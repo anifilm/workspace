@@ -1,0 +1,11 @@
+/home/anifilm/workspace/csharp/bin/Debug/netcoreapp2.2/csharp.deps.json
+/home/anifilm/workspace/csharp/bin/Debug/netcoreapp2.2/csharp.runtimeconfig.json
+/home/anifilm/workspace/csharp/bin/Debug/netcoreapp2.2/csharp.runtimeconfig.dev.json
+/home/anifilm/workspace/csharp/bin/Debug/netcoreapp2.2/csharp.dll
+/home/anifilm/workspace/csharp/bin/Debug/netcoreapp2.2/csharp.pdb
+/home/anifilm/workspace/csharp/obj/Debug/netcoreapp2.2/csharp.csprojAssemblyReference.cache
+/home/anifilm/workspace/csharp/obj/Debug/netcoreapp2.2/csharp.csproj.CoreCompileInputs.cache
+/home/anifilm/workspace/csharp/obj/Debug/netcoreapp2.2/csharp.AssemblyInfoInputs.cache
+/home/anifilm/workspace/csharp/obj/Debug/netcoreapp2.2/csharp.AssemblyInfo.cs
+/home/anifilm/workspace/csharp/obj/Debug/netcoreapp2.2/csharp.dll
+/home/anifilm/workspace/csharp/obj/Debug/netcoreapp2.2/csharp.pdb
