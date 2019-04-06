@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
+
 	int intergerVar = 100;
 	float floatingVar = 331.79;
 	double doubleVar = 8.44e+11;

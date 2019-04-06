@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
+
 	void *ptr = malloc(100);
 
 	printf("%p\n", ptr);

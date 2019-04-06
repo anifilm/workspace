@@ -2,8 +2,8 @@
 
 int is_digit(char c);
 
-int main()
-{
+int main() {
+
 	char input;
 	
 	printf("숫자를 입력하세요: ");
@@ -18,11 +18,10 @@ int main()
 	return 0;
 }
 
-int is_digit(char c)
-{
-	if (48 <= c && c <= 57) {
+int is_digit(char c) {
+
+	if (48 <= c && c <= 57)
 		return 1;
-	} else {
+	else
 		return 0;
-	}
 }

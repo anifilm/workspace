@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
+	
 	int arr[5];
 	int i, ave = 0;
 

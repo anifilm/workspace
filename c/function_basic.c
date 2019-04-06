@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-int magic_box(int i)
-{
+int magic_box(int i) {
+
 	i += 4;
 	return i;
 }
 
-int main()
-{
+int main() {
+
 	int i;
 
 	printf("마술 상자에 집어 넣을 값: ");

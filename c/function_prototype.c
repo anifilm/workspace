@@ -2,8 +2,8 @@
 
 int swap(int *a, int *b);
 
-int main()
-{
+int main() {
+
 	int i, j;
 
 	i = 3;
@@ -18,8 +18,8 @@ int main()
 	return 0;
 }
 
-int swap(int *a, int *b)
-{
+int swap(int *a, int *b) {
+	
 	int tmp = *a;
 
 	*a = *b;

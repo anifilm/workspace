@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
+	
 	// declaring variables
 	double width = 34.2;
 	double height = 65.5;

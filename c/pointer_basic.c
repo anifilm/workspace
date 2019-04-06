@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main(void)
-{
+int main() {
+    
     int num1 = 1234;
     double num2 = 3.14;
 

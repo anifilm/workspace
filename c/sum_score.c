@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
+
 	int i;
 	int subject, score;
 	double sum_score = 0;

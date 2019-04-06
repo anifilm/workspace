@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
+	
 	// declaring variables
 	double width = atoi(argv[1]);
 	double height = atoi(argv[2]);

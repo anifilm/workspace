@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
+	
 	int arr[10] = {2, 10, 30, 21, 34, 23, 53, 21, 9, 15};
 	
 	int i;

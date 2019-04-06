@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
+	
 	int student;	// 입력 받고자 하는 학생수
 	int i, input;
 	int *score;		// 학생들의 수학 점수 변수

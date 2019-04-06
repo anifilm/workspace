@@ -2,8 +2,8 @@
 
 int max_number(int *parr);
 
-int main()
-{
+int main() {
+
 	int arr[5];
 	int i;
 
@@ -17,12 +17,13 @@ int main()
 	return 0;
 }
 
-int max_number(int *parr)
-{
+int max_number(int *parr) {
+
 	int i;
 	int max = parr[0];
 
 	for (i = 1; i < 5; i++) {
+		
 		if (parr[i] > max) {
 			max = parr[i];
 		}

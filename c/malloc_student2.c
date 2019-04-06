@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
+	
 	int i, j, input, sum = 0;
 	int subject, student;
 	int **arr;

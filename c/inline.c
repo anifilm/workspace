@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-__inline int square(int a) {return a*a;}
+__inline int square(int a) { return a * a; }
 
 int main(int argc, char **argv) {
 

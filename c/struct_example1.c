@@ -10,8 +10,8 @@ struct company {
 	char name[10];
 };
 
-int main()
-{
+int main() {
+	
 	struct company Lim;
 
 	Lim.data.age = 42;

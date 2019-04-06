@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
+
 	int i;
 	int x, y;
 	int **arr;		// 우리는 arr[x][y]를 만들 것이다.
