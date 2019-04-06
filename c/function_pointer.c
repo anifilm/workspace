@@ -1,29 +1,34 @@
 #include <stdio.h>
 
-int swap(int *a, int *b);
+int max(int a, int b);
+int donothing(int c, int k);
 
-int main()
-{
-	int i, j;
+int main() {
 
-	i = 3;
-	j = 5;
+	int a, b;
+	int (*pfunc)(int, int);
+	pfunc = max;
 
-	printf("Swap 이전 : i = %d, j = %d\n", i, j);
+	scanf("%d %d", &a, &b);
+	printf("max(a, b): %d\n", max(a, b));
+	printf("pfunc(a, b): %d\n", pfunc(a, b));
 
-	swap(&i, &j);
+	pfunc = donothing;
 
-	printf("Swap 이후 : i = %d, j = %d\n", i, j);
+	printf("donothing(1, 1): %d\n", donothing(1, 1));
+	printf("pfunc(1, 1): %d\n", pfunc(1, 1));
+
+	return 0;
+}
+
+int max(int a, int b) {
+
+	if (a > b)
+		return a;
+	else
+		return b;
 
 	return 0;
 }
 
-int swap(int *a, int *b)
-{
-	int tmp = *a;
-
-	*a = *b;
-	*b = tmp;
-
-	return 0;
-}
+int donothing(int c, int k) { return 1; }

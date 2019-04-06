@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-int magic_box(int i);
+int magic_box(int i)
+{
+	i += 4;
+	return i;
+}
 
 int main()
 {
@@ -12,10 +16,4 @@ int main()
 	printf("마술 상자를 지나면: %d\n", magic_box(i));
 
 	return 0;
-}
-
-int magic_box(int i)
-{
-	i += 4;
-	return i;
 }
