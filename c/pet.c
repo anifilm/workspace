@@ -17,7 +17,7 @@ int main()
 	} else if (input == 2) {
 		printf("아이 시원해\n");
 	} else if (input == 3) {
-		printf("zzz\n");
+		printf("zzZ:\n");
 	} else {
 		printf("무얼 하라고 하는지 모르겠어. 왈왈!\n");
 	}

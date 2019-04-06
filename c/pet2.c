@@ -22,7 +22,7 @@ int main()
 			break;
 
 		case 3:
-			printf("zzz\n");
+			printf("zzZ\n");
 			break;
 
 		default:
