@@ -15,6 +15,7 @@ env = gym.make('FrozenLake-v3')
 Q = np.zeros([env.observation_space.n, env.action_space.n])
 
 # Discount factor
+learning_rate = 0.85
 dis = .99
 num_episodes = 2000
 
@@ -36,7 +37,9 @@ for i in range(num_episodes):
         new_state, reward, done, _ = env.step(action)
 
         # Update Q-Table with new knowledge using learning rate
-        Q[state, action] = reward + dis * np.max(Q[new_state, :])
+        # Q[state, action] = reward + dis * np.max(Q[new_state, :])
+        Q[state, action] = (1 - learning_rate) * Q[state, action] \
+            + learning_rate * (reward + dis * np.max(Q[new_state, :]))
 
         rAll += reward
         state = new_state
