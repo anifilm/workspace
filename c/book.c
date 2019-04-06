@@ -1,6 +1,63 @@
 #include <stdio.h>
 
+int add_book(char (*book_name)[30], char (*auth_name)[30],
+		char (*publ_name)[30], int *borrowed, int *num_total_book);
+int search_book(char (*book_name)[30], char (*auth_name)[30],
+		char (*publ_name)[30], int num_total_book);
+
+int borrow_book(int *borrowed);
+int return_book(int *borrowed);
+
 char compare(char *str1, char *str2);
+
+int main() {
+
+	int user_choice;
+	int num_total_book = 0;
+
+	// 각각 책, 저자, 출판사를 저장할 배열을 생성, 책의 최대 개수는 100권
+	char book_name[100][30], auth_name[100][30], publ_name[100][30];
+
+	// 빌렸는지 상태를 표시
+	int borrowed[100];
+
+	while (1) {
+		printf("\n[도서 관리 프로그램]\n\n");
+		printf("메뉴를 선택하세요\n");
+		printf("1. 책을 새로 추가하기\n");
+		printf("2. 책을 검색하기\n");
+		printf("3. 책을 대여하기\n");
+		printf("4. 책을 반납하기\n");
+		printf("5. 프로그램 종료\n");
+
+		printf("\n당신의 선택은: ");
+		scanf("%d", &user_choice);
+		
+		if (user_choice == 1) {
+			// 책을 새로 추가 하는 함수 호출
+			add_book(book_name, auth_name, publ_name, borrowed, &num_total_book);
+
+		} else if (user_choice == 2) {
+			// 책을 검색하는 함수 호출
+			search_book(book_name, auth_name, publ_name, num_total_book);
+
+		} else if (user_choice == 3) {
+			// 책을 대여하는 함수 호출
+			borrow_book(borrowed);
+
+		} else if (user_choice == 4) {
+			// 책을 반납하는 함수 호출
+			return_book(borrowed);
+
+		} else if (user_choice == 5) {
+			// 프로그램을 종료한다
+			printf("\n프로그램을 종료합니다.\n");
+			break;
+		}
+	}
+
+	return 0;
+}
 
 //책을 추가하는 함수
 int add_book(char (*book_name)[30], char (*auth_name)[30],
@@ -118,55 +175,6 @@ int return_book(int *borrowed) {
 	} else {
 		printf("\n책이 반납되었습니다.\n");
 		borrowed[book_num] = 0;
-	}
-
-	return 0;
-}
-
-int main() {
-
-	int user_choice;
-	int num_total_book = 0;
-
-	// 각각 책, 저자, 출판사를 저장할 배열을 생성, 책의 최대 개수는 100권
-	char book_name[100][30], auth_name[100][30], publ_name[100][30];
-
-	// 빌렸는지 상태를 표시
-	int borrowed[100];
-
-	while (1) {
-		printf("\n[도서 관리 프로그램]\n\n");
-		printf("메뉴를 선택하세요\n");
-		printf("1. 책을 새로 추가하기\n");
-		printf("2. 책을 검색하기\n");
-		printf("3. 책을 대여하기\n");
-		printf("4. 책을 반납하기\n");
-		printf("5. 프로그램 종료\n");
-
-		printf("\n당신의 선택은: ");
-		scanf("%d", &user_choice);
-		
-		if (user_choice == 1) {
-			// 책을 새로 추가 하는 함수 호출
-			add_book(book_name, auth_name, publ_name, borrowed, &num_total_book);
-
-		} else if (user_choice == 2) {
-			// 책을 검색하는 함수 호출
-			search_book(book_name, auth_name, publ_name, num_total_book);
-
-		} else if (user_choice == 3) {
-			// 책을 대여하는 함수 호출
-			borrow_book(borrowed);
-
-		} else if (user_choice == 4) {
-			// 책을 반납하는 함수 호출
-			return_book(borrowed);
-
-		} else if (user_choice == 5) {
-			// 프로그램을 종료한다
-			printf("\n프로그램을 종료합니다.\n");
-			break;
-		}
 	}
 
 	return 0;
