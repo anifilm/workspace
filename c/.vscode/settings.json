@@ -1,8 +1,0 @@
-{
-    "editor.fontSize": 18,
-    "terminal.integrated.fontSize": 16,
-    "markdown.preview.fontSize": 16,
-    "debug.console.fontSize": 16,
-    "editor.fontFamily": "'D2Coding','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "terminal.integrated.fontFamily": "'D2Coding','fonts-powerline'"
-}
