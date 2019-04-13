@@ -19,7 +19,7 @@ int main() {
 
     won = dollars * usd_per_krw;
 
-    cout << (int)won << " won is equivalent to " << dollars << " dollars." << endl;
+    cout << static_cast<int>(won) << " won is equivalent to " << dollars << " dollars." << endl;
 
     cout << endl;
 
