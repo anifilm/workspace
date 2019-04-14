@@ -1,6 +1,6 @@
 package operator;
 
-public class operatoin_ex4 {
+public class operation_ex4 {
     
     public static void main(String[] args) {
 

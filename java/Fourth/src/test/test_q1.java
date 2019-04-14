@@ -23,7 +23,7 @@ public class test_q1 {
         } else if (operator == '/') {
             sum = num1 / num2;
         } else {
-            System.out.print("연산자 오류 입니다.);
+            System.out.print("연산자 오류 입니다.");
             return;
         }
         
