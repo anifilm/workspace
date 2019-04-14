@@ -1,23 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int str_length(char *str);
+int stringLength(const char *string);
 
 int main() {
 
-	char str[] = {"What is your name?"};
-
-	printf("이 문자열의 길이: %d\n", str_length(str));
+	printf("%d\n", stringLength("stringLength test"));
+	printf("%d\n", stringLength(""));
+	printf("%d\n", stringLength("anifilm"));
 
 	return 0;
 }
 
-int str_length(char *str) {
+int stringLength(const char *string) {
 
-	int i = 0;
+	const char *lastAddress = string;
 
-	while (str[i]) {
-		i++;
-	}
+	while (*lastAddress)
+		++lastAddress;
 
-	return i;
+	return lastAddress - string;
 }
