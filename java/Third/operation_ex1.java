@@ -1,4 +1,5 @@
 class operation_ex1 {
+    
     public static void main(String[] args) {
 
         int mathScore = 90;
