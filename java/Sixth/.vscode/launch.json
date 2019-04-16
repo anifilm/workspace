@@ -1,0 +1,53 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StudentTest4",
+            "request": "launch",
+            "mainClass": "staticex.StudentTest4",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StudentTest3",
+            "request": "launch",
+            "mainClass": "staticex.StudentTest3",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StudentTest2",
+            "request": "launch",
+            "mainClass": "staticex.StudentTest2",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StudentTest1",
+            "request": "launch",
+            "mainClass": "staticex.StudentTest1",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TakeTrans",
+            "request": "launch",
+            "mainClass": "cooperation.TakeTrans",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CallAnotherConst",
+            "request": "launch",
+            "mainClass": "thisex.CallAnotherConst",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ThisExample",
+            "request": "launch",
+            "mainClass": "thisex.ThisExample",
+            "projectName": "Sixth"
+        }
+    ]
+}
