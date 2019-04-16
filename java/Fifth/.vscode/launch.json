@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MyDateTest",
+            "request": "launch",
+            "mainClass": "test.MyDateTest",
+            "projectName": "Fifth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StudentTest",
+            "request": "launch",
+            "mainClass": "hiding.StudentTest",
+            "projectName": "Fifth"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - OrderTest",
             "request": "launch",
             "mainClass": "alone.OrderTest",
