@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CardCompanyTest",
+            "request": "launch",
+            "mainClass": "test.q6.CardCompanyTest",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CoffeeTest",
+            "request": "launch",
+            "mainClass": "test.q5.CoffeeTest",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CarFactoryTest",
+            "request": "launch",
+            "mainClass": "alone.CarFactoryTest",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CompanyTest",
+            "request": "launch",
+            "mainClass": "singleton.CompanyTest",
+            "projectName": "Sixth"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StudentTest4",
             "request": "launch",
             "mainClass": "staticex.StudentTest4",

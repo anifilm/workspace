@@ -1,6 +1,6 @@
 package staticex;
 
-public class StudentTest1 {
+public class StudentTest {
 
     public static void main(String[] args) {
 
@@ -12,6 +12,6 @@ public class StudentTest1 {
         Student studentJung = new Student();
         studentJung.setStudentName("정흥규");
         System.out.println(studentJung.serialNum);      // 증가된 값 출력
-        System.out.println(studentLim.serialNum);
+        System.out.println(studentLim.serialNum);       // 증가된 값 출력
     }
 }
