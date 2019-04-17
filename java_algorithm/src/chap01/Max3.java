@@ -2,7 +2,7 @@ package chap01;
 
 import java.util.Scanner;
 
-public class Max3 {
+class Max3 {
 
     public static void main(String[] args) {
 

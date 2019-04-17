@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IntArray",
+            "request": "launch",
+            "mainClass": "chap02.IntArray",
+            "projectName": "java_algorithm"
+        }
+    ]
+}
