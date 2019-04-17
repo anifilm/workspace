@@ -1,0 +1,109 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EnhancedForLoop",
+            "request": "launch",
+            "mainClass": "array.EnhancedForLoop",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObjectCopy3",
+            "request": "launch",
+            "mainClass": "array.ObjectCopy3",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObjectCopy2",
+            "request": "launch",
+            "mainClass": "array.ObjectCopy2",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ObjectCopy1",
+            "request": "launch",
+            "mainClass": "array.ObjectCopy1",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayCopy",
+            "request": "launch",
+            "mainClass": "array.ArrayCopy",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArracyCopy",
+            "request": "launch",
+            "mainClass": "array.ArracyCopy",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StudentArray",
+            "request": "launch",
+            "mainClass": "alone.StudentArray",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BookArray2",
+            "request": "launch",
+            "mainClass": "array.BookArray2",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BookArray",
+            "request": "launch",
+            "mainClass": "array.BookArray",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Book",
+            "request": "launch",
+            "mainClass": "array.Book",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CharArray",
+            "request": "launch",
+            "mainClass": "array.CharArray",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayTest3",
+            "request": "launch",
+            "mainClass": "array.ArrayTest3",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayTest2",
+            "request": "launch",
+            "mainClass": "array.ArrayTest2",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayTest_review",
+            "request": "launch",
+            "mainClass": "array.ArrayTest_review",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayTest",
+            "request": "launch",
+            "mainClass": "array.ArrayTest",
+            "projectName": "Seventh"
+        }
+    ]
+}
