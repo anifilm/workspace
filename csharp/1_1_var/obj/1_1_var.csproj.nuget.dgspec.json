@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/anifilm/workspace/csharp/1_1_var/1_1_var.csproj": {}
+  },
+  "projects": {
+    "/home/anifilm/workspace/csharp/1_1_var/1_1_var.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/anifilm/workspace/csharp/1_1_var/1_1_var.csproj",
+        "projectName": "1_1_var",
+        "projectPath": "/home/anifilm/workspace/csharp/1_1_var/1_1_var.csproj",
+        "packagesPath": "/home/anifilm/.nuget/packages/",
+        "outputPath": "/home/anifilm/workspace/csharp/1_1_var/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/anifilm/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
