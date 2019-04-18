@@ -1,0 +1,11 @@
+/home/anifilm/workspace/csharp/1_3_for_foreach/bin/Debug/netcoreapp2.2/1_3_for_foreach.deps.json
+/home/anifilm/workspace/csharp/1_3_for_foreach/bin/Debug/netcoreapp2.2/1_3_for_foreach.runtimeconfig.json
+/home/anifilm/workspace/csharp/1_3_for_foreach/bin/Debug/netcoreapp2.2/1_3_for_foreach.runtimeconfig.dev.json
+/home/anifilm/workspace/csharp/1_3_for_foreach/bin/Debug/netcoreapp2.2/1_3_for_foreach.dll
+/home/anifilm/workspace/csharp/1_3_for_foreach/bin/Debug/netcoreapp2.2/1_3_for_foreach.pdb
+/home/anifilm/workspace/csharp/1_3_for_foreach/obj/Debug/netcoreapp2.2/1_3_for_foreach.csprojAssemblyReference.cache
+/home/anifilm/workspace/csharp/1_3_for_foreach/obj/Debug/netcoreapp2.2/1_3_for_foreach.csproj.CoreCompileInputs.cache
+/home/anifilm/workspace/csharp/1_3_for_foreach/obj/Debug/netcoreapp2.2/1_3_for_foreach.AssemblyInfoInputs.cache
+/home/anifilm/workspace/csharp/1_3_for_foreach/obj/Debug/netcoreapp2.2/1_3_for_foreach.AssemblyInfo.cs
+/home/anifilm/workspace/csharp/1_3_for_foreach/obj/Debug/netcoreapp2.2/1_3_for_foreach.dll
+/home/anifilm/workspace/csharp/1_3_for_foreach/obj/Debug/netcoreapp2.2/1_3_for_foreach.pdb
