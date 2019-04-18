@@ -1,0 +1,11 @@
+/home/anifilm/workspace/csharp/First/bin/Debug/netcoreapp2.2/First.deps.json
+/home/anifilm/workspace/csharp/First/bin/Debug/netcoreapp2.2/First.runtimeconfig.json
+/home/anifilm/workspace/csharp/First/bin/Debug/netcoreapp2.2/First.runtimeconfig.dev.json
+/home/anifilm/workspace/csharp/First/bin/Debug/netcoreapp2.2/First.dll
+/home/anifilm/workspace/csharp/First/bin/Debug/netcoreapp2.2/First.pdb
+/home/anifilm/workspace/csharp/First/obj/Debug/netcoreapp2.2/First.csprojAssemblyReference.cache
+/home/anifilm/workspace/csharp/First/obj/Debug/netcoreapp2.2/First.csproj.CoreCompileInputs.cache
+/home/anifilm/workspace/csharp/First/obj/Debug/netcoreapp2.2/First.AssemblyInfoInputs.cache
+/home/anifilm/workspace/csharp/First/obj/Debug/netcoreapp2.2/First.AssemblyInfo.cs
+/home/anifilm/workspace/csharp/First/obj/Debug/netcoreapp2.2/First.dll
+/home/anifilm/workspace/csharp/First/obj/Debug/netcoreapp2.2/First.pdb
