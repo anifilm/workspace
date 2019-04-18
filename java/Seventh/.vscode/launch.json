@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StudentArrayList",
+            "request": "launch",
+            "mainClass": "alone.StudentArrayList",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ArrayListTest",
+            "request": "launch",
+            "mainClass": "array.ArrayListTest",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TwoDimention2",
+            "request": "launch",
+            "mainClass": "array.TwoDimention2",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TwoDimentionAlphabet",
+            "request": "launch",
+            "mainClass": "alone.TwoDimentionAlphabet",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TwoDimention",
+            "request": "launch",
+            "mainClass": "array.TwoDimention",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - EnhancedForLoop",
             "request": "launch",
             "mainClass": "array.EnhancedForLoop",
