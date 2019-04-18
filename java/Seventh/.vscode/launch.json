@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - StudentTest",
+            "request": "launch",
+            "mainClass": "arraylist.StudentTest",
+            "projectName": "Seventh"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StudentArrayList",
             "request": "launch",
             "mainClass": "alone.StudentArrayList",
