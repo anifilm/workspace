@@ -20,9 +20,7 @@ public class ArrayListTest {
             book.showBookInfo();
         }
 
-        System.out.println( );
-
-        System.out.println("=== 향상된 for문 사용 ===");
+        System.out.println("\n=== 향상된 for문 사용 ===");
 
         for (Book book : library) {
 

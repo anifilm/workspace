@@ -2,6 +2,7 @@
 Q2 구구단을 짝수 단만 출력하도록 프로그램을 만들어 보세요.
 (힌트 continue문을 사용합니다.)
 */
+
 package test;
 
 public class test_q2 {

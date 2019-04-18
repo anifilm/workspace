@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DogTest",
+            "request": "launch",
+            "mainClass": "test.q5.DogTest",
+            "projectName": "chapter7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DogTest",
+            "request": "launch",
+            "mainClass": "test.q4.DogTest",
+            "projectName": "chapter7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Q3",
+            "request": "launch",
+            "mainClass": "test.Q3",
+            "projectName": "chapter7"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Q2",
+            "request": "launch",
+            "mainClass": "test.Q2",
+            "projectName": "chapter7"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StudentTest",
             "request": "launch",
             "mainClass": "arraylist.StudentTest",
