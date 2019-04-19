@@ -22,6 +22,5 @@ int main() {
     cout << static_cast<int>(won) << " won is equivalent to " << dollars << " dollars." << endl;
 
     cout << endl;
-
 	return 0;
 }
