@@ -1,0 +1,11 @@
+/home/anifilm/workspace/csharp/Second/bin/Debug/netcoreapp2.2/Second.deps.json
+/home/anifilm/workspace/csharp/Second/bin/Debug/netcoreapp2.2/Second.runtimeconfig.json
+/home/anifilm/workspace/csharp/Second/bin/Debug/netcoreapp2.2/Second.runtimeconfig.dev.json
+/home/anifilm/workspace/csharp/Second/bin/Debug/netcoreapp2.2/Second.dll
+/home/anifilm/workspace/csharp/Second/bin/Debug/netcoreapp2.2/Second.pdb
+/home/anifilm/workspace/csharp/Second/obj/Debug/netcoreapp2.2/Second.csprojAssemblyReference.cache
+/home/anifilm/workspace/csharp/Second/obj/Debug/netcoreapp2.2/Second.csproj.CoreCompileInputs.cache
+/home/anifilm/workspace/csharp/Second/obj/Debug/netcoreapp2.2/Second.AssemblyInfoInputs.cache
+/home/anifilm/workspace/csharp/Second/obj/Debug/netcoreapp2.2/Second.AssemblyInfo.cs
+/home/anifilm/workspace/csharp/Second/obj/Debug/netcoreapp2.2/Second.dll
+/home/anifilm/workspace/csharp/Second/obj/Debug/netcoreapp2.2/Second.pdb
