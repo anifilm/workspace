@@ -9,16 +9,16 @@ int main() {
 
 	int num {};
 	
-	cout << "Enter a positive integer - start the countdown: ";
+	cout << "Enter a positive integer to count up to: ";
 	cin >> num;
 
-	while (num > 0) {
+    int i {1};
 
-		cout << num << endl;
-		num--;
+	while (num >= i) {
+
+		cout << i << endl;
+		i++;
 	}
-
-	cout << "Blastoff!" << endl;
 
 	cout << endl;	
 	return 0;
