@@ -1,6 +1,8 @@
 # Python Object-Oriented Programming
 
 class Employee:
+	
+	raise_amount = 1.04
 
 	def __init__(self, first, last, pay):
 		self.first = first
@@ -11,10 +13,11 @@ class Employee:
 	def fullname(self):
 		return '{} {}'.format(self.first, self.last)
 
+	def apply_raise(self):
+		self.pay = int(self.pay * self.raise_amount)
+		
 
-emp_1 = Employee('Corey', 'Schafer', 50000)
-emp_2 = Employee('Test', 'User', 6000)
 
-emp_1.fullname()
-print(Employee.fullname(emp_1))
-# print(emp_2.fullname())
+dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
+dev_2 = Developer('Test', 'Employee', 60000, 'Java')
+
