@@ -1,8 +1,27 @@
 def elevator(left, right, call):
-	if abs(left-call) >= abs(right-call):
-        return "right"
+    
+    # if abs(left-call) >= abs(right-call):
+    #     return "right"
+    # else:
+    #     return "left"
+
+    if (call == 0):
+        if (call == right): return "right"
+        elif (call == left): return "left"
+        elif (left < right): return "left"
+        else: return "right"
+    elif (call == 1):
+        if (call == right): return "right"
+        elif (call == left): return "left"
+        elif (left <= right): return "right"
+        else: return "right"
+    elif (call == 2):
+        if (call == right): return "right"
+        elif (call == left): return "left"
+        elif (left <= right): return "right"
+        else: return "left"
     else:
-        return "left"
+        pass # Code on! :)
 
 	
 def main():
