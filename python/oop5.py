@@ -16,8 +16,27 @@ class Employee:
 	def apply_raise(self):
 		self.pay = int(self.pay * self.raise_amount)
 		
+	def __repr__(self):
+		return "Employee('{}', '{}', {})".format(self.first, self.last, self.pay)
 
+	def __str__(self):
+		return '{} - {}'.format(self.fullname(), self.email)
 
-dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
-dev_2 = Developer('Test', 'Employee', 60000, 'Java')
+	def __add__(self, other):
+		return self.pay + other.pay
+		
+	def __len__(self):
+		return len(self.fullname())
 
+emp_1 = Employee('Corey', 'Schafer', 50000)
+emp_2 = Employee('Test', 'Employee', 60000)
+
+print(len(emp_1))
+
+# print(emp_1)
+
+# print(repr(emp_1))
+# print(str(emp_1))
+
+# print(emp_1.__repr__())
+# print(emp_1.__str__())
