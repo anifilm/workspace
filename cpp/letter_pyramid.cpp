@@ -11,7 +11,7 @@ int main() {
     cin >> input_string;
 
     int line_count = input_string.length();
-    int space_count = line_count - 1;
+    int space_count = line_count;
     int word_count = 1;
 
     for (int i {0}; i < line_count; i++) {
