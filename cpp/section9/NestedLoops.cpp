@@ -1,5 +1,5 @@
 // Section 9
-// Nested loops - Multiplication Table
+// Nested Loops - Multiplication Table
 
 #include <iostream>
 

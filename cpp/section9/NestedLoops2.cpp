@@ -1,5 +1,5 @@
 // Section 9
-// Nested loops - Histogram
+// Nested Loops - Histogram
 
 #include <iostream>
 #include <vector>
