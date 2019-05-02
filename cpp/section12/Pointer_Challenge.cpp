@@ -1,5 +1,5 @@
-// Section 14
-// 
+// Section 12
+// Pointer Challenge 
 
 #include <iostream>
 
