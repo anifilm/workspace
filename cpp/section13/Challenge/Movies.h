@@ -13,12 +13,12 @@
 #include <string>
 #include "Movie.h"
 
-class Movies
-{
+class Movies {
 private:
     std::vector<Movie> movies;
+
 public:
-    Movies();             // Constructor
+    Movies();           // Constructor
     ~Movies();          // Destructor
     
     /*************************************************************************

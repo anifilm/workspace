@@ -8,7 +8,7 @@
 #include <iostream>
 #include "Movies.h"
 
- /*************************************************************************
+/*************************************************************************
     Movies no-args constructor
 **************************************************************************/
 Movies::Movies() {
@@ -20,7 +20,7 @@ Movies::Movies() {
 Movies::~Movies() {
 }
 
-  /*************************************************************************
+/*************************************************************************
     add_movie expects the name of the move, rating and watched count
     
     It will search the movies vector to see if a movie object already exists
@@ -32,10 +32,18 @@ Movies::~Movies() {
     *********************************************************************/
 bool Movies::add_movie(std::string name, std::string rating, int watched) {
     // you implement this method
-    return false;
+    for (const Movie &movie: movies) {
+        if (movie.get_name() == name)
+            return false;
+    }
+
+    Movie temp {name, rating, watched};
+    movies.push_back(temp);
+
+    return true;
 }
 
- /*************************************************************************
+/*************************************************************************
     increment_watched expects the name of the move to increment the
     watched count
     
@@ -48,6 +56,13 @@ bool Movies::add_movie(std::string name, std::string rating, int watched) {
     *********************************************************************/
 bool Movies::increment_watched(std::string name) {
    // you implement this method
+   for (Movie &movie: movies) {
+       if (movie.get_name() == name) {
+           movie.increment_watched();
+           return true;
+       }
+   }
+
    return false;
 }
 
@@ -59,5 +74,13 @@ bool Movies::increment_watched(std::string name) {
     object displays itself
     *********************************************************************/
 void Movies::display() const {
-   // You implement this method
+    // You implement this method
+    if (movies.size() == 0) {
+        std::cout << "Sorry, no movies to display\n" << std::endl;
+    } else {
+        std::cout << "\n==============================" << std::endl;
+        for (const auto &movie: movies)
+            movie.display();
+        std::cout << "==============================\n" << std::endl;
+    }
 }
