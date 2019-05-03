@@ -1,5 +1,5 @@
 /******************************************************************
- * Section 13 Challenge
+ * Section 13 Challenge Solution
  * main.cpp
  * 
  * Test the Movies project
@@ -57,7 +57,7 @@ int main() {
     
     add_movie(my_movies, "Big", "PG-13",2);                 // OK
     add_movie(my_movies,"Star Wars", "PG",5);             // OK
-    add_movie(my_movies,"Cinderella", "PG",7);           // OK
+    add_movie(my_movies,"Cinderella", "PG",7);            // OK
      
     my_movies.display();   // Big, Star Wars, Cinderella
     
@@ -69,9 +69,9 @@ int main() {
     increment_watched(my_movies,"Big");                    // OK
     increment_watched(my_movies,"Ice Age");              // OK
     
-    my_movies.display();    // Big and Ice Age watched count incremented by 1
+   my_movies.display();    // Big and Ice Age watched count incremented by 1
     
-    increment_watched(my_movies,"XXX");         // XXX not found
+    increment_watched(my_movies,"XXX");     // XXX not found
 
 	return 0;
 }
