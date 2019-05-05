@@ -11,8 +11,10 @@ public:
     Mystring(const Mystring &source);       // Copy constructor
     ~Mystring();                            // Destructor
 
+    Mystring &operator = (const Mystring &rhs);		// Copy assignment
+
     void display() const;
-    int get_length() const;                 // getter
+    int get_length() const;					// getter
     const char *get_str() const;
 };
 

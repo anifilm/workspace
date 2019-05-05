@@ -9,7 +9,7 @@ int main() {
 
     Mystring empty;                 // no-args constructor
     Mystring larry("Larry");        // overloaded constructor
-    Mystring stooge {larry};        // copt constructor
+    Mystring stooge {larry};        // copy constructor
 
     empty.display();
     larry.display();
