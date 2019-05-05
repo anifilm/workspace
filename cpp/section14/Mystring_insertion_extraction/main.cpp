@@ -1,5 +1,5 @@
 // Section 14
-// Mystring - starting point
+// Mystring - Overloading insertion and extraction operator
 #include <iostream>
 #include "Mystring.h"
 
@@ -7,13 +7,20 @@ using namespace std;
 
 int main() {
 
-    Mystring empty;                 // no-args constructor
-    Mystring larry("Larry");        // overloaded constructor
-    Mystring stooge {larry};        // copy constructor
+    Mystring larry {"Larry"};
+    Mystring moe {"Moe"};
+    Mystring curly;
 
-    empty.display();
-    larry.display();
-    stooge.display();
+    cout << "Enter the third stooge's first name: ";
+    cin >> curly;
 
+    cout << "The three stooges are " << larry << ", " << moe << ", and " << curly << endl;
+
+    cout << "\nEnter the three stooges names separated by a space: ";
+    cin >> larry >> moe >> curly;
+
+    cout << "The three stooges are " << larry << ", " << moe << ", and " << curly << endl; 
+
+    cout << endl;
     return 0;
 }
