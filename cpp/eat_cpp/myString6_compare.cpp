@@ -12,16 +12,15 @@ class MyString {
     int memory_capacity;        // 현재 할당된 용량
 
 public:
-	// 문자 하나로 생성
-	MyString(char c);
-	// 문자열로 부터 생성
-	MyString(const char *str);
-	// 복사 생성자
-	MyString(const MyString &str);
+    // 문자 하나로 생성
+    MyString(char c);
+    // 문자열로 부터 생성
+    MyString(const char *str);      // overloaded constructor
+    MyString(const MyString &str);  // copy constructor
 
-	~MyString();
+    ~MyString();                    // distructor
 
-	int length() const;
+    int get_length() const;         // getter
     int capacity() const;
     void reserve(int size);
 
@@ -72,7 +71,7 @@ MyString::MyString(const MyString &str) {
 
 MyString::~MyString() { delete[] string_content; }
 
-int MyString::length() const { return string_length; }
+int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
 	for (int i {0}; i != string_length; i++)
@@ -98,7 +97,6 @@ MyString &MyString::assign(MyString &str) {
     for (int i {0}; i != str.string_length; i++) {
         string_content[i] = str.string_content[i];
     }
-
     // 그리고 굳이  str.stringg_length + 1 ~ string_length 부분은 초기화
     // 시킬 필요는 없다. 왜냐하면 거기까지는 읽어들이지 않기 때문이다.
 
@@ -222,10 +220,10 @@ MyString &MyString::insert(int loc, char c) {
 
 MyString &MyString::erase(int loc, int num) {
     // loc 의 앞 부터 시작해서 num 문자를 지운다
-    if (num < 0 || loc < 0 || loc > string_length) return *this;
+    if (num < 0 || loc < 0 || loc > string_length)
+        return *this;
 
     // 지운다는 것은 단순히 뒤의 문자들을 앞으로 끌고 온다고 생각하면 된다
-
     for (int i = loc + num; i < string_length; i++) {
         string_content[1 - num] = string_content[i];
     }
@@ -237,14 +235,17 @@ MyString &MyString::erase(int loc, int num) {
 int MyString::find(int find_from, MyString &str) {
     int i, j;
 
-    if (str.string_length == 0) return -1;
+    if (str.string_length == 0)
+        return -1;
 
     for (i = find_from; i < string_length - str.string_length; i++) {
         for (j = 0; j < str.string_length; j++) {
-            if (string_content[i + j] != str.string_content[j]) break;
+            if (string_content[i + j] != str.string_content[j])
+                break;
         }
 
-        if (j == str.string_length) return i;
+        if (j == str.string_length)
+            return i;
     }
 
     return -1;      // 찾지 못했음
@@ -267,15 +268,19 @@ int MyString::compare(MyString &str) {
     // -1 은 (*this) 가 사전식으로 더 앞에 온다는 의미이다
 
     for (int i {0}; i < min(string_length, str.string_length); i++) {
-        if (string_content[i] > str.string_content[i]) return 1;
-        else if (string_content[i] < str.string_content[i]) return -1;
+        if (string_content[i] > str.string_content[i])
+            return 1;
+        else if (string_content[i] < str.string_content[i])
+            return -1;
     }
     // 여기 까지 했는데 끝나지 않았다면 앞 부분 까지 모두 똑같은 것이 된다
     // 만일 문자열 길이가 같다면 두 문자열은 아예 같은 문자열이 된다
 
-    if (string_length == str.string_length) return 0;
+    if (string_length == str.string_length)
+        return 0;
     // 참고로 abc 와 abcd 의 크기 비교는 abcd 가 더 뒤에 오게 된다
-    else if (string_length > str.string_length) return -1;
+    else if (string_length > str.string_length)
+        return -1;
 
     return -1;
 }

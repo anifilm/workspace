@@ -11,16 +11,15 @@ class MyString {
     int memory_capacity;        // 현재 할당된 용량
 
 public:
-	// 문자 하나로 생성
-	MyString(char c);
-	// 문자열로 부터 생성
-	MyString(const char *str);
-	// 복사 생성자
-	MyString(const MyString &str);
+    // 문자 하나로 생성
+    MyString(char c);
+    // 문자열로 부터 생성
+    MyString(const char *str);      // overloaded constructor
+    MyString(const MyString &str);  // copy constructor
 
-	~MyString();
+    ~MyString();                    // distructor
 
-	int length() const;
+    int get_length() const;         // getter
     int capacity() const;
     void reserve(int size);
 
@@ -57,7 +56,7 @@ MyString::MyString(const MyString &str) {
 
 MyString::~MyString() { delete[] string_content; }
 
-int MyString::length() const { return string_length; }
+int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
 	for (int i {0}; i != string_length; i++)
@@ -116,7 +115,7 @@ int MyString::capacity() const { return memory_capacity; }
 
 void MyString::reserve(int size) {
     if (size > memory_capacity) {
-        char* prev_string_content = string_content;
+        char *prev_string_content = string_content;
 
         string_content = new char[size];
         memory_capacity = size;
@@ -136,7 +135,7 @@ int main() {
     str1.reserve(30);
 
     cout << "Capacity: " << str1.capacity() << endl;
-    cout << "String length: " << str1.length() << endl;
+    cout << "String length: " << str1.get_length() << endl;
 
 	str1.println();
 }

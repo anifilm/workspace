@@ -90,7 +90,7 @@ Complex Complex::operator+(const char *str) {
 
 	// 만일 'i' 가 있다면 실수부와 허수부를 나누어서 처리한다
 	str_real = get_number(str, begin, pos_i - 1);
-	str_img = get_number(str, pos_i +1, end -1);
+	str_img = get_number(str, pos_i + 1, end - 1);
 
 	if (pos_i >= 1 && str[pos_i - 1] == '-') str_img *= -1.0;
 
