@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>             // string.h 는 strlen 때문에 include
+#include <cstring>
 
 using namespace std;
 
@@ -10,14 +10,11 @@ class MyString {
 
     int memory_capacity;        // 현재 할당된 용량
 
-	public:
-
+public:
 	// 문자 하나로 생성
 	MyString(char c);
-	
 	// 문자열로 부터 생성
 	MyString(const char *str);
-	
 	// 복사 생성자
 	MyString(const MyString &str);
 
@@ -46,7 +43,8 @@ MyString::MyString(const char *str) {
     memory_capacity = string_length;
 	string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++) string_content[i] = str[i];
+	for (int i {0}; i != string_length; i++)
+        string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString &str) {
@@ -62,11 +60,13 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::length() const { return string_length; }
 
 void MyString::print() {
-	for (int i {0}; i != string_length; i++) cout << string_content[i];
+	for (int i {0}; i != string_length; i++)
+        cout << string_content[i];
 }
 
 void MyString::println() {
-	for (int i {0}; i != string_length; i++) cout << string_content[i];
+	for (int i {0}; i != string_length; i++)
+        cout << string_content[i];
 
 	cout << endl;
 }

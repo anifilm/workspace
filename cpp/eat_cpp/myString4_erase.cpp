@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <cstring>
 
 using namespace std;
 
@@ -10,14 +10,11 @@ class MyString {
 
     int memory_capacity;        // 현재 할당된 용량
 
-	public:
-
+public:
 	// 문자 하나로 생성
 	MyString(char c);
-	
 	// 문자열로 부터 생성
 	MyString(const char *str);
-	
 	// 복사 생성자
 	MyString(const MyString &str);
 
@@ -40,10 +37,6 @@ class MyString {
     MyString &insert(int loc, char c);
 
     MyString &erase(int loc, int num);
-
-    int find(int find_from, MyString &str);
-    int find(int find_from, const char *str);
-    int find(int find_from, char c);
 };
 
 MyString::MyString(char c) {
@@ -58,7 +51,8 @@ MyString::MyString(const char *str) {
     memory_capacity = string_length;
 	string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++) string_content[i] = str[i];
+	for (int i {0}; i != string_length; i++)
+        string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString &str) {
@@ -74,11 +68,13 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::length() const { return string_length; }
 
 void MyString::print() {
-	for (int i {0}; i != string_length; i++) cout << string_content[i];
+	for (int i {0}; i != string_length; i++)
+        cout << string_content[i];
 }
 
 void MyString::println() {
-	for (int i {0}; i != string_length; i++) cout << string_content[i];
+	for (int i {0}; i != string_length; i++)
+        cout << string_content[i];
 
 	cout << endl;
 }
@@ -128,7 +124,7 @@ int MyString::capacity() const { return memory_capacity; }
 
 void MyString::reserve(int size) {
     if (size > memory_capacity) {
-        char* prev_string_content = string_content;
+        char *prev_string_content = string_content;
 
         string_content = new char[size];
         memory_capacity = size;
@@ -138,7 +134,6 @@ void MyString::reserve(int size) {
 
         delete[] prev_string_content;
     }
-
     // 만일 예약하려는 size가 현재 capacity 보다 작다면
     // 아무것도 안해도 된다
 }
@@ -232,37 +227,20 @@ MyString &MyString::erase(int loc, int num) {
     return *this;
 }
 
-int MyString::find(int find_from, MyString &str) {
-    int i, j;
-
-    if (str.string_length == 0) return -1;
-
-    for (i = find_from; i < string_length - str.string_length; i++) {
-        for (j = 0; j < str.string_length; j++) {
-            if (string_content[i + j] != str.string_content[j]) break;
-        }
-
-        if (j == str.string_length) return i;
-    }
-
-    return -1;      // 찾지 못했음
-}
-
-int MyString::find(int find_from, const char *str) {
-    MyString temp(str);
-    return find(find_from, temp);
-}
-
-int MyString::find(int find_from, char c) {
-    MyString temp(c);
-    return find(find_from, temp);
-}
-
 int main() {
+	
+	MyString str1("very very very long string");
+    MyString str2("<some string inserted between>");
+    str1.reserve(30);
 
-	MyString str1("this is a very very long string");
+    cout << "Capacity: " << str1.capacity() << endl;
+    cout << "String length: " << str1.length() << endl;
+	str1.println();
 
-    cout << "Location of first <very> in the string: " << str1.find(0, "very") << endl;
-    cout << "Location of seconf <very> in the string: " << str1.find(str1.find(0, "very") + 1, "very") << endl;
+    str1.insert(5, str2);
+    str1.println();
 
+    cout << "Capacity: " << str1.capacity() << endl;
+    cout << "String length: " << str1.length() << endl;
+    str1.println();
 }

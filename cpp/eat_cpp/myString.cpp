@@ -1,7 +1,5 @@
 #include <iostream>
-#include <string.h>
-// string.h 는 strlen 때문에 include 했는데,
-// 사실 여러분이 직접 strlen 과 같은 함수를 만들어서 사용해도 됩니다.
+#include <cstring>
 
 using namespace std;
 
@@ -10,14 +8,11 @@ class MyString {
 	char *string_content;		// 문자열 데이터를 가리키는 포인터
 	int string_length;			// 문자열 길이
 
-	public:
-
+public:
 	// 문자 하나로 생성
 	MyString(char c);
-	
 	// 문자열로 부터 생성
 	MyString(const char *str);
-	
 	// 복사 생성자
 	MyString(const MyString &str);
 
