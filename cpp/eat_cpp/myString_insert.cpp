@@ -5,7 +5,7 @@ using namespace std;
 
 class MyString {
 
-	char* string_content;		// 문자열 데이터를 가리키는 포인터
+	char *string_content;		// 문자열 데이터를 가리키는 포인터
 	int string_length;			// 문자열 길이
 
     int memory_capacity;        // 현재 할당된 용량
@@ -16,10 +16,10 @@ class MyString {
 	MyString(char c);
 	
 	// 문자열로 부터 생성
-	MyString(const char* str);
+	MyString(const char *str);
 	
 	// 복사 생성자
-	MyString(const MyString& str);
+	MyString(const MyString &str);
 
 	~MyString();
 
@@ -30,14 +30,14 @@ class MyString {
 	void print();
 	void println();
 
-    MyString& assign(MyString& str);
-    MyString& assign(const char* str);
+    MyString &assign(MyString &str);
+    MyString &assign(const char *str);
 
     char at(int i);
 
-    MyString& insert(int loc, MyString& str);
-    MyString& insert(int loc, const char* str);
-    MyString& insert(int loc, char c);
+    MyString &insert(int loc, MyString &str);
+    MyString &insert(int loc, const char *str);
+    MyString &insert(int loc, char c);
 };
 
 MyString::MyString(char c) {
@@ -47,7 +47,7 @@ MyString::MyString(char c) {
     string_length = 1;
 }
 
-MyString::MyString(const char* str) {
+MyString::MyString(const char *str) {
 	string_length = strlen(str);
     memory_capacity = string_length;
 	string_content = new char[string_length];
@@ -55,7 +55,7 @@ MyString::MyString(const char* str) {
 	for (int i {0}; i != string_length; i++) string_content[i] = str[i];
 }
 
-MyString::MyString(const MyString& str) {
+MyString::MyString(const MyString &str) {
 	string_length = str.string_length;
 	string_content = new char[string_length];
 
@@ -77,7 +77,7 @@ void MyString::println() {
 	cout << endl;
 }
 
-MyString& MyString::assign(MyString& str) {
+MyString &MyString::assign(MyString &str) {
     if (str.string_length > memory_capacity) {
         // 그러면 다시 할당을 해줘야 한다
         delete[] string_content;
@@ -98,7 +98,7 @@ MyString& MyString::assign(MyString& str) {
     return *this;
 }
 
-MyString& MyString::assign(const char* str) {
+MyString &MyString::assign(const char *str) {
     int str_length = strlen(str);
 
     if (str_length > memory_capacity) {
@@ -122,7 +122,7 @@ int MyString::capacity() const { return memory_capacity; }
 
 void MyString::reserve(int size) {
     if (size > memory_capacity) {
-        char* prev_string_content = string_content;
+        char *prev_string_content = string_content;
 
         string_content = new char[size];
         memory_capacity = size;
@@ -139,12 +139,12 @@ void MyString::reserve(int size) {
 
 char MyString::at(int i) {
     if (i >= string_length || 1 < 0)
-        return NULL;
+        return 0;
     else
         return string_content[i];
 }
 
-MyString& MyString::insert(int loc, MyString& str) {
+MyString &MyString::insert(int loc, MyString &str) {
     // 이는 i 의 위치 바로 앞에 문자를 샆입하게 된다
     // 예를 들어서 abc 라는 문자열에 insert(1, "d") 를 하게 된다면 adbc 가 된다
 
@@ -155,11 +155,12 @@ MyString& MyString::insert(int loc, MyString& str) {
         // 이제 새롭게 동적으로 할당을 해야 한다
         memory_capacity = string_length + str.string_length;
 
-        char* prev_string_content = string_content;
+        char *prev_string_content = string_content;
         string_content = new char[memory_capacity];
 
         // 일단 insert 되는 부분 직전까지의 내용을 복사한다
-        for (int i {0}; i < loc; i++) {
+        int i;
+        for (i = 0; i < loc; i++) {
             string_content[i] = prev_string_content[i];
         }
 
@@ -197,12 +198,12 @@ MyString& MyString::insert(int loc, MyString& str) {
     return *this;
 }
 
-MyString& MyString::insert(int loc, const char* str) {
+MyString &MyString::insert(int loc, const char *str) {
     MyString temp(str);
     return insert(loc, temp);
 }
 
-MyString& MyString::insert(int loc, char c) {
+MyString &MyString::insert(int loc, char c) {
     MyString temp(c);
     return insert(loc, temp);
 }

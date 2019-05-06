@@ -3,7 +3,7 @@
 int main() {
 
 	int a;
-	int* pa;
+	int *pa;
 	pa = &a;
 
 	printf("pa의 값: %p\n", pa);

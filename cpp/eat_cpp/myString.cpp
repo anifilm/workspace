@@ -16,10 +16,10 @@ class MyString {
 	MyString(char c);
 	
 	// 문자열로 부터 생성
-	MyString(const char* str);
+	MyString(const char *str);
 	
 	// 복사 생성자
-	MyString(const MyString& str);
+	MyString(const MyString &str);
 
 	~MyString();
 
@@ -34,14 +34,14 @@ MyString::MyString(char c) {
 	string_content[0] = c;
 }
 
-MyString::MyString(const char* str) {
+MyString::MyString(const char *str) {
 	string_length = strlen(str);
 	string_content = new char[string_length];
 
 	for (int i {0}; i != string_length; i++) string_content[i] = str[i];
 }
 
-MyString::MyString(const MyString& str) {
+MyString::MyString(const MyString &str) {
 	string_length = str.string_length;
 	string_content = new char[string_length];
 

@@ -44,6 +44,10 @@ class MyString {
     int find(int find_from, MyString &str);
     int find(int find_from, const char *str);
     int find(int find_from, char c);
+
+    int compare(MyString &str);
+
+    bool operator==(MyString &str);
 };
 
 MyString::MyString(char c) {
@@ -128,7 +132,7 @@ int MyString::capacity() const { return memory_capacity; }
 
 void MyString::reserve(int size) {
     if (size > memory_capacity) {
-        char* prev_string_content = string_content;
+        char *prev_string_content = string_content;
 
         string_content = new char[size];
         memory_capacity = size;
@@ -258,11 +262,43 @@ int MyString::find(int find_from, char c) {
     return find(find_from, temp);
 }
 
+int MyString::compare(MyString &str) {
+    // (*this) - (str) 을 수행해서 그 1, 0, -1 로 그 결과를 리턴한다
+    // 1 은 (*this) 가 사전식으로 더 뒤에 온다은 의미
+    // 0 은 두 문자열이 같다는 의미
+    // -1 은 (*this) 가 사전식으로 더 앞에 온다는 의미이다
+
+    for (int i {0}; i < min(string_length, str.string_length); i++) {
+        if (string_content[i] > str.string_content[i]) return 1;
+        else if (string_content[i] < str.string_content[i]) return -1;
+    }
+    // 여기 까지 했는데 끝나지 않았다면 앞 부분 까지 모두 똑같은 것이 된다
+    // 만일 문자열 길이가 같다면 두 문자열은 아예 같은 문자열이 된다
+
+    if (string_length == str.string_length) return 0;
+    // 참고로 abc 와 abcd 의 크기 비교는 abcd 가 더 뒤에 오게 된다
+    else if (string_length > str.string_length) return -1;
+
+    return -1;
+}
+
+bool MyString::operator==(MyString &str) {
+    return !compare(str);       // str과 같으면 compare 에서 0 을 리턴한다
+}
+
 int main() {
 
-	MyString str1("this is a very very long string");
+	MyString str1("a word");
+    MyString str2("sentence");
+    MyString str3("sentence");
 
-    cout << "Location of first <very> in the string: " << str1.find(0, "very") << endl;
-    cout << "Location of seconf <very> in the string: " << str1.find(str1.find(0, "very") + 1, "very") << endl;
+    if (str1 == str2)
+        cout << "str1 and str2 are same" << endl;
+    else
+        cout << "str1 and str2 are different" << endl;
 
+    if (str2 == str3)
+        cout << "str2 and str3 are same" << endl;
+    else
+        cout << "str2 and str3 are different" << endl;    
 }
