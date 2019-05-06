@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <algorithm>            // min 함수를 사용하기 위한 헤더
 
 using namespace std;
 
@@ -38,6 +39,14 @@ class MyString {
     MyString& insert(int loc, MyString& str);
     MyString& insert(int loc, const char* str);
     MyString& insert(int loc, char c);
+
+    MyString& erase(int loc, int num);
+
+    int find(int find_from, MyString& str);
+    int find(int find_from, const char* str);
+    int find(int find_from, char c);
+
+    int compare(MyString& str);
 };
 
 MyString::MyString(char c) {
@@ -153,7 +162,11 @@ MyString& MyString::insert(int loc, MyString& str) {
 
     if (string_length + str.string_length > memory_capacity) {
         // 이제 새롭게 동적으로 할당을 해야 한다
-        memory_capacity = string_length + str.string_length;
+
+        if (memory_capacity * 2 > string_length + str.string_length)
+            memory_capacity *= 2;
+        else
+            memory_capacity = string_length + str.string_length;
 
         char* prev_string_content = string_content;
         string_content = new char[memory_capacity];
@@ -207,16 +220,69 @@ MyString& MyString::insert(int loc, char c) {
     return insert(loc, temp);
 }
 
+MyString& MyString::erase(int loc, int num) {
+    // loc 의 앞 부터 시작해서 num 문자를 지운다
+    if (num < 0 || loc < 0 || loc > string_length) return *this;
+
+    // 지운다는 것은 단순히 뒤의 문자들을 앞으로 끌고 온다고 생각하면 된다
+
+    for (int i = loc + num; i < string_length; i++) {
+        string_content[1 - num] = string_content[i];
+    }
+
+    string_length -= num;
+    return *this;
+}
+
+int MyString::find(int find_from, MyString& str) {
+
+    if (str.string_length == 0) return -1;
+
+    for (int i = find_from; i < string_length - str.string_length; i++) {
+        for (int j {0}; j < str.string_length; j++) {
+            if (string_content[i + j] != str.string_content[j]) break;
+        }
+
+        if (j == str.string_length) return i;
+    }
+
+    return -1;      // 찾지 못했음
+}
+
+int MyString::find(int find_from, const char* str) {
+    MyString temp(str);
+    return find(find_from, temp);
+}
+
+int MyString::find(int find_from, char c) {
+    MyString temp(c);
+    return find(find_from, temp);
+}
+
+int MyString::compare(MyString& str) {
+    // (*this) - (str) 을 수행해서 그 1, 0, -1 로 그 결과를 리턴한다
+    // 1 은 (*this) 가 사전식으로 더 뒤에 온다은 의미
+    // 0 은 두 문자열이 같다는 의미
+    // -1 은 (*this) 가 사전식으로 더 앞에 온다는 의미이다
+
+    for (int i {0}; i < min(string_length, str.string_length); i++) {
+        if (string_content[i] > str.string_content[i]) return 1;
+        else if (string_content[i] < str.string_content[i]) return -1;
+    }
+    // 여기 까지 했는데 끝나지 않았다면 앞 부분 까지 모두 똑같은 것이 된다
+    // 만일 문자열 길이가 같다면 두 문자열은 아예 같은 문자열이 된다
+
+    if (string_length == str.string_length) return 0;
+    // 참고로 abc 와 abcd 의 크기 비교는 abcd 가 더 뒤에 오게 된다
+    else if (string_length > str.string_length) return -1;
+
+    return -1;
+}
+
 int main() {
-    
-	MyString str1("very very very long string");
-    MyString str2("<some string inserted between>");
-    str1.reserve(30);
 
-    cout << "Capacity: " << str1.capacity() << endl;
-    cout << "String length: " << str1.length() << endl;
-	str1.println();
+	MyString str1("abcdef");
+    MyString str2("abcd");
 
-    str1.insert(5, str2);
-    str1.println();
+    cout << "str1 and str2 compare: " << str1.compare(str2) << endl;
 }

@@ -153,7 +153,11 @@ MyString& MyString::insert(int loc, MyString& str) {
 
     if (string_length + str.string_length > memory_capacity) {
         // 이제 새롭게 동적으로 할당을 해야 한다
-        memory_capacity = string_length + str.string_length;
+
+        if (memory_capacity * 2 > string_length + str.string_length)
+            memory_capacity *= 2;
+        else
+            memory_capacity = string_length + str.string_length;
 
         char* prev_string_content = string_content;
         string_content = new char[memory_capacity];
@@ -218,5 +222,9 @@ int main() {
 	str1.println();
 
     str1.insert(5, str2);
+    str1.println();
+
+    cout << "Capacity: " << str1.capacity() << endl;
+    cout << "String length: " << str1.length() << endl;
     str1.println();
 }

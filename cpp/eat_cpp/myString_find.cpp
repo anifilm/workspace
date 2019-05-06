@@ -38,6 +38,12 @@ class MyString {
     MyString& insert(int loc, MyString& str);
     MyString& insert(int loc, const char* str);
     MyString& insert(int loc, char c);
+
+    MyString& erase(int loc, int num);
+
+    int find(int find_from, MyString& str);
+    int find(int find_from, const char* str);
+    int find(int find_from, char c);
 };
 
 MyString::MyString(char c) {
@@ -153,7 +159,11 @@ MyString& MyString::insert(int loc, MyString& str) {
 
     if (string_length + str.string_length > memory_capacity) {
         // 이제 새롭게 동적으로 할당을 해야 한다
-        memory_capacity = string_length + str.string_length;
+
+        if (memory_capacity * 2 > string_length + str.string_length)
+            memory_capacity *= 2;
+        else
+            memory_capacity = string_length + str.string_length;
 
         char* prev_string_content = string_content;
         string_content = new char[memory_capacity];
@@ -207,16 +217,50 @@ MyString& MyString::insert(int loc, char c) {
     return insert(loc, temp);
 }
 
+MyString& MyString::erase(int loc, int num) {
+    // loc 의 앞 부터 시작해서 num 문자를 지운다
+    if (num < 0 || loc < 0 || loc > string_length) return *this;
+
+    // 지운다는 것은 단순히 뒤의 문자들을 앞으로 끌고 온다고 생각하면 된다
+
+    for (int i = loc + num; i < string_length; i++) {
+        string_content[1 - num] = string_content[i];
+    }
+
+    string_length -= num;
+    return *this;
+}
+
+int MyString::find(int find_from, MyString& str) {
+
+    if (str.string_length == 0) return -1;
+
+    for (int i = find_from; i < string_length - str.string_length; i++) {
+        for (int j {0}; j < str.string_length; j++) {
+            if (string_content[i + j] != str.string_content[j]) break;
+        }
+
+        if (j == str.string_length) return i;
+    }
+
+    return -1;      // 찾지 못했음
+}
+
+int MyString::find(int find_from, const char* str) {
+    MyString temp(str);
+    return find(find_from, temp);
+}
+
+int MyString::find(int find_from, char c) {
+    MyString temp(c);
+    return find(find_from, temp);
+}
+
 int main() {
-    
-	MyString str1("very very very long string");
-    MyString str2("<some string inserted between>");
-    str1.reserve(30);
 
-    cout << "Capacity: " << str1.capacity() << endl;
-    cout << "String length: " << str1.length() << endl;
-	str1.println();
+	MyString str1("this is a very very long string");
 
-    str1.insert(5, str2);
-    str1.println();
+    cout << "Location of first <very> in the string: " << str1.find(0, "very") << endl;
+    cout << "Location of seconf <very> in the string: " << str1.find(str1.find(0, "very") + 1, "very") << endl;
+
 }
