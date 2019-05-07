@@ -1,12 +1,15 @@
 #include <iostream>
+#include "Liger.h"
 
 using namespace std;
 
 int main() {
 
-	cout << "+------------------------------+" << endl;
-	cout << "|     Example     |" << endl;
-	cout << "+------------------------------+" << endl;
+	Liger liger(5);
 
+	liger.ShowOffBeautifulHair();
+	liger.PretendToBeZebra();
 
+	cout << "Tiger age: " << liger.Tiger::GetAge() << endl;
+	cout << "Lion age: " << liger.Lion::GetAge() << endl;
 }

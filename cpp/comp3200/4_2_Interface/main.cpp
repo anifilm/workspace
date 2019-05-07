@@ -1,12 +1,16 @@
 #include <iostream>
+#include "Bat.h"
+#include "Cat.h"
 
 using namespace std;
 
 int main() {
 
-	cout << "+------------------------------+" << endl;
-	cout << "|     Example     |" << endl;
-	cout << "+------------------------------+" << endl;
+	Bat bat;
+	Cat cat;
 
+	bat.Fly();
+	bat.Walk();
 
+	cat.Walk();
 }
