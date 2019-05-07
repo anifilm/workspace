@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 
-	cout << "+--------------------------------+" << endl;
-	cout << "|     Reverse String Example     |" << endl;
-	cout << "+--------------------------------+" << endl;
+	cout << "+------------------------------+" << endl;
+	cout << "|    Reverse String Example    |" << endl;
+	cout << "+------------------------------+" << endl;
 
 	const int LINE_SIZE {512};
 	char line[LINE_SIZE];

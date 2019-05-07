@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 	
-	cout << "+----------------------------+" << endl;
-	cout << "|     Print Menu Example     |" << endl;
-	cout << "+----------------------------+" << endl;
+	cout << "+------------------------------+" << endl;
+	cout << "|      Print Menu Example      |" << endl;
+	cout << "+------------------------------+" << endl;
 
 	const float coffeePrice = 1.25f;
 	const float lattePrice = 4.75f;

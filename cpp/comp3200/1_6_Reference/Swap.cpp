@@ -11,9 +11,9 @@ void swap(int &number1, int &number2) {
 
 int main() {
 
-	cout << "+--------------------------------+" << endl;
-	cout << "|          Swap Example           |" << endl;
-	cout << "+--------------------------------+" << endl;
+	cout << "+------------------------------+" << endl;
+	cout << "|         Swap Example          |" << endl;
+	cout << "+------------------------------+" << endl;
 
 	int number1 {1};
 	int number2 {2};

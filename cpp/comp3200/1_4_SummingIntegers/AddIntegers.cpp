@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 	
-	cout << "+--------------------------------+" << endl;
-	cout << "|      Add Integers Example      |" << endl;
-	cout << "+--------------------------------+" << endl;
+	cout << "+------------------------------+" << endl;
+	cout << "|     Add Integers Example     |" << endl;
+	cout << "+------------------------------+" << endl;
 
 	int number;
 	int sum {0};
