@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstring>
-#include <algorithm>            // min 함수를 사용하기 위한 헤더
 
 using namespace std;
 
