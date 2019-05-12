@@ -1,2 +1,3 @@
-num = 22.2
-puts Math.log(1)
+print "Enter your name: "
+name = gets.chomp()
+puts "Hello " + name + ", you are cool!"
