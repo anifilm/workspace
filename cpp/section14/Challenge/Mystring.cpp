@@ -2,9 +2,9 @@
 #include <cstring>
 #include "Mystring.h"
 
- // No-args constructor
+// No-args constructor
 Mystring::Mystring() 
-    : str{nullptr} {
+    : str {nullptr} {
     str = new char[1];
     *str = '\0';
 }
@@ -12,37 +12,37 @@ Mystring::Mystring()
 // Overloaded constructor
 Mystring::Mystring(const char *s) 
     : str {nullptr} {
-        if (s==nullptr) {
+        if (s == nullptr) {
             str = new char[1];
             *str = '\0';
         } else {
-            str = new char[strlen(s)+1];
+            str = new char[strlen(s) + 1];
             strcpy(str, s);
         }
 }
 
 // Copy constructor
 Mystring::Mystring(const Mystring &source) 
-    : str{nullptr} {
-        str = new char[strlen(source.str)+ 1];
+    : str {nullptr} {
+        str = new char[strlen(source.str) + 1];
         strcpy(str, source.str);
  //       std::cout << "Copy constructor used" << std::endl;
 
 }
 
 // Move constructor
-Mystring::Mystring( Mystring &&source) 
+Mystring::Mystring(Mystring &&source) 
     :str(source.str) {
         source.str = nullptr;
 //        std::cout << "Move constructor used" << std::endl;
 }
 
- // Destructor
+// Destructor
 Mystring::~Mystring() {
     delete [] str;
 }
 
- // Copy assignment
+// Copy assignment
 Mystring &Mystring::operator=(const Mystring &rhs) {
 //    std::cout << "Using copy assignment" << std::endl;
 
@@ -55,8 +55,9 @@ Mystring &Mystring::operator=(const Mystring &rhs) {
 }
 
 // Move assignment
-Mystring &Mystring::operator=( Mystring &&rhs) {
+Mystring &Mystring::operator=(Mystring &&rhs) {
  //   std::cout << "Using move assignment" << std::endl;
+ 
     if (this == &rhs) 
         return *this;
     delete [] str;
@@ -70,9 +71,9 @@ void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
 }
 
- // getters
- int Mystring::get_length() const { return strlen(str); }
- const char *Mystring::get_str() const { return str; }
+// getters
+int Mystring::get_length() const { return strlen(str); }
+const char *Mystring::get_str() const { return str; }
 
 // overloaded insertion operator
 std::ostream &operator<<(std::ostream &os, const Mystring &rhs) {
@@ -88,4 +89,3 @@ std::istream &operator>>(std::istream &in, Mystring &rhs) {
     delete [] buff;
     return in;
 }
-
