@@ -1,5 +1,5 @@
-def sayhi
-  puts "Hello User"
+def sayhi(name)
+  puts "Hello " + name
 end
 
-sayhi()
+sayhi("Mike")
