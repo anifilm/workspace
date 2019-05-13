@@ -3,8 +3,7 @@ def pow(base_num, pow_num)
  pow_num.times do |index|
    result = result * base_num
  end
-
  return result
 end
 
-puts pow(5, 5)
+puts pow(2, 3)
