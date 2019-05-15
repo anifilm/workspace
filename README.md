@@ -1,20 +1,20 @@
 # workspace
 
-- git 설정하기
+## git 설정하기
 
 git config --global user.name "유저이름"
 
 git config --global user.email "깃허브 메일주소"
 
 
-- 폴더 생성
+## 폴더 생성
 
 mkdir ~/myProject
 
 cd ~/myProject
 
 
-- 깃 명령어
+## 깃 명령어
 
 git init						// 깃 명령어를 사용할 수 있는 디렉토리로 설정
 
@@ -40,6 +40,6 @@ git pull (origin master)		// 깃허브 변경된 내용 받기
 git fetch (origin master)		// 깃허브 변경된 내용 받기 (merge)
 
 
-- 저장소 복제
+## 저장소 복제
 
 git clone https://github.com/...	// 현재 디렉로리에 저장소 폴더 생성 및 파일 복제
