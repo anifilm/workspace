@@ -14,7 +14,7 @@ mkdir ~/myProject
 cd ~/myProject
 
 
-## 깃 명령어
+## git 명령어
 
 git init						// 깃 명령어를 사용할 수 있는 디렉토리로 설정
 
