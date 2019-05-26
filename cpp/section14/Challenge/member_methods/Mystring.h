@@ -12,7 +12,7 @@ public:
     Mystring();                                     // No-args constructor
     Mystring(const char *s);                        // Overloaded constructor
     Mystring(const Mystring &source);               // Copy constructor
-    Mystring( Mystring &&source);                   // Move constructor
+    Mystring(Mystring &&source);                    // Move constructor
     ~Mystring();                                    // Destructor
     
     Mystring &operator=(const Mystring &rhs);       // Copy assignment
@@ -22,6 +22,20 @@ public:
     
     int get_length() const;                         // getters
     const char *get_str() const;
+
+    Mystring operator-() const;
+    Mystring operator+(const Mystring &rhs) const;
+    Mystring &operator+=(const Mystring &rhs);
+    Mystring operator*(int n) const;
+    Mystring &operator*=(int n);
+    Mystring &operator++();
+    Mystring operator++(int);
+
+    bool operator==(const Mystring &rhs) const;
+    bool operator!=(const Mystring &rhs) const;
+    bool operator<(const Mystring &rhs) const;
+    bool operator>(const Mystring &rhs) const;
+
 };
 
 #endif // _MYSTRING_H_
