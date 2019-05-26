@@ -3,7 +3,7 @@
 using namespace std;
 
 void global_example();
-void local_exmaple();
+void local_exmaple(int);
 void static_local_example();
 
 int num {300};      // Global variable - declared outside any class or function
