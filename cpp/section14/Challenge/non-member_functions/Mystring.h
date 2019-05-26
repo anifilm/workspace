@@ -3,6 +3,19 @@
 
 class Mystring
 {
+    friend Mystring operator-(const Mystring &obj);
+    friend Mystring operator+(const Mystring &lhs, const Mystring &rhs);
+    friend Mystring &operator+=(Mystring &lhs, const Mystring &rhs);
+    friend Mystring operator*(const Mystring &lhs, int n);
+    friend Mystring &operator*=(Mystring &lhs, int n);
+    friend Mystring &operator++(Mystring &obj);
+    friend Mystring operator++(Mystring &obj, int);
+
+    friend bool operator==(const Mystring &lhs, const Mystring &rhs);
+    friend bool operator!=(const Mystring &lhs, const Mystring &rhs);
+    friend bool operator<(const Mystring &lhs, const Mystring &rhs);
+    friend bool operator>(const Mystring &lhs, const Mystring &rhs);
+
     friend std::ostream &operator<<(std::ostream &os, const Mystring &rhs);
     friend std::istream &operator>>(std::istream &in, Mystring &rhs);
 
@@ -22,20 +35,6 @@ public:
     
     int get_length() const;                         // getters
     const char *get_str() const;
-
-    Mystring operator-() const;
-    Mystring operator+(const Mystring &rhs) const;
-    Mystring &operator+=(const Mystring &rhs);
-    Mystring operator*(int n) const;
-    Mystring &operator*=(int n);
-    Mystring &operator++();
-    Mystring operator++(int);
-
-    bool operator==(const Mystring &rhs) const;
-    bool operator!=(const Mystring &rhs) const;
-    bool operator<(const Mystring &rhs) const;
-    bool operator>(const Mystring &rhs) const;
-
 };
 
 #endif // _MYSTRING_H_
