@@ -115,6 +115,11 @@ Mystring &Mystring::operator+=(const Mystring &rhs) {
 }
 
 Mystring Mystring::operator*(int n) const {
+    Mystring temp;
+    for (int i = 1; i <= n; i++)
+        temp = temp + *this;
+    return temp;
+    /*
     size_t buff_size = std::strlen(str) * n + 1;
     char *buff = new char[buff_size];
     std::strcpy(buff, "");
@@ -123,6 +128,7 @@ Mystring Mystring::operator*(int n) const {
     Mystring temp {buff};
     delete [] buff;
     return temp;
+    */
 }
 
 Mystring &Mystring::operator*=(int n) {
