@@ -1,44 +1,39 @@
 // Section 15
-// Deriving our First Class
+// Challenge
 
 #include <iostream>
-#include "Account.h"
+#include <vector>
 #include "Savings_Account.h"
+#include "Account_Util.h"
 
 using namespace std;
 
 int main() {
 
-	// Use the Account class
-	cout << "\n=== Account ==================================" << endl;
+	cout.precision(2);
+	cout << fixed;
 
-	Account acc {};
-	acc.deposit(2000.0);
-	acc.withdraw(500.0);
+	//Accounts
+	vector<Account> accounts;
+	accounts.push_back(Account {});
+	accounts.push_back(Account {"Larry"});
+	accounts.push_back(Account {"Moe", 2000});
+	accounts.push_back(Account {"Curly", 5000});
 
-	cout << endl;
+	display(accounts);
+	deposit(accounts, 1000);
+	withdraw(accounts, 2000);
 
-	Account *p_acc {nullptr};
-	p_acc = new Account();
-	p_acc->deposit(1000.0);
-	p_acc->withdraw(500.0);
-	delete p_acc;
+	// Savings Accounts
+	vector<Savings_Account> sav_accounts;
+	sav_accounts.push_back(Savings_Account {});
+	sav_accounts.push_back(Savings_Account {"Superman"});
+	sav_accounts.push_back(Savings_Account {"Batman", 2000});
+	sav_accounts.push_back(Savings_Account {"Wonderwoman", 5000, 5.0});
 
-	// Use the Saving Account class
-	cout << "\n=== Saving Account ===========================" << endl;
+	display(sav_accounts);
+	deposit(sav_accounts, 1000);
+	withdraw(sav_accounts, 2000);
 
-	Savings_Account sav_acc {};
-	sav_acc.deposit(2000.0);
-	sav_acc.withdraw(500.0);
-
-	cout << endl;
-
-	Savings_Account *p_sav_acc {nullptr};
-	p_sav_acc = new Savings_Account();
-	p_sav_acc->deposit(1000.0);
-	p_sav_acc->withdraw(500.0);
-	delete p_sav_acc;
-
-	cout << "\n==============================================" << endl;
 	return 0;
 }

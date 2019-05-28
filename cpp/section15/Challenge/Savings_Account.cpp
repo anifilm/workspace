@@ -1,17 +1,19 @@
-#include <iostream>
 #include "Savings_Account.h"
 
-void Savings_Account::deposit(double amount) {
-    std::cout << "Savings Account deposit called with " << amount << std::endl;
+Savings_Account::Savings_Account(std::string name, double balance, double int_rate)
+    : Account {name, balance}, int_rate {int_rate} {
 }
 
-void Savings_Account::withdraw(double amount) {
-    std::cout << "Savings Account withdraw called with " << amount << std::endl;
+// Deposit:
+//     Amount supplied to deposit will be incremented by (amount * int_rate / 100)
+//     and the updated amount will be deposited
+
+bool Savings_Account::deposit(double amount) {
+    amount += amount * (int_rate / 100);
+    return Account::deposit(amount);
 }
 
-Savings_Account::Savings_Account()
-    : int_rate {3.0} {
-}
-
-Savings_Account::~Savings_Account() {
+std::ostream &operator<<(std::ostream &os, const Savings_Account &account) {
+    os << "[Savings_account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
+    return os;
 }

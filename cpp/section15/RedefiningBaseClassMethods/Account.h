@@ -1,16 +1,17 @@
 #ifndef _ACCOUNT_H_
 #define _ACCOUNT_H_
-#include <string>
+#include <iostream>
 
+// Simple Account class
 class Account {
-
-public:
+    friend std::ostream &operator<<(std::ostream &os, const Account &account);
+protected:
     double balance;
-    std::string name;
+public:
+    Account();
+    Account(double balance);
     void deposit(double amount);
     void withdraw(double amount);
-    Account();
-    ~Account();
 };
 
 #endif // _ACCOUNT_H_

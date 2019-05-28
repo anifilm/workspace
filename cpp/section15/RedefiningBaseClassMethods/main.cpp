@@ -1,8 +1,7 @@
 // Section 15
-// Deriving our First Class
+// Redefining and Using Base Class Methods
 
 #include <iostream>
-#include "Account.h"
 #include "Savings_Account.h"
 
 using namespace std;
@@ -12,32 +11,32 @@ int main() {
 	// Use the Account class
 	cout << "\n=== Account ==================================" << endl;
 
-	Account acc {};
-	acc.deposit(2000.0);
-	acc.withdraw(500.0);
+	Account a1 {1000.0};
+	cout << a1 << endl;					// Account balance: 1000
 
-	cout << endl;
+	a1.deposit(2000.0);
+	cout << a1 << endl;					// Account balance: 1500
 
-	Account *p_acc {nullptr};
-	p_acc = new Account();
-	p_acc->deposit(1000.0);
-	p_acc->withdraw(500.0);
-	delete p_acc;
+	a1.withdraw(1000.0);		
+	cout << a1 << endl;					// Account balance: 500
+
+	a1.withdraw(5000.0);				// Insufficient funds
+	cout << a1 << endl;					// Account balance: 500
 
 	// Use the Saving Account class
 	cout << "\n=== Saving Account ===========================" << endl;
 
-	Savings_Account sav_acc {};
-	sav_acc.deposit(2000.0);
-	sav_acc.withdraw(500.0);
+	Savings_Account s1 {1000, 5.0};
+	cout << s1 << endl;					// Savings Account balance: 1000, Interest rate: 5
 
-	cout << endl;
+	s1.deposit(1000);
+	cout << s1 << endl;					// Savings Account balance: 2050, Interest rate: 5
 
-	Savings_Account *p_sav_acc {nullptr};
-	p_sav_acc = new Savings_Account();
-	p_sav_acc->deposit(1000.0);
-	p_sav_acc->withdraw(500.0);
-	delete p_sav_acc;
+	s1.withdraw(2000);
+	cout << s1 << endl;					// Savings Account balance: 50, Interest rate: 5
+
+	s1.withdraw(1000);					// Insufficient funds
+	cout << s1 << endl;					// Savings Account balance: 50, Interest rate: 5
 
 	cout << "\n==============================================" << endl;
 	return 0;
