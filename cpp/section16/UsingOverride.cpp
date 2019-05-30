@@ -32,6 +32,6 @@ int main() {
 	Base *p3 = new Derived();		// Base::say_hello()	????	I wanted Drived::say_hello()
 	p3->say_hello();
 
-	cout << endl;	
+	cout << endl;
 	return 0;
 }

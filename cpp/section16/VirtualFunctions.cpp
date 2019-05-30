@@ -53,6 +53,6 @@ int main() {
 	delete p3;
 	delete p4;
 
-	cout << endl;	
+	cout << endl;
 	return 0;
 }

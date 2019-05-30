@@ -44,5 +44,6 @@ int main() {
 
 	delete ptr;
 
+	cout << endl;
 	return 0;
 }
