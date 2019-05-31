@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Account.h"
 
 Account::Account(std::string name, double balance)

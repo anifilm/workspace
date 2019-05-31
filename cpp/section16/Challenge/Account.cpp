@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Account.h"
 
 Account::Account(std::string name, double balance)
@@ -23,11 +22,17 @@ bool Account::withdraw(double amount) {
     }
 }
 
-double Account::get_balance() const {
-    return balance;
-}
+// double Account::get_balance() const {
+//     return balance;
+// }
 
-std::ostream &operator<<(std::ostream &os, const Account &account) {
-    os << "[Account: " << account.name << ": " << account.balance << "]";
-    return os;
+// std::ostream &operator<<(std::ostream &os, const Account &account) {
+//     os << "[Account: " << account.name << ": " << account.balance << "]";
+//     return os;
+// }
+
+void Account::print(std::ostream &os) const {
+    os.precision(2);
+    os << std::fixed;
+    os << "[Account: " << name << ": " << balance << "]";
 }

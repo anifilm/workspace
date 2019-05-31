@@ -13,7 +13,17 @@ bool Savings_Account::deposit(double amount) {
     return Account::deposit(amount);
 }
 
-std::ostream &operator<<(std::ostream &os, const Savings_Account &account) {
-    os << "[Savings_account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
-    return os;
+bool Savings_Account::withdraw(double amount) {
+    return Account::withdraw(amount);
+}
+
+// std::ostream &operator<<(std::ostream &os, const Savings_Account &account) {
+//     os << "[Savings_account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
+//     return os;
+// }
+
+void Savings_Account::print(std::ostream &os) const {
+    os.precision(2);
+    os << std::fixed;
+    os << "[Savings_Account: " << name << ": " << balance << ", " << int_rate << "%]";
 }
