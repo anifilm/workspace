@@ -14,7 +14,7 @@ public:
 	Test(): data {0} { cout << "Test constructor (" << data << ")" << endl; }
 	Test(int data): data {data} { cout << "Test constructor (" << data << ")" << endl; }
 	int get_data() const { return data; }
-	~Test() { cout << "Test destructor {" << data << ")" << endl; }
+	~Test() { cout << "Test destructor (" << data << ")" << endl; }
 };
 
 // Function prototypes
@@ -24,15 +24,26 @@ void fill(vector<shared_ptr<Test>> &vec, int num);
 void display(const vector<shared_ptr<Test>> &vec);
 
 auto make() {
-	return 1;
+	return make_unique<vector<shared_ptr<Test>>>();
 }
 
 void fill(vector<shared_ptr<Test>> &vec, int num) {
+	int temp;
+	for (int i {1}; i <= num; i++) {
+		cout << "Enter data point [" << i << "] : ";
+		cin >> temp;
 
+		vec.push_back(make_shared<Test> (temp));
+	}
 }
 
 void display(const vector<shared_ptr<Test>> &vec) {
-
+	cout << "\nDisplaying vector data" << endl;
+	cout << "======================" << endl;
+	for (const auto &ptr: vec)
+		cout << ptr->get_data() << endl;
+	
+	cout << "======================" << endl;
 }
 
 int main() {
