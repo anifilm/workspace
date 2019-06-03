@@ -1,12 +1,8 @@
 #include "Checking_Account.h"
 
 Checking_Account::Checking_Account(std::string name, double balance)
-    try: Account {name, balance} {
-
-    }
-    catch (...) {
-        ;
-    }
+    : Account {name, balance} {
+}
 
 bool Checking_Account::deposit(double amount) {
     return Account::deposit(amount);
