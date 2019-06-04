@@ -3,28 +3,34 @@
 
 #include <iostream>
 #include <iomanip>
-#include <vector>
 #include <string>
+#include <vector>
+
+using namespace std;
 
 struct City {
-    std::string name;
+    string name;
     long population;
     double cost;
 };
 
 // Assume each country has at least 1 city
 struct Country {
-    std::string name;
-    std::vector<City> cities;
+    string name;
+    vector<City> cities;
 };
 
 struct Tours {
-    std::string title;
-    std::vector<Country> countries;
+    string title;
+    vector<Country> countries;
 };
 
-int main()
-{
+void ruler() {
+	cout << "\n1234567890123456789012345678901234567890123456789012345678901234567890" << endl;
+}
+
+int main() {
+
     Tours tours
         { "Tour Ticket Prices from Miami",
             {
@@ -56,18 +62,44 @@ int main()
         }
     };
 
+    const int total_width {70};
+    const int field1_width {20};    // Country name
+    const int field2_width {20};    // City name
+    const int field3_width {15};    // Population
+    const int field4_width {15};    // Cost
+    int title_length = tours.title.length();
+
+    // Show ruler
+    ruler();
+    cout << endl;
+
     // Unformatted display so you can see how to access the vector elements
-    std::cout << tours.title << std::endl;
-    for(auto country : tours.countries) {   // loop through the countries
-        std::cout << country.name << std::endl;
-        for(auto city : country.cities) {       // loop through the cities for each country
-            std::cout << "\t" << city.name 
-                          << "\t" << city.population 
-                          << "\t" << city.cost 
-                          << std::endl;
+    cout << setw((total_width - title_length) / 2) << "" << tours.title << endl;
+    cout << endl;
+
+    cout << setw(field1_width) << left << "Country"
+         << setw(field2_width) << left << "City"
+         << setw(field3_width) << right << "Population"
+         << setw(field4_width) << right << "Price"
+         << endl;
+
+    cout << setfill('-');
+    cout << setw(total_width) << "" << endl;
+
+    cout << setfill(' ');
+    cout << setprecision(2) << fixed;
+
+    for(auto country: tours.countries) {            // loop through the countries
+        // for(auto city: country.cities) {         // loop through the cities for each country
+        for (size_t i {0}; i < country.cities.size(); ++i) {
+            cout << setw(field1_width) << left << ((i == 0) ? country.name : "");
+            cout << setw(field2_width) << left << country.cities.at(i).name
+                 << setw(field3_width) << right << country.cities.at(i).population 
+                 << setw(field4_width) << right << country.cities.at(i).cost 
+                 << endl;
         }
     }
 
-    std::cout << std::endl
+    cout << endl;
     return 0;
 }
