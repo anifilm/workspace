@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
 
-	double num1 {123456789.987654321};
+	double num1 {123456789.123456789};
 	double num2 {1234.5678};
 	double num3 {1234.0};
 
