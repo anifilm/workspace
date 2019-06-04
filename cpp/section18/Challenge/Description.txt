@@ -1,5 +1,6 @@
 Section 18 Challenge
 -----------------------
+
 For this challenge we want to integrate our own user-defined exception classes into the Account class
 hierarchy.
 
