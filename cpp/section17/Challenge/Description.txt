@@ -1,6 +1,5 @@
-Section 17
-Challenge 1
-/***********************************************************************************************************
+Section 17 Challenge
+-----------------------
 Create a program that has the following:
 
 1. a function named make that creates and returns a unique_ptr to a vector of shared_ptrs to Test objects. 
