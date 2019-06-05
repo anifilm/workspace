@@ -1,6 +1,6 @@
 // Section 19
 // Challenge 3 - Solution
-// Word counter
+// Word finder
 #include <iostream>
 #include <fstream>
 
@@ -20,7 +20,7 @@ int main() {
     int word_count {0};
     int match_count {0};
     
-    in_file.open("../romeoandjuliet.txt");
+    in_file.open("./Challenge_3/romeoandjuliet.txt");
      if (!in_file) {
         std::cerr << "Problem opening file" << std::endl;
         return 1;

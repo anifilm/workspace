@@ -50,7 +50,7 @@ int main() {
     int total_students {0};
     double average_score {0.0};
     
-    in_file.open("../responses.txt");
+    in_file.open(".Challenge_2/responses.txt");
      if (!in_file) {
         std::cerr << "Problem opening file" << std::endl;
         return 1;
