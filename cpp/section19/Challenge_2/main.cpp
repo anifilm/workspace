@@ -52,6 +52,7 @@ int main() {
 
 	if (!in_file) {
 		cerr << "Error opening file" << endl;
+		return 1;
 	}
 
 	string answer_key {};

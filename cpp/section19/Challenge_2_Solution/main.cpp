@@ -52,7 +52,7 @@ int main() {
     
     in_file.open(".Challenge_2/responses.txt");
      if (!in_file) {
-        std::cerr << "Problem opening file" << std::endl;
+        std::cerr << "Error opening file" << std::endl;
         return 1;
     }
     

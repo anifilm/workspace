@@ -13,7 +13,7 @@ int main() {
 	in_file.open("./ReadFile_4/poem.txt");
 
 	if (!in_file) {
-		cerr << "Problem opening file" << endl;
+		cerr << "Error opening file" << endl;
 		return 1;
 	}
 
