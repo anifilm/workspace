@@ -59,7 +59,7 @@ int main()
         }
     };
 
-    const int total_width   {70};
+    const int total_width  {70};
     const int field1_width {20};    // Country name
     const int field2_width {20};    // City name
     const int field3_width {15};    // Population
@@ -87,10 +87,9 @@ int main()
     std::cout << std::setprecision(2) << std::fixed;                // for displaying the cost with 2 decimal digits
     
     // Note the use of the conditional operator to display the country name or "" for the first country
-    
     for(Country country : tours.countries) {
-        for (size_t i = 0; i<country.cities.size(); ++i) {
-            std::cout << std::setw(field1_width) << std::left <<  ((i == 0) ? country.name : "") // conditional operator
+        for (size_t i = 0; i < country.cities.size(); ++i) {
+            std::cout << std::setw(field1_width) << std::left << ((i == 0) ? country.name : "") // conditional operator
                            << std::setw(field2_width) << std::left << country.cities.at(i).name 
                            << std::setw(field3_width) << std::right<< country.cities.at(i).population 
                            << std::setw(field4_width) << std::right << country.cities.at(i).cost 
