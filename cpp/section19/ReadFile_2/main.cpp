@@ -11,17 +11,17 @@ using namespace std;
 int main() {
 
 	ifstream in_file;
-	string line;
-
-	int num;
-	double total;
-
 	in_file.open("./ReadFile_2/test.txt");
 
 	if (!in_file) {
 		cerr << "Program opening file" << endl;
 		return 1;
 	}
+
+	string line;
+	int num;
+	double total;
+
 	while (in_file >> line >> num >> total) {
 		cout << setw(10) << left << line
 			 << setw(10) << num

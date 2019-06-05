@@ -10,17 +10,16 @@ using namespace std;
 int main() {
 
 	ifstream in_file;
-	string line;
-
-	int num;
-	double total;
-
 	in_file.open("./ReadFile_1/test.txt");
 
 	if (!in_file) {
 		cerr << "Program opening file" << endl;
 		return 1;
 	}
+
+	string line;
+	int num;
+	double total;
 
 	in_file >> line >> num >> total;
 
