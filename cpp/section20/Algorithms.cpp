@@ -31,9 +31,9 @@ void find_test() {
 
 	vector<int> vec {1, 2, 3, 4, 5};
 
-	auto loc = find(begin(vec), end(vec), 1);
+	auto loc = std::find(begin(vec), end(vec), 1);
 
-	if (loc != end(vec))
+	if (loc != std::end(vec))
 		cout << "Found the number: " << *loc << endl;
 	else
 		cout << "Couldn't find the number" << endl;
@@ -44,7 +44,7 @@ void find_test() {
 		{"Curly", 21}
 	};
 
-	auto loc1 = find(players.begin(), players.end(), Person {"Moe", 20});
+	auto loc1 = std::find(players.begin(), players.end(), Person {"Moe", 20});
 
 	if (loc1 != players.end())
 		cout << "Found Moe" << endl;
@@ -58,7 +58,7 @@ void count_test() {
 
 	vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1};
 
-	int num = count(vec.begin(), vec.end(), 1);
+	int num = std::count(vec.begin(), vec.end(), 1);
 	cout << num << " occurrences found" << endl;
 }
 
@@ -70,14 +70,14 @@ void count_if_test() {
 
 	// count only if the element is even
 	vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1, 100};
-	int num = count_if(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; });
+	int num = std::count_if(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; });
 	cout << num << " even numbers found" << endl;
 
-	num = count_if(vec.begin(), vec.end(), [](int x) { return x % 2 != 0; });
+	num = std::count_if(vec.begin(), vec.end(), [](int x) { return x % 2 != 0; });
 	cout << num << " odd numbers found" << endl;
 
 	// how can we determine how many elements in vec are >= 5?
-	num = count_if(vec.begin(), vec.end(), [](int x) { return x >= 5; });
+	num = std::count_if(vec.begin(), vec.end(), [](int x) { return x >= 5; });
 	cout << num << " numbers are >= 5" << endl;
 }
 
@@ -91,7 +91,7 @@ void replace_test() {
 	}
 	cout << endl;
 
-	replace(vec.begin(), vec.end(), 1, 100);
+	std::replace(vec.begin(), vec.end(), 1, 100);
 
 	for (auto i: vec) {
 		cout << i << " ";
@@ -102,12 +102,12 @@ void replace_test() {
 void all_of_test() {
 	vector <int> vec1 {1, 3, 5, 7, 9, 1, 3, 13, 19, 5};
 
-	if (all_of(vec1.begin(), vec1.end(), [](int x) { return x > 10; }))
+	if (std::all_of(vec1.begin(), vec1.end(), [](int x) { return x > 10; }))
 		cout << "All the elements are > 10" << endl;
 	else
 		cout << "Not all the elements are > 10" << endl;
 
-	if (all_of(vec1.begin(), vec1.end(), [](int x) { return x < 20; }))
+	if (std::all_of(vec1.begin(), vec1.end(), [](int x) { return x < 20; }))
 		cout << "All the elements are < 20" << endl;
 	else
 		cout << "Not all the elements are < 20" << endl;
@@ -119,7 +119,7 @@ void string_transform_test() {
 
 	string str1 {"This is a test"};
 	cout << "Before transform: " << str1 << endl;
-	transform(str1.begin(), str1.end(), str1.begin(), ::toupper);
+	std::transform(str1.begin(), str1.end(), str1.begin(), ::toupper);
 	cout << "After transform: " << str1 << endl;
 }
 
