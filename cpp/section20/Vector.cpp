@@ -1,5 +1,5 @@
 // Section 20
-// std::vector
+// Vector
 
 #include <iostream>
 #include <vector>

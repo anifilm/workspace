@@ -1,5 +1,5 @@
 // Section 20
-// std::array
+// Array
 
 #include <iostream>
 #include <array>
