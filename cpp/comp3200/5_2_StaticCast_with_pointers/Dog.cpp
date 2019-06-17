@@ -1,0 +1,16 @@
+#include <iostream>
+#include "Dog.h"
+
+Dog::Dog(int age, const char *address)
+    : Animal(age) {
+    	mHomeAddress = new char[strlen(address) + 1];
+    	memcpy(mHomeAddress, address, strlen(address) + 1);
+}
+
+Dog::~Dog() {
+	delete [] mHomeAddress;
+}
+
+const char* Dog::GetAddress() const {
+	return mHomeAddress;
+}

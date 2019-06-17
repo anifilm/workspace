@@ -1,0 +1,16 @@
+#include <cstring>
+#include "Cat.h"
+
+Cat::Cat(int age, const char *name)
+    : Animal(age) {
+    	mName = new char[strlen(name) + 1];
+    	memcpy(mName, name, strlen(name) + 1);
+}
+
+Cat::~Cat() {
+	delete [] mName;
+}
+
+const char* Cat::GetName() const {
+	return mName;
+}
