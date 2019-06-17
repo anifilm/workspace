@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstring>
 #include "Dog.h"
 
 Dog::Dog(int age, const char *address)

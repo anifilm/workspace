@@ -7,7 +7,7 @@ private:
 
 public:
     Animal(int age);
-    virtual ~Animal();
+    virtual ~Animal() {}
 };
 
 #endif // _ANIMAL_H_

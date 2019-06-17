@@ -10,7 +10,7 @@ int main() {
 	const float floatNumber = static_cast<float>(intNumber);
 	const short shortNumber = static_cast<short>(intNumber);
 
-	cout << showbace << hex << uppercase;
+	cout << showbase << hex << uppercase;
 	cout << "int: " << intNumber
 		 << ", short: " << shortNumber
 		 << endl;
