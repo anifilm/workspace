@@ -10,6 +10,7 @@ using namespace std;
 class Test {
 private:
 	int data;
+	
 public:
 	Test(): data {0} { cout << "Test constructor (" << data << ")" << endl; }
 	Test(int data): data {data} { cout << "Test constructor (" << data << ")" << endl; }

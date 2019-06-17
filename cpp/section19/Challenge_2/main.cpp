@@ -2,15 +2,15 @@
 // Automated Grader
 
 #include <iostream>
-#include <fstream>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
 void print_header();
 void print_footer(double average);
-void print_student(const string &studnet, int score);
-int process_response(const string &response, const string &answer_key);
+void print_student(const std::string &studnet, int score);
+int process_response(const std::string &response, const std::string &answer_key);
 
 void print_header() {
 	cout << setw(20) << left << "Student"
@@ -32,12 +32,12 @@ void print_footer(double average) {
 		 << setw(8) << right << average << endl;
 }
 
-void print_student(const string &student, int score) {
+void print_student(const std::string &student, int score) {
 	cout << setw(20) << left << student 
 		 << setw(8) << right << score << endl;
 }
 
-int process_response(const string &response, const string &answer_key) {
+int process_response(const std::string &response, const std::string &answer_key) {
 	int score {0};
 	for (size_t i {0}; i < answer_key.size(); ++i) {
 		if (response.at(i) == answer_key.at(i))

@@ -9,9 +9,9 @@ using namespace std;
 class B;		// forward declaration
 
 class A {
-	shared_ptr<B> b_ptr;
+	std::shared_ptr<B> b_ptr;
 public:
-	void set_B(shared_ptr<B> &b) {
+	void set_B(std::shared_ptr<B> &b) {
 		b_ptr = b;
 	}
 	A() { cout << "A Constructor" << endl; }
@@ -19,9 +19,9 @@ public:
 };
 
 class B {
-	weak_ptr<A> a_ptr;		// make weak to break the strong curcular reference
+	std::weak_ptr<A> a_ptr;		// make weak to break the strong curcular reference
 public:
-	void set_A(shared_ptr<A> &a) {
+	void set_A(std::shared_ptr<A> &a) {
 		a_ptr = a;
 	}
 	B() { cout << "B Constructor" << endl; }

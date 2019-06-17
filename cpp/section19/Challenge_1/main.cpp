@@ -9,20 +9,20 @@
 using namespace std;
 
 struct City {
-    string name;
+    std::string name;
     long population;
     double cost;
 };
 
 // Assume each country has at least 1 city
 struct Country {
-    string name;
-    vector<City> cities;
+    std::string name;
+    std::vector<City> cities;
 };
 
 struct Tours {
-    string title;
-    vector<Country> countries;
+    std::string title;
+    std::vector<Country> countries;
 };
 
 void ruler() {

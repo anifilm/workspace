@@ -13,7 +13,7 @@ using namespace std;
 
 // Used for Part1
 // Display the word and count from the std::map<std::string, int>
-void display_words(const map<string, int> &words) {
+void display_words(const std::map<std::string, int> &words) {
 	cout << setw(12) << left << "\nWord"
 		 << setw(8) << right << "Count" << endl;
 	cout << "===================" << endl;
@@ -24,9 +24,9 @@ void display_words(const map<string, int> &words) {
 
 // Used for Part2
 // Display the word and occurences from the std::map<std::string, std::set<int>>
-void display_words(const map<string, set<int>> &words) {
+void display_words(const std::map<string, std::set<int>> &words) {
 	cout << setw(12) << left << "\nWord"
-			<< setw(17) << right << "Occurrences" << endl;
+		 << setw(17) << right << "Occurrences" << endl;
 	cout << "============================" << endl;
 	for (auto pair: words) {
 		cout << setw(12) << left << pair.first
@@ -39,8 +39,8 @@ void display_words(const map<string, set<int>> &words) {
 
 // This function removes perious, commas, semicolons and colon in
 // a string and returns the clean version
-string clean_string(const string &s) {
-	string result;
+std::string clean_string(const std::string &s) {
+	std::string result;
 	for (char c: s) {
 		if (c == '.' || c == ',' || c == ';' || c == ':')
 			continue;
@@ -53,15 +53,15 @@ string clean_string(const string &s) {
 // Part1 precess the file and build a map of words and the
 // number ot times they occur in the file
 void part1() {
-	map<string, int> words;
-	string line;
-	string word;
-	ifstream in_file {"./Challenge_3/words.txt"};
+	std::map<string, int> words;
+	std::string line;
+	std::string word;
+	std::ifstream in_file {"./Challenge_3/words.txt"};
 
 	if (in_file) {
-		while (getline(in_file, line)) {
-			// cout << line;
-			stringstream ss(line);
+		while (std::getline(in_file, line)) {
+			// std::cout << line;
+			std::stringstream ss(line);
 			while (ss >> word) {
 				word = clean_string(word);
 				words[word]++;
@@ -78,17 +78,17 @@ void part1() {
 // Part2 process the file and builds a map of words
 // and a set of numbers in which the word appears
 void part2() {
-	map<string, set<int>> words;
-	string line;
-	string word;
-	ifstream in_file {"./Challenge_3/words.txt"};
+	std::map<string, set<int>> words;
+	std::string line;
+	std::string word;
+	std::ifstream in_file {"./Challenge_3/words.txt"};
 
 	if (in_file) {
 		int line_number {0};
-		while (getline(in_file, line)) {
+		while (std::getline(in_file, line)) {
 			line_number++;
-			// cout << line;
-			stringstream ss(line);
+			// std::cout << line;
+			std::stringstream ss(line);
 			while (ss >> word) {
 				word = clean_string(word);
 				words[word].insert(line_number);

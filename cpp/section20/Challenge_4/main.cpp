@@ -13,8 +13,8 @@ using namespace std;
 bool is_palindrome(const string &s) {
 	// You must implement this function
 	// Since we are learning the STL - use a deque to solve the problem
-	stack<char> stk;
-	queue<char> q;
+	std::stack<char> stk;
+	std::queue<char> q;
 
 	for (char c: s)
 		if (std::isalpha(c)) {
@@ -35,13 +35,12 @@ bool is_palindrome(const string &s) {
 		if (c1 != c2)
 			return false;
 	}
-
 	return true;
 }
 
 int main() {
 
-	vector<string> test_strings {
+	std::vector<string> test_strings {
 		"a", "aa", "aba", "abba", "abbcbba", "ab", "abc", "radar", "bob", "ana", "avid diva",
 		"Amore, Roma", "A Toyota's a toyota", "A Santa at NASA", "C++", "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!",
 		"This id a palindrome", "palindrome"

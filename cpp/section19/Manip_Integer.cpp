@@ -37,15 +37,15 @@ int main() {
 	cout << oct << num << endl;
 
 	// setting using the set method
-	cout.setf(ios::showbase);
-	cout.setf(ios::uppercase);
-	cout.setf(ios::showpos);
+	cout.setf(std::ios::showbase);
+	cout.setf(std::ios::uppercase);
+	cout.setf(std::ios::showpos);
 
 	// resetting to defaults
-	cout << resetiosflags(ios::basefield);
-	cout << resetiosflags(ios::showbase);
-	cout << resetiosflags(ios::showpos);
-	cout << resetiosflags(ios::uppercase);
+	cout << resetiosflags(std::ios::basefield);
+	cout << resetiosflags(std::ios::showbase);
+	cout << resetiosflags(std::ios::showpos);
+	cout << resetiosflags(std::ios::uppercase);
 
 	cout << "\n------------------------------" << endl;
 	cout << "Enter an integer : ";

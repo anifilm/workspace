@@ -13,11 +13,11 @@ using namespace std;
 template<typename T>
 class Item {
 private:
-	string name;
+	std::string name;
 	T value;
 public:
-	Item(string name, T value): name {name}, value {value} {}
-	string get_name() const { return name; }
+	Item(std::string name, T value): name {name}, value {value} {}
+	std::string get_name() const { return name; }
 	T get_value() const { return value; }
 };
 
@@ -39,7 +39,7 @@ int main() {
 	cout << item3.get_name() << " " << item3.get_value().get_name() << " " << item3.get_value().get_value()<< endl;
 
 	cout << "\n===============================" << endl;
-	vector<Item<double>> vec {};
+	std::vector<Item<double>> vec {};
 	vec.push_back (Item<double> ("Larry", 100.0));
 	vec.push_back (Item<double> ("Moe", 200.0));
 	vec.push_back (Item<double> ("Curly", 300.0));

@@ -70,7 +70,7 @@ int main() {
 	cout << num3 << endl;
 
 	// Back to defaults
-	cout.unsetf(ios::scientific | ios::fixed);
+	cout.unsetf(std::ios::scientific | std::ios::fixed);
 	cout << resetiosflags(ios::showpos);
 
 	// Show trailing zeroes up to precision 10
@@ -81,10 +81,10 @@ int main() {
 	cout << num3 << endl;
 
 	// Back to defaults
-	cout.unsetf(ios::scientific | ios::fixed);
+	cout.unsetf(std::ios::scientific | std::ios::fixed);
 	cout << setprecision(6);
-	cout << resetiosflags(ios::showpos);
-	cout << resetiosflags(ios::showpoint);
+	cout << resetiosflags(std::ios::showpos);
+	cout << resetiosflags(std::ios::showpoint);
 
 	cout << "\n-- Back to default ---------------------------" << endl;
 	cout << num1 << endl;

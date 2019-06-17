@@ -11,18 +11,18 @@
 using namespace std;
 
 class Song {
-	friend ostream &operator<<(ostream &os, const Song &s);
-	string name;
-	string artist;
+	friend std::ostream &operator<<(std::ostream &os, const Song &s);
+	std::string name;
+	std::string artist;
 	int rating;
 public:
 	Song() = default;
-	Song(string name, string artist, int rating)
+	Song(std::string name, std::string artist, int rating)
 		: name {name}, artist {artist}, rating {rating} {}
-	string get_name() const {
+	std::string get_name() const {
 		return name;
 	}
-	string get_artist() const {
+	std::string get_artist() const {
 		return artist;
 	}
 	int get_rating() const {
@@ -36,7 +36,7 @@ public:
 	}
 };
 
-ostream &operator<<(ostream &os, const Song &s) {
+std::ostream &operator<<(std::ostream &os, const Song &s) {
 	os << setw(20) << left << s.name
 	   << setw(30) << left << s.artist
 	   << setw(2) << left << s.rating;
@@ -72,7 +72,7 @@ void display_playlist(const list<Song> &playlist, const Song &current_song) {
 
 int main() {
 
-	list<Song> playlist {
+	std::list<Song> playlist {
 		{"God's Plan", "Drake", 5},
 		{"Never Be The Same", "Camila Cabello", 5},
 		{"Pray For Me", "The Weekend and K. Lamar", 4},
@@ -81,7 +81,7 @@ int main() {
 		{"Whatever It Takes", "Imagine Dragons", 3}
 	};
 
-	list<Song>::iterator current_song = playlist.begin();
+	std::list<Song>::iterator current_song = playlist.begin();
 	display_playlist(playlist, *current_song);
 
 	char selection {};

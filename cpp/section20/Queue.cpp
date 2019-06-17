@@ -11,7 +11,7 @@ using namespace std;
 // Note theat the queue is passed in by value
 // so we don't affect the passed in queue
 template <typename T>
-void display(queue<T> q) {
+void display(std::queue<T> q) {
 	cout << "[ ";
 	while (!q.empty()) {
 		T elem = q.front();
@@ -23,7 +23,7 @@ void display(queue<T> q) {
 
 int main() {
 
-	queue<int> q;
+	std::queue<int> q;
 
 	for (int i: {1, 2, 3, 4, 5})
 		q.push(i);

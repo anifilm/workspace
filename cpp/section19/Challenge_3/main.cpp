@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool find_substring(const string &word_to_find, const string &target) {
+bool find_substring(const std::string &word_to_find, const std::string &target) {
 	std::size_t found = target.find(word_to_find);
 	if (found == std::string::npos) {
 		return false;

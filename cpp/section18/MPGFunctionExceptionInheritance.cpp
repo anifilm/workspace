@@ -5,14 +5,14 @@
 
 using namespace std;
 
-class DivideByZeroException: public runtime_error {
+class DivideByZeroException: public std::runtime_error {
 public:
-	DivideByZeroException(): runtime_error {"Sorry, you can't divide by zero"} {}
+	DivideByZeroException(): std::runtime_error {"Sorry, you can't divide by zero"} {}
 };
 
-class NegativeValueException: public runtime_error {
+class NegativeValueException: public std::runtime_error {
 public:
-	NegativeValueException(): runtime_error {"Sorry, one of your parameters in negative"} {}
+	NegativeValueException(): std::runtime_error {"Sorry, one of your parameters in negative"} {}
 };
 
 double calulate_mpg(int miles, int gallons) {

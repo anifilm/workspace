@@ -7,12 +7,12 @@
 using namespace std;
 
 class Person {
-	friend ostream &operator<<(ostream &os, const Person &p);
-	string name;
+	friend std::ostream &operator<<(std::ostream &os, const Person &p);
+	std::string name;
 	int age;
 public:
 	Person(): name {"Unknown"}, age {0} {}
-	Person(string name, int age): name {name}, age {age} {}
+	Person(std::string name, int age): name {name}, age {age} {}
 	bool operator<(const Person &rhs) const {
 		// return this->age < rhs.age;
 		return this->name < rhs.name;
@@ -22,7 +22,7 @@ public:
 	}
 };
 
-ostream &operator<<(ostream &os, const Person &p) {
+std::ostream &operator<<(std::ostream &os, const Person &p) {
 	os << p.name << ":" << p.age;
 	return os;
 }
@@ -32,7 +32,7 @@ ostream &operator<<(ostream &os, const Person &p) {
 // It is being passed by value so we don't modify
 // the priority queue being passed in
 template <typename T>
-void display(priority_queue<T> pq) {
+void display(std::priority_queue<T> pq) {
 	cout << "[ ";
 	while (!pq.empty()) {
 		T elem = pq.top();
@@ -44,7 +44,7 @@ void display(priority_queue<T> pq) {
 
 void test1() {
 	cout << "\n== Test1 ==============================" << endl;
-	priority_queue<int> pq;
+	std::priority_queue<int> pq;
 	
 	for (int i: {3, 5, 7, 12, 23, 12, 4, 100, 0, 3, 5, 7})
 		pq.push(i);
@@ -60,7 +60,7 @@ void test1() {
 
 void test2() {
 	cout << "\n== Test2 ==============================" << endl;
-	priority_queue<Person> pq;
+	std::priority_queue<Person> pq;
 
 	pq.push(Person {"A", 10});
 	pq.push(Person {"B", 1});

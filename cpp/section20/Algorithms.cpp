@@ -14,7 +14,7 @@ class Person {
 	int age;
 public:
 	Person() = default;
-	Person(string name, int age)
+	Person(std::string name, int age)
 		: name {name}, age {age} {
 	}
 	bool operator<(const Person &rhs) const {
@@ -29,7 +29,7 @@ public:
 void find_test() {
 	cout << "\n==============================" << endl;
 
-	vector<int> vec {1, 2, 3, 4, 5};
+	std::vector<int> vec {1, 2, 3, 4, 5};
 
 	auto loc = std::find(begin(vec), end(vec), 1);
 
@@ -38,7 +38,7 @@ void find_test() {
 	else
 		cout << "Couldn't find the number" << endl;
 	
-	list<Person> players {
+	std::list<Person> players {
 		{"Larry", 18},
 		{"Moe", 20},
 		{"Curly", 21}
@@ -56,7 +56,7 @@ void find_test() {
 void count_test() {
 	cout << "\n==============================" << endl;
 
-	vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1};
+	std::vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1};
 
 	int num = std::count(vec.begin(), vec.end(), 1);
 	cout << num << " occurrences found" << endl;
@@ -69,7 +69,7 @@ void count_if_test() {
 	cout << "\n==============================" << endl;
 
 	// count only if the element is even
-	vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1, 100};
+	std::vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1, 100};
 	int num = std::count_if(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; });
 	cout << num << " even numbers found" << endl;
 
@@ -84,7 +84,7 @@ void count_if_test() {
 void replace_test() {
 	cout << "\n==============================" << endl;
 
-	vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1};
+	std::vector<int> vec {1, 2, 3, 4, 5, 1, 2, 1};
 
 	for (auto i: vec) {
 		cout << i << " ";
@@ -100,7 +100,7 @@ void replace_test() {
 }
 
 void all_of_test() {
-	vector <int> vec1 {1, 3, 5, 7, 9, 1, 3, 13, 19, 5};
+	std::vector<int> vec1 {1, 3, 5, 7, 9, 1, 3, 13, 19, 5};
 
 	if (std::all_of(vec1.begin(), vec1.end(), [](int x) { return x > 10; }))
 		cout << "All the elements are > 10" << endl;
@@ -117,7 +117,7 @@ void all_of_test() {
 void string_transform_test() {
 	cout << "\n==============================" << endl;
 
-	string str1 {"This is a test"};
+	std::string str1 {"This is a test"};
 	cout << "Before transform: " << str1 << endl;
 	std::transform(str1.begin(), str1.end(), str1.begin(), ::toupper);
 	cout << "After transform: " << str1 << endl;

@@ -17,13 +17,14 @@ class Array {
 	int size {N};			// how do we get the N???
 	T values[N];			// the N needs to ne known at compile-time!
 
-	friend ostream &operator<<(ostream &os, const Array<T, N> &arr) {
+	friend std::ostream &operator<<(std::ostream &os, const Array<T, N> &arr) {
 		os << "[ ";
 		for (const auto &val: arr.values)
 			os << val << " ";
 		os << "]" << endl;
 		return os;
 	}
+	
 public:
 	Array() = default;
 	Array(T init_val) {

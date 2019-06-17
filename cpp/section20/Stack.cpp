@@ -13,7 +13,7 @@ using namespace std;
 // Note theat the stack is passed in by value
 // so we don't affect the passed in stack
 template <typename T>
-void display(stack<T> s) {
+void display(std::stack<T> s) {
 	cout << "[ ";
 	while (!s.empty()) {
 		T elem = s.top();
@@ -25,10 +25,10 @@ void display(stack<T> s) {
 
 int main() {
 
-	stack<int> s1;
-	stack<int, vector<int>> s2;
-	stack<int, list<int>> s3;
-	stack<int, deque<int>> s4;
+	std::stack<int> s1;
+	std::stack<int, vector<int>> s2;
+	std::stack<int, list<int>> s3;
+	std::stack<int, deque<int>> s4;
 
 	for (int i: {1, 2, 3, 4, 5})
 		s1.push(i);

@@ -17,14 +17,14 @@ void func(T1 a, T2 b) {
 }
 
 struct Person {
-	string name;
+	std::string name;
 	int age;
 	bool operator<(const Person &rhs) const {
 		return this->age < rhs.age;
 	}
 };
 
-ostream &operator<<(ostream &os, const Person &p) {
+std::ostream &operator<<(std::ostream &os, const Person &p) {
 	os << p.name;
 	return os;
 }
