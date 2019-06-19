@@ -32,11 +32,7 @@ void UGrabber::BeginPlay()
 void UGrabber::FindPhysicsHandleComponent()
 {
     PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
-    if (PhysicsHandle)
-    {
-        // Physics handle is found
-    }
-    else
+    if (PhysicsHandle == nullptr)
     {
         UE_LOG(LogTemp, Error, TEXT("%s missing physics handle component"), *GetOwner()->GetName());
     }
@@ -64,6 +60,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+    if (!PhysicsHandle) { return; }
     // if the physics handle is attached
     if (PhysicsHandle->GrabbedComponent)
     {
@@ -91,6 +88,7 @@ void UGrabber::Grap()
         //    ComponentToGrap->GetOwner()->GetActorLocation(),
         //    true    // allow rotation
         //);
+        if (!PhysicsHandle) { return; }
         PhysicsHandle->GrabComponentAtLocationWithRotation(
             ComponentToGrap,
             NAME_None,  // no bones needed
@@ -103,6 +101,7 @@ void UGrabber::Grap()
 void UGrabber::Release()
 {
     //UE_LOG(LogTemp, Warning, TEXT("Grab released"));
+    if (!PhysicsHandle) { return; }
     PhysicsHandle->ReleaseComponent();
 }
 
