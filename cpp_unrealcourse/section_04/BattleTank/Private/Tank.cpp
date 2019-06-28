@@ -1,7 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright 2019 Anifilm. All Rights Reserved.
 
 #include "Tank.h"
 #include "TankAimingComponent.h"
+#include "TankBarrel.h"
+#include "Projectile.h"
 
 // Sets default values
 ATank::ATank()
@@ -34,6 +36,17 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
+{
+	TankAimingComponent->SetBarrelReference(BarrelToSet);
+	Barrel = BarrelToSet;
+}
+
+void ATank::SetTurretReference(UTankTurret* TurretToSet)
+{
+	TankAimingComponent->SetTurretReference(TurretToSet);
+}
+
 void ATank::AimAt(FVector HitLocation)
 {
 	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
@@ -41,12 +54,16 @@ void ATank::AimAt(FVector HitLocation)
     // UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s"), *OurTankName, *HitLocation.ToString());
 }
 
-void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
+void ATank::Fire()
 {
-	TankAimingComponent->SetBarrelReference(BarrelToSet);
-}
+	// auto Time = GetWorld()->GetTimeSeconds();
+	// UE_LOG(LogTemp, Warning, TEXT("%f: Tank Fires"), Time);
 
-void ATank::SetTurretReference(UTankTurret* TurretToSet)
-{
-	TankAimingComponent->SetTurretReference(TurretToSet);
+	if (!Barrel) { return; }
+
+	// Spawn a projectile at the socket location on the barrel
+	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("Projectile")),
+					  Barrel->GetSocketRotation(FName("Projectile")));
+
+	Projectile->LaunchProjectile(LaunchSpeed);
 }
