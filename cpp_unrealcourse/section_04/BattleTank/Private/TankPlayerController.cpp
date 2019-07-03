@@ -8,17 +8,7 @@ void ATankPlayerController::BeginPlay()
 {
     Super::BeginPlay();
 
-    // auto ControlledTank = GetControlledTank();
-    // if (!ControlledTank)
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("PlayerController not prossesing a tank"));
-    // }
-    // else
-    // {
-    //     UE_LOG(LogTemp, Warning, TEXT("PlayerController prossessing: %s"), *(ControlledTank->GetName()));
-    // }
-
-    // auto AimingComponent = GetControlledTank()->FindComponentByClass<UTankAimingComponent>();
+    if (!GetPawn()) { return; }
     auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
 
     if (!ensure(AimingComponent)) { return; }
@@ -33,11 +23,13 @@ void ATankPlayerController::Tick(float DeltaTime)
 
 void ATankPlayerController::AimTowardsCrosshair()
 {
+    if (!GetPawn()) { return; } // e.g. if not possessing
     auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
     if (!ensure(AimingComponent)) { return; }
 
-    FVector HitLocation;    // Out parameter
-    if (GetSightRayHitLocation(HitLocation))    // Has "side-effect", is going to line trace
+    FVector HitLocation;        // Out parameter
+    bool bGotHitLocation = GetSightRayHitLocation(HitLocation);
+    if (bGotHitLocation)        // Has "side-effect", is going to line trace
     {
         // Tell controlled tank to aim at this point
         AimingComponent->AimAt(HitLocation);
@@ -57,9 +49,9 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
     if (GetLookDirection(ScreenLocation, LookDirection))
     {
         // Line-trace aling that look direction, and see what we hit (up to max range)
-        GetLookVectorHitLocation(LookDirection, HitLocation);
+        return GetLookVectorHitLocation(LookDirection, HitLocation);
     }
-    return true;
+	return false;
 }
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
