@@ -1,30 +1,23 @@
 ﻿using System;
 
 namespace Datatypes2
-{   // Class names like ClientActivity
+{
     class Program
     {
-        // Method name like CalculateValue
-        // method arguments like firstNumber
         static void Main(string[] args)
         {
-            // local variables like itemCount
+            string myname = "anifilm";
 
-            // use userControl instead of usrCtr 
+            string message = "My name is " + myname;
 
-            // don't use numbers at the start of variable names
+            string capsMessage = message.ToUpper();
 
+            string lowerCaseMessage = message.ToLower();
 
-            // Correct
-            string myName;
-            int lastNum;
-            bool isSaved;
-
-            // Avoid
-            //String myName;
-            //Int32 lastNum;
-            //Boolean isSaved;
+            Console.WriteLine(message);
+            Console.WriteLine(capsMessage);
+            Console.WriteLine(lowerCaseMessage);
+            Console.Read();
         }
-
     }
 }
