@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{761972BB-1FCB-4DE1-8808-C8168CA1766A}</ProjectGuid>
+    <ProjectGuid>{BD2F6ECB-3647-4123-8718-735363861C9B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Decisions</RootNamespace>
-    <AssemblyName>Decisions</AssemblyName>
+    <RootNamespace>IfStatements2</RootNamespace>
+    <AssemblyName>IfStatements2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
