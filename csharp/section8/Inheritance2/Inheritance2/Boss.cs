@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Inheritance2
+{
+    class Boss : Employee
+    {
+        public string CompanyCar { get; set; }
+
+        public Boss(string name, string firstName, int salary, string companyCar) : base(name, firstName, salary)
+        {
+            this.CompanyCar = companyCar;
+        }
+
+        public void Lead()
+        {
+            Console.WriteLine("I'm boss! My name is {0} {1}. I driving my car {2}", FirstName, Name, CompanyCar);
+        }
+    }
+}
