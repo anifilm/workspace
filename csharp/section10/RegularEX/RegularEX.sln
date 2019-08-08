@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegularEX", "RegularEX\RegularEX.csproj", "{698FF3B4-D216-4E87-88D0-0581C35A3705}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{698FF3B4-D216-4E87-88D0-0581C35A3705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698FF3B4-D216-4E87-88D0-0581C35A3705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698FF3B4-D216-4E87-88D0-0581C35A3705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698FF3B4-D216-4E87-88D0-0581C35A3705}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CB985A9-C270-451A-8E2D-2121C528291F}
+	EndGlobalSection
+EndGlobal
