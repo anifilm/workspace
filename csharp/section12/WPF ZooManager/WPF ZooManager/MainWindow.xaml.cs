@@ -315,15 +315,14 @@ namespace WPF_ZooManager
 
         private void RemoveAnimal_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: 미구현된 내용
-            MessageBox.Show("Try Remove Animal from Zoo, but not accept!!");
             try
             {
-                string query = "delete from ZooAnimal where Id = @ZooAnimalId";
+                string query = "delete from ZooAnimal where ZooId = @ZooId AND AnimalId = @AnimalId";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
                 sqlConnection.Open();
-                sqlCommand.Parameters.AddWithValue("@ZooAnimalId", listAssociatedAnimals.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@AnimalId", listAssociatedAnimals.SelectedValue);
                 sqlCommand.ExecuteScalar();
             }
             catch (Exception ex)
