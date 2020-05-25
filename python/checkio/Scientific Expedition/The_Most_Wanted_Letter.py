@@ -1,7 +1,7 @@
 def checkio(text: str) -> str:
     total = 0
     text_lower = text.lower()
-    
+
     for i in text_lower:
         if i.isalpha():
             if text_lower.count(i) > total:

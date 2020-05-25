@@ -2,7 +2,7 @@ from typing import List, Any
 
 
 def all_the_same(elements: List[Any]) -> bool:
-	return elements[1:] == elements[:-1]
+    return elements[1:] == elements[:-1]
 
 
 if __name__ == '__main__':

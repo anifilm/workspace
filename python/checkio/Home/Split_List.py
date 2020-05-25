@@ -5,10 +5,10 @@ def split_list(items: list) -> list:
     list_count = len(items)
     
     for c in range(list_count):
-    	if c < list_count / 2:
-    		first_list.append(items[c])
-    	else:
-    		second_list.append(items[c])
+        if c < list_count / 2:
+            first_list.append(items[c])
+        else:
+            second_list.append(items[c])
     
     items = [first_list, second_list]
 

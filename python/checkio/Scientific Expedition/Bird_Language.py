@@ -3,7 +3,7 @@ VOWELS = "aeiouy"
 def translate(phrase):
     result = []
     i = 0
-    
+
     while i < len(phrase):
         result.append(phrase[i])
         if phrase[i] in VOWELS:

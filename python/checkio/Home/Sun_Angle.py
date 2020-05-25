@@ -1,10 +1,10 @@
 def sun_angle(time):
     sp_time = time.split(':')
-    
+
     hour = int(sp_time[0])
     minite = int(sp_time[1])
     sum_time = hour + (minite / 60)
-    
+
     if sum_time < 6.0 or sum_time > 18.0:
         return "I don't see the sun!"
     else:

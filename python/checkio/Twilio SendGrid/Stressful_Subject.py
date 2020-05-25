@@ -3,7 +3,7 @@ def is_stressful(subj):
         recoognise stressful subject
     """
     import re
-    
+
     return (subj.isupper() or subj.endswith('!!!') or any(re.search('+[.!-]*'.join(word), subj.lower())
                 for word in ['help', 'asap', 'urgent']))
 

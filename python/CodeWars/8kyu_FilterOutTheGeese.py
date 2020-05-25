@@ -1,19 +1,15 @@
 geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
 
 def goose_filter(birds):
-	#your code here
-	result = []
-	
-	for bid in birds:
-	
-		if bid not in geese:
-			result.append(bid)
-	
-	return result
+    result = []
 
-	#return [bid for bid in birds if bid not in geese]
+    for bid in birds:
+        if bid not in geese:
+            result.append(bid)
 
-	
+    return result
+
+
 def main():
 
 print(goose_filter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"])

@@ -1,10 +1,10 @@
 def safe_pawns(pawns: set) -> int:
-	pawns = [(ord(c[0])-96, int(c[1])) for c in pawns]
+    pawns = [(ord(c[0])-96, int(c[1])) for c in pawns]
 
-	safes = [(y, x) for y, x in pawns
-			if (y+1, x-1) in pawns or (y-1, x-1) in pawns]
-    
-	return len(safes)
+    safes = [(y, x) for y, x in pawns
+            if (y+1, x-1) in pawns or (y-1, x-1) in pawns]
+
+    return len(safes)
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing

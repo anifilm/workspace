@@ -23,7 +23,7 @@ def checkio(number: int) -> str:
 if __name__ == '__main__':
     print('Example:')
     print(checkio(15))
-    
+
     assert checkio(15) == "Fizz Buzz", "15 is divisible by 3 and 5"
     assert checkio(6) == "Fizz", "6 is divisible by 3"
     assert checkio(5) == "Buzz", "5 is divisible by 5"

@@ -13,18 +13,18 @@ MORSE = {'.-':    'a', '-...':  'b', '-.-.':  'c',
         }
 
 def morse_decoder(code):
-	code_list = code.split('   ')
+    code_list = code.split('   ')
 
-	for i in range(len(code_list)):
-		words = ''
-		for c in code_list[i].split(' '):
-			words += MORSE[c]
+    for i in range(len(code_list)):
+        words = ''
+        for c in code_list[i].split(' '):
+            words += MORSE[c]
 
-		code_list[i] = words
+        code_list[i] = words
 
-	code = ' '.join(code_list).capitalize()
+    code = ' '.join(code_list).capitalize()
     
-	return code
+    return code
 
 if __name__ == '__main__':
     print("Example:")

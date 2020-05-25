@@ -1,5 +1,4 @@
 def elevator(left, right, call):
-    
     # if abs(left-call) >= abs(right-call):
     #     return "right"
     # else:
@@ -23,7 +22,7 @@ def elevator(left, right, call):
     else:
         pass # Code on! :)
 
-	
+
 def main():
 
 	print(elevator(0, 1, 0))	# "left"

@@ -1,12 +1,12 @@
 def flat_list(array):
     result = []
-    
+
     for t in array:
         if type(t) == list:
             result.extend(flat_list(t))
         else:
             result.append(t)
-            
+
     return result
 
 if __name__ == '__main__':

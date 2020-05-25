@@ -6,7 +6,7 @@ def long_repeat(line):
     current = []
     counter = ['']
     count = 0
-    
+
     for word in words:
 
         if current == word:

@@ -1,6 +1,15 @@
 def frequency_sort(items):
-    # your code here
-    return None
+    # for i in range(len(items)):
+    #   print(items.count(items[i]))
+
+    #   for j in range(1, len(items)):
+    #       if i > j:
+    #           continue
+    #       elif items[i] == items[j]:
+    #           items.insert(i, items[j])
+    #           items.pop(j+1)
+
+    return sorted(items, key = lambda x: (items.count(x), -items.index(x)), reverse=True)
 
 
 if __name__ == '__main__':
@@ -13,4 +22,5 @@ if __name__ == '__main__':
     assert list(frequency_sort([17, 99, 42])) == [17, 99, 42]
     assert list(frequency_sort([])) == []
     assert list(frequency_sort([1])) == [1]
+    # assert list(frequency_sort([4, 4, 4, 4, 6, 6, 2, 2, 2])) == [4, 4, 4, 4, 2, 2, 2, 6, 6]
     print("Coding complete? Click 'Check' to earn cool rewards!")

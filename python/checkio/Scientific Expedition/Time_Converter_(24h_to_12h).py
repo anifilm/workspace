@@ -2,7 +2,7 @@ def time_converter(time):
 
     split_time = time.split(':')
     hour = int(split_time[0])
-    
+
     if hour < 12:
         con = ' a.m.'
         if hour == 0:

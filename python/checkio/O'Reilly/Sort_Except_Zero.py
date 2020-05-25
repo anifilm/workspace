@@ -3,15 +3,15 @@ from typing import Iterable
 
 def except_zero(items: list) -> Iterable:
     for i in range(len(items)):
-    	if items[i] == 0:
-    		continue
-    	for j in range(1, len(items)):
-    		if i > j:
-    			continue
-    		elif items[j] == 0:
-    			continue
-    		elif items[i] > items[j]:
-    			items[i], items[j] = items[j], items[i]
+        if items[i] == 0:
+            continue
+        for j in range(1, len(items)):
+            if i > j:
+                continue
+            elif items[j] == 0:
+                continue
+            elif items[i] > items[j]:
+                items[i], items[j] = items[j], items[i]
 
     return items
 

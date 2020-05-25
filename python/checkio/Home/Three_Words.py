@@ -1,6 +1,6 @@
 def checkio(words: str) -> bool:
     count = 0
-    
+
     for word in words.split():
         if word.isalpha():
             count += 1
@@ -8,7 +8,7 @@ def checkio(words: str) -> bool:
             count = 0
         if count >= 3:
             return True
-    
+
     return False
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
