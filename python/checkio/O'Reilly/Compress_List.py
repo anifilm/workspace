@@ -1,28 +1,16 @@
-'''
-A given list should be "compressed" in a way so, instead of two (or more) equal elements, staying one after another, there is only one in the result Iterable (list, tuple, iterator ...).
-
-example
-
-Input: List.
-
-Output: "Compressed" Iterable (list, tuple, iterator ...).
-
-Example:
-
-compress([5, 5, 5,
-          4, 5, 6,
-          6, 5, 5,
-          7, 8, 0,
-          0]) == [5, 4, 5, 6, 5, 7, 8, 0]
-compress([1, 1, 1, 1, 2, 2, 2, 1, 1, 1]) == [1, 2, 1]
-'''
-
 from typing import Iterable
 
 
 def compress(items: list) -> Iterable:
-    # your code here
-    return items
+    list = []
+    diff = -1
+
+    for i in items:
+        if i != diff:
+            list.append(i)
+        diff = i
+
+    return list
 
 
 if __name__ == '__main__':
