@@ -1,8 +1,6 @@
 def backward_string_by_word(text: str) -> str:
     for i in text.split():
-        # print(i[::-1]) 문자열 뒤집기
-        text = text.replace(i, i[::-1])
-    print(text)
+        text = text.replace(i, i[::-1])     # i[::-1] 문자열 뒤집기
 
     return text
 
