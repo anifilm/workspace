@@ -16,12 +16,8 @@ def twoSum(nums, target):
             return(start_index, next_index + temp_nums.index(n))
 
 
-def main():
+if __name__ == "__main__":
 
     nums = [2, 7, 11, 15]
     target = 9
     print(twoSum(nums, target))
-
-
-if __name__ == "__main__":
-    main()
