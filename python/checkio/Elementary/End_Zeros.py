@@ -1,21 +1,14 @@
-'''
-Try to find out how many zeros a given number has at the end.
-
-Input: A positive Int
-
-Output: An Int.
-
-Example:
-
-end_zeros(0) == 1
-end_zeros(1) == 0
-end_zeros(10) == 1
-end_zeros(101) == 0
-'''
-
 def end_zeros(num: int) -> int:
-    # your code here
-    return None
+    str_num = str(num)
+    ans = 0
+
+    for i in str_num[::-1]:
+        if int(i) == 0:
+            ans += 1
+        else:
+            break
+
+    return ans
 
 
 if __name__ == '__main__':
@@ -29,4 +22,5 @@ if __name__ == '__main__':
     assert end_zeros(101) == 0
     assert end_zeros(245) == 0
     assert end_zeros(100100) == 2
+    assert end_zeros(10010000) == 4
     print("Coding complete? Click 'Check' to earn cool rewards!")
