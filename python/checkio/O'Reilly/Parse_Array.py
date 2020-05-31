@@ -1,25 +1,3 @@
-'''
-In this task you you already have the solution. The problem is that it has a bug and you must try to find and fix it. "import", "exec" and "eval" don't work for this task.
-
-You are given a string that contains a list with integers or nested lists. The integers could have single plus or minus sign before them. If the input string does not contain an array, then raise ValueError. For an incorrectly formatted string -- raise ValueError. Elements of the array are separated by commas.
-
-Input: A string.
-
-Output: The list with nested lists or integers.
-
-Example:
-
-parse_array("[1, 2, 3]") == [1, 2, 3]
-parse_array("[[1], 2, 3]") == [[1], 2, 3]
-parse_array("[-3, [-2, 0], 10]") == [-3, [-2, 0], 10]
-
-How it is used: This task is designed for you to show off your bug hunting skills. The parser code itself can be modified and improved to work as part of a larger more complex parsing system.
-
-Precondition:
-depth < 5
-∀ x ∈ data : -1000 < x < 1000
-'''
-
 WHITESPACE_STR = ' \t\n\r'
 
 
@@ -31,6 +9,7 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
     sep_flag = False
     whitespace_flag = False
     started_flag = False
+
     for ch in s:
         if ch in _w:
             whitespace_flag = True
@@ -41,16 +20,17 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
             if closed_flag or accumulator:
                 raise ValueError
             in_array = []
+
             if stack:
                 stack[-1](in_array)
             else:
                 array = in_array
                 started_flag = True
+
             stack.append(in_array.append)
         elif not started_flag:
             raise ValueError("Wrong string.")
         elif ch == "]":
-
             if not stack:
                 raise ValueError("Wrong string.")
             if accumulator:
@@ -68,6 +48,7 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
                 pass
             else:
                 raise ValueError("Wrong string.")
+
             sep_flag = True
             closed_flag = False
             whitespace_flag = False
@@ -76,7 +57,8 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
                 raise ValueError
             accumulator += ch
         whitespace_flag = False
-    if not array is None:
+
+    if not array is None and not stack and not sep_flag:    # fixed this
         return array
     else:
         raise ValueError("Wrong string")
