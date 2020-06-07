@@ -1,7 +1,25 @@
 body {
   background-color: #2c3e50;
   color: white;
+}
+
+.wrapper {
+  height: 100%;
   text-align: center;
+}
+
+.wrapper:before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  margin-right: 0;
+  vertical-align: middle;
+}
+
+.box {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .btn {
