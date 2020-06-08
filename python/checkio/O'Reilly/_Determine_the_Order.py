@@ -8,10 +8,49 @@ Output: The order as a string.
 Example:
 
 checkio(["acb", "bd", "zwa"]) == "zwacbd"
+acb, bd -> acbd
+acb, zwa
+bd, zwa
+zwa, acb -> zwacb
+zwa, bd
+
+acbd, zwacb
+zwacb, acbd -> zwacbd
+
+
 checkio(["klm", "kadl", "lsm"]) == "kadlsm"
+klm, kadl -> kadlm
+klm, lsm -> klsm
+kadl, lsm -> kadlsm
+lsm, klm -> klsm
+lsm, kadl -> kadlsm
+
+kadlm, klsm -> kadlsm
+
+
 checkio(["a", "b", "c"]) == "abc"
+a, b -> ab
+a, c -> ac
+b, c -> bc
+c, a -> ca
+c, b -> cb
+
+ab, ac -> abc
+ab, bc -> abc
+bc, ca -> bca
+
+
 checkio(["aazzss"]) == "azs"
+
 checkio(["dfg", "frt", "tyg"]) == "dfrtyg"
+dfg, frt -> dfrt
+dfg, tyg
+frt, tyg -> frtyg
+tyg, dfg
+tyg, frt
+
+dfrt, frtyg -> dfrtyg
+
 
 How it is used: This concept can be useful for the cryptology, helping you to find regularities and patterns in natural text and ciphered messages.
 
@@ -20,6 +59,10 @@ Precondition: For each test, there can be the only one solution.
 '''
 
 def checkio(data):
+    for word in data:
+        for char in word:
+            print(char)
+
     return ""
 
 #These "asserts" using only for self-checking and not necessary for auto-testing

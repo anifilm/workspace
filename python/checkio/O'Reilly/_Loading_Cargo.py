@@ -22,11 +22,29 @@ Output data: The number representing the lowest possible weight difference as a 
 Example:
 
 checkio([10,10]) == 0
+[10] : [10]
+
 checkio([10]) == 10
+[10] : [0]
+
 checkio([5, 8, 13, 27, 14]) == 3
+[5, 27] : [8, 13, 14]
+
 checkio([5,5,6,5]) == 1
+[5, 5] : [6, 5]
+
 checkio([12, 30, 30, 32, 42, 49]) == 9
+[12, 32, 49] : [30, 30, 42]
+
 checkio([1, 1, 1, 3]) == 0
+[1, 1, 1] : [3]
+
+1. 모든수를 더하여 2로 나눈다 (중간값 판단)
+
+2. 각 항의 수를 더하여 중간값에 가까운 결과를 저장
+
+3. 두 결과를 비교 (뺄샘하여 양의 정수로 변환)
+
 
 How it is used: This is a combinatorial optimization version of the partition problem. The combinatorial optimization has wide usage and you often see it when you look at automated schedules or route calculating.
 
