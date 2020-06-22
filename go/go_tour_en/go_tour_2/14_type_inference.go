@@ -1,4 +1,4 @@
-//
+// Type inference
 package main
 
 import "fmt"

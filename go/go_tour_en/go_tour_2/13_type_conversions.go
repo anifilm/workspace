@@ -1,4 +1,4 @@
-//
+// Type converstions
 package main
 
 import (

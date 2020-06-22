@@ -1,4 +1,4 @@
-// Switch
+// Switch with no conditon
 package main
 
 import (

@@ -1,4 +1,4 @@
-//
+// Zero values
 package main
 
 import "fmt"

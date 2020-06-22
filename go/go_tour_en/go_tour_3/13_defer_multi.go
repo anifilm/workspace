@@ -1,4 +1,4 @@
-// Defer
+// Stacking defer
 package main
 
 import "fmt"
