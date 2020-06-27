@@ -17,11 +17,11 @@ func main() {
         "code yet has the convenience of garbage collection and the power of run-time reflection."
     str2 := "It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language."
 
-    fmt.Println("ex1:", str1+str2)
+    fmt.Println("ex1:", str1+" "+str2)
 
     // 예제 2 (결합: Join())
     strSet := []string{} // 슬라이스 선언
     strSet = append(strSet, str1)
     strSet = append(strSet, str2)
-    fmt.Println("ex2:", strings.Join(strSet, ""))
+    fmt.Println("ex2:", strings.Join(strSet, " "))
 }
