@@ -19,6 +19,6 @@ const style = StyleSheet.create({
     },
     text: {
         color: '#2c2c2c',
-        fonrSize: 30
+        fontSize: 30
     }
 });
