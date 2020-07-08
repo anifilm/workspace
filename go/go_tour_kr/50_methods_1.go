@@ -1,4 +1,4 @@
-// 메소드 (Methods)
+// 메서드 (Methods)
 package main
 
 import (

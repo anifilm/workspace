@@ -1,4 +1,4 @@
-// 메소드 (2)
+// 메서드 (2)
 package main
 
 import (
