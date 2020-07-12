@@ -12,7 +12,7 @@ func end(t string) {
 }
 
 func a() {
-    defer end(start("b"))
+    defer end(start("b"))	// 중첩 함수 주의!
     fmt.Println("in a")
 }
 
