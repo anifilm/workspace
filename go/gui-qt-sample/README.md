@@ -3,7 +3,8 @@
 파이썬 PyQt5 샘플을 Golang에 맞게 작성해 보았습니다. (학습용 & 참고용)
 
 
-[참고 자료]
+#### [참고 자료]
+
 
 ### therecipe/qt: Qt binding for Go (Golang)
 
