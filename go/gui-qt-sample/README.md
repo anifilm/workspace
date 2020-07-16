@@ -5,11 +5,11 @@
 
 [참고 자료]
 
-## therecipe/qt: Qt binding for Go (Golang)
+### therecipe/qt: Qt binding for Go (Golang)
 
 https://github.com/therecipe/qt
 
 
-## PyQt5 Tutorial - 파이썬으로 만드는 나만의 GUI 프로그램
+### PyQt5 Tutorial - 파이썬으로 만드는 나만의 GUI 프로그램
 
 https://wikidocs.net/book/2165
