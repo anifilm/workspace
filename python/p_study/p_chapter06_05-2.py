@@ -40,10 +40,10 @@ def main():
 
     # 결과 건수
     # ThreadPoolExecutor() or ProcessPoolExecutor()
-    with ThreadPoolExecutor() as excutor:
+    with ThreadPoolExecutor(worker) as executor:
         for work in WORK_LIST:
             # future 반환
-            future = excutor.submit(sum_generator, work)
+            future = executor.submit(sum_generator, work)
             # 스케쥴링
             futures_list.append(future)
             # 스케쥴링 확인
