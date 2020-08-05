@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-void main()
-{
+void main() {
+
     int data1, data2;
     data1 = 5;
     data2 = data1;

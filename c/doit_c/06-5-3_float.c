@@ -8,8 +8,8 @@
 
 #include <stdio.h>
 
-void main()
-{
+void main() {
+
     float value = 2.1f;
     printf("%f", value);
 }

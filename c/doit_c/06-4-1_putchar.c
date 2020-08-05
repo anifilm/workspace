@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-void main()
-{
+void main() {
+
     putchar('H');
     putchar('i');
     putchar('~');

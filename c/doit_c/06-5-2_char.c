@@ -8,8 +8,8 @@
 
 #include <stdio.h>
 
-void main()
-{
+void main() {
+
     char data = 65;
     printf("%c의 ASCII 값은 %d 입니다.", data, data);
 }

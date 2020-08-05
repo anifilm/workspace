@@ -8,8 +8,8 @@
 
 #include <stdio.h>
 
-void main()
-{
+void main() {
+
     int data = 5;
     printf("%d", data);
 }

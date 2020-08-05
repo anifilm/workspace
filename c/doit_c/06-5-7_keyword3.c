@@ -8,8 +8,8 @@
 
 #include <stdio.h>
 
-void main()
-{
+void main() {
+
     int data1 = 10;
     int data2 = 010;
     int data3 = 0x10;
