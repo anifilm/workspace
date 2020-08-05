@@ -11,17 +11,17 @@ func main() {
     // +, -, *, /, %, >>, <<, &, ^...
 
     // 예제 1
-    var n1 uint8 = 125
-    var n2 uint8 = 90
+    var n1 uint16 = 125
+    var n2 uint16 = 90
 
     fmt.Println("ex1-1:", n1+n2)
     fmt.Println("ex1-2:", n1-n2)
     fmt.Println("ex1-3:", n1*n2)
     fmt.Println("ex1-4:", n1/n2)
     fmt.Println("ex1-5:", n1%n2)
-    fmt.Println("ex1-6:", n1<<2) // 0111 1101 << 2 -> 0001 1111 0100 비트연산 재확인 필요
-    fmt.Println("ex1-7:", n1>>2) // 0111 1101 >> 2 ->      0001 1111
-    fmt.Println("ex1-8:", ^n1)   // XOR 0111 1101  ->      1000 1101
+    fmt.Println("ex1-6:", n1<<2) // 0111 1101 << 2 -> 0001 1111 0100 (0x1F4, 500)
+    fmt.Println("ex1-7:", n1>>2) // 0111 1101 >> 2 ->      0001 1111 (0x1F, 31)
+    fmt.Println("ex1-8:", n1^n2)
 
     // 예제 2
     var n3 int = 12
