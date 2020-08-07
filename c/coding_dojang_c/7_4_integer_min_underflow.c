@@ -9,11 +9,11 @@ int main() {
     long num4 = LONG_MIN - 1;
     long long num5 = LLONG_MIN - 1;
 
-    printf("char(min) num1: %d\n", num1);            // char      -> %d
-    printf("short(min) num2: %d\n", num2);           // short     -> %d
-    printf("int(min) num3: %d\n", num3);             // int       -> %d
-    printf("long(min) num4: %ld\n", num4);           // long      -> %ld
-    printf("long long(min) num5: %lld\n", num5);     // long long -> %lld
+    printf("char(min) num1: %d\n", num1);           // char      -> %d
+    printf("short(min) num2: %d\n", num2);          // short     -> %d
+    printf("int(min) num3: %d\n", num3);            // int       -> %d
+    printf("long(min) num4: %ld\n", num4);          // long      -> %ld
+    printf("long long(min) num5: %lld\n", num5);    // long long -> %lld
 
     unsigned char num6 = 0 - 1;
     unsigned short num7 = 0 - 1;

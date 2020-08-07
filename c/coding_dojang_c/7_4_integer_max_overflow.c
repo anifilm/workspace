@@ -9,11 +9,11 @@ int main() {
     long num4 = LONG_MAX + 1;
     long long num5 = LLONG_MAX + 1;
 
-    printf("char(max) num1: %d\n", num1);            // char      -> %d
-    printf("short(max) num2: %d\n", num2);           // short     -> %d
-    printf("int(max) num3: %d\n", num3);             // int       -> %d
-    printf("long(max) num4: %ld\n", num4);           // long      -> %ld
-    printf("long long(max) num5: %lld\n", num5);     // long long -> %lld
+    printf("char(max) num1: %d\n", num1);           // char      -> %d
+    printf("short(max) num2: %d\n", num2);          // short     -> %d
+    printf("int(max) num3: %d\n", num3);            // int       -> %d
+    printf("long(max) num4: %ld\n", num4);          // long      -> %ld
+    printf("long long(max) num5: %lld\n", num5);    // long long -> %lld
 
     unsigned char num6 = UCHAR_MAX + 1;
     unsigned short num7 = USHRT_MAX + 1;
