@@ -1,15 +1,15 @@
 #include <stdio.h>
-#include <string.h>     // strcmp ÇÔ¼ö°¡ ¼±¾ğµÈ Çì´õ ÆÄÀÏ
+#include <string.h>     // strcmp í•¨ìˆ˜ê°€ ì„ ì–¸ëœ í—¤ë” íŒŒì¼
 
 int main() {
 
-    // aaa´Â ASCII ÄÚµå·Î 97 97 97
-    // aab´Â ASCII ÄÚµå·Î 97 97 98
-    // aac´Â ASCII ÄÚµå·Î 97 97 99
+    // aaaëŠ” ASCII ì½”ë“œë¡œ 97 97 97
+    // aabëŠ” ASCII ì½”ë“œë¡œ 97 97 98
+    // aacëŠ” ASCII ì½”ë“œë¡œ 97 97 99
 
-    printf("strcmp(\"aaa\", \"aaa\"): %d\n", strcmp("aaa", "aaa"));     // aaa¿Í aaa´Â °°À¸¹Ç·Î 0
-    printf("strcmp(\"aab\", \"aaa\"): %d\n", strcmp("aab", "aaa"));     // aab¿Í aaaÁß¿¡ aab°¡ Å©¹Ç·Î 1
-    printf("strcmp(\"aab\", \"aac\"): %d\n", strcmp("aab", "aac"));     // aab¿Í aacÁß¿¡ aac°¡ Å©¹Ç·Î -1
+    printf("strcmp(\"aaa\", \"aaa\"): %d\n", strcmp("aaa", "aaa"));     // aaaì™€ aaaëŠ” ê°™ìœ¼ë¯€ë¡œ 0
+    printf("strcmp(\"aab\", \"aaa\"): %d\n", strcmp("aab", "aaa"));     // aabì™€ aaaì¤‘ì— aabê°€ í¬ë¯€ë¡œ 1
+    printf("strcmp(\"aab\", \"aac\"): %d\n", strcmp("aab", "aac"));     // aabì™€ aacì¤‘ì— aacê°€ í¬ë¯€ë¡œ -1
 
     return 0;
 }

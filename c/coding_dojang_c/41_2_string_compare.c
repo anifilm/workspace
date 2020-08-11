@@ -1,18 +1,18 @@
 #include <stdio.h>
-#include <string.h>     // strcmp ÇÔ¼ö°¡ ¼±¾ðµÈ Çì´õ ÆÄÀÏ
+#include <string.h>     // strcmp í•¨ìˆ˜ê°€ ì„ ì–¸ëœ í—¤ë” íŒŒì¼
 
 int main() {
 
-    char *s1 = "Hello";     // Æ÷ÀÎÅÍ¿¡ ¹®ÀÚ¿­ HelloÀÇ ÁÖ¼Ò°ª ÇÒ´ç
-    char s2[10] = "Hello";  // Å©±â°¡ 10ÀÎ charÇü ¹è¿­À» ¼±¾ðÇÏ°í ¹®ÀÚ¿­À» ÇÒ´ç
+    char *s1 = "Hello";     // í¬ì¸í„°ì— ë¬¸ìžì—´ Helloì˜ ì£¼ì†Œê°’ í• ë‹¹
+    char s2[10] = "Hello";  // í¬ê¸°ê°€ 10ì¸ charí˜• ë°°ì—´ì„ ì„ ì–¸í•˜ê³  ë¬¸ìžì—´ì„ í• ë‹¹
 
-    int ret = strcmp(s1, s2);   // µÎ ¹®ÀÚ¿­ÀÌ °°ÀºÁö ¹®ÀÚ¿­ ºñ±³
+    int ret = strcmp(s1, s2);   // ë‘ ë¬¸ìžì—´ì´ ê°™ì€ì§€ ë¬¸ìžì—´ ë¹„êµ
 
-    printf("strcmp(s1, s2): %d\n", ret);    // µÎ ¹®ÀÚ¿­ÀÌ °°À¸¸é 0
+    printf("strcmp(s1, s2): %d\n", ret);    // ë‘ ë¬¸ìžì—´ì´ ê°™ìœ¼ë©´ 0
 
-    //  1: ASCII ÄÚµå ±âÁØÀ¸·Î ¹®ÀÚ¿­1 (s1)ÀÌ Å¬¶§
-    //  0: ASCII ÄÚµå ±âÁØÀ¸·Î µÎ ¹®ÀÚ¿­ÀÌ °°À»¶§
-    // -1: ASCII ÄÚµå ±âÁØÀ¸·Î ¹®ÀÚ¿­2 (s2)ÀÌ Å¬¶§
+    //  1: ASCII ì½”ë“œ ê¸°ì¤€ìœ¼ë¡œ ë¬¸ìžì—´1 (s1)ì´ í´ë•Œ
+    //  0: ASCII ì½”ë“œ ê¸°ì¤€ìœ¼ë¡œ ë‘ ë¬¸ìžì—´ì´ ê°™ì„ë•Œ
+    // -1: ASCII ì½”ë“œ ê¸°ì¤€ìœ¼ë¡œ ë¬¸ìžì—´2 (s2)ì´ í´ë•Œ
 
     return 0;
 }

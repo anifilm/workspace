@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <string.h>     // strlen ÇÔ¼ö°¡ ¼±¾ğµÈ Çì´õ ÆÄÀÏ
+#include <string.h>     // strlen í•¨ìˆ˜ê°€ ì„ ì–¸ëœ í—¤ë” íŒŒì¼
 
 int main() {
 
-    char *s1 = "Hello";     // Æ÷ÀÎÅÍ¿¡ ¹®ÀÚ¿­ HelloÀÇ ÁÖ¼Ò°ª ÇÒ´ç
-    char s2[10] = "Hello";  // Å©±â°¡ 10ÀÎ charÇü ¹è¿­À» ¼±¾ğÇÏ°í ¹®ÀÚ¿­À» ÇÒ´ç
+    char *s1 = "Hello";     // í¬ì¸í„°ì— ë¬¸ìì—´ Helloì˜ ì£¼ì†Œê°’ í• ë‹¹
+    char s2[10] = "Hello";  // í¬ê¸°ê°€ 10ì¸ charí˜• ë°°ì—´ì„ ì„ ì–¸í•˜ê³  ë¬¸ìì—´ì„ í• ë‹¹
 
-    printf("strlen(s1): %d\n", strlen(s1));     // strlen ÇÔ¼ö·Î ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÔ
-    printf("strlen(s2): %d\n", strlen(s2));     // strlen ÇÔ¼ö·Î ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ±¸ÇÔ
+    printf("strlen(s1): %d\n", strlen(s1));     // strlen í•¨ìˆ˜ë¡œ ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•¨
+    printf("strlen(s2): %d\n", strlen(s2));     // strlen í•¨ìˆ˜ë¡œ ë¬¸ìì—´ì˜ ê¸¸ì´ë¥¼ êµ¬í•¨
 
     return 0;
 }
