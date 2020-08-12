@@ -3,7 +3,6 @@
 
 int main() {
 
-
     char *s1 = malloc(sizeof(char) * 20);   // char 20개 크기만큼 동적 메모리 할당
 
     sprintf(s1, "Hello, %s", "world!");     // "Hello, %s"로 서식을 지정하여 s1에 저장
