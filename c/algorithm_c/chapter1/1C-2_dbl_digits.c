@@ -5,7 +5,7 @@ int main(void) {
 
     int n;
 
-    printf("2자리 정수를 입력하시오.\n");
+    printf("2자리 정수를 입력하세요.\n");
 
     do {
         printf("수는: ");

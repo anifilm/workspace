@@ -1,4 +1,5 @@
-// Q3 네 값의 최소값을 구하는 min4 함수를 작성하시오.
+// Q3 네 값의 최소값을 구하는 min4 함수를 작성하세요.
+// int min4(int a, int b, int c, int d);
 #include <stdio.h>
 
 // a, b, c, d의 최소값을 구합니다.
