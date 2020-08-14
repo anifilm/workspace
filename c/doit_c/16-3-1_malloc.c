@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <malloc.h>     // malloc, free 함수를 사용하기 위해 추가함
 
-void main() {
+int main() {
 
     char *p_name;
     p_name = (char *)malloc(32);    // 32바이트의 메모리를 동적 할당합니다.
@@ -16,4 +16,6 @@ void main() {
         // 메모리 할당에 실패한 경우
         printf("Memory allocation error!!");
     }
+
+    return 0;
 }

@@ -8,7 +8,7 @@ void ShowMultiplication(int step) {
     }
 }
 
-void main() {
+int main() {
 
     int m;
 
@@ -16,4 +16,6 @@ void main() {
        ShowMultiplication(m);
        printf("\n");
     }
+	
+	return 0;
 }

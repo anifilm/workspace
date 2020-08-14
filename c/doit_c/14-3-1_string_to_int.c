@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     // pos_num은 각 자릿수에 곱할 숫자, num은 정수로 변환될 숫자를 저장할 변수
     int pos_num = 100, num = 0, i, temp_num;
@@ -16,4 +16,6 @@ void main() {
     }
     // 변환된 정수값을 %d를 사용하여 출력함
     printf("%s -> %d\n", num_string, num);
+
+    return 0;
 }

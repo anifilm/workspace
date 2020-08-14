@@ -8,8 +8,10 @@
 
 #include <stdio.h>
 
-void main() {
+int main() {
 
     char data = -1;
     printf("%d, %u", data, data);
+	
+	return 0;
 }

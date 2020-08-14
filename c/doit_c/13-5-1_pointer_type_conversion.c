@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int data = 0x12345678, i;
     char *p = (char *)&data;
@@ -9,4 +9,6 @@ void main() {
         printf("%X, ", *p);
         p++;
     }
+	
+	return 0;
 }

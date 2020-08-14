@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     char data[5] = {1, 2, 3, 4, 5};
     int result = 0, i;      // 합산에 사용할 result 변수는 0으로 초기화함
@@ -12,4 +12,6 @@ void main() {
     }
     // 합산한 결과값을 출력함
     printf("data 배열의 각 요소의 합은 %d 입니다.\n", result);
+
+    return 0;
 }

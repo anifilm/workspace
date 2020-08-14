@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int int_data;
     float float_data;
@@ -9,4 +9,6 @@ void main() {
     scanf("%f", &float_data);   // 실수 값을 입력 받음
 
     printf("input: %d, %f\n", int_data, float_data);
+	
+	return 0;
 }

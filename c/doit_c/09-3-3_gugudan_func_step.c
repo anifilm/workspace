@@ -8,7 +8,9 @@ void ShowMultiplication(int step) {
     }
 }
 
-void main() {
+int main() {
 
     ShowMultiplication(5);
+	
+	return 0;
 }

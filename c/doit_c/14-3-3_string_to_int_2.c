@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int num = 0, count = 0;
     char num_string[4] = "123";
@@ -11,4 +11,6 @@ void main() {
     }
     // 변환된 정수값을 %d를 사용하여 출력함
     printf("%s -> %d\n", num_string, num);
+	
+	return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int m;
 
@@ -8,4 +8,6 @@ void main() {
         if (m == 6) continue;
         printf("m(%d)\n", m);
     }
+	
+	return 0;
 }

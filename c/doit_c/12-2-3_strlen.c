@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main() {
+int main() {
 
     int data_length;
     char data[10] = {'h' ,'a', 'p', 'p', 'y', 0,};
@@ -9,4 +9,6 @@ void main() {
     data_length = strlen(data);
 
     printf("data length = %d\n", data_length);
+
+	return 0;
 }

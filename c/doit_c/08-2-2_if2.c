@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int score = 92;
     char grade;
@@ -11,4 +11,6 @@ void main() {
     }
 
     printf("작업 종료\n");
+	
+	return 0;
 }

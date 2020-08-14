@@ -8,8 +8,10 @@
 
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int data = 5;
     printf("%d", data);
+	
+	return 0;
 }

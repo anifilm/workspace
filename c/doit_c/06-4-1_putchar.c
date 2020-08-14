@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     putchar('H');
     putchar('i');
     putchar('~');
+	
+	return 0;
 }

@@ -17,7 +17,7 @@ void Swap(int *const pa,  int *const pb) {
     *pb = temp;
 }
 
-void main() {
+int main() {
 
     int start = 96, end = 5;
 
@@ -28,4 +28,6 @@ void main() {
     }
 
     printf("after: start = %d, end = %d\n", start, end);
+
+	return 0;
 }

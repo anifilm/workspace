@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int data1 = 5, data2 = 3;
 
@@ -11,4 +11,6 @@ void main() {
     int result5 = !data1;                       // false
 
     printf("result: %d, %d, %d, %d, %d\n", result1, result2, result3, result4, result5);
+	
+	return 0;
 }

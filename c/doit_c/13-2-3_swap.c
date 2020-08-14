@@ -8,7 +8,7 @@ void Swap(int a,  int b) {
     // 함수내에 전달된 값은 변경 가능 (원본 변경 불가)
 }
 
-void main() {
+int main() {
 
     int start = 96, end = 5;
 
@@ -20,4 +20,6 @@ void main() {
     }
 
     printf("after: start = %d, end = %d\n", start, end);
+	
+	return 0;
 }

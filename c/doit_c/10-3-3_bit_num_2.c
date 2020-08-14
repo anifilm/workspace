@@ -12,7 +12,7 @@ unsigned char GetBit(unsigned char dest_data, unsigned char bit_num) {
     return bit_state;
 }
 
-void main() {
+int main() {
 
     unsigned char lamp_state = 0x75;
     unsigned char bit_state;
@@ -25,4 +25,6 @@ void main() {
         printf("%d", bit_state);
     }
     printf("\n");
+	
+	return 0;
 }

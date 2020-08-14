@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void main() {
+int main() {
 
     char data[12] = {0, 0, 2, 0, 1, 1, 0, 0, 2, 1, 0, 2};
     int i, x, y;
@@ -15,4 +15,6 @@ void main() {
         else if (data[i] == 2) printf(" 흰 돌이 놓여 있습니다.\n");
         else printf("는 돌이 놓여 있지 않습니다.\n");
     }
+	
+	return 0;
 }

@@ -8,8 +8,10 @@
 
 #include <stdio.h>
 
-void main() {
+int main() {
 
     // %c -> char
     printf("65의 ASCII 값은 %c 입니다.", 65);
+	
+	return 0;
 }

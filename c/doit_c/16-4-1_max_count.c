@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAX_COUNT   5   // 최대 입력을 5회로 제한함
 
-void main() {
+int main() {
 
     int num[MAX_COUNT], count = 0, sum = 0, i;
     // 최대 5회까지 입력 받고 중간에 9999를 누르면 종료함
@@ -18,4 +18,6 @@ void main() {
         sum = sum + num[i];               // 입력한 숫자들을 합산함
     }
     printf(" = %d\n", sum);         // 합산한 값을 출력
+
+    return 0;
 }

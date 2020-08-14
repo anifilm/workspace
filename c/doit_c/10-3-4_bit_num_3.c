@@ -13,7 +13,7 @@ unsigned char ModifyBit(unsigned char dest_data, unsigned char bit_num, char val
     return dest_data;
 }
 
-void main() {
+int main() {
 
     unsigned char lamp_state = 0x7F;
     printf("%X -> ", lamp_state);
@@ -23,4 +23,6 @@ void main() {
 
     lamp_state = ModifyBit(lamp_state, 3, 1);
     printf("%X\n", lamp_state);
+	
+	return 0;
 }

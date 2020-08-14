@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int m, n;
 
@@ -10,4 +10,6 @@ void main() {
             printf("m(%d) = n(%d)\n", m, n);
         }
     }
+	
+	return 0;
 }

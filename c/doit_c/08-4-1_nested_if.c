@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int year = 2019, month = 12, day = 31;
     day++;
@@ -16,4 +16,5 @@ void main() {
     }
     printf("Date: %d년 %d월 %d일\n", year, month, day);
 
+    return 0;
 }

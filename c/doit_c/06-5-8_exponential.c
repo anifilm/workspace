@@ -8,9 +8,11 @@
 
 #include <stdio.h>
 
-void main() {
+int main() {
 
     float data = 12.34f;
     // %f 실수 출력, %e 지수 출력, %E 지수 출력
     printf("%f, %e, %E", data, data, data);
+	
+	return 0;
 }

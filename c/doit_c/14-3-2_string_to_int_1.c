@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>     // 문자열 길이를 구하는 strlen 함수를 포함하는 헤더 파일
 
-void main() {
+int main() {
 
     int pos_num = 1, num = 0, i, count;
     char num_string[4] = "123";
@@ -16,4 +16,6 @@ void main() {
     }
     // 변환된 정수값을 %d를 사용하여 출력함
     printf("%s -> %d\n", num_string, num);
+	
+	return 0;
 }

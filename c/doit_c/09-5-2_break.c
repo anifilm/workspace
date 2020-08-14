@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int m, n;
 
@@ -11,4 +11,6 @@ void main() {
         }
         if (m == 5 && n == 1) break;
     }
+	
+	return 0;
 }

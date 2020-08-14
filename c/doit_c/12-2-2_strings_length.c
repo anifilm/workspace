@@ -8,7 +8,7 @@ int GetStringLength(char data[]) {
     return count;
 }
 
-void main() {
+int main() {
 
     int data_length;
     char data[10] = {'h' ,'a', 'p', 'p', 'y', 0,};
@@ -16,4 +16,6 @@ void main() {
     data_length = GetStringLength(data);
 
     printf("data length = %d\n", data_length);
+	
+	return 0;
 }

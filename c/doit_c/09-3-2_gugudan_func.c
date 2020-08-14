@@ -8,7 +8,9 @@ void ShowMultiplication() {
     }
 }
 
-void main() {
+int main() {
 
     ShowMultiplication();
+	
+	return 0;
 }

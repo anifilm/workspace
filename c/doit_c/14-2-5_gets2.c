@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     char input_string[10];
     // 반환값이 NULL이 아니라면 문자열을 입력 받아서 input_string에 저장함
@@ -9,4 +9,6 @@ void main() {
     } else {
         printf("input -> Canceled\n");
     }
+	
+	return 0;
 }

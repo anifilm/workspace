@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>     // char(ASCII)를 int로 변환하는 atoi 함수를 포함하는 헤더 파일
 
-void main() {
+int main() {
 
     int first_num, second_num;
     char first_string[16], second_string[16];
@@ -15,6 +15,8 @@ void main() {
     second_num = atoi(second_string);    // 문자열 -> 정수
     // 정수로 변환된 두 수를 합산한 결과값을 출력
     printf("%d + %d = %d\n", first_num, second_num, first_num + second_num);
+	
+	return 0;
 }
 
 /*

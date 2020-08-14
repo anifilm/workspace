@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int step, i;
 
@@ -10,4 +10,6 @@ void main() {
         }
         printf("\n");
     }
+	
+	return 0;
 }

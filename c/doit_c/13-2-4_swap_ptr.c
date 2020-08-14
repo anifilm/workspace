@@ -8,7 +8,7 @@ void Swap(int *pa,  int *pb) {
     // 각 변수의 주소값에 할당된 원본값을 직접 수정하여 원본값이 변경된다.
 }
 
-void main() {
+int main() {
 
     int start = 96, end = 5;
 
@@ -19,4 +19,6 @@ void main() {
     }
 
     printf("after: start = %d, end = %d\n", start, end);
+
+	return 0;
 }

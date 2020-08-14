@@ -15,7 +15,7 @@ int GetMyString(char buffer[], int limit) {
     return 0;                       // 입력 초과 현상이 발생했음을 알림
 }
 
-void main() {
+int main() {
 
     char temp[10];
     int state;
@@ -24,4 +24,6 @@ void main() {
 
     if (state == 1) printf("input: %s\n", temp);        // 정상 입력
     else printf("input: %s -> out of range\n", temp);   // 입력 범위 초과
+	
+	return 0;
 }

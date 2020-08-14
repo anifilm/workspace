@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int score = 86;
     char grade;
@@ -24,4 +24,6 @@ void main() {
     }
 
     printf("당신의 점수는 %d 점이고 등급은 %c 입니다.", score, grade);
+	
+	return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int data1 = 5, data2 = 3;
 
@@ -10,4 +10,6 @@ void main() {
     int result4 = data1 % data2;    // 나눗셈 (나머지)
 
     printf("result: %d, %d, %d, %d\n", result1, result2, result3, result4);
+	
+	return 0;
 }

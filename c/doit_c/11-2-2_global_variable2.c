@@ -9,8 +9,10 @@ void Sum(int data1, int data2) {
                             // 전역 변수가 아닌 지역 변수 result에 저장
 }
 
-void main() {
+int main() {
 
     Sum(5, 3);
     printf("5 + 3 = %d\n", result);
+	
+	return 0;
 }

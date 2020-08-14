@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 
     int num = 0;
     // 정상적인 나이를 입력할 때까지 반복하기 위해 무한 반복을 사용함
@@ -17,4 +17,6 @@ void main() {
     }
     // 입력된 나이를 확인하기 위해 출력
     printf("your age: %d\n", num);
+	
+	return 0;
 }
