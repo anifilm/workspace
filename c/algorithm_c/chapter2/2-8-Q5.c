@@ -1,4 +1,5 @@
-// 배열 요소를 역순으로 정렬합니다.
+// Q5 오른쪽처럼 배열 요소를 역순으로 정렬하는 과정을 일일이 출력하도록
+// 실습 2-7을 수정한 프로그램을 작성하세요
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,9 +8,22 @@
 
 // 요소 개수가 n인 배열 a의 요소를 역순으로 정렬
 void ary_reverse(int a[], int n) {
-    int i;
-    for (i = 0; i < n / 2; i++)
+    int i, j;
+
+    // 최초 정렬 내용을 출력
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+
+    for (i = 0; i < n / 2; i++) {
+        printf("a[%d]와 a[%d]를 교환합니다.\n", i, n - i - 1);
         swap(int, a[i], a[n - i - 1]);
+        // 교환 이후 정렬 내용을 출력
+        for (j = 0; j < n; j++)
+            printf("%d ", a[j]);
+        printf("\n");
+    }
+    printf("역순 정렬을 종료합니다.\n");
 }
 
 int main(void) {
@@ -28,24 +42,7 @@ int main(void) {
         scanf("%d", &x[i]);
     }
 
-    printf("\n배열 x의 입력 내용 확인\n");
-    printf("{ ");
-    for (i = 0; i < nx; i++)
-        printf("%d ", x[i]);
-    printf("}\n");
-
     ary_reverse(x, nx);     // 배열 x의 요소를 역순으로 정렬
-    printf("\n배열의 요소를 역순으로 정렬 했습니다.\n");
-
-     // for (i = 0; i < nx; i++)
-     //    printf("x[%d] = %d\n", i, x[i]);
-
-    printf("배열 x의 변경 내용 확인\n");
-    printf("{ ");
-    for (i = 0; i < nx; i++)
-        printf("%d ", x[i]);
-    printf("}\n");
-
     free(x);   // 배열 x를 해제
 
     return 0;

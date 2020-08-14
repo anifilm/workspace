@@ -1,14 +1,16 @@
-// 배열 요소의 최대값을 구합니다. (값을 입력합니다)
+// Q2 앞의 문제(실습 2-5)를 수정하여 키의 합계를 구하는 프로그램을 작성하세요.
+// 합계를 구하는 과정은 아래와 같은 함수로 구현하세요.
+// int sumof(const int a[], int n);
 #include <stdio.h>
 #include <stdlib.h>
 
-// 요소 개수가 n인 배열 a의 요소의 최대값을 구합니다.
-int maxof(const int a[], int n) {
+// 요소 개수가 n인 배열 a의 요소의 합계를 구합니다.
+int sumof(const int a[], int n) {
     int i;
-    int max = a[0];     // 최대값
+    int sum = 0;
     for (i = 0; i < n; i++)
-        if (a[i] > max) max = a[i];
-    return max;
+        sum += a[i];
+    return sum;
 }
 
 int main(void) {
@@ -24,7 +26,7 @@ int main(void) {
         printf("height[%d]: ", i);
         scanf("%d", &height[i]);
     }
-    printf("최대값은 %d 입니다.\n", maxof(height, number));
+    printf("합계는 %d 입니다.\n", sumof(height, number));
     free(height);   // 배열 height를 해제
 
     return 0;
