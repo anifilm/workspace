@@ -1,3 +1,4 @@
+// 조건 수식에 따른 if ~ else ~의 단일 명령 문장 실행하기
 #include <stdio.h>
 
 int main() {
@@ -7,6 +8,6 @@ int main() {
     else printf("data는 3보다 작거나 같은 수입니다.\n");
 
     printf("작업 종료\n");
-	
+
 	return 0;
 }

@@ -1,3 +1,4 @@
+// strlen 함수를 사용하여 문자열 길이 출력하기
 #include <stdio.h>
 #include <string.h>
 

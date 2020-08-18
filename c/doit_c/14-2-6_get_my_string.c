@@ -1,3 +1,4 @@
+// 문자열을 입력 받을 때 키 입력 횟수 제한하기
 #include <stdio.h>
 
 int GetMyString(char buffer[], int limit) {
@@ -24,6 +25,6 @@ int main() {
 
     if (state == 1) printf("input: %s\n", temp);        // 정상 입력
     else printf("input: %s -> out of range\n", temp);   // 입력 범위 초과
-	
+
 	return 0;
 }

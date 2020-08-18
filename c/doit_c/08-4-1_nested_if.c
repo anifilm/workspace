@@ -1,3 +1,4 @@
+// 중첩된 if 조건문을 사용해 날짜, 월, 년도 증가 시키기
 #include <stdio.h>
 
 int main() {

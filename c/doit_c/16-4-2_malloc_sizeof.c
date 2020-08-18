@@ -1,7 +1,8 @@
+// 동적 메모리 할당을 사용하여 숫자를 입력 받아 합산하기
 #include <stdio.h>
 #include <malloc.h>
 
-void main() {
+int main() {
 
     int *p_num_list, count = 0, sum = 0, limit = 0, i;
 
@@ -24,4 +25,6 @@ void main() {
     }
     printf(" = %d\n", sum);     // 합산한 값을 출력
     free(p_num_list);       // 사용했던 메모리를 제거함
+
+    return 0;
 }

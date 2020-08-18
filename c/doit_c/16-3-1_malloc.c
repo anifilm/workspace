@@ -1,3 +1,4 @@
+// 동적 메모리 할당을 사용하여 이름 입력 받고 출력하기
 #include <stdio.h>
 #include <malloc.h>     // malloc, free 함수를 사용하기 위해 추가함
 

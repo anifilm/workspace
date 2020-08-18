@@ -1,3 +1,4 @@
+// rewind 함수를 사용하여 표준 입력 버퍼 초기화하기
 #include <stdio.h>
 
 int main() {

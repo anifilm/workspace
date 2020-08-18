@@ -1,3 +1,4 @@
+// 변수의 값을 2진수 형태로 확인하는 예제
 #include <stdio.h>
 
 unsigned char GetBit(unsigned char dest_data, unsigned char bit_num) {
@@ -25,6 +26,6 @@ int main() {
         printf("%d", bit_state);
     }
     printf("\n");
-	
+
 	return 0;
 }

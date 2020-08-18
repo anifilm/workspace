@@ -1,3 +1,4 @@
+// 1차원 배열을 사용하여 바둑판 정보를 저장하고 알려주기
 #include <stdio.h>
 #include <string.h>
 
@@ -15,6 +16,6 @@ int main() {
         else if (data[i] == 2) printf(" 흰 돌이 놓여 있습니다.\n");
         else printf("는 돌이 놓여 있지 않습니다.\n");
     }
-	
+
 	return 0;
 }

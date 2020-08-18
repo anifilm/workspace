@@ -1,3 +1,4 @@
+// 변수의 특정 비트를 1로 만드는 예제
 #include <stdio.h>
 
 unsigned char SetBit(unsigned char dest_data, unsigned char bit_num) {
@@ -13,6 +14,6 @@ int main() {
 
     lamp_state = SetBit(lamp_state, 3);
     printf("%x\n", lamp_state);
-	
+
 	return 0;
 }

@@ -1,3 +1,4 @@
+// 전역 변수와 지역 변수의 이름이 같을 때 문제점 살펴보기
 #include <stdio.h>
 
 int result;     // 전역 변수, 특별한 초기화 값이 없으면 0 으로 초기화
@@ -13,6 +14,6 @@ int main() {
 
     Sum(5, 3);
     printf("5 + 3 = %d\n", result);
-	
+
 	return 0;
 }

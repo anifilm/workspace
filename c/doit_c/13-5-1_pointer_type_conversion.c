@@ -1,3 +1,4 @@
+// int형 변수에 저장된 값을 1바이트 단위로 출력하기
 #include <stdio.h>
 
 int main() {
@@ -9,6 +10,6 @@ int main() {
         printf("%X, ", *p);
         p++;
     }
-	
+
 	return 0;
 }

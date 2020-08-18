@@ -1,3 +1,4 @@
+// break 문을 사용해서 반복문 모두 빠져나오기
 #include <stdio.h>
 
 int main() {
@@ -11,6 +12,6 @@ int main() {
         }
         if (m == 5 && n == 1) break;
     }
-	
+
 	return 0;
 }

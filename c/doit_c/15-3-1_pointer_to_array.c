@@ -1,3 +1,4 @@
+// 포인터를 사용하여 배열의 각 요소에 저장된 값 합산하기
 #include <stdio.h>
 
 int main() {

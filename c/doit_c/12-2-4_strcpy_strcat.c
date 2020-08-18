@@ -1,3 +1,4 @@
+// 두 개의 문자열 합치기
 #include <stdio.h>
 #include <string.h>
 
@@ -10,6 +11,6 @@ int main() {
     strcat(result, "def");  // result 값의 맨 뒤에 "def" 를 추가
 
     printf("%s + \"def\" = %s\n", data, result);
-	
+
 	return 0;
 }

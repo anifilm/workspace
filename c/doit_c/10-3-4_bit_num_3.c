@@ -1,3 +1,4 @@
+// 변수의 특정 비트를 0 또는 1로 변경하는 예제
 #include <stdio.h>
 
 unsigned char ModifyBit(unsigned char dest_data, unsigned char bit_num, char value) {
@@ -23,6 +24,6 @@ int main() {
 
     lamp_state = ModifyBit(lamp_state, 3, 1);
     printf("%X\n", lamp_state);
-	
+
 	return 0;
 }

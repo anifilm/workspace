@@ -1,3 +1,4 @@
+// 조건 수식이 참일 때 복합 명령 문장 실행하기
 #include <stdio.h>
 
 int main() {
@@ -11,6 +12,6 @@ int main() {
     }
 
     printf("작업 종료\n");
-	
+
 	return 0;
 }

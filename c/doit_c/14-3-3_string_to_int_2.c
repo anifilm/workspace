@@ -1,3 +1,4 @@
+// 길이 제한 없이 문자열 형식의 숫자를 정수로 변환하기 (2)
 #include <stdio.h>
 
 int main() {
@@ -11,6 +12,6 @@ int main() {
     }
     // 변환된 정수값을 %d를 사용하여 출력함
     printf("%s -> %d\n", num_string, num);
-	
+
 	return 0;
 }

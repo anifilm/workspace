@@ -1,3 +1,4 @@
+// scanf 함수를 사용하여 나이 입력 받기 (1)
 #include <stdio.h>
 
 int main() {
@@ -17,6 +18,6 @@ int main() {
     }
     // 입력된 나이를 확인하기 위해 출력
     printf("your age: %d\n", num);
-	
+
 	return 0;
 }

@@ -1,3 +1,4 @@
+// for 반복문과 함수를 사용하여 구구단 2단 출력하기
 #include <stdio.h>
 
 void ShowMultiplication() {
@@ -11,6 +12,6 @@ void ShowMultiplication() {
 int main() {
 
     ShowMultiplication();
-	
+
 	return 0;
 }

@@ -1,3 +1,4 @@
+// break 문을 사용해서 하나의 반복문 빠져나오기
 #include <stdio.h>
 
 int main() {
@@ -10,6 +11,6 @@ int main() {
             printf("m(%d) = n(%d)\n", m, n);
         }
     }
-	
+
 	return 0;
 }

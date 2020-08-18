@@ -1,3 +1,4 @@
+// for 반복문을 중첩 사용하여 구구단 전체를 출력하기
 #include <stdio.h>
 
 int main() {
@@ -10,6 +11,6 @@ int main() {
         }
         printf("\n");
     }
-	
+
 	return 0;
 }

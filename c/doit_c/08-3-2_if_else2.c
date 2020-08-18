@@ -1,3 +1,4 @@
+// 조건 수식에 따른 if ~ else ~의 복합 명령 문장 실행하기
 #include <stdio.h>
 
 int main() {

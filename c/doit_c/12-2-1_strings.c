@@ -1,3 +1,4 @@
+// 배열에 문자열을 저장하고 출력하기
 #include <stdio.h>
 
 int main() {
@@ -7,6 +8,6 @@ int main() {
 
     printf("%s\n", data);
     printf("%s\n", ment);
-	
+
 	return 0;
 }

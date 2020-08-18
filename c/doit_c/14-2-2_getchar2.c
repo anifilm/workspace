@@ -1,3 +1,4 @@
+// getchar 함수를 사용하여 문자 한 개씩 두 번 입력 받기
 #include <stdio.h>
 
 int main() {

@@ -1,3 +1,4 @@
+// gets 함수로 문자열을 입력 받을 때 입력 취소까지 처리하기
 #include <stdio.h>
 
 int main() {
@@ -9,6 +10,6 @@ int main() {
     } else {
         printf("input -> Canceled\n");
     }
-	
+
 	return 0;
 }

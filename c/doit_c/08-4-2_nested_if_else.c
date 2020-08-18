@@ -1,3 +1,4 @@
+// 중첩된 if ~ else ~문을 사용해 점수에 따른 등급 지정하기
 #include <stdio.h>
 
 int main() {
@@ -24,6 +25,6 @@ int main() {
     }
 
     printf("당신의 점수는 %d 점이고 등급은 %c 입니다.", score, grade);
-	
+
 	return 0;
 }

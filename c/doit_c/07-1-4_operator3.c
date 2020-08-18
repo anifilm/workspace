@@ -1,3 +1,4 @@
+// 논리 연산자를 사용하여 연산하기
 #include <stdio.h>
 
 int main() {
@@ -11,6 +12,6 @@ int main() {
     int result5 = !data1;                       // false
 
     printf("result: %d, %d, %d, %d, %d\n", result1, result2, result3, result4, result5);
-	
+
 	return 0;
 }

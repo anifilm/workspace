@@ -1,3 +1,4 @@
+// getchar 함수를 사용하여 키보드에서 문자 한 개 입력 받기
 #include <stdio.h>
 
 int main() {
@@ -7,6 +8,6 @@ int main() {
     input_data = getchar();
     // 입력 받은 문자를 출력함
     printf("input: %c\n", input_data);
-	
+
 	return 0;
 }

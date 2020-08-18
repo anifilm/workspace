@@ -1,3 +1,4 @@
+// 배열의 각 요소에 저장된 값 합하기
 #include <stdio.h>
 
 int main() {

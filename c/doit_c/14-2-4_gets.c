@@ -1,3 +1,4 @@
+// gets 함수로 문자열 입력 받기
 #include <stdio.h>
 
 int main() {
@@ -6,6 +7,6 @@ int main() {
     char input_string[10];
     gets(input_string);     // 문자열을 입력 받아 input_string에 저장함
     printf("input: %s\n", input_string);    // 입력 받은 문자열을 출력함
-	
+
 	return 0;
 }

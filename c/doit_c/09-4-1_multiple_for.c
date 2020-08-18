@@ -1,3 +1,4 @@
+// for 반복문을 사용한 중첩 반복문 예제
 #include <stdio.h>
 
 int main() {
@@ -9,6 +10,6 @@ int main() {
             printf("m(%d) = n(%d)\n", m, n);
         }
     }
-	
+
 	return 0;
 }

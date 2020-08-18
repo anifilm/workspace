@@ -1,3 +1,4 @@
+// gets 함수를 사용하여 두 개의 숫자를 입력 받아 합산하기
 #include <stdio.h>
 
 int ArrayToInterger(char string[]) {
@@ -24,6 +25,6 @@ int main() {
     second_num = ArrayToInterger(second_string);    // 문자열 -> 정수
     // 정수로 변환된 두 수를 합산한 결과값을 출력
     printf("%d + %d = %d\n", first_num, second_num, first_num + second_num);
-	
+
 	return 0;
 }
