@@ -1,6 +1,6 @@
 // 정적 메모리 할당을 사용하여 숫자를 입력 받아 합산하기
 #include <stdio.h>
-#define MAX_COUNT   5   // 최대 입력을 5회로 제한함
+#define MAX_COUNT 5     // 최대 입력을 5회로 제한함
 
 int main() {
 
