@@ -11,7 +11,7 @@ int main() {
         }
     }
 
-    exit_pos :
+    exit_pos:
     printf("< end >\n");
 
 	return 0;
