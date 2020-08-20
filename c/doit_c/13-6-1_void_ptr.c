@@ -16,7 +16,7 @@ int main() {
 
     int data = 0x12345678;
 
-    printf("%X\n", GetData(&data, 2));      // data 변수에서 2바이트 크기만 출력
+    printf("%x\n", GetData(&data, 2));      // data 변수에서 2바이트 크기만 출력
 
 	return 0;
 }

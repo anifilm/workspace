@@ -7,8 +7,7 @@ int main() {
     char *p = (char *)&data;
 
     for (i = 0; i < 4; i++) {
-        printf("%X, ", *p);
-        p++;
+        printf("%x, ", *(p + i));
     }
 
 	return 0;

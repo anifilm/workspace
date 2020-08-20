@@ -10,12 +10,11 @@ int main() {
     int i, j, temp;
 
     for (i = 0; i < 7; i++) {
-        for (j = 0; j < 7; j++) {
-            if (i == j) continue;
-            else if (data[i] < data[j]) {
-                temp = data[j];
-                data[j] = data[i];
-                data[i] = temp;
+        for (j = i + 1; j < 7; j++) {
+            if (data[i] > data[j]) {
+                temp = data[i];
+                data[i] = data[j];
+                data[j] = temp;
             }
         }
     }
