@@ -11,6 +11,8 @@ int main() {
 
     printf("첫번째 문자열 입력: ");
     fgets(first_string, 10, stdin);
+    first_string[strlen(first_string) - 1] = '\0';  // 문자열 마지막의 개행문자 제거
+
     printf("두번째 문자열 입력: ");
     fgets(second_string, 10, stdin);
 
