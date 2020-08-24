@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:math' show Random;
+
 main() async {
   print('Compute π using the Monte Carlo method.');
   await for (var estimate in computePi().take(100)) {
     print('π ≅ $estimate');
   }
 }
+
 /// Generates a stream of increasingly accurate estimates of π.
 Stream<double> computePi({int batch: 100000}) async* {
   var total = 0;
@@ -24,12 +26,14 @@ Stream<double> computePi({int batch: 100000}) async* {
     yield ratio * 4;
   }
 }
+
 Iterable<Point> generateRandom([int seed]) sync* {
   final random = Random(seed);
   while (true) {
     yield Point(random.nextDouble(), random.nextDouble());
   }
 }
+
 class Point {
   final double x, y;
   const Point(this.x, this.y);

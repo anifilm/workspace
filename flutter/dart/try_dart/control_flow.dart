@@ -6,6 +6,7 @@ isEven(int x) {
     return false;
   }
 }
+
 List<int> getEvenNumbers(Iterable<int> numbers) {
   var evenNumbers = <int>[];
   // A for-in loop.
@@ -15,6 +16,7 @@ List<int> getEvenNumbers(Iterable<int> numbers) {
   }
   return evenNumbers;
 }
+
 main() {
   var numbers = List.generate(10, (i) => i);
   print(getEvenNumbers(numbers));
