@@ -17,16 +17,12 @@ int main() {
 }
 
 char stradd(char *dest, char *src) {
-
     while (*dest) {
-
         dest++;
     }
 
 	while (*src) {
-
         *dest = *src;
-
         src++;
         dest++;
 	}

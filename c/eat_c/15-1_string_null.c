@@ -8,7 +8,7 @@ int main()
 
 	char not_null = '0';
 
-	printf("NULL의 정수(아스키)값: %d, %d, %s\n", null_1, null_2, null_3); 
+	printf("NULL의 정수(아스키)값: %d, %d, %s\n", null_1, null_2, null_3);
 	printf("'0'의 정수(아스키)값: %d\n", not_null);
 
 	return 0;
