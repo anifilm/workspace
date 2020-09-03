@@ -34,12 +34,12 @@ void Pop(short *ap_data_list, short *ap_top) {
 }
 
 void PrintData(short *ap_data_list, short a_top) {
-    printf("----[ Stack Data ]----\n");
+    printf("\n----[ Stack Data ]----\n");
 
     for (int i = 0; i <= a_top; i++) {
         printf(" %2d번째 = %hd\n", i + 1, ap_data_list[i]);
     }
-    printf("----------------------\n\n");
+    printf("----------------------\n");
 }
 
 int main() {

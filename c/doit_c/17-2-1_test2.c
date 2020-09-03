@@ -3,7 +3,8 @@
 int main() {
 
     short **pp, data = 3;
-    long long my_ptr = (long long)&data;
+    // int my_ptr = (int)&data;
+    long long my_ptr = (long long)&data;    // 64비트 운영체제 기준, 메모리 주소 8바이트 저장으로 long long 타입 선언
     pp = (short **)&my_ptr;
 
     printf("data의 주소값: %p, 저장된 값: %d\n", &data, data);
