@@ -1,11 +1,12 @@
+// Section 5: 34. (Challenge) Print the Area of a Rectangle
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
-	
+int main() {
+
 	// declaring variables
-	double width = atoi(argv[1]);
-	double height = atoi(argv[2]);
+	double width = 34.2;
+	double height = 65.5;
 	double perimeter = 0.0;
 	double area = 0.0;
 

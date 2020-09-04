@@ -1,3 +1,4 @@
+// Section 9: 69. Local and Global Variables
 #include <stdio.h>
 
 int function();
@@ -16,7 +17,7 @@ int main() {
 }
 
 int function() {
-	
+
 	static int Function_Call = 0;
 
 	Function_Call++;
@@ -27,7 +28,7 @@ int function() {
 }
 
 int function2() {
-	
+
 	static int Function_Call = 0;
 
 	Function_Call++;

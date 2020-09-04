@@ -1,8 +1,9 @@
+// Section 5: 36. (Challenge) Create and use an enum type
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
+
     enum company {
     	GOOGLE,
     	FACEBOOK,
