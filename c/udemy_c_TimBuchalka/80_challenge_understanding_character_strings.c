@@ -29,7 +29,7 @@ int stringLength(const char string[]) {
     int count = 0;
 
     while (string[count] != '\0')
-        ++count;
+        count++;
 
     return count;
 }

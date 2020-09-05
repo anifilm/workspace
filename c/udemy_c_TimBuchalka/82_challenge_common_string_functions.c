@@ -9,7 +9,7 @@ int main() {
     char name[25][50], temp[25];
     int l, i, n, j;
 
-    printf("\n\nPrint individual characters of string in reverse order :\n");
+    printf("\nPrint individual characters of string in reverse order: \n");
     printf("----------------------------------------------------------\n");
     printf("Input the string: ");
     scanf("%s", str);
@@ -18,9 +18,8 @@ int main() {
 
     printf("The characters of the string in reverse are: \n");
 
-    for (i = l; i >= 0; i--) {
+    for (i = l; i >= 0; i--)
         printf("%c", str[i]);
-    }
 
     printf("\n");
     printf("----------------------------------------------------------");
@@ -34,9 +33,7 @@ int main() {
     printf("Input string %d: \n", n);
 
     for (i = 0; i < n; i++)
-    {
         scanf("%s", name[i]);
-    }
 
     for (i = 1; i <= n; i++)
         for (j = 0; j <= n - i; j++)
