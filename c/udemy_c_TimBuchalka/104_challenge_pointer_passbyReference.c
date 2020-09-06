@@ -1,3 +1,4 @@
+// Section 12 : 104. (Challenge) Using Pointers as parameters
 #include <stdio.h>
 #include <stdlib.h>
 

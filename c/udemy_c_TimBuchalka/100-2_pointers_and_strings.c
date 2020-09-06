@@ -1,7 +1,8 @@
+// Section 12 : 100. Pointers and String
+// Example optimized
 #include <stdio.h>
 
 void copyString(char *to, char *from) {
-
 	while(*from)	// the null character is equal to the value 0, so will jump out then
 		*to++ = *from++;
 
