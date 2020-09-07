@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void square(int* const x);
+void square(int *const x);
 
 int main() {
 
@@ -14,7 +14,7 @@ int main() {
 	return 0;
 }
 
-void square(int* const x) {
+void square(int *const x) {
 
 	*x = (*x) * (*x);
 }

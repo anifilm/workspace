@@ -2,18 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
+
    int size;
    char *text = NULL;
 
    printf("Enter limit of the text: \n");
    scanf("%d", &size);
 
-   text = (char *) malloc(size * sizeof(char));
+   text = (char *) malloc(sizeof(char) * size);
 
-   if (text != NULL)
-   {
+   if (text != NULL) {
        printf("Enter some text: \n");
        scanf(" ");
        gets(text);
@@ -22,6 +21,6 @@ int main()
    }
 
    free(text);
-   text = NULL;
+
    return 0;
 }
