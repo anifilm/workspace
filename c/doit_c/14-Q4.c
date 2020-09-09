@@ -49,7 +49,7 @@ int main() {
 
     // 등수 계산 (평균 큰 순서대로 재정렬)
     for (i = 0; i < 3; i++) {
-        for (j = i+1; j < 3; j++) {
+        for (j = i + 1; j < 3; j++) {
             if (avg[i] < avg[j]) {
                 tmp = grade[i];
                 grade[i] = grade[j];

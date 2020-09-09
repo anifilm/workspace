@@ -10,7 +10,8 @@ typedef struct People {
 } Person;
 
 int AddFriend(Person *p_friend, int count) {
-    if (count < MAX_COUNT) {    // 입력 가능하 최대 수를 넘었는지 체크
+    if (count < MAX_COUNT) {    // 입력 가능한 최대 수를 넘었는지 체크
+        p_friend = p_friend + count;   // friends 배열의 count 위치로 이동함
         printf("\n새로운 친구 정보를 입력하세요\n");
         printf("1. 이름: ");
         scanf("%s", p_friend->name);         // 구조체의 name 요소에 이름을 입력
@@ -21,12 +22,15 @@ int AddFriend(Person *p_friend, int count) {
         printf("4. 몸무게: ");
         scanf("%f", &p_friend->weight);      // 구조체의 name 요소에 몸무게를 입력
         printf("입력을 완료했습니다.\n\n");
+
         return 1;   // 친구 추가 성공시 1을 반환
+
     } else {
         // 입력 가능한 최대 수를 넘었을 때 오류를 출력
         printf("최대 인원을 초과하여 입력을 할 수 없습니다.\n");
         printf("최대 %d명 까지만 관리 가능합니다.\n\n", MAX_COUNT);
     }
+
     return 0;       // 친구 추가 실패
 }
 

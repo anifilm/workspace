@@ -10,7 +10,7 @@
 void Push(short *ap_data_list, short *ap_top) {
     // 스택이 꽉 차서 더 이상 데이터를 저장할 수 없는 경우
     if (*ap_top >= MAX_DATA_COUNT - 1) {
-        printf("스텍에 데이터를 Push할 공간이 없습니다.\n");
+        printf("스택에 데이터를 Push할 공간이 없습니다.\n");
         return;
     }
 
