@@ -8,95 +8,106 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#define MAX_COUNT 5         // 등록 가능한 최대 학생수
-
 typedef struct grade {
-    char name[14];                                  // 이름
-    unsigned short int score1, score2, score3;      // 국어, 영어, 수학 점수
-    unsigned short int sum, avg, grade;             // 총점, 평균, 등수
+    unsigned short score1, score2, score3;      // 국어, 영어, 수학 점수
+    unsigned short sum, avg;                    // 총점, 평균, 등수
+    char name[14];                              // 이름
+    struct grade *p_next;
 } Students;
 
-int AddStudent(Students *p_student, int count) {
+void AddStudent(Students **pp_start, Students **pp_end, unsigned short *ap_count) {
     // 학생에 대한 성적 정보 입력
-    if (count < MAX_COUNT) {    // 입력 가능한 최대 수를 넘었는지 체크
-        p_student = p_student + count;   // student 배열의 count 위치로 이동함
-        printf("%d 번째 학생 이름: ", count + 1);
-        scanf("%s", p_student->name);
+    // 새 노드를 할당
+    Students *p_node = (Students *)malloc(sizeof(Students)), *p_temp_node, *p_prev_node;
 
-        do {
-            printf("국어 점수: ");
-            scanf("%d", &p_student->score1);
-            if (p_student->score1 > 100) printf("다시 입력하세요.\n");
-        } while (p_student->score1 > 100);
+    printf("%d 번째 학생 이름: ", *ap_count + 1);
+    scanf("%s", p_node->name);
 
-        do {
-            printf("영어 점수: ");
-            scanf("%d", &p_student->score2);
-            if (p_student->score2 > 100) printf("다시 입력하세요.\n");
-        } while (p_student->score2 > 100);
+    do {
+        printf("국어 점수: ");
+        scanf("%d", &p_node->score1);
+        if (p_node->score1 > 100) printf("다시 입력하세요.\n");
+    } while (p_node->score1 > 100);
 
-        do {
-            printf("수학 점수: ");
-            scanf("%d", &p_student->score3);
-            if (p_student->score3 > 100) printf("다시 입력하세요.\n");
-        } while (p_student->score3 > 100);
+    do {
+        printf("영어 점수: ");
+        scanf("%d", &p_node->score2);
+        if (p_node->score2 > 100) printf("다시 입력하세요.\n");
+    } while (p_node->score2 > 100);
 
-        putchar('\n');
+    do {
+        printf("수학 점수: ");
+        scanf("%d", &p_node->score3);
+        if (p_node->score3 > 100) printf("다시 입력하세요.\n");
+    } while (p_node->score3 > 100);
 
-        // 총점 평균 계산
-        p_student->sum = p_student->score1 + p_student->score2 + p_student->score3;
-        p_student->avg = p_student->sum / 3;
+    putchar('\n');
 
-        // 등수를 계산
-        // TODO 함수 구성
-        p_student->grade = 1;
+    // 총점 평균 계산
+    p_node->sum = p_node->score1 + p_node->score2 + p_node->score3;
+    p_node->avg = p_node->sum / 3;
 
-        return 1;   // 성적 추가 성공시 1을 반환
+    p_temp_node = *pp_start;
+    p_prev_node = NULL;
 
-    } else {
-        // 입력 가능한 최대 수를 넘었을 때 오류를 출력
-        printf("최대 인원을 초과하여 입력을 할 수 없습니다.\n");
-        printf("최대 %d명 까지만 관리 가능합니다.\n\n", MAX_COUNT);
+    // 등수로 재정렬
+    while (p_temp_node != NULL && p_node->sum < p_temp_node->sum) {
+        p_prev_node = p_temp_node;
+        p_temp_node = p_temp_node->p_next;
     }
 
-    return 0;       // 성적 추가 실패
+    if (*pp_start == NULL) {
+        *pp_start = p_node;
+        *pp_end = *pp_start;
+        (*pp_end)->p_next = NULL;
+    } else if (p_temp_node == *pp_start) {
+        p_node->p_next = *pp_start;
+        *pp_start = p_node;
+    } else if (p_temp_node == NULL) {
+        (*pp_end)->p_next = p_node;
+        *pp_end = (*pp_end)->p_next;
+        (*pp_end)->p_next = NULL;
+    } else {
+        p_node->p_next = p_prev_node->p_next;
+        p_prev_node->p_next = p_node;
+    }
+
+    (*ap_count)++;
 }
 
-void ShowStudentGrade(Students *p_student, int count) {
-    int i;
+void ShowStudentGrade(Students **pp_start) {
+    // 정보 출력 (등수 순서로)
+    printf("--------------------------------\n");
+    printf(" 이름   국어 영어 수학  총점  평균 등수\n");
+    printf("--------------------------------\n");
 
-    // int tmp, grade[count] = {1, 2, 3, };
+    Students *p_node = *pp_start;
+    char rank = 1;
 
-    // 등수 계산 (평균 큰 순서대로 재정렬)
-    // for (i = 0; i < 3; i++) {
-    //     for (j = i + 1; j < 3; j++) {
-    //         if (p_student->avg < (p_student + 1)->avg) {
-    //             tmp = grade[i];
-    //             grade[i] = grade[j];
-    //             grade[j] = tmp;
-    //         }
-    //     }
-    // }
+    while (p_node != NULL) {
+        printf("%s  %3d %3d %3d  %4d %3d %2d등\n",
+        p_node->name, p_node->score1, p_node->score2, p_node->score3,
+        p_node->sum, p_node->avg, rank);
 
-    if (count > 0) {        // 등록된 학생의 성적 정보가 있으면 그 수만큼 반복하면서 성적 정보를 출력
-        // 정보 출력 (등수 순서로)
-        printf("--------------------------------\n");
-        printf(" 이름   국어 영어 수학  총점  평균 등수\n");
-        printf("--------------------------------\n");
-        for (i = 0; i < count; i++) {
-            printf("%s  %3d %3d %3d  %4d %3d %2d등\n",
-            p_student->name, p_student->score1, p_student->score2, p_student->score3, p_student->sum, p_student->avg, p_student->grade);
-            p_student++;    // 다음 위치에 있는 학생 정보로 주소를 이동
-        }
-    } else {                // 등록된 학생의 성적 정보가 없으면 오류를 출력
-        printf("\n등록된 학생의 성적 정보가 없습니다.\n");
+        p_node = p_node->p_next;
+        rank++;
+    }
+}
+
+void DeleteAllGrade(Students *p_start) {
+    Students *p_node;
+
+    while (p_start != NULL) {
+        p_node = p_start;
+        p_start = p_start->p_next;
+        free(p_node);
     }
 }
 
 int main() {
 
-    Students student[MAX_COUNT];        // 성적 정보를 저장할 학생 배열
-    int count = 0, num;                 // count는 성적을 등록한 학생수
+    Students *p_start = NULL, *p_end = NULL;
+    unsigned short count = 0, menu;  // count는 성적을 등록한 학생수
 
     while (1) {     // 무한루프, 사용자가 2을 누르면 break문으로 종료
         // 메뉴를 화면에 출력
@@ -107,21 +118,23 @@ int main() {
         printf("3. 종료\n");
         printf("===============\n");
         printf("선택 (1 ~ 3): ");
-        scanf("%d", &num);      // 사용자에게 번호를 입력 받음
+        scanf("%hd", &menu);         // 사용자에게 번호를 입력 받음
 
         putchar('\n');
 
-        if (num == 1) {             // 1번, 성적 입력 선택
-            if (1 == AddStudent(student, count)) count++;
-        } else if (num == 2) {      // 2번, 성적 확인 선택
-            ShowStudentGrade(student, count);
-        } else if (num == 3) {      // 3번 반복문을 빠져나가 종료
+        if (menu == 1) {            // 1번, 성적 입력 선택
+            AddStudent(&p_start, &p_end, &count);
+        } else if (menu == 2) {     // 2번, 성적 확인 선택
+            ShowStudentGrade(&p_start);
+        } else if (menu == 3) {     // 3번 반복문을 빠져나가 종료
             break;
         } else {
             // 번호가 유효하지 않은 경우에 오류 메시지를 출력
             printf("1 ~ 3 번호만 선택할 수 있습니다.\n");
         }
     }
+
+    DeleteAllGrade(p_start);
 
     return 0;
 }
