@@ -9,3 +9,16 @@ int main() {
 
 	return 0;
 }
+
+/*
+
+비트 연산자          의미
+
+    &           bitwise AND
+    |           bitwise OR
+    ^           bitwise XOR
+    ~           bitwise NOT
+    <<          bitwise LEFT SHIFT
+    >>          bitwise RIGHT SHIFT
+
+*/
