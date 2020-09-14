@@ -9,7 +9,7 @@ int main() {
     printf("Enter three integers: ");
     scanf("%d %d %d", &first, &second, &third);
 
-    printf("The minimum is %d.\n", get_min(first, second, third));
+    printf("The minimum is %d\n", get_min(first, second, third));
 
     return 0;
 }
