@@ -5,13 +5,13 @@ int main() {
 
     int first_num, second_num;
 
-    printf("Enter dividend: \n");
+    printf("Enter dividend: ");
     scanf("%d", &first_num);
 
-    printf("Enter divisor: \n");
+    printf("Enter divisor: ");
     scanf("%d", &second_num);
 
     printf("Quotient is %d. Remainder is %d.\n", first_num / second_num, first_num % second_num);
 
-	return 0;
+    return 0;
 }

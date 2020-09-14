@@ -8,11 +8,11 @@ int main() {
 
     int c, f;
 
-    printf("Enter degrees in Celius: \n");
+    printf("Enter degrees in Celius: ");
     scanf("%d", &c);
 
     f = (c * 9 / 5) + 32;
     printf("%d degrees in Celcius is %d degrees in Fahrenheit.\n", c, f);
 
-	return 0;
+    return 0;
 }

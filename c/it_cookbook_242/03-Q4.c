@@ -5,7 +5,7 @@ int main() {
 
     int sec, hour, min;
 
-    printf("Enter seconds: \n");
+    printf("Enter seconds: ");
     scanf("%d", &sec);
 
     hour = (sec / 60) / 60;
@@ -13,5 +13,5 @@ int main() {
     sec = sec % 60;
     printf("It is %d hours, %d minutes, %d seconds.\n", hour, min, sec);
 
-	return 0;
+    return 0;
 }

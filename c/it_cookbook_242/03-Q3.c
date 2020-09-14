@@ -9,11 +9,11 @@ int main() {
     int a, b, c;
     double avg;
 
-    printf("Enter three intergers: \n");
+    printf("Enter three intergers: ");
     scanf("%d %d %d", &a, &b, &c);
 
     avg = (double)(a + b + c) / 3;
     printf("The average of %d, %d, %d is %lf.\n", a, b, c, avg);
 
-	return 0;
+    return 0;
 }

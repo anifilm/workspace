@@ -7,12 +7,12 @@ int main() {
 
     int num;
 
-    printf("Enter natural number: \n");
+    printf("Enter natural number: ");
     scanf("%d", &num);
 
     printf("%d\n", (num % 5 == 0) || (num % 6 == 0));
     printf("%d\n", (num % 5) == 0 && (num % 6) == 0);
     printf("%d\n", (num % 5) != 0 && (num % 6) != 0);
 
-	return 0;
+    return 0;
 }
