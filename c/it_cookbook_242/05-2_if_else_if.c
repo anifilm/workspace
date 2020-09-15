@@ -13,7 +13,7 @@ void compare(int n1, int n2) {
 int main() {
 
     int first, second;
-    printf("Enter two integers: \n");
+    printf("Enter two integers: ");
     scanf("%d %d", &first, &second);
 
     compare(first, second);

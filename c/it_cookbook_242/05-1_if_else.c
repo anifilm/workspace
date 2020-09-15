@@ -11,7 +11,7 @@ void odd_even(int n) {
 int main() {
 
     int num;
-    printf("Enter an integer: \n");
+    printf("Enter an integer: ");
     scanf("%d", &num);
 
     odd_even(num);
