@@ -12,12 +12,12 @@ int abs(int num) {
 
 int main() {
 
-    int num;
+    int number;
 
     printf("Enter an interger: ");
-    scanf("%d", &num);
+    scanf("%d", &number);
 
-    printf("The absolute value is %d\n", abs(num));
+    printf("The absolute value is %d\n", abs(number));
 
     return 0;
 }

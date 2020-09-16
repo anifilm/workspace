@@ -16,12 +16,12 @@ double std_deviation(double a, double b, double c);
 
 int main() {
 
-    double a, b, c;
+    double first, second, third;
 
     printf("Enter a three real numbers: ");
-    scanf("%lf %lf %lf", &a, &b, &c);
+    scanf("%lf %lf %lf", &first, &second, &third);
 
-    printf("Standard deviation is %lf\n", std_deviation(a, b, c));
+    printf("Standard deviation is %lf\n", std_deviation(first, second, third));
 
     return 0;
 }

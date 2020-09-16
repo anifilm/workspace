@@ -11,8 +11,8 @@
 // > Your BMI is 23.57. It is normal.
 #include <stdio.h>
 
-double calc_bmi(double height, double weight) {
-    return weight / ((height * 0.01) * (height * 0.01));
+double calc_bmi(double h, double w) {
+    return w / ((h * 0.01) * (h * 0.01));
 }
 
 void view_bmi_res(double bmi) {
@@ -27,15 +27,15 @@ void view_bmi_res(double bmi) {
 
 int main() {
 
-    double h, w;
+    double height, weight;
 
     printf("Enter your height: ");
-    scanf("%lf", &h);
+    scanf("%lf", &height);
 
     printf("Enter your weight: ");
-    scanf("%lf", &w);
+    scanf("%lf", &weight);
 
-    view_bmi_res(calc_bmi(h, w));
+    view_bmi_res(calc_bmi(height, weight));
 
     return 0;
 }

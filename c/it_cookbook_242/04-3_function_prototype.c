@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int square_add(int, int);
+int square_add(int f, int s);
 
 int main() {
 

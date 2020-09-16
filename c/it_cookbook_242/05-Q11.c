@@ -24,7 +24,7 @@ int main() {
     if (leap_year(year) == 1)
         printf("%d is a leap year.\n", year);
     else
-        printf("%d is not a leap year.\n", year);
+        printf("%d is NOT a leap year.\n", year);
 
     return 0;
 }

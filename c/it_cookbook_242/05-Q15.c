@@ -10,12 +10,12 @@
 // > 지불해야 할 총액은 32500원 입니다.
 #include <stdio.h>
 
-int calc_shipping_price(int price, int amount, int exp) {
+int calc_shipping_price(int p, int a, int e) {
     int ship_price;
-    int total = price * amount;
+    int total = p * a;
 
     if (total > 20000)
-        if (exp == 1)
+        if (e == 1)
             ship_price = 1500 + 1000;
         else
             ship_price = 1500;
@@ -27,18 +27,18 @@ int calc_shipping_price(int price, int amount, int exp) {
 
 int main() {
 
-    int shipping_p, shipping_amt, is_exp, total_cost;
+    int price, amount, is_exp, total_cost;
 
     printf("단가를 입력하세요: ");
-    scanf("%d", &shipping_p);
+    scanf("%d", &price);
 
     printf("개수를 입력하세요: ");
-    scanf("%d", &shipping_amt);
+    scanf("%d", &amount);
 
     printf("급행 여부를 입력하세요. (1: 급행, 0: 아님): ");
     scanf("%d", &is_exp);
 
-    total_cost = calc_shipping_price(shipping_p, shipping_amt, is_exp);
+    total_cost = calc_shipping_price(price, amount, is_exp);
 
     printf("\n지불해야 할 총액은 %d원 입니다.\n", total_cost);
 

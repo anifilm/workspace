@@ -19,5 +19,5 @@ int main() {
 }
 
 char to_upper_case(char ch) {
-    return ch - 32;
+    return ch -= 'a' - 'A';
 }

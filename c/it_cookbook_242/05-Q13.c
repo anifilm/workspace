@@ -13,30 +13,30 @@
 #include <stdio.h>
 #define TAX 1.137
 
-int calc_pay(int use_amount, int season) {
+int calc_pay(int a, int s) {
     double pay_val;
-    if (use_amount <= 200)
-        pay_val = use_amount * 93.3 + 910;
-    else if (use_amount > 200 && use_amount <= 400)
-        pay_val = use_amount * 187.9 + 1600;
-    else if (use_amount > 401 && use_amount <= 1000)
-        pay_val = use_amount * 280.6 + 7300;
-    else if (use_amount > 1000 && season == 1)
-        pay_val = use_amount * 709.5 + 7300;
+    if (a <= 200)
+        pay_val = a * 93.3 + 910;
+    else if (a > 200 && a <= 400)
+        pay_val = a * 187.9 + 1600;
+    else if (a > 401 && a <= 1000)
+        pay_val = a * 280.6 + 7300;
+    else if (a > 1000 && s == 1)
+        pay_val = a * 709.5 + 7300;
     return (int)(pay_val * TAX);
 }
 
 int main() {
 
-    int use_amt, se;
+    int amount, season;
 
     printf("Enter monthly amount in Kwh: ");
-    scanf("%d", &use_amt);
+    scanf("%d", &amount);
 
     printf("Enter 1 if summer or winter, 0 of not: ");
-    scanf("%d", &se);
+    scanf("%d", &season);
 
-    printf("Including tax, you pay %d won.", calc_pay(use_amt, se));
+    printf("Including tax, you pay %d won.", calc_pay(amount, season));
 
     return 0;
 }
