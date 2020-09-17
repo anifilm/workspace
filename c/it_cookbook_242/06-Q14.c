@@ -3,14 +3,14 @@
 // 힌트 주어진 수를 10으로 나눈 나머지를 출력한다. 10으로 나눈 몫에 대해 이 과정을 반복하되
 // 몫이 0이면 빠져나온다.
 // void reverse_it(int num);
-// > Enter a natural number;
-// > 1267
+// > Enter a natural number:
+// > 1267 ([Enter])
 // > 7621
-// > Enter a natural number;
-// > 12345
+// > Enter a natural number:
+// > 12345 ([Enter])
 // > 54321
-// > Enter a natural number;
-// > 0
+// > Enter a natural number:
+// > 0 ([Enter])
 #include <stdio.h>
 
 void reverse_it(int num) {
