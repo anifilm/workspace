@@ -9,6 +9,7 @@
 #define false 0
 
 int is_prime(int n, int half) {
+    // TODO 재귀호출로 변경 필요
     if (n == 1)
         return 0;
     else {

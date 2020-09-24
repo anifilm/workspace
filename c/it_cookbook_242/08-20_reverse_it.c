@@ -9,7 +9,6 @@ void reverse_it() {
         reverse_it();
         printf("%c", ch);
     }
-
 }
 
 int main() {
