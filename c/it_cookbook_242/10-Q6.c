@@ -15,19 +15,15 @@ void reverse(char s[], int last) {
 
 int main() {
 
-    char ch[100];
-    int i, count;
+    char ch, strings[100];
+    int i = 0;
 
     printf("Enter a string.\n");
-    scanf("%s", ch);
-
-    for (i = 0; ; i++) {
-        if (ch[i] == '\0') {
-            count = i;
-            break;
-        }
+    while ((ch = getchar()) != '\n') {
+        strings[i] = ch;
+        i++;
     }
-    reverse(ch, count);
+    reverse(strings, i);
     printf("\n");
 
     return 0;
