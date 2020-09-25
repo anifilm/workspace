@@ -22,11 +22,10 @@ int modulo(int a[], const int m, const int size);
 
 int main() {
 
-    int i, mod, arr[1000];
+    int i = 0, mod, arr[1000];
     char ch;
 
     printf("Enter a big positive integer.\n");
-    i = 0;
     while ((ch = getchar()) != '\n') {
         arr[i] = atoi(&ch);     // must include <stdlib.h>
         i++;                    // number of array elements

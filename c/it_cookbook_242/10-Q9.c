@@ -39,11 +39,12 @@ void bubble_sort(int arr[], int length);
 
 int main() {
 
-    int i = 0, data[12], value, first = 0, last, result;
+    int i, data[12], value, first, last, result;
 
     printf("Enter twelve integers.\n");
     for (i = 0; i < 12; i++)
         scanf("%d", &data[i]);
+    first = 0;
     last = i - 1;
     // 버블 소트를 사용하여 입력된 정수를 오름차순으로 정렬
     bubble_sort(data, i);

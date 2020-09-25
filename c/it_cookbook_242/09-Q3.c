@@ -22,7 +22,7 @@
 int main() {
 
     char a[100], b[100];
-    int i, count1, count2, is_palondrome;
+    int i, count1, count2, is_palindrome;
 
     while (1) {
         printf("Enter a sentence.\n");
@@ -40,13 +40,13 @@ int main() {
         }
         for (i = 0; i <= count2; i++) {
             if (b[i] != a[i]) {
-                is_palondrome = false;
+                is_palindrome = false;
                 break;
             } else {
-                is_palondrome = true;
+                is_palindrome = true;
             }
         }
-        if (is_palondrome)
+        if (is_palindrome)
             printf("Yes, it is a palindrome.\n");
         else
             printf("No, it is NOT a palindrome.\n");
