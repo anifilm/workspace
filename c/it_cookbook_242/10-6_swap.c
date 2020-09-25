@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap(int *p, int *q);
+void swap(int*, int*);
 
 int main() {
 
