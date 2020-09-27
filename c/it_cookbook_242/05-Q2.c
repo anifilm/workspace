@@ -6,16 +6,16 @@
 
 int is_vowel(char c) {
     switch (c) {
-    case 'a':
-    case 'e':
-    case 'i':
-    case 'o':
-    case 'u':
-        return 1;
-        break;
-    default:
-        return 0;
-        break;
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            return 1;
+            break;
+        default:
+            return 0;
+            break;
     }
 }
 

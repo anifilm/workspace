@@ -11,21 +11,21 @@
 
 void float_calculate(double op1, char op, double op2) {
     switch (op) {
-    case '+':
-        printf("%.3f + %.3f = %.3f\n", op1, op2, op1 + op2);
-        break;
-    case '-':
-        printf("%.3f - %.3f = %.3f\n", op1, op2, op1 - op2);
-        break;
-    case '*':
-        printf("%.3f * %.3f = %.3f\n", op1, op2, op1 * op2);
-        break;
-    case '/':
-        printf("%.3f / %.3f = %.3f\n", op1, op2, op1 / op2);
-        break;
-    default:
-        printf("Not an allowable operator.\n");
-        break;
+        case '+':
+            printf("%.3f + %.3f = %.3f\n", op1, op2, op1 + op2);
+            break;
+        case '-':
+            printf("%.3f - %.3f = %.3f\n", op1, op2, op1 - op2);
+            break;
+        case '*':
+            printf("%.3f * %.3f = %.3f\n", op1, op2, op1 * op2);
+            break;
+        case '/':
+            printf("%.3f / %.3f = %.3f\n", op1, op2, op1 / op2);
+            break;
+        default:
+            printf("Not an allowable operator.\n");
+            break;
     }
 }
 
