@@ -8,10 +8,8 @@
 #include <stdio.h>
 
 void reverse_array(int *a, int *b, int length) {
-    int i, j = length - 1;
-    for (i = 0; i < length; i++)
-        b[j--] = a[i];
-
+    for (int i = 0; i < length; i++)
+        b[length - 1 - i] = a[i];
 }
 
 int main() {
