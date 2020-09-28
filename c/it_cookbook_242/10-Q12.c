@@ -45,7 +45,7 @@ int main() {
             add_element(val, element, &count);
         else if (ch == 'd')
             delete_element(val, element, &count);
-        while ((ch = getchar()) != '\n');
+        while ((ch = getchar()) != '\n');   // 버퍼 클리어링
         show_element(element, &count);
     }
 
