@@ -19,8 +19,7 @@ int main() {
     printf("Enter a sequence of positive integers.\n");
     while (1) {
         scanf("%d", &temp);
-        if (temp < 0)
-            break;
+        if (temp < 0) break;
         a[i++] = temp;
     }
 
