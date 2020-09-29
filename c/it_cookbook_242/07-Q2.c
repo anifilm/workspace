@@ -43,12 +43,14 @@ int to_last_month(int year, int month) {
 }
 
 void print_the_calendar(int year, int month) {
-    int i, d;
+    int i, d, m;
     d = (to_last_year(year) + to_last_month(year, month)) % 7;
+    m = to_last_month(year, month + 1) - to_last_month(year, month);
     printf("\n 일\t 월\t 화\t 수\t 목\t 금\t 토\n\n");
-    for (i = 0; i <= d; i++)
-        printf(" \t");
-    for (i = 1; i <= 30; i++) {
+    if (d != 6)
+        for (i = 0; i <= d; i++)
+            printf(" \t");
+    for (i = 1; i <= m; i++) {
         printf(" %02d\t", i);
         if ((i + d + 1) % 7 == 0)
             printf("\n\n");
@@ -68,5 +70,6 @@ int main() {
         scanf("%d", &month);
         print_the_calendar(year, month);
     }
+
     return 0;
 }
