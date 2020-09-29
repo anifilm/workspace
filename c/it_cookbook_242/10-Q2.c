@@ -15,13 +15,12 @@
 #define MAX 100
 
 int count(const int a[], const int comp, int last) {
-    int i, count = 0;
-    // TODO 재귀호출로 변경 필요
-    for (i = 0; i < last; i++) {
-        if (a[i] == comp)
-            count++;
-    }
-    return count;
+    if (last == -1)             // 인덱스가 0인 경우에도 비교해야 하므로 베이스 케이스는 last가 -1일 때
+        return 0;
+    else if (a[last] == comp)   // 현재의 arr[last]가 comp와 같으면 재귀 호출을 한 값에 1을 더해 리턴
+        return 1 + count(a, comp, last - 1);
+    else                        // 그렇지 않으면 그냥 재귀 호출 (재귀 호출을 할 때마다 last를 1씩 감소시킴)
+        return count(a, comp, last - 1);
 }
 
 int main() {

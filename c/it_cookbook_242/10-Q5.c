@@ -6,13 +6,12 @@
 #include <stdio.h>
 
 // TODO void 로 변경 필요
-int factorial(int n, int *p) {
-    if (n == 1) {
-        *p = 1;
-        return *p;
-    } else {
-        *p = n * factorial(n - 1, p);
-        return *p;
+void factorial(int n, int *p) {
+    if (n == 1)
+        *p *= 1;
+    else {
+        *p *= n;
+        factorial(n - 1, p);
     }
 }
 
@@ -20,7 +19,6 @@ int main() {
 
     int num, result = 1, *ptr;
     ptr = &result;
-
     printf("Enter a positive integer: ");
     scanf("%d", &num);
 

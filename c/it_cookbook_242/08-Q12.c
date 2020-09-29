@@ -5,19 +5,14 @@
 // 1일때다.
 // int is_prime(int n, int half);
 #include <stdio.h>
-#define true 1
-#define false 0
 
 int is_prime(int n, int half) {
-    // TODO 재귀호출로 변경 필요
-    if (n == 1)
-        return 0;
-    else {
-        for (int i = 2; i <= half; i++) {
-            if (n % i == 0)
-                return 0;
-        }
+    if (half == 1)          // 베이스 케이스는 half가 1일때
         return 1;
+    else if (n % half == 0) // n이 half로 나누어 떨어지면 소수가 아님
+        return 0;
+    else {                  // 그렇지 않을 경우 half를 하나 줄여서 재귀 호출
+        return is_prime(n, half - 1);
     }
 }
 
