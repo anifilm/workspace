@@ -14,18 +14,16 @@ int main() {
 
     printf("Enter a sentence.\n");
     while (ch != '\n') {
-        // TODO 'in '만 판단하도록 수정 필요
         scanf("%c", &ch);
-        if (state == 0 && ch == 'i') {
+        if (state == 0 && ch == 'i')
             state = 1;
-        }
-        if (state == 1 && ch == 'n') {
+        else if (state == 1 && ch == 'n')
             state = 2;
-        }
-        if (state == 2 && ch == ' ') {
+        else if (state == 2 && ch == ' ')
             state = 3;
-        }
-        printf("%c state: %d\n", ch, state);
+        else if (state == 2 && ch != ' ')
+            state = 0;
+        // printf("%c state: %d\n", ch, state);
 
         if (state == 3) {
             count++;
@@ -33,7 +31,6 @@ int main() {
         }
     }
     printf("\nThe preposition 'in' appears %d times.\n", count);
-
 
     return 0;
 }
