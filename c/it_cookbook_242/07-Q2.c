@@ -12,6 +12,18 @@ int leap_year(int y) {
         return false;
 }
 
+// 서기 1년 1월 1일 부터 작년 말까지의 날짜 수를 돌려주는 함수
+int to_last_year(int year) {
+    int i, total = 0;
+    for (i = 1; i <= (year - 1); i++) {
+        if (leap_year(i))
+            total += 366;
+        else
+            total += 365;
+    }
+    return total;
+}
+
 // 금월 1년 1월 1일 부터 전달 말까지의 날짜 수
 int to_last_month(int year, int month) {
     int i, total = 0;
@@ -30,17 +42,31 @@ int to_last_month(int year, int month) {
     return total;
 }
 
+void print_the_calendar(int year, int month) {
+    int i, d;
+    d = (to_last_year(year) + to_last_month(year, month)) % 7;
+    printf("\n 일\t 월\t 화\t 수\t 목\t 금\t 토\n\n");
+    for (i = 0; i <= d; i++)
+        printf(" \t");
+    for (i = 1; i <= 30; i++) {
+        printf(" %02d\t", i);
+        if ((i + d + 1) % 7 == 0)
+            printf("\n\n");
+    }
+    printf("\n\n");
+}
+
 int main() {
 
     int year, month;
 
     while (1) {
         printf("Enter year and month: ");
-        scanf("%d %d", &year, &month);
+        scanf("%d", &year);
         if (year <= 0)
             break;
-        printf("Days up to last month is %d\n", to_last_month(year, month));
+        scanf("%d", &month);
+        print_the_calendar(year, month);
     }
-
     return 0;
 }

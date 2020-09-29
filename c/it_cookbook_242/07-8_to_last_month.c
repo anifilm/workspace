@@ -33,9 +33,10 @@ int main() {
 
     while (1) {
         printf("Enter year and month: ");
-        scanf("%d %d", &year, &month);
+        scanf("%d", &year);
         if (year <= 0)
             break;
+        scanf("%d", &month);
         printf("Days up to last month is %d\n", to_last_month(year, month));
     }
 

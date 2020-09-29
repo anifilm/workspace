@@ -28,9 +28,9 @@ int main() {
     while (1) {
         printf("Enter year: ");
         scanf("%d", &year);
-        printf("Days up to last year is %d\n", to_last_year(year));
         if (year <= 0)
             break;
+        printf("Days up to last year is %d\n", to_last_year(year));
     }
 
     return 0;
