@@ -1,7 +1,8 @@
-// 반복문과 조건문 연습 1
+// 동적 메모리 할당
 #include <stdio.h>
 
 int main() {
+
 
 
 	return 0;
