@@ -8,24 +8,16 @@
 // > able was I ere I saw elba ([Enter])
 // > Yes, it is a palindrome
 #include <stdio.h>
-#define true 1
-#define false 0
 
 int is_palindrome(char s[], int first, int last) {
-    // TODO 재귀호출로 변경 필요
-    char b[100];
-    int i, last2 = last;
-    for (i = 0; last >= 0; i++) {
-        b[last] = s[i];
-        last--;
+    if (first >= last)
+        return 1;
+    else if (s[first] != s[last])
+        return 0;
+    else {
+        // printf("%c == %c\n", s[first], s[last]);
+        return is_palindrome(s, ++first, --last);
     }
-    for (i = 0; i <= last2; i++) {
-        if (b[i] != s[i]) {
-            return false;
-            break;
-        }
-    }
-    return true;
 }
 
 int main() {
