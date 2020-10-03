@@ -1,4 +1,4 @@
-// 연속된 문자가 있는지 찾기
+// 사칙 연산 함수 만들기
 #include <stdio.h>
 
 int main() {

@@ -14,9 +14,9 @@ int main() {
 
 	printf("연속된 문자열 체크 -> ");
 	for (i = 0; i < len; i++) {
-		if (str[i] == str[i + 1]) {
+		if (str[i] == str[i + 1])
 			count++;
-		} else {
+		else {
 			if (count > 1) {
 				printf("['%c': %d]", str[i], count);
 				count = 1;

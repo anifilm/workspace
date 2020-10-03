@@ -1,4 +1,4 @@
-// 연속된 문자가 있는지 찾기
+// 정수값 입력받기
 #include <stdio.h>
 
 int main() {

@@ -1,4 +1,4 @@
-// 연속된 문자가 있는지 찾기
+// 약수(Divisor) 출력하기
 #include <stdio.h>
 
 int main() {

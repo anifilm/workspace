@@ -1,4 +1,4 @@
-// 연속된 문자가 있는지 찾기
+// N차 행렬에 숫자 채우기
 #include <stdio.h>
 
 int main() {
