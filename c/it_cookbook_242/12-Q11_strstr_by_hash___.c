@@ -22,6 +22,7 @@
 #define false 0
 
 char* strstr_by_hash(const char *str1, const char *str2) {
+    // TODO 수정필요
     const char *temp1 = str1, *temp2 = str2;
     int i, length = (int)strlen(str2);
     int matched = false;

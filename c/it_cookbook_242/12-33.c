@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
 
     int i, max, *rand_arr;
 

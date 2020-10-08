@@ -1,6 +1,6 @@
 // 05 strchr 함수와 동일한 역할을 수행하는 my_strchr 함수를 작성하라. 단, 입력 문장에 해당
 // 문자가 없으면 NULL을 리턴해야 한다. main에서 이 함수를 불러서, 찾아낸 문자 이후의 모든
-// 문자를 출력해 보라. 찾는 문자가 없으면 "No search character."라고 출력하라. 단, 프로그램은
+// 문자를 출력해 보라. 찾는 문자가 없으면 "No such character."라고 출력하라. 단, 프로그램은
 // "quit"가 입력될 때까지 실행을 반복한다.
 // char* my_strchr(const char *str, int c);
 // > Enter source string.
@@ -32,7 +32,7 @@ int main() {
         while (getchar() != '\n');
 
         if (my_strchr(source, ch) == NULL)
-            printf("No search character.\n");
+            printf("No such character.\n");
         else
             printf("%s\n", my_strchr(source, ch));
     }
