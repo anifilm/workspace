@@ -17,6 +17,13 @@
 #include <string.h>
 
 int k_palindrome(const char *string) {
+    // TODO 한글 코드를 비교 하도록, 빈칸 기호 무시하도록 수정 필요
+    int i, j, first = 0, last = (int)strlen(string) - 1;
+    for (i = first, j = last ; i <= last / 2; i++, j--) {
+        printf("%d %d\n", string[i], string[j]);
+        if (string[i] != string[j])
+            return 0;
+    }
     return 1;
 }
 
