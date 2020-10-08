@@ -15,14 +15,25 @@
 // > 네. 회문입니다.
 #include <stdio.h>
 #include <string.h>
+#include <wchar.h>
 
 int k_palindrome(const char *string) {
-    // TODO 한글 코드를 비교 하도록, 빈칸 기호 무시하도록 수정 필요
-    int i, j, first = 0, last = (int)strlen(string) - 1;
-    for (i = first, j = last ; i <= last / 2; i++, j--) {
-        printf("%d %d\n", string[i], string[j]);
-        if (string[i] != string[j])
-            return 0;
+    // TODO 한글 코드를 비교 하도록 수정필요
+    int i, j, last = (int)strlen(string) - 1;
+    for (i = 0, j = last ; i <= last / 2; ) {
+        if (string[i] >= 32 && string[i] <= 47)
+            i++;
+        else if (string[j] >= 32 && string[j] <= 47)
+            j--;
+        else {
+            printf("%d %d\n", string[i], string[j]);
+            if (string[i] != string[j])
+                return 0;
+            else {
+                i++;
+                j--;
+            }
+        }
     }
     return 1;
 }
@@ -36,7 +47,7 @@ int main() {
         gets(str);
         if (strcmp(str, "quit") == 0) break;
 
-        if (k_palindrome(str) == 1)
+        if (k_palindrome(str))
             printf("네. 회문입니다.\n");
         else
             printf("회문이 아닙니다.\n");
