@@ -15,7 +15,6 @@
 // > 네. 회문입니다.
 #include <stdio.h>
 #include <string.h>
-#include <wchar.h>
 
 int k_palindrome(const char *string) {
     // TODO 한글 코드를 비교 하도록 수정필요
