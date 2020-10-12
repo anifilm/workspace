@@ -3,17 +3,17 @@
 
 int main() {
 
-    int ch;
-    FILE *src = fopen("14_01_from.txt", "rt");
-    FILE *dest = fopen("14_01_to.txt", "wt");
+    char buff[100];
+    FILE *src = fopen("14-03_from.txt", "rt");
+    FILE *dest = fopen("14-03_to.txt", "wt");
 
     if (src == NULL || dest == NULL) {
         printf("Error opening file.\n");
         exit(1);
     }
 
-    while ((ch = fgetc(src)) != EOF)
-        fputc(ch, dest);
+    while (fgets(buff, sizeof(buff), src) != NULL)
+        fputs(buff, dest);
 
     if (feof(src))
         printf("Copy complete!\n");

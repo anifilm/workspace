@@ -62,7 +62,7 @@ int main() {
     wordType mydict[5000];      // 구조체 배열로 사전을 구현
 
     // append binary (read and write) 모드로 열기
-    FILE *fp = fopen("14_Q7_mydict.bin", "a+b");
+    FILE *fp = fopen("14-Q7_mydict.bin", "a+b");
 
     read_dictionary(fp, mydict, &count);    // count 값이 바뀌어야 하니 참조 호출로
     old_count = count;                      // 읽어온 파일 단어 개수를 old_count에 저장

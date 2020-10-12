@@ -7,7 +7,7 @@ int main() {
     char ch, str[100];
     int i = 0, j, count;
 
-    fp = fopen("14_06_apple.txt", "rt");
+    fp = fopen("14-06_apple.txt", "rt");
     while ((ch = fgetc(fp)) != EOF) {
         str[i] = ch;
         printf("%X ", ch);
@@ -16,7 +16,7 @@ int main() {
     printf("\n");
     fclose(fp);
 
-    fp = fopen("14_06_apple.txt", "rb");
+    fp = fopen("14-06_apple.txt", "rb");
     for (j = 0; j <= i; j++) {
         count = fread((void *)&str[j], sizeof(char), 1, fp);
         if (count < 1) {

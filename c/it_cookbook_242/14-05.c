@@ -13,7 +13,7 @@ int main() {
     studentType arr[MAX];
 
     FILE *src;
-    src = fopen("14_04_student.bin", "rb");
+    src = fopen("14-04_student.bin", "rb");
     if (src == NULL) {
         fprintf(stderr, "Error opening output file.\n");
         exit(1);

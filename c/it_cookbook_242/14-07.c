@@ -6,7 +6,7 @@ int main() {
     FILE *fp;
     char str[20] = "apple pie";
 
-    fp = fopen("14_07_rw.txt", "w+b");
+    fp = fopen("14-07_rw.txt", "w+b");
     if (fp == NULL) {
         printf("Error opening file.\n");
         exit(1);

@@ -48,7 +48,7 @@ void insert(char *w, char *m, dictType *d) {
 
 void save_dictionary(FILE *fp, dictType *d) {
     int i;
-    fp = fopen("14_Q6_mydict.bin", "wb");   // 이전 내용 지우고 새로 쓰기 모드로 열기
+    fp = fopen("14-Q6_mydict.bin", "wb");   // 이전 내용 지우고 새로 쓰기 모드로 열기
     i = fwrite((void *)&d, sizeof(dictType), 1, fp);        // 사전 구조체 하나를 저장
     if (i < 1) {
         fprintf(stderr, "Error writing a dictionary file.\n");
@@ -59,7 +59,7 @@ void save_dictionary(FILE *fp, dictType *d) {
 
 void read_dictionary(FILE *fp, dictType *d) {
     int i;
-    if ((fp = fopen("14_Q6_mydict.bin", "rb")) == NULL)     // 기존 파일이 없으면
+    if ((fp = fopen("14-Q6_mydict.bin", "rb")) == NULL)     // 기존 파일이 없으면
         d->count = 0;           // 사전 구조체의 count를 0으로 초기화
     else {                                                  // 기존 파일이 있으면
         i = fread((void *)&d, sizeof(dictType), 1, fp);     // 사전 구조체 하나를 읽어들임

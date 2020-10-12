@@ -7,7 +7,7 @@ int main() {
     int ch;
     unsigned int num = 0;
 
-    FILE *fp = fopen("14_02_from.txt", "rt");
+    FILE *fp = fopen("14-02_from.txt", "rt");
     if (fp == NULL) {
         printf("Error opening file.\n");
         exit(1);
