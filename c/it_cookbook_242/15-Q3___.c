@@ -31,7 +31,7 @@ int main() {
                 pop(&mystack);          // 스택 팝
         }
     }
-    is_empty(&mystack) ? printf("Legal expression.\n") : printf("Illegal expression.\n");
+    (is_empty(&mystack)) ? printf("Legal expression.\n") : printf("Illegal expression.\n");
 
     return 0;
 }
