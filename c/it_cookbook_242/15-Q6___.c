@@ -26,7 +26,7 @@ int main() {
 
     printf("Enter a string.\n");
     init(&mystack);                     // 스택 초기화
-    while (getchar() != '\n') {         // getchar()기 '\n'이 아닐 때까지
+    while ((ch = getchar()) != '\n') {  // getchar()기 '\n'이 아닐 때까지
         if (ch == '*') {
             if (is_full(&mystack)) {    // 스택이 꽉 찼으면
                 printf("Stack full.\n");
@@ -42,7 +42,7 @@ int main() {
                 pop(&mystack);          // 스택 팝
         }
     }
-    (is_empty(&mystack)) ? printf("Legal expression.\n") : printf("Illegal expression.\n");
+    is_empty(&mystack) ? printf("Legal expression.\n") : printf("Illegal expression.\n");
 
     return 0;
 }

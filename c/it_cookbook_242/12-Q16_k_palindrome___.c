@@ -44,6 +44,7 @@ int main() {
     while (1) {
         printf("한글 문장을 입력하세요.\n");
         gets(str);
+        printf("입력문장 출력: %s\n", str);
         if (strcmp(str, "quit") == 0) break;
 
         if (k_palindrome(str))

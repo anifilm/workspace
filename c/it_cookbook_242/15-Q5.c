@@ -13,6 +13,5 @@ int main() {
     sum = fp(a, b);             // 함수 포인터에 의해 함수를 호출하되 a, b를 전달
     printf("sum is: %d\n", sum);
 
-
     return 0;
 }
