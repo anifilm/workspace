@@ -25,17 +25,16 @@ int main() {
     for (i = 0; (ch = getchar()) != '\n'; i++) {    // 읽은 문자가 '\n'이 아닐 때까지
         str = (char *)realloc(str, sizeof(char) * (i + 1));
         // realloc에 의해 str에 (i + 1)개의 문자를 저장하는 공간을 할당
-        str[i] = ch;    // str[i]에 읽은 문자를 대입
+        str[i] = ch;        // str[i]에 읽은 문자를 대입
     }
-    str[i - 1] = ' ';      // '\n' 자리에 ' '를 덧씌움
-    str[i] = '\n';      // 그 다음에 '\n'을 추가
+    str[i] = ' ';           // '\n' 자리에 ' '를 덧씌움
+    str[i + 1] = '\n';      // 그 다음에 '\n'을 추가
     // str이 가리키는 문자열에서 ' '를 모두 널 문자('\0')로 치환하기 위해
     // strtok 함수를 호출
     // '\n' 자리에 ' '을 덧씌운 이유도 마지막 문자열 끝에 널 문자를 삽입하기 위함
     ptr = strtok(str, " ");
-    // 아래 두줄 수정 필요
-    for ( ; ptr != NULL; ptr++) // strtok의 리턴 값이 NULL이 아닐 때까지
-        ptr = strtok(str, " "); // ptr에 strtok의 리턴 값을 대입
+    while (ptr != NULL)             // strtok의 리턴 값이 NULL이 아닐 때까지
+        ptr = strtok(NULL, " ");    // ptr에 strtok의 리턴 값을 대입
 
     ptr = str;  // ptr을 str로 초기화
     arr = NULL; // 정수 배열 arr을 NULL로 초기화
@@ -44,12 +43,12 @@ int main() {
         // realloc에 의해 arr에 (i + 1)개의 정수를 저장하는 공간을 할당
         arr[i] = atoi(ptr);
         // atoi에 의해 ptr이 가리키는 문자열을 정수로 변환하여 arr[i]에 대입
-        while (*ptr != '\0')    // ptr이 str 배열의 다음 문자열을 가리키게 해야 함
-            ptr = str;
+        while (*ptr != '\0')        // ptr이 str 배열의 다음 문자열을 가리키게 해야 함
+            ptr = str++;
         ptr++;
     }
 
-    for (j = 0; j < i; i++)
+    for (j = 0; j < i; j++)
         printf("%d ", arr[j]);
     printf("\n");
 
