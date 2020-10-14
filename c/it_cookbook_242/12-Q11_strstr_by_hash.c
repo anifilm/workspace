@@ -22,18 +22,16 @@
 #define false 0
 
 char* strstr_by_hash(const char *str1, const char *str2) {
-    // TODO 수정 진행중...
-    const char *temp = str1, *temp1 = str1, *temp2 = str2;
-    int i;
-    int length1 = (int)strlen(str1), length2 = (int)strlen(str2);
+    const char *temp1 = str1, *temp2 = str2;
+    int i, length = (int)strlen(str2);
     int key = 0, val = 0, mul = 1, chck, matched = false;
 
-    // 해시 키 계산
-    for (i = 0; i < length2 - 1; i++)
+    // 해시 키 계산 방법 최적화 필요
+    for (i = 0; i < length - 1; i++)
         mul *= 10;
     chck = mul;
-    for (i = 0; i < length2; i++) {
-        key += (temp2[i] - 36) * chck;
+    for (i = 0; i < length; i++) {
+        key += (*(temp2 + i) - 36) * chck;
         chck /= 10;
     }
     printf("key %d\n", key);
@@ -41,39 +39,27 @@ char* strstr_by_hash(const char *str1, const char *str2) {
     while (*str1 != '\0') {
         val = 0;
         chck = mul;
-        for (i = 0 ; i < length2; i++) {
-            val += (*(temp + i) - 36) * chck;
+        for (i = 0 ; i < length; i++) {
+            val += (*(temp1 + i) - 36) * chck;
             chck /= 10;
         }
-        printf("val %d\n", val);
-
         if (key == val){
+            printf("val %d\n", val);
             printf("matched: true\n");
             matched = true;
-            break;
-        } else
-            printf("matched: false\n");
-        length2++;
-        temp++;
-    }
-
-    while (*str1 != '\0') {             // str1의 끝까지
-        if (*temp1 == *temp2) {         // 첫문자가 같으면
-            // matched = true;             // 일단 matched를 참으로 놓고
-            for (i = 0; i < length2; i++) {  // i가 0부터 length까지 증가하면서
-                printf("%c %c\n", *(temp1 + i), *(temp2 + i));
+            // 문자열 비교
+            for (i = 0; i < length; i++) {
                 if (*(temp1 + i) != *(temp2 + i)) {
-                    // temp1 + i가 가리키는 것이 temp2 + i가 가리키는 것과 다르면
-                    matched = false;    // matched는 거짓
-                    break;              // 루프 밖으로
+                    matched = false;
+                    break;
                 }
             }
-            if (matched == true)        // 초기화 값이 그대로 유지되었으면
-                return (char *)temp1;   // temp1을 리턴
+            if (matched == true)
+                return (char *)temp1;
         }
-        temp1++;    // 그렇지 않으면 temp1을 다음 문자로 이동
+        temp1++;
     }
-    return NULL;    // 매칭이 없을 경우 리턴값은 NULL
+    return NULL;
 }
 
 int main() {
