@@ -17,6 +17,37 @@
 // 그 결과를 푸시한다.
 #include <stdio.h>
 #include <stdlib.h>
+// #include "15-Q2_stack.h"
+
+// 15-Q2_stack.h file
+#define MAX 10
+
+struct stack {
+    int top;
+    int data[MAX];
+};
+typedef struct stack stackType;
+
+// 15-Q2_stack.c file
+void init(stackType *sp) {
+    sp->top = -1;
+}
+
+int is_empty(stackType *sp) {
+    return (sp->top == -1);
+}
+
+int is_full(stackType *sp) {
+    return (sp->top == (MAX - 1));
+}
+
+void push(stackType *sp, const int item) {
+    sp->data[++(sp->top)] = item;
+}
+
+int pop(stackType *sp) {
+    return sp->data[(sp->top)--];
+}
 
 int main() {
 

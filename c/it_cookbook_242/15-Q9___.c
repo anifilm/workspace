@@ -36,7 +36,7 @@ void swap_str(void *a, int i) {
 
 // 정수 배열이나 문자열 배열이나 동일한 원형으로 넘겨받아햐 하므로
 // arr 배열을 void* 형으로 선언
-void bubble_sort(void *arr, int (*compare)(void*, int), void (*swap)(void*, int),int numelt) {
+void bubble_sort(void *arr, int (*compare)(void*, int), void (*swap)(void*, int), int numelt) {
     int pass, current, sorted = 0;
     for (pass = 1; (pass < numelt) && (!sorted); pass++) {
         sorted = 1;

@@ -17,32 +17,64 @@
 // > undo undo redo redo
 #include <stdio.h>
 #include <stdlib.h>
-#include "15-Q6_stack.h"
+// #include "15-Q6_stack.h"
+
+// 15-Q6_stack.h file
+#define MAX 20
+
+struct stack {
+    int top;
+    int data[MAX];
+};
+typedef struct stack stackType;
+
+// 15-Q6_stack.c file
+void init(stackType *sp) {
+    sp->top = -1;
+}
+
+int is_empty(stackType *sp) {
+    return (sp->top == -1);
+}
+
+int is_full(stackType *sp) {
+    return (sp->top == (MAX - 1));
+}
+
+void push(stackType *sp, const int item) {
+    sp->data[++(sp->top)] = item;
+}
+
+int pop(stackType *sp) {
+    return sp->data[(sp->top)--];
+}
 
 int main() {
 
     char ch;
     stackType mystack;
+    stackType mystack2;
 
     printf("Enter a string.\n");
-    init(&mystack);                     // 스택 초기화
-    while ((ch = getchar()) != '\n') {  // getchar()기 '\n'이 아닐 때까지
+    init(&mystack);
+    init(&mystack2);
+    while ((ch = getchar()) != '\n') {
         if (ch == '*') {
-            if (is_full(&mystack)) {    // 스택이 꽉 찼으면
-                printf("Stack full.\n");
-                exit(1);
-            } else
-                push(&mystack, ch);     // 스택 푸시
-        }
-        if (ch == '*') {
-            if (is_empty(&mystack)) {   // 스택이 비었으면
+            if (is_empty(&mystack)) {
                 printf("Stack empty.\n");
                 exit(1);
             } else
-                pop(&mystack);          // 스택 팝
-        }
+                pop(&mystack);
+        } else
+            push(&mystack, ch);
     }
-    is_empty(&mystack) ? printf("Legal expression.\n") : printf("Illegal expression.\n");
+
+    while (!is_empty(&mystack))
+        push(&mystack2, pop(&mystack));
+
+    while (!is_empty(&mystack2))
+        printf("%c", pop(&mystack2));
+    printf("\n");
 
     return 0;
 }
