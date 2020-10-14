@@ -15,7 +15,11 @@
 #include <string.h>
 
 void change_str(char *str, const char *to, const char *from) {
-
+    char *ptr = strstr(str, from);
+    while (ptr != NULL) {
+        strncpy(ptr, to, (int)strlen(from));
+        ptr = strstr(ptr + 1, from);
+    }
 }
 
 int main() {
