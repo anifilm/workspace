@@ -1,6 +1,6 @@
 // 11 문자열 탐색 알고리즘 중 하나인 Rabin-Karp 알고리즘은 문자열을 숫자로 변환하여 탐색
 // 하는 방법이다. 예를 들어 abcdfkg라는 텍스트에서 cdf를 찾는다고 생각해 보자. 그 경우
-// cdf = 'c' * 100 + 'd' * 10 + 'i' = 63 * 100 + 64 * 10 + 66 = 7006 이라는 계산에
+// cdf = 'c' * 100 + 'd' * 10 + 'f' = 63 * 100 + 64 * 10 + 66 = 7006 이라는 계산에
 // 의해 숫자로 바꿀 수 있다. 숫자로 변환하고자 하는 문자열을 해시 키(Hash Key)라고 부르고,
 // 해시 키를 숫자로 변환하는 함수를 해시 함수(Hash Function)라 부른다. 텍스트 abcdfkg를
 // 세 문자 단위로 숫자로 바꾸면 처음 abc = 'a' * 100 + 'b' * 10 + 'c' 가 되어 찾고자
@@ -22,15 +22,46 @@
 #define false 0
 
 char* strstr_by_hash(const char *str1, const char *str2) {
-    // TODO 수정필요
-    const char *temp1 = str1, *temp2 = str2;
-    int i, length = (int)strlen(str2);
-    int matched = false;
+    // TODO 수정 진행중...
+    const char *temp = str1, *temp1 = str1, *temp2 = str2;
+    int i;
+    int length1 = (int)strlen(str1), length2 = (int)strlen(str2);
+    int key = 0, val = 0, mul = 1, chck, matched = false;
+
+    // 해시 키 계산
+    for (i = 0; i < length2 - 1; i++)
+        mul *= 10;
+    chck = mul;
+    for (i = 0; i < length2; i++) {
+        key += (temp2[i] - 36) * chck;
+        chck /= 10;
+    }
+    printf("key %d\n", key);
+
+    while (*str1 != '\0') {
+        val = 0;
+        chck = mul;
+        for (i = 0 ; i < length2; i++) {
+            val += (*(temp + i) - 36) * chck;
+            chck /= 10;
+        }
+        printf("val %d\n", val);
+
+        if (key == val){
+            printf("matched: true\n");
+            matched = true;
+            break;
+        } else
+            printf("matched: false\n");
+        length2++;
+        temp++;
+    }
 
     while (*str1 != '\0') {             // str1의 끝까지
         if (*temp1 == *temp2) {         // 첫문자가 같으면
-            matched = true;             // 일단 matched를 참으로 놓고
-            for (i = 0; i < length - 1; i++) {  // i가 0부터 length - 1까지 증가하면서
+            // matched = true;             // 일단 matched를 참으로 놓고
+            for (i = 0; i < length2; i++) {  // i가 0부터 length까지 증가하면서
+                printf("%c %c\n", *(temp1 + i), *(temp2 + i));
                 if (*(temp1 + i) != *(temp2 + i)) {
                     // temp1 + i가 가리키는 것이 temp2 + i가 가리키는 것과 다르면
                     matched = false;    // matched는 거짓

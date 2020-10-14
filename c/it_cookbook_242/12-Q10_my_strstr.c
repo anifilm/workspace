@@ -18,7 +18,7 @@ char* my_strstr(const char *str1, const char * str2) {
     while (*str1 != '\0') {             // str1의 끝까지
         if (*temp1 == *temp2) {         // 첫문자가 같으면
             matched = true;             // 일단 matched를 참으로 놓고
-            for (i = 0; i < length - 1; i++) {  // i가 0부터 length - 1까지 증가하면서
+            for (i = 0; i < length; i++) {  // i가 0부터 length까지 증가하면서
                 if (*(temp1 + i) != *(temp2 + i)) {
                     // temp1 + i가 가리키는 것이 temp2 + i가 가리키는 것과 다르면
                     matched = false;    // matched는 거짓
