@@ -16,9 +16,9 @@ static int write_to_file() {
     if (!(fp = fopen("persons.bin", "wb")))            // persons.bin 파일을 쓰기모드(바이너리)로 열기
         return -1;
 
-    if (fwrite(&kim, sizeof(struct person), 1, fp) != 1)    // 파일에 kim 구조체 내용을 쓰기
+    if (fwrite(&kim, sizeof(struct person), 1, fp) != 1)    // 파일에 kim 구조체 내용을 쓰기 (byte stream)
         goto err;
-    if (fwrite(&lee, sizeof(struct person), 1, fp) != 1)    // 파일에 lim 구조체 내용을 쓰기
+    if (fwrite(&lee, sizeof(struct person), 1, fp) != 1)    // 파일에 lim 구조체 내용을 쓰기 (byte stream)
         goto err;
 
     fclose(fp);
@@ -38,7 +38,7 @@ static int read_from_file() {
     if (!(fp = fopen("persons.bin", "rb")))            // persons.bin 파일을 읽기모드(바이너리)로 열기
         return -1;
 
-    if (fread(persons, sizeof(struct person), 2, fp) != 2) {    // 파일에서 구조체 내용을 두개 읽어 배열에 저장
+    if (fread(persons, sizeof(struct person), 2, fp) != 2) {    // 파일에서 구조체 내용을 두개 읽어 (byte stream) 배열에 저장
         fclose(fp);
         return -1;
     }

@@ -24,7 +24,7 @@ static int append_file() {
 static int trunc_file() {
     int fd;
     // datafile.txt 파일 쓰기모드 | 파일이 없으면 생성 | 파일이 있으면 내용을 초기화, 사용자 읽기쓰기 권한
-    fd = open("datafile.txt", O_WRONLY | O_CREAT | O_TRUNC, 0600);
+    fd = open("datafile.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd == -1) {
         printf("open() error\n");
         return -1;
@@ -39,7 +39,7 @@ static int trunc_file() {
 static int write_file() {
     int fd;
     // datafile.txt 파일 쓰기모드 | 파일이 없으면 생성, 사용자 읽기쓰기 권한
-    fd = open("datafile.txt", O_WRONLY | O_CREAT, 0600);
+    fd = open("datafile.txt", O_WRONLY | O_CREAT, 0644);
     if (fd == -1) {
         printf("open() error\n");
         return -1;
