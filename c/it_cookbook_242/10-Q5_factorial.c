@@ -5,7 +5,6 @@
 // void factorial(int n, int *p);
 #include <stdio.h>
 
-// TODO void 로 변경 필요
 void factorial(int n, int *p) {
     if (n == 1)
         *p *= 1;

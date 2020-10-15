@@ -9,26 +9,24 @@
 #include <string.h>
 
 char* my_strcpy(char *dest, const char *src, int index) {
-    // TODO 재귀호출로 변경 필요
-    int i = 0;
-    while ((dest[i] = src[i]) != '\0')
-        i++;
-    return dest;
+    if (src[index] == '\0')
+        return dest;
+    else {
+        dest[index] = src[index];
+        return my_strcpy(dest, src, ++index);
+    }
 }
 
 int main() {
 
     char dest[30], src[30];
-    int len;
 
     printf("Enter destination string.\n");
     gets(dest);
     printf("Enter source string.\n");
     gets(src);
 
-    len = strlen(src);
-
-    printf("On my_strcpy(dest, src), dest became %s.\n", my_strcpy(dest, src, len));
+    printf("On my_strcpy(dest, src), dest became %s.\n", my_strcpy(dest, src, 0));
 
     return 0;
 }
