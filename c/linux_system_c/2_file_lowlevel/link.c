@@ -3,9 +3,10 @@
 #include <string.h>
 #include <unistd.h>
 
-int main(int argc, char **argv) {
+#define TARGET_FILE	"hello_world"
 
-    #define TARGET_FILE	"hello_world"
+int main() {
+
     if (link(TARGET_FILE, "hello_by_link")) {
         printf("link() fail\n");
         return -1;

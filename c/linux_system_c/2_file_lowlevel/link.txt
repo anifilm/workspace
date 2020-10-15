@@ -1,0 +1,38 @@
+[Hardlink 생성]
+
+int link(const char *oldpath, const char *newpath);
+
+파라미터
+    - oldpath: 원본 파일 경로
+    - newpath: 생성할 하드링크 경로
+
+반환값
+    - 성공시 0
+    - 실패시 -1
+
+
+
+[Softlink 생성]
+
+int symlink(const char *target, const char *linkpath);
+
+파라미터
+    - target: 원본 파일 경로
+    - linkpath: 생성할 소프트링크 경로
+
+반환값
+    - 성공시 0
+    - 실패시 -1
+
+
+
+[Link 삭제]
+
+int unlink(const char *pathname);
+
+파라미터
+    - pathname: 삭제할 파일 경로
+
+반환값
+    - 성공시 0
+    - 실패시 -1
