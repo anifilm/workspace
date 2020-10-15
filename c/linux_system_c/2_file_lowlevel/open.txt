@@ -32,3 +32,56 @@ O_TRUNC         Regular file이 존재하는 경우 파일 사이즈를 0으로 
 
 O_APPEND        append mode로 열기 (파일 오프셋이 파일 끝에 위치)
 
+
+
+[파일 열기 - 권한]
+
+Symbol    Value    Perm      Symbol    Value    Perm      Symbol    Value    Perm
+
+S_IRWXU   0700    User RWX   S_IRWXG   0070    Grp RWX    S_IRWXO   0007    Other RWX
+
+S_IRUSR   0400    User R--   S_IRGRP   0040    Grp R--    S_IROTH   0004    Other R--
+
+S_IWUSR   0200    User -W-   S_IWGRP   0020    Grp -W-    S_IWOTH   0002    Other -W-
+
+S_IXUSR   0100    User --X   S_IXGRP   0010    Grp --X    S_IXOTH   0001    Other --X
+
+
+
+[파일 닫기]
+
+int close(int fd);
+
+파라미터
+    - fd: 파일 디스크립터
+
+반환값
+    - 성공시 0
+    - 실패시 -1
+
+
+
+[파일 포지션 - 오프셋 설정]
+
+off_t lseek(int fd, off_t offset, int whence);
+
+파라미터
+    - fd: 파일 디스크립터
+    - offset: 오프셋 값 (양수/음수 모두 가능)
+    - whence: 오프셋의 기준
+        - SEEK_SET: 파일의 시작 기준
+        - SEEK_END: 파일의 끝 기준
+        - SEEK_CUR: 현재 파일 포지션의 기준
+
+반환값
+    - 성공시 완료 후 파일 포지션 (오프셋값)
+    - 실패시 -1
+
+
+
+[파일 포지션 - 현재 오프셋 가져오기]
+
+ftell()과 같은 API는 없다.
+다음과 같이 현재 오프셋을 가져올 수 있다.
+
+cur_offset = lseek(fd, 0, SEEK_CUR);
