@@ -1,0 +1,176 @@
+[파일 내용 읽고 쓰기]
+
+Text mode
+
+    - 문자를 저장할 때 사용되는 방식
+    - "10" 저장시 파일에는 0x31, 0x30 이 저장됨
+    - fputc, fputs, fprintf
+    - fgetc, fgets, fscanf
+
+
+Binary mode
+
+    - 데이터를 저장할 때 사용되는 방식
+    - 10 저장시 파일에 0x0a가 저장됨
+    - fwrite
+    - fread
+
+
+
+[파일에 쓰기 - formatted]
+
+int fprintf(FILE *stream, const char *format, ...);
+
+파라미터
+    - stream: 열린 파일 포인터
+    - format: 출력 포맷
+    - ...: 가변 arguments
+
+반환값
+    - 성공시 쓰여진 바이트 값
+    - 실패시 음수
+
+
+
+[파일에서 읽기 - formatted]
+
+int fscanf(FILE *stream, const char *format, ...);
+
+파라미터
+    - stream: 열린 파일 포인터
+    - format: 입력 포맷
+    - ...: 가변 arguments
+
+반환값
+    - 성공시 입력받은 아이템 개수
+    - 실패시 EOF
+
+
+
+[포맷 변환 1]
+
+변환자                                                integet 길이
+
+d       signed interger                               hh       sizeof(char)
+
+u       unsigned interger, 10진수                     h        sizeof(short)
+
+o       unsigned interger, 8진수                      (생략)   sizeof(int)
+
+x       unsigned interger, 16진수 (abcde)             l        sizeof(long)
+
+X       unsigned interger, 16진수 (ABCDE)             ll       sizeof(long long)
+
+s       NULL-terminated string
+
+f       floating-point, [-]ddd.ddd
+
+e       floating-point, [-]d.ddde±dd
+
+
+
+[포맷 변환 2]
+
+데이터 타입                 변환자
+
+char                        %hhd, %hhx
+
+unsigned char               %hhu, &hhx
+
+short                       %hd,  %hx
+
+unsigned short              %hu,  %hx
+
+int                         %d,   %x
+
+unsigned int                %u,   %x
+
+long                        %ld,  %lx
+
+unsigned long               %lu,  %lx
+
+long long                   %lld, %llx
+
+unsigned long long          %llu, %llx
+
+
+
+[파일에 쓰기 - character/string]
+
+int fputc(int c, FILE *stream);
+
+파라미터
+    - c: 출력할 문자
+    - stream: 열린 파일 포인터
+
+반환값
+    - 성공시 쓰여진 문자
+    - 실패시 EOF
+
+
+int fputs(const char *s, FILE *stream);
+
+파라미터
+    - s: 출력할 문자열 (NULL-terminated)
+    - stream: 열린 파일 포인터
+
+반환값
+    - 성공시 0보다 크거나 같은 수
+    - 실패시 EOF
+
+
+
+[파일에서 읽기 - character/string]
+
+int fgetc(FILE *stream);
+
+파라미터
+    - stream: 열린 파일 포인터
+
+반환값
+    - 성공시 읽은 문자
+    - 실패시 EOF
+
+
+char fgets(const char *s, int size, FILE *stream);
+
+파라미터
+    - s: 문자열 버퍼
+    - size: 버퍼 사이즈
+    - stream: 열린 파일 포인터
+
+반환값
+    - 성공시 문자열 포인터
+    - 실패시 NULL
+
+
+
+[파일에 쓰기 - byte stream]
+
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+파라미터
+    - ptr: 출력할 byte stream 포인터
+    - size: 출력 아이템 사이즈
+    - nmemb: 출력 아이템 개수
+    - stream: 열린 파일 포인터
+
+반환값
+    - 실제로 출력된 아이템 개수
+    - 완전하게 쓰여졌는지 확인 필요
+
+
+
+[파일에서 읽기 - byte stream]
+
+size_t fread(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+파라미터
+    - ptr: 입력받을 버퍼 포인터
+    - size: 입력 아이템 사이즈
+    - nmemb: 입력 아이템 개수
+    - stream: 열린 파일 포인터
+
+반환값
+    - 실제로 입력된 아이템 개수
+    - 완전하게 읽혀졌는지 확인 필요

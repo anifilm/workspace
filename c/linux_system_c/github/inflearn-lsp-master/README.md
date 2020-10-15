@@ -1,3 +1,0 @@
-# inflearn LSP
-
-InfLearn LSP
