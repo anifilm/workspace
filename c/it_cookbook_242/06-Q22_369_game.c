@@ -11,21 +11,35 @@
 
 int main() {
 
-    int num, i;
+    int num, limit_num, i, check;
 
     printf("Enter a number: ");
-    scanf("%d", &num);
+    scanf("%d", &limit_num);
 
+    /*
     for (i = 1; i <= num; i++) {
-        if ((i/10 == 3 || i/10 == 6 || i/10 == 9) && (i%10 == 3 || i%10 == 6 || i%10 ==9))      // 십단위가 3,6,9이고 일단위가 3,6,9인 경우
-            // printf("!!(%d) ", i);
-            printf("!! ");
-        else if((i/10 == 3 || i/10 == 6 || i/10 == 9) || (i%10 == 3 || i%10 == 6 || i%10 ==9))  // 십단위가 3,6,9인 경우이거나 일단위가 3,6,9인 경우
-            // printf("!(%d) ", i);
-            printf("! ");
+        if ((i/10 == 3 || i/10 == 6 || i/10 == 9) && (i%10 == 3 || i%10 == 6 || i%10 == 9))      // 십단위가 3,6,9이고 일단위가 3,6,9인 경우
+            printf("!!(%d) ", i);
+        else if((i/10 == 3 || i/10 == 6 || i/10 == 9) || (i%10 == 3 || i%10 == 6 || i%10 == 9))  // 십단위가 3,6,9인 경우이거나 일단위가 3,6,9인 경우
+            printf("!(%d) ", i);
         else
             printf("%d ", i);
     }
+    */
+    for (i = 1; i <= limit_num; i++) {
+        num = i;
+        do {
+            check = num % 10;
+            if (check && (check % 3) == 0) break;
+            num = num / 10;
+        } while (num > 0);
+
+        if (num)
+            printf("!(%d) ", i);
+        else
+            printf("%d ", i);
+    }
+    printf("\n");
 
     return 0;
 }
