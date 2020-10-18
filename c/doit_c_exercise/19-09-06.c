@@ -1,4 +1,4 @@
-// 계산기 만들기 (C, 2)
+// 최근 날짜 찾기
 #include <stdio.h>
 
 int main() {
