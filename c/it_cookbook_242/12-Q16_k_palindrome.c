@@ -18,19 +18,29 @@
 
 int k_palindrome(const char *string) {
     // TODO 한글 코드를 비교 하도록 수정필요
-    int i, j, last = (int)strlen(string) - 1;
-    for (i = 0, j = last ; i <= last / 2; ) {
-        if (string[i] >= 32 && string[i] <= 47)
+    int i, last = (int)strlen(string) - 1;
+    // 마지막에 마침표로 끝낸 경우와 아닌 경우를 체크
+    int j = last;
+    if (string[j] == '.')
+        j -= 3;
+    else
+        j -= 2;
+
+    for (i = 0; i <= last / 2; ) {
+        if (string[i] == ' ') {
             i++;
-        else if (string[j] >= 32 && string[j] <= 47)
-            j--;
-        else {
-            printf("%d %d\n", string[i], string[j]);
+            continue;
+        } else {
+            // printf("%c%c%c %c%c%c\n", string[i], string[i+1], string[i+2], string[j], string[j+1], string[j+2]);
             if (string[i] != string[j])
                 return 0;
             else {
-                i++;
-                j--;
+                i += 3;     // 리눅스 시스템에서 작성, UTF-8 한글 한글자당 3byte
+                            // 윈도우 시스템이라면 CP949 멀티바이트 한글 한글자당 2byte 적용 필요
+                if (string[j-1] == ' ')     // 뒤에서 띄어쓰기가 있다면
+                    j -= 4;
+                else
+                    j -= 3;
             }
         }
     }
@@ -44,7 +54,7 @@ int main() {
     while (1) {
         printf("한글 문장을 입력하세요.\n");
         gets(str);
-        printf("입력문장 출력: %s\n", str);
+        // printf("입력문장 출력: %s\n", str);
         if (strcmp(str, "quit") == 0) break;
 
         if (k_palindrome(str))
