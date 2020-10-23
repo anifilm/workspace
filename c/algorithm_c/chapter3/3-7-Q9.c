@@ -25,7 +25,7 @@ void *bsearchx(const void *key, const void *base, size_t nmemb, size_t size,
             } else if (pl == pr)
                 break;
             else if (comp < 0)
-                pl = pc + 1;    // 검색 범위를 후반브로 좁혀감
+                pl = pc + 1;    // 검색 범위를 후반부로 좁혀감
             else
                 pr = pc - 1;    // 검색 범위를 전반부로 좁혀감
         }
