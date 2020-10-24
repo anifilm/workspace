@@ -3,11 +3,24 @@
 
 // 정수 x, y의 최대공약수를 반환
 int gcd(int x, int y) {
-    if (y == 0)
-        return x;
-    else
-        return gcd(y, x % y);
-
+    /*
+    int i, j, result;
+    for (i = 1; i <= x; i++) {
+        for (j = 1; j <= y; j++) {
+            if ((x % i == 0) && (y % j == 0)) {
+                if (i == j) result = i;
+            }
+        }
+    }
+    return result;
+    */
+    int temp;
+    while (y != 0) {
+        temp = y;
+        y = x % y;
+        x = temp;
+    }
+    return x;
 }
 
 int main() {

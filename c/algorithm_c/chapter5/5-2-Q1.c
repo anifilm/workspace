@@ -3,10 +3,16 @@
 
 // 정수의 n의 순차곱셈 값을 반환
 int factorial(int n) {
+    /*
     int i, result = 1;
     for (i = 2; i <= n; i++)
         result *= i;
     return result;
+    */
+    int fact = 1;
+    while (n > 1)
+        fact *= n--;
+    return fact;
 }
 
 int main() {
