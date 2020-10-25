@@ -1,14 +1,51 @@
 // Q7 실습 5-6의 move 함수를 비재귀적으로 수정하세요.
 #include <stdio.h>
+#include "5-5_IntStack.h"
 
 // 원반[1] ~ 원반[no]를 x기둥에서 y기둥으로 욺김
 void move(int no, int x, int y) {
-    if (no > 1)
-        move(no - 1, x, 6 - x - y);     // 그룹을 시작 기둥에서 중간 기둥으로
-    printf("원반[%d]을(를) %d 기둥에서 %d 기둥으로 옮김\n", no, x, y);  // 바닥 원반을 목표 기둥으로
+    int sw = 0;
+    IntStack xstk, ystk, sstk;      // 스택
 
-    if (no > 1)
-        move(no -1, 6 - x - y, y);      // 구룹을 중간 기둥에서 목표 기둥으로
+    Initialize(&xstk, 100);
+    Initialize(&ystk, 100);
+    Initialize(&sstk, 100);
+
+    while (1) {
+        if (sw == 0 && no > 1) {
+            Push(&xstk, x);         // x값을 푸시
+            Push(&ystk, y);         // y값을 푸시
+            Push(&sstk, sw);        // sw값을 푸시
+            no = no - 1;
+            y = 6 - x - y;
+            continue;
+        }
+        printf("원반[%d]을(를) %d 기둥에서 %d 기둥으로 옮김\n", no, x, y);
+
+        if (sw == 1 && no > 1) {
+            Push(&xstk, x);         // x값을 푸시
+            Push(&ystk, y);         // y값을 푸시
+            Push(&sstk, sw);        // sw값을 푸시
+            no = no - 1;
+            x = 6 - x - y;
+            if (++sw == 2) sw = 0;
+            continue;
+        }
+
+        do {
+            if (IsEmpty(&xstk))     // 스택이 비어있는 상태이면
+                return;
+            Pop(&xstk, &x);         // x값을 팝
+            Pop(&ystk, &y);         // y값을 팝
+            Pop(&sstk, &sw);        // sw값을 팝
+            sw++;
+            no++;
+        } while (sw == 2);
+    }
+
+    Terminate(&xstk);
+    Terminate(&ystk);
+    Terminate(&sstk);
 }
 
 int main() {
