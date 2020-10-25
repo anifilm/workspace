@@ -10,7 +10,7 @@ void move(int no, int x, int y) {
     printf("원반[%d]을(를) %s에서 %s으로 옮김\n", no, name[x - 1], name[y - 1]);  // 바닥 원반을 목표 기둥으로
 
     if (no > 1)
-        move(no -1, 6 - x - y, y);      // 구룹을 중간 기둥에서 목표 기둥으로
+        move(no - 1, 6 - x - y, y);     // 그룹을 중간 기둥에서 목표 기둥으로
 }
 
 int main() {
