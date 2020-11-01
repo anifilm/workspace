@@ -4,9 +4,8 @@
 using namespace std;
 
 class MyString {
-
-	char *string_content;		// 문자열 데이터를 가리키는 포인터
-	int string_length;			// 문자열 길이
+    char *string_content;		// 문자열 데이터를 가리키는 포인터
+    int string_length;			// 문자열 길이
 
     int memory_capacity;        // 현재 할당된 용량
 
@@ -23,8 +22,8 @@ public:
     int capacity() const;
     void reserve(int size);
 
-	void print();
-	void println();
+    void print();
+    void println();
 
     MyString &assign(MyString &str);
     MyString &assign(const char *str);
@@ -34,40 +33,30 @@ public:
     MyString &insert(int loc, MyString &str);
     MyString &insert(int loc, const char *str);
     MyString &insert(int loc, char c);
-
-    MyString &erase(int loc, int num);
-
-    int find(int find_from, MyString &str);
-    int find(int find_from, const char *str);
-    int find(int find_from, char c);
-
-    int compare(MyString &str);
-
-    bool operator==(MyString &str);
 };
 
 MyString::MyString(char c) {
-	string_content = new char[1];
-	string_content[0] = c;
+    string_content = new char[1];
+    string_content[0] = c;
     memory_capacity = 1;
     string_length = 1;
 }
 
 MyString::MyString(const char *str) {
-	string_length = strlen(str);
+    string_length = strlen(str);
     memory_capacity = string_length;
-	string_content = new char[string_length];
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString &str) {
-	string_length = str.string_length;
-	string_content = new char[string_length];
+    string_length = str.string_length;
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
-		string_content[i] = str.string_content[i];
+    for (int i {0}; i != string_length; i++)
+        string_content[i] = str.string_content[i];
 }
 
 MyString::~MyString() { delete[] string_content; }
@@ -75,15 +64,15 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 }
 
 void MyString::println() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 
-	cout << endl;
+    cout << endl;
 }
 
 MyString &MyString::assign(MyString &str) {
@@ -98,7 +87,7 @@ MyString &MyString::assign(MyString &str) {
     for (int i {0}; i != str.string_length; i++) {
         string_content[i] = str.string_content[i];
     }
-    // 그리고 굳이 str.stringg_length + 1 ~ string_length 부분은 초기화
+    // 그리고 굳이  str.stringg_length + 1 ~ string_length 부분은 초기화
     // 시킬 필요는 없다. 왜냐하면 거기까지는 읽어들이지 않기 때문이다.
 
     string_length = str.string_length;
@@ -219,90 +208,20 @@ MyString &MyString::insert(int loc, char c) {
     return insert(loc, temp);
 }
 
-MyString &MyString::erase(int loc, int num) {
-    // loc 의 앞 부터 시작해서 num 문자를 지운다
-    if (num < 0 || loc < 0 || loc > string_length)
-        return *this;
-
-    // 지운다는 것은 단순히 뒤의 문자들을 앞으로 끌고 온다고 생각하면 된다
-    for (int i = loc + num; i < string_length; i++) {
-        string_content[1 - num] = string_content[i];
-    }
-
-    string_length -= num;
-    return *this;
-}
-
-int MyString::find(int find_from, MyString &str) {
-    int i, j;
-
-    if (str.string_length == 0)
-        return -1;
-
-    for (i = find_from; i < string_length - str.string_length; i++) {
-        for (j = 0; j < str.string_length; j++) {
-            if (string_content[i + j] != str.string_content[j])
-                break;
-        }
-
-        if (j == str.string_length)
-            return i;
-    }
-
-    return -1;      // 찾지 못했음
-}
-
-int MyString::find(int find_from, const char *str) {
-    MyString temp(str);
-    return find(find_from, temp);
-}
-
-int MyString::find(int find_from, char c) {
-    MyString temp(c);
-    return find(find_from, temp);
-}
-
-int MyString::compare(MyString &str) {
-    // (*this) - (str) 을 수행해서 그 1, 0, -1 로 그 결과를 리턴한다
-    // 1 은 (*this) 가 사전식으로 더 뒤에 온다은 의미
-    // 0 은 두 문자열이 같다는 의미
-    // -1 은 (*this) 가 사전식으로 더 앞에 온다는 의미이다
-
-    for (int i {0}; i < min(string_length, str.string_length); i++) {
-        if (string_content[i] > str.string_content[i])
-            return 1;
-        else if (string_content[i] < str.string_content[i])
-            return -1;
-    }
-    // 여기 까지 했는데 끝나지 않았다면 앞 부분 까지 모두 똑같은 것이 된다
-    // 만일 문자열 길이가 같다면 두 문자열은 아예 같은 문자열이 된다
-
-    if (string_length == str.string_length)
-        return 0;
-    // 참고로 abc 와 abcd 의 크기 비교는 abcd 가 더 뒤에 오게 된다
-    else if (string_length > str.string_length)
-        return -1;
-
-    return -1;
-}
-
-bool MyString::operator==(MyString &str) {
-    return !compare(str);       // str과 같으면 compare 에서 0 을 리턴한다
-}
-
 int main() {
 
-	MyString str1("a word");
-    MyString str2("sentence");
-    MyString str3("sentence");
+    MyString str1("very very very long string");
+    MyString str2("<some string inserted between>");
+    str1.reserve(30);
 
-    if (str1 == str2)
-        cout << "str1 and str2 are same" << endl;
-    else
-        cout << "str1 and str2 are different" << endl;
+    cout << "Capacity: " << str1.capacity() << endl;
+    cout << "String length: " << str1.get_length() << endl;
+    str1.println();
 
-    if (str2 == str3)
-        cout << "str2 and str3 are same" << endl;
-    else
-        cout << "str2 and str3 are different" << endl;    
+    str1.insert(5, str2);
+    str1.println();
+
+    cout << "Capacity: " << str1.capacity() << endl;
+    cout << "String length: " << str1.get_length() << endl;
+    str1.println();
 }

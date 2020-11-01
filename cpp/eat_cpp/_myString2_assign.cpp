@@ -4,9 +4,8 @@
 using namespace std;
 
 class MyString {
-
-	char *string_content;      // 문자열 데이터를 가리키는 포인터
-	int string_length;         // 문자열 길이
+    char *string_content;      // 문자열 데이터를 가리키는 포인터
+    int string_length;         // 문자열 길이
 
     int memory_capacity;        // 현재 할당된 용량
 
@@ -23,35 +22,35 @@ public:
     int capacity() const;
     void reserve(int size);
 
-	void print();
-	void println();
+    void print();
+    void println();
 
     MyString &assign(MyString &str);
     MyString &assign(const char *str);
 };
 
 MyString::MyString(char c) {
-	string_content = new char[1];
-	string_content[0] = c;
+    string_content = new char[1];
+    string_content[0] = c;
     memory_capacity = 1;
     string_length = 1;
 }
 
 MyString::MyString(const char *str) {
-	string_length = strlen(str);
+    string_length = strlen(str);
     memory_capacity = string_length;
-	string_content = new char[string_length];
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString &str) {
-	string_length = str.string_length;
-	string_content = new char[string_length];
+    string_length = str.string_length;
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
-		string_content[i] = str.string_content[i];
+    for (int i {0}; i != string_length; i++)
+        string_content[i] = str.string_content[i];
 }
 
 MyString::~MyString() { delete[] string_content; }
@@ -59,15 +58,15 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 }
 
 void MyString::println() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 
-	cout << endl;
+    cout << endl;
 }
 
 MyString &MyString::assign(MyString &str) {
@@ -130,12 +129,12 @@ void MyString::reserve(int size) {
 }
 
 int main() {
-    
-	MyString str1("very very very long string");
+
+    MyString str1("very very very long string");
     str1.reserve(30);
 
     cout << "Capacity: " << str1.capacity() << endl;
     cout << "String length: " << str1.get_length() << endl;
 
-	str1.println();
+    str1.println();
 }

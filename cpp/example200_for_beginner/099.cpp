@@ -1,6 +1,6 @@
 // 하위 폴더 목록 확인하기 (directory_iterator)
 #include <iostream>
-#include <experimental/filesystem>      // C++17 이상
+#include <experimental/filesystem>      // C++17 이상, (빌드시 $ g++ -std=c++17 099.cpp -lstdc++fs)
 
 using namespace std;
 namespace fs = experimental::filesystem;

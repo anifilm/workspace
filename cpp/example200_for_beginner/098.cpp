@@ -1,6 +1,6 @@
 // 폴더 존재 유무 확인하기 (exists)
 #include <iostream>
-#include <experimental/filesystem>      // C++17 이상
+#include <experimental/filesystem>      // C++17 이상, (빌드시 $ g++ -std=c++17 098.cpp -lstdc++fs)
 
 using namespace std;
 namespace fs = experimental::filesystem;

@@ -4,9 +4,8 @@
 using namespace std;
 
 class MyString {
-
-	char *string_content;		// 문자열 데이터를 가리키는 포인터
-	int string_length;			// 문자열 길이
+    char *string_content;		// 문자열 데이터를 가리키는 포인터
+    int string_length;			// 문자열 길이
 
     int memory_capacity;        // 현재 할당된 용량
 
@@ -23,8 +22,8 @@ public:
     int capacity() const;
     void reserve(int size);
 
-	void print();
-	void println();
+    void print();
+    void println();
 
     MyString &assign(MyString &str);
     MyString &assign(const char *str);
@@ -34,30 +33,32 @@ public:
     MyString &insert(int loc, MyString &str);
     MyString &insert(int loc, const char *str);
     MyString &insert(int loc, char c);
+
+    MyString &erase(int loc, int num);
 };
 
 MyString::MyString(char c) {
-	string_content = new char[1];
-	string_content[0] = c;
+    string_content = new char[1];
+    string_content[0] = c;
     memory_capacity = 1;
     string_length = 1;
 }
 
 MyString::MyString(const char *str) {
-	string_length = strlen(str);
+    string_length = strlen(str);
     memory_capacity = string_length;
-	string_content = new char[string_length];
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString &str) {
-	string_length = str.string_length;
-	string_content = new char[string_length];
+    string_length = str.string_length;
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
-		string_content[i] = str.string_content[i];
+    for (int i {0}; i != string_length; i++)
+        string_content[i] = str.string_content[i];
 }
 
 MyString::~MyString() { delete[] string_content; }
@@ -65,15 +66,15 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 }
 
 void MyString::println() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 
-	cout << endl;
+    cout << endl;
 }
 
 MyString &MyString::assign(MyString &str) {
@@ -88,7 +89,6 @@ MyString &MyString::assign(MyString &str) {
     for (int i {0}; i != str.string_length; i++) {
         string_content[i] = str.string_content[i];
     }
-
     // 그리고 굳이  str.stringg_length + 1 ~ string_length 부분은 초기화
     // 시킬 필요는 없다. 왜냐하면 거기까지는 읽어들이지 않기 때문이다.
 
@@ -151,7 +151,11 @@ MyString &MyString::insert(int loc, MyString &str) {
 
     if (string_length + str.string_length > memory_capacity) {
         // 이제 새롭게 동적으로 할당을 해야 한다
-        memory_capacity = string_length + str.string_length;
+
+        if (memory_capacity * 2 > string_length + str.string_length)
+            memory_capacity *= 2;
+        else
+            memory_capacity = string_length + str.string_length;
 
         char *prev_string_content = string_content;
         string_content = new char[memory_capacity];
@@ -206,16 +210,34 @@ MyString &MyString::insert(int loc, char c) {
     return insert(loc, temp);
 }
 
+MyString &MyString::erase(int loc, int num) {
+    // loc 의 앞 부터 시작해서 num 문자를 지운다
+    if (num < 0 || loc < 0 || loc > string_length) return *this;
+
+    // 지운다는 것은 단순히 뒤의 문자들을 앞으로 끌고 온다고 생각하면 된다
+
+    for (int i = loc + num; i < string_length; i++) {
+        string_content[1 - num] = string_content[i];
+    }
+
+    string_length -= num;
+    return *this;
+}
+
 int main() {
-    
-	MyString str1("very very very long string");
+
+    MyString str1("very very very long string");
     MyString str2("<some string inserted between>");
     str1.reserve(30);
 
     cout << "Capacity: " << str1.capacity() << endl;
     cout << "String length: " << str1.get_length() << endl;
-	str1.println();
+    str1.println();
 
     str1.insert(5, str2);
+    str1.println();
+
+    cout << "Capacity: " << str1.capacity() << endl;
+    cout << "String length: " << str1.get_length() << endl;
     str1.println();
 }

@@ -4,9 +4,8 @@
 using namespace std;
 
 class MyString {
-
-	char *string_content;      // 문자열 데이터를 가리키는 포인터
-	int string_length;         // 문자열 길이
+    char *string_content;		// 문자열 데이터를 가리키는 포인터
+    int string_length;			// 문자열 길이
 
     int memory_capacity;        // 현재 할당된 용량
 
@@ -23,49 +22,51 @@ public:
     int capacity() const;
     void reserve(int size);
 
-	void print();
-	void println();
+    void print();
+    void println();
 
-    MyString& assign(MyString &str);
-    MyString& assign(const char *str);
+    MyString &assign(MyString &str);
+    MyString &assign(const char *str);
 
     char at(int i);
 
-    MyString& insert(int loc, MyString  str);
-    MyString& insert(int loc, const char *str);
-    MyString& insert(int loc, char c);
+    MyString &insert(int loc, MyString &str);
+    MyString &insert(int loc, const char *str);
+    MyString &insert(int loc, char c);
 
-    MyString& erase(int loc, int num);
+    MyString &erase(int loc, int num);
 
     int find(int find_from, MyString &str);
     int find(int find_from, const char *str);
     int find(int find_from, char c);
 
     int compare(MyString &str);
+
+    bool operator==(MyString &str);
 };
 
 MyString::MyString(char c) {
-	string_content = new char[1];
-	string_content[0] = c;
+    string_content = new char[1];
+    string_content[0] = c;
     memory_capacity = 1;
     string_length = 1;
 }
 
 MyString::MyString(const char *str) {
-	string_length = strlen(str);
+    string_length = strlen(str);
     memory_capacity = string_length;
-	string_content = new char[string_length];
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString &str) {
-	string_length = str.string_length;
-	string_content = new char[string_length];
+    string_length = str.string_length;
+    string_content = new char[string_length];
 
-	for (int i {0}; i != string_length; i++)
-		string_content[i] = str.string_content[i];
+    for (int i {0}; i != string_length; i++)
+        string_content[i] = str.string_content[i];
 }
 
 MyString::~MyString() { delete[] string_content; }
@@ -73,15 +74,15 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 }
 
 void MyString::println() {
-	for (int i {0}; i != string_length; i++)
+    for (int i {0}; i != string_length; i++)
         cout << string_content[i];
 
-	cout << endl;
+    cout << endl;
 }
 
 MyString &MyString::assign(MyString &str) {
@@ -96,7 +97,7 @@ MyString &MyString::assign(MyString &str) {
     for (int i {0}; i != str.string_length; i++) {
         string_content[i] = str.string_content[i];
     }
-    // 그리고 굳이  str.stringg_length + 1 ~ string_length 부분은 초기화
+    // 그리고 굳이 str.stringg_length + 1 ~ string_length 부분은 초기화
     // 시킬 필요는 없다. 왜냐하면 거기까지는 읽어들이지 않기 때문이다.
 
     string_length = str.string_length;
@@ -128,7 +129,7 @@ int MyString::capacity() const { return memory_capacity; }
 
 void MyString::reserve(int size) {
     if (size > memory_capacity) {
-        char* prev_string_content = string_content;
+        char *prev_string_content = string_content;
 
         string_content = new char[size];
         memory_capacity = size;
@@ -284,10 +285,23 @@ int MyString::compare(MyString &str) {
     return -1;
 }
 
+bool MyString::operator==(MyString &str) {
+    return !compare(str);       // str과 같으면 compare 에서 0 을 리턴한다
+}
+
 int main() {
 
-	MyString str1("abcdef");
-    MyString str2("abcd");
+    MyString str1("a word");
+    MyString str2("sentence");
+    MyString str3("sentence");
 
-    cout << "str1 and str2 compare: " << str1.compare(str2) << endl;
+    if (str1 == str2)
+        cout << "str1 and str2 are same" << endl;
+    else
+        cout << "str1 and str2 are different" << endl;
+
+    if (str2 == str3)
+        cout << "str2 and str3 are same" << endl;
+    else
+        cout << "str2 and str3 are different" << endl;
 }
