@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char stradd(char *dest, char *src);
+void stradd(char *dest, char *src);
 
 int main() {
 
@@ -16,18 +16,14 @@ int main() {
 	return 0;
 }
 
-char stradd(char *dest, char *src) {
+void stradd(char *dest, char *src) {
     while (*dest) {
         dest++;
     }
-
 	while (*src) {
         *dest = *src;
         src++;
         dest++;
 	}
-
     *dest = '\0';
-
-	return 1;
 }

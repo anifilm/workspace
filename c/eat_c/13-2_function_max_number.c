@@ -21,12 +21,9 @@ int main() {
 int max_number(int *parr) {
 	int i;
 	int max = parr[0];
-
 	for (i = 1; i < 5; i++) {
-		if (parr[i] > max) {
+		if (parr[i] > max)
 			max = parr[i];
-		}
 	}
-
 	return max;
 }

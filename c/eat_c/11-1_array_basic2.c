@@ -7,9 +7,8 @@ int main() {
 
 	int i;
 
-	for (i = 0; i < 10; i++) {
+	for (i = 0; i < 10; i++)
 		printf("Array %d번째 원소: %d\n", i + 1, arr[i]);
-	}
 
 	return 0;
 }

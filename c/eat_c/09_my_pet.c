@@ -1,8 +1,8 @@
 // 마이펫
 #include <stdio.h>
 
-int main()
-{
+int main() {
+
 	int input;
 
 	printf("마이펫\n");
@@ -13,15 +13,14 @@ int main()
 
 	scanf("%d", &input);
 
-	if (input == 1) {
+	if (input == 1)
 		printf("아이 맛있어\n");
-	} else if (input == 2) {
+	else if (input == 2)
 		printf("아이 시원해\n");
-	} else if (input == 3) {
+	else if (input == 3)
 		printf("zzZ:\n");
-	} else {
+	else
 		printf("무얼 하라고 하는지 모르겠어. 왈왈!\n");
-	}
 
 	return 0;
 }

@@ -7,7 +7,6 @@ int main() {
 
     for (i = 0; i < 100; i++) {
         if (i % 5 == 0) continue;
-
         printf("%d ", i);
     }
     printf("\n");

@@ -1,8 +1,8 @@
 // 마이펫 2 switch
 #include <stdio.h>
 
-int main()
-{
+int main() {
+
 	int input;
 
 	printf("마이펫\n");

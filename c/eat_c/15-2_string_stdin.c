@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main() {
+
     char str1[10], str2[10];
 
     printf("문자열을 입력하세요: ");

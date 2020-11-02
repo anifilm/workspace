@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int add_number(int *parr);
+void add_number(int *parr);
 
 int main() {
 
@@ -19,12 +19,8 @@ int main() {
 	return 0;
 }
 
-int add_number(int *parr) {
+void add_number(int *parr) {
   	int i;
-
-  	for (i = 0; i < 3; i++) {
+  	for (i = 0; i < 3; i++)
     	parr[i]++;
-  	}
-
-  	return 0;
 }

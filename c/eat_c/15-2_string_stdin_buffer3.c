@@ -3,6 +3,7 @@
 #include <stdio_ext.h>
 
 int main() {
+
     int num;
     char c;
 

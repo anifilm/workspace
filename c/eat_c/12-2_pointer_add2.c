@@ -7,9 +7,9 @@ int main() {
     char b;
     double c;
 
-    int* pa = &a;
-    char* pb = &b;
-    double* pc = &c;
+    int *pa = &a;
+    char *pb = &b;
+    double *pc = &c;
 
     printf("pa 의 값 : %p \n", pa);
     printf("(pa + 1) 의 값 : %p \n", pa + 1);     // 4byte(int) 주소값 증가

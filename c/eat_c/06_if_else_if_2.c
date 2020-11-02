@@ -12,13 +12,12 @@ int main() {
     ave_score = (math + english + science + programming) / 4;
     printf("당신의 평균 점수는 %f 입니다.\n", ave_score);
 
-    if (ave_score >= 90) {
+    if (ave_score >= 90)
         printf("당신은 우등생 입니다.");
-    } else if (ave_score >= 30) {
+    else if (ave_score >= 30)
         printf("조금만 노력하세요!.\n");
-    } else {
+    else
         printf("공부를 발로 합니까?\n");
-    }
 
   return 0;
 }

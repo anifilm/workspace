@@ -12,12 +12,11 @@ int main() {
         printf("arr[%d] 의 주소값 : %p ", i, &arr[i]);
         printf("(parr + %d) 의 값 : %p ", i, (parr + i));
 
-        if (&arr[i] == (parr + i)) {
+        if (&arr[i] == (parr + i))
             // 만일 (parr + i) 가 성공적으로 arr[i] 를 가리킨다면
             printf("--> 일치\n");
-        } else {
+        else
             printf("--> 불일치\n");
-        }
     }
 
 	return 0;

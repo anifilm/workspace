@@ -137,9 +137,9 @@ int borrow_book(int *borrowed) {
 	printf("책 번호: ");
 	scanf("%d", &book_num);
 
-	if (borrowed[book_num] == 1) {
+	if (borrowed[book_num] == 1)
 		printf("\n이미 대출된 책입니다.\n");
-	} else {
+	else {
 		printf("\n책이 대출되었습니다.\n");
 		borrowed[book_num] = 1;
 	}
@@ -155,9 +155,9 @@ int return_book(int *borrowed) {
 	printf("책 번호: ");
 	scanf("%d", &book_num);
 
-	if (borrowed[book_num] == 0) {
+	if (borrowed[book_num] == 0)
 		printf("\n이미 반납된 책입니다.\n");
-	} else {
+	else {
 		printf("\n책이 반납되었습니다.\n");
 		borrowed[book_num] = 0;
 	}
@@ -167,10 +167,8 @@ int return_book(int *borrowed) {
 
 char compare(char *str1, char *str2) {
 	while (*str1) {
-		if (*str1 != *str2) {
+		if (*str1 != *str2)
 			return 0;
-		}
-
 		str1++;
 		str2++;
 	}

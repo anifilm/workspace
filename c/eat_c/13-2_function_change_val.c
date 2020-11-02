@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-int change_val(int i) {
+void change_val(int i) {
     i = 3;
-    return 0;
 }
 
 int main() {

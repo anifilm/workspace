@@ -1,5 +1,4 @@
 // word_test.c
-
 #include <stdio.h>
 #include "str.h"
 
@@ -13,11 +12,10 @@ int main() {
     printf("Input word 2: ");
     scanf("%s", str2);
 
-    if (compare(str1, str2)) {
+    if (compare(str1, str2))
         printf("%s와 %s는 같은 단어 입니다.\n", str1, str2);
-    } else {
+    else
         printf("%s와 %s는 다른 단어 입니다.\n", str1, str2);
-    }
 
     return 0;
 }

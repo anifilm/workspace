@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int change_val(int *pi) {
+void change_val(int *pi) {
     printf("\n----- chage_val 함수 안에서 -----\n");
 
     printf("pi 의 값: %p\n", pi);

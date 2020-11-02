@@ -14,14 +14,13 @@ int main() {
     prime[0] = 2;
     prime[1] = 3;
 
-    for (;;) {
+    for ( ; ; ) {
         ok = 0;
         for (i = 0; i <= index; i++) {
             if (guess % prime[i] != 0) {
                 ok++;
-            } else {
+            else
                 break;
-            }
         }
         if (ok == (index + 1)) {
             index++;

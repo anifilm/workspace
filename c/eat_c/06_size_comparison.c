@@ -8,9 +8,8 @@ int main() {
     scanf("%d", &a);
 
     if (a >= 10) {
-        if (a < 20) {
+        if (a < 20)
             printf(" %d 는 10 이상, 20 미만인 수 입니다.\n", a);
-        }
     }
 
     return 0;
