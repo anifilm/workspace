@@ -3,7 +3,7 @@
 
 int main() {
 
-    int lucky_number = 3;
+    int lucky_number {3};
     std::cout << "내 비밀의 수를 맞춰보세요." << std::endl;
 
     int user_input;     // 사용자 입력
