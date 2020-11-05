@@ -1,10 +1,11 @@
+// 자기 자신을 가리키는 포인터 this
 #include <iostream>
 
 using namespace std;
 
 class Marine {
     static int total_marine_num;
-    const static int i = 0;
+    const static int i {0};
 
     int hp;					// 마린 체력
     int coord_x, coord_y;	// 마린 위치
@@ -18,65 +19,57 @@ public:
     Marine(int x, int y, int default_demage);
 
     int attack();						// 데미지를 리턴한다
-    void be_attacked(int damage_earn);	// 입은 데미지
+    Marine& be_attacked(int damage_earn);	// 입은 데미지
     void move(int x, int y);			// 새로운 위치
 
     void show_status();		// 상태를 보여준다
 
     static void show_total_marine();
-    ~Marine() { total_marine_num--; }
+    ~Marine() {total_marine_num--;}
 };
 
-int Marine::total_marine_num = 0;
+int Marine::total_marine_num {0};
 
 void Marine::show_total_marine() {
-
     cout << "전체 마린 수: " << total_marine_num << endl;
 }
 
 Marine::Marine()
-    : coord_x(0), coord_y(0), hp(50), default_damage(5), is_dead(false) {
-
-    total_marine_num++;
+    : coord_x {0}, coord_y {0}, hp {50}, default_damage {5}, is_dead {false} {
+        total_marine_num++;
 }
 
 Marine::Marine(int x, int y)
-    : coord_x(x), coord_y(y), hp(50), default_damage(5), is_dead(false) {
-
-    total_marine_num++;
+    : coord_x {x}, coord_y {y}, hp {50}, default_damage {5}, is_dead {false} {
+        total_marine_num++;
 }
 
 Marine::Marine(int x, int y, int default_damage)
     : coord_x(x), coord_y(y), hp(50), default_damage(default_damage), is_dead(false) {
-
-    total_marine_num++;
+        total_marine_num++;
 }
 
 void Marine::move(int x, int y) {
-
     coord_x = x;
     coord_y = y;
 }
 
-int Marine::attack() { return default_damage; }
+int Marine::attack() {return default_damage;}
 
-void Marine::be_attacked(int damage_earn) {
-
+Marine& Marine::be_attacked(int damage_earn) {
     hp -= damage_earn;
-
     if (hp <= 0) is_dead = true;
+    return *this;
 }
 
 void Marine::show_status() {
-
-    cout << " *** Marine *** " << endl;
-    cout << " Location : { " << coord_x << " , " << coord_y << " ) " << endl;
-    cout << " HP : " << hp << endl;
-    cout << " 현재 총 마린 수: " << total_marine_num << endl;
+    cout << "*** Marine ***" << endl;
+    cout << "Location: (" << coord_x << ", " << coord_y << ")" << endl;
+    cout << "HP: " << hp << endl;
+    cout << "현재 총 마린 수: " << total_marine_num << endl;
 }
 
 void create_marine() {
-
     Marine marine3(10, 10, 4);
     Marine::show_total_marine();
 }
@@ -97,4 +90,6 @@ int main() {
 
     marine1.show_status();
     marine2.show_status();
+
+    return 0;
 }

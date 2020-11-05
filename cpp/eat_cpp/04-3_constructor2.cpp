@@ -20,7 +20,6 @@ public:
 };
 
 Marine::Marine() {
-
     hp = 50;
     coord_x = coord_y = 0;
     damage = 5;
@@ -28,7 +27,6 @@ Marine::Marine() {
 }
 
 Marine::Marine(int x, int y) {
-
     coord_x = x;
     coord_y = y;
     hp = 50;
@@ -37,39 +35,42 @@ Marine::Marine(int x, int y) {
 }
 
 void Marine::move(int x, int y) {
-
     coord_x = x;
     coord_y = y;
 }
 
-int Marine::attack() { return damage; }
+int Marine::attack() {return damage;}
 
 void Marine::be_attacked(int damage_earn) {
-
     hp -= damage_earn;
-
     if (hp <= 0) is_dead = true;
 }
 
 void Marine::show_status() {
-
-    cout << " *** Marine *** " << endl;
-    cout << " Location : { " << coord_x << " , " << coord_y << " ) " << endl;
-    cout << " HP : " << hp << endl;
+    cout << "*** Marine ***" << endl;
+    cout << "Location: (" << coord_x << " , " << coord_y << ")" << endl;
+    cout << "HP: " << hp << endl;
 }
 
 int main() {
 
-    Marine marine1(2 ,3);
-    Marine marine2(3, 5);
+    Marine* marines[100];       // TODO:포인터 배열 선언 추가 학습 필요
 
-    marine1.show_status();
-    marine2.show_status();
+    marines[0] = new Marine(2 ,3);      // new 동적 메모리 할당
+    marines[1] = new Marine(3, 5);
+
+    marines[0]->show_status();
+    marines[1]->show_status();
 
     cout << endl << "마린1이 마린2를 공격!" << endl;
 
-    marine2.be_attacked(marine1.attack());
+    marines[1]->be_attacked(marines[0]->attack());
 
-    marine1.show_status();
-    marine2.show_status();
+    marines[0]->show_status();
+    marines[1]->show_status();
+
+    delete marines[0];
+    delete marines[1];
+
+    return 0;
 }

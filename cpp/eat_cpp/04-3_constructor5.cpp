@@ -1,3 +1,4 @@
+// 복사 생성자 (Copy Constructor)
 #include <iostream>
 #include <string.h>
 
@@ -16,9 +17,7 @@ public:
 };
 
 Photon_Cannon::Photon_Cannon(const Photon_Cannon &pc) {
-
     cout << "복사 생성자 호출!" << endl;
-
     hp = pc.hp;
     shield = pc.shield;
     coord_x = pc.coord_x;
@@ -27,9 +26,7 @@ Photon_Cannon::Photon_Cannon(const Photon_Cannon &pc) {
 }
 
 Photon_Cannon::Photon_Cannon(int x, int y) {
-
     cout << "생성자 호출!" << endl;
-
     hp = shield = 100;
     coord_x = x;
     coord_y = y;
@@ -37,18 +34,19 @@ Photon_Cannon::Photon_Cannon(int x, int y) {
 }
 
 void Photon_Cannon::show_status() {
-
     cout << "Photon Cannon" << endl;
-    cout << " Location : ( " << coord_x << " , " << coord_y << " ) " << endl;
-    cout << " HP : " << hp << endl;
+    cout << "Location: (" << coord_x << ", " << coord_y << ")" << endl;
+    cout << "HP: " << hp << endl;
 }
 
 int main() {
 
     Photon_Cannon pc1(3, 3);
-    Photon_Cannon pc2(pc1);
-    Photon_Cannon pc3 = pc2;
+    Photon_Cannon pc2(pc1);         // 복사 생성자 호출
+    Photon_Cannon pc3 = pc2;        // 복사 생성자 호출
 
     pc1.show_status();
     pc2.show_status();
+
+    return 0;
 }

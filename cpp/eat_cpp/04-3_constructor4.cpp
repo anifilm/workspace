@@ -1,3 +1,4 @@
+// 소멸자 (Destructor) 추가
 #include <iostream>
 #include <string.h>
 
@@ -13,6 +14,7 @@ class Marine {
 public:
     Marine();							// 기본 생성자
     Marine(int x, int y, const char *marine_name);	// 이름까지 지정
+    ~Marine();                          // 소멸자 추가
 
     int attack();						// 데미지를 리턴한다
     void be_attacked(int damage_earn);	// 입은 데미지
@@ -22,7 +24,6 @@ public:
 };
 
 Marine::Marine() {
-
     hp = 50;
     coord_x = coord_y = 0;
     damage = 5;
@@ -31,10 +32,8 @@ Marine::Marine() {
 }
 
 Marine::Marine(int x, int y, const char *marine_name) {
-
     name = new char[strlen(marine_name) + 1];
     strcpy(name, marine_name);
-
     coord_x = x;
     coord_y = y;
     hp = 50;
@@ -43,25 +42,26 @@ Marine::Marine(int x, int y, const char *marine_name) {
 }
 
 void Marine::move(int x, int y) {
-
     coord_x = x;
     coord_y = y;
 }
 
-int Marine::attack() { return damage; }
+int Marine::attack() {return damage;}
 
 void Marine::be_attacked(int damage_earn) {
-
     hp -= damage_earn;
-
     if (hp <= 0) is_dead = true;
 }
 
 void Marine::show_status() {
+    std::cout << "*** Marine: " << name << " ***" << std::endl;
+    cout << "Location: (" << coord_x << ", " << coord_y << ")" << endl;
+    cout << "HP: " << hp << endl;
+}
 
-    cout << " *** Marine: " << name << " *** " << endl;
-    cout << " Location : { " << coord_x << " , " << coord_y << " ) " << endl;
-    cout << " HP : " << hp << endl;
+Marine::~Marine() {
+    cout << name << "의 소멸자 호출!" << endl;    // 소멸자 호출시 내용 출력
+    if (name != NULL) { delete[] name; }
 }
 
 int main() {
@@ -81,6 +81,6 @@ int main() {
     marines[0]->show_status();
     marines[1]->show_status();
 
-    delete marines[0];
+    delete marines[0];      // 메모리에서 삭제시 소멸자 호출
     delete marines[1];
 }

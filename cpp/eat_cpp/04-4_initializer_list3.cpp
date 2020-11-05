@@ -12,6 +12,7 @@ class Marine {
 public:
     Marine();				// 기본 생성자
     Marine(int x, int y);	// x, y 좌표에 마린 생성
+    Marine(int x, int y, int default_demage);
 
     int attack();						// 데미지를 리턴한다
     void be_attacked(int damage_earn);	// 입은 데미지
@@ -21,37 +22,36 @@ public:
 };
 
 Marine::Marine()
-    : coord_x(0), coord_y(0), hp(50), default_damage(5), is_dead(false) {}
+    : coord_x {0}, coord_y {0}, hp {50}, default_damage {5}, is_dead {false} {}
 
 Marine::Marine(int x, int y)
-    : coord_x(x), coord_y(y), hp(50), default_damage(5), is_dead(false) {}
+    : coord_x {x}, coord_y {y}, hp {50}, default_damage {5}, is_dead {false} {}
+
+Marine::Marine(int x, int y, int default_damage)
+    : coord_x {x}, coord_y {y}, hp {50}, default_damage {default_damage}, is_dead {false} {}
 
 void Marine::move(int x, int y) {
-
     coord_x = x;
     coord_y = y;
 }
 
-int Marine::attack() { return default_damage; }
+int Marine::attack() {return default_damage;}
 
 void Marine::be_attacked(int damage_earn) {
-
     hp -= damage_earn;
-
     if (hp <= 0) is_dead = true;
 }
 
 void Marine::show_status() {
-
-    cout << " *** Marine *** " << endl;
-    cout << " Location : { " << coord_x << " , " << coord_y << " ) " << endl;
-    cout << " HP : " << hp << endl;
+    cout << "*** Marine ***" << endl;
+    cout << "Location: (" << coord_x << ", " << coord_y << ")" << endl;
+    cout << "HP: " << hp << endl;
 }
 
 int main() {
 
-    Marine marine1(2 ,3);
-    Marine marine2(3, 5);
+    Marine marine1(2 ,3, 10);
+    Marine marine2(3, 5, 10);
 
     marine1.show_status();
     marine2.show_status();
@@ -62,4 +62,6 @@ int main() {
 
     marine1.show_status();
     marine2.show_status();
+
+    return 0;
 }

@@ -43,9 +43,9 @@ MyString::MyString(const MyString &str) {
         string_content[i] = str.string_content[i];
 }
 
-MyString::~MyString() { delete[] string_content; }
+MyString::~MyString() {delete[] string_content;}
 
-int MyString::get_length() const { return string_length; }
+int MyString::get_length() const {return string_length;}
 
 void MyString::print() {
     for (int i {0}; i != string_length; i++)
@@ -55,7 +55,6 @@ void MyString::print() {
 void MyString::println() {
     for (int i {0}; i != string_length; i++)
         cout << string_content[i];
-
     cout << endl;
 }
 
@@ -66,4 +65,6 @@ int main() {
 
     str1.println();
     str2.println();
+
+    return 0;
 }
