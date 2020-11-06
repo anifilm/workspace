@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 struct intPtrs {
-    int *p1;
-    int *p2;
+    int* p1;
+    int* p2;
 };
 
 int main() {

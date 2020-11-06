@@ -5,15 +5,15 @@
 
 int main() {
 
-    char *str;
+    char* str;
 
     // Initial memory allocation
-    str = (char *)malloc(15);
+    str = (char*)malloc(15);
     strcpy(str, "Jason");
     printf("String = %s, \tAddress = %p\n", str, str);
 
     // Reallocating memory
-    str = (char *)realloc(str, 25);
+    str = (char*)realloc(str, 25);
     strcat(str, ".com");
     printf("String = %s, Address = %p\n", str, str);
 

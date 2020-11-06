@@ -4,7 +4,7 @@
 int main() {
 
     int number = 0;             // A variable of type int initialized to 0
-    int *p_number = NULL;       // A pointer that can point to type int
+    int* p_number = NULL;       // A pointer that can point to type int
 
     number = 10;
 
@@ -19,5 +19,5 @@ int main() {
     printf("p_number's value: %p\n", p_number);     // Output the value (an address)
     printf("value pointed to: %d\n", *p_number);    // Value at the address
 
-	return 0;
+    return 0;
 }

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int stringLength(const char *string);
+int stringLength(const char* string);
 
 int main() {
 
@@ -13,8 +13,8 @@ int main() {
     return 0;
 }
 
-int stringLength(const char *string) {
-    const char *lastAddress = string;
+int stringLength(const char* string) {
+    const char* lastAddress = string;
 
     while (*lastAddress)
         lastAddress++;

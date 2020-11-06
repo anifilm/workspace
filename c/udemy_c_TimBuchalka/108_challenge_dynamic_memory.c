@@ -5,12 +5,12 @@
 int main() {
 
    int size;
-   char *text = NULL;
+   char* text = NULL;
 
    printf("Enter limit of the text: \n");
    scanf("%d", &size);
 
-   text = (char *) malloc(sizeof(char) * size);
+   text = (char*) malloc(sizeof(char) * size);
 
    if (text != NULL) {
        printf("Enter some text: \n");
