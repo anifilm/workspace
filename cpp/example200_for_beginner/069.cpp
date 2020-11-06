@@ -6,10 +6,10 @@ using namespace std;
 int main() {
 
     int number1 {10};
-    int *pointer1 (&number1);
+    int* pointer1 = &number1;
 
     double number2 {23.4};
-    double *pointer2 {&number2};
+    double *pointer2 = &number2;
 
     cout << "number1: " << number1 << ", sizeof(int number1): " << sizeof(number1) << endl;
     cout << "pointer1: " << pointer1 << ", sizeof(int pointer1): " << sizeof(pointer1) << endl;

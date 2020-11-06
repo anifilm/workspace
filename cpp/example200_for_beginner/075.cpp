@@ -3,13 +3,13 @@
 
 using namespace std;
 
-void Func1(int &arg) {
+void Func1(int& arg) {
     cout << "변경 전: " << arg << endl;
     arg += 10;
     cout << "변경 후: " << arg << endl;
 }
 
-void Func2(string &info) {
+void Func2(string& info) {
     info += "981년";
 }
 

@@ -1,7 +1,7 @@
 // 참조자의 도입 1
 #include <iostream>
 
-void change_val(int *p) {
+void change_val(int* p) {
     *p = 3;
 }
 

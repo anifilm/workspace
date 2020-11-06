@@ -3,13 +3,13 @@
 
 using namespace std;
 
-void Func1(bool *is_on) {
+void Func1(bool* is_on) {
     cout << "Call by address: " << is_on << ", sizeof(is_on): " << sizeof(is_on) << endl;
     // is_on은 주소값을 가지고 있다. (&is_tmp)
     // *is_on 포인터로 값에 접근할 수 있다.
 }
 
-void Func2(bool &is_on) {
+void Func2(bool& is_on) {
     cout << "Call by reference: " << is_on << ", sizeof(is_on): " << sizeof(is_on) << endl;
     // is_on은 is_tmp의 값에 접근할 수 있다.
     // &is_on이 가리키는 주소값은 is_tmp의 주소값과 같다.

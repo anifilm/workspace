@@ -1,7 +1,7 @@
 // 함수 인자로 레퍼런스 받기
 #include <iostream>
 
-void change_val(int &ref) {
+void change_val(int& ref) {
     ref = 3;
 }
 

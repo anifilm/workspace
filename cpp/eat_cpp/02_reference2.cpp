@@ -4,8 +4,8 @@
 int main() {
 
     int x;
-    int &y = x;
-    int &z = y;
+    int& y = x;
+    int& z = y;
 
     x = 1;
     std::cout << "x: " << x << " y: " << y << " z: " << z << std::endl;

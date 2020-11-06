@@ -9,7 +9,7 @@ int main() {
     int number2 {20};
 
     /* ptr1 포인터의 주소값이 가리키는 값을 상수로 선언 */
-    int const *ptr1;            // 주소값 변경 가능, 주소가 가리키는 값 변경 불가능
+    const int* ptr1;            // 주소값 변경 가능, 주소가 가리키는 값 변경 불가능
 
     ptr1 = &number1;            // 포인터 변수 ptr1에 number1의 메모리 주소값을 저장
     cout << ptr1 << endl;

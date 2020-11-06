@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Print1(int *arr) {
+void Print1(int* arr) {
     cout << "== Print1 ==" << endl;
     cout << arr[0] << ", " << arr[1] << ", " << arr[2] << endl;
     cout << endl;
