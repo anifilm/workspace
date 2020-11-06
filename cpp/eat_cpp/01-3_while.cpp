@@ -1,6 +1,8 @@
 // while문 이용하기
 #include <iostream>
 
+using namespace std;
+
 int main() {
 
     int i {1}, sum {0};
@@ -10,7 +12,7 @@ int main() {
         i++;
     }
 
-    std::cout << "합은: " << sum << std::endl;
+    cout << "합은: " << sum << endl;
 
     return 0;
 }

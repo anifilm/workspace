@@ -1,16 +1,20 @@
 // 함수의 오버로딩 2
 #include <iostream>
 
+using namespace std;
+
 void print(int x) {
-    std::cout << "int: " << x << std::endl;
+    cout << "int: " << x << endl;
 }
 
-// void print(char x) {
-//     std::cout << "char: " << x << std::endl;
-// }
+/*
+void print(char x) {
+    cout << "char: " << x << endl;
+}
+*/
 
 void print(double x) {
-    std::cout << "double: " << x << std::endl;
+    cout << "double: " << x << endl;
 }
 
 int main() {

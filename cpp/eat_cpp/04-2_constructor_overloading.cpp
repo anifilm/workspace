@@ -1,6 +1,8 @@
 // 생성자 오버로딩 (Cosntructor Overloading)
 #include <iostream>
 
+using namespace std;
+
 class Date {
     int _year;
     int _month;     // 1부터 12까지
@@ -19,7 +21,7 @@ public:
 
     // 디폴트 생성자 (Default Constructor)
     Date() {
-        std::cout << "기본 생성자 호출" << std::endl;
+        cout << "기본 생성자 호출" << endl;
         _year = 2012;
         _month = 7;
         _day = 12;
@@ -27,7 +29,7 @@ public:
 
     // 생성자 (Constructor)
     Date(int year, int month, int day) {
-        std::cout << "생성자 호출" << std::endl;
+        cout << "생성자 호출" << endl;
         _year = year;
         _month = month;
         _day = day;
@@ -72,8 +74,8 @@ void Date::AddMonth(int inc) {
 void Date::AddYear(int inc) { _year += inc; }
 
 void Date::ShowDate() {
-    std::cout << "오늘은 " << _year << "년 " << _month << "월 "
-              << _day << "일 입니다." << std::endl;
+    cout << "오늘은 " << _year << "년 " << _month << "월 "
+              << _day << "일 입니다." << endl;
 }
 
 int main() {

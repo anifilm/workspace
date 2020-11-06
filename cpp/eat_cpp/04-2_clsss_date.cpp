@@ -1,6 +1,8 @@
 // Date 클래스
 #include <iostream>
 
+using namespace std;
+
 class Date {
     int _year;
     int _month;     // 1부터 12까지
@@ -62,8 +64,8 @@ void Date::AddMonth(int inc) {
 void Date::AddYear(int inc) { _year += inc; }
 
 void Date::ShowDate() {
-    std::cout << "오늘은 " << _year << "년 " << _month << "월 "
-              << _day << "일 입니다." << std::endl;
+    cout << "오늘은 " << _year << "년 " << _month << "월 "
+              << _day << "일 입니다." << endl;
 }
 
 int main() {

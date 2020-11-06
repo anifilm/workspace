@@ -1,6 +1,8 @@
 // 함수 인자로 레퍼런스 받기
 #include <iostream>
 
+using namespace std;
+
 void change_val(int& ref) {
     ref = 3;
 }
@@ -9,9 +11,9 @@ int main() {
 
     int number {5};
 
-    std::cout << number << std::endl;
+    cout << number << endl;
     change_val(number);
-    std::cout << number << std::endl;
+    cout << number << endl;
 
     return 0;
 }

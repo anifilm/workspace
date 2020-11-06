@@ -10,7 +10,7 @@ private:
 
 public:
     Complex(double real, double img): real(real), img(img) {}
-    Complex(const Complex& c) {real = c.real, img = c.img;}
+    Complex(const Complex& c) { real = c.real, img = c.img; }
     Complex(const char* str);
 
     Complex operator+(const Complex& c);
@@ -30,7 +30,7 @@ public:
 
     Complex& operator=(const Complex& c);
 
-    void println() {cout << "(" << real << ", " << img << ")" << endl;}
+    void println() { cout << "(" << real << ", " << img << ")" << endl; }
 };
 
 double Complex::get_number(const char* str, int from, int to) {

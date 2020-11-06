@@ -1,6 +1,8 @@
 // 참조자의 도입 1
 #include <iostream>
 
+using namespace std;
+
 void change_val(int* p) {
     *p = 3;
 }
@@ -9,9 +11,9 @@ int main() {
 
     int number {5};
 
-    std::cout << number << std::endl;
+    cout << number << endl;
     change_val(&number);
-    std::cout << number << std::endl;
+    cout << number << endl;
 
     return 0;
 }

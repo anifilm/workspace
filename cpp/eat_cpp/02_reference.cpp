@@ -1,6 +1,8 @@
 // 참조자의 도입 2
 #include <iostream>
 
+using namespace std;
+
 int main() {
 
     int a {3}, b {6};
@@ -8,8 +10,8 @@ int main() {
     // &another_a = b;      // 한번 선언된 레퍼런스는 재할당 할 수 없다. (포인터와 다른점)
 
     another_a = 5;
-    std::cout << "a: " << a << std::endl;
-    std::cout << "another_a: " << another_a << std::endl;
+    cout << "a: " << a << endl;
+    cout << "another_a: " << another_a << endl;
 
     return 0;
 }

@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 // Animal Class 선언, 클래스를 이용해서 만들어진 객체를 인스턴스(instance)라고 부른다.
 class Animal {
 private:        // 인스턴스 변수 선언
@@ -16,8 +18,8 @@ public:         // 인스턴스 메서드 선언
         weight += (inc / 3);
     }
     void view_stat() {
-        std::cout << "이 동물의 food  : " << food << std::endl;
-        std::cout << "이 동물의 weight: " << weight << std::endl;
+        cout << "이 동물의 food  : " << food << endl;
+        cout << "이 동물의 weight: " << weight << endl;
     }
 };
 

@@ -8,14 +8,14 @@ private:
 
 public:
     Complex(double real, double img): real(real), img(img) {}
-    Complex(const Complex& c) {real = c.real, img = c.img;}
+    Complex(const Complex& c) { real = c.real, img = c.img; }
 
     Complex operator+(const Complex& c);
     Complex operator-(const Complex& c);
     Complex operator*(const Complex& c);
     Complex operator/(const Complex& c);
 
-    void println() {cout << "(" << real << ", " << img << ")" << endl;}
+    void println() { cout << "(" << real << ", " << img << ")" << endl; }
 };
 
 Complex Complex::operator+(const Complex& c) {

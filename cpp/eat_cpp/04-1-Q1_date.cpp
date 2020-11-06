@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 class Date {
     int year;
     int month;     // 1부터 12까지
@@ -34,9 +36,9 @@ public:
     }
 
     void ShowDate() {
-        std::cout << year << "년 ";
-        std::cout << month << "월 ";
-        std::cout << day << "일" << std::endl;
+        cout << year << "년 ";
+        cout << month << "월 ";
+        cout << day << "일" << endl;
     }
 };
 

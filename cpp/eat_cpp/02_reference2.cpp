@@ -1,6 +1,8 @@
 // 참조자 이해하기
 #include <iostream>
 
+using namespace std;
+
 int main() {
 
     int x;
@@ -8,13 +10,13 @@ int main() {
     int& z = y;
 
     x = 1;
-    std::cout << "x: " << x << " y: " << y << " z: " << z << std::endl;
+    cout << "x: " << x << " y: " << y << " z: " << z << endl;
 
     y = 2;
-    std::cout << "x: " << x << " y: " << y << " z: " << z << std::endl;
+    cout << "x: " << x << " y: " << y << " z: " << z << endl;
 
     z = 3;
-    std::cout << "x: " << x << " y: " << y << " z: " << z << std::endl;
+    cout << "x: " << x << " y: " << y << " z: " << z << endl;
 
     return 0;
 }
