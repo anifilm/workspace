@@ -5,39 +5,39 @@
 #include <fcntl.h>
 #include <errno.h>
 
-int main(int argc, char **argv)
-{
-	int ret;
-	int flag;
-	int fd;
-	char buf[128];
+int main(int argc, char** argv) {
 
-	fd = STDIN_FILENO;
+    int ret;
+    int flag;
+    int fd;
+    char buf[128];
 
-	printf("trying to read...\n");
-	memset(buf, 0, sizeof(buf));
-	ret = read(fd, buf, sizeof(buf));
-	printf("read() [%s] - %d bytes\n", buf, ret);
+    fd = STDIN_FILENO;
 
-	flag = fcntl(fd, F_GETFL);
-	if (flag == -1) {
-		printf("fcntl(F_GETFL) fail\n");
-		return -1;
-	}
+    printf("trying to read...\n");
+    memset(buf, 0, sizeof(buf));
+    ret = read(fd, buf, sizeof(buf));
+    printf("read() [%s] - %d bytes\n", buf, ret);
 
-	ret = fcntl(fd, F_SETFL, flag | O_NONBLOCK);
-	if (ret == -1) {
-		printf("fcntl(F_SETFL) fail\n");
-		return -1;
-	}
+    flag = fcntl(fd, F_GETFL);
+    if (flag == -1) {
+        printf("fcntl(F_GETFL) fail\n");
+        return -1;
+    }
 
-	printf("trying to read...\n");
-	memset(buf, 0, sizeof(buf));
-	ret = read(fd, buf, sizeof(buf));
-	printf("read() [%s] - %d bytes\n", buf, ret);
-	if (ret == -1) {
-		printf("errno=%d, %s\n", errno, strerror(errno));
-	}
+    ret = fcntl(fd, F_SETFL, flag | O_NONBLOCK);
+    if (ret == -1) {
+        printf("fcntl(F_SETFL) fail\n");
+        return -1;
+    }
 
-	return 0;
+    printf("trying to read...\n");
+    memset(buf, 0, sizeof(buf));
+    ret = read(fd, buf, sizeof(buf));
+    printf("read() [%s] - %d bytes\n", buf, ret);
+    if (ret == -1) {
+        printf("errno=%d, %s\n", errno, strerror(errno));
+    }
+
+    return 0;
 }

@@ -5,54 +5,54 @@
 #include <sys/file.h>
 #include <errno.h>
 
-static void print_usage(const char *progname)
+static void print_usage(const char* progname)
 {
-	printf("usage: %s (ex|sh)\n", progname);
-	exit(-1);
+    printf("usage: %s (ex|sh)\n", progname);
+    exit(-1);
 }
 
-int main(int argc, char **argv)
-{
-	int fd;
-	int ops;
+int main(int argc, char** argv) {
 
-	if (argc < 2) {
-		print_usage(argv[0]);
-	}
+    int fd;
+    int ops;
 
-	if (!strcmp(argv[1], "sh")) {
-		ops = LOCK_SH;
-	} else if (!strcmp(argv[1], "ex")) {
-		ops = LOCK_EX;
-	} else {
-		print_usage(argv[0]);
-	}
+    if (argc < 2) {
+        print_usage(argv[0]);
+    }
 
-	fd = open("lockfile", O_RDWR | O_CREAT, 0644);
-	if (fd < 0) {
-		printf("open() fail\n");
-		return -1;
-	}
+    if (!strcmp(argv[1], "sh")) {
+        ops = LOCK_SH;
+    } else if (!strcmp(argv[1], "ex")) {
+        ops = LOCK_EX;
+    } else {
+        print_usage(argv[0]);
+    }
 
-	printf("trying to grab the lock\n");
-	if (flock(fd, ops | LOCK_NB) != 0) {
-		printf("flock(ops %d), errno=%d(%s)\n", 
-				ops, errno, strerror(errno));
-		goto out;
-	}
-	printf("grab the lock!!\n");
-	getc(stdin);
+    fd = open("lockfile", O_RDWR | O_CREAT, 0644);
+    if (fd < 0) {
+        printf("open() fail\n");
+        return -1;
+    }
 
-	if (flock(fd, LOCK_UN)) {
-		printf("flock(unlock)\n");
-		goto out;
-	}
+    printf("trying to grab the lock\n");
+    if (flock(fd, ops | LOCK_NB) != 0) {
+        printf("flock(ops %d), errno=%d(%s)\n",
+                ops, errno, strerror(errno));
+        goto out;
+    }
+    printf("grab the lock!!\n");
+    getc(stdin);
 
-	close(fd);
+    if (flock(fd, LOCK_UN)) {
+        printf("flock(unlock)\n");
+        goto out;
+    }
 
-	return 0;
+    close(fd);
+
+    return 0;
 
 out:
-	close(fd);
-	return -1;
+    close(fd);
+    return -1;
 }

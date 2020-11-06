@@ -6,33 +6,33 @@
 #include <dirent.h>
 
 #define TYPE2STR(X)	\
-	((X) == DT_BLK		? "block device" :\
-	 (X) == DT_CHR		? "char device" :\
-	 (X) == DT_DIR		? "directory" :\
-	 (X) == DT_FIFO		? "fifo" :\
-	 (X) == DT_LNK		? "symlink" :\
-	 (X) == DT_REG		? "regular file" :\
-	 (X) == DT_SOCK		? "socket" :\
-	 "unknown")
+    ((X) == DT_BLK		? "block device" :\
+     (X) == DT_CHR		? "char device" :\
+     (X) == DT_DIR		? "directory" :\
+     (X) == DT_FIFO		? "fifo" :\
+     (X) == DT_LNK		? "symlink" :\
+     (X) == DT_REG		? "regular file" :\
+     (X) == DT_SOCK		? "socket" :\
+     "unknown")
 
-int main(int argc, char **argv)
-{
-	DIR *dp;
-	struct dirent *entry;
+int main(int argc, char** argv) {
 
-	dp = opendir(".");
-	if (!dp) {
-		printf("opendir() fail\n");
-		return -1;
-	}
+    DIR* dp;
+    struct dirent* entry;
 
-	while ((entry = readdir(dp))) {
-		printf("%s: %s\n",
-				entry->d_name,
-				TYPE2STR(entry->d_type));
-	}
+    dp = opendir(".");
+    if (!dp) {
+        printf("opendir() fail\n");
+        return -1;
+    }
 
-	closedir(dp);
+    while ((entry = readdir(dp))) {
+        printf("%s: %s\n",
+                entry->d_name,
+                TYPE2STR(entry->d_type));
+    }
 
-	return 0;
+    closedir(dp);
+
+    return 0;
 }

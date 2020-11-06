@@ -2,7 +2,7 @@
 #include <string.h>
 
 static int create_file() {
-    FILE *fp;
+    FILE* fp;
 
     if (!(fp = fopen("datafile.txt", "w"))) {   // datafile.txt 파일을 쓰기모드로 열기
         printf("fopen() fail\n");
@@ -22,7 +22,7 @@ static int create_file() {
 }
 
 static int read_file() {
-    FILE *fp;
+    FILE* fp;
     char buf[1024];
 
     if (!(fp = fopen("datafile.txt", "r+"))) {   // datafile.txt 파일을 읽기+(쓰기가능)모드로 열기

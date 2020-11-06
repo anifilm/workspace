@@ -2,7 +2,7 @@
 #include <string.h>
 
 int write_to_file() {
-    FILE *fp;
+    FILE* fp;
 
     fp = fopen("data.txt", "w");            // data.txt 파일을 쓰기모드로 열기
     if (fp == NULL) {
@@ -18,7 +18,7 @@ int write_to_file() {
 }
 
 int read_from_file() {
-    FILE *fp;
+    FILE* fp;
     char buf[1024];
 
     fp = fopen("data.txt", "r");            // data.txt 파일을 읽기모드로 열기

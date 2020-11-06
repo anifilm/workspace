@@ -5,40 +5,39 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-void test_func(void)
-{
-	printf("this is a test function(pid %d)\n", getpid());
+void test_func(void) {
+    printf("this is a test function(pid %d)\n", getpid());
 }
 
-int main(int argc, char **argv)
-{
-	pid_t pid;
-	int exit_status;
-		
-	printf("origin process pid: %d\n", getpid());
+int main(int argc, char** argv) {
 
-	pid = fork();
-	if (pid == 0) {
-		/* child process */
-		printf("child process pid: %d\n", getpid());
-		if (execl("/bin/ls", "ls", "-al", "/tmp", NULL) == -1) {
-			printf("execl() fail\n");
-			return -1;
-		}
-	} else if(pid > 0) {
-		/* parent process */
-		printf("parent process pid: %d, child pid %d\n", 
-				getpid(), pid);
-	}
-	test_func();
+    pid_t pid;
+    int exit_status;
 
-	pid = wait(&exit_status);
-	if (WIFEXITED(exit_status)) {
-		printf("child %d returns %d\n",
-				pid, WEXITSTATUS(exit_status));
-	} else {
-		printf("child %d is not exited\n", pid);
-	}
+    printf("origin process pid: %d\n", getpid());
 
-	return 0;
+    pid = fork();
+    if (pid == 0) {
+        /* child process */
+        printf("child process pid: %d\n", getpid());
+        if (execl("/bin/ls", "ls", "-al", "/tmp", NULL) == -1) {
+            printf("execl() fail\n");
+            return -1;
+        }
+    } else if(pid > 0) {
+        /* parent process */
+        printf("parent process pid: %d, child pid %d\n",
+                getpid(), pid);
+    }
+    test_func();
+
+    pid = wait(&exit_status);
+    if (WIFEXITED(exit_status)) {
+        printf("child %d returns %d\n",
+                pid, WEXITSTATUS(exit_status));
+    } else {
+        printf("child %d is not exited\n", pid);
+    }
+
+    return 0;
 }

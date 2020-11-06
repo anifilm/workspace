@@ -11,7 +11,7 @@ struct person {
     int age;
 };
 
-static int write_info(struct person *p) {
+static int write_info(struct person* p) {
     int fd;
     ssize_t ret;
     // person_info.bin 파일 쓰기모드 | 파일이 없으면 생성 | append mode, 사용자 읽기쓰기 권한
@@ -55,7 +55,7 @@ static int dump_info() {
             close(fd);
             return -1;
         } else if (ret == 0) {
-            FILE *fp;
+            FILE* fp;
             // 파일 디스크립터를 파일 포인터로 변환 (읽기모드)
             fp = fdopen(fd, "r");
             if (fp == NULL) {

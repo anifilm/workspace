@@ -51,7 +51,7 @@ static int write_file() {
     return 0;
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
 
     // 파일에 쓰기 함수를 호출
     if (write_file()) {

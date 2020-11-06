@@ -8,7 +8,7 @@ struct person {
 };
 
 static int write_to_file() {
-    FILE *fp = NULL;
+    FILE* fp = NULL;
 
     struct person kim = {"Kim", 20};
     struct person lee = {"Lee", 30};
@@ -31,7 +31,7 @@ err:
 }
 
 static int read_from_file() {
-    FILE *fp;
+    FILE* fp;
 
     struct person persons[2];
 
