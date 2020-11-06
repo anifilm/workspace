@@ -11,12 +11,12 @@ class Photon_Cannon {
 
 public:
     Photon_Cannon(int x, int y);
-    Photon_Cannon(const Photon_Cannon &pc);
+    Photon_Cannon(const Photon_Cannon& pc);
 
     void show_status();
 };
 
-Photon_Cannon::Photon_Cannon(const Photon_Cannon &pc) {
+Photon_Cannon::Photon_Cannon(const Photon_Cannon& pc) {
     cout << "복사 생성자 호출!" << endl;
     hp = pc.hp;
     shield = pc.shield;

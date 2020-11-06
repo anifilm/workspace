@@ -8,59 +8,59 @@ private:
 
 public:
     Complex(double real, double img): real(real), img(img) {}
-    Complex(const Complex &c) {real = c.real, img = c.img;}
+    Complex(const Complex& c) {real = c.real, img = c.img;}
 
-    Complex operator+(const Complex &c);
-    Complex operator-(const Complex &c);
-    Complex operator*(const Complex &c);
-    Complex operator/(const Complex &c);
+    Complex operator+(const Complex& c);
+    Complex operator-(const Complex& c);
+    Complex operator*(const Complex& c);
+    Complex operator/(const Complex& c);
 
-    Complex& operator+=(const Complex &c);
-    Complex& operator-=(const Complex &c);
-    Complex& operator*=(const Complex &c);
-    Complex& operator/=(const Complex &c);
+    Complex& operator+=(const Complex& c);
+    Complex& operator-=(const Complex& c);
+    Complex& operator*=(const Complex& c);
+    Complex& operator/=(const Complex& c);
 
     void println() {cout << "(" << real << ", " << img << ")" << endl;}
 };
 
-Complex Complex::operator+(const Complex &c) {
+Complex Complex::operator+(const Complex& c) {
     Complex temp(real + c.real, img + c.img);
     return temp;
 }
 
-Complex Complex::operator-(const Complex &c) {
+Complex Complex::operator-(const Complex& c) {
     Complex temp(real - c.real, img - c.img);
     return temp;
 }
 
-Complex Complex::operator*(const Complex &c) {
+Complex Complex::operator*(const Complex& c) {
     Complex temp(real * c.real - img * c.img, real * c.img + img * c.real);
     return temp;
 }
 
-Complex Complex::operator/(const Complex &c) {
+Complex Complex::operator/(const Complex& c) {
     Complex temp(
         (real * c.real + img * c.img) / (c.real * c.real + c.img * c.img),
         (img * c.real - real * c.img) / (c.real * c.real + c.img * c.img));
     return temp;
 }
 
-Complex& Complex::operator+=(const Complex &c) {
+Complex& Complex::operator+=(const Complex& c) {
     (*this) = (*this) + c;
     return *this;
 }
 
-Complex& Complex::operator-=(const Complex &c) {
+Complex& Complex::operator-=(const Complex& c) {
     (*this) = (*this) - c;
     return *this;
 }
 
-Complex& Complex::operator*=(const Complex &c) {
+Complex& Complex::operator*=(const Complex& c) {
     (*this) = (*this) * c;
     return *this;
 }
 
-Complex& Complex::operator/=(const Complex &c) {
+Complex& Complex::operator/=(const Complex& c) {
     (*this) = (*this) / c;
     return *this;
 }

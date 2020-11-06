@@ -31,7 +31,7 @@ void Marine::move(int x, int y) {
     coord_y = y;
 }
 
-int Marine::attack() {return default_damage;}
+int Marine::attack() { return default_damage; }
 
 void Marine::be_attacked(int damage_earn) {
     hp -= damage_earn;

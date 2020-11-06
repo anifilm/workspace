@@ -25,7 +25,7 @@ public:
     void show_status();		// 상태를 보여준다
 
     static void show_total_marine();
-    ~Marine() {total_marine_num--;}
+    ~Marine() { total_marine_num--; }
 };
 
 int Marine::total_marine_num {0};
@@ -54,7 +54,7 @@ void Marine::move(int x, int y) {
     coord_y = y;
 }
 
-int Marine::attack() {return default_damage;}
+int Marine::attack() { return default_damage; }
 
 Marine& Marine::be_attacked(int damage_earn) {
     hp -= damage_earn;

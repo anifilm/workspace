@@ -59,9 +59,7 @@ void Date::AddMonth(int inc) {
     _month = (_month == 12 ? 12 : _month % 12);
 }
 
-void Date::AddYear(int inc) {
-    _year += inc;
-}
+void Date::AddYear(int inc) { _year += inc; }
 
 void Date::ShowDate() {
     std::cout << "오늘은 " << _year << "년 " << _month << "월 "

@@ -9,11 +9,11 @@ class Marine {
     int coord_x, coord_y;	// 마린 위치
     int damage;				// 공격력
     bool is_dead;
-    char *name;				// 마린 이름
+    char* name;				// 마린 이름
 
 public:
     Marine();							// 기본 생성자
-    Marine(int x, int y, const char *marine_name);	// 이름까지 지정
+    Marine(int x, int y, const char* marine_name);	// 이름까지 지정
     ~Marine();                          // 소멸자 추가
 
     int attack();						// 데미지를 리턴한다
@@ -31,7 +31,7 @@ Marine::Marine() {
     name = NULL;
 }
 
-Marine::Marine(int x, int y, const char *marine_name) {
+Marine::Marine(int x, int y, const char* marine_name) {
     name = new char[strlen(marine_name) + 1];
     strcpy(name, marine_name);
     coord_x = x;
@@ -46,7 +46,7 @@ void Marine::move(int x, int y) {
     coord_y = y;
 }
 
-int Marine::attack() {return damage;}
+int Marine::attack() { return damage; }
 
 void Marine::be_attacked(int damage_earn) {
     hp -= damage_earn;

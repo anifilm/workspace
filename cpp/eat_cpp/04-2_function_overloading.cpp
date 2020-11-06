@@ -13,7 +13,6 @@ void print(double x) {
     std::cout << "double: " << x << std::endl;
 }
 
-
 int main() {
 
     int a {1};

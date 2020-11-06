@@ -8,12 +8,12 @@ class Photon_Cannon {
     int hp, shield;
     int coord_x, coord_y;
     int damage;
-    char *name;
+    char* name;
 
 public:
     Photon_Cannon(int x, int y);
-    Photon_Cannon(int x, int y, const char *cannon_name);
-    Photon_Cannon(const Photon_Cannon &pc);
+    Photon_Cannon(int x, int y, const char* cannon_name);
+    Photon_Cannon(const Photon_Cannon& pc);
     ~Photon_Cannon();
 
     void show_status();
@@ -27,7 +27,7 @@ Photon_Cannon::Photon_Cannon(int x, int y) {
     name = NULL;
 }
 
-Photon_Cannon::Photon_Cannon(const Photon_Cannon &pc) {
+Photon_Cannon::Photon_Cannon(const Photon_Cannon& pc) {
     cout << "복사 생성자 호출!" << endl;
     hp = pc.hp;
     shield = pc.shield;
@@ -38,7 +38,7 @@ Photon_Cannon::Photon_Cannon(const Photon_Cannon &pc) {
     strcpy(name, pc.name);
 }
 
-Photon_Cannon::Photon_Cannon(int x, int y, const char *cannon_name) {
+Photon_Cannon::Photon_Cannon(int x, int y, const char* cannon_name) {
     cout << "생성자 호출!" << endl;
     hp = shield = 100;
     coord_x = x;

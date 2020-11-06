@@ -6,42 +6,42 @@ using namespace std;
 class Complex {
 private:
     double real, img;
-    double get_number(const char *str, int from, int to);
+    double get_number(const char* str, int from, int to);
 
 public:
     Complex(double real, double img): real(real), img(img) {}
-    Complex(const Complex &c) {real = c.real, img = c.img;}
-    Complex(const char *str);
+    Complex(const Complex& c) {real = c.real, img = c.img;}
+    Complex(const char* str);
 
-    Complex operator+(const Complex &c);
-    Complex operator-(const Complex &c);
-    Complex operator*(const Complex &c);
-    Complex operator/(const Complex &c);
+    Complex operator+(const Complex& c);
+    Complex operator-(const Complex& c);
+    Complex operator*(const Complex& c);
+    Complex operator/(const Complex& c);
 
-    Complex operator+(const char *str);
-    Complex operator-(const char *str);
-    Complex operator*(const char *str);
-    Complex operator/(const char *str);
+    Complex operator+(const char* str);
+    Complex operator-(const char* str);
+    Complex operator*(const char* str);
+    Complex operator/(const char* str);
 
-    Complex& operator+=(const Complex &c);
-    Complex& operator-=(const Complex &c);
-    Complex& operator*=(const Complex &c);
-    Complex& operator/=(const Complex &c);
+    Complex& operator+=(const Complex& c);
+    Complex& operator-=(const Complex& c);
+    Complex& operator*=(const Complex& c);
+    Complex& operator/=(const Complex& c);
 
-    Complex& operator=(const Complex &c);
+    Complex& operator=(const Complex& c);
 
     void println() {cout << "(" << real << ", " << img << ")" << endl;}
 };
 
-double Complex::get_number(const char *str, int from, int to) {
+double Complex::get_number(const char* str, int from, int to) {
     bool minus = false;
     if (from > to) return 0;
 
     if (str[from] == '-') minus = true;
     if (str[from] == '-' || str[from] == '+') from++;
 
-    double num = 0.0;
-    double decimal = 1.0;
+    double num {0.0};
+    double decimal {1.0};
 
     bool integer_part = true;
     for (int i = from; i <= to; i++) {
@@ -63,7 +63,7 @@ double Complex::get_number(const char *str, int from, int to) {
     return num;
 }
 
-Complex::Complex(const char *str) {
+Complex::Complex(const char* str) {
     // 입력 받은 문자분열을 분석하여 real 부분과 img 부분을 찾아야 한다
     // 문자열의 꼴은 다음과 같다 "[부호](실수부)(부호)i(허수부)"
     // 이때 맨 앞의 부호는 생략 가능 (생략시 + 라 가정)
@@ -93,69 +93,69 @@ Complex::Complex(const char *str) {
     if (pos_i >= 1 && str[pos_i - 1] == '-') img *= -1.0;
 }
 
-Complex Complex::operator+(const Complex &c) {
+Complex Complex::operator+(const Complex& c) {
     Complex temp(real + c.real, img + c.img);
     return temp;
 }
 
-Complex Complex::operator-(const Complex &c) {
+Complex Complex::operator-(const Complex& c) {
     Complex temp(real - c.real, img - c.img);
     return temp;
 }
 
-Complex Complex::operator*(const Complex &c) {
+Complex Complex::operator*(const Complex& c) {
     Complex temp(real * c.real - img * c.img, real * c.img + img * c.real);
     return temp;
 }
 
-Complex Complex::operator/(const Complex &c) {
+Complex Complex::operator/(const Complex& c) {
     Complex temp(
         (real * c.real + img * c.img) / (c.real * c.real + c.img * c.img),
         (img * c.real - real * c.img) / (c.real * c.real + c.img * c.img));
     return temp;
 }
 
-Complex Complex::operator+(const char *str) {
+Complex Complex::operator+(const char* str) {
     Complex temp(str);
     return (*this) + temp;
 }
 
-Complex Complex::operator-(const char *str) {
+Complex Complex::operator-(const char* str) {
     Complex temp(str);
     return (*this) - temp;
 }
 
-Complex Complex::operator*(const char *str) {
+Complex Complex::operator*(const char* str) {
     Complex temp(str);
     return (*this) * temp;
 }
 
-Complex Complex::operator/(const char *str) {
+Complex Complex::operator/(const char* str) {
     Complex temp(str);
     return (*this) / temp;
 }
 
-Complex& Complex::operator+=(const Complex &c) {
+Complex& Complex::operator+=(const Complex& c) {
     (*this) = (*this) + c;
     return *this;
 }
 
-Complex& Complex::operator-=(const Complex &c) {
+Complex& Complex::operator-=(const Complex& c) {
     (*this) = (*this) - c;
     return *this;
 }
 
-Complex& Complex::operator*=(const Complex &c) {
+Complex& Complex::operator*=(const Complex& c) {
     (*this) = (*this) * c;
     return *this;
 }
 
-Complex& Complex::operator/=(const Complex &c) {
+Complex& Complex::operator/=(const Complex& c) {
     (*this) = (*this) / c;
     return *this;
 }
 
-Complex& Complex::operator=(const Complex &c) {
+Complex& Complex::operator=(const Complex& c) {
     real = c.real;
     img = c.img;
     return *this;
