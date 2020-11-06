@@ -6,7 +6,7 @@ struct Test {
     int gender;
 };
 
-void set_human(struct Test *a, int age, int gender);
+void set_human(struct Test* a, int age, int gender);
 
 int main() {
 
@@ -19,7 +19,7 @@ int main() {
     return 0;
 }
 
-void set_human(struct Test *a, int age, int gender) {
+void set_human(struct Test* a, int age, int gender) {
     a->age = age;
     a->gender = gender;
 }

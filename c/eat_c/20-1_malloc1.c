@@ -4,12 +4,12 @@
 int main() {
 
     int SizeOfArray;
-    int *arr;
+    int* arr;
 
     printf("만들고 싶은 배열의 원소의 수: ");
     scanf("%d", &SizeOfArray);
 
-    arr = (int *)malloc(sizeof(int) * SizeOfArray);
+    arr = (int*)malloc(sizeof(int) * SizeOfArray);
     // int arr[SizeOfArray] 와 동일한 작업을 한 크기의 배열 생성
 
     //printf("%ls", arr);

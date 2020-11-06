@@ -1,7 +1,7 @@
 // 임의의 주소값 p로 부터 byte만큼 읽은 함수
 #include <stdio.h>
 
-void read_char(void *p, int byte);
+void read_char(void* p, int byte);
 
 int main() {
 
@@ -13,10 +13,10 @@ int main() {
     return 0;
 }
 
-void read_char(void *p, int byte) {
+void read_char(void* p, int byte) {
     do {
-        printf("%x\n", *(char *)p);
+        printf("%x\n", *(char*)p);
         byte--;
-        p = (char *)p + 1;
+        p = (char*)p + 1;
     } while (p && byte);
 }

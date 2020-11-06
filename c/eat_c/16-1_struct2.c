@@ -1,7 +1,7 @@
 // 구조체 예제 2
 #include <stdio.h>
 
-void copy_str(char *dest, const char *src);
+void copy_str(char* dest, const char* src);
 
 struct Books {
     char name[30];      // 책 이름
@@ -26,7 +26,7 @@ int main() {
     return 0;
 }
 
-void copy_str(char *dest, const char *src) {
+void copy_str(char* dest, const char* src) {
     while (*src) {
         *dest = *src;
         src++;

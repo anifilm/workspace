@@ -3,7 +3,7 @@
 
 struct Test {
     int c;
-    int *pointer;
+    int* pointer;
 };
 
 int main() {
@@ -19,7 +19,7 @@ int main() {
 
     printf("i: %d\n", i);
 
-    struct Test *ptr = &st;
+    struct Test* ptr = &st;
     *ptr->pointer = 4;
 
     printf("i: %d\n", i);

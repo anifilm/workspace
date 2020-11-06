@@ -3,14 +3,14 @@
 
 int main() {
 
-	int *p;
-	int a;
+    int* p;
+    int a;
 
-	p = &a;		// 포인터 p에 a의 메모리 주소값을 대입
-	a = 2;
+    p = &a;		// 포인터 p에 a의 메모리 주소값을 대입
+    a = 2;
 
-	printf("a의 값: %d\n", a);
-	printf("*p의 값: %d\n", *p);		// 포인터 p의 메모리 주소에 있는 값을 출력
+    printf("a의 값: %d\n", a);
+    printf("*p의 값: %d\n", *p);		// 포인터 p의 메모리 주소에 있는 값을 출력
 
-	return 0;
+    return 0;
 }

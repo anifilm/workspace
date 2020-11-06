@@ -3,12 +3,12 @@
 
 int main() {
 
-	int a;
-	int *pa;
-	pa = &a;
+    int a;
+    int* pa;
+    pa = &a;
 
-	printf("pa의 값: %p\n", pa);
-	printf("(pa + 1)의 값: %p\n", pa + 1);   // 4byte(int) 주소값 증가
+    printf("pa의 값: %p\n", pa);
+    printf("(pa + 1)의 값: %p\n", pa + 1);   // 4byte(int) 주소값 증가
 
-	return 0;
+    return 0;
 }

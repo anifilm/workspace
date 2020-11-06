@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int compare(char *str1, char *str2);
+int compare(char* str1, char* str2);
 
 int main() {
 
@@ -27,7 +27,7 @@ int main() {
     return 0;
 }
 
-int compare(char *str1, char *str2) {
+int compare(char* str1, char* str2) {
     while (*str1) {
         if (*str1 != *str2)
             return 0;

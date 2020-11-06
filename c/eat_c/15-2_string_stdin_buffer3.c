@@ -10,7 +10,7 @@ int main() {
     printf("숫자를 입력하세요: ");
     scanf("%d", &num);
 
-    // while (getchar() != '\n');
+//  while (getchar() != '\n');
     __fpurge(stdin);    // stdin 입력 버퍼를 비운다 (리눅스에서만 동작 가능)
 
     printf("문자를 입력하세요: ");

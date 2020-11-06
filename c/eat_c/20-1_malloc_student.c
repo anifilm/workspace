@@ -6,13 +6,13 @@ int main() {
 
     int student;	// 입력 받고자 하는 학생수
     int i, input;
-    int *score;		// 학생들의 수학 점수 변수
+    int* score;		// 학생들의 수학 점수 변수
     int sum = 0;	// 총점
 
     printf("학생의 수는?: ");
     scanf("%d", &student);
 
-    score = (int *)malloc(sizeof(int) * student);
+    score = (int*)malloc(sizeof(int) * student);
 
     for (i = 0; i < student; i++) {
         printf("학생 %d의 점수: ", i + 1);

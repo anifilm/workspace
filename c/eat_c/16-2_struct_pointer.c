@@ -8,7 +8,7 @@ struct Test {
 int main() {
 
     struct Test st;
-    struct Test *ptr = &st;
+    struct Test* ptr = &st;
 
     // ptr이 가리키는 구조체 변수의 c 멤버의 값을 0으로 한다.
     (*ptr).c = 0;
@@ -20,6 +20,5 @@ int main() {
 
     printf("st.c: %d\n", st.c);
 
-	return 0;
+    return 0;
 }
-

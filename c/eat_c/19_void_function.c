@@ -1,7 +1,7 @@
 // 리턴값이 없는 함수
 #include <stdio.h>
 
-void add_one(int *p) {
+void add_one(int* p) {
     (*p) += 1;
 }
 

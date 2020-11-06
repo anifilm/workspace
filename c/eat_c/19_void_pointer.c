@@ -3,11 +3,11 @@
 
 int main() {
 
-    void *a;
+    void* a;
     double b = 123.4;
 
     a = &b;
-    printf("%lf\n", *(double *)a);
+    printf("%lf\n", *(double*)a);
 
     return 0;
 }

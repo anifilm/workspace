@@ -6,7 +6,7 @@ int main() {
 
     int i, j, input, sum = 0;
     int subject, student;
-    int **arr;
+    int** arr;
     // 우리는 arr[subject][student] 배열을 만들 것이다.
 
     printf("입력할 과목의 수: ");
@@ -15,10 +15,10 @@ int main() {
     printf("학생의 수는?: ");
     scanf("%d", &student);
 
-    arr = (int **)malloc(sizeof(int *) * subject);
+    arr = (int**)malloc(sizeof(int*) * subject);
 
     for (i = 0; i < subject; i++)
-        arr[i] = (int *)malloc(sizeof(int) * student);
+        arr[i] = (int*)malloc(sizeof(int) * student);
 
     for (i = 0; i < subject; i++) {
         printf("\n과목 %d 점수 ----------\n", i + 1);

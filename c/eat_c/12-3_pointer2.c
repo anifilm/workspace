@@ -4,8 +4,8 @@
 int main() {
 
     int a;
-    int *pa;
-    int **ppa;
+    int* pa;
+    int** ppa;
 
     pa = &a;
     ppa = &pa;

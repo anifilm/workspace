@@ -6,7 +6,7 @@ struct obj {
     int x, y;
 } Ball;
 
-void copy_str(char *dest, const char *src);
+void copy_str(char* dest, const char* src);
 void print_obj_status(struct obj OBJ);
 
 int main() {
@@ -25,7 +25,7 @@ void print_obj_status(struct obj OBJ) {
     printf("(%d, %d)\n", OBJ.x, OBJ.y);
 }
 
-void copy_str(char *dest, const char *src) {
+void copy_str(char* dest, const char* src) {
     while (*src) {
         *dest = *src;
         src++;

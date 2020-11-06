@@ -8,7 +8,7 @@ struct Test {
 int main() {
 
     struct Test st;
-    struct Test *ptr;
+    struct Test* ptr;
 
     ptr = &st;
 
@@ -18,6 +18,5 @@ int main() {
     printf("st의 a 멤버: %d\n", st.a);
     printf("st의 b 멤버: %d\n", st.b);
 
-	return 0;
+    return 0;
 }
-

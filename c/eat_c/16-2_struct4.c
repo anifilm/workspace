@@ -7,8 +7,8 @@ struct Test {
     char name[20];
 };
 
-void set_human(struct Test *a, int age, int gender, const char *name);
-void copy_str(char *dest, const char *src);
+void set_human(struct Test* a, int age, int gender, const char* name);
+void copy_str(char* dest, const char* src);
 
 int main() {
 
@@ -22,13 +22,13 @@ int main() {
     return 0;
 }
 
-void set_human(struct Test *a, int age, int gender, const char *name) {
+void set_human(struct Test* a, int age, int gender, const char* name) {
     a->age = age;
     a->gender = gender;
     copy_str(a->name, name);
 }
 
-void copy_str(char *dest, const char *src) {
+void copy_str(char* dest, const char* src) {
     while (*src) {
         *dest = *src;
         src++;

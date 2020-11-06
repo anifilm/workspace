@@ -5,7 +5,7 @@ int main() {
 
     int a;
     int b;
-    int *p;
+    int* p;
 
     p = &a;     // 포인터 p에 변수 a의 주소값을 대입
     *p = 2;     // 포인터 p가 가리키는 주소값(변수 a)에 값 2를 대입

@@ -1,7 +1,7 @@
 // 구조체의 대입 2
 #include <stdio.h>
 
-void copy_str(char *dest, const char *src);
+void copy_str(char* dest, const char* src);
 
 struct Test {
   int i;
@@ -21,7 +21,7 @@ int main() {
     return 0;
 }
 
-void copy_str(char *dest, const char *src) {
+void copy_str(char* dest, const char* src) {
     while (*src) {
         *dest = *src;
         src++;

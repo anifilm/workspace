@@ -4,7 +4,7 @@
 int main() {
 
     char word[30] = {"long sentence"};
-    char *str = word;
+    char* str = word;
 
     printf("%s\n", str);
 

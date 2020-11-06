@@ -1,7 +1,7 @@
 // 두 변수의 값을 교환하는 함수 2
 #include <stdio.h>
 
-void swap(int *a, int *b) {
+void swap(int* a, int* b) {
     int temp = *a;
     *a = *b;
     *b = temp;

@@ -9,13 +9,13 @@ struct fruits {
 
 int main() {
 
-    struct fruits *arr;
+    struct fruits* arr;
     int i, size;
 
     printf("과일 상자의 크기: ");
     scanf("%d", &size);
 
-    arr = (struct fruits *)malloc(sizeof(struct fruits) * size);
+    arr = (struct fruits*)malloc(sizeof(struct fruits) * size);
 
     for (i = 0; i < size; i++) {
         printf("arr[%d].apple: ", i);
