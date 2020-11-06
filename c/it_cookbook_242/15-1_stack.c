@@ -1,21 +1,21 @@
 #include "15-1_stack.h"
 
-void init(stackType *sp) {
+void init(stackType* sp) {
     sp->top = -1;
 }
 
-int is_empty(stackType *sp) {
+int is_empty(stackType* sp) {
     return (sp->top == -1);
 }
 
-int is_full(stackType *sp) {
+int is_full(stackType* sp) {
     return (sp->top == (MAX - 1));
 }
 
-void push(stackType *sp, const int item) {
+void push(stackType* sp, const int item) {
     sp->data[++(sp->top)] = item;
 }
 
-int pop(stackType *sp) {
+int pop(stackType* sp) {
     return sp->data[(sp->top)--];
 }

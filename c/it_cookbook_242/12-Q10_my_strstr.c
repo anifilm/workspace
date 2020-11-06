@@ -10,7 +10,7 @@
 #define true 1
 #define false 0
 
-char* my_strstr(const char *str1, const char * str2) {
+char* my_strstr(const char* str1, const char*  str2) {
     const char *temp1 = str1, *temp2 = str2;
     int i, length = (int)strlen(str2);
     int matched = false;
@@ -26,7 +26,7 @@ char* my_strstr(const char *str1, const char * str2) {
                 }
             }
             if (matched == true)        // 초기화 값이 그대로 유지되었으면
-                return (char *)temp1;   // temp1을 리턴
+                return (char*)temp1;   // temp1을 리턴
         }
         temp1++;    // 그렇지 않으면 temp1을 다음 문자로 이동
     }

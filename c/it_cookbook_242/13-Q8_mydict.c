@@ -24,7 +24,7 @@ typedef struct {
 } dictType;                 // 사전 구조체
 
 // d가 가리키는 사전에서 w가 가리키는 단어를 찾아 meaning을 리턴
-char* search(char *w, dictType *d) {
+char* search(char* w, dictType* d) {
     int i;
     for (i = 0; i < d->count; i++) {            // i가 0부터 count보다 작을 때까지
         if (strcmp(d->dict[i].word, w) == 0)    // 문자열 비교
@@ -34,7 +34,7 @@ char* search(char *w, dictType *d) {
 }
 
 // d가 가리키는 사전에 w가 가리키는 단어 명과 m이 가리키는 단어 뜻을 삽입
-void insert(char *w, char *m, dictType *d) {
+void insert(char* w, char* m, dictType* d) {
     strcpy(d->dict[d->count].word, w);      // 인덱스 count 위치에 단어 명 삽입
     strcpy(d->dict[d->count].meaning, m);   // 단어 뜻 삽입
     d->count++;                             // 현재 단어 수 증가

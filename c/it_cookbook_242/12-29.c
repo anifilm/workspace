@@ -7,8 +7,8 @@ int main() {
     char conti[3][5] = {"Kim", "Lee", "Park"};
     char temp[5];
 
-    char *ragged[3] = {"Kim", "Lee", "Park"};
-    char *temp_ptr;
+    char* ragged[3] = {"Kim", "Lee", "Park"};
+    char* temp_ptr;
 
     strcpy(temp, conti[2]);
     strcpy(conti[2], conti[0]);

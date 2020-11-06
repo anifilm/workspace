@@ -18,7 +18,7 @@ char* read_line() {
 int main() {
 
     int i;
-    char *p = read_line();
+    char* p = read_line();
 
     for (i = 0; p[i] != '\0'; i++) {
         if (islower(p[i]))

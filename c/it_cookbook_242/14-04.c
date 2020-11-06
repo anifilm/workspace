@@ -12,7 +12,7 @@ int main() {
     int i, count;
     studentType arr[MAX];
 
-    FILE *dest = fopen("14-04_student.bin", "wb");
+    FILE* dest = fopen("14-04_student.bin", "wb");
     if (dest == NULL) {
         fprintf(stderr, "Error opening output file.\n");
         exit(1);
@@ -24,7 +24,7 @@ int main() {
     }
 
     for (i = 0; i < MAX; i++) {
-        count = fwrite((void *)&arr[i], sizeof(studentType), 1, dest);
+        count = fwrite((void*)&arr[i], sizeof(studentType), 1, dest);
         if (count < 1) {
             fprintf(stderr, "Error while writing a structure.\n");
             exit(1);

@@ -3,7 +3,7 @@
 // 원래 문장 그대로 출력해야 한다.
 // 힌트 리턴 값이 NULL이 아닐 때까지 루프를 돌면서 strstr(str, from)을 호출하여 교체할 위치를
 // 찾아낸 다음에 strlen(from)의 길이만큼 문자 단위로 복사한다.
-// void change_str(char *str, const char *to, const char *from);
+// void change_str(char* str, const char* to, const char* from);
 // > Enter a string.
 // > This winter is so cold compared with the previous winters.
 // > from string.
@@ -14,8 +14,8 @@
 #include <stdio.h>
 #include <string.h>
 
-void change_str(char *str, const char *to, const char *from) {
-    char *ptr = strstr(str, from);
+void change_str(char* str, const char* to, const char* from) {
+    char* ptr = strstr(str, from);
     while (ptr != NULL) {
         strncpy(ptr, to, (int)strlen(from));
         ptr = strstr(ptr + 1, from);

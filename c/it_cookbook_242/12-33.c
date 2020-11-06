@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
 
     int i, max, *rand_arr;
 
     srand(time(NULL));
     max = atoi(argv[1]);
 
-    rand_arr = (int *)malloc(sizeof(int) * max);
+    rand_arr = (int*)malloc(sizeof(int) * max);
     if (rand_arr == NULL) {
         fprintf(stderr, "No more memory.\n");
         exit(1);

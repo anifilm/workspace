@@ -16,7 +16,7 @@ int main() {
     return 0;
 }
 
-void swap(int *p, int *q) {
+void swap(int* p, int* q) {
     int temp;
     temp = *p;
     *p = *q;

@@ -14,7 +14,7 @@
 int main() {
 
     time_t now, your_time;
-    char *str;
+    char* str;
     int my_year, my_month;
     struct tm *struct_ptr;
 

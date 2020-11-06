@@ -5,7 +5,7 @@
 #include <stdio.h>
 #define MAX_LEN 100
 
-void swap_string(char *a, char *b) {
+void swap_string(char* a, char* b) {
     int i, temp[MAX_LEN];
     for (i = 0; *(a + i) != '\0'; i++)      // a string을 temp string으로 복사
         temp[i] = a[i];                     // 포인터 기호를 써서 대입 가능

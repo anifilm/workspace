@@ -27,18 +27,18 @@ int main() {
 
 int** create_matrix(int row, int col) {
     int i, **p;
-    p = (int **)malloc(sizeof(int *) * row);
+    p = (int**)malloc(sizeof(int*) * row);
     if (p == NULL)
         exit(1);
     for (i = 0; i < row; i++) {
-        p[i] = (int *)malloc(sizeof(int) * col);
+        p[i] = (int*)malloc(sizeof(int) * col);
         if (p[i] == NULL)
             exit(1);
     }
     return p;
 }
 
-void destroy_matrix(int **p, int row) {
+void destroy_matrix(int** p, int row) {
     int i;
     for (i = 0; i < row; i++)
         free(p[i]);

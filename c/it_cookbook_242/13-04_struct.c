@@ -3,7 +3,7 @@
 #include <string.h>
 
 struct employee {
-    char *name;
+    char* name;
     int residnet_no;
 };
 
@@ -15,7 +15,7 @@ int main() {
     p->name = "Jay Kim";
     puts(p->name);
 
-    p->name = (char *)malloc(sizeof(char) * 40);
+    p->name = (char*)malloc(sizeof(char) * 40);
     if (p->name == NULL) {
         printf("No more memory.\n");
         exit(1);

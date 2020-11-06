@@ -5,7 +5,7 @@
 
 int main() {
 
-    char *wish_list[MAX];
+    char* wish_list[MAX];
     char temp[100];
     int i = 0, j;
 
@@ -14,7 +14,7 @@ int main() {
         gets(temp);
         if (strcmp(temp, "quit") == 0)
             break;
-        wish_list[i] = (char *)malloc(sizeof(char) * (strlen(temp) + 1));
+        wish_list[i] = (char*)malloc(sizeof(char) * (strlen(temp) + 1));
         if (wish_list[i] == NULL) {
             fprintf(stderr, "No more memory.\n");
             exit(1);

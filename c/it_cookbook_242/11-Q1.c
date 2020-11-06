@@ -1,7 +1,7 @@
 // 01 다음 프로그램의 출력을 예측하고 실제로 프로그램을 실행하여 예측한 값이 맞는지 확인하라.
 #include <stdio.h>
 
-void in_order(int m, int *n) {
+void in_order(int m, int* n) {
     if (m > *n)
         return;
     else {

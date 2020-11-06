@@ -13,7 +13,7 @@ typedef struct {
 } wordType;                 // 단어 구조체
 
 // dict 배열에서 w가 가리키는 단어 찾기. count는 배열 내 현재 단어 개수
-char* search(char *w, wordType dict[], int count) {
+char* search(char* w, wordType dict[], int count) {
     int i;
     for (i = 0; i < count; i++) {               // 0부터 count보다 작을 때까지
         if (strcmp(dict[i].word, w) == 0)       // 배열 단어명이 w가 가리키는 단어명과 같으면
@@ -23,19 +23,19 @@ char* search(char *w, wordType dict[], int count) {
 }
 
 // dict 배열에 w가 가리키는 단어 추가하기. cptr은 count 변수를 가리키는 포인터
-void insert(char *w, char *m, wordType dict[], int *cptr) {
+void insert(char* w, char* m, wordType dict[], int* cptr) {
     strcpy(dict[*cptr].word, w);        // 배열 끝에 새로운 단어 명 추가
     strcpy(dict[*cptr].meaning, m);     // 단어 뜻 추가
     (*cptr)++;                          // 현재 단어 수 증가
 }
 
 // 파일에 새로운 단어를 추가하기. oldcnt은 이전 파일 단어 수, newcnt는 현재 단어수
-void save_dictionary(FILE *fp, wordType dict[], int oldcnt, int newcnt) {
+void save_dictionary(FILE* fp, wordType dict[], int oldcnt, int newcnt) {
     int i;
     fseek(fp, 0L, SEEK_END);            // 위치 포인터를 파일 끝으로
     for (i = oldcnt; i < newcnt; i++) { // 추가된 단어에 대해서
         // 구조체를 하나씩 파일에 저장하면서 쓰기 오류 확인
-        if (fwrite((void *)&dict[i], sizeof(wordType), 1, fp) < 1) {
+        if (fwrite((void*)&dict[i], sizeof(wordType), 1, fp) < 1) {
             fprintf(stderr, "Error writing a structure.\n");    // 쓰기 오류 처리
             exit(1);                                            // 종료
         }
@@ -43,10 +43,10 @@ void save_dictionary(FILE *fp, wordType dict[], int oldcnt, int newcnt) {
 }
 
 // 이전 파일 읽어 들이기. 단어 수를 세어서 *cptr 즉, count에 저장
-void read_dictionary(FILE *fp, wordType dict[], int *cptr) {
+void read_dictionary(FILE* fp, wordType dict[], int* cptr) {
     *cptr = 0;
     fseek(fp, 0, SEEK_SET);     // append 모드로 열면 포인터가 파일 끝으로 감. 이를 처음으로
-    while (fread((void *)&dict[*cptr], sizeof(wordType), 1, fp))
+    while (fread((void*)&dict[*cptr], sizeof(wordType), 1, fp))
         (*cptr)++;              // 이전에 저장한 단어를 배열로 읽어 들임
     if (!feof(fp)) {            // 파일 끝 테스트
         printf("Error reading dictionary file.\n");
@@ -62,7 +62,7 @@ int main() {
     wordType mydict[5000];      // 구조체 배열로 사전을 구현
 
     // append binary (read and write) 모드로 열기
-    FILE *fp = fopen("14-Q7_mydict.bin", "a+b");
+    FILE* fp = fopen("14-Q7_mydict.bin", "a+b");
 
     read_dictionary(fp, mydict, &count);    // count 값이 바뀌어야 하니 참조 호출로
     old_count = count;                      // 읽어온 파일 단어 개수를 old_count에 저장

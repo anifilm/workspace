@@ -2,9 +2,9 @@
 // 확인하라.
 #include <stdio.h>
 
-void fcn(char *str) {
+void fcn(char* str) {
     char ch;
-    char *current = str;
+    char* current = str;
     while (*str)
         str++;
     for (str--; str > current; str--, current++) {

@@ -4,9 +4,9 @@
 int main() {
 
     int ch;
-    FILE *src1 = fopen("14-Q3_first.txt", "rt");
-    FILE *src2 = fopen("14-Q3_second.txt", "rt");
-    FILE *dest = fopen("14-Q3_merge.txt", "wt");
+    FILE* src1 = fopen("14-Q3_first.txt", "rt");
+    FILE* src2 = fopen("14-Q3_second.txt", "rt");
+    FILE* dest = fopen("14-Q3_merge.txt", "wt");
 
     if (src1 == NULL || src2 == NULL) {
         printf("Error opening file.\n");

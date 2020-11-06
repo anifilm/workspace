@@ -4,7 +4,7 @@
 int main() {
 
     char str[] = "J.Park Seoul 010-222-3456";
-    char *p = strtok(str, " ");
+    char* p = strtok(str, " ");
 
     while (p != NULL) {
         printf("%s\n", p);

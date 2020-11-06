@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include "15-3_stack.h"
 
-void init(nodeType **top) {
+void init(nodeType** top) {
     *top = NULL;
 }
 
-int is_empty(nodeType **top) {
+int is_empty(nodeType** top) {
     return (*top == NULL);
 }
 
-void push(nodeType **top, const char item) {
-    nodeType *temp = (nodeType *)malloc(sizeof(nodeType));
+void push(nodeType** top, const char item) {
+    nodeType *temp = (nodeType*)malloc(sizeof(nodeType));
     if (temp == NULL) {
         printf("No more memory.\n");
         exit(1);
@@ -21,8 +21,8 @@ void push(nodeType **top, const char item) {
     *top = temp;
 }
 
-char pop(nodeType **top) {
-    nodeType *temp;
+char pop(nodeType** top) {
+    nodeType* temp;
     char item;
     if (is_empty(top)) {
         printf("Stack empty.\n");
@@ -35,8 +35,8 @@ char pop(nodeType **top) {
     return item;
 }
 
-void free_list(nodeType **top) {
-    nodeType *temp = *top;
+void free_list(nodeType** top) {
+    nodeType* temp = *top;
     while (temp != NULL) {
         *top = (*top)->next;
         free(temp);

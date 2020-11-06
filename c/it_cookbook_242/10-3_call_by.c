@@ -4,7 +4,7 @@ void call_by_value(int p) {
     p += 1;
 }
 
-void call_by_reference(int *p) {
+void call_by_reference(int* p) {
     *p += 1;
 }
 

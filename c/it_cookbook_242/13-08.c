@@ -5,7 +5,7 @@
 struct employee {
     int entry_year;     // 입사연도
     char residence[6];  // 거주지
-    char *name;         // 사원 이름
+    char* name;         // 사원 이름
 };
 
 void show_name(struct employee her) {
@@ -17,7 +17,7 @@ int main() {
 
     struct employee a = {2019, "Seoul", NULL};
 
-    a.name = (char *)malloc(sizeof(char) * 9);
+    a.name = (char*)malloc(sizeof(char) * 9);
     strcpy(a.name, "박하영");
 
     show_name(a);

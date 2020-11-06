@@ -4,7 +4,7 @@
 // int count_vowel(char *arr, int length);
 #include <stdio.h>
 
-int count_vowel(char *arr, int length) {
+int count_vowel(char* arr, int length) {
     int i, count = 0;
     for (i = 0; i < length; i++) {
         switch (*(arr + i)) {

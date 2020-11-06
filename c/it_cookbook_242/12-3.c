@@ -3,7 +3,7 @@
 int main() {
 
     char str1[10] = "apple";
-    char *str2 = "apple";
+    char* str2 = "apple";
 
     str1[4] = 'y';
     printf("%s", str1);

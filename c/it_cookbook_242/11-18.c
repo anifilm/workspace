@@ -14,7 +14,7 @@ void print_it(int p[2][3]) {
 
 int main() {
 
-    int *arr = (int *)malloc(sizeof(int) * 2 * 3);
+    int* arr = (int*)malloc(sizeof(int) * 2 * 3);
     if (arr != NULL)
         print_it(arr);
 

@@ -3,8 +3,8 @@
 // 배열 내용을 서로 바꾸어 보라. 이후 main으로 되돌아와서 배열 내요이 바뀌었는느 다시 print_
 // array 함수를 불러 출력하라. 단, 두 함수 모두 포인터 기호만 써서 구현해야 하며 배열 요소의
 // 개수는 다섯 개로 한다.
-// void print_array(int *arr, int length);
-// void swap_array(int *a, int *b, int length);
+// void print_array(int* arr, int length);
+// void swap_array(int* a, int* b, int length);
 // > Enter the contents of first array.
 // > 1 2 3 4 5 ([Enter])
 // > Enter the Contents of second array.
@@ -17,13 +17,13 @@
 // > second: 1 2 3 4 5
 #include <stdio.h>
 
-void print_array(int *arr, int length) {
+void print_array(int* arr, int length) {
     for (int i = 0; i < length; i++)
         printf("%d ", arr[i]);
     printf("\n");
 }
 
-void swap_array(int *a, int *b, int length) {
+void swap_array(int* a, int* b, int length) {
     int i, temp;
     for (i = 0; i < length; i++) {
         temp = a[i];

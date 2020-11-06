@@ -3,7 +3,7 @@
 
 int main() {
 
-    FILE *fp;
+    FILE* fp;
     char ch, str[100];
     int i = 0, j, count;
 
@@ -18,7 +18,7 @@ int main() {
 
     fp = fopen("14-06_apple.txt", "rb");
     for (j = 0; j <= i; j++) {
-        count = fread((void *)&str[j], sizeof(char), 1, fp);
+        count = fread((void*)&str[j], sizeof(char), 1, fp);
         if (count < 1) {
             fprintf(stderr, "Error writing a character.\n");
             exit(1);

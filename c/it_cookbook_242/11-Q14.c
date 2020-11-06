@@ -31,7 +31,7 @@ int main() {
     printf("Enter number of elements in array a.\n");
     scanf("%d", &a_len);
 
-    a = (int *)malloc(sizeof(int) * a_len);
+    a = (int*)malloc(sizeof(int) * a_len);
     if (a == NULL)
         exit(1);
     else {
@@ -44,7 +44,7 @@ int main() {
     printf("Enter number of elements in array b.\n");
     scanf("%d", &b_len);
 
-    b = (int *)malloc(sizeof(int) * b_len);
+    b = (int*)malloc(sizeof(int) * b_len);
     if (b == NULL)
         exit(1);
     else {
@@ -53,7 +53,7 @@ int main() {
             scanf("%d", &b[j]);
     }
 
-    m = (int *)malloc(sizeof(int) * (a_len + b_len));
+    m = (int*)malloc(sizeof(int) * (a_len + b_len));
 
     i = j = k = 0;
     while (1) {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-char* my_strcpy(char *dest, const char *src) {
-    char *backup = dest;
+char* my_strcpy(char* dest, const char* src) {
+    char* backup = dest;
     while (*src != '\0') {
         *dest = *src;
         dest++;

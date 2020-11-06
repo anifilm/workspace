@@ -34,7 +34,7 @@
 
 int binary_search(int arr[], int length, int value, int first, int last);
 void print_array(const int arr[], int length);
-void swap(int *p, int *q);
+void swap(int* p, int* q);
 void bubble_sort(int arr[], int length);
 
 int main() {
@@ -89,7 +89,7 @@ void print_array(const int arr[], int length) {
         printf("%d ", arr[i]);
 }
 
-void swap(int *p, int *q) {
+void swap(int* p, int* q) {
     int temp;
     temp = *p;
     *p = *q;

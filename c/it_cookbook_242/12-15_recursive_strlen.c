@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int recursive_strlen(const char *str) {
+int recursive_strlen(const char* str) {
     if (*str == '\0')
         return 0;
     else

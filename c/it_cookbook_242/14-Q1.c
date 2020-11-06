@@ -8,7 +8,7 @@ int main() {
 
     char buff1[100], buff2[100];
 
-    FILE *fp = fopen("14-Q1_wt.txt", "wt");
+    FILE* fp = fopen("14-Q1_wt.txt", "wt");
     if (fp == NULL) {
         printf("Error opening file.\n");
         exit(1);

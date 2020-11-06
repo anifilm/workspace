@@ -7,7 +7,7 @@ int main() {
     char in_file[MAX];
     int ch, i;
     long length;
-    FILE *fp;
+    FILE* fp;
 
     fprintf(stdout, "Enter input file name.\n");
     scanf("%s", in_file);

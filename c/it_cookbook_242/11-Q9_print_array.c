@@ -5,7 +5,7 @@
 // void print_array(char *arr, int length);
 #include <stdio.h>
 
-void print_array(char *arr, int length) {
+void print_array(char* arr, int length) {
     if (length == -1) {
         return;
     } else {

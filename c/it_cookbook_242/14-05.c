@@ -12,7 +12,7 @@ int main() {
     int i, count;
     studentType arr[MAX];
 
-    FILE *src;
+    FILE* src;
     src = fopen("14-04_student.bin", "rb");
     if (src == NULL) {
         fprintf(stderr, "Error opening output file.\n");
@@ -20,7 +20,7 @@ int main() {
     }
 
     i = 0;
-    while (fread((void *)&arr[i], sizeof(studentType), 1, src))
+    while (fread((void*)&arr[i], sizeof(studentType), 1, src))
         i++;
 
     if (feof(src))

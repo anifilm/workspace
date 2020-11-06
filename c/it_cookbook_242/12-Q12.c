@@ -8,18 +8,18 @@
 
 int main() {
 
-    char **p = NULL, word[100];
+    char** p = NULL, word[100];
     int i, row = 0;             // row는 행 번호(0, 1, 2, ...)
 
     while (1) {
         printf("Enter a word.\n");
         gets(word);
         if (strcmp(word, "quit") == 0) break;    // quit가 입력되면 루프를 빠져나감
-        p = (char **)realloc(p, sizeof(char *) * row);
+        p = (char**)realloc(p, sizeof(char*) * row);
         // realloc, row를 써서 단어가 들어올 때마다 행의 수를 증가
         if (p == NULL)          // 널 테스트
             exit(1);            // 널이면 exit로 빠져나감
-        p[row] = (char *)malloc(sizeof(char) * strlen(word));
+        p[row] = (char*)malloc(sizeof(char) * strlen(word));
         // malloc을 써서 p[row]가 단어 크기 만큼의 동적 메모리를 가리키게 함
         if (p[row] == NULL)     // 널 테스트
             exit(1);            // 널이면 exit로 빠져나감

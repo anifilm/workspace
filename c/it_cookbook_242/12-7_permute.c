@@ -12,14 +12,14 @@ int main() {
     return 0;
 }
 
-void swap(char *x, char *y) {
+void swap(char* x, char* y) {
     char temp;
     temp = *x;
     *x = *y;
     *y = temp;
 }
 
-void permute(char *s, int left, int right) {
+void permute(char* s, int left, int right) {
     int i;
     if (left == right)
         printf("%s\n", s);

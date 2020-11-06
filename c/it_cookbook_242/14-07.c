@@ -3,7 +3,7 @@
 
 int main() {
 
-    FILE *fp;
+    FILE* fp;
     char str[20] = "apple pie";
 
     fp = fopen("14-07_rw.txt", "w+b");

@@ -4,11 +4,11 @@
 // 힌트 index는 현재 복사해야 할 문자의 인덱스를 뜻한다. 따라서 src[index]가 '\0'이면 문자열
 // 의 끝이므로 그것을 복사한 후 곧바로 빠져나와야 한다. 그렇지 않으면 복사 후에 index를 증가
 // 시켜 재귀 호출을 계속 해야 한다.
-// char* my_strcpy(char *dest, const char *src, int index);
+// char* my_strcpy(char* dest, const char* src, int index);
 #include <stdio.h>
 #include <string.h>
 
-char* my_strcpy(char *dest, const char *src, int index) {
+char* my_strcpy(char* dest, const char* src, int index) {
     if (src[index] == '\0')
         return dest;
     else {

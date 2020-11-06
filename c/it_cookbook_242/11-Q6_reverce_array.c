@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int* reverse_array(int *a, int length) {
-    int *p = (int *)malloc(sizeof(int) * length);
+int* reverse_array(int* a, int length) {
+    int* p = (int*)malloc(sizeof(int) * length);
     if (p == NULL)
         exit(1);
     for (int i = 0; i < length; i++)

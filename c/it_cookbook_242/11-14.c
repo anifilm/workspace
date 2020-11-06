@@ -5,7 +5,7 @@ int main() {
 
     int last = 0;
     char ch, *p;
-    p = (char *)malloc(sizeof(char));
+    p = (char*)malloc(sizeof(char));
     if (p == NULL)
         exit(1);
 
@@ -16,7 +16,7 @@ int main() {
         else {
             *(p + last) = ch;
             last++;
-            p = (char *)realloc(p, sizeof(char) * (last + 1));
+            p = (char*)realloc(p, sizeof(char) * (last + 1));
             if (p == NULL)
                 exit(1);
         }

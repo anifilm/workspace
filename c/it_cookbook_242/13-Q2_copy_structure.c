@@ -5,12 +5,12 @@
 #include <string.h>
 
 typedef struct {
-    char *name;
+    char* name;
     int age;
 } personType;
 
-void copy_structure(personType *to, const personType *from);
-void print_structure(const personType *p);
+void copy_structure(personType* to, const personType* from);
+void print_structure(const personType* p);
 
 int main() {
 
@@ -23,11 +23,11 @@ int main() {
     return 0;
 }
 
-void copy_structure(personType *to, const personType *from) {
+void copy_structure(personType* to, const personType* from) {
     strcpy(to->name, from->name);
     to->age = from->age;
 }
 
-void print_structure(const personType *p) {
+void print_structure(const personType* p) {
     printf("%s %d\n", p->name, p->age);
 }

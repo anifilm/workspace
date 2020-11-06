@@ -8,14 +8,14 @@
 // 힌트 음수가 들어올 수도 있으므로 일단 부호를 처리해야 한다. 이후 읽은 문자에서 '0'을
 // 빼면 숫자가 된다. 따라서 '\0'이 들어오기 전까지 루프를 돌면서 이전 숫자에 10을 곱한 값
 // 에 현재의 숫자를 더하면 된다.
-// int my_atoi(const char *string);
+// int my_atoi(const char* string);
 // > Enter a number string.
 // > -234 ([Enter])
 // > The string you enter is integer -234
 #include <stdio.h>
 #include <string.h>
 
-int my_atoi(const char *string) {
+int my_atoi(const char* string) {
     int count = 0, num = 0, sign = 1;
     // 음수 부호 처리
     if (string[0] == '-') {

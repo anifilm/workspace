@@ -4,7 +4,7 @@
 int main() {
 
     char s[100] = "I am here.";
-    char *t = "I am here.";
+    char* t = "I am here.";
     (s == t) ? printf("yes.\n") : printf("no.\n");      // 메모리 주소값, 다르다
     (*s == *t) ? printf("yes.\n") : printf("no.\n");    // 포인터가 가리키는 주소에 저장된 첫번째 문자의 아스키값, 같다.
 

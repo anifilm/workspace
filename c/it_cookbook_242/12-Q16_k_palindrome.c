@@ -3,7 +3,7 @@
 // 힌트 first를 0으로, last를 배열 끝으로 초기화한 다음 first와 last가 교차할 때까지 대칭
 // 위치의 문자를 비교한다. first는 2바이트씩 전진, last는 2바이트씩 후퇴, 빈칸이나 기호는
 // 건너뛴다.
-// int k_palindrome(const char *string);
+// int k_palindrome(const char* string);
 // > 한글 문장을 입력하세요.
 // > 다시 올 이월이 윤이월이올시다. ([Enter])
 // > 네. 회문입니다.
@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int k_palindrome(const char *string) {
+int k_palindrome(const char* string) {
     // TODO 한글 코드를 비교 하도록 수정필요
     int i, last = (int)strlen(string) - 1;
     // 마지막에 마침표로 끝낸 경우와 아닌 경우를 체크

@@ -5,7 +5,7 @@
 
 struct word {
     char name[20];      // 단어명
-    char *meaning;      // 단어뜻
+    char* meaning;      // 단어뜻
 };
 
 int main() {
@@ -18,13 +18,13 @@ int main() {
         printf("Enter a word.\n");
         gets(temp);
         if (strcmp(temp, "quit") == 0) break;
-        arr[i] = (struct word *)malloc(sizeof(struct word));
+        arr[i] = (struct word*)malloc(sizeof(struct word));
         if (arr[i] == NULL)
             exit(1);
         strcpy(arr[i]->name, temp);
         printf("Enter meaning of the word.\n");
         gets(temp);
-        arr[i]->meaning = (char *)malloc(sizeof(char) * (strlen(temp) + 1));
+        arr[i]->meaning = (char*)malloc(sizeof(char) * (strlen(temp) + 1));
         if (arr[i]->meaning == NULL)
             exit(1);
         strcpy(arr[i]->meaning, temp);

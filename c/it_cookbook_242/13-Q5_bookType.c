@@ -5,15 +5,15 @@
 #include <string.h>
 
 typedef struct {
-    char *title;    // 제목
-    char *author;   // 저자
+    char* title;    // 제목
+    char* author;   // 저자
     struct {
         int year;   // 발간 연도
         int month;  // 발간 월
     } date;
 } bookType;
 
-bookType* look_up(char *author, bookType *shelf, int size) {
+bookType* look_up(char* author, bookType* shelf, int size) {
     int i;
     // 0부터 size보다 작을 때까지 루프를 돌면서
     for (i = 0; i < size; i++) {
@@ -28,7 +28,7 @@ bookType* look_up(char *author, bookType *shelf, int size) {
 int main() {
 
     char name[20];
-    bookType *srch;
+    bookType* srch;
     bookType shelf[3] = {
         {"번역의 탄생", "이희재", {2009, 2}},
         {"나의 문화유산 답사기", "유홍준", {2014, 2}},

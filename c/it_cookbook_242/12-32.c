@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
 
     int i;
-    char *name = argv[1];
+    char* name = argv[1];
     int age = atoi(argv[2]);
 
     printf("argc is %d\n", argc);

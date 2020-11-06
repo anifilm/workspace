@@ -4,8 +4,8 @@
 int main() {
 
     int ch;
-    FILE *src = fopen("14-01_from.txt", "rt");
-    FILE *dest = fopen("14-01_to.txt", "wt");
+    FILE* src = fopen("14-01_from.txt", "rt");
+    FILE* dest = fopen("14-01_to.txt", "wt");
 
     if (src == NULL || dest == NULL) {
         printf("Error opening file.\n");

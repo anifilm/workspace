@@ -10,9 +10,9 @@
 // 인 상태에서 인덱스 2에 있는 요소를 삭제하면 인덱스 3, 4, 5에 있는 요소가 차례차례 외쪽으로 한 칸
 // 씩 이동해야 한다. 추가할 경우 count가 증가하고 삭제할 경우 count가 감소한다. a 5가 입력되면 숫자
 // 5를 읽고 난 다음에는 while ((ch = getchar()) != '\n');에 의해 버퍼 클리어링을 해야 한다.
-// int has_element(int value, int set[], const int *cp);
-// void add_element(int value, int set[], int *cp);
-// void delete_element(int value, int set[], int *cp);
+// int has_element(int value, int set[], const int* cp);
+// void add_element(int value, int set[], int* cp);
+// void delete_element(int value, int set[], int* cp);
 // > Enter commands: a 5 adds 5 to the set, d 5 deletes 5 from the set.
 // > a 20 ([Enter])
 // > 20
@@ -25,11 +25,11 @@
 // > q ([Enter])
 #include <stdio.h>
 
-int has_element(int value, int set[], const int *cp);
-void show_element(int set[], const int *cp);
-void sort_element(int set[], const int *cp);
-void add_element(int value, int set[], int *cp);
-void delete_element(int value, int set[], int *cp);
+int has_element(int value, int set[], const int* cp);
+void show_element(int set[], const int* cp);
+void sort_element(int set[], const int* cp);
+void add_element(int value, int set[], int* cp);
+void delete_element(int value, int set[], int* cp);
 
 int main() {
 
@@ -52,7 +52,7 @@ int main() {
     return 0;
 }
 
-int has_element(int value, int set[], const int *cp) {
+int has_element(int value, int set[], const int* cp) {
     int i;
     for (i = 0; i < *cp; i++)
         if (set[i] == value)
@@ -60,14 +60,14 @@ int has_element(int value, int set[], const int *cp) {
     return 0;
 }
 
-void show_element(int set[], const int *cp) {
+void show_element(int set[], const int* cp) {
     int i;
     for (i = 0; i < *cp; i++)
         printf("%d ", set[i]);
     printf("\n");
 }
 
-void sort_element(int set[], const int *cp) {
+void sort_element(int set[], const int* cp) {
     int i, j, key;
     for (i = 1; i < *cp; i++) {
         key = set[i];
@@ -77,7 +77,7 @@ void sort_element(int set[], const int *cp) {
     }
 }
 
-void add_element(int value, int set[], int *cp) {
+void add_element(int value, int set[], int* cp) {
     if (has_element(value, set, cp))
         return;
     else {
@@ -87,7 +87,7 @@ void add_element(int value, int set[], int *cp) {
     sort_element(set, cp);
 }
 
-void delete_element(int value, int set[], int *cp) {
+void delete_element(int value, int set[], int* cp) {
     int i, j;
     if (!has_element(value, set, cp)) {
         return;

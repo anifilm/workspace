@@ -2,7 +2,7 @@
 
 int main() {
 
-    char *p = "apple";
+    char* p = "apple";
     char str[20];
     int i;
 

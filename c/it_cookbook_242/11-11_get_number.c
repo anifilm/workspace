@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int* get_number() {
-    int *p;
-    p = (int *)malloc(sizeof(int));
+    int* p;
+    p = (int*)malloc(sizeof(int));
     if (p != NULL)
         *p = 20;
     return p;
@@ -11,7 +11,7 @@ int* get_number() {
 
 int main() {
 
-    int *ptr;
+    int* ptr;
 
     ptr = get_number();
     printf("*ptr is %d\n", *ptr);

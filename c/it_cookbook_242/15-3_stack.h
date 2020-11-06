@@ -3,18 +3,18 @@
 
 struct node {
     char data;
-    struct node *next;
+    struct node* next;
 };
 typedef struct node nodeType;
 
-void init(nodeType **top);
+void init(nodeType** top);
 
-int is_empty(nodeType **top);
+int is_empty(nodeType** top);
 
-void push(nodeType **top, const char item);
+void push(nodeType** top, const char item);
 
-char pop(nodeType **top);
+char pop(nodeType** top);
 
-void free_list(nodeType **top);
+void free_list(nodeType** top);
 
 #endif

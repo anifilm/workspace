@@ -7,7 +7,7 @@ char* safe_strcpy(char*, const char*);
 int main() {
 
     char source[100];
-    char *destination = NULL;
+    char* destination = NULL;
 
     printf("Enter source string.\n");
     gets(source);
@@ -21,9 +21,9 @@ int main() {
     return 0;
 }
 
-char* safe_strcpy(char *dest, const char *src) {
-    char *backup;
-    dest = (char *)malloc(sizeof(char) * (strlen(src) + 1));
+char* safe_strcpy(char* dest, const char* src) {
+    char* backup;
+    dest = (char*)malloc(sizeof(char) * (strlen(src) + 1));
     if (dest == NULL) {
         printf("No more memory.\n");
         exit(1);

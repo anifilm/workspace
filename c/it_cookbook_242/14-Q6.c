@@ -30,7 +30,7 @@ typedef struct {
 } dictType;                 // 사전 구조체
 
 // d가 가리키는 사전에서 w가 가리키는 단어를 찾아 meaning을 리턴
-char* search(char *w, dictType *d) {
+char* search(char* w, dictType* d) {
     int i;
     for (i = 0; i < d->count; i++) {            // i가 0부터 count보다 작을 때까지
         if (strcmp(d->dict[i].word, w) == 0)    // 문자열 비교
@@ -40,16 +40,16 @@ char* search(char *w, dictType *d) {
 }
 
 // d가 가리키는 사전에 w가 가리키는 단어 명과 m이 가리키는 단어 뜻을 삽입
-void insert(char *w, char *m, dictType *d) {
+void insert(char* w, char* m, dictType* d) {
     strcpy(d->dict[d->count].word, w);      // 인덱스 count 위치에 단어 명 삽입
     strcpy(d->dict[d->count].meaning, m);   // 단어 뜻 삽입
     d->count++;                             // 현재 단어 수 증가
 }
 
-void save_dictionary(FILE *fp, dictType *d) {
+void save_dictionary(FILE* fp, dictType* d) {
     int i;
     fp = fopen("14-Q6_mydict.bin", "wb");   // 이전 내용 지우고 새로 쓰기 모드로 열기
-    i = fwrite((void *)&d, sizeof(dictType), 1, fp);        // 사전 구조체 하나를 저장
+    i = fwrite((void*)&d, sizeof(dictType), 1, fp);        // 사전 구조체 하나를 저장
     if (i < 1) {
         fprintf(stderr, "Error writing a dictionary file.\n");
         exit(1);
@@ -57,7 +57,7 @@ void save_dictionary(FILE *fp, dictType *d) {
     fclose(fp);                 // 쓰기가 끝난 파일 닫기
 }
 
-void read_dictionary(FILE *fp, dictType *d) {
+void read_dictionary(FILE* fp, dictType* d) {
     int i;
     if ((fp = fopen("14-Q6_mydict.bin", "rb")) == NULL)     // 기존 파일이 없으면
         d->count = 0;           // 사전 구조체의 count를 0으로 초기화
@@ -77,7 +77,7 @@ int main() {
     char meaning[100];          // 단어 뜻은 최대 100바이트
     dictType mydict;
 
-    FILE *fp = NULL;
+    FILE* fp = NULL;
 
     // 기존 파일이 있으면 아래 함수에 의해 사전 구조체를 읽어옴
     // 기존 파일이 없으면 아래 함수 내부에서 구조체 멤버 변수 count를 0으로 초기화

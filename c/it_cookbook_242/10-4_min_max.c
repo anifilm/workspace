@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void min_max(int a, int b, int *min, int *max) {
+void min_max(int a, int b, int* min, int* max) {
     if (a < b) {
         *min = a;
         *max = b;

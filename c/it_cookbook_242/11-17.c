@@ -3,7 +3,7 @@
 int main() {
 
     int i, j, arr[2][3];
-    // int *p = arr;    // 오류 발생
+    // int* p = arr;    // 오류 발생
     int (*p)[3] = arr;
 
     for (i = 0; i < 2; i++) {

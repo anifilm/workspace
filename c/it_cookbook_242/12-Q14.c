@@ -18,12 +18,12 @@ int main() {
 
     char ch, *str, *ptr;
     int i, j;
-    int *arr;   // 정수 배열
+    int* arr;   // 정수 배열
 
     printf("Enter one or more integers.\n");
     str = NULL; // 동적 문자열을 가리키는 포인터 str을 NULL로 초기화
     for (i = 0; (ch = getchar()) != '\n'; i++) {    // 읽은 문자가 '\n'이 아닐 때까지
-        str = (char *)realloc(str, sizeof(char) * (i + 1));
+        str = (char*)realloc(str, sizeof(char) * (i + 1));
         // realloc에 의해 str에 (i + 1)개의 문자를 저장하는 공간을 할당
         str[i] = ch;        // str[i]에 읽은 문자를 대입
     }
@@ -39,7 +39,7 @@ int main() {
     ptr = str;  // ptr을 str로 초기화
     arr = NULL; // 정수 배열 arr을 NULL로 초기화
     for (i = 0; *ptr != '\n'; i++) {
-        arr = (int *)realloc(arr, sizeof(int) * (i + 1));
+        arr = (int*)realloc(arr, sizeof(int) * (i + 1));
         // realloc에 의해 arr에 (i + 1)개의 정수를 저장하는 공간을 할당
         arr[i] = atoi(ptr);
         // atoi에 의해 ptr이 가리키는 문자열을 정수로 변환하여 arr[i]에 대입

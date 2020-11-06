@@ -11,21 +11,21 @@
 // 15-Q4_stack.h file
 struct node {
     char data;
-    struct node *next;
+    struct node* next;
 };
 typedef struct node nodeType;
 
 // 15-Q4_stack.c file
-void init(nodeType **top) {
+void init(nodeType** top) {
     *top = NULL;
 }
 
-int is_empty(nodeType **top) {
+int is_empty(nodeType** top) {
     return (*top == NULL);
 }
 
-void push(nodeType **top, const char item) {
-    nodeType *temp = (nodeType *)malloc(sizeof(nodeType));
+void push(nodeType** top, const char item) {
+    nodeType* temp = (nodeType*)malloc(sizeof(nodeType));
     if (temp == NULL) {
         printf("No more memory.\n");
         exit(1);
@@ -35,8 +35,8 @@ void push(nodeType **top, const char item) {
     *top = temp;
 }
 
-char pop(nodeType **top) {
-    nodeType *temp;
+char pop(nodeType** top) {
+    nodeType* temp;
     char item;
     if (is_empty(top)) {
         printf("Stack empty.\n");
@@ -49,8 +49,8 @@ char pop(nodeType **top) {
     return item;
 }
 
-void free_list(nodeType **top) {
-    nodeType *temp = *top;
+void free_list(nodeType** top) {
+    nodeType* temp = *top;
     while (temp != NULL) {
         *top = (*top)->next;
         free(temp);
@@ -61,7 +61,7 @@ void free_list(nodeType **top) {
 int main() {
 
     char ch;
-    nodeType *mystack;
+    nodeType* mystack;
 
     printf("Enter an expression.\n");
     init(&mystack);                     // 스택 초기화

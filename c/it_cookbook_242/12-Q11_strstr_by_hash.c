@@ -10,7 +10,7 @@
 // 텍스트와 검색 문자열을 입력받아 배열에 저장한 후 Rabin-Karp 알고리즘을 적용하여 해당
 // 문자열이 텍스트에 존재하면 그 문자열부터 이후 문자를 모두 출력하고 존재하지 않으면
 // "No such string."이라고 출력하는 프로그램을 작성하라.
-// char* strstr_by_hash(const char *str1, const char *str2);
+// char* strstr_by_hash(const char* str1, const char* str2);
 // > Enter text.
 // > In thes days, everything gets polarized. ([Enter])
 // > Enter search string.
@@ -21,7 +21,7 @@
 #define true 1
 #define false 0
 
-char* strstr_by_hash(const char *str1, const char *str2) {
+char* strstr_by_hash(const char* str1, const char* str2) {
     const char *temp1 = str1, *temp2 = str2;
     int i, length = (int)strlen(str2);
     int key = 0, val = 0, mul = 1, chck, matched = false;
@@ -55,7 +55,7 @@ char* strstr_by_hash(const char *str1, const char *str2) {
                 }
             }
             if (matched == true)
-                return (char *)temp1;
+                return (char*)temp1;
         }
         temp1++;
     }

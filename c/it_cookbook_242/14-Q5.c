@@ -10,7 +10,7 @@ int main() {
     char ch;
     int key, count;
 
-    FILE *fp = fopen("14-Q5_encrypt.bin", "w+b");   // encrypt.bin 파일. 쓰고 읽기 모드
+    FILE* fp = fopen("14-Q5_encrypt.bin", "w+b");   // encrypt.bin 파일. 쓰고 읽기 모드
     if (fp == NULL) {                               // 널 테스트
         fprintf(stderr, "Error opening file.\n");   // fprintf(stderr) 오류 메시지
         exit(1);                                    // 종료

@@ -5,7 +5,7 @@ void swap(int**, int**);
 int main() {
 
     int first, second;
-    int *fp = &first, *sp = &second;
+    int* fp = &first, *sp = &second;
 
     printf("Enter two integers to swap.\n");
     scanf("%d %d", &first, &second);
@@ -18,8 +18,8 @@ int main() {
     return 0;
 }
 
-void swap(int **p, int **q) {
-    int *temp;
+void swap(int** p, int** q) {
+    int* temp;
     temp = *p;
     *p = *q;
     *q = temp;

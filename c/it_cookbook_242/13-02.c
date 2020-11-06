@@ -4,10 +4,10 @@
 
 int main() {
 
-    struct rectangle *p;
+    struct rectangle* p;
     int x_diff, y_diff;
 
-    p = (struct  rectangle *)malloc(sizeof(struct rectangle));
+    p = (struct  rectangle*)malloc(sizeof(struct rectangle));
     if (p == NULL) {
         printf("No more memory.\n");
         exit(1);

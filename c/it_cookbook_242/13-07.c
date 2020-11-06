@@ -5,7 +5,7 @@
 struct employee {
     int entry_year;     // 입사연도
     char residence[6];  // 거주지
-    char *name;         // 사원 이름
+    char* name;         // 사원 이름
 };
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
     struct employee a = {2019, "Seoul", NULL};
     struct employee b;
 
-    a.name = (char *)malloc(sizeof(char) * 5);
+    a.name = (char*)malloc(sizeof(char) * 5);
     strcpy(a.name, "Lee");
 
     b = a;      // 얕은 복사 (Shallow Copy)

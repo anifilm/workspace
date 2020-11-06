@@ -4,7 +4,7 @@
 // "quit"가 입력될 때까지 실행을 반복한다.
 // 힌트 실행을 반복하려면 main에서 루프를 돌되 if (strcmp(dest, "quit") == 0) break;에 의해
 // 빠져나온다.
-// char* my_strcat(char *dest, char *src);
+// char* my_strcat(char* dest, char* src);
 // > Enter destination string.
 // > bla ([Enter])
 // > Enter source string.
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char* my_strcat(char *dest, char *src) {
+char* my_strcat(char* dest, char* src) {
     int i = (int)strlen(dest), j = 0;
     while ((dest[i] = src[j]) != '\0') {
         i++;

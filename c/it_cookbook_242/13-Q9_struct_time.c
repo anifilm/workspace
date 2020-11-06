@@ -11,7 +11,7 @@
 int main() {
 
     time_t now;
-    char *str;
+    char* str;
 
     now = time(NULL);       // ...①
     str = ctime(&now);      // ...②
@@ -59,7 +59,7 @@ time_t mktime(struct tm *ptr);
 
 int main() {
 
-    struct tm *struct_ptr;
+    struct tm* struct_ptr;
 
     while (1) {
         system("CLS");                  // 화면 클리어

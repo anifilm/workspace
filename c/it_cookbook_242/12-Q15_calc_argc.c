@@ -3,7 +3,7 @@
 // 다음과 같은 형식의 입출력이 되도록 해야 한다. 또, 메인 함수는 아래 원형으로 작성해야 한다.
 // 힌트 argv[2]가 가리키는 '+'는 문자형이 아니다. '\0'이 추가된 문자열 혈이므로 *argv[2]로
 // 첫 문자를 접근할 수 있다.
-// int main(int argc, char **argv);
+// int main(int argc, char** argv);
 // C:/> calc 2 + 3 ([Enter])
 // 2 + 3 = 5
 // C:/> calc 2 x 3 ([Enter])
@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
 
     int first = atoi(argv[1]), second = atoi(argv[3]);
     char op = *argv[2];

@@ -7,23 +7,23 @@ struct student {
     char id[20];
 };
 
-int compare_int(const void *a, const void *b) {
-    return (*(int *)a - *(int *)b);
+int compare_int(const void* a, const void* b) {
+    return (*(int *)a - *(int*)b);
 }
 
-int compare_string(const void *a, const void *b) {
-    return (strcmp(((struct student *)a)->name, ((struct student *)b)->name));
+int compare_string(const void* a, const void* b) {
+    return (strcmp(((struct student*)a)->name, ((struct student*)b)->name));
 }
 
 int main() {
 
-    int *np;
-    struct student *sp;
+    int* np;
+    struct student* sp;
     int i, num;
     const int max = 3;
     char name[20], id[20];
 
-    np = (int *)malloc(sizeof(int) * max);
+    np = (int*)malloc(sizeof(int) * max);
     for (i = 0; i < max; i++) {
         printf("Enter integers.\n");
         scanf("%d", &num);
@@ -35,7 +35,7 @@ int main() {
         printf("%d ", np[i]);
     printf("\n\n");
 
-    sp = (struct student *)malloc(sizeof(struct student) * max);
+    sp = (struct student*)malloc(sizeof(struct student) * max);
     for (i = 0; i < max; i++) {
         printf("Enter name and age.\n");
         scanf("%s %s", name, id);

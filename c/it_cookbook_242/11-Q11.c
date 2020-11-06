@@ -1,4 +1,4 @@
-// 11 char **p = (char **)malloc(sizeof(char *) * 2);
+// 11 char** p = (char**)malloc(sizeof(char*) * 2);
 // 위 선언에 의해 2개 요소로 이루어진 포인터 배열 p[0], p[1]을 생성할 수 있다. 이후 두 개의
 // 문자열을 별도로 입력받아 각각을 p[0], p[1]이 가리키는 배열에 저장하되 realoc을 써서 필요한
 // 만큼 공간을 확보하여 저장할 수 있다. 이후 swap 함수를 호출하여 p[0], p[1] 포인터 자체를
@@ -16,13 +16,13 @@ int main() {
 
     int i;
     char ch, *temp;
-    char **p = (char **)malloc(sizeof(char *) * 2);
+    char** p = (char**)malloc(sizeof(char*) * 2);
 
     p[1] = p[0] = NULL;     // 포인터 값이 NULL이면 calloc은 malloc과 동일
 
     printf("Enter first string.\n");
     for (i = 0; (ch = getchar()) != '\n'; i++) {
-        p[0] = (char *)realloc(p[0], sizeof(char) * (i + 1));
+        p[0] = (char*)realloc(p[0], sizeof(char) * (i + 1));
         // realloc만을 써서 필요 공간 확보 첫 인자는 p[0]
         // i가 0이면 입력 문자수는 1, '\0' 추가하려면 이보다 하나 더 큰 공간이 필요
         if (p[0] == NULL)   // 널 테스트, p[0]이 널이면
@@ -34,7 +34,7 @@ int main() {
     // 둘째 문자열에 대해서도 동일한 작업
     printf("Enter second string.\n");
     for (i = 0; (ch = getchar()) != '\n'; i++) {
-        p[1] = (char *)realloc(p[1], sizeof(char) * (i + 1));
+        p[1] = (char*)realloc(p[1], sizeof(char) * (i + 1));
         if (p[1] == NULL)
             exit(1);
         p[1][i] = ch;

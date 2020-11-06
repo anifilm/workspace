@@ -4,7 +4,7 @@
 int main() {
 
     char dest[9];
-    char *src = "mju.ac.kr";
+    char* src = "mju.ac.kr";
     char str[9];
 
     strncpy(dest, src, sizeof(dest));

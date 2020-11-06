@@ -1,5 +1,5 @@
 // 04 매크로 상수 __FILE__은 C소스코드 파일이 있는 경로를 나타낸다.
-// 따라서 FILE *fp = fopen(__FILE__, "r"); 이라고 하면 소스 코드 자체를 열 수 있다. 현재의
+// 따라서 FILE* fp = fopen(__FILE__, "r"); 이라고 하면 소스 코드 자체를 열 수 있다. 현재의
 // 소스코드 파일을 읽어서 소괄호(parenthesis)의 개수와 중괄호(brace)의 개수를 출력하고 여는
 // 괄호 수와 닫는 괄호 수가 일치하는지 확인하라.
 // > left parenthesis: 17, right parenthesis: 17
@@ -11,7 +11,7 @@ int main() {
 
     int ch, count_lp = 0, count_rp = 0, count_lb = 0, count_rb = 0;
 
-    FILE *fp = fopen(__FILE__, "r");
+    FILE* fp = fopen(__FILE__, "r");
     if (fp == NULL) {
         printf("Error opening file.\n");
         exit(1);

@@ -9,7 +9,7 @@ double average_by_array(int p[], int length) {
     return sum / length;
 }
 
-double average_by_pointer(int *p, int length){
+double average_by_pointer(int* p, int length){
     double sum = 0.0;
     for (int i = 0; i < length; i++)
         sum += *(p + i);

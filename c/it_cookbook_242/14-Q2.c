@@ -10,7 +10,7 @@ int main() {
     char buff[100];
     int i, j;
 
-    FILE *fp = fopen("14-Q2_original.txt", "rt");
+    FILE* fp = fopen("14-Q2_original.txt", "rt");
     if (fp == NULL) {                       // 널 텍스트
         printf("Error opening file.\n");    // 오류 메시지 출력
         exit(1);                            // 종료

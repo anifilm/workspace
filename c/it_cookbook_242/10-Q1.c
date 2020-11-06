@@ -2,10 +2,10 @@
 // 하는 프로그램을 작성하라.
 // 힌트 main에서 일단 sum 변수와 그것을 가리키는 포인터 변수 ptr을 선언한 후 함수 호출 시
 // ptr을 p로 넘겨준다.
-// void add(const int a, const int b, int *p);
+// void add(const int a, const int b, int* p);
 #include <stdio.h>
 
-void add(const int a, const int b, int *p) {
+void add(const int a, const int b, int* p) {
     *p = a + b;
 }
 

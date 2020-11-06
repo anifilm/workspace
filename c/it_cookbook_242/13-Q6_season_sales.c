@@ -10,7 +10,7 @@
 #include <stdlib.h>
 
 typedef struct {
-    char *name;             // 아이템 명
+    char* name;             // 아이템 명
     int price;              // 단가
 } infoType;
 
@@ -21,7 +21,7 @@ typedef struct {
 
 int main() {
 
-    itemType *p;
+    itemType* p;
     int i, season_sales_sum = 0, total_sales;
 
     printf("Enter item name.\n");

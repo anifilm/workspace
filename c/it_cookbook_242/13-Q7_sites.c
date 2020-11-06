@@ -7,7 +7,7 @@
 #include <string.h>
 
 typedef struct {
-    char *name;             // 관광지 이름
+    char* name;             // 관광지 이름
     char rating;            // 등급: 'A', 'B', 'C'로 평가
 } siteType;
 
@@ -16,17 +16,17 @@ int main() {
     int i;
     char temp[100];
 
-    siteType *sites[3];     // 구조체를 가리키는 포인터 배열
+    siteType* sites[3];     // 구조체를 가리키는 포인터 배열
 
     for (i = 0; i < 3; i++) {
         // 포인터를 쓰려면 항상 가리키는 대상을 저장할 공간을 먼저 만들어야 함
-        sites[i] = (siteType *)malloc(sizeof(siteType));
+        sites[i] = (siteType*)malloc(sizeof(siteType));
         if (sites[i] == NULL)           // 널 테스트
             exit(1);                    // exit로 빠져나감
         printf("Enter name of tour site.\n");
         gets(temp);
         // 포인터를 쓰려면 항상 가리키는 대상을 저장할 공간을 먼저 만들어야 함
-        sites[i]->name = (char *)malloc(sizeof(char));
+        sites[i]->name = (char*)malloc(sizeof(char));
         if (sites[i]->name == NULL)     // 널 테스트
             exit(1);
         strcpy(sites[i]->name, temp);   // 문자열 복사

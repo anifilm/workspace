@@ -3,7 +3,7 @@
 #define FRIENDS 3
 #define MAX 10
 
-void swap(char *p, char *q) {
+void swap(char* p, char* q) {
     char temp[MAX];
     strcpy(temp, p);
     strcpy(p, q);
