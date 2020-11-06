@@ -4,11 +4,11 @@
 int main() {
 
     int data = 0x12345678, i;
-    char *p = (char *)&data;
+    char* p = (char*)&data;
 
     for (i = 0; i < 4; i++) {
         printf("%x, ", *(p + i));
     }
 
-	return 0;
+    return 0;
 }

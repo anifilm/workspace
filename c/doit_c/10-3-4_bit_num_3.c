@@ -2,9 +2,7 @@
 #include <stdio.h>
 
 unsigned char ModifyBit(unsigned char dest_data, unsigned char bit_num, char value) {
-
     unsigned char mask;
-
     if (bit_num < 8) {
         mask = 0x01 << bit_num;
         if (value == 1) dest_data = dest_data | mask;
@@ -25,5 +23,5 @@ int main() {
     lamp_state = ModifyBit(lamp_state, 3, 1);
     printf("%X\n", lamp_state);
 
-	return 0;
+    return 0;
 }

@@ -4,12 +4,12 @@
 
 int main() {
 
-    int *p_num_list, count = 0, sum = 0, limit = 0, i;
+    int* p_num_list, count = 0, sum = 0, limit = 0, i;
 
     printf("사용할 최대 개수를 입력하세요: ");
     scanf("%d", &limit);
     // 사용자가 입력한 개수만큼 정수럴 저장할 수 있는 메모리를 할당
-    p_num_list = (int *)malloc(sizeof(int) * limit);
+    p_num_list = (int*)malloc(sizeof(int) * limit);
     // 중간에 9999를 누르면 종료함
     while (count < limit) {
         printf("숫자를 입력하세요 (9999를 누르면 종료): ");

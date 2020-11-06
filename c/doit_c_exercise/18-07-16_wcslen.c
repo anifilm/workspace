@@ -7,7 +7,7 @@
 
 int main() {
 
-    const wchar_t *p = L"임채영";          // 출력에 문제가 있다
+    const wchar_t* p = L"임채영";          // 출력에 문제가 있다
     int len;
     // setlocale(LC_ALL, "ko_KR.UTF-8");     // 지역코드를 대한민국으로 설정, 잘 안되는 듯
     _wsetlocale(LC_ALL, L"korean");       // 이건 잘 나온다

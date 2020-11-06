@@ -12,28 +12,29 @@
 
 // (힌트) 프로그램이 종료되기 전에 free 함수를 사용하여 동적으로 할당된 메모리를 해제하는 코드까지 작성해야 합니다.
 #include <stdio.h>
+#include <malloc.h>
 
 int main() {
 
     // *(p + 0) 와 *(p + 1) 에 해당하는 메모리 생성
-    char p = (char ***)malloc(sizeof(char **) * 2);
+    char*** p = (char***)malloc(sizeof(char**) * 2);
     int i, j;
 
     for (i = 0; i < 2; i++) {
         // *((p + 0) + 0) 에서 *(*(p + 1) + 2) 에 해당하는 메모리 생성
         // *(p + 0) = (char **)malloc(sizeof(char *) * 3);
         // *(p + 1) = (char **)malloc(sizeof(char *) * 3);
-        *(p + i) = (char **)malloc(sizeof(char *) * 3);
+        *(p + i) = (char**)malloc(sizeof(char*) * 3);
 
         for (j = 0; j < 3; j++) {
             // *(*(*(p + 0) + 0) + 0) 에서 *(*(*(p + 1) + 2) + 3) 까지에 해당하는 메모리 생성
-            // *(*(p + 0) + 0) = (char *)malloc(sizeof(char) * 4);
-            // *(*(p + 0) + 1) = (char *)malloc(sizeof(char) * 4);
-            // *(*(p + 0) + 2) = (char *)malloc(sizeof(char) * 4);
-            // *(*(p + 1) + 0) = (char *)malloc(sizeof(char) * 4);
-            // *(*(p + 1) + 1) = (char *)malloc(sizeof(char) * 4);
-            // *(*(p + 1) + 2) = (char *)malloc(sizeof(char) * 4);
-            *(*(p + i) + j) = (char *)malloc(sizeof(char) * 4);
+            // *(*(p + 0) + 0) = (char*)malloc(sizeof(char) * 4);
+            // *(*(p + 0) + 1) = (char*)malloc(sizeof(char) * 4);
+            // *(*(p + 0) + 2) = (char*)malloc(sizeof(char) * 4);
+            // *(*(p + 1) + 0) = (char*)malloc(sizeof(char) * 4);
+            // *(*(p + 1) + 1) = (char*)malloc(sizeof(char) * 4);
+            // *(*(p + 1) + 2) = (char*)malloc(sizeof(char) * 4);
+            *(*(p + i) + j) = (char*)malloc(sizeof(char) * 4);
         }
     }
 

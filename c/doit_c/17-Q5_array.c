@@ -7,7 +7,7 @@
 
 #define MAX_DATA_COUNT 30
 
-void Push(short *ap_data_list, short *ap_top) {
+void Push(short* ap_data_list, short* ap_top) {
     // 스택이 꽉 차서 더 이상 데이터를 저장할 수 없는 경우
     if (*ap_top >= MAX_DATA_COUNT - 1) {
         printf("스택에 데이터를 Push할 공간이 없습니다.\n");
@@ -22,7 +22,7 @@ void Push(short *ap_data_list, short *ap_top) {
     ap_data_list[*ap_top] = data;
 }
 
-void Pop(short *ap_data_list, short *ap_top) {
+void Pop(short* ap_data_list, short* ap_top) {
     // 스택이 비어있는 경우
     if (*ap_top == -1) printf("Pop할 데이터가 존재하지 않습니다.\n");
 
@@ -32,7 +32,7 @@ void Pop(short *ap_data_list, short *ap_top) {
     printf("Pop Data: %hd\n", data);
 }
 
-void PrintData(short *ap_data_list, short a_top) {
+void PrintData(short* ap_data_list, short a_top) {
     printf("\n----[ Stack Data ]----\n");
 
     for (int i = 0; i <= a_top; i++) {

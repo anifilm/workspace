@@ -4,8 +4,8 @@
 
 int main() {
 
-    char *p_name;
-    p_name = (char *)malloc(32);    // 32바이트의 메모리를 동적 할당합니다.
+    char* p_name;
+    p_name = (char*)malloc(32);    // 32바이트의 메모리를 동적 할당합니다.
     if (p_name != NULL) {
         // 메모리 할당에 성공한 경우
         printf("Your name: ");

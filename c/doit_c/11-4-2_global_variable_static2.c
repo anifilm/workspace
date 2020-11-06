@@ -12,7 +12,6 @@ int main() {
     int i;
 
     for (i = 0; i < 5; i++) Test();
-
     // printf("%d\n", data);    // 해당 함수가 아니어서 사용 불가
 
     return 0;

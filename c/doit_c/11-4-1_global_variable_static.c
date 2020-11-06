@@ -12,7 +12,6 @@ int main() {
     int i;
 
     for (i = 0; i < 5; i++) Test();
-
     printf("%d\n", data);
 
     return 0;

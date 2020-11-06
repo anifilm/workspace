@@ -9,7 +9,7 @@ typedef struct People {
     float weight;               // 몸무게
 } Person;
 
-int AddFriend(Person *p_friend, int count) {
+int AddFriend(Person* p_friend, int count) {
     if (count < MAX_COUNT) {    // 입력 가능한 최대 수를 넘었는지 체크
         p_friend = p_friend + count;   // friends 배열의 count 위치로 이동함
         printf("\n새로운 친구 정보를 입력하세요\n");
@@ -34,7 +34,7 @@ int AddFriend(Person *p_friend, int count) {
     return 0;       // 친구 추가 실패
 }
 
-void ShowFriendList(Person *p_friend, int count) {
+void ShowFriendList(Person* p_friend, int count) {
     int i;
     if (count > 0) {    // 등록된 친구가 있으면 그 수만큼 반복하면서 친구 정보를 출력
         printf("\n등록된 친구 목록\n");

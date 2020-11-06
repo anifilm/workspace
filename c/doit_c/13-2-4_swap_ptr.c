@@ -1,8 +1,7 @@
 // 간접 주소 지정 방식 (포인터)으로 변수 값 교환하기
 #include <stdio.h>
 
-void Swap(int *pa,  int *pb) {
-
+void Swap(int* pa,  int* pb) {
     int temp = *pa;
     *pa = *pb;
     *pb = temp;
@@ -21,5 +20,5 @@ int main() {
 
     printf("after: start = %d, end = %d\n", start, end);
 
-	return 0;
+    return 0;
 }

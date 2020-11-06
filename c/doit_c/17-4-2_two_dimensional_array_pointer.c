@@ -7,7 +7,7 @@ int main() {
     // 연령별 인원수를 저장할 배열 - 사용자에게 입력 받음
     unsigned char limit_table[3];
     // 연령별 윗몸 일으키기 횟수를 저장할 배열
-    unsigned char *p[3];
+    unsigned char* p[3];
     int age, member, temp, sum;
     // 연령별로 윗몸 일으키기 횟수를 입력 받음
     for (age = 0; age < 3; age++) {
@@ -16,7 +16,7 @@ int main() {
         scanf("%d", &temp);
         limit_table[age] = (unsigned char)temp;
         // 입력 받은 인원수만큼 메모리를 할당
-        p[age] = (unsigned char *)malloc(limit_table[age]);
+        p[age] = (unsigned char*)malloc(limit_table[age]);
         // 해당 연령에 소속된 사람들을 순서대로 입력 받음
         for (member = 0; member < limit_table[age]; member++) {
             printf("%dth: ", member + 1);

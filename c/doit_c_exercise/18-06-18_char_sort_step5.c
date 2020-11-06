@@ -1,8 +1,8 @@
 // 문자열 오름차순으로 정렬하기
 #include <stdio.h>
 
-int GetStringLength(char *ap_string) {
-    char *p = ap_string;
+int GetStringLength(char* ap_string) {
+    char* p = ap_string;
     // 문자열 끝에 있는 NULL 문자가 나올 때까지 반복하면서 주소를 이동
     // while문이 끝나면 포인터 ap_string은 문자열의 끝 위치를 가리키고 있게 된다.
     while (*ap_string++);
@@ -11,7 +11,7 @@ int GetStringLength(char *ap_string) {
     return ap_string - p - 1;
 }
 
-void SortCharInString(char *ap_string) {
+void SortCharInString(char* ap_string) {
     int i, step, len;
     char temp;
 

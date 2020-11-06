@@ -11,7 +11,7 @@ int GetStringLength(const char a_str[]) {
 char* FindStringInString(const char a_str[], const char a_find_str[]) {
     int str_len, find_str_len;
     int limit, i, sub_i;
-    if (!a_find_str[0]) return (char *)a_str;
+    if (!a_find_str[0]) return (char*)a_str;
     str_len = GetStringLength(a_str);
     find_str_len = GetStringLength(a_find_str);
     limit = str_len - find_str_len;
@@ -21,16 +21,16 @@ char* FindStringInString(const char a_str[], const char a_find_str[]) {
             for (sub_i = 1; sub_i < find_str_len; sub_i++) {
                 if (a_str[i + sub_i] != a_find_str[sub_i]) break;
             }
-            if (sub_i == find_str_len) return (char *)(a_str + i);
+            if (sub_i == find_str_len) return (char*)(a_str + i);
         }
     }
-    return (char *)NULL;
+    return (char* )NULL;
 }
 
 int main() {
 
-    char *p_src_str = "abcdefg", *p_find_str = "cde";
-    char *p_pos = FindStringInString(p_src_str, p_find_str);
+    char* p_src_str = "abcdefg", *p_find_str = "cde";
+    char* p_pos = FindStringInString(p_src_str, p_find_str);
 
     if (p_pos != NULL) {
         printf("기준 문자열: %s\n", p_src_str);

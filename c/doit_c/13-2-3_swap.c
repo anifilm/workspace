@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 void Swap(int a,  int b) {
-
     int temp = a;
     a = b;
     b = temp;
@@ -22,5 +21,5 @@ int main() {
 
     printf("after: start = %d, end = %d\n", start, end);
 
-	return 0;
+    return 0;
 }

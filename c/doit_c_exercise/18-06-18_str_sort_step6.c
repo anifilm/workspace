@@ -4,7 +4,7 @@
 #define MAX_COUNT 5
 #define MAX_LENGTH 16
 
-int StringCompare(const char *ap_string1, const char *ap_string2) {
+int StringCompare(const char* ap_string1, const char* ap_string2) {
     while (1) {
         if (*ap_string1 != *ap_string2) break;
         if (*ap_string1 == 0) break;
@@ -17,8 +17,8 @@ int StringCompare(const char *ap_string1, const char *ap_string2) {
     return -1;
 }
 
-int StringCopy(char *ap_dest, char *ap_src) {
-    char *p_start = ap_dest;
+int StringCopy(char* ap_dest, char* ap_src) {
+    char* p_start = ap_dest;
     while (*ap_src) *ap_dest++ = *ap_src++;
     *ap_dest = 0;                   // '\0'도 함께 복사
     return ap_dest - p_start;       // 복사된 문자열의 길이를 반환

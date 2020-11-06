@@ -1,5 +1,5 @@
 // 두 값을 합산하는 함수
-int Sum(int a, int b, void (*pa)(int *), void (*pb)(int *)) {
+int Sum(int a, int b, void (*pa)(int*), void (*pb)(int*)) {
 
     if (pa != NULL) (*pa)(&a);
     if (pb != NULL) (*pb)(&b);

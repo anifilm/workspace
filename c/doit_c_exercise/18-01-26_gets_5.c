@@ -2,7 +2,7 @@
 // 5. while 문은 getc 함수를 한번만 사용할 수 없는가?
 #include <stdio.h>
 
-void GetString(char *ap_string) {
+void GetString(char* ap_string) {
     int temp_char;
     // 사용자가 입력한 문자가 Enter 키 값이 아니면 계속 반복하면서 키를 입력 받는다
     while ((temp_char = getc(stdin)) != '\n') {
@@ -19,5 +19,5 @@ int main() {
 
     printf("input -> %s\n", temp);  // 입력 받은 문자열을 확인
 
-	return 0;
+    return 0;
 }

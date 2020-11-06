@@ -3,8 +3,8 @@
 
 int main() {
 
-    short **pp, data = 3;
-    pp = (short **)malloc(4);
+    short** pp, data = 3;
+    pp = (short**)malloc(4);
     *pp = &data;
 
     printf("data의 주소값: %p, 저장된 값: %d\n", &data, data);

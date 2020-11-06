@@ -2,7 +2,7 @@
 // 빈칸을 채워서 코드를 완성하세요.
 #include <stdio.h>
 
-void Test(int *p) {
+void Test(int* p) {
     *p = 5;
 }
 
@@ -11,8 +11,7 @@ int main() {
     int tips = 0;
 
     Test(&tips);
-
     printf("tips = %d\n", tips);
 
-	return 0;
+    return 0;
 }

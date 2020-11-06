@@ -1,7 +1,7 @@
 // scanf 함수 만들어 보기
 #include <stdio.h>
 
-int my_scanf(const char *ap_format, void *ap_data) {
+int my_scanf(const char* ap_format, void* ap_data) {
     int temp_char, num = 0, flag;
     // % 문자를 찾는다. 그리고 %가 없는 경우도 대비해야 한다.
     while (*ap_format != '%' && *ap_format) ap_format++;
@@ -31,7 +31,7 @@ int my_scanf(const char *ap_format, void *ap_data) {
                     temp_char = getc(stdin);
                 }
                 // 'h'면 short로 'd'면 int로 값을 대입한다.
-                if (*ap_format == 'h') *(short *)ap_data = num * flag;
+                if (*ap_format == 'h') *(short*)ap_data = num * flag;
                 else *(int *)ap_data = num * flag;
                 break;
         }
@@ -51,5 +51,5 @@ int main() {
 
     printf("[input]: %c, %hd, %d\n", c_data, h_data, i_data);
 
-	return 0;
+    return 0;
 }

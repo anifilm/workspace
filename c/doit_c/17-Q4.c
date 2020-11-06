@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <malloc.h>
 
-void GetMyData(int **q) {
+void GetMyData(int** q) {
     // 할당된 주소 값을 포인터 q가 가리키는 main 함수의 p에 저장함
-    *q = (int *)malloc(40);
+    *q = (int*)malloc(40);
 }
 
 int main() {
 
-    int *p;
+    int* p;
 
     GetMyData(&p);
     *p = 5;

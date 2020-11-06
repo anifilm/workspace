@@ -4,7 +4,7 @@
 
 int main() {
 
-    int **p;    // 행렬을 저장하기 위한 2차원 포인터
+    int** p;    // 행렬을 저장하기 위한 2차원 포인터
     int edge_num, edge_base;
     int size, i, x = 0, y = 0, flag = 1, step = 0;
 
@@ -13,9 +13,9 @@ int main() {
 
     edge_num = edge_base = size - 1;
 
-    p = (int **)malloc(sizeof(int *) * size);
+    p = (int**)malloc(sizeof(int*) * size);
     for (i = 0; i < size; i++)
-        *(p + i) = (int *)malloc(sizeof(int) * size);
+        *(p + i) = (int*)malloc(sizeof(int) * size);
 
     for (i = 0; i < size * size; i++) {
         *(*(p + y) + x) = i + 1;

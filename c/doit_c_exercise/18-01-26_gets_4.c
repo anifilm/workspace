@@ -2,7 +2,7 @@
 // 4. GetString 함수를 do ~ while 문으로 재구성
 #include <stdio.h>
 
-void GetString(char *ap_string) {
+void GetString(char* ap_string) {
     int temp_char;
     do {
         // 사용자가 입력한 문자를 temp_char에 넣는다
@@ -21,5 +21,5 @@ int main() {
 
     printf("input -> %s\n", temp);  // 입력 받은 문자열을 확인
 
-	return 0;
+    return 0;
 }

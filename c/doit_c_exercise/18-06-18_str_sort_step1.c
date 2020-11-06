@@ -6,8 +6,8 @@
 int main() {
 
     int i, step;
-    const char *p_temp_str;
-    const char *p_str_list[MAX_COUNT] = {
+    const char* p_temp_str;
+    const char* p_str_list[MAX_COUNT] = {
         "tipsware", "naver", "microsoft", "blog", "mvp"
     };
 

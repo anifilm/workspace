@@ -3,15 +3,13 @@
 
 void ShowMultiplication() {
     int i;
-
-    for (i = 1; i <= 9; i++) {
+    for (i = 1; i <= 9; i++)
         printf("2 * %d = %d\n", i, 2 * i);
-    }
 }
 
 int main() {
 
     ShowMultiplication();
 
-	return 0;
+    return 0;
 }

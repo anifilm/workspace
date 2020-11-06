@@ -4,9 +4,9 @@
 
 int main() {
 
-    short **pp;
-    pp = (short **)malloc(sizeof(short *));     // 4바이트를 할당, 두번째 상자를 만듬
-    *pp = (short *)malloc(sizeof(short));       // 2바이트를 할당, 세번째 상자를 만듬
+    short** pp;
+    pp = (short**)malloc(sizeof(short *));     // 4바이트를 할당, 두번째 상자를 만듬
+    *pp = (short*)malloc(sizeof(short));       // 2바이트를 할당, 세번째 상자를 만듬
 
     **pp = 10;      // 2차원 포인터를 사용하여 세번째 상자에 10에 대입
     printf("**pp: %d\n", **pp);

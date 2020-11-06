@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define MAX_LENGTH 32
 
-int GetStringLength(const char *ap_string) {
+int GetStringLength(const char* ap_string) {
     int count = 0;
     // 문자열의 끝에 있는 'NULL 문자'가 나올때까지 반복
     while (*ap_string) {
@@ -15,7 +15,7 @@ int GetStringLength(const char *ap_string) {
     return count;
 }
 
-void PrintString(const char *ap_string) {
+void PrintString(const char* ap_string) {
     while (*ap_string) {
         if (*ap_string >> 7) {
             printf("%c%c%c\n", *ap_string, *(ap_string + 1), *(ap_string + 3));

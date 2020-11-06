@@ -24,9 +24,9 @@ struct Test {
 
 int main() {
 
-    struct Test *p = (struct Test *)malloc(sizeof(struct Test));
+    struct Test* p = (struct Test*)malloc(sizeof(struct Test));
 
     printf("struct Test is: %d byte\n", sizeof(*p));
 
-	return 0;
+    return 0;
 }

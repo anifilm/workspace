@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define MAX_COUNT 5
 
-int StringCompare(const char *ap_string1, const char *ap_string2) {
+int StringCompare(const char* ap_string1, const char* ap_string2) {
     while (1) {
         if (*ap_string1 != *ap_string2) break;
         if (*ap_string1 == 0) break;
@@ -15,9 +15,9 @@ int StringCompare(const char *ap_string1, const char *ap_string2) {
     return -1;
 }
 
-void SortStringInList(const char *ap_str_list[], int a_count) {
+void SortStringInList(const char* ap_str_list[], int a_count) {
     int i, step;
-    const char *p_temp_str;
+    const char* p_temp_str;
 
     for (step = 0; step < MAX_COUNT - 1; step++) {
         for (i = 0; i < MAX_COUNT - 1 - step; i++) {
@@ -33,7 +33,7 @@ void SortStringInList(const char *ap_str_list[], int a_count) {
 int main() {
 
     int i;
-    const char *p_str_list[MAX_COUNT] = {
+    const char* p_str_list[MAX_COUNT] = {
         "tipsware", "naver", "microsoft", "blog", "mvp"
     };
 

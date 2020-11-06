@@ -15,10 +15,10 @@ typedef struct grade {
     struct grade *p_next;
 } Students;
 
-void AddStudent(Students **pp_start, Students **pp_end, unsigned short *ap_count) {
+void AddStudent(Students** pp_start, Students** pp_end, unsigned short* ap_count) {
     // 학생에 대한 성적 정보 입력
     // 새 노드를 할당
-    Students *p_node = (Students *)malloc(sizeof(Students)), *p_temp_node, *p_prev_node;
+    Students* p_node = (Students*)malloc(sizeof(Students)), *p_temp_node, *p_prev_node;
 
     printf("%d 번째 학생 이름: ", *ap_count + 1);
     scanf("%s", p_node->name);
@@ -75,13 +75,13 @@ void AddStudent(Students **pp_start, Students **pp_end, unsigned short *ap_count
     (*ap_count)++;
 }
 
-void ShowStudentGrade(Students **pp_start) {
+void ShowStudentGrade(Students** pp_start) {
     // 정보 출력 (등수 순서로)
     printf("--------------------------------\n");
     printf(" 이름   국어 영어 수학  총점  평균 등수\n");
     printf("--------------------------------\n");
 
-    Students *p_node = *pp_start;
+    Students* p_node = *pp_start;
     char rank = 1;
 
     while (p_node != NULL) {
@@ -94,8 +94,8 @@ void ShowStudentGrade(Students **pp_start) {
     }
 }
 
-void DeleteAllGrade(Students *p_start) {
-    Students *p_node;
+void DeleteAllGrade(Students* p_start) {
+    Students* p_node;
 
     while (p_start != NULL) {
         p_node = p_start;

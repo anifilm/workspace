@@ -5,7 +5,7 @@ int main() {
 
     int num;
 
-    FILE *p_file = fopen("19-4-3_data.txt", "rt");  // 읽기 모드로 텍스트 파일을 열기
+    FILE* p_file = fopen("19-4-3_data.txt", "rt");  // 읽기 모드로 텍스트 파일을 열기
     if (p_file != NULL) {   // 파일 열기에 성공한 경우
         while (fscanf(p_file, "%d", &num) != EOF) {
             // 파일에서 읽은 숫자값을 화면에 출력

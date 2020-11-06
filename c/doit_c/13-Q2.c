@@ -6,10 +6,10 @@
 int main() {
 
     int data = 0x12345678;
-    short *ptr = (short *)&data;
+    short* ptr = (short*)&data;
     *ptr = 0x0412;
 
     printf("0x%x\n", data);
 
-	return 0;
+    return 0;
 }

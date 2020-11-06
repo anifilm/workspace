@@ -4,20 +4,20 @@
 
 typedef struct node {
     int number;             // 정수값을 저장할 변수
-    struct node *p_next;    // 다음 노드를 가리킬 포인터
+    struct node* p_next;    // 다음 노드를 가리킬 포인터
 } NODE;
 
 // 기존 연결 리스트에 노드가 없는 경우 이 함수로 전달된 p_head와 p_tail 값을 수정해야 하므로
 // AddNumber를 호출할 때 p_head, p_tail 포인터 변수의 주소값을 넘겨줍니다.
 // 따라서 1차원 포인터의 주소값을 받아서 사용해야 하므로 두 개의 2차원 포인터를 사용합니다.
-void AddNumber(NODE **pp_head, NODE **pp_tail, int data) {
+void AddNumber(node** pp_head, node** pp_tail, int data) {
 
     if (*pp_head != NULL) {
-        (*pp_tail)->p_next = (NODE *)malloc(sizeof(NODE));      // 새 노드를 할당
+        (*pp_tail)->p_next = (node*)malloc(sizeof(NODE));      // 새 노드를 할당
         *pp_tail = (*pp_tail)->p_next;      // p_tail(*pp_tail)에 새 노드의 주소값을 저장
     } else {
         // p_head 값이 NULL이면 첫 노드가 추가됨, p_head 값에 직접 대입함
-        *pp_head = (NODE *)malloc(sizeof(NODE));                // 새 노드를 할당
+        *pp_head = (node*)malloc(sizeof(NODE));                // 새 노드를 할당
         *pp_tail = *pp_head;                // 새 노드의 주소값을 p_tail(*pp_tail)에 저장
     }
 
@@ -28,7 +28,7 @@ void AddNumber(NODE **pp_head, NODE **pp_tail, int data) {
 int main() {
 
     // 노드의 시작과 끝을 기억할 포인터 정의
-    NODE *p_head = NULL, *p_tail = NULL, *p;
+    node *p_head = NULL, *p_tail = NULL, *p;
     int sum = 0, temp;
 
     while (1) {     // 무한 루프, 중간에 9999를 입력하면 종료

@@ -5,7 +5,7 @@ int main() {
 
     int num1, num2, num3;
 
-    FILE *p_file = fopen("19-4-2_data.txt", "rt");  // 읽기 모드로 텍스트 파일을 열기
+    FILE* p_file = fopen("19-4-2_data.txt", "rt");  // 읽기 모드로 텍스트 파일을 열기
     if (p_file != NULL) {   // 파일 열기에 성공한 경우
         // num1에 412, num2에 100, num3에 123 값을 저장
         fscanf(p_file, "%d %d %d", &num1, &num2, &num3);

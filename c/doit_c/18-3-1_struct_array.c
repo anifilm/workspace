@@ -4,8 +4,8 @@
 
 typedef char NAME_TYPE[14];
 
-int AddFriend(NAME_TYPE *p_name, unsigned short int *p_age,
-              float *p_height, float *p_weight, int count) {
+int AddFriend(NAME_TYPE* p_name, unsigned short int* p_age,
+              float* p_height, float* p_weight, int count) {
     if (count < MAX_COUNT) {    // 입력 가능하 최대 수를 넘었는지 체크
         printf("\n새로운 친구 정보를 입력하세요\n");
         printf("1. 이름: ");
@@ -26,7 +26,7 @@ int AddFriend(NAME_TYPE *p_name, unsigned short int *p_age,
     return 0;       // 친구 추가 실패
 }
 
-void ShowFriendList(NAME_TYPE *p_name, unsigned short int *p_age, float *p_height, float *p_weight, int count) {
+void ShowFriendList(NAME_TYPE* p_name, unsigned short int* p_age, float* p_height, float* p_weight, int count) {
     int i;
     if (count > 0) {    // 등록된 친구가 있으면 그 수만큼 반복하면서 친구 정보를 출력
         printf("\n등록된 친구 목록\n");

@@ -5,7 +5,7 @@ int main() {
 
     char temp[64];  // 파일에서 문자열을 입력 받을 배열 변수
 
-    FILE *p_file = fopen("19-4-4_data.txt", "rt");  // 읽기 모드로 텍스트 파일을 열기
+    FILE* p_file = fopen("19-4-4_data.txt", "rt");  // 읽기 모드로 텍스트 파일을 열기
     if (p_file != NULL) {   // 파일 열기에 성공한 경우
         while (fscanf(p_file, "%s", temp) != EOF) {
             // 파일에서 읽은 문자열을 화면에 출력

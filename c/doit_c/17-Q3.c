@@ -5,13 +5,13 @@
 
 int main() {
 
-    char **p;
+    char** p;
     int i;
 
-    p = (char **)malloc(sizeof(char *) * 2);
+    p = (char**)malloc(sizeof(char*) * 2);
 
     for (i = 0; i < 2; i++) {
-        *(p + i) = (char *)malloc(sizeof(char) * 3);
+        *(p + i) = (char*)malloc(sizeof(char) * 3);
     }
 
     for (i = 0; i < 2; i++) free(*(p + i));

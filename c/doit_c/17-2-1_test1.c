@@ -3,8 +3,8 @@
 int main() {
 
     short data = 3;
-    short *p = &data;
-    short **pp = &p;
+    short* p = &data;
+    short** pp = &p;
 
     printf("data의 주소값: %p, 저장된 값: %d\n", &data, data);
 

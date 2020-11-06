@@ -2,9 +2,7 @@
 #include <stdio.h>
 
 int GetStringLength(char data[]) {
-
     int count = 0;
-
     while(data[count]) count++;
     return count;
 }
@@ -18,5 +16,5 @@ int main() {
 
     printf("data length = %d\n", data_length);
 
-	return 0;
+    return 0;
 }

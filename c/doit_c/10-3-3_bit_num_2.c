@@ -2,9 +2,7 @@
 #include <stdio.h>
 
 unsigned char GetBit(unsigned char dest_data, unsigned char bit_num) {
-
     unsigned char bit_state = 0;
-
     if (bit_num < 8) {
         bit_state = dest_data & (0x01 << bit_num);
         bit_state = bit_state >> bit_num;
@@ -27,5 +25,5 @@ int main() {
     }
     printf("\n");
 
-	return 0;
+    return 0;
 }

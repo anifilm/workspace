@@ -10,8 +10,7 @@ const int *p;
 
 */
 
-void Swap(int *const pa,  int *const pb) {
-
+void Swap(int* const pa,  int* const pb) {
     int temp = *pa;
     *pa = *pb;
     *pb = temp;
@@ -29,5 +28,5 @@ int main() {
 
     printf("after: start = %d, end = %d\n", start, end);
 
-	return 0;
+    return 0;
 }
