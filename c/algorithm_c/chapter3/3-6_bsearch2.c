@@ -15,12 +15,12 @@ int int_cmpr(const int *a, const int *b) {
 int main(void) {
 
     int i, nx, ky;
-    int *x;                 // 배열의 첫번째 요소에 대한 포인터
-    int *p;                 // 검색한 요소에 대한 포인터
+    int* x;                 // 배열의 첫번째 요소에 대한 포인터
+    int* p;                 // 검색한 요소에 대한 포인터
     puts("bsearch 함수를 사용하여 검색 (내림차순)");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
     printf("내림차순으로 입력하세요.\n");
     printf("x[0]: ");
     scanf("%d", &x[0]);
@@ -41,11 +41,11 @@ int main(void) {
         printf("%d ", x[i]);
     printf("}\n");
 
-    p = bsearch(&ky,                                            // 검색값의 메모리 주소값
-                x,                                              // 배열 x
-                nx,                                             // 요소의 개수
-                sizeof(int),                                    // 요소의 크기
-                (int(*)(const void *, const void *))int_cmpr    // 비교 함수
+    p = (int*)bsearch(&ky,                                    // 검색값의 메모리 주소값
+                x,                                            // 배열 x
+                nx,                                           // 요소의 개수
+                sizeof(int),                                  // 요소의 크기
+                (int(*)(const void*, const void*))int_cmpr    // 비교 함수
                 );
 
     if (p == NULL)

@@ -24,7 +24,7 @@ int gcd_array(const int a[], int n) {
 int main() {
 
     int i, nx;
-    int *x;     // 배열의 첫번째 요소에 대한 포인터
+    int* x;     // 배열의 첫번째 요소에 대한 포인터
 
     printf("요소의 개수: ");
     scanf("%d", &nx);

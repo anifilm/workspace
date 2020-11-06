@@ -16,12 +16,12 @@ int search(int a[], int n, int key) {
 int main(void) {
 
     int i, nx, ky, idx;
-    int *x;                 // 배열의 첫번째 요소에 대한 포인터
+    int* x;                 // 배열의 첫번째 요소에 대한 포인터
 
     puts("선형 검색 (보초법)");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = calloc(nx + 1, sizeof(int));    // 요소의 개수가 (nx + 1)인 int형 배열을 생성
+    x = (int*)calloc(nx + 1, sizeof(int));    // 요소의 개수가 (nx + 1)인 int형 배열을 생성
     for (i = 0; i < nx; i++) {      // 주의: 값을 읽어 들인 것은 nx개
         printf("x[%d]: ", i);
         scanf("%d", &x[i]);

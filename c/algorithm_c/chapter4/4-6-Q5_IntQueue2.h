@@ -8,46 +8,46 @@ typedef struct {
     int num;    // 현재 요소 개수
     int front;  // 프론트
     int rear;   // 리어
-    int *que;   // 큐의 맨 앞 요소에 대한 포인터
+    int* que;   // 큐의 맨 앞 요소에 대한 포인터
 } IntQueue;
 
 // 큐 초기화
-int Initialize(IntQueue *q, int max);
+int Initialize(IntQueue* q, int max);
 
 // 큐에 데이터를 인큐
-int Enque(IntQueue *q, int x);
+int Enque(IntQueue* q, int x);
 
 // 큐에서 데이터를 디큐
-int Deque(IntQueue *q, int *x);
+int Deque(IntQueue* q, int* x);
 
 // 큐에서 데이터를 피크
-int Peek(const IntQueue *q, int *x);
+int Peek(const IntQueue* q, int* x);
 
 // 모든 데이터 삭제
-void Clear(IntQueue *q);
+void Clear(IntQueue* q);
 
 // 큐의 최대 용량
-int Capacity(const IntQueue *q);
+int Capacity(const IntQueue* q);
 
 // 큐에 저장된 데이터 개수
-int Size(const IntQueue *q);
+int Size(const IntQueue* q);
 
 // 큐가 비어 있는가?
-int IsEmpty(const IntQueue *q);
+int IsEmpty(const IntQueue* q);
 
 // 큐가 가득 찼는가?
-int IsFull(const IntQueue *q);
+int IsFull(const IntQueue* q);
 
 // 큐에서 검색
-int Search(const IntQueue *q, int x);
+int Search(const IntQueue* q, int x);
 
 // 큐에서 검색 (논리적 인덱스 반환)
-int Search2(const IntQueue *q, int x);
+int Search2(const IntQueue* q, int x);
 
 // 모든 데이터 출력
-void Print(const IntQueue *q);
+void Print(const IntQueue* q);
 
 // 큐 종료
-void Terminate(IntQueue *q);
+void Terminate(IntQueue* q);
 
 #endif

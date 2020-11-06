@@ -7,18 +7,18 @@
 
 // base가 가리키는 요소의 크기가 size이고 요소의 개수가 nmemb인 배열에서 key와 일치하는 요소를
 // 비교 함수 compar를 사용하여 선형 검색
-void *seqsearch(const void *key, const void *base, size_t nmemb, size_t size,
-                int(*compar)(const void *, const void *)) {
+void* seqsearch(const void* key, const void* base, size_t nmemb, size_t size,
+                int(*compar)(const void*, const void*)) {
     size_t i;
-    char *x = (char *)base;
+    char* x = (char*)base;
     for (i = 0; i < nmemb; i++)
-        if (!compar((const void *)&x[i * size], key))
+        if (!compar((const void*)&x[i * size], key))
             return (&x[i * size]);
     return NULL;        // 검색 실패
 }
 
 // 정수를 비교하는 함수
-int int_cmp(const int *a, const int *b) {
+int int_cmp(const int* a, const int* b) {
     if (*a < *b)
         return -1;
     else if (*a > *b)
@@ -35,7 +35,7 @@ int main(void) {
     puts("seqsearch 함수를 사용하여 검색");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
     for (i = 0; i < nx; i++) {
         printf("x[%d]: ", i);
         scanf("%d", &x[i]);
@@ -49,11 +49,11 @@ int main(void) {
         printf("%d ", x[i]);
     printf("}\n");
 
-    p = seqsearch(&ky,                                            // 검색값의 메모리 주소값
-                  x,                                              // 배열 x
-                  nx,                                             // 요소의 개수
-                  sizeof(int),                                    // 요소의 크기
-                  (int(*)(const void *, const void *))int_cmp     // 비교 함수
+    p = (int*)seqsearch(&ky,                                    // 검색값의 메모리 주소값
+                  x,                                            // 배열 x
+                  nx,                                           // 요소의 개수
+                  sizeof(int),                                  // 요소의 크기
+                  (int(*)(const void*, const void*))int_cmp     // 비교 함수
     );
 
     if (p == NULL)

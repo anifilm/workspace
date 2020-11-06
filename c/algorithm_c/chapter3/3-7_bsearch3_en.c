@@ -10,7 +10,7 @@ typedef struct {
 } Person;
 
 // Person형의 비교 함수 (오른차순으로 이름 정렬)
-int npcmp(const Person *x, const Person *y) {
+int npcmp(const Person* x, const Person* y) {
     return strcmp(x->name, y->name);
 }
 
@@ -32,8 +32,8 @@ int main(void) {
         Person temp, *p;
         printf("이름: ");
         scanf("%s", temp.name);
-        p = bsearch(&temp, x, nx, sizeof(Person),
-                    (int(*)(const void *, const void *))npcmp);
+        p = (Person*)bsearch(&temp, x, nx, sizeof(Person),
+                    (int(*)(const void*, const void*))npcmp);
         if (p == NULL)
             puts("해당 값을 찾을 수 없습니다.");
         else {

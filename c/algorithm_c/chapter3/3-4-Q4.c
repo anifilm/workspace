@@ -56,12 +56,12 @@ int bin_search(const int a[], int n, int key) {
 int main(void) {
 
     int i, nx, ky, idx;
-    int *x;                 // 배열의 첫번째 요소에 대한 포인터
+    int* x;                 // 배열의 첫번째 요소에 대한 포인터
 
     puts("이진 검색");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
     printf("오름차순으로 입력하세요.\n");
     printf("x[0]: ");
     scanf("%d", &x[0]);

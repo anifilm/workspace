@@ -17,13 +17,13 @@ int maxof(const int a[], int n) {
 int main(void) {
 
     int i;
-    int *height;        // 배열의 첫번째 요소의 포인터
+    int* height;        // 배열의 첫번째 요소의 포인터
     int number;         // 사람수 = 배열 height의 요소 개수
 
     srand(time(NULL));          // 시간으로 난수의 seed 값을 초기화
     number = 5 + rand() % 16;               // 5 ~ 20의 난수를 생성, 대입
     printf("사람 수: %d\n", number);
-    height = calloc(number, sizeof(int));   // 요소 개수가 number인 배열을 생성
+    height = (int*)calloc(number, sizeof(int));   // 요소 개수가 number인 배열을 생성
     for (i = 0; i < number; i++) {
         height[i] = 120 + rand() % 80;      // 120 ~ 199의 난수를 생성, 대입
         printf("height[%d] = %d\n", i, height[i]);

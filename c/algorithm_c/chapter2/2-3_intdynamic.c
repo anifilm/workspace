@@ -4,8 +4,8 @@
 
 int main(void) {
 
-    int *x;
-    x = calloc(1, sizeof(int));     // int형 포인터에 메모리 할당
+    int* x;
+    x = (int*)calloc(1, sizeof(int));     // int형 포인터에 메모리 할당
 
     if (x == NULL) {
         puts("메모리 할당에 실패하였습니다.");

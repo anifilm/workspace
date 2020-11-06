@@ -18,14 +18,14 @@ int main(void) {
 
     int i, nx, ky;
     int no;                     // ky와 일치하는 요소의 개수
-    int *x;                     // 데이터를 저장하는 배열
-    int *idx;                   // ky와 일치하는 요소의 인덱스를 저장하는 배열
+    int* x;                     // 데이터를 저장하는 배열
+    int* idx;                   // ky와 일치하는 요소의 인덱스를 저장하는 배열
 
     puts("선형 검색");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
-    idx = calloc(nx, sizeof(int));  // 요소의 개수가 nx인 int형 배열을 생성
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    idx = (int*)calloc(nx, sizeof(int));  // 요소의 개수가 nx인 int형 배열을 생성
 
     for (i = 0; i < nx; i++) {
         printf("x[%d]: ", i);
