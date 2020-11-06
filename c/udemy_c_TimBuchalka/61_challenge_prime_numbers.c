@@ -19,11 +19,9 @@ int main() {
 
     for(p = 5; p <= 100; p = p + 2) {
         isPrime = true;
-
         for (i = 1; isPrime && p / primes[i] >= primes[i]; i++)
             if (p % primes[i] == 0)
                 isPrime = false;
-
         if (isPrime == true) {
             primes[primeIndex] = p;
             primeIndex++;

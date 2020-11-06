@@ -4,13 +4,11 @@
 
 int main() {
 
-    if (strncmp("astronomy", "astro", 5) == 0) {
+    if (strncmp("astronomy", "astro", 5) == 0)
         printf("Found: astronomy\n");
-    }
 
-    if (strncmp("astrounding", "astro", 5) == 0) {
+    if (strncmp("astrounding", "astro", 5) == 0)
         printf("Found: astrounding\n");
-    }
 
     return 0;
 }

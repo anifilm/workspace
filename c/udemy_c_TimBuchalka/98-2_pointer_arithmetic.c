@@ -14,7 +14,6 @@ int main(void) {
 }
 
 int arraySum(int* array, const int n) {
-
     int sum = 0;
     int* const arrayEnd = array + n;    // (array + 10)
 

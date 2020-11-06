@@ -52,13 +52,11 @@ int main() {
 
 int gcd(int u, int v) {
     int temp;
-
     while (v != 0) {
         temp = u % v;
         u = v;
         v = temp;
     }
-
     return u;
 }
 
@@ -73,16 +71,13 @@ float squareRoot(float x) {
     } else {
         while (absoluteValue(guess * guess - x) >= epsilon)
             guess = ( x / guess + guess ) / 2.0;
-
         returnValue = guess;
     }
-
     return returnValue;
 }
 
 float absoluteValue(float x) {
     if (x < 0)
         x = -x;
-
     return x;
 }

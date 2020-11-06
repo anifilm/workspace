@@ -4,21 +4,18 @@
 int global = 0;		// 전역 변수
 
 int function() {
-
-	global++;
-
-	return 0;
+    global++;
+    return 0;
 }
 
 int main() {
 
-	global = 10;
+    global = 10;
 
-	printf("Before function global value: %d\n", global);
+    printf("Before function global value: %d\n", global);
 
-	function();
+    function();
+    printf("After function global value: %d\n", global);
 
-	printf("After function global value: %d\n", global);
-
-	return 0;
+    return 0;
 }
