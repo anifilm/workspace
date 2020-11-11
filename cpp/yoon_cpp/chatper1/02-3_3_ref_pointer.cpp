@@ -9,9 +9,9 @@ int main() {
     int* ptr = &num;
     int** dptr = &ptr;
 
-    int& ref = num;
-    int *(&pref) = ptr;
-    int **(&dpref) = dptr;
+    int &ref = num;
+    int* &pref = ptr;       // int *(&pref) = ptr;
+    int** &dpref = dptr;    // int **(&dpref) = dptr;
 
     cout << ref << endl;
     cout << *pref << endl;
@@ -19,10 +19,3 @@ int main() {
 
     return 0;
 }
-
-/*
-
-배열의 요소는 변수로 간주되어 참조자의 선언이 가능하다.
-포인터 변수도 변수이기 때문에 참조자의 선언이 가능하다.
-
-*/
