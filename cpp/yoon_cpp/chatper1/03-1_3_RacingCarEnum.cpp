@@ -1,21 +1,25 @@
-// C++에서의 구조체 변수의 선언
+// 구조체 안에 enum 상수의 선언
 #include <iostream>
 
 using namespace std;
 
-#define ID_LEN    20
-#define MAX_SPD   200
-#define FUEL_STEP 2
-#define ACC_STEP  10
-#define BRK_STEP  10
+namespace CAR_CONST {
+    enum {
+        ID_LEN    = 20,
+        MAX_SPD   = 200,
+        FUEL_STEP = 2,
+        ACC_STEP  = 10,
+        BRK_STEP  = 10
+    };
+}
 
 struct Car {
-    char gamerId[ID_LEN];   // 소유자ID
-    int fuelGauge;          // 연료량
-    int curSpeed;           // 현재속도
+    char gamerID[CAR_CONST::ID_LEN];    // 소유자ID
+    int fuelGauge;                      // 연료량
+    int curSpeed;                       // 현재속도
 
     void ShowCarState() {
-        cout << "소유자ID: " << gamerId << endl;
+        cout << "소유자ID: " << gamerID << endl;
         cout << "연료량: " << fuelGauge << "%" << endl;
         cout << "현재속도: " << curSpeed << "km/s" << endl;
         cout << endl;
@@ -25,23 +29,23 @@ struct Car {
         if (fuelGauge <= 0)
             return;
         else
-            fuelGauge -= FUEL_STEP;
+            fuelGauge -= CAR_CONST::FUEL_STEP;
 
-        if (curSpeed + ACC_STEP >= MAX_SPD) {
-            curSpeed = MAX_SPD;
+        if (curSpeed + CAR_CONST::ACC_STEP >= CAR_CONST::MAX_SPD) {
+            curSpeed = CAR_CONST::MAX_SPD;
             return;
         }
 
-        curSpeed += ACC_STEP;
+        curSpeed += CAR_CONST::ACC_STEP;
     }
 
     void Break() {
-        if (curSpeed < BRK_STEP) {
+        if (curSpeed < CAR_CONST::BRK_STEP) {
             curSpeed = 0;
             return;
         }
 
-        curSpeed -= BRK_STEP;
+        curSpeed -= CAR_CONST::BRK_STEP;
     }
 };
 

@@ -10,12 +10,12 @@ using namespace std;
 #define BRK_STEP  10
 
 struct Car {
-    char gamerId[ID_LEN];   // 소유자ID
+    char gamerID[ID_LEN];   // 소유자ID
     int fuelGauge;          // 연료량
     int curSpeed;           // 현재속도
 
     void ShowCarState() {
-        cout << "소유자ID: " << gamerId << endl;
+        cout << "소유자ID: " << gamerID << endl;
         cout << "연료량: " << fuelGauge << "%" << endl;
         cout << "현재속도: " << curSpeed << "km/s" << endl;
         cout << endl;
