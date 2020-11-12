@@ -1,9 +1,12 @@
-// 문제 02-1 [참조자 기반의 Call-by-reference 구현]
-// 문제 2
-// 앞서 소개한 예제 ref_swap.cpp의 SwapByRef2 함수를 다음의 형태로 호출하면 컴파일
-// 에러가 발생한다.
-// SwapByRef2(23, 45);
-// 컴파일 에러가 발생하는 이유가 무엇인지 설명해보자.
+/* 문제 02-1 [참조자 기반의 Call-by-reference 구현]
+문제 2
+앞서 소개한 예제 02-4_1_RefSwap.cpp의 SwapByRef2 함수를 다음의 형태로 호출하면 컴파일
+에러가 발생한다.
+
+SwapByRef2(23, 45);
+
+컴파일 에러가 발생하는 이유가 무엇인지 설명해보자.
+*/
 #include <iostream>
 
 using namespace std;
