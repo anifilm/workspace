@@ -15,7 +15,7 @@
 // 파일의 이름은 여러분이 임의로 정해도 된다. 하지만, 각 파일에 들어갈 내용은 위의
 // 지시대로 진행해야 한다.
 #include <iostream>
-#include "01-4-Q_namesp.h"
+#include "01-5-Q_namesp.h"
 
 void BestComImpl::SimpleFunc(void) {
     std::cout << "BestCom이 정의한 함수" << std::endl;

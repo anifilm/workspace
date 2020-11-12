@@ -18,11 +18,19 @@ int main(void) {
 
 using namespace std;
 
+/*
 void SwapPointer(int* p_num1, int* p_num2) {
     int temp = *p_num1;
     *p_num1 = *p_num2;
     *p_num2 = temp;
 }
+*/
+void SwapPointer(int *(&p_num1), int *(&p_num2)) {
+    int* temp = p_num1;
+    p_num1 = p_num2;
+    p_num2 = temp;
+}
+
 
 int main() {
 
@@ -31,7 +39,7 @@ int main() {
     int num2 = 10;
     int* ptr2 = &num2;
 
-    cout << "before swap pointer" << endl;
+    cout << "before swap reference" << endl;
     cout << *ptr1 << endl;
     cout << *ptr2 << endl;
     cout << endl;
