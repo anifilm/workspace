@@ -13,13 +13,11 @@ int main() {
     cin >> number;
 
     while (number >= 100) {
-
         cout << "\nEnter an integer less than 100: ";
         cin >> number;
     }
-
     cout << "Thanks" << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

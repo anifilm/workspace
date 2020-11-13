@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-	Mystring a {"Hello"};               // overloaded constructor
+    Mystring a {"Hello"};               // overloaded constructor
     a = Mystring {"Hola"};              // overloaded constructor then move assignment
     a = "Bonjour";                      // overloaded constructor then move assignment
 
@@ -37,19 +37,18 @@ int main() {
     stooges_vec.push_back("Curly");     // move constructor
 
     cout << "== Loop1 ====================" << endl;
-    for (const Mystring &s: stooges_vec)
-    	s.display();					// Larry
-    									// Moe
-    									// Curly
+    for (const Mystring& s : stooges_vec)
+        s.display();					// Larry
+                                        // Moe
+                                        // Curly
     cout << "== Loop2 ====================" << endl;
-    for (Mystring &s: stooges_vec)
-    	s = "Changed";					// move assignment
-        
-	cout << "== Loop3 ====================" << endl;
-	for (const Mystring &s: stooges_vec)
-		s.display();					// Changed
-										// Changed
-										// Changed
-	
+    for (Mystring& s : stooges_vec)
+        s = "Changed";					// move assignment
+
+    cout << "== Loop3 ====================" << endl;
+    for (const Mystring& s : stooges_vec)
+        s.display();					// Changed
+                                        // Changed
+                                        // Changed
     return 0;
 }

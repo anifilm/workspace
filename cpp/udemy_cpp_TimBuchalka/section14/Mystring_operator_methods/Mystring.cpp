@@ -11,7 +11,7 @@ Mystring::Mystring()
 }
 
 // Overloaded constructor
-Mystring::Mystring(const char *s)
+Mystring::Mystring(const char* s)
     : str {nullptr} {
         if (s == nullptr) {
             str = new char[1];
@@ -23,7 +23,7 @@ Mystring::Mystring(const char *s)
 }
 
 // Copy constructor
-Mystring::Mystring(const Mystring &source)
+Mystring::Mystring(const Mystring& source)
     : str {nullptr} {
         str = new char[strlen(source.str) + 1];
         strcpy(str, source.str);
@@ -31,7 +31,7 @@ Mystring::Mystring(const Mystring &source)
 }
 
 // Move constructor
-Mystring::Mystring(Mystring &&source)
+Mystring::Mystring(Mystring&& source)
     : str(source.str) {
         source.str = nullptr;
         std::cout << "Move constructor used" << std::endl;
@@ -40,33 +40,33 @@ Mystring::Mystring(Mystring &&source)
 
 // Destructor
 Mystring::~Mystring() {
-    // if (str == nullptr) {
-    //     std::cout << "Calling destructor for Mystring : nullptr" << std::endl;
-    // } else {
-    //     std::cout << "Calling destructor for Mystring : " << str << std::endl;
-    // }
-    delete [] str;
+//  if (str == nullptr) {
+//      std::cout << "Calling destructor for Mystring : nullptr" << std::endl;
+//  } else {
+//      std::cout << "Calling destructor for Mystring : " << str << std::endl;
+//  }
+    delete[] str;
 }
 
 // Copy assignment operator
-Mystring &Mystring::operator=(const Mystring &rhs) {
+Mystring& Mystring::operator=(const Mystring& rhs) {
     std::cout << "Using copy assignment" << std::endl;
 
     if (this == &rhs)
         return *this;
-    delete [] str;
+    delete[] str;
     str = new char[strlen(rhs.str) + 1];
     strcpy(str, rhs.str);
     return *this;
 }
 
 // Move assignment operator
-Mystring &Mystring::operator=(Mystring &&rhs) {
+Mystring& Mystring::operator=(Mystring&& rhs) {
     std::cout << "Using move assignment" << std::endl;
 
     if (this == &rhs)
         return *this;
-    delete [] str;
+    delete[] str;
     str = rhs.str;
     rhs.str = nullptr;
     return *this;
@@ -74,28 +74,28 @@ Mystring &Mystring::operator=(Mystring &&rhs) {
 
 // Make lowercase
 Mystring Mystring::operator-() const {
-    char *buff = new char[strlen(str) + 1];
+    char* buff = new char[strlen(str) + 1];
     strcpy(buff, str);
 
     for (size_t i {0}; i < strlen(buff); i++)
         buff[i] = tolower(buff[i]);
     Mystring temp {buff};
-    delete [] buff;
+    delete[] buff;
     return temp;
 }
 
 // Concatentate
-Mystring Mystring::operator+(const Mystring &rhs) const {
-    char *buff = new char[strlen(str) + strlen(rhs.str) + 1];
+Mystring Mystring::operator+(const Mystring& rhs) const {
+    char* buff = new char[strlen(str) + strlen(rhs.str) + 1];
     strcpy(buff, str);
     strcat(buff, rhs.str);
     Mystring temp {buff};
-    delete [] buff;
+    delete[] buff;
     return temp;
 }
 
 // Equality
-bool Mystring::operator==(const Mystring &rhs) const {
+bool Mystring::operator==(const Mystring& rhs) const {
     return (strcmp(str, rhs.str) == 0);
 }
 

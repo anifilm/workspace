@@ -52,10 +52,9 @@ int main() {
         if (position != string::npos) {
             char new_char { key.at(position) };
             encrypt_msg += new_char;
-        } else {
+        } else
             encrypt_msg += c;
-        }
-    } 
+    }
 
     cout << "\nEncrypting message: " << encrypt_msg << endl;
 
@@ -67,13 +66,12 @@ int main() {
         if (position != string::npos) {
             char new_char { alphabet.at(position) };
             decrypt_msg += new_char;
-        } else {
+        } else
             decrypt_msg += c;
-        }
     }
 
     cout << "\nDecrypting message: " << decrypt_msg << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

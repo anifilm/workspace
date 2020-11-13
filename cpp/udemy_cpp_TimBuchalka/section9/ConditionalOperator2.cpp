@@ -13,11 +13,9 @@ int main() {
     cin >> num1 >> num2;
 
     if (num1 != num2) {
-
         cout << "\nLargerst: " << ((num1 > num2) ? num1 : num2) << endl;
         cout << "Smallest: " << ((num1 < num2) ? num1 : num2) << endl;
     } else {
-
         cout << "\nThe numbers are the same" << endl;
     }
 

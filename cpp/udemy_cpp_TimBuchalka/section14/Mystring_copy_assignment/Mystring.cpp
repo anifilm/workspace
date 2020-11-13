@@ -10,7 +10,7 @@ Mystring::Mystring()
 }
 
 // Overloaded constructor
-Mystring::Mystring(const char *s)
+Mystring::Mystring(const char* s)
     : str {nullptr} {
         if (s == nullptr) {
             str = new char[1];
@@ -22,7 +22,7 @@ Mystring::Mystring(const char *s)
 }
 
 // Copy constructor
-Mystring::Mystring(const Mystring &source)
+Mystring::Mystring(const Mystring& source)
     : str {nullptr} {
         str = new char[strlen(source.str) + 1];
         strcpy(str, source.str);
@@ -30,16 +30,16 @@ Mystring::Mystring(const Mystring &source)
 
 // Destructor
 Mystring::~Mystring() {
-    delete [] str;
+    delete[] str;
 }
 
 // Copy assignment
-Mystring &Mystring::operator=(const Mystring &rhs) {
+Mystring& Mystring::operator=(const Mystring& rhs) {
     std::cout << "Copy assignment" << std::endl;
 
     if (this == &rhs)
         return *this;
-    delete [] this->str;
+    delete[] this->str;
     str = new char[strlen(rhs.str) + 1];
     strcpy(this->str, rhs.str);
     return *this;
@@ -56,6 +56,6 @@ int Mystring::get_length() const {
 }
 
 // string getter
-const char *Mystring::get_str() const {
+const char* Mystring::get_str() const {
     return str;
 }

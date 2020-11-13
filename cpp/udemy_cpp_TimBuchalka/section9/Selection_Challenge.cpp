@@ -90,17 +90,15 @@ int main() {
         cin >> user_choice;
 
         switch (user_choice) {
-
             case 'p':
             case 'P':
                 if (numbers.size() != 0) {
                     cout << "\n[ ";
-                    for (int nums: numbers)
+                    for (int nums : numbers)
                         cout << nums << " ";
                     cout << "]" << endl;
-                } else {
+                } else
                     cout << "\n[] - the list is empty" << endl;
-                }
                 break;
             case 'a':
             case 'A':
@@ -115,45 +113,41 @@ int main() {
                     for (int nums: numbers)
                         sum += nums;
                     cout << "\nThe mean is " << static_cast<double>(sum)/numbers.size() << endl;
-                } else {
+                } else
                     cout << "\nUnable to calulate the mean - no data" << endl;
-                }
                 break;
             case 's':
             case 'S':
                 min = numbers.at(0);
                 if (numbers.size() != 0) {
-                    for (int nums: numbers)
+                    for (int nums : numbers)
                         if (nums < min)
                             min = nums;
                     cout << "\nThe smallest number is " << min << endl;
-                } else {
+                } else
                     cout << "\nUnable to determine the smallest number - list is empty" << endl;
-                }
                 break;
             case 'l':
             case 'L':
                 max = numbers.at(0);
                 if (numbers.size() != 0) {
-                    for (int nums: numbers)
+                    for (int nums : numbers)
                         if (nums > max)
                             max = nums;
                     cout << "\nThe largest number is " << max << endl;
-                } else {
+                } else
                     cout << "\nUnable to determine the largest number - list is empty" << endl;
-                }
                 break;
             case 'q':
             case 'Q':
                 cout << "\nGoodbye!" << endl;
                 done = true;
                 break;
-
             default:
                 cout << "\nUnknown selection, please try again" << endl;
         }
     }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

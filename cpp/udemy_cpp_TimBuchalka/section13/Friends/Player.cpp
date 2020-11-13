@@ -7,7 +7,7 @@ Player::Player(std::string name_val, int health_val, int xp_val)
         num_players++;
 }
 
-Player::Player(const Player &source)
+Player::Player(const Player& source)
     : Player {source.name, source.health, source.xp} {
 }
 

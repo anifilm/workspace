@@ -30,6 +30,7 @@ void static_local_example() {
 }
 
 int main() {
+
     int num {100};      // Local to main
     int num1 {500};     // Local to main
 
@@ -52,6 +53,6 @@ int main() {
     static_local_example();
     static_local_example();
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

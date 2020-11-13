@@ -23,7 +23,7 @@ int main() {
     return 0;
 }
 
-void fillVector(vector<Student> &newMyClass) {
+void fillVector(vector<Student>& newMyClass) {
 
     string name;
     char grade;
@@ -46,7 +46,7 @@ void fillVector(vector<Student> &newMyClass) {
     }
 }
 
-void printVector(const vector<Student> &newMyClass) {
+void printVector(const vector<Student>& newMyClass) {
 
     cout << "\n===============================" << endl;
 

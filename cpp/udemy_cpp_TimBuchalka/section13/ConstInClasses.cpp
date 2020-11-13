@@ -22,7 +22,7 @@ public:
 
     // Overloaded Constructors
     Player();
-    Player(string name_val);    
+    Player(string name_val);
     Player(string name_val, int health_val, int xp_val);
 };
 
@@ -38,7 +38,7 @@ Player::Player(string name_val, int health_val, int xp_val)
     : name {name_val}, health {health_val}, xp {xp_val} {
 }
 
-void display_player_name(const Player &p) {
+void display_player_name(const Player& p) {
     cout << p.get_name() << endl;
 }
 
@@ -54,5 +54,5 @@ int main() {
     display_player_name(villain);
     display_player_name(hero);
 
-	return 0;
+    return 0;
 }

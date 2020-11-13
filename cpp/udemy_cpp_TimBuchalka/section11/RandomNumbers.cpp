@@ -25,7 +25,6 @@ int main() {
         cout << random_number << endl;
     }
 
-
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

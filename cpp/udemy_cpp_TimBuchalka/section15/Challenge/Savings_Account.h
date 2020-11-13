@@ -10,9 +10,9 @@
 //     and the updated amount will be deposited
 
 class Savings_Account: public Account {
-    friend std::ostream &operator<<(std::ostream &os, const Savings_Account &account);
+    friend std::ostream& operator<<(std::ostream& os, const Savings_Account& account);
 private:
-    static constexpr const char *def_name = "Unnamed Saving Account";
+    static constexpr const char* def_name = "Unnamed Saving Account";
     static constexpr double def_balance = 0.0;
     static constexpr double def_int_rate = 0.0;
 protected:

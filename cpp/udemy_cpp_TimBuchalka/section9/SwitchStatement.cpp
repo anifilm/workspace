@@ -17,7 +17,6 @@ int main() {
     cin >> letter_grade;
 
     switch (letter_grade) {
-
         case 'a':
         case 'A':
             cout << "\nYou need a 90 or above, study hard!" << endl;
@@ -40,21 +39,18 @@ int main() {
             char confirm {};
             cout << "\nAre you sure (Y/N)? ";
             cin >> confirm;
-
             if (confirm == 'y' || confirm == 'Y')
                 cout << "OK, I guess you didn't study..." << endl;
             else if (confirm == 'n' || confirm == 'N')
                 cout << "Good- go study!" << endl;
             else
                 cout << "Illegal choice" << endl;
-
             break;
         }
-
         default:
             cout << "\nSorry, not a valid grade" << endl;
     }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

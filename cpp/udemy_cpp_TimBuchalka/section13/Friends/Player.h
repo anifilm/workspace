@@ -6,8 +6,8 @@
 class Friend_class;
 
 class Player {
-    friend void Other_class::display_player(Player &p);
-    friend void display_player(Player &p);
+    friend void Other_class::display_player(Player& p);
+    friend void display_player(Player& p);
     friend class Friend_class;
 
 private:
@@ -17,13 +17,13 @@ private:
     int xp;
 
 public:
-    std::string get_name() {return name;}
-    int get_health() {return health;}
-    int get_xp() {return xp;}
+    std::string get_name() { return name; }
+    int get_health() { return health; }
+    int get_xp() { return xp; }
 
     Player(std::string name_val = "None", int health_val = 0, int xp_val = 0);
     // Copy constructor
-    Player(const Player &source);
+    Player(const Player& source);
     // Destructor
     ~Player();
 

@@ -20,7 +20,7 @@ void Account::withdraw(double amount) {
         std::cout << "Insufficient funds" << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &os, const Account &account) {
+std::ostream& operator<<(std::ostream& os, const Account& account) {
     os << "Account balance: " << account.balance;
     return os;
 }

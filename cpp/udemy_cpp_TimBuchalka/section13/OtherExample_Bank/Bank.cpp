@@ -6,7 +6,6 @@ double Bank::bankBalance = 10000;
 
 Bank::Bank(std::string newName, int newAccountNumber, double newBalance)
     : name {newName}, accountNumber {newAccountNumber}, balance {newBalance} {
-
     totalAccounts++;
     bankBalance += newBalance;
 }

@@ -7,23 +7,23 @@
 
 using namespace std;
 
-void swap(int *a, int *b) {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 int main() {
 
-	int x {100}, y {200};
-	cout << "Before swap" << endl;
-	cout << "x: " << x << "  y: " << y << endl;
+    int x {100}, y {200};
+    cout << "Before swap" << endl;
+    cout << "x: " << x << "  y: " << y << endl;
 
-	swap(&x, &y);
+    swap(&x, &y);
 
-	cout << "\nAfter swap" << endl;
-	cout << "x: " << x << "  y: " << y << endl;
+    cout << "\nAfter swap" << endl;
+    cout << "x: " << x << "  y: " << y << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

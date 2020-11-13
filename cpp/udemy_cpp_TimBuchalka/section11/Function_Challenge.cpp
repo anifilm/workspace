@@ -21,7 +21,7 @@
       - You can then define a function that reads the selection from the user and returns it in uppercase
       - Create functions for each menu option
       - Create functions that display the list of numbersm calculates the mean and so forth
-    
+
     Take it one function at a time and take your time.
     If you get frustrated, take a break -- this isn't as easy as it looks the first time you do it!
 
@@ -53,12 +53,9 @@ int main() {
     char user_choice {};
 
     while (!done) {
-
         display_menu();
         user_choice = get_choice();
-
         switch (user_choice) {
-
             case 'P':
                 print_numbers(numbers);
                 break;
@@ -77,18 +74,16 @@ int main() {
             case 'Q':
                 done = quit();
                 break;
-
             default:
                 unknown();
         }
     }
+    cout << endl;
 
-	cout << endl;	
-	return 0;
+    return 0;
 }
 
 void display_menu() {
-
     cout << "\nYour program should display a menu options to the user as follows:" << endl;
 
     cout << "\nP - Print numbers" << endl;
@@ -106,10 +101,10 @@ char get_choice() {
     return toupper(user_choice);
 }
 
-void print_numbers(const vector<int> &numbers) {
+void print_numbers(const vector<int>& numbers) {
     if (numbers.size() != 0) {
         cout << "\n[ ";
-        for (int nums: numbers)
+        for (int nums : numbers)
             cout << nums << " ";
         cout << "]" << endl;
     } else {
@@ -117,7 +112,7 @@ void print_numbers(const vector<int> &numbers) {
     }
 }
 
-void add_number(vector<int> &numbers) {
+void add_number(vector<int>& numbers) {
     int number_to_add {};
     cout << "\nEnter an integer to add to the list: ";
     cin >> number_to_add;
@@ -125,41 +120,39 @@ void add_number(vector<int> &numbers) {
     numbers.push_back(number_to_add);
 }
 
-void mean_number(vector<int> &numbers) {
+void mean_number(vector<int>& numbers) {
     int sum {};
     if (numbers.size() != 0) {
-        for (int nums: numbers)
+        for (int nums : numbers)
             sum += nums;
-        cout << "\nThe mean is " << static_cast<double>(sum)/numbers.size() << endl;
+        cout << "\nThe mean is " << static_cast<double>(sum) / numbers.size() << endl;
     } else {
         cout << "\nUnable to calulate the mean - no data" << endl;
     }
 }
 
-void smallest_number(vector<int> &numbers) {
+void smallest_number(vector<int>& numbers) {
     int min {};
     min = numbers.at(0);
     if (numbers.size() != 0) {
-        for (int nums: numbers)
+        for (int nums : numbers)
             if (nums < min)
                 min = nums;
         cout << "\nThe smallest number is " << min << endl;
-    } else {
+    } else
         cout << "\nUnable to determine the smallest number - list is empty" << endl;
-    }
 }
 
-void largest_number(vector<int> &numbers) {
+void largest_number(vector<int>& numbers) {
     int max {};
     max = numbers.at(0);
     if (numbers.size() != 0) {
-        for (int nums: numbers)
+        for (int nums : numbers)
             if (nums > max)
                 max = nums;
         cout << "\nThe largest number is " << max << endl;
-    } else {
+    } else
         cout << "\nUnable to determine the largest number - list is empty" << endl;
-    }
 }
 
 bool quit() {

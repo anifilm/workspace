@@ -21,15 +21,13 @@ int main() {
 
     cout << "The ceil of " << num << " is: " << ceil(num) << endl;
     cout << "The floor of " << num << " is: " << floor(num) << endl;
-    cout << "The round of " << num << " is: " << round(num) << endl; 
-
+    cout << "The round of " << num << " is: " << round(num) << endl;
 
     double power {};
     cout << "\nEnter a power to rise " << num << " to: ";
     cin >> power;
     cout << num << " raised to the " << power << " power is: " << pow(num, power) << endl;      // 제곱 (power)
 
-
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

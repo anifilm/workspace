@@ -10,7 +10,7 @@ Mystring::Mystring()
 }
 
 // Overloaded constructor
-Mystring::Mystring(const char *s)
+Mystring::Mystring(const char* s)
     : str {nullptr} {
         if (s == nullptr) {
             str = new char[1];
@@ -22,7 +22,7 @@ Mystring::Mystring(const char *s)
 }
 
 // Copy constructor
-Mystring::Mystring(const Mystring &source)
+Mystring::Mystring(const Mystring& source)
     : str {nullptr} {
         str = new char[strlen(source.str) + 1];
         strcpy(str, source.str);
@@ -30,7 +30,7 @@ Mystring::Mystring(const Mystring &source)
 }
 
 // Move constructor
-Mystring::Mystring(Mystring &&source)
+Mystring::Mystring(Mystring&& source)
     : str(source.str) {
         source.str = nullptr;
         std::cout << "Move constructor used" << std::endl;
@@ -39,33 +39,33 @@ Mystring::Mystring(Mystring &&source)
 
 // Destructor
 Mystring::~Mystring() {
-    // if (str == nullptr) {
-    //     std::cout << "Calling destructor for Mystring : nullptr" << std::endl;
-    // } else {
-    //     std::cout << "Calling destructor for Mystring : " << str << std::endl;
-    // }
-    delete [] str;
+//  if (str == nullptr) {
+//      std::cout << "Calling destructor for Mystring : nullptr" << std::endl;
+//  } else {
+//      std::cout << "Calling destructor for Mystring : " << str << std::endl;
+//  }
+    delete[] str;
 }
 
 // Copy assignment operator
-Mystring &Mystring::operator=(const Mystring &rhs) {
+Mystring& Mystring::operator=(const Mystring& rhs) {
     std::cout << "Using copy assignment" << std::endl;
 
     if (this == &rhs)
         return *this;
-    delete [] str;
+    delete[] str;
     str = new char[strlen(rhs.str) + 1];
     strcpy(str, rhs.str);
     return *this;
 }
 
 // Move assignment operator
-Mystring &Mystring::operator=(Mystring &&rhs) {
+Mystring& Mystring::operator=(Mystring&& rhs) {
     std::cout << "Using move assignment" << std::endl;
 
     if (this == &rhs)
         return *this;
-    delete [] str;
+    delete[] str;
     str = rhs.str;
     rhs.str = nullptr;
     return *this;
@@ -82,21 +82,21 @@ int Mystring::get_length() const {
 }
 
 // string getter
-const char *Mystring::get_str() const {
+const char* Mystring::get_str() const {
     return str;
 }
 
 // overloaded insertion operator
-std::ostream &operator<<(std::ostream &os, const Mystring &rhs) {
+std::ostream& operator<<(std::ostream& os, const Mystring& rhs) {
     os << rhs.str;
     return os;
 }
 
 // overloaded extraction operator
-std::istream &operator>>(std::istream &in, Mystring &rhs) {
-    char *buff = new char[1000];
+std::istream& operator>>(std::istream& in, Mystring& rhs) {
+    char* buff = new char[1000];
     in >> buff;
     rhs = Mystring{buff};
-    delete [] buff;
+    delete[] buff;
     return in;
 }

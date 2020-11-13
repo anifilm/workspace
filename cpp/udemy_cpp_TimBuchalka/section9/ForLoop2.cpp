@@ -19,7 +19,7 @@ int main() {
     double average_temp {};
     double total {};
 
-    for (auto temp: temperatures)
+    for (auto temp : temperatures)
         total += temp;
 
     if (temperatures.size() != 0)
@@ -28,7 +28,6 @@ int main() {
     cout << fixed << setprecision(1);
     cout << "Average temperature is " << average_temp << endl;
 
-
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

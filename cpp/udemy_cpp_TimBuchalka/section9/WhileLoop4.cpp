@@ -11,10 +11,8 @@ int main() {
     int number {0};
 
     while (!done) {
-
         cout << "Enter an integer between 1 and 5: ";
         cin >> number;
-
         if (number <= 1 || number >= 5)
             cout << "\nOut of range, try again" << endl;
         else {
@@ -23,6 +21,6 @@ int main() {
         }
     }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

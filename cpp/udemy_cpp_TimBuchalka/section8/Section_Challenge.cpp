@@ -67,13 +67,13 @@ int main() {
     pennies = balance;
 
     cout << "\nYou can provide this change as follows:" << endl;
-    cout << "dollars  : " << dollars << endl;
-    cout << "quarters : " << quarters << endl;
-    cout << "dimes    : " << dimes << endl;
-    cout << "nickels  : " << nickels << endl;
-    cout << "pennies  : " << pennies << endl;
+    cout << "dollars : " << dollars << endl;
+    cout << "quarters: " << quarters << endl;
+    cout << "dimes   : " << dimes << endl;
+    cout << "nickels : " << nickels << endl;
+    cout << "pennies : " << pennies << endl;
 
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

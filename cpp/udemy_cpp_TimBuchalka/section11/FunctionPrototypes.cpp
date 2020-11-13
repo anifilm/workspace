@@ -18,8 +18,8 @@ int main() {
     area_circle();
     volume_cylinder();
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }
 
 double calc_volume_cylinder(double radius, double height) {
@@ -32,7 +32,6 @@ double calc_area_circle(double radius) {
 }
 
 void area_circle() {
-
     double radius {};
     cout << "\nEnter the radius of the circle: ";
     cin >> radius;
@@ -41,7 +40,6 @@ void area_circle() {
 }
 
 void volume_cylinder() {
-
     double radius {};
     double height {};
     cout << "\nEnter the radius of the cylinder: ";

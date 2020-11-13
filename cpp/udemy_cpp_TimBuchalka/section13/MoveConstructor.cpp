@@ -8,7 +8,7 @@ using namespace std;
 
 class Move {
 private:
-    int *data;
+    int* data;
 
 public:
     void set_data_value(int d) { *data = d; }
@@ -17,9 +17,9 @@ public:
     // Constructor
     Move(int d);
     // Copy Constructor
-    Move(const Move &source);
+    Move(const Move& source);
     // Move Constructor
-    Move(Move &&source) noexcept;
+    Move(Move&& source) noexcept;
     // Destructor
     ~Move();
 };
@@ -31,13 +31,13 @@ Move::Move(int d) {
 }
 
 // Copy ctor
-Move::Move(const Move &source)
+Move::Move(const Move& source)
     : Move {*source.data} {
         cout << "Copy constructor - deep copy for: " << *data << endl;
 }
 
 // Move ctor
-Move::Move(Move &&source) noexcept
+Move::Move(Move&& source) noexcept
     : data {source.data} {
         source.data = nullptr;
         cout << "Move constructor - moving resource: " << *data << endl;
@@ -65,5 +65,5 @@ int main() {
     vec.push_back(Move {70});
     vec.push_back(Move {80});
 
-	return 0;
+    return 0;
 }

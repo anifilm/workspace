@@ -24,14 +24,14 @@ int main() {
     larry2.display();                       // larry : 5
 
     Mystring stooges = larry + "Moe";       // ok with member function
-    // Mystring stooges = "Larry" + moe;    // Compiler error
+//  Mystring stooges = "Larry" + moe;       // Compiler error
 
     Mystring two_stooges = moe + " " + "Larry";
     two_stooges.display();                  // Moe Larry : 9
 
     Mystring three_stooges = moe + " " + larry + " " + "Curly";
     three_stooges.display();                // Moe Larry Curly : 15
-	
+
     cout << endl;
     return 0;
 }

@@ -7,19 +7,17 @@ using namespace std;
 
 int main() {
 
-	int num {};
-	
-	cout << "Enter a positive integer - start the countdown: ";
-	cin >> num;
+    int num {};
 
-	while (num > 0) {
+    cout << "Enter a positive integer - start the countdown: ";
+    cin >> num;
 
-		cout << num << endl;
-		num--;
-	}
+    while (num > 0) {
+        cout << num << endl;
+        num--;
+    }
+    cout << "Blastoff!" << endl;
 
-	cout << "Blastoff!" << endl;
-
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

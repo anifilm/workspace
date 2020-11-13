@@ -4,10 +4,10 @@
     Recall the challenge from Section 9 below.
     Your challenge for section 11 is to modularize your solution to the Section 9
     challenge by refactoring your solution so that it uses uses functions.
-    
+
     You decide how to modularize the program.
     you can use my solution which is included in this file, or modularize your solution.
-    
+
     Here are a few hints:
         - Create functions for each major function
         - Keep the functions small
@@ -16,17 +16,17 @@
           to any function that requires it
 
         DO NOT move the vector object outside main and make it a global variable.
-    
+
         - You can start by defining a function that displays the menu
         - You can then define a function that reads the selection from the user and returns it in uppercase
         - Create functions for each menu option
         - Create functions that display the list of numbers, calculates the mean and so forth
-        
+
     Take it one function at a time and take your time.
     If you get frustrated, take a break -- this isn't as easy as it looks the first time you do it!
-    
+
     Finally,  don't forget to use function prototypes!
-    
+
     Good luck -- I know you can do it!
 */
 
@@ -41,36 +41,36 @@ void display_menu();
 char get_selection();
 
 // Menu handling function prototypes
-void handle_display(const vector<int> &v);
-void handle_add(vector<int> &v);
-void handle_mean(const vector<int> &v);
-void handle_smallest(const vector<int> &v);
-void handle_largest(const vector<int> &v);
-void handle_find(const vector<int> &v);
+void handle_display(const vector<int>& v);
+void handle_add(vector<int>& v);
+void handle_mean(const vector<int>& v);
+void handle_smallest(const vector<int>& v);
+void handle_largest(const vector<int>& v);
+void handle_find(const vector<int>& v);
 void handle_quit();
 void handle_unknown();
 
 // Prototypes for functions that work with the list
 // to display it, calculate mean, etc.
-void display_list(const vector<int> &v);
-double calculate_mean(const vector<int> &v);
-int get_smallest(const vector<int> &v);
-int get_largest(const vector<int> &v);
-bool find(const vector<int> &v, int target);
+void display_list(const vector<int>& v);
+double calculate_mean(const vector<int>& v);
+int get_smallest(const vector<int>& v);
+int get_largest(const vector<int>& v);
+bool find(const vector<int>& v, int target);
 
 int main() {
-    
+
     vector<int> numbers;        // our list of numbers
     char selection {};
-    
+
     do {
         display_menu();
         selection = get_selection();
         switch (selection) {
-            case 'P': 
-                handle_display(numbers); 
+            case 'P':
+                handle_display(numbers);
                 break;
-            case 'A': 
+            case 'A':
                 handle_add(numbers);
                 break;
             case 'M':
@@ -126,10 +126,10 @@ option from the main menu.
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-void handle_display(const vector<int> &v) {
+void handle_display(const vector<int>& v) {
     if (v.size() == 0)
         cout << "[] - the list is empty" << endl;
-    else    
+    else
         display_list(v);
 }
 
@@ -140,7 +140,7 @@ to the list from the main menu
 Note that the vector parameter must NOT be const since
 it will be changing the list of numbers
 ***************************************************************/
-void handle_add(vector<int> &v) {
+void handle_add(vector<int>& v) {
     int num_to_add {};
     cout << "Enter an integer to add to the list: ";
     cin >> num_to_add;
@@ -154,50 +154,50 @@ from the main menu
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-void handle_mean(const vector<int> &v) {
+void handle_mean(const vector<int>& v) {
     if (v.size() == 0)
         cout << "Unable to calculate mean - list is empty" << endl;
-    else    
+    else
         cout << "The mean is " << calculate_mean(v) << endl;
 }
 
 /***************************************************************
-This function is called when the user selects the smallest 
+This function is called when the user selects the smallest
 option from the main menu
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-void handle_smallest(const vector<int> &v) {
+void handle_smallest(const vector<int>& v) {
      if (v.size() == 0)
         cout << "Unable to determine the smallest - list is empty" << endl;
-    else    
+    else
         cout << "The smallest element in the list is " << get_smallest(v) << endl;
 }
 
 /***************************************************************
-This function is called when the user selects the largest 
+This function is called when the user selects the largest
 option from the main menu
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-void handle_largest(const vector<int> &v) {
+void handle_largest(const vector<int>& v) {
      if (v.size() == 0)
         cout << "Unable to determine the largest - list is empty" << endl;
-    else    
+    else
         cout << "The largest element in the list is " << get_largest(v) << endl;
 }
 
 /***************************************************************
-This function is called when the user selects the find 
+This function is called when the user selects the find
 option from the main menu
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-void handle_find(const vector<int> &v) {
+void handle_find(const vector<int>& v) {
     int target{};
     cout << "Enter the number to find: ";
     cin >> target;
-    if ( find(v, target)) 
+    if ( find(v, target))
         cout << target << " was found" << endl;
     else
         cout << target << " was not found" << endl;
@@ -205,7 +205,7 @@ void handle_find(const vector<int> &v) {
 
 
 /***************************************************************
-This function is called when the user selects the quit 
+This function is called when the user selects the quit
 option from the main menu
 ***************************************************************/
 void handle_quit() {
@@ -227,9 +227,9 @@ and displays all the integers in the list in square brackets
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-void display_list(const vector<int> &v) {
+void display_list(const vector<int>& v) {
     cout << "[ ";
-    for (auto num: v)
+    for (auto num : v)
         cout << num << " ";
     cout << "]" << endl;
 }
@@ -241,9 +241,9 @@ Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 Note: the list must not be empty
 ***************************************************************/
-double calculate_mean(const vector<int> &v) {
+double calculate_mean(const vector<int>& v) {
     int total {};
-    for (auto num: v)
+    for (auto num : v)
         total += num;
     return static_cast<double>(total)/v.size();
 }
@@ -255,9 +255,9 @@ Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 Note: the list must not be empty
 ***************************************************************/
-int get_largest(const vector<int> &v) {
+int get_largest(const vector<int>& v) {
     int largest = v.at(0);
-    for (auto num: v) 
+    for (auto num : v)
         if (num > largest)
             largest = num;
     return largest;
@@ -270,9 +270,9 @@ Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 Note: the list must not be empty
 ***************************************************************/
-int get_smallest(const vector<int> &v) {
+int get_smallest(const vector<int>& v) {
     int smallest = v.at(0);
-    for (auto num: v) 
+    for (auto num : v)
         if (num < smallest)
             smallest = num;
     return smallest;
@@ -288,10 +288,9 @@ If the target is not found in the vector false is returned
 Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
-bool find(const vector<int> &v, int target) {
-    for (auto num: v)
+bool find(const vector<int>& v, int target) {
+    for (auto num : v)
         if (num == target)
             return true;
     return false;
 }
-

@@ -15,7 +15,6 @@ int main() {
     int word_count = 1;
 
     for (int i {0}; i < line_count; i++) {
-
         for (int j {0}; j < space_count; j++) {
             cout << ' ';
         }
@@ -33,6 +32,6 @@ int main() {
         cout << endl;
     }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

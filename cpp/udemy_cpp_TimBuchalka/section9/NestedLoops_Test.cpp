@@ -23,21 +23,15 @@ and only check the solution if you really get stuck.
 using namespace std;
 
 int calculate_pairs(vector<int> vec) {
-
     int result {};
-
     if (vec.size() > 1) {
-
         for (int i {0}; i < vec.size() - 1; i++) {
-
             for (int j {1}; j < vec.size(); j++) {
-
                 if (i != j && i < j)
                     result += vec[i] * vec[j];
             }
         }
     }
-
     return result;
 }
 
@@ -48,6 +42,6 @@ int main() {
     cout << calculate_pairs({1, 2, 3}) << endl;
     cout << calculate_pairs({2, 4, 6, 8}) << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

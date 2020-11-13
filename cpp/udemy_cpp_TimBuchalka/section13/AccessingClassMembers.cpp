@@ -14,7 +14,7 @@ public:
     int xp;
 
     // methods
-    void talk(string text_to_say) {cout << name << " says " << text_to_say << endl;}
+    void talk(string text_to_say) { cout << name << " says " << text_to_say << endl; }
     bool is_dead();
 };
 
@@ -25,8 +25,8 @@ public:
     double balance;
 
     // methods
-    bool deposit(double bal) {balance += bal; cout << "In deposit" << endl;}
-    bool withdraw(double bal) {balance -= bal; cout << "In withdraw" << endl;}
+    bool deposit(double bal) { balance += bal; cout << "In deposit" << endl; }
+    bool withdraw(double bal) { balance -= bal; cout << "In withdraw" << endl; }
 };
 
 int main() {
@@ -43,11 +43,11 @@ int main() {
     frank.xp = 12;
     frank.talk("Hi there");
 
-    Player *enemy = new Player;
+    Player* enemy = new Player;
     (*enemy).name = "Enemy";
     (*enemy).health = 100;
     enemy->xp = 15;
     enemy->talk("I will destroy you!");
 
-	return 0;
+    return 0;
 }

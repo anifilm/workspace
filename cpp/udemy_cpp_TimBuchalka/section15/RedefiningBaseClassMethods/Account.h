@@ -4,7 +4,7 @@
 
 // Simple Account class
 class Account {
-    friend std::ostream &operator<<(std::ostream &os, const Account &account);
+    friend std::ostream& operator<<(std::ostream& os, const Account& account);
 protected:
     double balance;
 public:

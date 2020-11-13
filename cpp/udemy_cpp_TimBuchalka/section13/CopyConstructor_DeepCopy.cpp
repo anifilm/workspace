@@ -8,16 +8,16 @@ using namespace std;
 
 class Deep {
 private:
-    int *data;
+    int* data;
 
 public:
-    void set_data_value(int d) {*data = d;}
-    int get_data_value() {return *data;}
+    void set_data_value(int d) { *data = d; }
+    int get_data_value() { return *data; }
 
     // Constructor
     Deep(int d);
     // Copy Constructor
-    Deep(const Deep &source);
+    Deep(const Deep& source);
     // Destructor
     ~Deep();
 };
@@ -49,5 +49,5 @@ int main() {
     Deep obj2 {obj1};
     obj2.set_data_value(1000);
 
-	return 0;
+    return 0;
 }

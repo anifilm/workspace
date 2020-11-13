@@ -17,19 +17,19 @@ private:
 public:
     Bank(std::string = "None", int accountNumber = 0, double balance = 0);
     // Copy Constructor
-    Bank(const Bank &source);
+    Bank(const Bank& source);
     // Destructor
     ~Bank();
 
     // Accessor Functions
-    std::string getName() const {return name;}
-    int getAccountNumber() const {return accountNumber;}
-    double getBalance() const {return balance;}
+    std::string getName() const { return name; }
+    int getAccountNumber() const { return accountNumber; }
+    double getBalance() const { return balance; }
 
     // Mutator Functions
-    void setName(std::string name) {this->name = name;}
-    void setAccountNumber(int accountNumber) {this->accountNumber = accountNumber;}
-    void setBalance(double balance) {this->balance = balance; bankBalance += balance;}
+    void setName(std::string name) { this->name = name; }
+    void setAccountNumber(int accountNumber) { this->accountNumber = accountNumber; }
+    void setBalance(double balance) { this->balance = balance; bankBalance += balance; }
 
     void withdraw(double);
     void deposit(double);

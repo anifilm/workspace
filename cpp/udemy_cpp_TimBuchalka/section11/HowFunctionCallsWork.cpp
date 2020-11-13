@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void func2(int &x, int y, int z) {
+void func2(int& x, int y, int z) {
     x += y + z;
 }
 
@@ -23,8 +23,8 @@ int main() {
     z = func1(x ,y);
     cout << z << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }
 
 /*  What typically happens when main calls func1 (or any function calls another) ?
@@ -45,5 +45,5 @@ int main() {
         tranfer control to the return address (jmp)
     main:
         pop the parameters
-        pop the return value 
+        pop the return value
 */

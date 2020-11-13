@@ -5,7 +5,7 @@ class Player;
 
 class Other_class {
 public:
-    void display_player(Player &p);
+    void display_player(Player& p);
 };
 
 #endif // _OTHER_CLASS_H_

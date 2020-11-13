@@ -41,14 +41,12 @@ int main() {
     //double package_cost {};
 
     if (p_length < max_dimension_lenth && p_width < max_dimension_lenth && p_height < max_dimension_lenth) {
-
         double package_cost {};
         package_cost = base_cost;
 
         if (package_volume > tier2_threshold) {
             package_cost += package_cost * tier2_surcharge;
             cout << "adding tier 2 surcharge" << endl;
-
         } else if (package_volume > tier1_threshold) {
             package_cost += package_cost * tier1_surcharge;
             cout << "adding tier 1 surcharge" << endl;
@@ -56,11 +54,9 @@ int main() {
         cout << fixed << setprecision(2);   // print dollars nicely
         cout << "The volume of your package is " << package_volume << endl;
         cout << "Your package will cost $" << package_cost << " to ship" << endl;
-
-    } else {
+    } else
         cout << "Sorry, package rejected - dimension exceeded" << endl;
-    }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

@@ -19,7 +19,7 @@ int main() {
         cout << "\nEnter your selection: ";
         cin >> selection;
 
-	    cout << endl;
+        cout << endl;
         if (selection == '1')
             cout << "You chose 1 - doing this" << endl;
         else if (selection == '2')
@@ -33,6 +33,6 @@ int main() {
 
     } while (selection != 'q' && selection != 'Q');
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

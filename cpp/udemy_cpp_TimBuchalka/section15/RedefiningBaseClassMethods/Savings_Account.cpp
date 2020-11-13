@@ -14,7 +14,7 @@ void Savings_Account::deposit(double amount) {
     Account::deposit(amount);
 }
 
-std::ostream &operator<<(std::ostream &os, const Savings_Account &account) {
+std::ostream& operator<<(std::ostream& os, const Savings_Account& account) {
     os << "Savings account balance: " << account.balance << " Interest rate: " << account.int_rate;
     return os;
 }

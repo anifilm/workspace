@@ -14,7 +14,6 @@ int main() {
     char letter_grade {};
 
     if (score >= 0 && score <= 100) {
-
         if (score >= 90)
             letter_grade = 'A';
         else if (score >= 80)
@@ -33,10 +32,9 @@ int main() {
         else
             cout << "Great, You passed this class!" << endl;
 
-    } else {
+    } else
         cout << "Sorry, " << score << " is not in range" << endl;
-    }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

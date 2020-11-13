@@ -1,3 +1,4 @@
+// Section 7
 // Arrays
 
 #include <iostream>
@@ -19,7 +20,7 @@ int main() {
                             // we'll talk about assignment statment in an upcoming section
 
     cout << "The first high temperature is now: " << hi_temps[0] << endl;
-//
+
 
     int test_scores[5] {100, 90, 80, 70, 60};
 
@@ -47,5 +48,5 @@ int main() {
 
     cout << endl;
 
-	return 0;
+    return 0;
 }

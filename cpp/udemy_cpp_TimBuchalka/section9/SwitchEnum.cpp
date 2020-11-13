@@ -14,7 +14,6 @@ int main() {
     Direction heading {left};
 
     switch (heading) {
-
         case left:
             cout << "Going left" << endl;
             break;
@@ -27,11 +26,10 @@ int main() {
         case down:
             cout << "Going down" << endl;
             break;
-
         default:
             cout << "OK" << endl;
     }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

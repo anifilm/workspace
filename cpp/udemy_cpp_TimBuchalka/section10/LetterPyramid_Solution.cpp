@@ -16,19 +16,16 @@ int main() {
 
     // for each letter in the string
 
-    for (char c: letters) {
-
+    for (char c : letters) {
         size_t num_spaces = num_letters - position;
-
         while (num_spaces > 0) {
             cout << " ";
             --num_spaces;
         }
 
         // Display in order up to the current character
-        for (size_t j {0}; j < position; j++) {
+        for (size_t j {0}; j < position; j++)
             cout << letters.at(j);
-        }
 
         // Display the current 'center' character
         cout << c;
@@ -41,8 +38,8 @@ int main() {
         }
         cout << endl;       // Don't forget the end line
         ++position;
-    } 
+    }
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }
