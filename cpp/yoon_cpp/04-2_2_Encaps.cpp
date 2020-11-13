@@ -1,4 +1,4 @@
-// 캡슐화 (Encapsulation)
+// 캡슐화 (Encapsulation) 2
 #include <iostream>
 
 using namespace std;

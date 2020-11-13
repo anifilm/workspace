@@ -20,7 +20,7 @@ public:
 };
 
 Player::Player()
-    : Player {"None", 0 ,0} {
+    : Player {"None", 0, 0} {
     cout << "No-args constructor" << endl;
 }
 
