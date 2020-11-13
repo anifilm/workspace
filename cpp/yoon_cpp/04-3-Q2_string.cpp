@@ -27,7 +27,6 @@ int main(void) {
 }
 */
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
@@ -54,20 +53,13 @@ namespace COMP_POS {
 
 class NameCard {
 private:
-    char* name;
-    char* company;
-    char* phone;
+    string name;
+    string company;
+    string phone;
     int position;
-
 public:
     NameCard(const char* _name, const char* _company, const char* _phone, int _pos)
-        : position {_pos} {
-            name = new char[strlen(_name) + 1];
-            company = new char[strlen(_company) + 1];
-            phone = new char[strlen(_phone) + 1];
-            strcpy(name, _name);
-            strcpy(company, _company);
-            strcpy(phone, _phone);
+        : name {_name}, company {_company}, phone {_phone}, position {_pos} {
     }
     void ShowNameCardInfo() {
         cout << "이름: " << name << endl;
@@ -77,11 +69,7 @@ public:
         COMP_POS::ShowPositionInfo(position);
         cout << endl;
     }
-    ~NameCard() {
-        delete[] name;
-        delete[] company;
-        delete[] phone;
-    };
+    ~NameCard() {};
 };
 
 int main() {

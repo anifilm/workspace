@@ -8,7 +8,6 @@ class Person {
 private:
     char* name;
     int age;
-
 public:
     Person(const char* myname, int myage) {
         int len = strlen(myname) + 1;
@@ -16,15 +15,13 @@ public:
         strcpy(name, myname);
         age = myage;
     }
-
     void ShowPersonInfo() const {
         cout << "이름: " << name << endl;
         cout << "나이: " << age << endl;
     }
-
     ~Person() {
         delete[] name;
-        cout << "Called destructor" << endl;
+        cout << "called destructor" << endl;
     }
 };
 

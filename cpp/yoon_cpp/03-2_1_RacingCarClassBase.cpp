@@ -23,7 +23,6 @@ private:
     char gamerID[CAR_CONST::ID_LEN];    // 소유자ID
     int fuelGauge;                      // 연료량
     int curSpeed;                       // 현재속도
-
 public:
     void InitMember(char* ID, int fuel);
     void ShowCarState();    // 상태정보 출력

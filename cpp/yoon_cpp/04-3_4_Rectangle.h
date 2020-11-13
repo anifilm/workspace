@@ -7,7 +7,6 @@ class Rectangle {
 private:
     Point upLeft;
     Point lowRight;
-
 public:
 //  bool InitMembers(Point& ul, Point& lr);
     Rectangle(const int& x1, const int& y1, const int& x2, const int& y2);

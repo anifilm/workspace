@@ -24,7 +24,6 @@ struct Car {
         cout << "현재속도: " << curSpeed << "km/s" << endl;
         cout << endl;
     }
-
     void Accel() {
         if (fuelGauge <= 0)
             return;
@@ -35,16 +34,13 @@ struct Car {
             curSpeed = CAR_CONST::MAX_SPD;
             return;
         }
-
         curSpeed += CAR_CONST::ACC_STEP;
     }
-
     void Break() {
         if (curSpeed < CAR_CONST::BRK_STEP) {
             curSpeed = 0;
             return;
         }
-
         curSpeed -= CAR_CONST::BRK_STEP;
     }
 };

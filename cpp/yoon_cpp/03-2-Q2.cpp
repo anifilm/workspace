@@ -29,7 +29,6 @@ using namespace std;
 class Printer {
 private:
     char myStr[100];
-
 public:
     void SetString(const char* p_str);
     void ShowString();
@@ -38,6 +37,7 @@ public:
 void Printer::SetString(const char* p_str) {
     strcpy(myStr, p_str);
 }
+
 void Printer::ShowString() {
     cout << myStr << endl;
 }

@@ -32,7 +32,6 @@ void Accel(Car& car) {
         car.curSpeed = MAX_SPD;
         return;
     }
-
     car.curSpeed += ACC_STEP;
 }
 
@@ -41,7 +40,6 @@ void Break(Car& car) {
         car.curSpeed = 0;
         return;
     }
-
     car.curSpeed -= BRK_STEP;
 }
 

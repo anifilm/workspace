@@ -7,7 +7,6 @@ class Rectangle {
 private:
     Point upLeft;
     Point lowRight;
-
 public:
     bool InitMembers(Point& ul, Point& lr);
     void ShowRecInfo() const;

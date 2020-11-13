@@ -11,7 +11,6 @@ using namespace std;
 class Point {
 private:
     int xpos, ypos;
-
 public:
     /*
     void Init(int x, int y) {
@@ -22,7 +21,6 @@ public:
     Point(const int& x, const int& y)
         : xpos {x}, ypos {y} {
     }
-
     void ShowPointInfo() const {
         cout << "[" << xpos << ", " << ypos << "]" << endl;
     }
@@ -32,7 +30,6 @@ class Circle {
 private:
     int rad;        // 반지름
     Point center;   // 원의 중심
-
 public:
     /*
     void Init(int x, int y, int r) {
@@ -43,7 +40,6 @@ public:
     Circle(const int& x, const int& y, const int& r)
         : rad {r}, center {x, y} {
     }
-
     void ShowCircleInfo() const {
         cout << "radius: " << rad << endl;
         center.ShowPointInfo();
@@ -54,7 +50,6 @@ class Ring {
 private:
     Circle inCircle;
     Circle outCircle;
-
 public:
     /*
     void Init(int cix, int ciy, int cir, int cox, int coy, int cor) {
@@ -65,7 +60,6 @@ public:
     Ring(int cix, int ciy, int cir, int cox, int coy, int cor)
         : inCircle {cix, ciy, cir}, outCircle {cox, coy, cor} {
     }
-
     void ShowRingInfo() const {
         cout << "Inner Circle Info..." << endl;
         inCircle.ShowCircleInfo();

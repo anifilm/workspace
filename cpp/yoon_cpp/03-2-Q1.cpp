@@ -34,7 +34,6 @@ private:
     int countMin;
     int countMul;
     int countDiv;
-
 public:
     void Init();
     double Add(double num1, double num2);

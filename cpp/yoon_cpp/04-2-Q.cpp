@@ -54,13 +54,11 @@ using namespace std;
 class Point {
 private:
     int xpos, ypos;
-
 public:
     void Init(int x, int y) {
         xpos = x;
         ypos = y;
     }
-
     void ShowPointInfo() const {
         cout << "[" << xpos << ", " << ypos << "]" << endl;
     }
@@ -70,7 +68,6 @@ class Circle {
 private:
     int rad;        // 반지름
     Point center;   // 원의 중심
-
 public:
     void Init(int x, int y, int r) {
         rad = r;
@@ -86,7 +83,6 @@ class Ring {
 private:
     Circle inCircle;
     Circle outCircle;
-
 public:
     void Init(int cix, int ciy, int cir, int cox, int coy, int cor) {
         inCircle.Init(cix, ciy, cir);

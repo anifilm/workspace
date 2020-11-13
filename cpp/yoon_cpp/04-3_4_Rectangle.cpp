@@ -17,7 +17,7 @@ bool Rectangle::InitMembers(Point& ul, Point& lr) {
 */
 Rectangle::Rectangle(const int& x1, const int& y1, const int& x2, const int& y2)
     : upLeft {x1, y1}, lowRight {x2, y2} {
-        cout << "Two-args constructor" << endl;
+    // empty
 }
 
 void Rectangle::ShowRecInfo() const {
