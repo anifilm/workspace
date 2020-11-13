@@ -62,8 +62,8 @@ public:
 
 int main() {
 
-    FruitSeller seller(1000, 20, 0);
-    FruitBuyer buyer(5000);
+    FruitSeller seller {1000, 20, 0};
+    FruitBuyer buyer {5000};
     buyer.BuyApples(seller, 2000);      // 과일의 구매
 
     cout << "과일 판매자의 현황" << endl;

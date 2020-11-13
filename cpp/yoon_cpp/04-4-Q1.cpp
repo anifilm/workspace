@@ -13,9 +13,14 @@ private:
     int xpos, ypos;
 
 public:
+    /*
     void Init(int x, int y) {
         xpos = x;
         ypos = y;
+    }
+    */
+    Point(const int& x, const int& y)
+        : xpos {x}, ypos {y} {
     }
 
     void ShowPointInfo() const {
@@ -29,10 +34,16 @@ private:
     Point center;   // 원의 중심
 
 public:
+    /*
     void Init(int x, int y, int r) {
         rad = r;
         center.Init(x, y);
     }
+    */
+    Circle(const int& x, const int& y, const int& r)
+        : rad {r}, center {x, y} {
+    }
+
     void ShowCircleInfo() const {
         cout << "radius: " << rad << endl;
         center.ShowPointInfo();
@@ -45,10 +56,16 @@ private:
     Circle outCircle;
 
 public:
+    /*
     void Init(int cix, int ciy, int cir, int cox, int coy, int cor) {
         inCircle.Init(cix, ciy, cir);
         outCircle.Init(cox, coy, cor);
     }
+    */
+    Ring(int cix, int ciy, int cir, int cox, int coy, int cor)
+        : inCircle {cix, ciy, cir}, outCircle {cox, coy, cor} {
+    }
+
     void ShowRingInfo() const {
         cout << "Inner Circle Info..." << endl;
         inCircle.ShowCircleInfo();
@@ -59,8 +76,7 @@ public:
 
 int main() {
 
-    Ring ring;
-    ring.Init(1, 1, 4, 2, 2, 9);
+    Ring ring {1, 1, 4, 2, 2, 9};
     ring.ShowRingInfo();
 
     return 0;

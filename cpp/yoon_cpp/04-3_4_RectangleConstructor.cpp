@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    Rectangle rec(1, 1, 5, 5);
+    Rectangle rec {1, 1, 5, 5};
     rec.ShowRecInfo();
 
     return 0;

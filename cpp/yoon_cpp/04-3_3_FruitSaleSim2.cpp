@@ -71,12 +71,12 @@ int main() {
     FruitSeller seller;
     seller.InitMembers(1000, 20, 0);
     */
-    FruitSeller seller(1000, 20, 0);    // 생성자를 통한 초기화
+    FruitSeller seller {1000, 20, 0};   // 생성자를 통한 초기화
     /*
     FruitBuyer buyer;
     buyer.InitMembers(5000);
     */
-    FruitBuyer buyer(5000);             // 생성자을 통한 초기화
+    FruitBuyer buyer {5000};            // 생성자을 통한 초기화
     buyer.BuyApples(seller, 2000);      // 과일의 구매
 
     cout << "과일 판매자의 현황" << endl;

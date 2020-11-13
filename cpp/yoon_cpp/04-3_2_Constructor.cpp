@@ -29,6 +29,6 @@ int main() {
 }
 
 SimpleClass sc1() {
-    SimpleClass sc(20, 30);
+    SimpleClass sc {20, 30};
     return sc;
 }

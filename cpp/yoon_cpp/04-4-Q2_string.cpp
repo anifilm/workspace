@@ -32,6 +32,23 @@ using namespace std;
 
 namespace COMP_POS {
     enum {CLERK, SENIOR, ASSIST, MANAGER};
+
+    void ShowPositionInfo(int pos) {
+        switch(pos) {
+            case CLERK:
+                cout << "사원" << endl;
+                break;
+            case SENIOR:
+                cout << "주입" << endl;
+                break;
+            case ASSIST:
+                cout << "대리" << endl;
+                break;
+            case MANAGER:
+                cout << "과장" << endl;
+                break;
+        }
+    }
 }
 
 class NameCard {
@@ -39,40 +56,28 @@ private:
     string name;
     string company;
     string phone;
-    int rank;
+    int position;
+
 public:
-    NameCard(const char* myName, const char* myCompany, const char* myPhone, int myRank)
-        : name {myName}, company {myCompany}, phone {myPhone}, rank {myRank} {
+    NameCard(const char* _name, const char* _company, const char* _phone, int _pos)
+        : name {_name}, company {_company}, phone {_phone}, position {_pos} {
     }
     void ShowNameCardInfo() {
         cout << "이름: " << name << endl;
         cout << "회사: " << company << endl;
         cout << "전화번호: " << phone << endl;
         cout << "직급: ";
-        switch(rank) {
-            case COMP_POS::CLERK:
-                cout << "사원" << endl;
-                break;
-            case COMP_POS::SENIOR:
-                cout << "주입" << endl;
-                break;
-            case COMP_POS::ASSIST:
-                cout << "대리" << endl;
-                break;
-            case COMP_POS::MANAGER:
-                cout << "과장" << endl;
-                break;
-        }
+        COMP_POS::ShowPositionInfo(position);
         cout << endl;
     }
+    ~NameCard() {};
 };
 
 int main() {
 
-    NameCard manClerk("Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK);
-    NameCard manSenior("Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR);
-    NameCard manAssist("Kim", "SoGoodComp", "010-5555-6666", COMP_POS::ASSIST);
-
+    NameCard manClerk {"Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK};
+    NameCard manSenior {"Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR};
+    NameCard manAssist {"Kim", "SoGoodComp", "010-5555-6666", COMP_POS::ASSIST};
     manClerk.ShowNameCardInfo();
     manSenior.ShowNameCardInfo();
     manAssist.ShowNameCardInfo();

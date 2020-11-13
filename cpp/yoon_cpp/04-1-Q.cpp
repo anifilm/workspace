@@ -30,6 +30,10 @@ void FruitSeller::InitMembers(int price, int num, int money) {
 }
 
 int FruitSeller::SaleApples(int money) {
+    if (money <= 0) {
+        cout << "사과 구매를 위한 지급 금액이 0보다 작습니다." << endl;
+        return 0;
+    }
     int num = money / APPLE_PRICE;
     numOfApples -= num;
     myMoney += money;
