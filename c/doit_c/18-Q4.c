@@ -12,7 +12,7 @@ typedef struct grade {
     unsigned short score1, score2, score3;      // 국어, 영어, 수학 점수
     unsigned short sum, avg;                    // 총점, 평균, 등수
     char name[14];                              // 이름
-    struct grade *p_next;
+    struct grade* p_next;
 } Students;
 
 void AddStudent(Students** pp_start, Students** pp_end, unsigned short* ap_count) {
