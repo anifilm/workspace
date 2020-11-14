@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
-void GetMyData(int** q) {         // 포인터 변수 q는 p 변수의 주소값을 저장
+void GetMyData(int** q) {  // 포인터 변수 q는 p 변수의 주소값을 저장
     *q = (int*)malloc(8);  // 할당된 메모리의 주소값을 포인터 q가 가리티는 main 함수의 p에 저장
 }
 
