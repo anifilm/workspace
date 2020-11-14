@@ -40,7 +40,6 @@ void Car::Accel() {
         curSpeed = CAR_CONST::MAX_SPD;
         return;
     }
-
     curSpeed += CAR_CONST::ACC_STEP;
 }
 
@@ -49,7 +48,6 @@ void Car::Break() {
         curSpeed = 0;
         return;
     }
-
     curSpeed -= CAR_CONST::BRK_STEP;
 }
 
