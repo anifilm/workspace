@@ -1,4 +1,8 @@
-// OOP 단계별 프로젝트 1단계
+/*
+Banking System Ver 0.1
+작성자: 임채영
+내 용 : OOP 단계별 프로젝트의 기본 틀 구성
+*/
 #include <iostream>
 #include <cstring>
 
@@ -49,10 +53,9 @@ int main() {
                 cout << "\n프로그램을 종료합니다." << endl;
                 return 0;
             default:
-                cout << "\n잘못 입력하였습니다." << endl;
+                cout << "\n잘못 입력하였습니다.\n" << endl;
                 break;
         }
-        cout << endl;
     }
 }
 
@@ -70,7 +73,7 @@ void MakeAccount() {
     char name[NAME_LEN];
     int balance;
 
-    cout << "[계좌개설]" << endl;
+    cout << "\n[계좌개설]" << endl;
     cout << "계좌ID: "; cin >> id;
     cin.ignore(32767, '\n');        // 문자입력 받기 전에 개행을 스트림에서 제거
     cout << "이 름 : ";
@@ -88,7 +91,7 @@ void DepositMoney() {
     int money;
     int id;
 
-    cout << "[입 금]" << endl;
+    cout << "\n[입 금]" << endl;
     cout << "계좌ID: "; cin >> id;
     cout << "입금액: "; cin >> money;
     cout << endl;
@@ -107,7 +110,7 @@ void WithdrawMoney() {
     int money;
     int id;
 
-    cout << "[출 금]" << endl;
+    cout << "\n[출 금]" << endl;
     cout << "계좌ID: "; cin >> id;
     cout << "출금액: "; cin >> money;
     cout << endl;
