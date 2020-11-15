@@ -21,6 +21,7 @@ public:
     void Take() const { cout << "코가 뻥 뚫립니다." << endl; }
 };
 
+// 캡슐화 된 콘택600
 class CONTAC600 {
 private:
     SinivelCap sin;
