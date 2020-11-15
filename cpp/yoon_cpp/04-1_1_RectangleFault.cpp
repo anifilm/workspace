@@ -13,7 +13,7 @@ class Rectangle {
 public:
     Point upLeft;
     Point lowRight;
-
+public:
     void ShowRecInfo() {
         cout << "좌 상단: " << "[" << upLeft.xpos << ", " << upLeft.ypos << "]" << endl;
         cout << "우 하단: " << "[" << lowRight.xpos << ", " << lowRight.ypos << "]" << endl;
