@@ -9,25 +9,27 @@ struct Person {
     char name[NAME_LEN];
     int age;
     char address[ADDRESS_LEN];
-
-    // 함수를 구조체 안에 포함시키기
-    void AddAge() { age++; }
-    void ShowPersonInfo() {
-        printf("이름: %s\n", name);
-        printf("나이: %d\n", age);
-        printf("주소: %s\n", address);
-        cout << endl;
-    }
 };
+
+void AddAge(Person& person) {
+    person.age++;
+}
+
+void ShowPersonInfo(const Person& person) {
+    cout << "이름: " << person.name << endl;
+    cout << "나이: " << person.age << endl;
+    cout << "주소: " << person.address << endl;
+    cout << endl;
+}
 
 int main() {
 
     struct Person p1 {"홍길동", 30, "서울시 용산구 한남동"};
-    p1.AddAge();
-    p1.ShowPersonInfo();
+    AddAge(p1);
+    ShowPersonInfo(p1);
 
     struct Person p2 {"고길동", 40, "서울시 서초구 반포동"};
-    p2.ShowPersonInfo();
+    ShowPersonInfo(p2);
 
     return 0;
 }

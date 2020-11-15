@@ -32,9 +32,9 @@ void Person::InitMembers(const char* _name, int _age, const char* _address) {
 }
 void Person::AddAge() { age++; }
 void Person::ShowPersonInfo() {
-    printf("이름: %s\n", name);
-    printf("나이: %d\n", age);
-    printf("주소: %s\n", address);
+    cout << "이름: " << name << endl;
+    cout << "나이: " << age << endl;
+    cout << "주소: " << address << endl;
     cout << endl;
 }
 

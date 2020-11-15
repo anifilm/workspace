@@ -18,26 +18,26 @@ private:
     int age;
     char* address;
 public:
-    // 개체 초기화 함수를 생성자로 변경 (this 포인터 사용)
-    Person(const char* name, int age, const char* address);
+    // 개체 초기화 함수를 생성자로 변경
+    Person(const char* _name, int _age, const char* _address);
     void AddAge();
     void ShowPersonInfo();
     ~Person();
 };
 
-// 개체 초기화 함수를 생성자로 변경 (this 포인터 사용)
-Person::Person(const char* name, int age, const char* address)
-    : age(age) {
-    this->name = new char[strlen(name) + 1];
-    strcpy(this->name, name);
-    this->address = new char[strlen(address) + 1];
-    strcpy(this->address, address);
+// 개체 초기화 함수를 생성자로 변경 (배열을 동적으로 할당)
+Person::Person(const char* _name, int _age, const char* _address) {
+    name = new char[strlen(_name) + 1];
+    strcpy(name, _name);
+    address = new char[strlen(_address) + 1];
+    strcpy(address, _address);
+    age = _age;
 }
 void Person::AddAge() { age++; }
 void Person::ShowPersonInfo() {
-    printf("이름: %s\n", name);
-    printf("나이: %d\n", age);
-    printf("주소: %s\n", address);
+    cout << "이름: " << name << endl;
+    cout << "나이: " << age << endl;
+    cout << "주소: " << address << endl;
     cout << endl;
 }
 // 동적 할당된 배열을 소멸자를 통하여 메모리 해제
