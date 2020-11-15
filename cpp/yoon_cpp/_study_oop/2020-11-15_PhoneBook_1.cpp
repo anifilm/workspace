@@ -2,11 +2,6 @@
 
 using namespace std;
 
-#define NAME_LEN 20
-#define PHONE_LEN 20
-#define ADDRESS_LEN 100
-#define COMPANY_LEN 30
-
 namespace COMP_POS {
     enum {CLERK, SENIOR, ASSIST, MANAGER};
     void ShowPositionInfo(int pos) {
@@ -28,6 +23,12 @@ namespace COMP_POS {
 }
 
 struct PhoneBook {
+    enum {
+        NAME_LEN = 20,
+        PHONE_LEN = 20,
+        ADDRESS_LEN = 100,
+        COMPANY_LEN = 30,
+    };
     char name[NAME_LEN];
     int age;
     char phone[PHONE_LEN];
