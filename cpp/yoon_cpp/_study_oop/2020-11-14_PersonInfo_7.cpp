@@ -3,14 +3,6 @@
 
 using namespace std;
 
-// 구조체 안에 enum 상수를 네임스페이스를 사용하여 구성
-namespace PERSON_CONST {
-    enum {
-        NAME_LEN = 20,
-        ADDRESS_LEN = 100
-    };
-}
-
 // 구조체를 클래스로 변경 (배열을 동적으로 할당하도록 변경)
 class Person {
 private:

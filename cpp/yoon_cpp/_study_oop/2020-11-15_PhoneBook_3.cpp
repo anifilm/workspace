@@ -40,18 +40,21 @@ struct PhoneBook {
     char company[PHONEBOOK_CONST::COMPANY_LEN];
     int position;
 
-    // 함수를 구조체 안에 포함시키기
-    void ShowPersonInfo() const  {
-        cout << "이름: " << name << endl;
-        cout << "나이: " << age << endl;
-        cout << "전화번호: " << phone << endl;
-        cout << "주소: " << address << endl;
-        cout << "회사: " << company << endl;
-        cout << "직급: ";
-        COMP_POS::ShowPositionInfo(position);
-        cout << endl;
-    }
+    // 함수를 외부로 빼기 위해서 함수 원형 선언
+    void ShowPersonInfo() const;
 };
+
+// 함수를 외부로 뺄 수 있다.
+void PhoneBook::ShowPersonInfo() const  {
+    cout << "이름: " << name << endl;
+    cout << "나이: " << age << endl;
+    cout << "전화번호: " << phone << endl;
+    cout << "주소: " << address << endl;
+    cout << "회사: " << company << endl;
+    cout << "직급: ";
+    COMP_POS::ShowPositionInfo(position);
+    cout << endl;
+}
 
 int main() {
 
