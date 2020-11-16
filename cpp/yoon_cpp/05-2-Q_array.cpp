@@ -57,7 +57,7 @@ public:
             strcpy(company, _company);
             strcpy(phone, _phone);
     }
-    // 복사 생성자 (copy constructor), 직접 정의하여 개체 생성시 깊은 복사가 되도록 해야 한다.
+    // 복사 생성자 (copy constructor), 개체 생성시 깊은 복사가 되도록 직접 정의할 수 있다.
     NameCard(const NameCard& copy)
         : position(copy.position) {
             name = new char[strlen(copy.name) + 1];

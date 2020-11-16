@@ -51,7 +51,7 @@ public:
     NameCard(const char* _name, const char* _company, const char* _phone, int _pos)
         : name {_name}, company {_company}, phone {_phone}, position {_pos} {
     }
-    // 복사 생성자 (copy constructor), 직접 정의하지 않아도 사용할 수 있다.
+    // 복사 생성자 (copy constructor), 정의하지 않아도 자동을 생성되며 사용 가능하다
     NameCard(const NameCard& copy)
         : name {copy.name}, company {copy.company}, phone {copy.phone}, position {copy.position} {
     }

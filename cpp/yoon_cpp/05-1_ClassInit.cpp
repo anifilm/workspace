@@ -27,7 +27,7 @@ int main() {
     SoSimple sim1(15, 30);
     cout << "생성 및 초기화 직전" << endl;
 //  SoSimple sim2 = sim1; 또는
-    SoSimple sim2(sim1);
+    SoSimple sim2(sim1);     // 복사 생성자 호출
     cout << "생성 및 초기화 직후" << endl;
     sim2.ShowSimpleData();
 

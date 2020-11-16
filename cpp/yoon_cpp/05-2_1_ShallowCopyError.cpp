@@ -15,6 +15,11 @@ public:
         strcpy(name, myname);
         age = myage;
     }
+    // 복사 생성자 (copy constructor), 정의하지 않아도 자동을 생성되며 사용 가능하다
+    Person(const Person& copy)
+        : name {copy.name}, age {copy.age} {
+            cout << "called copy constructor" << endl;
+    }
     void ShowPersonInfo() const {
         cout << "이름: " << name << endl;
         cout << "나이: " << age << endl;
@@ -28,7 +33,7 @@ public:
 int main() {
 
     Person man1 {"Lee dong woo", 29};
-    Person man2 = man1;
+    Person man2 = man1;     // 복사 생성자 호출
     man1.ShowPersonInfo();
     man2.ShowPersonInfo();
 
