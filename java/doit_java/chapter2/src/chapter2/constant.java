@@ -11,6 +11,6 @@ public class Constant {
         System.out.println(MAX_NUM);
         System.out.println(MIN_MUN);
 
-        // MAX_NUM = 1000;          // 오류 발생, 상수는 값을 변경할 수 없음
+    //  MAX_NUM = 1000;             // 오류 발생, 상수는 값을 변경할 수 없음
     }
 }

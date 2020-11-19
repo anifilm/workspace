@@ -1,6 +1,6 @@
 package chapter2;
 
-public class BinaryTest {
+public class BinaryTest1 {
     public static void main(String[] args) {
 
         int num = 10;       // 십진수 10
