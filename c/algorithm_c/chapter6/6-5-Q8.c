@@ -1,27 +1,51 @@
-// Q1 재귀 함수 호출을 사용하지 않고 factorial 함수를 작성하세요.
+// Q8 요소의 삽입 과정을 자세하게 출력할 수 있도록 단순 삽입 정렬 프로그램을 수정
+// 하세요. 오른쪽처럼 현재 선택한 요소 아래에 기호 +, 삽입하는 위치의 요소 아래에
+// 기호 ^, 그 사이에 기호 -를 출력하세요. 삽입하지 않는 (요소의 이동이 필요없는)
+// 경우에는 선택한 요소 아래에 +만 출력하면 됩니다.
+//  6  4  8  5  2  9  7
+// ^---+
+//  4  6  8  5  2  9  7
+//        +
+//  4  6  8  5  2  9  7
+//    ^------+
+//  4  5  6  8  2  9  7
+// ^------------+
+// ...이하 생략...
 #include <stdio.h>
+#include <stdlib.h>
 
-// 정수의 n의 순차곱셈 값을 반환
-int factorial(int n) {
-    /*
-    int i, result = 1;
-    for (i = 2; i <= n; i++)
-        result *= i;
-    return result;
-    */
-    int fact = 1;
-    while (n > 1)
-        fact *= n--;
-    return fact;
+// 단순 삽입 정렬
+void insertion(int a[], int n) {
+    int i, j;
+    for (i = 0; i < n; i++) {
+        int tmp = a[i];
+        for (j = i; j > 0 && a[j - 1] > tmp; j--)
+            a[j] = a[j - 1];
+        a[j] = tmp;
+    }
 }
 
 int main() {
 
-    int x;
+    int i, nx;
+    int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    printf("정수를 입력하세요: ");
-    scanf("%d", &x);
-    printf("%d의 순차곱셈 값은 %d 입니다.\n", x, factorial(x));
+    puts("단순 삽입 정렬");
+    printf("요소 개수: ");
+    scanf("%d", &nx);
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
 
+    for (i = 0; i < nx; i++) {
+        printf("x[%d]: ", i);
+        scanf("%d", &x[i]);
+    }
+
+    insertion(x, nx);  // 배열 x를 단순 삽입 정렬
+
+    printf("\n오름차순으로 정렬했습니다.\n");
+    for (i = 0; i < nx; i++)
+        printf("x[%d] = %d\n", i, x[i]);
+
+    free(x);        // 배열 해제
     return 0;
 }
