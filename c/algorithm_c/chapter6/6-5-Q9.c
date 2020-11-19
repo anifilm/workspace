@@ -4,15 +4,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// 단순 삽입 정렬
+// 단순 삽입 정렬 (a[0]을 보초로 사용)
 void insertion(int a[], int n) {
-    int i, j;
-    for (i = 0; i < n; i++) {
-        int tmp = a[i];
-        for (j = i; j > 0 && a[j - 1] > tmp; j--)
+    int i, j, k;
+    for (i = 1; i < n; i++) {
+        // 숫자 출력
+        for (k = 1; k < n; k++)
+        printf(" %d ", a[k]);
+        printf("\n");
+
+        int tmp = a[0] = a[i];
+        for (j = i; a[j - 1] > tmp; j--)
             a[j] = a[j - 1];
-        a[j] = tmp;
+        if (j) a[j] = tmp;
+
+        // 기호 출력
+        printf("%*s%s", j, "", (i != j) ? "^" : " ");
+        for (k = 1; k < 3 * (i - j); k++)
+            printf("-");
+        printf("+\n");
     }
+    // 숫자 출력 (정렬 완료)
+    for (k = 1; k < n; k++)
+    printf(" %d ", a[k]);
+    printf("\n");
 }
 
 int main() {
@@ -23,17 +38,17 @@ int main() {
     puts("단순 삽입 정렬");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    x = (int*)calloc(nx + 1, sizeof(int));    // a[0]를 보초로 사용하기 때문에 n + 1개의 배열을 생성
 
-    for (i = 0; i < nx; i++) {
+    for (i = 1; i < nx + 1; i++) {
         printf("x[%d]: ", i);
         scanf("%d", &x[i]);
     }
 
-    insertion(x, nx);  // 배열 x를 단순 삽입 정렬
+    insertion(x, nx + 1);  // 배열 x를 단순 삽입 정렬
 
     printf("\n오름차순으로 정렬했습니다.\n");
-    for (i = 0; i < nx; i++)
+    for (i = 1; i < nx + 1; i++)
         printf("x[%d] = %d\n", i, x[i]);
 
     free(x);        // 배열 해제

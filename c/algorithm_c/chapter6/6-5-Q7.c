@@ -16,13 +16,26 @@
 
 // 단순 선택 정렬
 void selection(int a[], int n) {
-    int i, j;
+    int i, j, k;
     for (i = 0; i < n - 1; i++) {
         int min = i;
-        for (j = i + 1; j < n; j++) {
+        for (j = i + 1; j < n; j++)
             if (a[j] < a[min]) min = j;
-        swap(int, a[i], a[min]);
+        // 기호 출력
+        for (k = 0; k < n; k++) {
+            if (a[i] == a[k])
+                printf(" * ");
+            else if (a[min] == a[k])
+                printf(" + ");
+            else
+                printf("   ");
         }
+        printf("\n");
+        // 숫자 출력
+        for (k = 0; k < n; k++)
+            printf(" %d ", a[k]);
+        printf("\n");
+        swap(int, a[i], a[min]);
     }
 }
 
@@ -40,6 +53,7 @@ int main() {
         printf("x[%d]: ", i);
         scanf("%d", &x[i]);
     }
+    printf("\n");
 
     selection(x, nx);  // 배열 x를 단순 선택 정렬
 

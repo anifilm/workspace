@@ -3,6 +3,8 @@
 // 기호 ^, 그 사이에 기호 -를 출력하세요. 삽입하지 않는 (요소의 이동이 필요없는)
 // 경우에는 선택한 요소 아래에 +만 출력하면 됩니다.
 //  6  4  8  5  2  9  7
+//  +
+//  6  4  8  5  2  9  7
 // ^---+
 //  4  6  8  5  2  9  7
 //        +
@@ -16,13 +18,28 @@
 
 // 단순 삽입 정렬
 void insertion(int a[], int n) {
-    int i, j;
+    int i, j, k;
     for (i = 0; i < n; i++) {
+        // 숫자 출력
+        for (k = 0; k < n; k++)
+        printf(" %d ", a[k]);
+        printf("\n");
+
         int tmp = a[i];
         for (j = i; j > 0 && a[j - 1] > tmp; j--)
             a[j] = a[j - 1];
         a[j] = tmp;
+
+        // 기호 출력
+        printf("%*s%s", 3 * j, "", (i != j) ? "^" : " ");
+        for (k = 0; k < 3 * (i - j); k++)
+            printf("-");
+        printf("+\n");
     }
+    // 숫자 출력 (정렬 완료)
+    for (k = 0; k < n; k++)
+    printf(" %d ", a[k]);
+    printf("\n");
 }
 
 int main() {
@@ -39,6 +56,7 @@ int main() {
         printf("x[%d]: ", i);
         scanf("%d", &x[i]);
     }
+    printf("\n");
 
     insertion(x, nx);  // 배열 x를 단순 삽입 정렬
 

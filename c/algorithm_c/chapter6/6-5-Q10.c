@@ -12,8 +12,9 @@ void insertion(int a[], int n) {
     int i, j;
     for (i = 0; i < n; i++) {
         int tmp = a[i];
-        for (j = i; j > 0 && a[j - 1] > tmp; j--)
+        for (j = i; j > 0 && a[j - 1] > tmp; j--) {
             a[j] = a[j - 1];
+        }
         a[j] = tmp;
     }
 }
