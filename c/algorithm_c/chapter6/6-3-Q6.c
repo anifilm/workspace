@@ -1,27 +1,93 @@
-// Q1 재귀 함수 호출을 사용하지 않고 factorial 함수를 작성하세요.
+// Q6 다음의 배열을 정렬한다고 가정하겠습니다.
+// {9, 1, 3, 4, 5, 6, 7, 8}
+// 이 배열은 두번째 요소부터는 정렬은 되어 있지만 버전 3의 버블 정렬 알고리즘을 사용
+// 해도 빠른 시간 안에 정렬 작업을 마칠 수는 없습니다. 왜냐하면 맨 앞에 있는 요소의
+// 값(9)은 1회의 패스틀 거쳐도 한 칸만 뒤로 옳겨지기 때문입니다. 그래서 홀수 번째의
+// 패스는 가장 작은 요소를 맨 앞으로 옮기고 짝수 번째 패스는 가장 큰 요소를 맨 뒤로
+// 옮기는 방식을 사용하면(패스의 스캔 방향을 교대로 바꾸면) 이런 정렬을 더 적은 횟수
+// 로 비교를 수행할 수 있습니다. 버전 3의 프로그램을 개선하여 양방향 버블 정렬을 수행
+// 하는 프로그램을 작성하세요.
+// 버블 정렬을 개선한 이 알고리즘은 양방향 버블 정렬 (bidirection bubble sort) 또는
+// 칵테일 정렬 (cocktail sort), 셰이커 정렬 (shaker sort)이라는 이름으로 알려져 있습
+// 니다.
 #include <stdio.h>
+#include <stdlib.h>
 
-// 정수의 n의 순차곱셈 값을 반환
-int factorial(int n) {
-    /*
-    int i, result = 1;
-    for (i = 2; i <= n; i++)
-        result *= i;
-    return result;
-    */
-    int fact = 1;
-    while (n > 1)
-        fact *= n--;
-    return fact;
+#define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
+
+// 양방향 버블 정렬
+void bubble(int a[], int n) {
+    int left = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
+    int right = n - 1;
+    int p_count = 1;
+    while (left < right) {
+        int i, j;
+        int last = n - 1;   // 마지막으로 교환을 수행한 위치를 저장합니다.
+        printf("패스 %d: (홀수번째)\n", p_count);
+        for (j = n - 1; j > left; j--) {
+            // 숫자 출력 1
+            for (i = 0; i < j - 1; i++)
+                printf("%d ", a[i]);
+            if (a[j - 1] > a[j]) {
+                printf("%d+%d ", a[j - 1], a[j]);
+                swap(int, a[j - 1], a[j]);
+                last = j;
+            } else
+                printf("%d-%d ", a[j - 1], a[j]);
+            // 숫자 출력 2
+            for (i = j; i < n - 1; i++)
+                printf("%d ", a[i]);
+            printf("\n");
+        }
+        left = last;
+        p_count++;
+
+        if (left < right) {
+            printf("\n패스 %d: (짝수번째)\n", p_count);
+            for (j = last; j < right; j++) {
+                // 숫자 출력 1
+                for (i = 0; i < j; i++)
+                    printf("%d ", a[i]);
+                if (a[j] > a[j + 1]) {
+                    printf("%d+%d ", a[j], a[j + 1]);
+                    swap(int, a[j], a[j + 1]);
+                    last = j;
+                } else
+                    printf("%d-%d ", a[j], a[j + 1]);
+                // 숫자 출력 2
+                for (i = j + 1; i < n - 1; i++)
+                    printf("%d ", a[i]);
+                printf("\n");
+            }
+            printf("\n");
+            right = last;
+            p_count++;
+        }
+    }
 }
 
 int main() {
 
-    int x;
+    int i, nx;
+    int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    printf("정수를 입력하세요: ");
-    scanf("%d", &x);
-    printf("%d의 순차곱셈 값은 %d 입니다.\n", x, factorial(x));
+    puts("버블 정렬 (버전 4: 양방향 버블 정렬을 진행합니다.)");
+    printf("요소 개수: ");
+    scanf("%d", &nx);
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
 
+    for (i = 0; i < nx; i++) {
+        printf("x[%d]: ", i);
+        scanf("%d", &x[i]);
+    }
+    printf("\n");
+
+    bubble(x, nx);  // 배열 x를 버블 정렬
+
+    printf("\n오름차순으로 정렬했습니다.\n");
+    for (i = 0; i < nx; i++)
+        printf("x[%d] = %d\n", i, x[i]);
+
+    free(x);        // 배열 해제
     return 0;
 }

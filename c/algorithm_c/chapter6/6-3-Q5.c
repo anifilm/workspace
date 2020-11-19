@@ -1,27 +1,61 @@
-// Q1 재귀 함수 호출을 사용하지 않고 factorial 함수를 작성하세요.
+// Q5 연습문제 Q2(204쪽)와 마찬가지로 비교, 교환 과정을 자세히 출력하는 프로그램(실습
+// 6-3)으로 수정하세요.
 #include <stdio.h>
+#include <stdlib.h>
 
-// 정수의 n의 순차곱셈 값을 반환
-int factorial(int n) {
-    /*
-    int i, result = 1;
-    for (i = 2; i <= n; i++)
-        result *= i;
-    return result;
-    */
-    int fact = 1;
-    while (n > 1)
-        fact *= n--;
-    return fact;
+#define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
+
+// 버블 정렬 3
+void bubble(int a[], int n) {
+    int k = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
+    int p_count = 1;
+    while (k < n - 1) {
+        int i, j;
+        int last = n - 1;   // 마지막으로 교환을 수행한 위치를 저장합니다.
+        printf("패스 %d:\n", p_count);
+        for (j = n - 1; j > k; j--) {
+            // 숫자 출력 1
+            for (i = 0; i < j - 1; i++)
+                printf("%d ", a[i]);
+            if (a[j - 1] > a[j]) {
+                printf("%d+%d ", a[j - 1], a[j]);
+                swap(int, a[j - 1], a[j]);
+                last = j;
+            } else
+                printf("%d-%d ", a[j - 1], a[j]);
+            // 숫자 출력 2
+            for (i = j; i < n - 1; i++)
+                printf("%d ", a[i]);
+            printf("\n");
+        }
+        printf("\n");
+        k = last;
+        p_count++;
+    }
 }
 
 int main() {
 
-    int x;
+    int i, nx;
+    int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    printf("정수를 입력하세요: ");
-    scanf("%d", &x);
-    printf("%d의 순차곱셈 값은 %d 입니다.\n", x, factorial(x));
+    puts("버블 정렬 (버전 3: 스캔 범위를 제한합니다.)");
+    printf("요소 개수: ");
+    scanf("%d", &nx);
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
 
+    for (i = 0; i < nx; i++) {
+        printf("x[%d]: ", i);
+        scanf("%d", &x[i]);
+    }
+    printf("\n");
+
+    bubble(x, nx);  // 배열 x를 버블 정렬
+
+    printf("\n오름차순으로 정렬했습니다.\n");
+    for (i = 0; i < nx; i++)
+        printf("x[%d] = %d\n", i, x[i]);
+
+    free(x);        // 배열 해제
     return 0;
 }

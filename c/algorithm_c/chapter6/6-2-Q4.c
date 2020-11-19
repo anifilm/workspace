@@ -54,7 +54,7 @@ int main() {
     int i, nx;
     int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    puts("버블 정렬 (버전 2: 과정을 출력합니다.)");
+    puts("버블 정렬 (버전 2: 교환 횟수에 따라 정렬 작업을 멈춥니다.)");
     printf("요소 개수: ");
     scanf("%d", &nx);
     x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
