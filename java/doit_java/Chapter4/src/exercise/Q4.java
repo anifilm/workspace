@@ -17,20 +17,14 @@ public class Q4 {
         int spaceCount = lineCount / 2 + 1;
 
         for (int i = 0; i < lineCount ; i++) {
-            for (int j = 0; j < spaceCount; j++) {
-                System.out.print(' ');
-                System.out.print(' ');
-            }
-            for (int j = 0; j < starCount; j++) {
-                System.out.print(' ');
-                System.out.print('*');
-            }
-            for (int j = 0; j < spaceCount; j++) {
-                System.out.print(' ');
-                System.out.print(' ');
-            }
-            spaceCount -= 1;
+            for (int j = 0; j < spaceCount; j++)
+                System.out.print("  ");
+            for (int j = 0; j < starCount; j++)
+                System.out.print(" *");
+            for (int j = 0; j < spaceCount; j++)
+                System.out.print("  ");
             starCount += 2;
+            spaceCount -= 1;
             System.out.println();
         }
     }

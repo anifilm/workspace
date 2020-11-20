@@ -30,7 +30,8 @@ public class SwitchCase3_Elevator {
                 ment = "헬스 클럽";
                 break;
             default:
-                ment = "알수없음";
+                System.out.print("잘못 누르셨습니다.");
+                return;
         }
 
         System.out.println(floor + "층 " + ment + " 입니다.");

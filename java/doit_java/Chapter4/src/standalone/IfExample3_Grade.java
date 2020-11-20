@@ -13,17 +13,16 @@ public class IfExample3_Grade {
         int score = 92;
         char grade;
 
-        if (100 >= score && score >= 90) {
+        if (100 >= score && score >= 90)
             grade = 'A';
-        } else if (89 >= score && score >= 80) {
+        else if (89 >= score && score >= 80)
             grade = 'B';
-        } else if (79 >= score && score >= 70) {
+        else if (79 >= score && score >= 70)
             grade = 'C';
-        } else if (69 >= score && score >= 60) {
+        else if (69 >= score && score >= 60)
             grade = 'D';
-        } else {
+        else
             grade = 'F';
-        }
 
         System.out.println("성적에 따른 학점은 " + grade + " 입니다.");
     }

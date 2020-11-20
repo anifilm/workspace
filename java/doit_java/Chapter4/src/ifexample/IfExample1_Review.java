@@ -9,10 +9,10 @@ public class IfExample1_Review {
     public static void main(String args[]) {
 
         char gender = 'F';
-        if (gender == 'F') {
+
+        if (gender == 'F')
             System.out.println("여성입니다.");
-        } else {
+        else
             System.out.println("남성입니다.");
-        }
     }
 }

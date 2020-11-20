@@ -8,14 +8,17 @@ public class SwitchCase1 {
         char medalColor;
 
         switch (ranking) {
-            case 1: medalColor = 'G';
-                    break;
-            case 2: medalColor = 'S';
-                    break;
-            case 3: medalColor = 'B';
-                    break;
+            case 1:
+                medalColor = 'G';
+                break;
+            case 2:
+                medalColor = 'S';
+                break;
+            case 3:
+                medalColor = 'B';
+                break;
             default:
-                    medalColor = 'A';
+                medalColor = 'A';
         }
 
         System.out.println(ranking + "등의 메달 색깔은 " + medalColor + " 입니다.");

@@ -13,19 +13,19 @@ public class Q1_IfElse {
         int sum;
         char operator = '-';
 
-        if (operator == '+') {
+        if (operator == '+')
             sum = num1 + num2;
-        } else if (operator == '-') {
+        else if (operator == '-')
             sum = num1 - num2;
-        } else if (operator == '*') {
+        else if (operator == '*')
             sum = num1 * num2;
-        } else if (operator == '/') {
+        else if (operator == '/')
             sum = num1 / num2;
-        } else {
+        else {
             System.out.print("연산자 오류 입니다.");
             return;
         }
-        
+
         System.out.print(num1);
         System.out.print(" " + operator + " ");
         System.out.print(num2 + " = " + sum);

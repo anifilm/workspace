@@ -9,7 +9,8 @@ public class BreakExample1 {
 
         for (num = 0; num < 100; num++) {   // 합한 값이 100보다 클 때 종료
             sum += num;
-            if (sum >= 10) break;
+            if (sum >= 10)
+                break;
         }
         
         System.out.println("num: " + num);
