@@ -19,6 +19,7 @@ public class SwitchCase1 {
                 break;
             default:
                 medalColor = "None";
+            //  break;      /* 생략 가능 */
         }
 
         System.out.println(ranking + "등의 메달 색깔은 " + medalColor + " 입니다.");

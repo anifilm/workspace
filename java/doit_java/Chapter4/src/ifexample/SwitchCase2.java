@@ -18,6 +18,7 @@ public class SwitchCase2 {
                 break;
             default:
                 System.out.println("메달이 없습니다.");
+                break;
         }
     }
 }
