@@ -32,4 +32,4 @@ char    2 byte   16bit    (문자형이 존재하는 것은 c언어와 다르다
 논리형
 boolean 1 byte
 
-*/
+ */

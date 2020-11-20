@@ -16,8 +16,8 @@ public class Q5 {
     public static void main(String args[]) {
 
         int lineCount = 7;
-        int starCount = 1;
         int spaceCount = lineCount / 2 + 1;
+        int starCount = 1;
 
         for (int i = 0; i < lineCount ; i++) {
             for (int j = 0; j < spaceCount; j++)
