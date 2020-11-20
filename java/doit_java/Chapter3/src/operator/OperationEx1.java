@@ -1,3 +1,4 @@
+// 산술 연산자를 사용하여 총점과 평균 구하기
 package operator;
 
 public class OperationEx1 {

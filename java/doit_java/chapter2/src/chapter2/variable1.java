@@ -1,3 +1,4 @@
+// 변수 선언하여 사용하기
 package chapter2;
 
 public class Variable1 {

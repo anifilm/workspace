@@ -1,3 +1,4 @@
+// 묵시적 형 변환
 package chapter2;
 
 public class ImplicitConversion {
