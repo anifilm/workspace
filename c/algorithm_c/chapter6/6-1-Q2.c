@@ -19,7 +19,7 @@
 
 #define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
 
-// 버블 정렬
+// 버블 정렬 함수
 void bubble(int a[], int n) {
     int i, j, k;
     int c_count = 0;    // 비교 횟수

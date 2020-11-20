@@ -15,7 +15,7 @@
 
 #define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
 
-// 양방향 버블 정렬
+// 양방향 버블 정렬 함수
 void bubble(int a[], int n) {
     int left = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
     int right = n - 1;

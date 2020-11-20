@@ -7,15 +7,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// 단순 삽입 정렬
-void insertion(int a[], int n) {
+// 이진 삽입 정렬 함수
+void bin_insertion(int a[], int n) {
     int i, j;
-    for (i = 0; i < n; i++) {
-        int tmp = a[i];
-        for (j = i; j > 0 && a[j - 1] > tmp; j--) {
+
+    for (i = 1; i < n; i++) {
+        int key = a[i];
+        int pl = 0;		// 검색 범위의 첫 인덱스
+        int pr = i - 1; // 검색 범위의 끝 인덱스
+        int pc;			// 검색 범위의 가운데 인덱스
+        int pd;			// 삽입하는 위치의 인덱스
+
+        do {
+            pc = (pl + pr) / 2;
+            if (a[pc] == key)		// 검색 성공
+                break;
+            else if (a[pc] < key)
+                pl = pc + 1;
+            else
+                pr = pc - 1;
+        } while (pl <= pr);
+        pd = (pl <= pr) ? pc + 1 : pr + 1;
+        // 삽입 정렬 진행
+        for (j = i; j > pd; j--)
             a[j] = a[j - 1];
-        }
-        a[j] = tmp;
+        a[pd] = key;
     }
 }
 
@@ -24,7 +40,7 @@ int main() {
     int i, nx;
     int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    puts("단순 삽입 정렬");
+    puts("이진 삽입 정렬");
     printf("요소 개수: ");
     scanf("%d", &nx);
     x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
@@ -34,7 +50,7 @@ int main() {
         scanf("%d", &x[i]);
     }
 
-    insertion(x, nx);  // 배열 x를 단순 삽입 정렬
+    bin_insertion(x, nx);  // 배열 x를 이진 삽입 정렬
 
     printf("\n오름차순으로 정렬했습니다.\n");
     for (i = 0; i < nx; i++)

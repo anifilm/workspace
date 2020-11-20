@@ -14,7 +14,7 @@
 
 #define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
 
-// 단순 선택 정렬
+// 단순 선택 정렬 함수
 void selection(int a[], int n) {
     int i, j, k;
     for (i = 0; i < n - 1; i++) {

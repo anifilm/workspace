@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// 단순 삽입 정렬
+// 단순 삽입 정렬 함수
 void insertion(int a[], int n) {
     int i, j, k;
     for (i = 0; i < n; i++) {

@@ -16,7 +16,7 @@ int is_sorted(const int a[], int n) {
     return 1;           // 더이상 교환이 없다면 1
 }
 
-// 버블 정렬 2
+// 버블 정렬 함수 2
 void bubble(int a[], int n) {
     int i, j;
     for (i = 0; i < n - 1; i++) {

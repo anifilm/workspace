@@ -4,30 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// 단순 삽입 정렬 (a[0]을 보초로 사용)
+// 단순 삽입 정렬 함수 (a[0]을 보초로 사용)
 void insertion(int a[], int n) {
-    int i, j, k;
+    int i, j;
     for (i = 1; i < n; i++) {
-        // 숫자 출력
-        for (k = 1; k < n; k++)
-        printf(" %d ", a[k]);
-        printf("\n");
-
         int tmp = a[0] = a[i];
         for (j = i; a[j - 1] > tmp; j--)
             a[j] = a[j - 1];
         if (j) a[j] = tmp;
-
-        // 기호 출력
-        printf("%*s%s", j, "", (i != j) ? "^" : " ");
-        for (k = 1; k < 3 * (i - j); k++)
-            printf("-");
-        printf("+\n");
     }
-    // 숫자 출력 (정렬 완료)
-    for (k = 1; k < n; k++)
-    printf(" %d ", a[k]);
-    printf("\n");
 }
 
 int main() {
@@ -35,7 +20,7 @@ int main() {
     int i, nx;
     int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    puts("단순 삽입 정렬");
+    puts("단순 삽입 정렬 (a[0]을 보초로 사용)");
     printf("요소 개수: ");
     scanf("%d", &nx);
     x = (int*)calloc(nx + 1, sizeof(int));    // a[0]를 보초로 사용하기 때문에 n + 1개의 배열을 생성
@@ -44,6 +29,7 @@ int main() {
         printf("x[%d]: ", i);
         scanf("%d", &x[i]);
     }
+    printf("\n");
 
     insertion(x, nx + 1);  // 배열 x를 단순 삽입 정렬
 

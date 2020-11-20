@@ -1,21 +1,62 @@
-// 순차곱셈의 결과를 재귀적으로 구합니다.
+// 배열을 나누는 프로그램
 #include <stdio.h>
+#include <stdlib.h>
 
-// 정수의 n의 순차곱셈 값을 반환
-int factorial(int n) {
-    if (n > 0)
-        return n * factorial(n - 1);
-    else
-        return 1;
+#define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
+
+// 배열을 나누는 함수
+void partition(int a[], int n) {
+    int i;
+    int pl = 0;         // 왼쪽 커서
+    int pr = n - 1;     // 오른쪽 커서
+    int x = a[n / 2];   // 피벗은 가운데 요소를 선택합니다.
+
+    do {
+        while(a[pl] < x) pl++;
+        while(a[pr] > x) pr--;
+        if (pl <= pr) {
+            swap(int, a[pl], a[pr]);
+            pl++;
+            pr--;
+        }
+    } while (pl <= pr);
+
+    printf("피벗의 값은 %d입니다.\n", x);
+    printf("피벗 이하의 그룹\n");             // 피벗 이하의 그룹
+    for (i = 0; i <= pl - 1; i++)            // a[0] ~ a[pl - 1]
+        printf("%d ", a[i]);
+    putchar('\n');
+    if (pl > pr + 1) {
+        printf("피벗과 일치하는 그룹\n");     // 피벗과 같은 그룹
+        for (i = pr + 1; i <= pl - 1; i++)  // a[pr + 1] ~ a[pl - 1]
+            printf("%d ", a[i]);
+        putchar('\n');
+    }
+    printf("피벗 이상의 그룹\n");             // 피벗 이상의 그룹
+    for (i = pr + 1; i < n; i++)            // a[pr + 1] ~ a[n - 1]
+        printf("%d ", a[i]);
+    putchar('\n');
 }
+
 
 int main() {
 
-    int x;
+        int i, nx;
+        int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-    printf("정수를 입력하세요: ");
-    scanf("%d", &x);
-    printf("%d의 순차곱셈 값은 %d 입니다.\n", x, factorial(x));
+        puts("배열을 나눕니다.");
+        printf("요소 개수: ");
+        scanf("%d", &nx);
+        x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
 
-    return 0;
+        for (i = 0; i < nx; i++) {
+            printf("x[%d]: ", i);
+            scanf("%d", &x[i]);
+        }
+        putchar('\n');
+
+        partition(x, nx);  // 배열 x를 분할
+
+        free(x);        // 배열 해제
+        return 0;
 }

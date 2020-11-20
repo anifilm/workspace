@@ -4,7 +4,7 @@
 
 #define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
 
-// 버블 정렬 3
+// 버블 정렬 함수 3
 void bubble(int a[], int n) {
     int k = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
     while (k < n - 1) {

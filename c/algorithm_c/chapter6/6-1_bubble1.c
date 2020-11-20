@@ -4,7 +4,7 @@
 
 #define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
 
-// 버블 정렬
+// 버블 정렬 함수
 void bubble(int a[], int n) {
     int i, j;
     for (i = 0; i < n - 1; i++) {
