@@ -1,3 +1,4 @@
+// 단락 회로 평가 실습하기
 package operator;
 
 public class OperationEx3 {
@@ -19,3 +20,15 @@ public class OperationEx3 {
         System.out.println(i);      // 논리 합에서 앞 항이 참이면 뒷 항이 실행되지 않아 i 값은 그대로
     }
 }
+
+/*
+
+논리 연산에서 모든 항이 실행되지 않는 경우 - 단락 회로 평가
+
+논리 곱 (&&)
+false && true (앞이 false 이기 때문에 뒷 항을 평가하지 않는다.)
+
+논리 합 (||)
+true || false (앞이  true 이기 때문에 뒷 항을 평가하지 않는다.)
+
+ */

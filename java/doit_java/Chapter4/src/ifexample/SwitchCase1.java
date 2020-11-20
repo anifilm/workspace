@@ -1,0 +1,23 @@
+// switch-case문 예제 1
+package ifexample;
+
+public class SwitchCase1 {
+    public static void main(String args[]) {
+
+        int ranking = 1;
+        char medalColor;
+
+        switch (ranking) {
+            case 1: medalColor = 'G';
+                    break;
+            case 2: medalColor = 'S';
+                    break;
+            case 3: medalColor = 'B';
+                    break;
+            default:
+                    medalColor = 'A';
+        }
+
+        System.out.println(ranking + "등의 메달 색깔은 " + medalColor + " 입니다.");
+    }
+}
