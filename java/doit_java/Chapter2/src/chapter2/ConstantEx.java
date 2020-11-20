@@ -8,6 +8,8 @@ public class ConstantEx {
 
         final int STUDENT_NUM = 30;
 
+        System.out.println(MAX_NUM);
+        System.out.println(PI);
         System.out.println(STUDENT_NUM);
     }
 }
