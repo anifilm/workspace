@@ -1,10 +1,9 @@
-// API에서 제공하는 참조 타입 사용하기
+// 016 API에서 제공하는 참조 타입 사용하기
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
-public class s016_JavaObjectType {
-
+public class S016_JavaObjectType {
     public static void main(String[] args) {
 
         // 기본 타입의 배열은 참조 타입

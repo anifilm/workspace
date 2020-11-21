@@ -1,4 +1,4 @@
-// 사용자 정의 참조 타입 사용하기
+// 017 사용자 정의 참조 타입 사용하기
 
 // 사용자 정의 클래스
 class JLocation {
@@ -6,8 +6,7 @@ class JLocation {
     public double lng;
 }
 
-public class s017_JavaUserDefinedType {
-
+public class S017_JavaUserDefinedType {
     public static void main(String[] args) {
 
         // 두개의 기본 타입

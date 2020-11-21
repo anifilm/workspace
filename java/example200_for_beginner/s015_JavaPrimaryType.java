@@ -1,6 +1,5 @@
-// 기본 타입 선언하기
-public class s015_JavaPrimaryType {
-
+// 015 기본 타입 선언하기
+public class S015_JavaPrimaryType {
     public static void main(String[] args) {
 
         boolean isL = false;
