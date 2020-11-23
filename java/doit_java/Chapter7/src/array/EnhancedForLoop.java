@@ -1,6 +1,5 @@
 // 향상된 for문 사용하기
 package array;
-
 import java.util.Arrays;
 
 public class EnhancedForLoop {

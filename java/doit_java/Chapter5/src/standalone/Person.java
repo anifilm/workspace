@@ -21,21 +21,4 @@ public class Person {
     int age;
     boolean isMarried;
     int numberOfChildren;
-
-    public static void main(String[] args) {
-        Person personJames = new Person();
-        personJames.personName = "James";
-        personJames.age = 40;
-        personJames.isMarried = true;
-        personJames.numberOfChildren = 3;
-
-        System.out.print("이름: ");
-        System.out.println(personJames.personName);
-        System.out.print("나이: ");
-        System.out.println(personJames.age);
-        System.out.print("결혼 여부: ");
-        System.out.println(personJames.isMarried);
-        System.out.print("자녀 수: ");
-        System.out.println(personJames.numberOfChildren);
-    }
 }

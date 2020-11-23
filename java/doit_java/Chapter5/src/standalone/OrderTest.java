@@ -18,7 +18,6 @@ public class OrderTest {
     public static void main(String[] args) {
 
         Order order = new Order();
-
         order.orderId = 202011200001L;
         order.customerId = "anifilm";
         order.orderDate = "2020년 11월 20일";
