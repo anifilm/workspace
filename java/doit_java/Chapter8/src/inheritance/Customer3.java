@@ -23,7 +23,6 @@ public class Customer3 {
     public String showCustomerInfo() {
         return customerName + " 님의 등급은 " + customerGrade + " 이며, 보너스 포인트는 " + bonusPoint + " 입니다.";
     }
-
     // protected 예약어로 선언한 변수를 외부에서 사용할수 있도록 get(), set() 메서드 추가
     public int getCustomerID() {
         return customerID;

@@ -12,7 +12,7 @@ public class VIPCustomer4 extends Customer4 {
         bonusRatio = 0.05;      // 보너스 적립 5%
         saleRatio = 0.1;        // 할인율 10%
         this.agentID = agentID;
-        System.out.println("VIPCustomer4(int, String) 생성자 호출");
+        System.out.println("VIPCustomer4(int, String, int) 생성자 호출");
     }
 
     public VIPCustomer4() {

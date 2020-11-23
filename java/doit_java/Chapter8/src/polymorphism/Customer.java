@@ -1,15 +1,33 @@
-// protected 변수 선언
-package inheritance;
+// 고객 관리 프로그램 완성하기 1
+package polymorphism;
 
-public class Customer2 {
-    protected int customerID;       // private에서 protected으로 변경
-    protected String customerName;  // private에서 protected으로 변경
-    protected String customerGrade; // private에서 protected으로 변경
-    int bonusPoint;
-    double bonusRatio;
+// inheritance Customer5를 복사해옴
+public class Customer {
+    protected int customerID;       // 고객 아이디
+    protected String customerName;  // 고객 이름
+    protected String customerGrade; // 고객 등급
+    public int bonusPoint;          // 보너스 포인트
+    public double bonusRatio;       // 적립 비율
 
-    // 디폴트 생성자
-    public Customer2() {
+    // 새로운 디폴트 생성자
+    public Customer() {
+        initCustomer();     // 고객 등급과 보너스 포인트 적립률 지정 함수 호출
+    }
+
+    public Customer(int customerID, String customerName) {
+        this.customerID = customerID;
+        this.customerName = customerName;
+        // customerGrade = "SILVER";
+        // bonusRatio = 0.01;
+        initCustomer();     // 고객 등급과 보너스 포인트 적립률 지정 함수 호출
+    }
+    /* 원래의 디폴트 생성자
+    public Customer() {
+        customerGrade = "SILVER";
+        bonusRatio = 0.01;
+    }*/
+    // 디폴트 생성자의 내용을 private로 변경하고 멤버변수 초기화 부분을 호출하도록 변경
+    private void initCustomer() {
         customerGrade = "SILVER";   // 기본 등급
         bonusRatio = 0.01;          // 보너스 포인트 기본 적립 비율
     }
