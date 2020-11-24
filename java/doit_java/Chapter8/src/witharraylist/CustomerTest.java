@@ -1,7 +1,6 @@
+// 배열을 활용한 고객 관리 프로그램 구현하기
 package witharraylist;
 import java.util.ArrayList;
-import polymorphism.Customer;
-import polymorphism.VIPCustomer;
 
 public class CustomerTest {
     public static void main(String[] args) {
@@ -15,6 +14,7 @@ public class CustomerTest {
         Customer customerKim = new VIPCustomer(10050, "김태일", 1000);
         Customer customerMoon = new VIPCustomer(10060, "문영수", 2000);
 
+        // ArrayList의 add 속성을 사용해 객체 배열에 고객 추가
         customerList.add(customerLim);
         customerList.add(customerJung);
         customerList.add(customerSeo);
@@ -29,6 +29,7 @@ public class CustomerTest {
 
         System.out.println("\n====== 할인율과 보너스 포인트 계산 ======");
         int price = 10000;
+        // 다형성 구현
         for (Customer customer : customerList) {
             int cost = customer.calcPrice(price);
             System.out.println(customer.getCustomerName() + " 님이 " + cost + "원 지블 하셨습니다.");

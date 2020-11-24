@@ -1,7 +1,6 @@
 package inheritance2;
 
 public class Subject {
-
 	private int subjectId;
 	private int subjectName;
 	

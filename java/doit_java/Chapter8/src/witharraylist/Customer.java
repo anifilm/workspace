@@ -1,5 +1,5 @@
 // 고객 관리 프로그램 완성하기 1
-package polymorphism;
+package witharraylist;
 
 // inheritance Customer5를 복사해옴
 public class Customer {

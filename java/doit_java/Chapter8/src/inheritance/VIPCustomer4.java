@@ -1,4 +1,4 @@
-// 상속에서 클래스 생성 과정 2
+// 명시적으로 상위 클래스 생성자 호출하기
 package inheritance;
 
 // VIPCustomer 클래스는 Customer4 클래스를 상속 받음
@@ -7,7 +7,7 @@ public class VIPCustomer4 extends Customer4 {
     double saleRatio;       // 할인율
 
     public VIPCustomer4(int customerID, String customerName, int agentID) {
-        super(customerID, customerName);
+        super(customerID, customerName);    // 상위 클래스 생성자 호출
         customerGrade = "VIP";  // 고객 등급 VIP
         bonusRatio = 0.05;      // 보너스 적립 5%
         saleRatio = 0.1;        // 할인율 10%

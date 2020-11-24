@@ -7,7 +7,7 @@ public class VIPCustomer5 extends Customer5 {
     double saleRatio;       // 할인율
 
     public VIPCustomer5(int customerID, String customerName, int agentID) {
-        super(customerID, customerName);
+        super(customerID, customerName);    // 상위 클래스 생성자 호출
         customerGrade = "VIP";  // 고객 등급 VIP
         bonusRatio = 0.05;      // 보너스 적립 5%
         saleRatio = 0.1;        // 할인율 10%

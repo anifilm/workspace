@@ -1,6 +1,5 @@
+// 새로운 고객 등급 추가하기
 package witharraylist;
-
-import polymorphism.Customer;
 
 public class GoldCustomer extends Customer {
     double saleRatio;

@@ -1,5 +1,6 @@
 // 고객 관리 프로그램 완성하기 2
-package polymorphism;
+package witharraylist;
+
 // inheritance VIPCustomer5에서 복사해옴
 // VIPCustomer 클래스는 Customer 클래스를 상속 받음
 public class VIPCustomer extends Customer {
@@ -13,6 +14,7 @@ public class VIPCustomer extends Customer {
         saleRatio = 0.1;        // 할인율 10%
         this.agentID = agentID;
     }
+
     /* VIP 디폴트 생성자
     public VIPCustomer() {
         customerGrade = "VIP";  // 고객 등급 VIP

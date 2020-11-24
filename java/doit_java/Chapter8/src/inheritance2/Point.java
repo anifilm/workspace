@@ -1,7 +1,6 @@
 package inheritance2;
 
 public class Point {
-
 	private int x;
 	private int y;
 	
