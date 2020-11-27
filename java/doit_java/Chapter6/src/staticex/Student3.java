@@ -2,9 +2,7 @@
 package staticex;
 
 public class Student3 {
-
-    private static int serialNum = 1000;    // private 변수로 변경
-
+    private static int serialNum = 1000;     // private 변수로 변경
     public int studentID;
     public String studentName;
     public int grade;

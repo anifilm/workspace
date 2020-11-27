@@ -18,5 +18,3 @@ public class Customer implements Buy, Sell{
         System.out.println("고객 판매 주문");
     }
 }
-
-

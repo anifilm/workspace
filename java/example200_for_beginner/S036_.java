@@ -1,8 +1,5 @@
-//
-public class S019_ {
+public class S036_ {
     public static void main(String[] args) {
-
-
 
     }
 }
