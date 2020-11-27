@@ -8,7 +8,7 @@ int main() {
     char buffer[MAX_LENGTH];
     FILE* p_file = NULL;
 
-    p_file = fopen("./18-05-26_data.txt", "rt");
+    p_file = fopen("./2018-05-26_data.txt", "rt");
     if (p_file != NULL) {
         printf("data.txt 파일의 내용은 다음과 같습니다.\n\n");
         while (fgets(buffer, MAX_LENGTH, p_file) != NULL)
