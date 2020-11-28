@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 class Student {
-    int studentID;
+    int studentId;
     String studentName;
     ArrayList<Subject> subjectList;
 
-    public Student(int studentID, String studentName) {
-        this.studentID = studentID;
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
         this.studentName = studentName;
         subjectList = new ArrayList<Subject>(); // ArrayList 생성
     }

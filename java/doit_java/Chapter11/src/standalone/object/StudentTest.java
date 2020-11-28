@@ -7,17 +7,17 @@ toString() 메서드 직접 재정의하기
 package standalone.object;
 
 class Student {
-    int studentID;
+    int studentId;
     String studentName;
 
-    public Student(int studentID, String studentName) {
-        this.studentID = studentID;
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
         this.studentName = studentName;
     }
 
     @Override
     public String toString() {
-        return studentID + ", " + studentName;
+        return studentId + ", " + studentName;
     }
 }
 

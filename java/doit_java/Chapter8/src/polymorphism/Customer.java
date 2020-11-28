@@ -3,7 +3,7 @@ package polymorphism;
 
 // inheritance Customer5를 복사해옴
 public class Customer {
-    protected int customerID;       // 고객 아이디
+    protected int customerId;       // 고객 아이디
     protected String customerName;  // 고객 이름
     protected String customerGrade; // 고객 등급
     int bonusPoint;                 // 보너스 포인트
@@ -14,8 +14,8 @@ public class Customer {
         initCustomer();     // 고객 등급과 보너스 포인트 적립률 지정 함수 호출
     }
 
-    public Customer(int customerID, String customerName) {
-        this.customerID = customerID;
+    public Customer(int customerId, String customerName) {
+        this.customerId = customerId;
         this.customerName = customerName;
         // customerGrade = "SILVER";
         // bonusRatio = 0.01;
@@ -41,11 +41,11 @@ public class Customer {
         return customerName + " 님의 등급은 " + customerGrade + " 이며, 보너스 포인트는 " + bonusPoint + " 입니다.";
     }
     // protected 예약어로 선언한 변수를 외부에서 사용할수 있도록 get(), set() 메서드 추가
-    public int getCustomerID() {
-        return customerID;
+    public int getCustomerId() {
+        return customerId;
     }
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
     public String getCustomerName() {
         return customerName;

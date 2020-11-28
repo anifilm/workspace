@@ -1,5 +1,5 @@
 class Student1 {
-    int studentID;
+    int studentId;
     String studentName;
     int koreaScore;
     int mathScore;
@@ -9,7 +9,7 @@ class Student1 {
 }
 
 class Student2 {
-    int studentID;
+    int studentId;
     String studentName;
     int koreaScore;
     int mathScore;
@@ -23,7 +23,7 @@ class Subject {
 }
 
 class Student3 {
-    int studentID;
+    int studentId;
     String studentName;
     Subject korean;
     Subject math;

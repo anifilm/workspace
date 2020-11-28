@@ -2,7 +2,7 @@
 package hiding;
 
 public class Student2 {
-    int studentID;
+    int studentId;
     private String studentName;
     int grade;
     String address;

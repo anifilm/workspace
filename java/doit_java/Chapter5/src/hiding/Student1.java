@@ -2,7 +2,7 @@
 package hiding;
 
 public class Student1 {
-    int studentID;
+    int studentId;
     private String studentName;     // studentName 변수를 private으로 선언
     int grade;
     String address;

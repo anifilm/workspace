@@ -10,7 +10,7 @@ package standalone;
 
 public class Student3 {
     private static int serialNum = 1000;
-    public int studentID;
+    public int studentId;
     public String studentName;
     public int grade;
     public String address;
@@ -18,7 +18,7 @@ public class Student3 {
 
     public Student3() {
         serialNum++;
-        studentID = serialNum;
+        studentId = serialNum;
     }
 
     public String getStudentName() {

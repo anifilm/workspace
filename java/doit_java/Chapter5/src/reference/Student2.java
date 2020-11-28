@@ -2,7 +2,7 @@
 package reference;
 
 public class Student2 {
-    int studentID;
+    int studentId;
     String studentName;
     int koreaScore;
     int mathScore;

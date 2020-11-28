@@ -3,14 +3,14 @@ package staticex;
 
 public class Student2 {
     private static int serialNum = 1000;     // private 변수로 변경
-    public int studentID;
+    public int studentId;
     public String studentName;
     public int grade;
     public String address;
 
     public Student2() {
         serialNum++;
-        studentID = serialNum;
+        studentId = serialNum;
     }
 
     public String getStudentName() {

@@ -2,17 +2,17 @@
 package object;
 
 class Student3 {
-    int studentID;
+    int studentId;
     String studentName;
 
-    public Student3(int studentID, String studentName) {
-        this.studentID = studentID;
+    public Student3(int studentId, String studentName) {
+        this.studentId = studentId;
         this.studentName = studentName;
     }
 
     @Override
     public String toString() {
-        return studentID + ", " + studentName;
+        return studentId + ", " + studentName;
     }
     // equals() 메서드 재정의
     @Override
@@ -21,19 +21,19 @@ class Student3 {
             Student3 std = (Student3)obj;
             // 재정의한 equals() 메서드는 학생의 학번이 같으면 true 반환
             /*
-            if (this.studentID == std.studentID)
+            if (this.studentId == std.studentId)
                 return true;
             else
                 return false;
              */
-            return (this.studentID == std.studentID);
+            return (this.studentId == std.studentId);
         }
         return false;
     }
     // 해시 코드 값으로 학번을 반환하도록 재정의
     @Override
     public int hashCode() {
-        return studentID;
+        return studentId;
     }
 }
 

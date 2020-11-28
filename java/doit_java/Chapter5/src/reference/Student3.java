@@ -2,7 +2,7 @@
 package reference;
 
 public class Student3 {
-    int studentID;
+    int studentId;
     String studentName;
     Subject korean; // Subject형을 사용하여 선언
     Subject math;   // Subject형을 사용하여 선언

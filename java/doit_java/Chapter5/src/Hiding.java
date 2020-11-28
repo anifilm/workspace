@@ -1,5 +1,5 @@
 class Student {
-    int studentID;
+    int studentId;
     private String studnetName;
     int grede;
     String address;

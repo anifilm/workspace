@@ -2,7 +2,7 @@
 package classpart;
 
 public class Student5 {
-    int studentID;
+    int studentId;
     String studentName;
     int grade;
     String address;

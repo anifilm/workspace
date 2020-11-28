@@ -1,13 +1,13 @@
 class Student1 {
     private static int serialNum = 1000;
-    public int studentID;
+    public int studentId;
     public String studentName;
     public int grade;
     public String address;
 
     public Student1() {
         serialNum++;
-        studentID = serialNum;
+        studentId = serialNum;
     }
 
     public String getStudentName() {
@@ -33,11 +33,11 @@ class StudentTest {
         Student1 studentLim = new Student1();
         studentLim.setStudentName("임채영");
         System.out.println(Student1.getSerialNum());
-        System.out.println(studentLim.studentName + " 학번: " + studentLim.studentID);
+        System.out.println(studentLim.studentName + " 학번: " + studentLim.studentId);
 
         Student1 studentJung = new Student1();
         studentJung.setStudentName("정흥규");
         System.out.println(Student1.getSerialNum());
-        System.out.println(studentJung.studentName + " 학번: " + studentJung.studentID);
+        System.out.println(studentJung.studentName + " 학번: " + studentJung.studentId);
     }
 }

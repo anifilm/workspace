@@ -3,7 +3,7 @@ package inheritance;
 
 // VIPCustomer 클래스는 Customer3 클래스를 상속 받음
 public class VIPCustomer3 extends Customer3 {
-    private int agentID;    // VIP 고객 담당 상담원 아이디
+    private int agentId;    // VIP 고객 담당 상담원 아이디
     double saleRatio;       // 할인율
 
     public VIPCustomer3() {
@@ -19,7 +19,7 @@ public class VIPCustomer3 extends Customer3 {
     //     return price - (int)(price * saleRatio);    // 할인된 가격을 계산하여 반환
     // }
 
-    public int getAgentID() {
-        return agentID;
+    public int getAgentId() {
+        return agentId;
     }
 }

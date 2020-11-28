@@ -9,7 +9,7 @@ Chapter5 프로젝트 폴더 아래에 test 패키지를 만들고 그것으로 
 package standalone;
 
 public class Student {
-	int studentID;
+	int studentId;
 	private String studentName;
 	int grade;
 	String address;

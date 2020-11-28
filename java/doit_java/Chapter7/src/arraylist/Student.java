@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Student {
     // Student 클래스의 멤버 변수
-    int studentID;
+    int studentId;
     String studentName;
     ArrayList<Subject> subjectList;     // ArrayList 선언
 
     // 생성자
-    public Student(int studentID, String studentName) {
-        this.studentID = studentID;
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
         this.studentName = studentName;
         subjectList = new ArrayList<Subject>(); // ArrayList 생성
     }

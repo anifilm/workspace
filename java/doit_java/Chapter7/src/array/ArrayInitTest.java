@@ -17,13 +17,13 @@ public class ArrayInitTest {
         testarray2 = new int[] {101, 102, 103, 104}; // new int[] 초기화시 요소수로 자동 변경됨
 
         // 배열 변수 선언과 동시 초기화 (크기는 입력 내용을 기반으로 자동지정됨)
-        int[] studentIDs = new int[] {101, 102, 103};
-    //  int[] studentIDs2 = new int[3] {101, 102, 103}; // 오류 발생
-        int[] studentIDs3 = {101, 102, 103};   // new int[] 를 생략할 수 있다
+        int[] studentId = new int[] {101, 102, 103};
+    //  int[] studentId2 = new int[3] {101, 102, 103}; // 오류 발생
+        int[] studentId3 = {101, 102, 103};   // new int[] 를 생략할 수 있다
 
         // 배열 변수 선언과 초기화
-        int[] studentIDs4;
-        studentIDs4 = new int[] {101, 102, 103};    // 변수 선언 이후 초기화시에는 new int[] 를 생략할 수 없다
+        int[] studentId4;
+        studentId4 = new int[] {101, 102, 103};    // 변수 선언 이후 초기화시에는 new int[] 를 생략할 수 없다
 
         System.out.println(testarray2.length);
         for (int i = 0; i < testarray2.length; i++)

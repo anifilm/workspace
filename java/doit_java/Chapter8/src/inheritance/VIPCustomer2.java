@@ -4,14 +4,14 @@ package inheritance;
 // VIPCustomer 클래스는 Customer2 클래스를 상속 받음
 public class VIPCustomer2 extends Customer2 {
     // Customer 클래스와 겹치는 멤버 변수
-    // private int customerID;
+    // private int customerId;
     // private String customerName;
     // private String customerGrade;
     // int bonusPoint;
     // double bonusRatio;
 
     // VIP 고객 관련 기능을 구현할 때만 필요한 멤버 변수
-    private int agentID;    // VIP 고객 담당 상담원 아이디
+    private int agentId;    // VIP 고객 담당 상담원 아이디
     double saleRatio;       // 할인율
     // 디폴트 생성자
     public VIPCustomer2() {
@@ -25,8 +25,8 @@ public class VIPCustomer2 extends Customer2 {
         return price - (int)(price * saleRatio);    // 할인율 적용
     }
     // VIP 고객에게만 필요한 메서드
-    public int getAgentID() {
-        return agentID;
+    public int getAgentId() {
+        return agentId;
     }
     // 고객 정보를 반환하는 메서드
     // public String showCustomerInfo() {

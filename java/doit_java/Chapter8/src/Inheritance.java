@@ -1,5 +1,5 @@
 class Customer {
-    protected int customerID;
+    protected int customerId;
     protected String customerName;
     protected String customerGrade;
     int bonusPoint;
@@ -10,8 +10,8 @@ class Customer {
         bonusRatio = 0.01;
     }
 
-    public Customer(int customerID, String customerName) {
-        this.customerID = customerID;
+    public Customer(int customerId, String customerName) {
+        this.customerId = customerId;
         this.customerName = customerName;
         customerGrade = "SILVER";
         bonusRatio = 0.01;
@@ -28,11 +28,11 @@ class Customer {
     }
 
     // protected 예약어로 선언한 변수를 외부에서 사용할수 있도록 get(), set() 메서드 추가
-    public int getCustomerID() {
-        return customerID;
+    public int getCustomerId() {
+        return customerId;
     }
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
     public String getCustomerName() {
         return customerName;
@@ -49,7 +49,7 @@ class Customer {
 }
 
 class VIPCustomer extends Customer {
-    private int agentID;
+    private int agentId;
     double saleRatio;
 
     public VIPCustomer() {
@@ -58,12 +58,12 @@ class VIPCustomer extends Customer {
         saleRatio = 0.1;
     }
 
-    public VIPCustomer(int customerID, String customerName, int agentID) {
-        super(customerID, customerName);    // 상위 클래스 생성자 호출
+    public VIPCustomer(int customerId, String customerName, int agentId) {
+        super(customerId, customerName);    // 상위 클래스 생성자 호출
         customerGrade = "VIP";
         bonusRatio = 0.05;
         saleRatio = 0.1;
-        this.agentID = agentID;
+        this.agentId = agentId;
         System.out.println("VIPCustomer(int, String, int) 생성자 호출");
     }
 
@@ -73,12 +73,12 @@ class VIPCustomer extends Customer {
         return price - (int)(price * saleRatio);
     }
 
-    public int getAgentID() {
-        return agentID;
+    public int getAgentId() {
+        return agentId;
     }
 
-    public void setAgentID(int agentID) {
-        this.agentID = agentID;
+    public void setAgentId(int agentId) {
+        this.agentId = agentId;
     }
 }
 
@@ -86,15 +86,15 @@ class CustomerTest {
     public static void main(String[] args) {
 
         Customer customerLim = new Customer();
-        customerLim.setCustomerID(10010);
+        customerLim.setCustomerId(10010);
         customerLim.setCustomerName("임채영");
         customerLim.bonusPoint = 1000;
         System.out.println(customerLim.showCustomerInfo());;
 
         VIPCustomer customerJung = new VIPCustomer();
-        customerJung.setCustomerID(10020);
+        customerJung.setCustomerId(10020);
         customerJung.setCustomerName("정흥규");
-        customerJung.setAgentID(1000);
+        customerJung.setAgentId(1000);
         customerJung.bonusPoint = 1000;
         System.out.println(customerJung.showCustomerInfo());
 

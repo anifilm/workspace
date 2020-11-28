@@ -1,8 +1,9 @@
+// Customer 클래스 구현하기
 package inheritance;
 
 public class Customer {
     // 멤버 변수
-    private int customerID;         // 고객 아이디
+    private int customerId;         // 고객 아이디
     private String customerName;    // 고객 이름
     private String customerGrade;   // 고객 등급
     int bonusPoint;                 // 보너스 포인트

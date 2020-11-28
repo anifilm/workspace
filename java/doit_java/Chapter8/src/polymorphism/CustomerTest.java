@@ -4,7 +4,7 @@ public class CustomerTest {
     public static void main(String[] args) {
 
         Customer customerLim = new Customer();
-        customerLim.setCustomerID(10010);
+        customerLim.setCustomerId(10010);
         customerLim.setCustomerName("임채영");
         customerLim.bonusPoint = 1000;
         System.out.println(customerLim.showCustomerInfo());
