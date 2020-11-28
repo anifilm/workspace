@@ -6,37 +6,37 @@
 #define STRLEN 10                   // 문자열 최대 길이
 
 // compare_str과 원형이 같아야 하므로 배열을 void*로 받음
-int compare_int(void *a, int i) {
-    int *nptr = (int *)a;           // void*를 int*로 형 변환해야
+int compare_int(void* a, int i) {
+    int* nptr = (int*)a;            // void*를 int*로 형 변환해야
     return (nptr[i] - nptr[i + 1]); // 포인터 산술 연산이 가능
 }
 
-int compare_str(void *a, int i) {   // a에는 2차원 배열이라는 정보가 없음
+int compare_str(void* a, int i) {   // a에는 2차원 배열이라는 정보가 없음
     char (*row)[STRLEN] = a;        // row가 가리키는 것은 STRLEN개의 문자로 이루어진 배열
                                     // 이제 row는 2차원 배열의 한 행. 즉, 하나의 단어를 가리킴
     return (strcmp(row[i], row[i + 1]));    // i행의 문자열과 (i + 1)행의 문자열을 비교
 }
 
 // swap_str과 원형이 같아야 하므로 배열을 void*로 받음
-void swap_int(void *a, int i) {
-    int *nptr = (int *)a;           // void*를 int*로 형 변환
+void swap_int(void* a, int i) {
+    int* nptr = (int*)a;            // void*를 int*로 형 변환
     int temp;
-    temp = *nptr;
-    *nptr = i;
-    i = temp;
+    temp = nptr[i];
+    nptr[i] = nptr[i + 1];
+    nptr[i + 1] = temp;
 }
 
-void swap_str(void *a, int i) {
+void swap_str(void* a, int i) {
     char (*row)[STRLEN] = a;
-    char temp;
-    temp = (*row)[STRLEN];
-    (*row)[STRLEN] = i;
-    i = temp;
+    char temp[STRLEN];
+    strcpy(temp, row[i]);
+    strcpy(row[i], row[i + 1]);
+    strcpy(row[i + 1] , temp);
 }
 
 // 정수 배열이나 문자열 배열이나 동일한 원형으로 넘겨받아햐 하므로
 // arr 배열을 void* 형으로 선언
-void bubble_sort(void *arr, int (*compare)(void*, int), void (*swap)(void*, int), int numelt) {
+void bubble_sort(void* arr, int (*compare)(void*, int), void (*swap)(void*, int), int numelt) {
     int pass, current, sorted = 0;
     for (pass = 1; (pass < numelt) && (!sorted); pass++) {
         sorted = 1;
