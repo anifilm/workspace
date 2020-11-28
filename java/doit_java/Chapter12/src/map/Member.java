@@ -1,5 +1,5 @@
-// Member 클래스 구현하기
-package collection;
+// HashMap 활용하기
+package map;
 
 public class Member {
     private int memberId;       // 회원 아이디
