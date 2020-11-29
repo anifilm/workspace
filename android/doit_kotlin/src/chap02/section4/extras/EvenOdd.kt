@@ -1,7 +1,6 @@
 package chap02.section4.extras
 
 fun main() {
-
     val n = 4
 
     if ((n % 2) == 1) { // 홀수

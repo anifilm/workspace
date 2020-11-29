@@ -2,7 +2,6 @@
 package chap02.section3
 
 fun main() {
-
     val num = 256
 
     if (num is Int) {   // num이 Int형일 때

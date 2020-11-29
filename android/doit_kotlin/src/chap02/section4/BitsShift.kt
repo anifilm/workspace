@@ -2,7 +2,6 @@
 package chap02.section4
 
 fun main() {
-
     var x = 4
     var y = 0b0000_1010 // 10진수 5
     var z = 0x0F        // 10진수 15

@@ -2,7 +2,6 @@
 package chap02.section1
 
 fun main() {
-
     val intro: String = "안녕하세요!"
     val num: Int = 20
 

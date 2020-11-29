@@ -2,7 +2,6 @@
 package chap02.section2
 
 fun main() {
-
     val number = 10             // number 변수는 Int형으로 추론
     var language = "English"    // language 변수는 String으로 추론
     val secondNumber: Int = 20  // secondNumber 변수는 자료형을 Int형으로 명시적으로 지정

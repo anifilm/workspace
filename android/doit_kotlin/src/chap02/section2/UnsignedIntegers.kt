@@ -1,7 +1,6 @@
 package chap02.section2
 
 fun main() {
-
     val uint: UInt = 153u
     val ushort: UShort = 65535u
     val ulong: ULong = 46322342uL

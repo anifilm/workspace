@@ -2,7 +2,6 @@
 package chap02.section2
 
 fun main() {
-
     val num = 10
     val formatedString = """
         var a = 6

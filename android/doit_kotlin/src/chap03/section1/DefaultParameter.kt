@@ -2,7 +2,6 @@
 package chap03.section1
 
 fun main() {
-
     val name = "임채영"
     val email = "anifilm02@gmail.com"
 

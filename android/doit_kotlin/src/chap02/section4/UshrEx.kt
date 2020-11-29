@@ -2,7 +2,6 @@
 package chap02.section4
 
 fun main() {
-
     val number1 = 5
     val number2 = -5
 

@@ -1,7 +1,6 @@
 package chap03.section1.extras
 
 fun main() {
-
     val result = avgFunc(5f, 100f, 90f, 80f)
     println("avg result: $result")
 }

@@ -1,7 +1,6 @@
 package chap03.section1.extras
 
 fun main() {
-
     varargsParams("Hello", "World", "Kotlin")
     varargsParams(1, 2, 3, 4)
 }

@@ -2,7 +2,6 @@
 package chap02.section4
 
 fun main() {
-
     var number1 = 12
     var number2 = 25
 

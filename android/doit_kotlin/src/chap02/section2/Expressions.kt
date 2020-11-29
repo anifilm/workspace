@@ -1,7 +1,6 @@
 package chap02.section2
 
 fun main() {
-
     val exp01 = 123          // exp01은 Int로 추론
     val exp02 = 123L         // exp02는 Long으로 추론
     val exp03 = 0x0F         // 16진 표기가 사용된 Int 값

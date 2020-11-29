@@ -1,7 +1,6 @@
 package chap02.section2.extras
 
 fun main() {
-
     val ch = 'A'    // ch는 Char로 추론
     println(ch + 1) // B
     println('a'.toInt())

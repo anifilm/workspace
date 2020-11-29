@@ -2,7 +2,6 @@
 package chap02.section3
 
 fun main() {
-
     checkArg("Hello")   // 문자열을 인자로 넣음
     checkArg(5) // 숫자를 인자로 넣음
 }
