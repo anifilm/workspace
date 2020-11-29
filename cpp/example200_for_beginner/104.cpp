@@ -4,17 +4,17 @@
 using namespace std;
 
 class KingInfo {
+private:
+    string name;
+
 public:
     void SetName(string name) {
-        name_ = name;
+        this->name = name;
     }
 
     string GetName() const {
-        return name_;
+        return name;
     }
-
-private:
-    string name_;
 };
 
 int main() {
