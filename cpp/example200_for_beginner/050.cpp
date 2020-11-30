@@ -17,17 +17,17 @@ int main() {
     random_shuffle(str2.begin(), str2.end());
     random_shuffle(data1, data1 + 4);
 
-    cout << "== str1 ==" << endl;
+    cout << "=== str1 ===" << endl;
     for (auto i : str1)
         cout << i << ", ";
     cout << endl;
 
-    cout << "\n== str2 ==" << endl;
+    cout << "\n=== str2 ===" << endl;
     for (auto i : str2)
         cout << i << ", ";
     cout << endl;
 
-    cout << "\n== data1 ==" << endl;
+    cout << "\n=== data1 ===" << endl;
     for (auto i : data1)
         cout << i << ", ";
     cout << endl;

@@ -11,7 +11,7 @@ int main() {
 
     ss << "1.2,2.6-3.8!4.7=8.9";
 
-    cout << "== string to double ==" << endl;
+    cout << "=== string to double ===" << endl;
     while (!ss.eof()) {
         ss >> number1;
         ss.ignore();
@@ -25,7 +25,7 @@ int main() {
 
     int number2 {0};
 
-    cout << "\n== string to int ==" << endl;
+    cout << "\n=== string to int ===" << endl;
     while (!ss.eof()) {
         ss >> number2;
         ss.ignore();

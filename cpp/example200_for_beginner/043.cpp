@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    cout << "== 소수점 버리기 ==" << endl;
+    cout << "=== 소수점 버리기 ===" << endl;
     cout << "floor(1.1): " << floor(1.1) << endl;
     cout << "floor(2.3): " << floor(2.3) << endl;
     cout << "floor(-2.3): " << floor(-2.3) << endl;
@@ -16,7 +16,7 @@ int main() {
     cout << "floor(100.9): " << floor(100.9) << endl;
     cout << endl;
 
-    cout << "== 소수점 올리기 ==" << endl;
+    cout << "=== 소수점 올리기 ===" << endl;
     cout << "ceil(1.1): " << ceil(1.1) << endl;
     cout << "ceil(2.3): " << ceil(2.3) << endl;
     cout << "ceil(-2.3): " << ceil(-2.3) << endl;

@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    cout << "== 실수 반올림 하기 ==" << endl;
+    cout << "=== 실수 반올림 하기 ===" << endl;
     cout << "round(1.1): " << round(1.1) << endl;
     cout << "round(2.3): " << round(2.3) << endl;
     cout << "round(-2.3): " << round(-2.3) << endl;

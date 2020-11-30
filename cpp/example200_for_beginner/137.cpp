@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    atomic<int> data1(10);
+    atomic<int> data1 {10};
     atomic<int> data2 = ATOMIC_VAR_INIT(20);
     atomic<int> data3 = data1.exchange(data2.load());
 

@@ -9,13 +9,13 @@ struct Princess {
     string birthday;
 } jungso;
 
-void Print1(Princess &who) {    // reference 로 호출
+void Print1(Princess& who) {    // reference 로 호출
     cout << "jungso.name = " << who.name << endl;
     cout << "jungso.father = " << who.father << endl;
     cout << "jungso.birthday = " << who.birthday << endl;
 }
 
-void Print2(Princess *who) {    // address 로 호출
+void Print2(Princess* who) {    // address 로 호출
     cout << "jungso->name = " << who->name << endl;
     cout << "jungso->father = " << who->father << endl;
     cout << "jungso->birthday = " << who->birthday << endl;

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int PointerFunc(vector<string> *info) {
+int PointerFunc(vector<string>* info) {
     if (info->empty() == true)
         return 0;
     else

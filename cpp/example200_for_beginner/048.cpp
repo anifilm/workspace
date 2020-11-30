@@ -1,3 +1,4 @@
+// 소수점 분리하기 (modf)
 #include <iostream>
 #include <cmath>
 

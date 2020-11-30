@@ -11,7 +11,7 @@ int main() {
     data1[1] = 100;
     data1[2] -= 2;
 
-    cout << "== data1 ==" << endl;
+    cout << "=== data1 ===" << endl;
     for (int i {0}; i < 3; i++)
         cout << "data1[" << i << "] = " << data1[i] << endl;
 

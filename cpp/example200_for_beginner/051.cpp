@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 
     time_t now = time(NULL);
-    tm *ptm = localtime(&now);
+    tm* ptm = localtime(&now);
 
     char buffer[82];
     strftime(buffer, 82, "예제 만드는 지금은 %Y년 %m월 %d일, %H시 %M분 %S초 입니다.(%p)", ptm);

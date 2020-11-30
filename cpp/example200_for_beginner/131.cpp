@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 
     vector<int> data;
-    int number = 0;
+    int number {};
 
     try {
         number = data.at(10);

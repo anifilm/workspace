@@ -5,11 +5,11 @@ using namespace std;
 
 int main() {
 
-    char character = 'C';
-    int integer = 100;
-    double precision = 3.14159;
-    bool is_true = true;
-    string word = "Hello, world!";
+    char character {'C'};
+    int integer {100};
+    double precision {3.14159};
+    bool is_true {true};
+    string word {"Hello, world!"};
 
     cout << "char: " << character << endl;
     cout << "int: " << integer << endl;

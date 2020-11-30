@@ -11,7 +11,7 @@ int main() {
     fill_n(data1, 2, 10);
     fill_n(data1 + 4, 3, 20);
 
-    cout << "== data1 결과 ==" << endl;
+    cout << "=== data1 결과 ===" << endl;
     for (int i {0}; i < 10; i++)
         cout << data1[i] << ", ";
     cout << endl;
@@ -20,7 +20,7 @@ int main() {
     fill_n(data2.begin(), data2.size() - 1, 30);
     fill_n(data2.begin(), 4, 40);
 
-    cout << "\n== data2 결과 ==" << endl;
+    cout << "\n=== data2 결과 ===" << endl;
     for (int i {0}, size = data2.size(); i < size; i++)
         cout << data2.at(i) << ", ";
     cout << endl;

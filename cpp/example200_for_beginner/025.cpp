@@ -8,8 +8,8 @@ int main() {
     int x {10};
     int y {20};
 
-    bool is_x = true;
-    bool is_y = false;
+    bool is_x {true};
+    bool is_y {false};
 
     if (is_x == true && is_y == true)
         cout << "is_x && is_y = " << "true" << endl;

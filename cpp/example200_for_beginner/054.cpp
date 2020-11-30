@@ -1,3 +1,4 @@
+// 문자열 조회하기 (find)
 #include <iostream>
 
 using namespace std;

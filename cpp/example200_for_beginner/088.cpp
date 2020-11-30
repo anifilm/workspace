@@ -6,7 +6,7 @@ using namespace std;
 struct Princess {
     string name;
     string father;
-    string birthday {"알 수 없음"};
+    string birthday {"알수 없음"};
 } Goryeo[2];
 
 int main() {
@@ -21,13 +21,13 @@ int main() {
     Goryeo[1].name = "효정공주";
     Goryeo[1].father = "고려 현종";
 
-    cout << "== 조선 공주 ==" << endl;
+    cout << "=== 조선 공주 ===" << endl;
     cout << jungmyung.name << endl;
     cout << jungmyung.father << endl;
     cout << jungmyung.birthday << endl;
     cout << endl;
 
-    cout << "== 고려 공주 ==" << endl;
+    cout << "=== 고려 공주 ===" << endl;
     cout << Goryeo[0].name << endl;
     cout << Goryeo[0].father << endl;
     cout << Goryeo[0].birthday << endl;

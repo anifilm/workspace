@@ -6,9 +6,9 @@ using namespace std;
 
 int main() {
 
-    atomic<int> data1(10);
+    atomic<int> data1 {10};
 
-    int number = 20;
+    int number {20};
 
     bool is_exchange = data1.compare_exchange_weak(number, 30);
 
