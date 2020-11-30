@@ -25,4 +25,3 @@ fun main() {
     println("g == h ${g == h}")
     println("g === h ${g === h}")
 }
-

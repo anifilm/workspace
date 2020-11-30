@@ -10,4 +10,3 @@ fun main() {
         """
     println(formatedString.trimMargin("|"))
 }
-

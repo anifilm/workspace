@@ -21,5 +21,4 @@ fun main() {
 
     println("$exp01\n$exp02\n$exp03\n$exp04\n$exp05\n$exp06\n$exp07\n")
     println("$exp08\n$exp09\n$exp10\n$exp11\n$exp12\n$exp13\n$exp14\n$exp15")
-
 }

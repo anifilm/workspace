@@ -8,5 +8,4 @@ fun main() {
 
     val new = out   // 람다식이 들어 있는 변수를 다른 변수에 할당
     new ()
-
 }

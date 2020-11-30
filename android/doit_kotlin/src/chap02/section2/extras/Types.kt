@@ -27,6 +27,4 @@ fun main() {
     val num06 = -32768      // Int로 추론
     val num07 = 2147483647  // Int로 추론
     val num08 = 9223372036854775807 // Long으로 추론
-
-
 }

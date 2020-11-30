@@ -1,5 +1,5 @@
 // 인자에 일반 함수 사용해 보기
-package chap03.section3
+package chap03.section3.funcargs
 
 fun main() {
     val res1 = sum(3, 2)    // 일반 인자
