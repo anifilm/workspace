@@ -33,25 +33,25 @@ void quick_sort(int a[], int n) {
 
 int main() {
 
-        int i, nx;
-        int* x;         // 배열의 첫번째 요소에 대한 포인터
+    int i, nx;
+    int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-        puts("퀵 정렬");
-        printf("요소 개수: ");
-        scanf("%d", &nx);
-        x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    puts("퀵 정렬");
+    printf("요소 개수: ");
+    scanf("%d", &nx);
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
 
-        for (i = 0; i < nx; i++) {
-            printf("x[%d]: ", i);
-            scanf("%d", &x[i]);
-        }
+    for (i = 0; i < nx; i++) {
+        printf("x[%d]: ", i);
+        scanf("%d", &x[i]);
+    }
 
-        quick_sort(x, nx);  // 배열 x를 퀵 정렬 (배열, 요소수)
+    quick_sort(x, nx);  // 배열 x를 퀵 정렬 (배열, 요소수)
 
-        printf("\n오름차순으로 정렬했습니다.\n");
-        for (i = 0; i < nx; i++)
-            printf("x[%d] = %d\n", i, x[i]);
+    printf("\n오름차순으로 정렬했습니다.\n");
+    for (i = 0; i < nx; i++)
+        printf("x[%d] = %d\n", i, x[i]);
 
-        free(x);        // 배열 해제
-        return 0;
+    free(x);        // 배열 해제
+    return 0;
 }

@@ -38,25 +38,24 @@ void partition(int a[], int n) {
     putchar('\n');
 }
 
-
 int main() {
 
-        int i, nx;
-        int* x;         // 배열의 첫번째 요소에 대한 포인터
+    int i, nx;
+    int* x;         // 배열의 첫번째 요소에 대한 포인터
 
-        puts("배열을 나눕니다.");
-        printf("요소 개수: ");
-        scanf("%d", &nx);
-        x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
+    puts("배열을 나눕니다.");
+    printf("요소 개수: ");
+    scanf("%d", &nx);
+    x = (int*)calloc(nx, sizeof(int));    // 요소의 개수가 nx인 int형 배열을 생성
 
-        for (i = 0; i < nx; i++) {
-            printf("x[%d]: ", i);
-            scanf("%d", &x[i]);
-        }
-        putchar('\n');
+    for (i = 0; i < nx; i++) {
+        printf("x[%d]: ", i);
+        scanf("%d", &x[i]);
+    }
+    putchar('\n');
 
-        partition(x, nx);  // 배열 x를 분할
+    partition(x, nx);  // 배열 x를 분할
 
-        free(x);        // 배열 해제
-        return 0;
+    free(x);        // 배열 해제
+    return 0;
 }
