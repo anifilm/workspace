@@ -7,11 +7,9 @@ int main(void) {
     int i, n;
     int sum;
 
-    n = 7;
-
     puts("1부터 n까지의 합을 구합니다.");
     printf("n의 값: %d\n", n);
-    // scanf("%d", &n);
+    scanf("%d", &n);
 
     sum = 0;
 

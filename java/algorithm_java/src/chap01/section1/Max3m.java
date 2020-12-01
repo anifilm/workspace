@@ -1,5 +1,5 @@
 // 3개의 정수값 가운데 최대값을 구하여 출력합니다.
-package chap01;
+package chap01.section1;
 
 public class Max3m {
     // a, b, c의 최대값을 구하여 반환합니다.

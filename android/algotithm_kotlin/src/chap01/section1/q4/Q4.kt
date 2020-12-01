@@ -1,15 +1,22 @@
-/* Q5
-중앙값을 구하는 메서드는 다음과 같이 작성할 수도 있습니다. 그러나 실습 1C-1의
-med3 메서드에 비해 효율이 떨어지는데, 그 이유를 설명하세요.
+/* Q4
+세값의 대소 관계 13종류의 모든 조합에 대해 중앙값을 구하여 출력하는 프로그램을 작성하세요.
  */
-package chap01.q5
+package chap01.q4
 
 fun med3(a: Int, b: Int, c: Int): Int {
-    if ((b >= a && c <= a) || (b <= a && c >= a))
+    if (a >= b)
+        if (b >= c)
+            return b;
+        else if (a <= c)
+            return a;
+        else
+            return c;
+    else if (a > c)
         return a;
-    else if ((a > b && c < b) || (a < b && c > b))
+    else if (b > c)
+        return c;
+    else
         return b;
-    return c;
 }
 
 fun main() {

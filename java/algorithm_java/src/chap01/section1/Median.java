@@ -1,17 +1,22 @@
-/* Q5
-중앙값을 구하는 메서드는 다음과 같이 작성할 수도 있습니다. 그러나 실습 1C-1의
-med3 메서드에 비해 효율이 떨어지는데, 그 이유를 설명하세요.
- */
-package chap01;
+// 3개의 정수값을 입력하고 중앙값을 구한 다음 출력합니다.
+package chap01.section1;
 import java.util.Scanner;
 
-public class Q5 {
+public class Median {
     static int med3(int a, int b, int c) {
-        if ((b >= a && c <= a) || (b <= a && c >= a))
+        if (a >= b)
+            if (b >= c)
+                return b;
+            else if (a <= c)
+                return a;
+            else
+                return c;
+        else if (a > c)
             return a;
-        else if ((a > b && c < b) || (a < b && c > b))
+        else if (b > c)
+            return c;
+        else
             return b;
-        return c;
     }
 
     public static void main(String[] args) {

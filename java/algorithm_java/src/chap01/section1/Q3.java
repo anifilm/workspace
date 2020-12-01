@@ -2,7 +2,7 @@
 네값의 최소값을 구하는 min4 메서드를 작성하세요.
 static int min4(int a, int b, int c, int d)
  */
-package chap01;
+package chap01.section1;
 
 public class Q3 {
     // a, b, c, d의 최소값을 구하여 반환합니다.

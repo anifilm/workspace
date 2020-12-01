@@ -1,24 +1,17 @@
-/* Q4
-세값의 대소 관계 13종류의 모든 조합에 대해 중앙값을 구하여 출력하는 프로그램을 작성하세요.
+/* Q5
+중앙값을 구하는 메서드는 다음과 같이 작성할 수도 있습니다. 그러나 실습 1C-1의
+med3 메서드에 비해 효율이 떨어지는데, 그 이유를 설명하세요.
  */
-package chap01;
+package chap01.section1;
 import java.util.Scanner;
 
-public class Q4 {
+public class Q5 {
     static int med3(int a, int b, int c) {
-        if (a >= b)
-            if (b >= c)
-                return b;
-            else if (a <= c)
-                return a;
-            else
-                return c;
-        else if (a > c)
+        if ((b >= a && c <= a) || (b <= a && c >= a))
             return a;
-        else if (b > c)
-            return c;
-        else
+        else if ((a > b && c < b) || (a < b && c > b))
             return b;
+        return c;
     }
 
     public static void main(String[] args) {

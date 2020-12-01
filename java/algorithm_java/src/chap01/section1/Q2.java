@@ -2,7 +2,7 @@
 세값의 최소값을 구하는 min3 메서드를 작성하세요.
 static int min3(int a, int b, int c)
  */
-package chap01;
+package chap01.section1;
 
 public class Q2 {
     // a, b, c의 최소값을 구하여 반환합니다.

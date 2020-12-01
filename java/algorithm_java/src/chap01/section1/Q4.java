@@ -1,8 +1,10 @@
-// 3개의 정수값을 입력하고 중앙값을 구한 다음 출력합니다.
-package chap01;
+/* Q4
+세값의 대소 관계 13종류의 모든 조합에 대해 중앙값을 구하여 출력하는 프로그램을 작성하세요.
+ */
+package chap01.section1;
 import java.util.Scanner;
 
-public class Median {
+public class Q4 {
     static int med3(int a, int b, int c) {
         if (a >= b)
             if (b >= c)

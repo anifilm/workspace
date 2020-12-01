@@ -1,7 +1,5 @@
-/* Q4
-세값의 대소 관계 13종류의 모든 조합에 대해 중앙값을 구하여 출력하는 프로그램을 작성하세요.
- */
-package chap01.q4
+// 3개의 정수값을 입력하고 중앙값을 구한 다음 출력합니다.
+package chap01
 
 fun med3(a: Int, b: Int, c: Int): Int {
     if (a >= b)
