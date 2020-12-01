@@ -1,7 +1,7 @@
+// 3개의 정수값을 입력하고 최대값을 구합니다.
 package chap01;
 import java.util.Scanner;
 
-// 3개의 정수값을 입력하고 최대값을 구합니다.
 public class Max3 {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
