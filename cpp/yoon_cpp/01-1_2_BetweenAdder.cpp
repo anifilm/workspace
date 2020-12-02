@@ -1,3 +1,4 @@
+// 관찰결과 2: C++의 지역변수 선언
 #include <iostream>
 
 int main() {

@@ -53,7 +53,6 @@ INTEN_NO = 1
 
 
     def __init__(self):
-
         # 변수명은 소문자로, 가능한 밑줄이 없는
         self.note = ''
 

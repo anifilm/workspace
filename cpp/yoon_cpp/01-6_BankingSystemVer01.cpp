@@ -1,7 +1,7 @@
 /*
 Banking System Ver 0.1
 작성자: 임채영
-내 용 : OOP 단계별 프로젝트의 기본 틀 구성
+내  용: OOP 단계별 프로젝트의 기본 틀 구성
 */
 #include <iostream>
 #include <cstring>

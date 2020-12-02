@@ -1,7 +1,7 @@
 /*
 Banking System Ver 0.2
 작성자: 임채영
-내 용 : Account 클래스 정의, 객체 포인터 배열 적용
+내  용: Account 클래스 정의, 객체 포인터 배열 적용
 */
 #include <iostream>
 #include <cstring>
