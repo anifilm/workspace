@@ -39,7 +39,7 @@ _클래스 내부에서 사용되는 함수의 경우 함수명 앞에 밑줄을
 타입 변수의 이름은 짧은 CapWords 방식을 사용합니다.<br>
 (기본 int, string, list, dic 객체외 다른 객체변수라고 보면 됨)
 
-<br><br><br>
+<br>
 
 ``` Python
 #클래스명은 CapWords
@@ -78,5 +78,6 @@ if __name__ == "__main__":
 
 ```
 
+<br>
 
 출처: https://cardin.tistory.com/entry/파이썬-PEF-8-변수명-규칙 [人生襍多]
