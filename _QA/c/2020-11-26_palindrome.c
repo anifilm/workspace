@@ -1,7 +1,9 @@
-// https://cafe.naver.com/cstudyjava/127102
-// 회문 이용
-// 도도도도도토리 2020.11.26.
-// 문자열 받으면 길이랑 회문인지 아닌지 판단하는거 코드 짰는데
+/*
+https://cafe.naver.com/cstudyjava/127102
+회문 이용
+도도도도도토리 2020.11.26.
+문자열 받으면 길이랑 회문인지 아닌지 판단하는거 코드 짰는데
+*/
 #include <stdio.h>
 #include <string.h>
 
