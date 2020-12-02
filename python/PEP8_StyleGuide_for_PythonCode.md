@@ -1,7 +1,9 @@
 PEP 8 -- Style Guide for Python Code
+
 참고 : https://www.python.org/dev/peps/pep-0008/
 
 ## 변수명 규칙
+
 
 ### 패키지와 모듈의 이름
 
