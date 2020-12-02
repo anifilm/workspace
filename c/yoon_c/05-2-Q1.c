@@ -13,15 +13,15 @@
 int main() {
 
     int lx, ly, rx, ry;
-    int result;
+    int area;
 
     printf("좌 상단의 x, y좌표: ");
     scanf("%d %d", &lx, &ly);
     printf("우 하단의 x, y좌표: ");
     scanf("%d %d", &rx, &ry);
 
-    result = (rx - lx) * (ry - ly);
-    printf("두 점이 이루는 직사각형의 넓이는 %d입니다.\n", result);
+    area = (rx - lx) * (ry - ly);
+    printf("두 점이 이루는 직사각형의 넓이는 %d입니다.\n", area);
 
     return 0;
 }

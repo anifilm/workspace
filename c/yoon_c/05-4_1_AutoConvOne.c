@@ -1,3 +1,4 @@
+// 대입연산의 전달과정에서 발생하는 자동 형 변환
 #include <stdio.h>
 
 int main() {

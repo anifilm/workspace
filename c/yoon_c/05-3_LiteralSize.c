@@ -1,3 +1,4 @@
+// 리터럴 상수의 자료형
 #include <stdio.h>
 
 int main() {

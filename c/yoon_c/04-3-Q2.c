@@ -13,7 +13,7 @@ int main() {
     int num1 = 3, num2 = 8, num3 = 4;
     int result;
 
-    // result = num1 * num2 / num3;
+//  result = num1 * num2 / num3;
     result = (num1 << 3) >> 2;
 
     printf("%d x %d ÷ %d = %d\n", num1, num2, num3, result);
