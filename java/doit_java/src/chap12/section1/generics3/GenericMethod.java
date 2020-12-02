@@ -1,7 +1,5 @@
 package chap12.section1.generics3;
 
-import generics.GenericPrinter;
-
 public class GenericMethod {
     public static <T, V> double makeRectiangle(Point<T, V> p1, Point<T, V> p2) {
         double left = ((Number)p1.getX()).doubleValue();

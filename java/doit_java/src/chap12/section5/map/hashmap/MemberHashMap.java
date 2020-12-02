@@ -1,8 +1,8 @@
 // HashMap 활용하기
 package chap12.section5.map.hashmap;
-import map.Member;
 import java.util.HashMap;
 import java.util.Iterator;
+import chap12.section5.map.Member;
 
 public class MemberHashMap {
     private HashMap<Integer, Member> hashMap;

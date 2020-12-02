@@ -1,8 +1,8 @@
 // TreeMap 활용하기
 package chap12.section5.map.treemap;
-import map.Member;
 import java.util.TreeMap;
 import java.util.Iterator;
+import chap12.section5.map.Member;
 
 public class MemberTreeMap {
     private TreeMap<Integer, Member> treeMap;

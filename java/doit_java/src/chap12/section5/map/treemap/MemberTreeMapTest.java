@@ -1,6 +1,6 @@
 // TreeMap 활용하기
 package chap12.section5.map.treemap;
-import map.Member;
+import chap12.section5.map.Member;
 
 public class MemberTreeMapTest {
     public static void main(String[] args) {

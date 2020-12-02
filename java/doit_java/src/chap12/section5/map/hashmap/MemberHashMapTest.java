@@ -1,6 +1,6 @@
 // HahsMap 활용하기
 package chap12.section5.map.hashmap;
-import map.Member;
+import chap12.section5.map.Member;
 
 public class MemberHashMapTest {
     public static void main(String[] args) {
