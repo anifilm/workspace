@@ -69,3 +69,6 @@ if __name__ == "__main__":
     print(eMsg.note)
 
 ```
+
+
+출처: https://cardin.tistory.com/entry/파이썬-PEF-8-변수명-규칙 [人生襍多]
