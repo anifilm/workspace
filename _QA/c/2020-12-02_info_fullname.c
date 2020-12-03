@@ -10,7 +10,7 @@ typedef struct Info {
 
 int main() {
 
-    FILE* fp = fopen("./2020-12-02_Info.txt", "rt");
+    FILE* fp = fopen("./2020-12-02_info.txt", "rt");
     Info info[3];
 
     char temp_name[20], temp_chr;
@@ -28,15 +28,17 @@ int main() {
         // printf("%s\n", temp_name);   // 확인용
         strcpy(info[i].name, temp_name);// 문자열 배열의 이름을 info[i].name에 복사
 
-        fseek(fp, -1, SEEK_CUR);        // 파일 포인터의 커서 위치가 나이까지 진행되었기 때문에
+        fseek(fp, -1, SEEK_CUR);         // 파일 포인터의 커서 위치가 나이까지 진행되었기 때문에
                                         // 한칸 이전으로 되돌림
         // 나머지 내용은 서식으로 받음
         fscanf(fp, "%d %s %s", &info[i].age, &info[i].sex, &info[i].city);
+
+        fgetc(fp);  // 개행문자 하나를 버립니다. (중요!)
     }
 
-    // 저장 내용 확인용
+    //저장 내용 확인용
     for (i = 0; i < 3; i++)
-        printf("%s %d %s %s", info[i].name, info[i].age, info[i].sex, info[i].city);
+        printf("%s %d %s %s\n", info[i].name, info[i].age, info[i].sex, info[i].city);
 
     fclose(fp);
     return 0;
