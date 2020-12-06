@@ -7,7 +7,7 @@
 
 int main() {
 
-    int num, i = 1;
+    int num, i = 0;
 
     printf("정수를 입력: ");
     scanf("%d", &num);

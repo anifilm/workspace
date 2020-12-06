@@ -9,8 +9,9 @@
 
 int main() {
 
-    int num, i = 0, sum = 0;
+    int i, num, sum = 0;
 
+    i = 0;
     while (i < 5) {
         num = 0;
         while (num < 1) {

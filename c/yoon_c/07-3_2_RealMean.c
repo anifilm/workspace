@@ -3,9 +3,9 @@
 
 int main() {
 
-    double total = 0.0;
-    double input = 0.0;
     int num = 0;
+    double input = 0.0;
+    double total = 0.0;
 
     for ( ; input >= 0.0; ) {
         total += input;

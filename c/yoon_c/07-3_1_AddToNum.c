@@ -3,8 +3,8 @@
 
 int main() {
 
-    int total = 0;
     int i, num;
+    int total = 0;
 
     printf("0부터 num까지의 덧셈, num은? ");
     scanf("%d", &num);

@@ -9,7 +9,7 @@
 
 int main() {
 
-    int num, fac = 1, i;
+    int num, i, fac = 1;
 
     printf("정수를 입력: ");
     scanf("%d", &num);

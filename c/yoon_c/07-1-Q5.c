@@ -16,6 +16,7 @@ int main() {
     printf("몇 개의 정수를 입력? ");
     scanf("%d", &num_of_int);
 
+    i = 0;
     while (i < num_of_int) {
         printf("정수를 입력: ");
         scanf("%d", &num);

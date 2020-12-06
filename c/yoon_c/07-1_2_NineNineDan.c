@@ -3,11 +3,12 @@
 
 int main() {
 
-    int dan = 0, num = 1;
+    int dan, num;
 
     printf("몇 단? ");
     scanf("%d", &dan);
 
+    num = 0;
     while (num < 10) {
         printf("%d x %d = %d\n", dan, num, dan * num);
         num++;

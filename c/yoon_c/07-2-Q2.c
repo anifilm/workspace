@@ -7,7 +7,7 @@
 
 int main() {
 
-    int total = 0, num = 0;
+    int num = 0, total = 0;
 
     do {
         total += num;

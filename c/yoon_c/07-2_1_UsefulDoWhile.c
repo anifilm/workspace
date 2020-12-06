@@ -3,7 +3,7 @@
 
 int main() {
 
-    int total = 0, num = 0;
+    int num = 0, total = 0;
 
     do {
         printf("정수 입력(0 to quit): ");

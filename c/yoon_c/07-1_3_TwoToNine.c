@@ -3,9 +3,9 @@
 
 int main() {
 
-    int cur = 2;
-    int is = 0;
+    int cur, is;
 
+    cur = 2;
     while (cur < 10) { // 2단부터 9단까지 반복
         is = 1;        // 새로운 단의 시작을 위해서
         while (is < 10) {     // 각 단의 1부터 9의 곱을 표현
