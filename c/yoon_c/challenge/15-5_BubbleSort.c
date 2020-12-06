@@ -6,15 +6,16 @@
 */
 #include <stdio.h>
 
-#define swap(type, x, y) do { type t = x; x = y; y = t; } while (0)
-
-// 버블 정렬 함수
+// 버블 정렬 함수 (오름차순 정렬)
 void BubbleSort(int a_arr[], int len) {
-    int i, j;
+    int i, j, temp;
     for (i = 0; i < len - 1; i++) {
-        for (j = len - 1; j > i; j--) {
-            if (a_arr[j - 1] > a_arr[j])
-                swap(int, a_arr[j - 1], a_arr[j]);
+        for (j = 0; j < (len - 1) - i; j++) {
+            if (a_arr[j] > a_arr[j + 1]) {
+                temp = a_arr[j];
+                a_arr[j] = a_arr[j + 1];
+                a_arr[j + 1] = temp;
+            }
         }
     }
 }
