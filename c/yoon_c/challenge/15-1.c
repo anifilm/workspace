@@ -18,6 +18,7 @@
 입력: 8
 입력: 9
 입력: 0
+
 홀수 출력: 1, 3, 5, 7, 9
 짝수 출력: 2, 4, 6, 8, 0
 */
@@ -48,7 +49,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    printf("홀수 출력: ");
+    printf("\n홀수 출력: ");
     PrintOdd(arr, length);
 
     printf("짝수 출력: ");
