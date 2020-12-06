@@ -29,9 +29,9 @@ int main() {
 
     printf("입력된 배열의 요소\n");
     printf("[");
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 5; i++)
         printf("%d, ", arr[i]);
-    printf("%d]\n\n", arr[i]);
+    printf("\b\b]\n\n", arr[i]);
 
     max = arr[0];
     for (i = 1; i < 5; i++)

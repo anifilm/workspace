@@ -14,7 +14,7 @@ int main() {
         if (num_list[i] < min) min = num_list[i];
         if (num_list[i] > max) max = num_list[i];
     }
-    printf("\n");
+    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
 
     printf("최소값: %d, 최대값: %d\n", min, max);
 

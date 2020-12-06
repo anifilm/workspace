@@ -3,34 +3,34 @@
 
 int main() {
 
-	int count, i, sum = 0;
+    int count, i, sum = 0;
 
-	printf("몇 개의 정수를 입력 하시겠습니까?: ");
-	scanf("%d", &count);
+    printf("몇 개의 정수를 입력 하시겠습니까?: ");
+    scanf("%d", &count);
 
-	int num[count];
+    int num[count];
 
-	for (i = 0; i < count; i++) {
-		printf("%d번째 정수 입력: ", i + 1);
-		scanf("%d", &num[i]);
-	}
+    for (i = 0; i < count; i++) {
+        printf("%d번째 정수 입력: ", i + 1);
+        scanf("%d", &num[i]);
+    }
 
-	printf("\n입력된 값 확인: ");
-	for (i = 0; i < count - 1; i++) {
-		printf("%d, ", num[i]);
-	}
-	printf("%d\n", num[i]);
+    printf("\n입력된 값 확인: ");
+    for (i = 0; i < count; i++) {
+        printf("%d, ", num[i]);
+    }
+    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
 
-	printf("\n입력된 값을 모두 합산 합니다.\n");
-	for (i = 0; i < count; i++) {
-		printf("%d", num[i]);
-		sum += num[i];
-		if (i < count - 1)
-			printf(" + ");
-		else
-			printf(" = ");
-	}
-	printf("%d\n", sum);
+    printf("\n입력된 값을 모두 합산 합니다.\n");
+    for (i = 0; i < count; i++) {
+        printf("%d", num[i]);
+        sum += num[i];
+        if (i < count - 1)
+            printf(" + ");
+        else
+            printf(" = ");
+    }
+    printf("%d\n", sum);
 
-	return 0;
+    return 0;
 }

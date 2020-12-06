@@ -4,19 +4,19 @@
 
 int main() {
 
-	int temp, i, count = 0, num[MAX];
+    int temp, i, count = 0, num[MAX];
 
-	while (count < MAX) {
-		printf("Input Data (Exit -> 9999): ");
-		scanf("%d", &temp);
-		if (temp == 9999) break;
-		num[count++] = temp;
-	}
-	printf("\n");
-	
-	for (i = 0; i < count - 1; i++)
-		printf("%d, ", num[i]);
-	printf("%d\n", num[i]);
+    while (count < MAX) {
+        printf("Input Data (Exit -> 9999): ");
+        scanf("%d", &temp);
+        if (temp == 9999) break;
+        num[count++] = temp;
+    }
+    printf("\n");
 
-	return 0;
+    for (i = 0; i < count; i++)
+        printf("%d, ", num[i]);
+    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+
+    return 0;
 }

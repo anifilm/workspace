@@ -3,22 +3,20 @@
 
 int main() {
 
-	int begin, end, sum = 0;
+    int begin, end, sum = 0;
 
-	printf("Begin: ");
-	scanf("%d", &begin);
-	printf("End: ");
-	scanf("%d", &end);
+    printf("Begin: ");
+    scanf("%d", &begin);
+    printf("End: ");
+    scanf("%d", &end);
 
-	for ( ; begin < end; begin++) {
-		printf("%d, ", begin);
-		sum += begin;
-	}
-	// 마지막 숫자는 콤마 없는 출력을 위해서 이렇게 함
-	printf("%d\n", begin);
-	sum += begin;
+    for ( ; begin <= end; begin++) {
+        printf("%d, ", begin);
+        sum += begin;
+    }
+    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
 
-	printf("Sum = %d\n", sum);
+    printf("Sum = %d\n", sum);
 
-	return 0;
+    return 0;
 }

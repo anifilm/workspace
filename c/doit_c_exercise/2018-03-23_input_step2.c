@@ -3,38 +3,38 @@
 #define MAX 100		// 정수값은 최대 100개 까지 저장
 
 void DisplayList(int a_data[], int a_count) {
-	int i;
-	for (i = 0; i < a_count - 1; i++)
-		printf("%d, ", a_data[i]);
-	printf("%d\n", a_data[i]);
+    int i;
+    for (i = 0; i < a_count; i++)
+        printf("%d, ", a_data[i]);
+    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
 }
 
 void InsertData(int a_data[], int a_count, int a_num) {
-	int i, j;
-	for (i = 0; i < a_count; i++)
-		if (a_num < a_data[i]) break;
+    int i, j;
+    for (i = 0; i < a_count; i++)
+        if (a_num < a_data[i]) break;
 
-	for (j = a_count; j > i; j--)
-		a_data[j] = a_data[j - 1];
+    for (j = a_count; j > i; j--)
+        a_data[j] = a_data[j - 1];
 
-	a_data[i] = a_num;
+    a_data[i] = a_num;
 }
 
 int main() {
 
-	int temp, count = 0, num[MAX];
+    int temp, count = 0, num[MAX];
 
-	while (count < MAX) {
-		printf("Input Data (Exit -> 9999): ");
-		scanf("%d", &temp);
-		if (temp == 9999) break;
-		InsertData(num, count, temp);
-		count++;
-		DisplayList(num, count);
-	}
-	printf("\n");
+    while (count < MAX) {
+        printf("Input Data (Exit -> 9999): ");
+        scanf("%d", &temp);
+        if (temp == 9999) break;
+        InsertData(num, count, temp);
+        count++;
+        DisplayList(num, count);
+    }
+    printf("\n");
 
-	DisplayList(num, count);
+    DisplayList(num, count);
 
-	return 0;
+    return 0;
 }
