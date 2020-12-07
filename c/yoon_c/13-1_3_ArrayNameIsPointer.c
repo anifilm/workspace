@@ -4,7 +4,7 @@
 int main() {
 
     int arr[3] = {15, 25, 35};
-    int* ptr = &arr[0];    // int* ptr = arr; 과 동일한 문장
+    int* ptr = &arr[0];    // int* ptr = arr; 와 같은 의미
 
     printf("%d %d\n", ptr[0], arr[0]);
     printf("%d %d\n", ptr[1], arr[1]);

@@ -4,7 +4,7 @@
 Swap3라 하면, 다음 형태로 함수가 호출되어야 한다.
   Swap(&num1, &num2, &num3);
 
-그리고 함수 호출릐 결과로 num1에 저장된 값은 num2에, num2에 저장된 값은 num3에,
+그리고 함수 호출의 결과로 num1에 저장된 값은 num2에, num2에 저장된 값은 num3에,
 그리고 num3에 저장된 값은 num1에 저장되어야 한다.
 */
 #include <stdio.h>
