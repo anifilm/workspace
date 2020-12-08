@@ -8,7 +8,7 @@ int main() {
     int* ptr2 = &num2;
     int* ptr3 = &num3;
 
-    int* ptrArr[] = {ptr1, ptr2, ptr3};
+    int* ptrArr[3] = {ptr1, ptr2, ptr3};
     int** dptr = ptrArr;
 
     printf("%d %d %d\n", *(ptrArr[0]), *(ptrArr[1]), *(ptrArr[2]));
