@@ -62,11 +62,10 @@ print(result)       # 3
 list_b = [1, 2, 3, 1]
 result = list_b.count(1)    # 리스트에 있는 값 1의 개수를 반환
 print(result)       # 2
-"""
-리스트의 전체 요소의 개수는 len() 함수를 사용하여 알 수 있다
-list_b_len = len(list_b)    # 4
 
-"""
+# 리스트 길이 구하기 (리스트 전체 요소의 개수는 len() 함수를 사용하여 알 수 있다)
+list_b_len = len(list_b)
+print(list_b_len)   # 4
 
 # 리스트 확장 (extend)
 list_a = [1, 2, 3]
