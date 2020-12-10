@@ -1,6 +1,6 @@
 /*
 Q5
-StudentTest의 출력 결과가 다음처럼 나오도록 Student 클래스를 구현해 보세요.
+StudentTest의 출력 결과가 다음처럼 나오도록 chap16.school.Student 클래스를 구현해 보세요.
  */
 package chap12.exercise.Q5;
 

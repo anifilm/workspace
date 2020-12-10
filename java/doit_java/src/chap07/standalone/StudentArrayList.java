@@ -1,8 +1,8 @@
 /*
 나 혼자 코딩!
 ArrayList 활용하기
-211쪽의 <나 혼자 코딩>에서 만든 Student 클래스를 이용하여 StudentArrayList 클래스를
-만들고 ArrayList<Student> 자료형의 ArrayList를 선언합니다. ArrayList에 학생 3명을
+211쪽의 <나 혼자 코딩>에서 만든 chap16.school.Student 클래스를 이용하여 StudentArrayList 클래스를
+만들고 ArrayList<chap16.school.Student> 자료형의 ArrayList를 선언합니다. ArrayList에 학생 3명을
 추가하고 그 정보를 출력하세요. 출력 결과는 다음과 같습니다.
  */
 package chap07.standalone;
