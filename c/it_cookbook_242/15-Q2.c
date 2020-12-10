@@ -4,7 +4,7 @@
 // 을 Reverse Polish Notation이라고도 한다). 프로그래머가 수식을 표현할 때는 중위 표현을
 // 사용하지만 이는 컴파일러에 의해 후위 표현으로 바뀌어 실행된다.
 
-// "(2 + 5) * 3 - 1"이라는 중위 표현은 컴파일러에 의해 "2 5 + 3 * 1 -"라는 우휘 표현으로
+// "(2 + 5) * 3 - 1"이라는 중위 표현은 컴파일러에 의해 "2 5 + 3 * 1 -"라는 후위 표현으로
 // 바뀌고, 이 과정에서 괄호가 제거된다. 이 후위 표현으로 연산을 실행해 보라. 그림에서 보듯
 // 연산 규칙은 단순하다. "2 5 + 3 * 1 -"을 순차적으로 읽으면서 언제든 피연산자 들어오면
 // 스택에 푸시한다. 단, 그림처럼 먼저 팝된 피연산자가 2항 연산자의 오른쪽에 있어야 한다.
@@ -51,7 +51,54 @@ int pop(stackType* sp) {
 
 int main() {
 
+    const char* input = "4 1 + 6 5 - * 3 2 - 7 7 + * /";
+    char str_num[1];
+    int i, num, num1, num2;
+    stackType mystack;
 
+    init(&mystack);
+    while (1) {
+        if (input[i] == '\n') break;
+        else if (input[i] == ' ') {
+            i++;
+            continue;
+        }
+        if (input[i] >= '0' && input[i] <= '9') {
+            str_num[0] = input[i];
+            num = atoi(str_num);
+            // printf("%d\n", num);
+            push(&mystack, num);
+        }
+        else if (input[i] == '+') {
+            num2 = pop(&mystack);
+            num1 = pop(&mystack);
+            // printf("%d %d\n", num1, num2);
+            push(&mystack, num1 + num2);
+        }
+        else if (input[i] == '-') {
+            num2 = pop(&mystack);
+            num1 = pop(&mystack);
+            // printf("%d %d\n", num1, num2);
+            push(&mystack, num1 - num2);
+        }
+        else if (input[i] == '*') {
+            num2 = pop(&mystack);
+            num1 = pop(&mystack);
+            // printf("%d %d\n", num1, num2);
+            push(&mystack, num1 * num2);
+        }
+        else if (input[i] == '/') {
+            num2 = pop(&mystack);
+            num1 = pop(&mystack);
+            // printf("%d %d\n", num1, num2);
+            push(&mystack, num1 / num2);
+        }
+        i++;
+    }
+
+    while (!is_empty(&mystack))
+        printf("%d", pop(&mystack));
+    printf("\n");
 
     return 0;
 }

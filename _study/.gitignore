@@ -1,0 +1,5 @@
+*.o
+*.gch
+*.class
+*.exe
+*.url
