@@ -42,4 +42,5 @@ int strncmp(const char* s2, const char* s2, size_t n);
  - s1 == s2인 경우 0 반환
  - s1 > s2인 경우  1 반환 (양수)
  - s2 < s2인 경우 -1 반환 (음수)
+
 */

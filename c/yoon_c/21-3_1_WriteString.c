@@ -11,8 +11,8 @@ int main() {
 
     printf("\n2. fputs test -----\n");
 
-    fputs(str, stdout);  printf("\n");
-    fputs("So Simple String", stdout);  printf("\n");
+    fputs(str, stdout); printf("\n");
+    fputs("So Simple String", stdout); printf("\n");
 
     printf("\n3. end of main ----\n");
 
