@@ -1,10 +1,10 @@
 # 연결 리스트(Linked List) 자료구조
-class Node:     # 연결 리스트를 구성하는 단위 데이터의 모습은 data+다음 데이터
-    def __init__(self, data, next = None):
+class Node:     # 연결 리스트를 구성하는 단위 데이터의 모습은 data + 다음 데이터
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
-def init():     # 연결 리스트를 생성한다. node 1 ~ node 4 그리고 연결 포인터 구성
+def init():     # 연결 리스트를 생성한다. node1 ~ node4 그리고 연결 포인터 구성
     global node1
     node1 = Node(1)
     node2 = Node(2)
@@ -42,7 +42,7 @@ def print_list():       # 연결 리스트의 데이터를 출력한다.
     global node1
     node = node1
     while node:
-        print (node.data)
+        print(node.data)
         node = node.next
     print()
 
@@ -52,5 +52,6 @@ def LinkedList():
     delete(2)
     insert("9")
     print_list()
+
 
 LinkedList()    # LinkedList를 수행하라.
