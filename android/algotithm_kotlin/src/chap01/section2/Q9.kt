@@ -3,4 +3,3 @@
 static int sumof(int a, int b)
  */
 package chap01.section2
-
