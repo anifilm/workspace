@@ -11,7 +11,6 @@ typedef enum language {
     Java,
     Kotlin,
     JavaScript,
-    TypeScript,
     Rust
 } Language;
 
@@ -31,8 +30,6 @@ void SelLanguage(int lang) {
             puts("Kotlin을 선택하였습니다."); return;
         case JavaScript:
             puts("JavaScript를 선택하였습니다."); return;
-        case TypeScript:
-            puts("TypeScript를 선택하였습니다."); return;
         case Rust:
             puts("Rust를 선택하였습니다."); return;
     }
