@@ -37,35 +37,35 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작
 1
 
 */
-const readline = require("readline")
+const readline = require("readline");
 const rl = readline.createInterface({
     input: process.stdin, output: process.stdout
-    })
+    });
 rl.on("line", function(line) {
-    plusCycle(line)
-    rl.close()
+    plusCycle(line);
+    rl.close();
     })
     .on("close", function() {
-    process.exit()
-})
+    process.exit();
+});
 
 function plusCycle(n) {
-    let check = n
-    var count = 1
+    var check = n;
+    var count = 1;
     while (1) {
-        n = calCycle(n)
-        if (check == n) break
-        count++
+        n = calCycle(n);
+        if (check == n) break;
+        count++;
     }
-    console.log(count)
+    console.log(count);
 }
 
 function calCycle(n) {
-    var b1 = n % 10
-    n /= 10
-    var b2 = Math.floor(n) % 10
+    var b1 = n % 10;
+    n /= 10;
+    var b2 = Math.floor(n) % 10;
     if (b1 + b2 >= 10)
-        return (b1 * 10) + ((b1 + b2) % 10)
+        return (b1 * 10) + ((b1 + b2) % 10);
     else
-        return (b1 * 10) + (b1 + b2)
+        return (b1 * 10) + (b1 + b2);
 }

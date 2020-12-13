@@ -32,17 +32,17 @@ A와 B가 같은 경우에는 '=='를 출력한다.
 ==
 
 */
-import fs = require('fs')
-var input = fs.readFileSync('/dev/stdin').toString().split(' ')
-var a = parseInt(input[0])
-var b = parseInt(input[1])
+var fs = require('fs');
+var input = fs.readFileSync('/dev/stdin').toString().split(' ');
+var a = parseInt(input[0]);
+var b = parseInt(input[1]);
 
 if (a < b) {
-    console.log("<")
+    console.log("<");
 }
 else if (a > b) {
-    console.log(">")
+    console.log(">");
 }
 else {
-    console.log("==")
+    console.log("==");
 }
