@@ -47,8 +47,8 @@ func main() {
     n /= 10
     b3 = n % 10
 
-    fmt.Printf("%d\n", a*b1)
-    fmt.Printf("%d\n", a*b2)
-    fmt.Printf("%d\n", a*b3)
-    fmt.Printf("%d\n", a*b)
+    fmt.Println(a * b1)
+    fmt.Println(a * b2)
+    fmt.Println(a * b3)
+    fmt.Println(a * b)
 }

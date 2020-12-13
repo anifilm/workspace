@@ -1,8 +1,8 @@
 #include <iostream>
-using namespace std;
+
 int main() {
-    auto a=0, b=0;
-    cin >> a >> b;
-    cout << a+b << endl;
+    int a = 0, b = 0;
+    std::cin >> a >> b;
+    std::cout << a + b << std::endl;
     return 0;
 }
