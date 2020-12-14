@@ -24,8 +24,8 @@ int main() {
 
         // 입력 버퍼를 지우는 다양한 방법
         while (getchar() != '\n');
-    //  fflush(stdin);
     //  rewind(stdin);
+    //  fflush(stdin);  /* 사용을 권장하지 않는다. */
     }
 
     return 0;

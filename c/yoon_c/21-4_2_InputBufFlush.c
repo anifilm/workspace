@@ -3,8 +3,8 @@
 // 입력 버퍼를 지우는 다양한 방법
 void ClearLineFromReadBuffer() {
     while (getchar() != '\n');
-//  fflush(stdin);
 //  rewind(stdin);
+//  fflush(stdin);  /* 사용을 권장하지 않는다. */
 }
 
 int main() {
