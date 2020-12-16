@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 
-    string str1 {"10"};
-    string str2 {"2.456"};
-    string str3 {"789 문자열"};
+    string str1 = "10";
+    string str2 = "2.456";
+    string str3 = "789 문자열";
 
     int num1 = stoi(str1);
     // int num2 = stoi(str2);

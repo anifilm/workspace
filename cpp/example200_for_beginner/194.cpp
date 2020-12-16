@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
 
-    string str {"Jolbon Buyeo was the predecessor to Goguryeo, and in 538, Beakje renamed itself Nambuyeo (South Buyeo)"};
+    string str = "Jolbon Buyeo was the predecessor to Goguryeo, and in 538, Beakje renamed itself Nambuyeo (South Buyeo)";
 
-    regex reg {"([A-Za-z]+)"};
+    regex reg("([A-Za-z]+)");
 
     auto start = sregex_iterator(str.begin(), str.end(), reg);
     auto end = sregex_iterator();

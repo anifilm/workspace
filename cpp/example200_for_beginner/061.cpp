@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    string sentence {"I like C++ Programming."};
+    string sentence = "I like C++ Programming.";
     sentence.erase(remove(sentence.begin(), sentence.end(), ' '), sentence.end());
 
     cout << sentence << endl;

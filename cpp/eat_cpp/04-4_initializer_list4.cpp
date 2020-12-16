@@ -25,20 +25,20 @@ public:
     ~Marine() {total_marine_num--;}
 };
 
-int Marine::total_marine_num {0};
+int Marine::total_marine_num = 0;
 
 Marine::Marine()
-    : coord_x {0}, coord_y {0}, hp {50}, default_damage {5}, is_dead {false} {
+    : coord_x(0), coord_y(0), hp(50), default_damage(5), is_dead(false) {
         total_marine_num++;
 }
 
 Marine::Marine(int x, int y)
-    : coord_x {x}, coord_y {y}, hp {50}, default_damage {5}, is_dead {false} {
+    : coord_x(x), coord_y(y), hp(50), default_damage(5), is_dead(false) {
         total_marine_num++;
 }
 
 Marine::Marine(int x, int y, int default_damage)
-    : coord_x {x}, coord_y {y}, hp {50}, default_damage {default_damage}, is_dead {false} {
+    : coord_x(x), coord_y(y), hp(50), default_damage(default_damage), is_dead(false) {
         total_marine_num++;
 }
 
@@ -68,7 +68,7 @@ void create_marine() {
 
 int main() {
 
-    Marine marine1(2 ,3, 10);
+    Marine marine1(2, 3, 10);
     marine1.show_status();
 
     Marine marine2(3, 5, 10);

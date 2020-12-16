@@ -32,8 +32,8 @@ double Complex::get_number(const char* str, int from, int to) const {
     if (str[from] == '-') minus = true;
     if (str[from] == '-' || str[from] == '+') from++;
 
-    double num {0.0};
-    double decimal {1.0};
+    double num = 0.0;
+    double decimal = 1.0;
 
     bool integer_part = true;
     for (int i = from; i <= to; i++) {

@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
 
-    double x {1.2345};
-    double div{}, mod{};
+    double x = 1.2345;
+    double div = 0, mod = 0;
 
     mod = modf(x, &div);
 

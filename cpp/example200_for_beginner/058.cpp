@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    string sentence {"I C++ Programming."};
+    string sentence = "I C++ Programming.";
     sentence.insert(2, "like ");
     cout << sentence << endl;
 

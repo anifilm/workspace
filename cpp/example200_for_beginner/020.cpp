@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int x {10};
-    int y {6};
+    int x = 10;
+    int y = 6;
     bool is_true = false;
 
     if (x > y)

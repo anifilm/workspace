@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 
-    int number1 {100};
-    int number2 {200};
-    int number3 {300};
+    int number1 = 100;
+    int number2 = 200;
+    int number3 = 300;
 
     if (number1 > number2 && number1 > number3)
         cout << "가장 큰 수 number1: " << number1 << endl;

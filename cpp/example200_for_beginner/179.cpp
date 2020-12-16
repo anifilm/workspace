@@ -9,9 +9,9 @@ bool IsOdd(int i) { return (i % 2) == 1; }
 
 int main() {
 
-    vector<int> data1 {1, 2, 3};
-    vector<int> data2 {4, 5, 6};
-    vector<int> data3 {7, 8, 9};
+    vector<int> data1 = {1, 2, 3};
+    vector<int> data2 = {4, 5, 6};
+    vector<int> data3 = {7, 8, 9};
     vector<int> result;
 
     copy_if(data1.begin(), data1.end(), back_inserter(result), IsOdd);

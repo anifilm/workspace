@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    atomic<int> data1 {1};
+    atomic<int> data1 = 1;
     data1++;
     data1 += 1;
     data1.fetch_add(1);

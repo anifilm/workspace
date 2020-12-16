@@ -39,14 +39,14 @@ MyString::MyString(const char* str) {
     string_length = strlen(str);
     memory_capacity = string_length;
     string_content = new char[string_length];
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         string_content[i] = str[i];
 }
 
 MyString::MyString(const MyString& str) {
     string_length = str.string_length;
     string_content = new char[string_length];
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         string_content[i] = str.string_content[i];
 }
 
@@ -55,12 +55,12 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         cout << string_content[i];
 }
 
 void MyString::println() {
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         cout << string_content[i];
     cout << endl;
 }
@@ -73,7 +73,7 @@ MyString& MyString::assign(MyString& str) {
         memory_capacity = str.string_length;
     }
 
-    for (int i {0}; i != str.string_length; i++)
+    for (int i = 0; i != str.string_length; i++)
         string_content[i] = str.string_content[i];
 
     // 그리고 굳이  str.stringg_length + 1 ~ string_length 부분은 초기화
@@ -91,7 +91,7 @@ MyString& MyString::assign(const char* str) {
         memory_capacity = str_length;
     }
 
-    for (int i {0}; i != str_length; i++)
+    for (int i = 0; i != str_length; i++)
         string_content[i] = str[i];
 
     string_length = str_length;
@@ -106,7 +106,7 @@ void MyString::reserve(int size) {
         string_content = new char[size];
         memory_capacity = size;
 
-        for (int i {0}; i != string_length; i++)
+        for (int i = 0; i != string_length; i++)
             string_content[i] = prev_string_content[i];
 
         delete[] prev_string_content;

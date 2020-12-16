@@ -63,7 +63,7 @@ int main() {
 
     Marine* marines[100];
 
-    marines[0] = new Marine(2 ,3, "Marine 1");      // 이름을 지정하여 생성
+    marines[0] = new Marine(2, 3, "Marine 1");      // 이름을 지정하여 생성
     marines[1] = new Marine(3, 5, "Marine 2");
 
     marines[0]->show_status();

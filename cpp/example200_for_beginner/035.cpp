@@ -6,12 +6,12 @@ using namespace std;
 
 int main() {
 
-    string str {"The Jin state was formed in southern Korea by the 3rd century BC"};
-    char find {'a'};
-    size_t size {str.size()};
-    int count {0};
+    string str = "The Jin state was formed in southern Korea by the 3rd century BC";
+    char find = 'a';
+    size_t size = str.size();
+    int count = 0;
 
-    for (size_t i {0}; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         if (str[i] == find)
             count++;
     }

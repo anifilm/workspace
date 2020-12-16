@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
 
-    string silla {"divided into the Three Kingdoms."};
-    string joseon {"Yi Seong-gye, established Joseon in 1392."};
+    string silla = "divided into the Three Kingdoms.";
+    string joseon = "Yi Seong-gye, established Joseon in 1392.";
 
     // MinGW-w64 g++ 컴파일러에서 사용할 수 없음
     // transform(silla.begin(), silla.end(), silla.begin(), toupper);

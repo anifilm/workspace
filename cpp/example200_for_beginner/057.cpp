@@ -5,11 +5,11 @@ using namespace std;
 
 int main() {
 
-    string king {"조선 세종"};
-    string favorite1 {"고기"};
-    string facorite2 {"야근"};
+    string king = "조선 세종";
+    string favorite1 = "고기";
+    string facorite2 = "야근";
 
-    string king_info {};
+    string king_info = 0;
 
     king_info += king;
     king_info += "은 ";

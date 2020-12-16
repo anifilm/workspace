@@ -18,8 +18,8 @@ int main() {
     vector<int> data;
     data.push_back(1);
 
-    int idx {10};
-    int value {20};
+    int idx = 10;
+    int value = 20;
 
     try {
         if (idx >= data.size())

@@ -8,8 +8,8 @@ using namespace std;
 
 int main() {
 
-    list<int> data1 {5, 3, 1, 7, 9};
-    list<string> data2 {"ef", "ab", "cd", "ij", "gh"};
+    list<int> data1 = {5, 3, 1, 7, 9};
+    list<string> data2 = {"ef", "ab", "cd", "ij", "gh"};
 
     cout << boolalpha;
     cout << "data1 sort: " << is_sorted(data1.begin(), data1.end()) << endl;

@@ -18,7 +18,7 @@ private:
 
 public:
     GoodKing(const string country)
-        : country {country} {
+        : country(country) {
     }
     void Display() {
         cout << this->country << " " << this->name << " 즉위 연도: BC " << this->year << endl;
@@ -31,7 +31,7 @@ private:
 
 public:
     BadKing(const string country)
-        : country {country} {
+        : country(country) {
     }
     void Display() {
         cout << this->country << " " << this->name << " 즉위 연도: " << this->year << endl;

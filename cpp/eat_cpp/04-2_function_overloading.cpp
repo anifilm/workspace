@@ -17,9 +17,9 @@ void print(double x) {
 
 int main() {
 
-    int a {1};
-    char b {'c'};
-    double c {3.2f};
+    int a = 1;
+    char b = 'c';
+    double c = 3.2f;
 
     print(a);
     print(b);

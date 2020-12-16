@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-    regex reg {R"(\d+)"};   // \d+ 숫자를 검색 조건으로 (여러 자리를 대상으로)
+    regex reg(R"(\d+)");   // \d+ 숫자를 검색 조건으로 (여러 자리를 대상으로)
     const string str = "12 34ab 56 cd78__ !9 10 ==11";
 
     vector<string> result;

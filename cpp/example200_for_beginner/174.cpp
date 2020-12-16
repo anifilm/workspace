@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
 
-    array<int, 5> data1 {5, 3, 1, 7, 9};
-    array<int, 5> data2 {1, 3, 5, 7, 9};
-    array<int, 7> data3 {2, 2, 1, 3, 5, 7, 9};
+    array<int, 5> data1 = {5, 3, 1, 7, 9};
+    array<int, 5> data2 = {1, 3, 5, 7, 9};
+    array<int, 7> data3 = {2, 2, 1, 3, 5, 7, 9};
 
     cout << boolalpha;
     cout << "data1 == data2: " <<

@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-    tuple<int, double> data1 {1, 2.1};
-    tuple<double, string> data2 {3.4, "문자열"};
+    tuple<int, double> data1(1, 2.1);
+    tuple<double, string> data2(3.4, "문자열");
 
     auto data3 = tuple_cat(data1, data2);
 

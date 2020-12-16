@@ -19,7 +19,7 @@ bool IsOdd(int arg) {
 
 int main() {
 
-    list<int> data {1, 2, 4, 2, 7, 10, 13, 14};
+    list<int> data = {1, 2, 4, 2, 7, 10, 13, 14};
 
     data.remove(2);
     data.remove_if(IsOdd);

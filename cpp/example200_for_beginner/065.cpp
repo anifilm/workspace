@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
 
-    string sort_str1 {"gfedcba"};
-    string sort_str2 {"AaBbCcDdEe"};
+    string sort_str1 = "gfedcba";
+    string sort_str2 = "AaBbCcDdEe";
 
     sort(sort_str1.begin(), sort_str1.end());
     sort(sort_str2.begin(), sort_str2.end());

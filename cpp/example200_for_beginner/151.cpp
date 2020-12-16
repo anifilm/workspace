@@ -17,7 +17,7 @@ struct TupleExam {
 
 int main() {
 
-    tuple<int, string> data {1, "str"};
+    tuple<int, string> data(1, "str");
 
     pair<TupleExam, TupleExam> data1(data, data);
     pair<TupleExam, TupleExam> data2(piecewise_construct, data, data);

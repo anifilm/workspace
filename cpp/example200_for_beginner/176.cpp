@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    vector<int> data {5, 9, 7, 4, 3, 8, 6};
+    vector<int> data = {5, 9, 7, 4, 3, 8, 6};
     cout << "distance1: " << distance(data.begin(), data.end()) << endl;
 
     vector<int>::iterator end_it = data.end() - 1;

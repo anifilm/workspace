@@ -12,7 +12,7 @@ enum Status {
 
 int main() {
 
-    Status number {disconnect};
+    Status number = disconnect;
 
     if (number == Status::normal)
         cout << "Status: normal" << endl;

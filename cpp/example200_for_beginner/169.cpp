@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    vector<int> data {10, 20, 30, 40};
+    vector<int> data = {10, 20, 30, 40};
 
     cout << "=== for, iterator ===" << endl;
     for (auto i = data.begin(); i != data.end(); i++)

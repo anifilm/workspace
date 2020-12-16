@@ -6,18 +6,18 @@ using namespace std;
 
 int main() {
 
-    vector<int> data1 {1, 2, 3};
-    vector<int> data2 {10, 30, 40};
+    vector<int> data1 = {1, 2, 3};
+    vector<int> data2 = {10, 30, 40};
 
     data1.swap(data2);
     data1.insert(data1.begin() + 1, 20);
 
     cout << "=== data1 ===" << endl;
-    for (size_t i {0}; i < data1.size(); i++)
+    for (size_t i = 0; i < data1.size(); i++)
         cout << "data1 (" << i << "): " << data1.at(i) << endl;
 
     cout << "\n=== data2 ===" << endl;
-    for (size_t i {0}; i < data2.size(); i++)
+    for (size_t i = 0; i < data2.size(); i++)
         cout << "data2 (" << i << "): " << data2.at(i) << endl;
 
     data2.erase(data2.begin() + 1, data2.begin() + 3);
@@ -30,7 +30,7 @@ int main() {
     data2.insert(data2.end(), data1.begin(), data1.end());
 
     cout << "\n=== data2 ===" << endl;
-    for (size_t i {0}; i < data2.size(); i++)
+    for (size_t i = 0; i < data2.size(); i++)
         cout << "data2 (" << i << "): " << data2.at(i) << endl;
 
     return 0;

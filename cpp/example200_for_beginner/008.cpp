@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int x {10};
-    int y {1};
+    int x = 10;
+    int y = 1;
 
     if (x > y)
         cout << "x는 y보다 큽니다." << endl;

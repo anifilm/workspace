@@ -31,7 +31,7 @@ MyString::MyString(const char* str) {
     string_length = strlen(str);
     string_content = new char[string_length];
 
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         string_content[i] = str[i];
 }
 
@@ -39,7 +39,7 @@ MyString::MyString(const MyString& str) {
     string_length = str.string_length;
     string_content = new char[string_length];
 
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         string_content[i] = str.string_content[i];
 }
 
@@ -48,12 +48,12 @@ MyString::~MyString() { delete[] string_content; }
 int MyString::get_length() const { return string_length; }
 
 void MyString::print() {
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         cout << string_content[i];
 }
 
 void MyString::println() {
-    for (int i {0}; i != string_length; i++)
+    for (int i = 0; i != string_length; i++)
         cout << string_content[i];
     cout << endl;
 }

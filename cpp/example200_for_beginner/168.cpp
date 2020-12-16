@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    vector<int> data {10, 20, 30, 40};
+    vector<int> data = {10, 20, 30, 40};
 
     cout << "=== for_each 람다 ===" << endl;
     for_each(data.begin(), data.end(), [](int i) {
@@ -22,7 +22,7 @@ int main() {
     cout << endl;
 
     cout << "\n=== for_each 람다 함수2 ===" << endl;
-    int y {11};
+    int y = 11;
     for_each(data.begin(), data.end(), [y](int x) {
         cout << x + y << ", ";
     });

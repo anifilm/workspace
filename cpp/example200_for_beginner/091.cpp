@@ -14,8 +14,8 @@ struct Data2 {
 
 int main() {
 
-    Data1 data1 {0};
-    Data2 data2 {data1, 10};
+    Data1 data1 = {0};
+    Data2 data2 = {data1, 10};
 
     cout << "Data1 number: " << data2.data1.number << endl;
     cout << "Data2 number: " << data2.number << endl;

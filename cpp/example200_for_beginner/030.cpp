@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int number1 {65};
-    double number2 {23.4};
+    int number1 = 65;
+    double number2 = 23.4;
 
     int number3 = int(number2);
     double number4 = double(number1 / number2);

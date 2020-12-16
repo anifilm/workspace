@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    vector<int> data {1, 2, 3};
+    vector<int> data = {1, 2, 3};
 
     for (vector<int>::iterator iter = data.begin();
         iter != data.end();

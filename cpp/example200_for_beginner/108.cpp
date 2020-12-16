@@ -13,7 +13,7 @@ private:
 
 public:
     TempClass()
-        : number1 {10}, number2 {20}, name {"나운: 문자명왕 이름"} {
+        : number1(10), number2(20), name("나운: 문자명왕 이름") {
     }
 
     void Print() {

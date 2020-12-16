@@ -5,11 +5,11 @@ using namespace std;
 
 int main() {
 
-    string publisher {"정보문화사"};
-    string language {"C++"};
+    string publisher = "정보문화사";
+    string language = "C++";
 
-    int x {10};
-    int y {10};
+    int x = 10;
+    int y = 10;
 
     if (publisher != language)
         cout << "두 문장은 같지 않습니다." << endl;

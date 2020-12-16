@@ -11,7 +11,7 @@ void Func(int arg) {
 
 int main() {
 
-    int year {10};
+    int year = 10;
 
     Func(year);
     cout << "함수 종료 후: " << year << endl;

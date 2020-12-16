@@ -5,10 +5,10 @@ using namespace std;
 
 int main() {
 
-    int two {2};
-    int eight {8};
-    int sum1 = {2};
-    int sum2 = {2};
+    int two = 2;
+    int eight = 8;
+    int sum1 = 0;
+    int sum2 = 0;
 
     sum1 = sum1 + two;
     sum2 += eight;

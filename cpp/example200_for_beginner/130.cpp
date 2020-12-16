@@ -9,7 +9,7 @@ inline int Max(int x, int y) {
 
 int main() {
 
-    for (int i {0}; i < 5; i++)
+    for (int i = 0; i < 5; i++)
         cout << Max(i, i + 10) << endl;
 
     return 0;

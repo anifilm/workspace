@@ -19,7 +19,7 @@ void Print2(int arr[]) {
 
 int main() {
 
-    int data[3] {1, 2, 3};
+    int data[3] = {1, 2, 3};
 
     Print1(data);
     Print2(data);

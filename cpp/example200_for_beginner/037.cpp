@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    int number {3};
+    int number = 3;
 
     switch (number) {
         case 1:

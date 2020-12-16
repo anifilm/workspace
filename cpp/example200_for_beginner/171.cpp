@@ -12,7 +12,7 @@ bool EvenOdd(int arg) {
 
 int main() {
 
-    vector<int> data {8, 27, 35, 49};
+    vector<int> data = {8, 27, 35, 49};
 
     if (any_of(data.begin(), data.end(), EvenOdd))
         cout << "data: 짝수가 존재합니다." << endl;

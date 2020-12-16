@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int number1 {10};
-    int number2 {20};
+    int number1 = 10;
+    int number2 = 20;
 
     /* ptr1 포인터의 주소값이 가리키는 값을 상수로 선언 */
     const int* ptr1;            // 주소값 변경 가능, 주소가 가리키는 값 변경 불가능
@@ -23,7 +23,7 @@ int main() {
     cout << endl;
 
     /* ptr2 포인터를 상수로 선언 */
-    int* const ptr2 {&number1}; // 주소값 변경 불가능, 주소가 가리키는 값은 변경 가능
+    int* const ptr2 = &number1; // 주소값 변경 불가능, 주소가 가리키는 값은 변경 가능
     cout << ptr2 << endl;
     cout << *ptr2 << endl;
 

@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    vector<int> data {8, 27, 35, 49};
+    vector<int> data = {8, 27, 35, 49};
 
     bool is_small = any_of(data.begin(), data.end(), [](int i) { return i < 100; });
     bool is_zero = any_of(data.begin(), data.end(), [](int i) { return i != 0; });

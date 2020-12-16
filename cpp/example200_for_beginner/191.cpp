@@ -7,11 +7,11 @@ using namespace std;
 
 int main() {
 
-    string str {"Wang Geon, a descendant of Go-gu-ryeo nobillity, deemed the nation as the successor of Go-guryeo"};
+    string str = "Wang Geon, a descendant of Go-gu-ryeo nobillity, deemed the nation as the successor of Go-guryeo";
 
     smatch match_info;
 
-    regex reg {"Go-([^ ]*)"};  // [] 괄호 사이의 문자를 검색
+    regex reg("Go-([^ ]*)");    // [] 괄호 사이의 문자를 검색
                                 // ^공백 공백을 제외한 모든 문자를 검색
 
     while (regex_search(str, match_info, reg)) {

@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    array<int, 5> data {5, 9, 4, 1, 7};
+    array<int, 5> data = {5, 9, 4, 1, 7};
 
     auto result1 = minmax_element(data.begin(), data.end());
 

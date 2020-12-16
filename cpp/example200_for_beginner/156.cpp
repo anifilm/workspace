@@ -15,7 +15,7 @@ void Print(const list<int> &data) {
 
 int main() {
 
-    list<int> data1 {1, 2, 3, 2};
+    list<int> data1 = {1, 2, 3, 2};
 
     data1.push_back(3);
     data1.sort();
@@ -24,7 +24,7 @@ int main() {
     data1.unique();
     Print(data1);
 
-    list<int> data2 {4, 5, 6};
+    list<int> data2 = {4, 5, 6};
 
     data2.merge(data1);
     Print(data2);

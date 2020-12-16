@@ -48,7 +48,7 @@ void Marine::be_attacked(int damage_earn) {
 
 void Marine::show_status() {
     cout << "*** Marine ***" << endl;
-    cout << "Location: (" << coord_x << " , " << coord_y << ")" << endl;
+    cout << "Location: (" << coord_x << ", " << coord_y << ")" << endl;
     cout << "HP: " << hp << endl;
 }
 
@@ -56,7 +56,7 @@ int main() {
 
     Marine* marines[100];       // TODO:포인터 배열 선언 추가 학습 필요
 
-    marines[0] = new Marine(2 ,3);      // new 동적 메모리 할당
+    marines[0] = new Marine(2, 3);      // new 동적 메모리 할당
     marines[1] = new Marine(3, 5);
 
     marines[0]->show_status();

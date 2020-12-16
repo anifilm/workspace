@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int x {10};
+int x = 10;
 
 int Func1() {
     int x = 100;

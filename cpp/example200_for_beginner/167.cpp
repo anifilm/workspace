@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    int data[] {10, 20, 30, 40};
+    int data[] = {10, 20, 30, 40};
 
 //  for each (int &i in data)   // for each문은 비주얼 스튜디오에서만 지원됨
     for (int &i : data)

@@ -13,7 +13,7 @@ public:
     void Add(T arg) { this->data.push_back(arg); }
     int Size() { return this->data.size(); }
     void Print() {
-        for (int i {0}, size = Size(); i < size; i++)
+        for (int i = 0, size = Size(); i < size; i++)
             cout << "data: " << this->data.at(i) << endl;
     }
 };

@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int number1 {10};
-    double number2 {67.8};
+    int number1 = 10;
+    double number2 = 67.8;
 
     string no_str1 = to_string(number1);
     string no_str2 = to_string(number2);

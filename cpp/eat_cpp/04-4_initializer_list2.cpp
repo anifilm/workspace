@@ -21,10 +21,10 @@ public:
 };
 
 Marine::Marine()
-    : coord_x {0}, coord_y {0}, hp {50}, default_damage {5}, is_dead {false} {}
+    : coord_x(0), coord_y(0), hp(50), default_damage(5), is_dead(false) {}
 
 Marine::Marine(int x, int y)
-    : coord_x {0}, coord_y {0}, hp {50}, default_damage {5}, is_dead {false} {}
+    : coord_x(0), coord_y(0), hp(50), default_damage(5), is_dead(false) {}
 
 void Marine::move(int x, int y) {
     coord_x = x;
@@ -46,7 +46,7 @@ void Marine::show_status() {
 
 int main() {
 
-    Marine marine1(2 ,3);
+    Marine marine1(2, 3);
     Marine marine2(3, 5);
 
     marine1.show_status();

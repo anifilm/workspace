@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int data1[2][2] {1, 2, 3};
-    int data2[2][3] {{1, } };
+    int data1[2][2] = {1, 2, 3};
+    int data2[2][3] = {{1,}};
 
     cout << "data1[0][0] = " << data1[0][0] << endl;
     cout << "data1[0][1] = " << data1[0][1] << endl;

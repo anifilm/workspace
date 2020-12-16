@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-    bitset<8> data1 {1};
-    bitset<8> data2 {0x01};
+    bitset<8> data1 = 1;
+    bitset<8> data2 = 0x01;
 
     cout << "data1: " << data1 << endl;
     cout << "data2: " << data2 << endl;

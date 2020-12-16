@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    string str {"gfedcba"};
+    string str = "gfedcba";
 
     reverse(str.begin(), str.end());
 

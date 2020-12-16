@@ -36,8 +36,8 @@ double Complex::get_number(const char* str, int from, int to) {
     if (str[from] == '-') minus = true;
     if (str[from] == '-' || str[from] == '+') from++;
 
-    double num {0.0};
-    double decimal {1.0};
+    double num = 0.0;
+    double decimal = 1.0;
 
     bool integer_part = true;
     for (int i = from; i <= to; i++) {
@@ -73,7 +73,7 @@ Complex Complex::operator+(const char* str) {
 
     // 먼저 가장 기준이 되는 'i'의 위치를 찾는다
     int pos_i = -1;
-    for (int i {0}; i != end; i++) {
+    for (int i = 0; i != end; i++) {
         if (str[i] == 'i') {
             pos_i = i;
             break;

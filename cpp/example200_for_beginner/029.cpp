@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-    int x {2};
-    double y {4.4};
+    int x = 2;
+    double y = 4.4;
 
     int i = static_cast<int>(y / x);
     int j = (int)y / x;

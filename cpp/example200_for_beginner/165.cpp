@@ -8,7 +8,7 @@ auto func2 = [](int x, int y) -> bool { return x < y; };
 
 int main() {
 
-    int x {2};
+    int x = 2;
 
     auto func3 = [=](int y) {
         func1();

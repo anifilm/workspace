@@ -7,10 +7,10 @@ using namespace std;
 
 int main() {
 
-    regex reg1 {R"(l|i|k|e)"};  // | 여러 조건 사용시 구분자
-    regex reg2 {R"(\D)"};       // \D 숫자를 제외한 문자만을 대상으로
-    regex reg3 {R"(\s)"};       // \s 공백 문자만 대상으로
-    string str {"i like coding"};
+    regex reg1(R"(l|i|k|e)");   // | 여러 조건 사용시 구분자
+    regex reg2(R"(\D)");        // \D 숫자를 제외한 문자만을 대상으로
+    regex reg3(R"(\s)");        // \s 공백 문자만 대상으로
+    string str = "i like coding";
 
     string result1 = regex_replace(str, reg1, "[$&]");
     string result2 = regex_replace(str, reg1, "*");

@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    int x {1};
+    int x = 1;
 
     cout << "x = " << x++ << endl;  // 1 출력 이후 증가 2
     cout << "x = " << x++ << endl;  // 2 출력 이후 증가 3

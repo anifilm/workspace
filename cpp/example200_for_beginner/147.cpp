@@ -9,10 +9,10 @@ int main() {
 
     typedef tuple<string, int , double> Data;
 
-    Data data1 {"문자열", 10, 1.2};
+    Data data1("문자열", 10, 1.2);
 
-    string my_str {};
-    int my_int {};
+    string my_str = 0;
+    int my_int = 0;
 
     tie(my_str, my_int, ignore) = data1;
 

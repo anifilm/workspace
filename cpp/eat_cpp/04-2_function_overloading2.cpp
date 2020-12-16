@@ -19,9 +19,9 @@ void print(double x) {
 
 int main() {
 
-    int a {1};
-    char b {'c'};
-    double c {3.2f};
+    int a = 1;
+    char b = 'c';
+    double c = 3.2f;
 
     print(a);
     print(b);       // 모호하다 (ambiguous)라고 판단해서 오류를 발생하게 된다.

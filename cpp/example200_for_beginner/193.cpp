@@ -19,7 +19,7 @@ int main() {
         "south Korea"
     };
 
-    regex reg {"(SOUTH|south).*(1945)"};
+    regex reg("(SOUTH|south).*(1945)");
 
     smatch match_info;
 

@@ -20,8 +20,8 @@ int main() {
     status.machine1 = kOpen;
     status.machine2 = kDisconnect;
 
-    cout << "상태 :" << status.machine1 << endl;
-    cout << "상태 :" << status.machine2 << endl;
+    cout << "상태: " << status.machine1 << endl;
+    cout << "상태: " << status.machine2 << endl;
 
     return 0;
 }

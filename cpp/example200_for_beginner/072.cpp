@@ -4,7 +4,7 @@
 using namespace std;
 
 int Temp1(const int arg) {
-    int number {20};
+    int number = 20;
     return number + 1;
 }
 
@@ -15,7 +15,7 @@ int Temp2(const int arg) {
 
 int main() {
 
-    int number {10};
+    int number = 10;
 
     int rtn1 = Temp1(number);
     int rtn2 = Temp2(number);

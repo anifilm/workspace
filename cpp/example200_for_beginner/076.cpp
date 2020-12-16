@@ -17,7 +17,7 @@ void Func2(bool& is_on) {
 
 int main() {
 
-    bool is_tmp {true};
+    bool is_tmp = true;
 
     Func1(&is_tmp);     // call by address
     Func2(is_tmp);      // call by reference

@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
 
-    bitset<8> data1 {100};
-    bitset<8> data2 {0x78};
-    bitset<8> data3 {string("11110000")};
+    bitset<8> data1 = 100;
+    bitset<8> data2 = 0x78;
+    bitset<8> data3(string("11110000"));
 
     cout << "data1: " << data1 << endl;
     cout << "data2: " << data2 << endl;

@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 
     list<int> data1;
-    list<int> data2 {3, 4, 5};
+    list<int> data2 = {3, 4, 5};
 
     data1.push_back(2);
     data1.push_back(7);

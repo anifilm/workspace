@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
 
-    string str1 {"1a2b3c4d5e6f7g8h9i"};
-    string str2 {"republic of korea"};
-    int data1[10] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    string str1 = "1a2b3c4d5e6f7g8h9i";
+    string str2 = "republic of korea";
+    int data1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     srand(static_cast<unsigned int>(time(NULL)));
 

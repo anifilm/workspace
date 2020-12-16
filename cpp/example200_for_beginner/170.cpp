@@ -8,8 +8,8 @@ using namespace std;
 
 int main() {
 
-    vector<int> data1 {1, 3, 5, 7};
-    vector<string> data2 {"ab", "cd", "ef"};
+    vector<int> data1 = {1, 3, 5, 7};
+    vector<string> data2 = {"ab", "cd", "ef"};
 
     if (all_of(data1.begin(), data1.end(), [](int i) { return i % 2; }))
         cout << "data1: 모두 홀수 입니다." << endl;

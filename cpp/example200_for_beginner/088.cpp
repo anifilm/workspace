@@ -6,7 +6,7 @@ using namespace std;
 struct Princess {
     string name;
     string father;
-    string birthday {"알수 없음"};
+    string birthday = "알수 없음";
 } Goryeo[2];
 
 int main() {

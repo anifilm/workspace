@@ -9,7 +9,7 @@ bool IsOdd(int i) { return (i % 2) == 1; }
 
 int main() {
 
-    vector<int> data1 {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+    vector<int> data1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
     vector<int> odd;
     vector<int> even;
 

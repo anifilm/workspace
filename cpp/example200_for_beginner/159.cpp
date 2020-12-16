@@ -15,7 +15,7 @@ void Print(const array<int, 3>& data) {
 
 int main() {
 
-    array<int, 3> data1 {10, 2, 5};
+    array<int, 3> data1 = {10, 2, 5};
     array<int, 3> data2;
 
     Print(data1);

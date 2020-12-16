@@ -15,8 +15,8 @@ void Func2(string& info) {
 
 int main() {
 
-    int year {10};
-    string king_info {"고려 성종 즉위년도: "};
+    int year = 10;
+    string king_info = "고려 성종 즉위년도: ";
 
     Func1(year);
     cout << "Func1 함수 종료 후: " << year << endl;

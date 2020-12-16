@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    string str1 {"I like C++ Programming."};
+    string str1 = "I like C++ Programming.";
     string str2 = move(str1);
 
     vector<int> v1 {1, 2, 3};

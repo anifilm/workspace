@@ -10,7 +10,7 @@ int main() {
 
     data.assign(5, 100);
 
-    for (size_t i {0}; i < data.size(); i++)
+    for (size_t i = 0; i < data.size(); i++)
         cout << "data " << i << ": " << data.at(i) << endl;
 
     data.front() = 1;
@@ -19,7 +19,7 @@ int main() {
     if (data.empty() == true)
         cout << "벡터가 비어 있습니다." << endl;
     else {
-        for (size_t i {0}; i < data.size(); i++)
+        for (size_t i = 0; i < data.size(); i++)
             cout << "data " << i << ": " << data.at(i) << endl;
     }
 

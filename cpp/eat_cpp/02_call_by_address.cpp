@@ -9,7 +9,7 @@ void change_val(int* p) {
 
 int main() {
 
-    int number {5};
+    int number = 5;
 
     cout << number << endl;
     change_val(&number);

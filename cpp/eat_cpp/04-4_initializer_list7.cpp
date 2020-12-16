@@ -5,7 +5,7 @@ using namespace std;
 
 class Marine {
     static int total_marine_num;
-    const static int i {0};
+    const static int i = 0;
 
     int hp;					// 마린 체력
     int coord_x, coord_y;	// 마린 위치
@@ -28,19 +28,19 @@ public:
     ~Marine() { total_marine_num--; }
 };
 
-int Marine::total_marine_num {0};
+int Marine::total_marine_num = 0;
 
 void Marine::show_total_marine() {
     cout << "전체 마린 수: " << total_marine_num << endl;
 }
 
 Marine::Marine()
-    : coord_x {0}, coord_y {0}, hp {50}, default_damage {5}, is_dead {false} {
+    : coord_x(0), coord_y(0), hp(50), default_damage(5), is_dead(false) {
         total_marine_num++;
 }
 
 Marine::Marine(int x, int y)
-    : coord_x {x}, coord_y {y}, hp {50}, default_damage {5}, is_dead {false} {
+    : coord_x(x), coord_y(y), hp(50), default_damage(5), is_dead(false) {
         total_marine_num++;
 }
 
@@ -76,7 +76,7 @@ void create_marine() {
 
 int main() {
 
-    Marine marine1(2 ,3, 5);
+    Marine marine1(2, 3, 5);
     Marine::show_total_marine();
 
     Marine marine2(3, 5, 10);
