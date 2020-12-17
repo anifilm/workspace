@@ -17,8 +17,8 @@ bool is_palindrome(const std::string& s)
         if(std::isalpha(c))
             d.push_back(std::toupper(c));
 
-    char c1 {};
-    char c2 {};
+    char c1;
+    char c2;
     // while are more than 1 characters in the deque
     //      remove and compare the front character with the back character
     //      if they are not the same - return false since it can't be a palindrome
@@ -36,7 +36,7 @@ bool is_palindrome(const std::string& s)
 
 int main()
 {
-    std::vector<std::string> test_strings = {"a", "aa", "aba", "abba", "abbcbba", "ab", "abc", "radar", "bob", "ana",
+    std::vector<std::string> test_strings {"a", "aa", "aba", "abba", "abbcbba", "ab", "abc", "radar", "bob", "ana",
         "avid diva", "Amore, Roma", "A Toyota's a toyota", "A Santa at NASA", "C++",
         "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!", "This is a palindrome", "palindrome"};
 

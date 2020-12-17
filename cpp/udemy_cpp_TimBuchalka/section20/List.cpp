@@ -39,7 +39,7 @@ void display(const std::list<T>& l) {
 
 void test1() {
     cout << "\n== Test1 ==============================" << endl;
-    std::list<int> l1 = {1, 2, 3, 4, 5};
+    std::list<int> l1 {1, 2, 3, 4, 5};
     display(l1);
 
     std::list<string> l2;
@@ -57,7 +57,7 @@ void test1() {
 
 void test2() {
     cout << "\n== Test2 ==============================" << endl;
-    std::list<int> l = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::list<int> l {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     display(l);
 
     cout << "Size: " << l.size() << endl;
@@ -72,7 +72,7 @@ void test2() {
 
 void test3() {
     cout << "\n== Test3 ==============================" << endl;
-    std::list<int> l = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::list<int> l {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     display(l);
 
     l.resize(5);
@@ -88,7 +88,7 @@ void test3() {
 
 void test4() {
     cout << "\n== Test4 ==============================" << endl;
-    std::list<int> l = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::list<int> l {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     display(l);
 
     auto it = std::find(l.begin(), l.end(), 5);
@@ -97,7 +97,7 @@ void test4() {
     }
     display(l);
 
-    std::list<int> l2 = {1000, 2000, 3000};
+    std::list<int> l2 {1000, 2000, 3000};
     l.insert(it, l2.begin(), l2.end());
     display(l);
 
@@ -110,7 +110,7 @@ void test4() {
 
 void test5() {
     cout << "\n== Test5 ==============================" << endl;
-    std::list<Person> stooges = {
+    std::list<Person> stooges {
         {"Larry", 18},
         {"Moe", 25},
         {"Curly", 17}
@@ -138,7 +138,7 @@ void test5() {
 
 void test6() {
     cout << "\n== Test6 ==============================" << endl;
-    std::list<Person> stooges = {
+    std::list<Person> stooges {
         {"Larry", 18},
         {"Moe", 25},
         {"Curly", 17}

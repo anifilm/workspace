@@ -23,16 +23,15 @@ void my_deleter(Test* ptr) {
 }
 
 int main() {
-
     {
         // Using a function
-        shared_ptr<Test> ptr1 { new Test {100}, my_deleter };
+        shared_ptr<Test> ptr1 (new Test(100), my_deleter);
     }
 
     cout << "\n===================================" << endl;
     {
         // Using a Lambda expression
-        shared_ptr<Test> ptr2 (new Test {1000}, [] (Test* ptr) {
+        shared_ptr<Test> ptr2 (new Test(1000), [] (Test* ptr) {
             cout << "Using my custom lambda deleter" << endl;
         });
     }

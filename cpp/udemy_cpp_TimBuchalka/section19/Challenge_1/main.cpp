@@ -90,7 +90,7 @@ int main() {
     cout << setprecision(2) << fixed;
 
     for(auto country : tours.countries) {            // loop through the countries
-        // for(auto city : country.cities) {         // loop through the cities for each country
+    //  for (auto city : country.cities) {           // loop through the cities for each country
         for (size_t i = 0; i < country.cities.size(); i++) {
             cout << setw(field1_width) << left << ((i == 0) ? country.name : "");
             cout << setw(field2_width) << left << country.cities.at(i).name

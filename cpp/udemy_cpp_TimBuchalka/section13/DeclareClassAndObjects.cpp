@@ -38,7 +38,7 @@ int main() {
 
     Player players[] = {frank, hero};
 
-    vector<Player> player_vec = {frank};
+    vector<Player> player_vec {frank};
     player_vec.push_back(hero);
 
     Player* enemy = nullptr;

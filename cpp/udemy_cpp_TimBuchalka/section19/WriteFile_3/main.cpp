@@ -1,6 +1,6 @@
 // Section 19
 // Write File 3
-// File copy using get/put 
+// File copy using get/put
 
 #include <iostream>
 #include <fstream>
@@ -9,30 +9,30 @@
 using namespace std;
 
 int main() {
-	
-	ifstream in_file {"./WriteFile_3/poem.txt"};
-	ofstream out_file {"./WriteFile_3/poem_out.txt"};
 
-	if (!in_file) {
-		cerr << "Error opening input file" << endl;
-		return 1;
-	}
+    ifstream in_file("./WriteFile_3/poem.txt");
+    ofstream out_file("./WriteFile_3/poem_out.txt");
 
-	if (!out_file) {
-		cerr << "Error creating file" << endl;
-		return 1;
-	}
+    if (!in_file) {
+        cerr << "Error opening input file" << endl;
+        return 1;
+    }
 
-	char c;
-	
-	while (in_file.get(c))
-		out_file.put(c);
+    if (!out_file) {
+        cerr << "Error creating file" << endl;
+        return 1;
+    }
 
-	cout << "File copied" << endl;
+    char c;
 
-	in_file.close();
-	out_file.close();
+    while (in_file.get(c))
+        out_file.put(c);
 
-	cout << endl;	
-	return 0;
+    cout << "File copied" << endl;
+
+    in_file.close();
+    out_file.close();
+
+    cout << endl;
+    return 0;
 }

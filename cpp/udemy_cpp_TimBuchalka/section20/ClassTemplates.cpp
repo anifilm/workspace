@@ -29,13 +29,13 @@ struct My_Pair {
 
 int main() {
 
-    Item<int> item1 = {"Frank", 100};
+    Item<int> item1 {"Frank", 100};
     cout << item1.get_name() << " " << item1.get_value() << endl;
 
-    Item<string> item2 = {"Frank", "Professor"};
+    Item<string> item2 {"Frank", "Professor"};
     cout << item2.get_name() << " " << item2.get_value() << endl;
 
-    Item<Item<string>> item3 = {"Frank", {"C++", "Professor"}};
+    Item<Item<string>> item3 {"Frank", {"C++", "Professor"}};
     cout << item3.get_name() << " " << item3.get_value().get_name() << " " << item3.get_value().get_value()<< endl;
 
     cout << "\n===============================" << endl;

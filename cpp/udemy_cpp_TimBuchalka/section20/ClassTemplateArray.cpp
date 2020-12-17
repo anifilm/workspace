@@ -66,7 +66,7 @@ int main() {
     cout << "The size of nums2 is: " << nums2.get_size() << endl;
     cout << nums2 << endl;
 
-    Array<string, 10> strings (string {"Frank"});
+    Array<string, 10> strings(string {"Frank"});
     cout << "The size of strings is: " << strings.get_size() << endl;
     cout << strings << endl;
 

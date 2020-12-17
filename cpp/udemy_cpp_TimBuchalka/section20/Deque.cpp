@@ -19,13 +19,13 @@ void display(const std::deque<T>& d) {
 
 void test1() {
     cout << "\n== Test1 ==============================" << endl;
-    std::deque<int> d = {1, 2, 3, 4, 5};
+    std::deque<int> d {1, 2, 3, 4, 5};
     display(d);
 
     d = {2, 4, 5, 6};
     display(d);
 
-    std::deque<int> d2 (10, 100);			// ten 100s in the vector
+    std::deque<int> d2(10, 100);			// ten 100s in the vector
     display(d2);
 
     d[0] = 100;
@@ -36,7 +36,7 @@ void test1() {
 
 void test2() {
     cout << "\n== Test3 ==============================" << endl;
-    std::deque<int> d = {0, 0, 0};
+    std::deque<int> d {0, 0, 0};
     display(d);
 
     // push and pops
@@ -59,7 +59,7 @@ void test2() {
 
 void test3() {
     cout << "\n== Test3 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> vec {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     std::deque<int> d;
 
     // insert all even numbers into the back of a deque and all
@@ -75,7 +75,7 @@ void test3() {
 
 void test4() {
     cout << "\n== Test4 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> vec {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     std::deque<int> d;
 
     // push front vs. back ordering
@@ -94,7 +94,7 @@ void test4() {
 
 void test5() {
     cout << "\n== Test5 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> vec {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     std::deque<int> d;
 
     // Same as test4 using set::copy

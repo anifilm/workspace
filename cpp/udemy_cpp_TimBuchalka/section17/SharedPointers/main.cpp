@@ -32,10 +32,10 @@ int main() {
     // use_count - the number of shared_ptr objects
     // managing the heap object
 
-//  shared_ptr<int> p1 { new int {100} };
+//  shared_ptr<int> p1(new int(100));
 //  cout << "Use count: " << p1.use_count() << endl;		// 1
 
-//  shared_ptr<int> p2 { p1 };		// shared ownership
+//  shared_ptr<int> p2(p1);		// shared ownership
 //  cout << "Use count: " << p1.use_count() << endl;		// 2
 
 //  p1.reset();		// decrement the use_count; p1 is nulled out

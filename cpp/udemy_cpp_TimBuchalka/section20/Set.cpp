@@ -39,7 +39,7 @@ void display(const std::set<T>& s) {
 
 void test1() {
     cout << "\n== Test1 ==============================" << endl;
-    std::set<int> s = {1, 4, 3, 5, 2};
+    std::set<int> s {1, 4, 3, 5, 2};
     display(s);
 
     s = {1, 2, 3, 1, 1, 2, 2, 3, 3, 4, 5};
@@ -66,7 +66,7 @@ void test1() {
 
 void test2() {
     cout << "\n== Test2 ==============================" << endl;
-    std::set<Person> stooges = {
+    std::set<Person> stooges {
         {"Larry", 1},
         {"Moe", 2},
         {"Curly", 3}
@@ -95,7 +95,7 @@ void test2() {
 
 void test3() {
     cout << "\n== Test3 ==============================" << endl;
-    std::set<string> s = {"A", "B", "C"};
+    std::set<string> s {"A", "B", "C"};
     display(s);
     cout << endl;
 

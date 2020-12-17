@@ -19,8 +19,8 @@ bool is_palindrome(const std::string& s) {
         if (std::isalpha(c))
             d.push_back(std::toupper(c));
 
-    char c1 {};
-    char c2 {};
+    char c1;
+    char c2;
 
     while (d.size() > 1) {
         c1 = d.front();
@@ -36,7 +36,7 @@ bool is_palindrome(const std::string& s) {
 
 int main() {
 
-    std::vector<string> test_strings = {
+    std::vector<string> test_strings {
         "a", "aa", "aba", "abba", "abbcbba", "ab", "abc", "radar", "bob", "ana", "avid diva",
         "Amore, Roma", "A Toyota's a toyota", "A Santa at NASA", "C++", "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!",
         "This id a palindrome", "palindrome"

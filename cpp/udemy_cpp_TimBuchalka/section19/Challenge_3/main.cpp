@@ -16,7 +16,7 @@ bool find_substring(const std::string& word_to_find, const std::string& target) 
 
 int main() {
 
-    ifstream in_file {"./Challenge_3/romeoandjuliet.txt"};
+    ifstream in_file("./Challenge_3/romeoandjuliet.txt");
 
     if (!in_file) {
         cerr << "Error opening file" << endl;

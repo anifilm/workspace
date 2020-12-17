@@ -59,7 +59,7 @@ int main() {
     repeat_string += (repeat_string + repeat_string + repeat_string);
 
 
-    Mystring s = "Frank";
+    Mystring s {"Frank"};
     ++s;
     cout << s << endl;                  // FRANK
 

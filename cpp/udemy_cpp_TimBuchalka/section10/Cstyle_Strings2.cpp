@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>      // for c-stype string functions
+#include <cstring>      // for c-style string functions
 #include <cctype>       // for character-based functions
 
 using namespace std;

@@ -72,7 +72,7 @@ void display_playlist(const list<Song>& playlist, const Song& current_song) {
 
 int main() {
 
-    std::list<Song> playlist = {
+    std::list<Song> playlist {
         {"God's Plan", "Drake", 5},
         {"Never Be The Same", "Camila Cabello", 5},
         {"Pray For Me", "The Weekend and K. Lamar", 4},
@@ -84,8 +84,7 @@ int main() {
     std::list<Song>::iterator current_song = playlist.begin();
     display_playlist(playlist, *current_song);
 
-    char selection {};
-
+    char selection;
     do {
         display_menu();
         cin >> selection;

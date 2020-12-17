@@ -10,8 +10,8 @@ using namespace std;
 
 int main() {
 
-    ifstream in_file {"./Challenge_4/romeoandjuliet.txt"};
-    ofstream out_file {"./Challenge_4/romeoandjuliet_out.txt"};
+    ifstream in_file("./Challenge_4/romeoandjuliet.txt");
+    ofstream out_file("./Challenge_4/romeoandjuliet_out.txt");
 
     if (!in_file) {
         cerr << "Error opening input file" << endl;

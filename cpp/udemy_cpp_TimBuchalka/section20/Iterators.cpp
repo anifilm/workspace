@@ -20,7 +20,7 @@ void display(const std::vector<int>& vec) {
 
 void test1() {
     cout << "\n==============================" << endl;
-    std::vector<int> nums1 = {1, 2, 3, 4, 5};
+    std::vector<int> nums1 {1, 2, 3, 4, 5};
     auto it = nums1.begin();		// point to 1
     cout << *it << endl;
 
@@ -41,7 +41,7 @@ void test1() {
 void test2() {
     cout << "\n==============================" << endl;
     // display all vector elements using an iterator
-    std::vector<int> nums1 = {1, 2, 3, 4, 5};
+    std::vector<int> nums1 {1, 2, 3, 4, 5};
     std::vector<int>::iterator it = nums1.begin();
 
     while (it != nums1.end()) {
@@ -62,7 +62,7 @@ void test2() {
 void test3() {
     // using a const_iterator
     cout << "\n==============================" << endl;
-    std::vector<int> nums1 = {1, 2, 3, 4, 5};
+    std::vector<int> nums1 {1, 2, 3, 4, 5};
     std::vector<int>::const_iterator it1 = nums1.begin();
     // auto it1 = nums1.cbegin();
 
@@ -82,7 +82,7 @@ void test3() {
 void test4() {
     // more iterators
     // using a reverse iterator
-    std::vector<int> vec = {1, 2, 3, 4, 5};
+    std::vector<int> vec {1, 2, 3, 4, 5};
     auto it1 = vec.rbegin();		// reverse iterator over vector of ints starts at 4
 
     while (it1 != vec.rend()) {
@@ -99,7 +99,7 @@ void test4() {
     cout << *it2 << endl;
 
     // iterator over a map
-    std::map<std::string, std::string> favorites = {
+    std::map<std::string, std::string> favorites {
         {"Frank", "C++"},
         {"Bill", "Java"},
         {"James", "Haskell"}
@@ -114,7 +114,7 @@ void test4() {
 
 void test5() {
     // iterator over a subset of a container
-    std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> vec {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     auto start = vec.begin() + 2;
     auto finish = vec.end() - 3;
 

@@ -19,7 +19,7 @@ void display(const std::array<int, 5>& arr) {
 
 void test1() {
     cout << "\n== Test1 ==============================" << endl;
-    std::array<int, 5> arr1 = {1, 2, 3, 4, 5};		// double {{ }} if C++11
+    std::array<int, 5> arr1 {1, 2, 3, 4, 5};		// double {{ }} if C++11
     std::array<int, 5> arr2;
 
     display(arr1);
@@ -44,8 +44,8 @@ void test1() {
 
 void test2() {
     cout << "\n== Test2 ==============================" << endl;
-    std::array<int, 5> arr1 = {1, 2, 3, 4, 5};		// double {{ }} if C++11
-    std::array<int, 5> arr2 = {10, 20, 30, 40, 50};
+    std::array<int, 5> arr1 {1, 2, 3, 4, 5};		// double {{ }} if C++11
+    std::array<int, 5> arr2 {10, 20, 30, 40, 50};
 
     display(arr1);
     display(arr2);
@@ -63,7 +63,7 @@ void test2() {
 
 void test3() {
     cout << "\n== Test3 ==============================" << endl;
-    std::array<int, 5> arr1 = {1, 2, 3, 4, 5};		// double {{ }} if C++11
+    std::array<int, 5> arr1 {1, 2, 3, 4, 5};		// double {{ }} if C++11
 
     int* ptr = arr1.data();
     cout << ptr << endl;
@@ -75,7 +75,7 @@ void test3() {
 
 void test4() {
     cout << "\n== Test4 ==============================" << endl;
-    std::array<int, 5> arr1 = {2, 1, 4, 5, 3};		// double {{ }} if C++11
+    std::array<int, 5> arr1 {2, 1, 4, 5, 3};		// double {{ }} if C++11
 
     display(arr1);
 
@@ -86,7 +86,7 @@ void test4() {
 
 void test5() {
     cout << "\n== Test5 ==============================" << endl;
-    std::array<int, 5> arr1 = {2, 1, 4, 5, 3};		// double {{ }} if C++11
+    std::array<int, 5> arr1 {2, 1, 4, 5, 3};		// double {{ }} if C++11
 
     std::array<int, 5>::iterator min_num = std::min_element(arr1.begin(), arr1.end());
     auto max_num = std::max_element(arr1.begin(), arr1.end());
@@ -95,7 +95,7 @@ void test5() {
 
 void test6() {
     cout << "\n== Test6 ==============================" << endl;
-    std::array<int, 5> arr1 = {2, 1, 3, 3, 5};		// double {{ }} if C++11
+    std::array<int, 5> arr1 {2, 1, 3, 3, 5};		// double {{ }} if C++11
 
     auto adjacent = std::adjacent_find(arr1.begin(), arr1.end());
     if (adjacent != arr1.end())
@@ -107,7 +107,7 @@ void test6() {
 void test7() {
     cout << "\n== Test7 ==============================" << endl;
     // accumulate is from #include <numeric>
-    std::array<int, 5> arr1 = {1, 2, 3, 4, 5};		// double {{ }} if C++11
+    std::array<int, 5> arr1 {1, 2, 3, 4, 5};		// double {{ }} if C++11
 
     int sum = std::accumulate(arr1.begin(), arr1.end(), 0);
     cout << "Sum of the elements in arr1 is: " << sum << endl;
@@ -115,7 +115,7 @@ void test7() {
 
 void test8() {
     cout << "\n== Test8 ==============================" << endl;
-    std::array<int, 10> arr1 = {1, 2, 3, 1, 2, 3, 3, 3, 3, 3};
+    std::array<int, 10> arr1 {1, 2, 3, 1, 2, 3, 3, 3, 3, 3};
 
     int count = std::count(arr1.begin(), arr1.end(), 3);
     cout << "Found 3: " << count << " times" << endl;
@@ -123,7 +123,7 @@ void test8() {
 
 void test9() {
     cout << "\n== Test9 ==============================" << endl;
-    std::array<int, 10> arr1 = {1, 2, 3, 50, 60, 70, 80, 200, 300, 400};
+    std::array<int, 10> arr1 {1, 2, 3, 50, 60, 70, 80, 200, 300, 400};
     // find how many numbers are between 10 and 200 -> 50, 60, 70, 80
 
     int count = std::count_if(arr1.begin(), arr1.end(), [](int x) { return x > 10 && x < 200; });

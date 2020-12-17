@@ -48,19 +48,19 @@ void display2(const std::vector<int>& vec) {
 
 void test1() {
     cout << "\n== Test1 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5};
+    std::vector<int> vec {1, 2, 3, 4, 5};
     display(vec);
 
     vec = {2, 4, 5, 6};
     display2(vec);
 
-    std::vector<int> vec2 (10, 100);			// ten 100s in the vector
+    std::vector<int> vec2(10, 100);			// ten 100s in the vector
     display(vec2);
 }
 
 void test2() {
     cout << "\n== Test2 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5};
+    std::vector<int> vec {1, 2, 3, 4, 5};
     display(vec);
     cout << "\nvec size: " << vec.size() << endl;
     cout << "vec max size: " << vec.max_size() << endl;
@@ -87,7 +87,7 @@ void test2() {
 
 void test3() {
     cout << "\n== Test3 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5};
+    std::vector<int> vec {1, 2, 3, 4, 5};
     display(vec);
 
     vec[0] = 100;
@@ -115,7 +115,7 @@ void test4() {
 
 void test5() {
     cout << "\n== Test5 ==============================" << endl;
-    std::vector<Person> stooges = {
+    std::vector<Person> stooges {
         {"Larry", 18},
         {"Moe", 25},
         {"Curly", 30}
@@ -131,7 +131,7 @@ void test5() {
 
 void test6() {
     cout << "\n== Test6 ==============================" << endl;
-    std::vector<int> vec = {1, 2, 3, 4, 5};
+    std::vector<int> vec {1, 2, 3, 4, 5};
     display(vec);
 
     vec.clear();		// remove all elements
@@ -157,8 +157,8 @@ void test6() {
 
 void test7() {
     cout << "\n== Test7 ==============================" << endl;
-    std::vector<int> vec1 = {1, 2, 3, 4, 5};
-    std::vector<int> vec2 = {10, 20, 30, 40, 50};
+    std::vector<int> vec1 {1, 2, 3, 4, 5};
+    std::vector<int> vec2 {10, 20, 30, 40, 50};
     display(vec1);
     display(vec2);
     cout << endl;
@@ -170,7 +170,7 @@ void test7() {
 
 void test8() {
     cout << "\n== Test8 ==============================" << endl;
-    std::vector<int> vec = {1, 21, 3, 40, 12};
+    std::vector<int> vec {1, 21, 3, 40, 12};
     display(vec);
 
     std::sort(vec.begin(), vec.end());
@@ -185,8 +185,8 @@ void test9() {
     // Copy one list to another using an iterator and back_inserter
 
     cout << "\n== Test9 ==============================" << endl;
-    std::vector<int> vec1 = {1, 2, 3, 4, 5};
-    std::vector<int> vec2 = {10, 20};
+    std::vector<int> vec1 {1, 2, 3, 4, 5};
+    std::vector<int> vec2 {10, 20};
 
     display(vec1);
     display(vec2);
@@ -214,8 +214,8 @@ void test9() {
 
 void test10() {
     cout << "\n== Test10 ==============================" << endl;
-    std::vector<int> vec1 = {1, 2, 3, 4, 5};
-    std::vector<int> vec2 = {10, 20, 30, 40, 50};
+    std::vector<int> vec1 {1, 2, 3, 4, 5};
+    std::vector<int> vec2 {10, 20, 30, 40, 50};
     std::vector<int> vec3;
 
     // transform over 2 ranges
@@ -227,8 +227,8 @@ void test10() {
 
 void test11() {
     cout << "\n== Test11 ==============================" << endl;
-    std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    std::vector<int> vec2 = {100, 200, 300, 400};
+    std::vector<int> vec1 {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::vector<int> vec2 {100, 200, 300, 400};
 
     display(vec1);
     display(vec2);

@@ -29,7 +29,7 @@ void display(const std::map<T1, T2>& m) {
 
 void test1() {
     cout << "\n== Test1 ==============================" << endl;
-    std::map<string, int> m = {
+    std::map<string, int> m {
         {"Larry", 3},
         {"Moe", 1},
         {"Curly", 2}
@@ -65,7 +65,7 @@ void test1() {
 
 void test2() {
     cout << "\n== Test2 ==============================" << endl;
-    std::map<string, set<int>> grades = {
+    std::map<string, set<int>> grades {
         {"Larry", {100, 90}},
         {"Moe", {94}},
         {"Curly", {80, 90, 100}}

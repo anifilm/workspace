@@ -25,11 +25,11 @@ public:
 
 int main() {
 
-//  Test* t1 = new Test {1000};
+//  Test* t1 = new Test(1000);
 //  delete t1;
 
-//  unique_ptr<Test> t1 { new Test {100} };
-//  unique_ptr<Test> t2 = make_unique<Test> (1000);
+//  unique_ptr<Test> t1(new Test(100));
+//  unique_ptr<Test> t2 = make_unique<Test>(1000);
 
 //  unique_ptr<Test> t3;
 //  t3 = move(t1);

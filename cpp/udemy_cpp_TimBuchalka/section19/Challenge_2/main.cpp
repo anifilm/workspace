@@ -48,7 +48,7 @@ int process_response(const std::string& response, const std::string& answer_key)
 
 int main() {
 
-    ifstream in_file {"./Challenge_2/responses.txt"};
+    ifstream in_file("./Challenge_2/responses.txt");
 
     if (!in_file) {
         cerr << "Error opening file" << endl;

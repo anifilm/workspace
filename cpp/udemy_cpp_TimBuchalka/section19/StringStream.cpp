@@ -48,7 +48,7 @@ int main() {
             cout << "Sorry, that's not an integer" << endl;
 
         // discards the input buffer
-        cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     } while (!done);
 
     cout << "You enterd the interger: " << value << endl;
