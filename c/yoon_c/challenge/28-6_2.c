@@ -1,50 +1,8 @@
 /* 도전! 프로그래밍 4
 도전 6
-전화번호 관리 프로그램을 작성해 보자. 이 프로그램이 기본적으로 지녀야 햐는 기능은
-다음과 같다.
- - 입력         이름과 전화번호의 입력
- - 삭제         이름을 입력하여 해당 이름의 정보 삭제
- - 검색         이름을 입력하여 해당 이름의 정보 출력
- - 전체 출력    저장된 모든 이름과 전화번호 정보를 출력
 
-다음 실행의 예에서 보이는 바와 유사하게 동작하는 전화번호 관리 프로그램을 구현하기
-바란다.
-
-[실행의 예]
-***** MENU *****
-1. Insert
-2. Delete
-3. Search
-4. Print All
-5. Exit
-Choose the item: 1
-[INSERT]
-Input Name: Yoon
-Input Phone Number: 010-1234-5678
-                    Data Inserted!
-
-***** MENU *****
-1. Insert
-2. Delete
-3. Search
-4. Print All
-5. Exit
-Choose the item: 1
-[INSERT]
-Input Name: Hong
-Input Phone Number: 010-5544-4321
-                    Data Inserted!
-
-***** MENU *****
-1. Insert
-2. Delete
-3. Search
-4. Print All
-5. Exit
-Choose the item: 4
-[PRINT ALL DATA]
-Name: Yoon      Phone: 010-1234-5678
-Name: Hong      Phone: 010-5544-4321
+수정 내용
+static int idx;를 main() 함수 안으로 이동
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -60,15 +18,16 @@ struct phonebook {
 };
 
 void ShowMenu();
-void InsertUserInfo(struct phonebook*);
-void DeleteUserInfo(struct phonebook*);
-void SearchUserInfo(struct phonebook*);
-void PrintAllData(struct phonebook*);
-static int idx;
+void InsertUserInfo(struct phonebook*, int* n);
+void DeleteUserInfo(struct phonebook*, int* n);
+void SearchUserInfo(struct phonebook*, int n);
+void PrintAllData(struct phonebook*, int n);
+// static int idx;
 
 int main() {
 
     struct phonebook userInfo[MAX_USER];
+    int idx = 0;
     int sel_item;
 
     while (1) {
@@ -87,19 +46,19 @@ int main() {
         switch (sel_item) {
             case 1:
                 puts("[INSERT]");
-                InsertUserInfo(userInfo);
+                InsertUserInfo(userInfo, &idx);
                 break;
             case 2:
                 puts("[DELETE]");
-                DeleteUserInfo(userInfo);
+                DeleteUserInfo(userInfo, &idx);
                 break;
             case 3:
                 puts("[SEARCH]");
-                SearchUserInfo(userInfo);
+                SearchUserInfo(userInfo, idx);
                 break;
             case 4:
                 puts("[PRINT ALL DATA]");
-                PrintAllData(userInfo);
+                PrintAllData(userInfo, idx);
                 break;
             default:
                 puts("\n프로그램을 종료합니다.");
@@ -119,22 +78,22 @@ void ShowMenu() {
     puts("5. Exit");
 }
 
-void InsertUserInfo(struct phonebook* userInfo) {
+void InsertUserInfo(struct phonebook* userInfo, int* n) {
     printf("Input Name: ");
-    gets(userInfo[idx].name);
+    gets(userInfo[*n].name);
     printf("Input Phone Number: ");
-    gets(userInfo[idx].phoneNum);
-    idx++;
+    gets(userInfo[*n].phoneNum);
+    (*n)++;
     puts("\t\t    Data Inserted!");
     putchar('\n');
 }
 
-void DeleteUserInfo(struct phonebook* userInfo) {
+void DeleteUserInfo(struct phonebook* userInfo, int* n) {
     char name[NAME_LEN];
     int i, find_flag = 0, d_idx;
     printf("Input Name: ");
     gets(name);
-    for (i = 0; i < idx; i++) {
+    for (i = 0; i < *n; i++) {
         // 삭제할 대상 찾기
         if (strcmp(name, userInfo[i].name) == 0) {
             find_flag = 1;
@@ -147,21 +106,21 @@ void DeleteUserInfo(struct phonebook* userInfo) {
         puts("사용자 정보를 찾을 수 없습니다.");
     else {
         // 사용자를 찾았으므로 삭제
-        for (i = d_idx; i < idx + 1; i++) {
+        for (i = d_idx; i < *n; i++) {
             strcpy(userInfo[i].name, userInfo[i+1].name);
             strcpy(userInfo[i].phoneNum, userInfo[i+1].phoneNum);
         }
-        idx--;
+        (*n)--;
     }
     putchar('\n');
 }
 
-void SearchUserInfo(struct phonebook* userInfo) {
+void SearchUserInfo(struct phonebook* userInfo, int n) {
     char name[NAME_LEN];
     int i, find_flag = 0;
     printf("Input Name: ");
     gets(name);
-    for (i = 0; i < idx; i++) {
+    for (i = 0; i < n; i++) {
         // 사용자 찾기
         if (strcmp(name, userInfo[i].name) == 0) {
             find_flag = 1;
@@ -173,10 +132,10 @@ void SearchUserInfo(struct phonebook* userInfo) {
     putchar('\n');
 }
 
-void PrintAllData(struct phonebook* userInfo) {
+void PrintAllData(struct phonebook* userInfo, int n) {
     int i;
-    if (0 < idx) {
-        for (i = 0; i < idx; i++)
+    if (0 < n) {
+        for (i = 0; i < n; i++)
             printf("Name: %s\tPhone Number: %s\n", userInfo[i].name, userInfo[i].phoneNum);
     }
     else {

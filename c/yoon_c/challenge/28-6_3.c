@@ -1,8 +1,8 @@
 /* 도전! 프로그래밍 4
-도전 7
+도전 6
 
 수정 내용
-입력된 내용을 파일로 저장하는 기능 추가
+구조체 배열을 동적 할당하도록 수정
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,17 +22,13 @@ void InsertUserInfo(struct phonebook*, int* n);
 void DeleteUserInfo(struct phonebook*, int* n);
 void SearchUserInfo(struct phonebook*, int n);
 void PrintAllData(struct phonebook*, int n);
-void LoadData(struct phonebook*, int *n);
-void StoreData(struct phonebook*, int n);
 
 int main() {
 
-    struct phonebook userInfo[MAX_USER];
+    struct phonebook* userInfo;
+    userInfo = (struct phonebook*)malloc(sizeof(struct phonebook) * MAX_USER);
     int idx = 0;
     int sel_item;
-
-    // 저장 내용 읽어들이는 함수
-    LoadData(userInfo, &idx);
 
     while (1) {
         ShowMenu();
@@ -65,8 +61,7 @@ int main() {
                 PrintAllData(userInfo, idx);
                 break;
             default:
-                // 프로그램 종료 전에 입력된 내용 파일로 저장
-                StoreData(userInfo, idx);
+                free(userInfo);
                 puts("\n프로그램을 종료합니다.");
                 return 0;
         }
@@ -148,31 +143,4 @@ void PrintAllData(struct phonebook* userInfo, int n) {
         puts("출력할 정보가 없습니다.");
     }
     putchar('\n');
-}
-
-void LoadData(struct phonebook* userInfo, int *n) {
-    FILE* fp = fopen("28-7_data.dat", "rt");
-    if (fp == NULL) {
-        puts("저장된 내용를 찾을 수 없습니다.");
-        return;
-    }
-
-    while (1) {
-        fscanf(fp, "%s %s", userInfo[*n].name, userInfo[*n].phoneNum);
-        if (feof(fp) != 0)
-            break;
-        (*n)++;
-    }
-    printf("%d개의 저장된 연락처를 불러왔습니다.\n\n", *n);
-}
-
-void StoreData(struct phonebook* userInfo, int n) {
-    FILE* file = fopen("28-7_data.dat", "wt");
-    if (file == NULL) {
-        printf("파일 생성에 실패 하였습니다.\n");
-        return;
-    }
-
-    for(int i = 0; i < n; i++)
-        fprintf(file, "%s %s ", userInfo[i].name, userInfo[i].phoneNum);
 }
