@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int num {};
+    int num;
     const int min = 10;
     const int max = 100;
 
@@ -18,7 +18,7 @@ int main() {
         cout << "\n===== If statement 1 =====" << endl;
         cout << num << " is greater than or equal to " << min << endl;
 
-        int diff {num - min};
+        int diff = num - min;
         cout << num << " is " << diff << " greater than " << min << endl;
     }
 
@@ -26,7 +26,7 @@ int main() {
         cout << "\n===== If statement 2 =====" << endl;
         cout << num << " is less than or equal to " << max << endl;
 
-        int diff {max - num};
+        int diff = max - num;
         cout << num << " is " << diff << " less than " << max << endl;
     }
 

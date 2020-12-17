@@ -9,7 +9,7 @@ int main() {
 
     string directory = "C:\\Program Files";
 
-    for (auto &name : fs::directory_iterator(directory))
+    for (auto& name : fs::directory_iterator(directory))
         cout << name << endl;
 
     return 0;

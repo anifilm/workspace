@@ -69,11 +69,11 @@ using namespace std;
 
 int main() {
 
-    bool done {false};
-    vector<int> numbers {};
-    char user_choice {};
-    int number_to_add {};
-    int sum {}, min {}, max{};
+    bool done = false;
+    vector<int> numbers;
+    char user_choice;
+    int number_to_add;
+    int sum = 0, min = 0, max = 0;
 
     while (!done) {
 
@@ -110,7 +110,7 @@ int main() {
             case 'm':
             case 'M':
                 if (numbers.size() != 0) {
-                    for (int nums: numbers)
+                    for (int nums : numbers)
                         sum += nums;
                     cout << "\nThe mean is " << static_cast<double>(sum)/numbers.size() << endl;
                 } else

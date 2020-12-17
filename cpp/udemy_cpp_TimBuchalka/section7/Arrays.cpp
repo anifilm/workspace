@@ -18,9 +18,7 @@ int main() {
 
     hi_temps[0] = 100.7;    // set the first element in hi_temp to 100.7
                             // we'll talk about assignment statment in an upcoming section
-
     cout << "The first high temperature is now: " << hi_temps[0] << endl;
-
 
     int test_scores[5] = {100, 90, 80, 70, 60};
 

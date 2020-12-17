@@ -38,10 +38,10 @@ int main() {
     string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string key = "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr";
 
-    string input_message {};
+    string input_message;
 
-    string encrypt_msg {};
-    string decrypt_msg {};
+    string encrypt_msg;
+    string decrypt_msg;
 
     cout << "\nEnter your secret message: ";
     getline(cin, input_message);

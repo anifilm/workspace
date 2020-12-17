@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 
-    char letter_grade {};
+    char letter_grade;
 
     cout << "\nEnter the letter grade you expect on the exam: ";
     cin >> letter_grade;
@@ -36,7 +36,7 @@ int main() {
         case 'f':
         case 'F':
         {
-            char confirm {};
+            char confirm;
             cout << "\nAre you sure (Y/N)? ";
             cin >> confirm;
             if (confirm == 'y' || confirm == 'Y')

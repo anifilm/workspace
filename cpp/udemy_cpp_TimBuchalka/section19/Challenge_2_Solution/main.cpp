@@ -44,9 +44,9 @@ int process_response(const std::string& response, const std::string& answer_key)
 int main() {
 
     std::ifstream in_file;
-    std::string answer_key {};
-    std::string name {};
-    std::string response{};
+    std::string answer_key;
+    std::string name;
+    std::string response;
     int running_sum = 0;
     int total_students = 0;
     double average_score = 0.0;

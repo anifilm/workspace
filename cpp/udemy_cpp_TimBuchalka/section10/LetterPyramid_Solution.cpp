@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    string letters {};
+    string letters;
 
     cout << "Enter a string of letters so I can create a Letter Pyramid from it: ";
     getline(cin, letters);

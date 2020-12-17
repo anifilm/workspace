@@ -10,7 +10,7 @@ Bank::Bank(std::string newName, int newAccountNumber, double newBalance)
     bankBalance += newBalance;
 }
 
-Bank::Bank(const Bank &source)
+Bank::Bank(const Bank& source)
     : Bank {source.name, source.accountNumber, source.bankBalance} {
 }
 

@@ -11,8 +11,8 @@ private:
     int data;
 
 public:
-    Test(): data {0} { cout << "Test constructor (" << data << ")" << endl; }
-    Test(int data): data {data} { cout << "Test constructor (" << data << ")" << endl; }
+    Test() : data {0} { cout << "Test constructor (" << data << ")" << endl; }
+    Test(int data) : data {data} { cout << "Test constructor (" << data << ")" << endl; }
     int get_data() const { return  data; }
     ~Test() { cout << "Test destructor (" << data << ")" << endl; }
 };

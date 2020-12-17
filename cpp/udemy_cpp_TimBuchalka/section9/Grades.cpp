@@ -7,11 +7,11 @@ using namespace std;
 
 int main() {
 
-    int score {};
+    int score;
     cout << "\nEnter your score on the exam (0-100): ";
     cin >> score;
 
-    char letter_grade {};
+    char letter_grade;
 
     if (score >= 0 && score <= 100) {
         if (score >= 90)

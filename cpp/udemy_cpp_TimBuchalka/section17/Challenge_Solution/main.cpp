@@ -9,8 +9,8 @@ class Test {
 private:
     int data;
 public:
-    Test(): data {0} { std::cout << "Test constructor (" << data << ")" << std::endl; }
-    Test(int data): data {data} { std::cout << "Test constructor (" << data << ")" << std::endl; }
+    Test() : data {0} { std::cout << "Test constructor (" << data << ")" << std::endl; }
+    Test(int data) : data {data} { std::cout << "Test constructor (" << data << ")" << std::endl; }
     int get_data() const { return data; }
     ~Test() {std::cout << "Test destructor (" << data << ")" << std::endl; }
 };
@@ -29,8 +29,8 @@ void fill(std::vector<std::shared_ptr<Test>>& vec, int num)  {
     for (int i = 1; i <= num; ++i) {
         std::cout << "Enter data point [" << i << "] : ";
         std::cin >> temp;
-//        std::shared_ptr<Test> ptr = std::make_shared<Test>(temp);
-//        vec.push_back(ptr);
+//      std::shared_ptr<Test> ptr = std::make_shared<Test>(temp);
+//      vec.push_back(ptr);
         vec.push_back(std::make_shared<Test>(temp));
     }
 }

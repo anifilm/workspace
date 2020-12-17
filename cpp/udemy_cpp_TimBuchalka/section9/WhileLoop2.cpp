@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int num {};
+    int num;
 
     cout << "Enter a positive integer to count up to: ";
     cin >> num;

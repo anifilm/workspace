@@ -18,9 +18,9 @@ void add_movie(Movies& movies, std::string name, std::string rating, int watched
  * and the name of the movie to increment the watched count
  *
  * If the watched count was incremented successfully it
-*  displays a success message
-*  otherwise the watched count could not be incremented
-*  because the name of the movie was not found
+ * displays a success message
+ * otherwise the watched count could not be incremented
+ * because the name of the movie was not found
  * ***************************************************************/
 
 void increment_watched(Movies& movies, std::string name) {
@@ -32,14 +32,14 @@ void increment_watched(Movies& movies, std::string name) {
 }
 
 /******************************************************************
-* helper function
-*  add_movie expects a reference to a Movies object
+ * helper function
+ * add_movie expects a reference to a Movies object
  * and the name of the movie, the rating and the watched count
  *
  * If the movie was successfully added to the movies object it
-*  displays a success message
-*  otherwise the movie was not added
-*  because the name of the movie was already in movies
+ * displays a success message
+ * otherwise the movie was not added
+ * because the name of the movie was already in movies
  * ***************************************************************/
 void add_movie(Movies& movies, std::string name, std::string rating, int watched) {
     if (movies.add_movie(name,rating,watched)) {

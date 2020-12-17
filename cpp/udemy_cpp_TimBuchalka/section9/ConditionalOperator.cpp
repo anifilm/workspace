@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int num {};
+    int num;
 
     cout << "Enter an integer: ";
     cin >> num;

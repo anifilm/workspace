@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-    double num {};
+    double num;
 
     cout << "Enter a number (double): ";
     cin >> num;
@@ -23,7 +23,7 @@ int main() {
     cout << "The floor of " << num << " is: " << floor(num) << endl;
     cout << "The round of " << num << " is: " << round(num) << endl;
 
-    double power {};
+    double power;
     cout << "\nEnter a power to rise " << num << " to: ";
     cin >> power;
     cout << num << " raised to the " << power << " power is: " << pow(num, power) << endl;      // 제곱 (power)

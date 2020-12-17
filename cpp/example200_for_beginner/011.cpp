@@ -14,7 +14,6 @@ void Minus(const int x, const int y) {
 int main() {
 
     cout << "2 + 6 = " << Plus(2, 6) << endl;
-
     Minus(10, 5);
 
     return 0;

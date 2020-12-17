@@ -32,7 +32,7 @@ double calc_area_circle(double radius) {
 }
 
 void area_circle() {
-    double radius {};
+    double radius;
     cout << "\nEnter the radius of the circle: ";
     cin >> radius;
 
@@ -40,8 +40,8 @@ void area_circle() {
 }
 
 void volume_cylinder() {
-    double radius {};
-    double height {};
+    double radius;
+    double height;
     cout << "\nEnter the radius of the cylinder: ";
     cin >> radius;
     cout << "\nEnter the height of the cylinder: ";

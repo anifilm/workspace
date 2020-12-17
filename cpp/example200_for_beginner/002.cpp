@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    int number = 0;
+    int number;
 
     cout << "숫자를 입력하세요: ";
     cin >> number;

@@ -30,6 +30,7 @@ public:
 };
 
 int main() {
+
     Account frank_account;
     frank_account.name = "Frank's account";
     frank_account.balance = 5000.0;

@@ -49,8 +49,8 @@ void unknown();
 int main() {
 
     bool done = false;
-    vector<int> numbers {};
-    char user_choice {};
+    vector<int> numbers;
+    char user_choice;
 
     while (!done) {
         display_menu();
@@ -95,7 +95,7 @@ void display_menu() {
 }
 
 char get_choice() {
-    char user_choice {};
+    char user_choice;
     cout << "\nEnter your choice: ";
     cin >> user_choice;
     return toupper(user_choice);
@@ -113,7 +113,7 @@ void print_numbers(const vector<int>& numbers) {
 }
 
 void add_number(vector<int>& numbers) {
-    int number_to_add {};
+    int number_to_add;
     cout << "\nEnter an integer to add to the list: ";
     cin >> number_to_add;
     cout << endl << number_to_add << " added" << endl;
@@ -121,7 +121,7 @@ void add_number(vector<int>& numbers) {
 }
 
 void mean_number(vector<int>& numbers) {
-    int sum {};
+    int sum = 0;
     if (numbers.size() != 0) {
         for (int nums : numbers)
             sum += nums;
@@ -132,8 +132,7 @@ void mean_number(vector<int>& numbers) {
 }
 
 void smallest_number(vector<int>& numbers) {
-    int min {};
-    min = numbers.at(0);
+    int min = numbers.at(0);
     if (numbers.size() != 0) {
         for (int nums : numbers)
             if (nums < min)
@@ -144,8 +143,7 @@ void smallest_number(vector<int>& numbers) {
 }
 
 void largest_number(vector<int>& numbers) {
-    int max {};
-    max = numbers.at(0);
+    int max = numbers.at(0);
     if (numbers.size() != 0) {
         for (int nums : numbers)
             if (nums > max)

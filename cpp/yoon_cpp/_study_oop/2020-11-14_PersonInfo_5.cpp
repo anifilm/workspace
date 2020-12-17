@@ -40,8 +40,8 @@ void Person::ShowPersonInfo() {
 
 int main() {
 
-//  struct Person p1 {"홍길동", 30, "서울시 용산구 한남동"};
-//  struct Person p2 {"고길동", 40, "서울시 서초구 반포동"};
+//  Person p1 = {"홍길동", 30, "서울시 용산구 한남동"};
+//  Person p2 = {"고길동", 40, "서울시 서초구 반포동"};
 
     // 클래스 선언된 개체 초기화
     Person p1;

@@ -4,7 +4,7 @@
 using namespace std;
 
 namespace COMP_POS {
-    enum {CLERK, SENIOR, ASSIST, MANAGER};
+    enum { CLERK, SENIOR, ASSIST, MANAGER };
     void ShowPositionInfo(int pos) {
         switch(pos) {
             case CLERK:
@@ -77,10 +77,10 @@ PhoneBook::~PhoneBook() {
 
 int main() {
 
-    PhoneBook p1 {"홍길동", 30, "010-1234-5678", "서울시 용산구 한남동", "NCSOFT", COMP_POS::ASSIST};
+    PhoneBook p1("홍길동", 30, "010-1234-5678", "서울시 용산구 한남동", "NCSOFT", COMP_POS::ASSIST);
     p1.ShowPersonInfo();
 
-    PhoneBook p2 {"고길동", 40, "010-5548-3345", "서울시 서초구 반포동", "WEBZEN", COMP_POS::MANAGER};
+    PhoneBook p2("고길동", 40, "010-5548-3345", "서울시 서초구 반포동", "WEBZEN", COMP_POS::MANAGER);
     p2.ShowPersonInfo();
 
     return 0;

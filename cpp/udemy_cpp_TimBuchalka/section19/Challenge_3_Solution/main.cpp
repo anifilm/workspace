@@ -14,9 +14,9 @@ bool find_substring(const std::string& word_to_find, const std::string& target) 
 }
 
 int main() {
-    std::ifstream in_file {};
-    std::string word_to_find {};
-    std::string word_read {};
+    std::ifstream in_file;
+    std::string word_to_find;
+    std::string word_read;
     int word_count = 0;
     int match_count = 0;
 

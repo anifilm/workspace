@@ -16,8 +16,8 @@ using namespace std;
 
 int main() {
 
+    int num1, num2, num3;
     int total = 0;
-    int num1 {}, num2 {}, num3 {};
     const int count = 3;
 
     cout << "Enter 3 integers separated by spaces: ";
@@ -25,7 +25,7 @@ int main() {
 
     total = num1 + num2 + num3;
 
-    double average = 0.0;
+    double average;
 
     average = static_cast<double>(total) / count;
     // average = (double)total/count;  Old-Style

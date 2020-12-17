@@ -20,7 +20,7 @@ int main() {
     cout << (larry == moe) << endl;         // false
     cout << (larry == stooge) << endl;      // true
 
-    // Mystring stooges = larry + "Moe";
+//  Mystring stooges = larry + "Moe";
     Mystring stooges = "Larry" + moe;       // Now ok with non-member function
     stooges.display();                      // LarryMoe :c8
 

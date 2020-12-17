@@ -10,10 +10,10 @@ class Temp {
 
 int main() {
 
-    cout << "sizeof(char): " << sizeof(char) << endl;       // 1 byte
-    cout << "sizeof(int): " << sizeof(int) << endl;         // 4 byte
+    cout << "sizeof(char)  : " << sizeof(char) << endl;     // 1 byte
+    cout << "sizeof(int)   : " << sizeof(int) << endl;      // 4 byte
     cout << "sizeof(double): " << sizeof(double) << endl;   // 8 byte
-    cout << "sizeof(class): " << sizeof(Temp) << endl;      // 8 byte
+    cout << "sizeof(class) : " << sizeof(Temp) << endl;     // 8 byte
 
     return 0;
 }

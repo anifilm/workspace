@@ -31,11 +31,11 @@ void Person::ShowPersonInfo() {
 
 int main() {
 
-    struct Person p1 {"홍길동", 30, "서울시 용산구 한남동"};
+    Person p1 = {"홍길동", 30, "서울시 용산구 한남동"};
     p1.AddAge();
     p1.ShowPersonInfo();
 
-    struct Person p2 {"고길동", 40, "서울시 서초구 반포동"};
+    Person p2 = {"고길동", 40, "서울시 서초구 반포동"};
     p2.ShowPersonInfo();
 
     return 0;

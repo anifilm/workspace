@@ -18,7 +18,7 @@ int main() {
         return 1;
     }
 
-    std::string line {};
+    std::string line;
     int line_number = 0;
     while (getline(in_file, line)) {
         if (line == "")

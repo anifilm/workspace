@@ -20,10 +20,10 @@ int main() {
 
     cout << "\n------------------------------" << endl;
 
-    for (auto &str : stooges)				// str is a reference to each vector element
+    for (auto& str : stooges)				// str is a reference to each vector element
         str = "Funny";
 
-    for (auto const &str : stooges)	   	    // notice we are using const
+    for (auto const& str : stooges)	   	    // notice we are using const
         cout << str << " ";					// now the vector elements have changed
     cout << endl;
 

@@ -11,12 +11,12 @@ using namespace std;
 
 int main() {
 
-    int num {};
-    double total {};
-    string name {};
+    int num;
+    double total;
+    string name;
 
     string info = "Moe 100 1234.5";
-    istringstream iss {info};
+    istringstream iss(info);
 
     iss >> name >> num >> total;
     cout << setw(10) << left << name
@@ -25,7 +25,7 @@ int main() {
 
     cout << "\n-----------------------------------" << endl;
 
-    ostringstream oss {};
+    ostringstream oss;
     oss << setw(10) << left << name
         << setw(5) << num
         << setw(10) << total << endl;
@@ -33,14 +33,14 @@ int main() {
 
     cout << "\n--- Data validation ---------------" << endl;
 
-    int value {};
-    string entry {};
+    int value;
+    string entry;
     bool done = false;
 
     do {
         cout << "Please enter an integer: ";
         cin >> entry;
-        istringstream validator {entry};
+        istringstream validator(entry);
 
         if (validator >> value)
             done = true;

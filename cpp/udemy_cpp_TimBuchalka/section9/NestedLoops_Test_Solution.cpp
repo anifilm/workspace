@@ -23,7 +23,7 @@ and only check the solution if you really get stuck.
 using namespace std;
 
 int calculate_pairs(vector<int> vec) {
-    int result {};
+    int result = 0;
     if (vec.size() > 1) {
         for (size_t i = 0; i < vec.size() - 1; i++) {
             for (size_t j = i + 1; j < vec.size(); j++)

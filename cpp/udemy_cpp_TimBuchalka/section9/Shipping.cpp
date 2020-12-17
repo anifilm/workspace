@@ -31,17 +31,17 @@ int main() {
     const double tier1_surcharge = 0.1;
     const double tier2_surcharge = 0.25;
 
-    int p_length {}, p_width {}, p_height {};
+    int p_length, p_width, p_height;
 
     cout << "\nWelcome to the package cost calculator" << endl;
     cout << "\nEnter length, width and height of the package separated by spaces: ";
     cin >> p_length >> p_width >> p_height;
 
-    int package_volume {p_length * p_width * p_height};
-    //double package_cost {};
+    int package_volume = p_length * p_width * p_height;
+//  double package_cost = 0.0;
 
     if (p_length < max_dimension_lenth && p_width < max_dimension_lenth && p_height < max_dimension_lenth) {
-        double package_cost {};
+        double package_cost = 0.0;
         package_cost = base_cost;
 
         if (package_volume > tier2_threshold) {

@@ -23,8 +23,8 @@ int main() {
         return 1;
     }
 
-    string word_read {};
-    string word_to_find {};
+    string word_read;
+    string word_to_find;
     int word_count = 0;
     int match_count = 0;
 

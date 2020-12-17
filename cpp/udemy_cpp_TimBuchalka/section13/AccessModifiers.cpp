@@ -22,8 +22,8 @@ public:
 int main() {
 
     Player frank;
-    // frank.name = "Frank";                // compile error
-    // cout << frank.health << endl;        // compile error
+//  frank.name = "Frank";                // compile error
+//  cout << frank.health << endl;        // compile error
     frank.talk("Hello there");
 
     return 0;

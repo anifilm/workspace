@@ -38,26 +38,22 @@ int main() {
     cin >> test_scores.at(2);
 
     cout << "\nUpdated test scores:" << endl;
-
     cout << test_scores.at(0) << endl;
     cout << test_scores.at(1) << endl;
     cout << test_scores.at(2) << endl;
 
     cout << "\nEnter a test score to add to the vector: ";
-
-    int score_to_add = 0;
+    int score_to_add;
     cin >> score_to_add;
 
     test_scores.push_back(score_to_add);
 
     cout << "\nEnter one more test score to add to vector: ";
-
     cin >> score_to_add;
 
     test_scores.push_back(score_to_add);
 
     cout << "\nTest scores are now:" << endl;
-
     cout << test_scores.at(0) << endl;
     cout << test_scores.at(1) << endl;
     cout << test_scores.at(2) << endl;
@@ -69,7 +65,6 @@ int main() {
  // cout << "This should cause an exception!!" << test_scores.at(10) << endl;
 
     // Example of a 2D-vector
-
     vector<vector<int>> movie_ratings = {
         {1, 2, 3, 4},
         {1, 2, 4, 4},

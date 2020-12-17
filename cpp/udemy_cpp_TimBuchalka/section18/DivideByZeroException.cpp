@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
 
-    int miles {};
-    int gallons {};
-    double miles_per_gallon {};
+    int miles;
+    int gallons;
+    double miles_per_gallon;
 
     cout << "Enter the miles driven: ";
     cin >> miles;

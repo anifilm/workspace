@@ -23,7 +23,7 @@ int main() {
         return 1;
     }
 
-    string line {};
+    string line;
     int line_number = 0;
 
     while (getline(in_file, line)) {

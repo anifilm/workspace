@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-    char selection {};
+    char selection;
 
     do {
         cout << "\n-------------------"<< endl;

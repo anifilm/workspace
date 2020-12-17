@@ -64,7 +64,7 @@ int main() {
         array[i]->withdraw(1000);
 
     cout << "\n=== Vector =========================" << endl;
-    vector<Account*> accounts {p1, p2, p3, p4};
+    vector<Account*> accounts = {p1, p2, p3, p4};
     for (auto acc_ptr : accounts)
         acc_ptr->withdraw(1000);
 

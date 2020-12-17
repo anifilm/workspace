@@ -34,7 +34,7 @@ Mystring::Mystring(const Mystring& source)
 Mystring::Mystring(Mystring&& source)
     :str(source.str) {
         source.str = nullptr;
-//      std::cout << "Move constructor used" << std::endl;
+    //  std::cout << "Move constructor used" << std::endl;
 }
 
 // Destructor

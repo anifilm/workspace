@@ -55,9 +55,9 @@ int main() {
         return 1;
     }
 
-    string answer_key {};
-    string name {};
-    string response {};
+    string answer_key;
+    string name;
+    string response;
 
     int running_sum = 0;
     int total_students = 0;

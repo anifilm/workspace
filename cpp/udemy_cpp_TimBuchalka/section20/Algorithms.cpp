@@ -38,7 +38,7 @@ void find_test() {
     else
         cout << "Couldn't find the number" << endl;
 
-    std::list<Person> players {
+    std::list<Person> players = {
         {"Larry", 18},
         {"Moe", 20},
         {"Curly", 21}

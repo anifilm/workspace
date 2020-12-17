@@ -38,7 +38,7 @@ int main() {
     cout << "Hello, welcome to anifilm's Carpet Ceaning Service" << endl;
     cout << "\nHow many rooms would you like cleaned? ";
 
-    int number_of_rooms = 0;
+    int number_of_rooms;
     cin >> number_of_rooms;
 
     const double price_per_room = 32.5;

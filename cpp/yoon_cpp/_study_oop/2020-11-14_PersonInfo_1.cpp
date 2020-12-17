@@ -24,11 +24,11 @@ void ShowPersonInfo(const Person& person) {
 
 int main() {
 
-    struct Person p1 {"홍길동", 30, "서울시 용산구 한남동"};
+    Person p1 = {"홍길동", 30, "서울시 용산구 한남동"};
     AddAge(p1);
     ShowPersonInfo(p1);
 
-    struct Person p2 {"고길동", 40, "서울시 서초구 반포동"};
+    Person p2 = {"고길동", 40, "서울시 서초구 반포동"};
     ShowPersonInfo(p2);
 
     return 0;

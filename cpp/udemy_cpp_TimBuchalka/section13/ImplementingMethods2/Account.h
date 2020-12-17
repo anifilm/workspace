@@ -8,6 +8,7 @@ private:
     // attributes
     std::string name;
     double balance;
+
 public:
     // methods
     // declared inline

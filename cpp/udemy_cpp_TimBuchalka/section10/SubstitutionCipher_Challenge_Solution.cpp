@@ -38,7 +38,7 @@ int main() {
     string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string key = "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr";
 
-    string secret_message {};
+    string secret_message;
 
     cout << "\nEnter your secret message: ";
     getline(cin, secret_message);
@@ -46,11 +46,11 @@ int main() {
 
     cout << "\nEncrypting message..." << endl;
 
-    string encrypt_msg {};
-    for (char c: secret_message) {
+    string encrypt_msg;
+    for (char c : secret_message) {
         size_t position = alphabet.find(c);
         if (position != string::npos) {
-            char new_char { key.at(position) };
+            char new_char = key.at(position);
             encrypt_msg += new_char;
         } else
             encrypt_msg += c;
@@ -60,11 +60,11 @@ int main() {
 
     cout << "\nDecrypting message..." << endl;
 
-    string decrypt_msg {};
-    for (char c: encrypt_msg) {
+    string decrypt_msg;
+    for (char c : encrypt_msg) {
         size_t position = key.find(c);
         if (position != string::npos) {
-            char new_char { alphabet.at(position) };
+            char new_char = alphabet.at(position);
             decrypt_msg += new_char;
         } else
             decrypt_msg += c;

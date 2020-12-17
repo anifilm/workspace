@@ -69,8 +69,8 @@ using namespace std;
 
 int main() {
 
-    vector<int> numbers {};
-    char selection {};
+    vector<int> numbers;
+    char selection;
 
     do {
         cout << "\nYour program should display a menu options to the user as follows:" << endl;
@@ -88,7 +88,7 @@ int main() {
         if (selection == 'p' || selection == 'P') {
             if (numbers.size() != 0) {
                 cout << "\n[ ";
-                for (auto nums: numbers)
+                for (auto nums : numbers)
                     cout << nums << " ";
                 cout << "]" << endl;
             } else {
@@ -102,8 +102,8 @@ int main() {
             numbers.push_back(number_to_add);
         } else if (selection == 'm' || selection == 'M') {
             if (numbers.size() != 0) {
-                int total {};
-                for (auto nums: numbers)
+                int total = 0;
+                for (auto nums : numbers)
                     total += nums;
                 cout << "\nThe mean is " << static_cast<double>(total)/numbers.size() << endl;
             } else {
@@ -112,7 +112,7 @@ int main() {
         } else if (selection == 's' || selection == 'S') {
             if (numbers.size() != 0) {
                 int smallest = numbers.at(0);
-                for (auto nums: numbers)
+                for (auto nums : numbers)
                     if (nums < smallest)
                         smallest = nums;
                 cout << "\nThe smallest number is " << smallest << endl;
@@ -122,7 +122,7 @@ int main() {
         } else if (selection == 'm' || selection == 'M') {
             if (numbers.size() != 0) {
                 int largest = numbers.at(0);
-                for (auto nums: numbers)
+                for (auto nums : numbers)
                     if (nums > largest)
                         largest = nums;
                 cout << "\nThe largest number is " << largest << endl;
@@ -136,6 +136,6 @@ int main() {
         }
     } while (selection != 'q' && selection != 'Q');
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

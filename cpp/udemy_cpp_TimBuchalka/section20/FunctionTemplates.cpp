@@ -46,8 +46,8 @@ int main() {
     my_swap(x, y);
     cout << x << ", " << y << endl;
 
-    Person p1 {"Curly", 15};
-    Person p2 {"Moe", 30};
+    Person p1 = {"Curly", 15};
+    Person p2 = {"Moe", 30};
 
     Person p3 = my_min(p1, p2);
     cout << p3.name << " is younger" << endl;

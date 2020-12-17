@@ -42,12 +42,12 @@ Person::~Person() {
 int main() {
 
     // 클래스 선언된 개체 생성자를 통한 초기화
-    Person p1 {"홍길동", 30, "서울시 용산구 한남동"};
+    Person p1("홍길동", 30, "서울시 용산구 한남동");
     p1.AddAge();
     p1.ShowPersonInfo();
 
-        // 클래스 선언된 개체 생성자를 통한 초기화
-    Person p2 {"고길동", 40, "서울시 서초구 반포동"};
+    // 클래스 선언된 개체 생성자를 통한 초기화
+    Person p2("고길동", 40, "서울시 서초구 반포동");
     p2.ShowPersonInfo();
 
     return 0;

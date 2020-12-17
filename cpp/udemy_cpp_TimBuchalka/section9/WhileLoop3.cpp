@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int number {};
+    int number;
 
     cout << "Enter an integer less than 100: ";
     cin >> number;

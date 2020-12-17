@@ -20,6 +20,7 @@ void greeting(string name, string prefix, string suffix) {
 }
 
 int main() {
+
     double cost = 0;
     cost = calc_cost(100.0, 0.08, 4.25);        // will use no defualt 100 + 8 + 4.25
 
@@ -34,7 +35,6 @@ int main() {
 
     cost = calc_cost();
     cout << "Cost is: " << cost << endl;
-
     cout << endl;
 
     greeting("Glenn Jones", "Dr.", "M.D.");

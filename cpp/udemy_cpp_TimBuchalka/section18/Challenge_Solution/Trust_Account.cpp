@@ -2,7 +2,6 @@
 
 Trust_Account::Trust_Account(std::string name, double balance, double int_rate)
     : Savings_Account {name, balance, int_rate}, num_withdrawals {0}  {
-
 }
 
 // Deposit additional $50 bonus when amount >= $5000

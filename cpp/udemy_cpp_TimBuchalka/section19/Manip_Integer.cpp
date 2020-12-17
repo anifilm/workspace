@@ -51,16 +51,16 @@ int main() {
     cout << "Enter an integer: ";
     cin >> num;
 
-    cout << "Decimal default : " << num << endl;
+    cout << "Decimal default: " << num << endl;
 
-    cout << "Hexadecimal     : " << hex << num << endl;
-    cout << "Hexadecimal     : " << hex << uppercase << num << endl;
-    cout << "Hexadecimal     : " << hex << num << endl;
-    cout << "Hexadecimal     : " << hex << nouppercase << num << endl;
+    cout << "Hexadecimal    : " << hex << num << endl;
+    cout << "Hexadecimal    : " << hex << uppercase << num << endl;
+    cout << "Hexadecimal    : " << hex << num << endl;
+    cout << "Hexadecimal    : " << hex << nouppercase << num << endl;
 
-    cout << "Octal           : " << oct << num << endl;
-    cout << "Hexadecimal     : " << hex << showbase << num << endl;
-    cout << "Octal           : " << oct << num << endl;
+    cout << "Octal          : " << oct << num << endl;
+    cout << "Hexadecimal    : " << hex << showbase << num << endl;
+    cout << "Octal          : " << oct << num << endl;
 
     cout << endl;
     return 0;

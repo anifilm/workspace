@@ -1,8 +1,8 @@
 #ifndef _MYSTRING_H_
 #define _MYSTRING_H_
+#include <iostream>
 
 class Mystring {
-
     friend Mystring operator-(const Mystring& obj);
     friend Mystring operator+(const Mystring& lhs, const Mystring& rhs);
     friend Mystring& operator+=(Mystring& lhs, const Mystring& rhs);

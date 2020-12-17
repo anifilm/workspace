@@ -32,12 +32,12 @@ int main() {
     cout << "Hello, welcome to anifilm's Carpet Ceaning Service" << endl;
     cout << "\nHow many small rooms would you like cleaned? ";
 
-    int number_of_small_rooms = 0;
+    int number_of_small_rooms;
     cin >> number_of_small_rooms;
 
     cout << "\nHow many large rooms would you like cleaned? ";
 
-    int number_of_large_rooms = 0;
+    int number_of_large_rooms;
     cin >> number_of_large_rooms;
 
     const double price_per_small_room = 20;

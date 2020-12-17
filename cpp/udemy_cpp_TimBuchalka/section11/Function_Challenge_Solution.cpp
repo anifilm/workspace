@@ -61,7 +61,7 @@ bool find(const vector<int>& v, int target);
 int main() {
 
     vector<int> numbers;        // our list of numbers
-    char selection {};
+    char selection;
 
     do {
         display_menu();
@@ -115,7 +115,7 @@ This function simply reads a character selection from
 stdin and returns it as upper case.
 ***************************************************************/
 char get_selection() {
-    char selection {};
+    char selection;
     cin >> selection;
     return toupper(selection);
 }
@@ -141,7 +141,7 @@ Note that the vector parameter must NOT be const since
 it will be changing the list of numbers
 ***************************************************************/
 void handle_add(vector<int>& v) {
-    int num_to_add {};
+    int num_to_add;
     cout << "Enter an integer to add to the list: ";
     cin >> num_to_add;
     v.push_back(num_to_add);
@@ -194,7 +194,7 @@ Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
 void handle_find(const vector<int>& v) {
-    int target {};
+    int target;
     cout << "Enter the number to find: ";
     cin >> target;
     if ( find(v, target))
@@ -242,7 +242,7 @@ this function should NOT modify the list of numbers
 Note: the list must not be empty
 ***************************************************************/
 double calculate_mean(const vector<int>& v) {
-    int total {};
+    int total = 0;
     for (auto num : v)
         total += num;
     return static_cast<double>(total) / v.size();

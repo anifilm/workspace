@@ -14,7 +14,7 @@ int main() {
 
     delete int_ptr;
 
-    size_t size = 0;
+    size_t size;
     double* temp_ptr = nullptr;
 
     cout << "How many temps? ";

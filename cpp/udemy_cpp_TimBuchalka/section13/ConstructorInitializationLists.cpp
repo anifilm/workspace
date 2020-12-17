@@ -8,7 +8,7 @@ using namespace std;
 
 class Player {
 private:
-    string name {"XXXXXX"};
+    string name = "XXXXXX";
     int health;
     int xp;
 
@@ -46,5 +46,5 @@ int main() {
     Player frank {"Frank"};
     Player villain {"Villain", 100, 55};
 
-	return 0;
+    return 0;
 }

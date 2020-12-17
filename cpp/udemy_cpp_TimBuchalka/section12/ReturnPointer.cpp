@@ -22,6 +22,7 @@ void display(const int* const array, size_t size) {
 }
 
 int main() {
+
     int* my_array = nullptr;
     size_t size;
     int init_value {};

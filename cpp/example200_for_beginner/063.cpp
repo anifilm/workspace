@@ -10,7 +10,7 @@ int main() {
     string str3 = "789 문자열";
 
     int num1 = stoi(str1);
-    // int num2 = stoi(str2);
+//  int num2 = stoi(str2);
     double num2 = stof(str2);
     int num3 = stoi(str3);
 

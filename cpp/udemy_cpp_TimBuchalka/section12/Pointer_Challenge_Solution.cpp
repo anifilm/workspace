@@ -93,16 +93,16 @@ int main() {
     int array2[] = {10, 20, 30};
 
     cout << "Array 1: " ;
-    print(array1,array1_size);
+    print(array1, array1_size);
 
     cout << "Array 2: " ;
-    print(array2,array2_size);
+    print(array2, array2_size);
 
     int* results = apply_all(array1, array1_size, array2, array2_size);
     constexpr size_t results_size {array1_size * array2_size};
 
     cout << "Result: " ;
-    print(results,results_size);
+    print(results, results_size);
 
     delete[] results;
 

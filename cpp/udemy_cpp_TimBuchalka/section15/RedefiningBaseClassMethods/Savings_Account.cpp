@@ -2,11 +2,11 @@
 #include "Savings_Account.h"
 
 Savings_Account::Savings_Account()
-    : Savings_Account {0.0, 0.0} {
+    : Savings_Account(0.0, 0.0) {
 }
 
 Savings_Account::Savings_Account(double balance, double int_rate)
-    : Account(balance), int_rate {int_rate} {
+    : Account(balance), int_rate(int_rate) {
 }
 
 void Savings_Account::deposit(double amount) {

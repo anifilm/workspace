@@ -6,12 +6,12 @@ using namespace std;
 
 int main() {
 
-    char first_name[20] {};
-    char last_name[20] {};
-    char full_name[50] {};
-    char temp[50] {};
+    char first_name[20];
+    char last_name[20];
+    char full_name[50];
+    char temp[50];
 
-    // cout << first_name;     // Will likely display garbage!
+//  cout << first_name;     // Will likely display garbage!
 
     cout << "Please enter your first name: ";
     cin >> first_name;
@@ -28,6 +28,6 @@ int main() {
     strcat(full_name, last_name);       // concatenate last_name to full_name
     cout << "\nYour full name is " << full_name << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

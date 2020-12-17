@@ -9,15 +9,15 @@ using namespace std;
 
 int main() {
 
-    // int scores[] = {10, 20, 30};
+//  int scores[] = {10, 20, 30};
 
-    // for (auto score: scores)
-    //     cout << score << endl;
+//  for (auto score : scores)
+//      cout << score << endl;
 
     vector<double> temperatures = {87.9, 77.9, 80.0, 72.5};
 
-    double average_temp {};
-    double total {};
+    double total;
+    double average_temp;
 
     for (auto temp : temperatures)
         total += temp;

@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 
-//  Account frank{"Frank", 5000};         // should not compile
+//  Account frank {"Frank", 5000};        // should not compile
 //  cout << frank << endl;
 
     Checking_Account frank {"Frank", 5000};
@@ -23,7 +23,7 @@ int main() {
     Account* p2 = new Savings_Account("Moe", 1000);
     Account* p3 = new Trust_Account("Curly");
 
-    std::vector<Account*> accounts {p1, p2, p3};
+    std::vector<Account*> accounts = {p1, p2, p3};
 
     display(accounts);
     deposit(accounts, 1000);

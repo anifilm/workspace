@@ -1,7 +1,7 @@
 #include "Checking_Account.h"
 
 Checking_Account::Checking_Account(std::string name, double balance)
-    try: Account {name, balance} {
+    try : Account {name, balance} {
 
     }
     catch (...) {

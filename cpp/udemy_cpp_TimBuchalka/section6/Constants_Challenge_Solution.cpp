@@ -31,16 +31,16 @@ int main() {
 
     cout << "Hello, welcome to Frank's Carpet Cleaning Service" << endl;
 
-    int small_rooms = 0;
+    int small_rooms;
     cout << "\nHow many small rooms would you like cleaned? ";
     cin >> small_rooms;
 
-    int large_rooms = 0;
+    int large_rooms;
     cout << "How many large rooms would you like cleaned? ";
     cin >> large_rooms;
 
-    const double  price_per_small_room = 25.0;
-    const double  price_per_large_room = 35.0;
+    const double price_per_small_room = 25.0;
+    const double price_per_large_room = 35.0;
 
     const double sales_tax = 0.06;
     const int estimate_expiry = 30; // days

@@ -61,7 +61,7 @@ int main() {
     s3 = "Watermelon";
     s3 = s5 + " and " + s2 + " juice";              // Apple and Banana juice
     cout << "s3 is now: " << s3 << endl;            // Apple and Banana juice
-    // s3 = "nice " + "cold " + s5 + " juice";      // Compiler error
+//  s3 = "nice " + "cold " + s5 + " juice";         // Compiler error
 
     // for loop
     cout << "\nLooping" << "\n----------------------------------------" << endl;
@@ -107,7 +107,7 @@ int main() {
     cout << "\nfind" << "\n----------------------------------------" << endl;
 
     s1 = "The secret word is Boo";
-    string word {};
+    string word;
 
     cout << "Enter the word to find: ";
     cin >> word;

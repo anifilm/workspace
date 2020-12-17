@@ -5,9 +5,7 @@ using namespace std;
 
 int main() {
 
-    int p = 0;
-    int n = 0;
-    int t = 0;
+    int p, n, t;
 
     for (int i = 1; i < 10; i++) {
         p = 0;

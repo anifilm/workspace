@@ -45,12 +45,12 @@ int main() {
     const int nickel_is_cents = 5;
     const int penny_is_cents = 1;
 
-    int change_amount {};
+    int change_amount;
 
     cout << "\nEnter an amount in cents: ";
     cin >> change_amount;
 
-    int balance {}, dollars {}, quarters {}, dimes {}, nickels {}, pennies {};
+    int balance, dollars, quarters, dimes, nickels, pennies;
 
     dollars = change_amount / dollar_is_cents;
     balance = change_amount - (dollars * dollar_is_cents);

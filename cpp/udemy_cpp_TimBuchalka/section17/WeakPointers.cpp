@@ -30,8 +30,8 @@ public:
 
 int main() {
 
-    shared_ptr<A> a = make_shared<A> ();
-    shared_ptr<B> b = make_shared<B> ();
+    shared_ptr<A> a = make_shared<A>();
+    shared_ptr<B> b = make_shared<B>();
     a->set_B(b);
     b->set_A(a);
 

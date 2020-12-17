@@ -2,7 +2,7 @@
 // Simple Account class
 
 Account::Account()
-    : balance {0.0} {
+    : balance(0.0) {    // delegating constructor
 }
 
 Account::Account(double balance)

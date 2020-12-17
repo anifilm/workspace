@@ -14,7 +14,7 @@ namespace PHONEBOOK_CONST {
 }
 
 namespace COMP_POS {
-    enum {CLERK, SENIOR, ASSIST, MANAGER};
+    enum { CLERK, SENIOR, ASSIST, MANAGER };
     void ShowPositionInfo(int pos) {
         switch(pos) {
             case CLERK:

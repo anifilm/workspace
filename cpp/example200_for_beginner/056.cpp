@@ -14,11 +14,11 @@ int main() {
     // transform(joseon.begin(), joseon.end(), joseon.begin(), tolower);
 
     // convert string to upper case
-    for_each(silla.begin(), silla.end(), [](char & c){
+    for_each(silla.begin(), silla.end(), [](char& c){
         c = toupper(c);
     });
     // convert string to lower case
-    for_each(joseon.begin(), joseon.end(), [](char & c){
+    for_each(joseon.begin(), joseon.end(), [](char& c){
         c = tolower(c);
     });
 

@@ -6,14 +6,14 @@ using namespace std;
 
 int main() {
 
-    char first_name[20] {};
-    char last_name[20] {};
-    char full_name[50] {};
-    char temp[50] {};
+    char first_name[20];
+    char last_name[20];
+    char full_name[50];
+    char temp[50];
 
-    // cout << "Enter your full name: ";
-    // cin >> full_name;
-    // cout << "Your full name is " << endl;
+//  cout << "Enter your full name: ";
+//  cin >> full_name;
+//  cout << "Your full name is " << endl;
 
     cout << "\nEnter your full name: ";
     cin.getline(full_name, 50);
@@ -22,7 +22,7 @@ int main() {
     cout << "------------------------------" << endl;
     strcpy(temp, full_name);
 
-    if(strcmp(temp, full_name) == 0)
+    if (strcmp(temp, full_name) == 0)
         cout << temp << " and " << full_name << " are the same" << endl;
     else
         cout << temp << " and " << full_name << " are different" << endl;
@@ -35,7 +35,7 @@ int main() {
     }
     cout << "\nYour full name is " << full_name << endl;
 
-    if(strcmp(temp, full_name) == 0)
+    if (strcmp(temp, full_name) == 0)
         cout << temp << " and " << full_name << " are the same" << endl;
     else
         cout << temp << " and " << full_name << " are different" << endl;

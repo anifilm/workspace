@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int num1 {}, num2 {};
+    int num1, num2;
 
     cout << boolalpha;
     cout << "Enter 2 integers separated bt a space: ";

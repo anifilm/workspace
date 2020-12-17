@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int num {};
+    int num;
     const int target = 10;
 
     cout << "\nEnter a number and I'll compare it to " << target << ": ";
@@ -17,13 +17,13 @@ int main() {
         cout << "\n===================================" << endl;
         cout << num << " is greater than or equal to " << target << endl;
 
-        int diff {num - target};
+        int diff = num - target;
         cout << num << " is " << diff << " greater than " << target << endl;
     } else {
         cout << "\n===================================" << endl;
         cout << num << " is less than or equal to " << target << endl;
 
-        int diff {target - num};
+        int diff = target - num;
         cout << num << " is " << diff << " less than " << target << endl;
     }
 

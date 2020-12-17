@@ -21,6 +21,7 @@ void set_array(int arr[], size_t size, int value) {
 }
 
 int main() {
+
     int my_scores[] = {100, 98, 90, 86, 84};
 
     print_array(my_scores, 5);
