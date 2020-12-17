@@ -48,7 +48,7 @@ void unknown();
 
 int main() {
 
-    bool done {false};
+    bool done = false;
     vector<int> numbers {};
     char user_choice {};
 
@@ -156,7 +156,7 @@ void largest_number(vector<int>& numbers) {
 }
 
 bool quit() {
-    bool done {false};
+    bool done = false;
     cout << "\nGoodbye!" << endl;
 
     return done = true;

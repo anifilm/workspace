@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-    bool done {false};
-    int number {0};
+    bool done = false;
+    int number {};
 
     while (!done) {
         cout << "Enter an integer between 1 and 5: ";

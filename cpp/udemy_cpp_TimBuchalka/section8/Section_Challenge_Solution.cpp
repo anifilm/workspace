@@ -39,11 +39,11 @@ using namespace std;
 
 int main() {
 
-    const int dollar_is_cents {100};
-    const int quarter_is_cents {25};
-    const int dime_is_cents {10};
-    const int nickel_is_cents {5};
-    const int penny_is_cents {1};
+    const int dollar_is_cents = 100;
+    const int quarter_is_cents = 25;
+    const int dime_is_cents = 10;
+    const int nickel_is_cents = 5;
+    const int penny_is_cents = 1;
 
     int change_amount {};
 
@@ -72,7 +72,6 @@ int main() {
     cout << "dimes   : " << dimes << endl;
     cout << "nickels : " << nickels << endl;
     cout << "pennies : " << pennies << endl;
-
 
     cout << endl;
     return 0;

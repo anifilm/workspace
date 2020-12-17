@@ -9,8 +9,8 @@ int main() {
 
     cout << boolalpha << endl;
 
-    Mystring larry {"Larry"};
-    Mystring moe {"Moe"};
+    Mystring larry = "Larry";
+    Mystring moe = "Moe";
 
     Mystring stooge = larry;
     larry.display();                        // Larry : 5

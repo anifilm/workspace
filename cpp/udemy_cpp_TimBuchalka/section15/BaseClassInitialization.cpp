@@ -6,7 +6,6 @@
 using namespace std;
 
 class Base {
-
 private:
     int value;
 public:
@@ -15,7 +14,7 @@ public:
     ~Base() { cout << "Base destructor" << endl; }
 };
 
-class Derived: public Base {
+class Derived : public Base {
 
 private:
     int doubled_value;

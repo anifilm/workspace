@@ -10,9 +10,9 @@ private:
     int xp;
 
 public:
-    std::string get_name() {return name;}
-    int get_health() {return health;}
-    int get_xp() {return xp;}
+    std::string get_name() { return name; }
+    int get_health() { return health; }
+    int get_xp() { return xp; }
 
     Player(std::string name_val = "None", int health_val = 0, int xp_val = 0);
     // Copy constructor

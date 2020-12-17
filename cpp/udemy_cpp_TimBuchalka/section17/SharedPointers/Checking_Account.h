@@ -4,7 +4,7 @@
 
 class Checking_Account: public Account {
 private:
-    static constexpr const char *def_name = "Unnamed Checking Account";
+    static constexpr const char* def_name = "Unnamed Checking Account";
     static constexpr double def_balance = 0.0;
     static constexpr double per_check_fee = 1.50;
 public:

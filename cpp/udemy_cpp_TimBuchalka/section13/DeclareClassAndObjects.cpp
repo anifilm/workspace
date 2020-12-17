@@ -9,9 +9,9 @@ using namespace std;
 
 class Player {
     // attributes
-    string name {"Player"};
-    int health {100};
-    int xp {0};
+    string name = "Player";
+    int health = 100;
+    int xp = 0;
 
     // methods
     void talk(string);
@@ -20,8 +20,8 @@ class Player {
 
 class Account {
     // attributes
-    string name {"Acount"};
-    double balance {0.0};
+    string name = "Acount";
+    double balance = 0.0;
 
     // methods
     bool deposit(double);
@@ -29,18 +29,19 @@ class Account {
 };
 
 int main() {
+
     Account frank_account;
     Account jim_account;
 
     Player frank;
     Player hero;
 
-    Player players[] {frank, hero};
+    Player players[] = {frank, hero};
 
-    vector<Player> player_vec {frank};
+    vector<Player> player_vec = {frank};
     player_vec.push_back(hero);
 
-    Player* enemy {nullptr};
+    Player* enemy = nullptr;
     enemy = new Player;
 
     delete enemy;

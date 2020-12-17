@@ -25,11 +25,11 @@ void display(int* array, int sentinel) {
 int main() {
 
     cout << "------------------------------" << endl;
-    vector<string> stooges {"Larry", "Moe", "Curly"};
+    vector<string> stooges = {"Larry", "Moe", "Curly"};
     display(&stooges);
 
     cout << "\n------------------------------" << endl;
-    int scores [] {100, 98, 97, 79, 85, -1};
+    int scores [] = {100, 98, 97, 79, 85, -1};
     display(scores, -1);
 
     cout << endl;

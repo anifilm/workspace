@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-    bool equal_result {false};
-    bool not_equal_result {false};
+    bool equal_result = false;
+    bool not_equal_result = false;
 
     int num1 {}, num2 {};
 
@@ -22,7 +22,7 @@ int main() {
     cout << "Comparision result (equals): " << equal_result << endl;
     cout << "Comparision result (not equals): " << not_equal_result << endl;
 
-    char char1{}, char2{};
+    char char1 {}, char2 {};
 
     cout << "Enter two characters separated by a space: ";
     cin >> char1 >> char2;
@@ -32,7 +32,7 @@ int main() {
     cout << "Comparision result (equals): " << equal_result << endl;
     cout << "Comparision result (not equals): " << not_equal_result << endl;
 
-    double double1{}, double2{};
+    double double1 {}, double2 {};
 
     cout << "Enter two doubles separated by a space: ";
     cin >> double1 >> double2;

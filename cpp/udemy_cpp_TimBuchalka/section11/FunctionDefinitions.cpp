@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const double pi {3.14159};
+const double pi = 3.14159;
 
 double calc_area_circle(double radius) {
     return pi * radius * radius;
@@ -43,6 +43,6 @@ int main() {
     area_circle();
     volume_cylinder();
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

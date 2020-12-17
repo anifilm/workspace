@@ -2,9 +2,9 @@
 #define _CHCKING_ACCOUNT_H_
 #include "Account.h"
 
-class Checking_Account: public Account {
+class Checking_Account : public Account {
 private:
-    static constexpr const char *def_name = "Unnamed Checking Account";
+    static constexpr const char* def_name = "Unnamed Checking Account";
     static constexpr double def_balance = 0.0;
     static constexpr double per_check_fee = 1.50;
 public:

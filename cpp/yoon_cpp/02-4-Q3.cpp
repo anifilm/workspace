@@ -27,7 +27,7 @@ void SwapPointer(int* p_num1, int* p_num2) {
     *p_num2 = temp;
 }
 */
-void SwapPointer(int *(&p_num1), int *(&p_num2)) {
+void SwapPointer(int* (&p_num1), int* (&p_num2)) {
     int* temp = p_num1;
     p_num1 = p_num2;
     p_num2 = temp;

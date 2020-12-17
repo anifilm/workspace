@@ -15,7 +15,7 @@
 
 class Movie {
 private:
-    std::string name;   // the name of the movie
+    std::string name;     // the name of the movie
     std::string rating;   // the movie rating G,PG, PG-13, R
     int watched;          // the number of times you've watched the movie
 public:

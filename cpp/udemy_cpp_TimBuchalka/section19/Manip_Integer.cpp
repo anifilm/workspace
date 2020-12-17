@@ -9,59 +9,59 @@ using namespace std;
 
 int main() {
 
-	int num {255};
+    int num = 255;
 
-	// Displaying using different bases
-	cout << "\n------------------------------" << endl;
-	cout << dec << num << endl;
-	cout << hex << num << endl;
-	cout << oct << num << endl;
+    // Displaying using different bases
+    cout << "\n------------------------------" << endl;
+    cout << dec << num << endl;
+    cout << hex << num << endl;
+    cout << oct << num << endl;
 
-	// Displaying showing the base prefix for hex and oct
-	cout << "\n------------------------------" << endl;
-	cout << showbase;
-	cout << dec << num << endl;
-	cout << hex << num << endl;
-	cout << oct << num << endl;
+    // Displaying showing the base prefix for hex and oct
+    cout << "\n------------------------------" << endl;
+    cout << showbase;
+    cout << dec << num << endl;
+    cout << hex << num << endl;
+    cout << oct << num << endl;
 
-	// Display the hex value in uppercase
-	cout << "\n------------------------------" << endl;
-	cout << showbase << uppercase;
-	cout << hex << num << endl;
+    // Display the hex value in uppercase
+    cout << "\n------------------------------" << endl;
+    cout << showbase << uppercase;
+    cout << hex << num << endl;
 
-	// Display the + sign in front of positive base 10 numbers
-	cout << "\n------------------------------" << endl;
-	cout << showpos;
-	cout << dec << num << endl;
-	cout << hex << num << endl;
-	cout << oct << num << endl;
+    // Display the + sign in front of positive base 10 numbers
+    cout << "\n------------------------------" << endl;
+    cout << showpos;
+    cout << dec << num << endl;
+    cout << hex << num << endl;
+    cout << oct << num << endl;
 
-	// setting using the set method
-	cout.setf(std::ios::showbase);
-	cout.setf(std::ios::uppercase);
-	cout.setf(std::ios::showpos);
+    // setting using the set method
+    cout.setf(std::ios::showbase);
+    cout.setf(std::ios::uppercase);
+    cout.setf(std::ios::showpos);
 
-	// resetting to defaults
-	cout << resetiosflags(std::ios::basefield);
-	cout << resetiosflags(std::ios::showbase);
-	cout << resetiosflags(std::ios::showpos);
-	cout << resetiosflags(std::ios::uppercase);
+    // resetting to defaults
+    cout << resetiosflags(std::ios::basefield);
+    cout << resetiosflags(std::ios::showbase);
+    cout << resetiosflags(std::ios::showpos);
+    cout << resetiosflags(std::ios::uppercase);
 
-	cout << "\n------------------------------" << endl;
-	cout << "Enter an integer : ";
-	cin >> num;
+    cout << "\n------------------------------" << endl;
+    cout << "Enter an integer: ";
+    cin >> num;
 
-	cout << "Decimal default  : " << num << endl;
+    cout << "Decimal default : " << num << endl;
 
-	cout << "Hexadecimal      : " << hex << num << endl;
-	cout << "Hexadecimal      : " << hex << uppercase << num << endl;
-	cout << "Hexadecimal      : " << hex << num << endl;
-	cout << "Hexadecimal      : " << hex << nouppercase << num << endl;
+    cout << "Hexadecimal     : " << hex << num << endl;
+    cout << "Hexadecimal     : " << hex << uppercase << num << endl;
+    cout << "Hexadecimal     : " << hex << num << endl;
+    cout << "Hexadecimal     : " << hex << nouppercase << num << endl;
 
-	cout << "Octal            : " << oct << num << endl;
-	cout << "Hexadecimal      : " << hex << showbase << num << endl;
-	cout << "Octal            : " << oct << num << endl;	
+    cout << "Octal           : " << oct << num << endl;
+    cout << "Hexadecimal     : " << hex << showbase << num << endl;
+    cout << "Octal           : " << oct << num << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

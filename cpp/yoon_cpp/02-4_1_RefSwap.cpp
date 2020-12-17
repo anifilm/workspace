@@ -11,8 +11,8 @@ void SwapByRef2(int& ref1, int& ref2) {
 
 int main() {
 
-    int val1 {10};
-    int val2 {20};
+    int val1 = 10;
+    int val2 = 20;
 
     cout << "before swap reference" << endl;
     cout << "val1: " << val1 << endl;

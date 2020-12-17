@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    int i {}, num {10};
+    int i = 0, num = 10;
 
     cout << "true: " << true << endl;
     cout << "false: " << false << endl;

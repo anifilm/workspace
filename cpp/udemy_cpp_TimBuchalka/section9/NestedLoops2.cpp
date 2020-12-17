@@ -15,7 +15,7 @@ int main() {
 
     vector<int> data {};
 
-    for (int i {1}; i <= num_items; i++) {
+    for (int i = 1; i <= num_items; i++) {
         int data_item {};
         cout << "Enter data item " << i << ": ";
         cin >> data_item;
@@ -25,7 +25,7 @@ int main() {
     cout << "\nDisplaying Histogram" << endl;
 
     for (auto val : data) {
-        for (int i {1}; i <= val; i++) {
+        for (int i = 1; i <= val; i++) {
             if (i % 5 == 0)
                 cout << "*";
             else

@@ -48,6 +48,7 @@ bool Account::withdraw(double amount) {
 }
 
 int main() {
+
     Account frank_account;
     frank_account.set_name("Frank's account");
     frank_account.set_balance(1000.0);

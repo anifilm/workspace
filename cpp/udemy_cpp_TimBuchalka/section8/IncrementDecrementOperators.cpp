@@ -19,8 +19,8 @@ using namespace std;
 
 int main() {
 
-    int counter {10};
-    int result {0};
+    int counter = 10;
+    int result = 0;
 
     // Example 1 - simple increment
     cout << "Counter: " << counter << endl;

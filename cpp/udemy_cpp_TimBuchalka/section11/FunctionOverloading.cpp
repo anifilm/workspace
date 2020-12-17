@@ -31,7 +31,7 @@ void print(string s, string t) {
 
 void print(vector<string> v) {
     cout << "Printing vector of strings: ";
-    for (auto s: v)
+    for (auto s : v)
         cout << s + " ";
     cout << endl;
 }
@@ -46,14 +46,14 @@ int main() {
 
     print("C-style string");        // C-style string is converted to a C++ string
 
-    string s {"C++ string"};
+    string s = "C++ string";
     print(s);           // C++ string
 
     print("C-style string", s);     // First argument is converted to a C++ string
 
-    vector<string> three_stooges {"Larry", "Moe", "Curly"};
+    vector<string> three_stooges = {"Larry", "Moe", "Curly"};
     print(three_stooges);
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

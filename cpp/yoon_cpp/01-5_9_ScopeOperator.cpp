@@ -3,10 +3,10 @@
 
 using namespace std;
 
-int val {100};          // 전역변수
+int val = 100;          // 전역변수
 
 int SimpleFunc1() {
-    int val {10};       // 지역변수
+    int val = 10;       // 지역변수
     return val += 3;    // 지역변수 val의 값 3증가
 }
 

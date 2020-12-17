@@ -12,9 +12,9 @@ using namespace std;
 
 int main() {
 
-    const int num {12};         // 상수선언
-    const int *ptr = &num;      // 포인터 변수
-    const int *(&rptr) = ptr;   // 포인터 변수를 참조하는 참조자
+    const int num = 12;         // 상수선언
+    const int* ptr = &num;      // 포인터 변수
+    const int* (&rptr) = ptr;   // 포인터 변수를 참조하는 참조자
 
     cout << num << endl;
     cout << *ptr << endl;

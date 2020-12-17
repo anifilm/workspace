@@ -35,7 +35,7 @@ bool Movies::add_movie(std::string name, std::string rating, int watched) {
         if (movie.get_name() == name)
             return false;
     }
-    Movie temp {name, rating, watched};
+    Movie temp = {name, rating, watched};
     movies.push_back(temp);
     return true;
 }

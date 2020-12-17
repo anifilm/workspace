@@ -14,7 +14,7 @@ int main() {
     // for (auto score: scores)
     //     cout << score << endl;
 
-    vector<double> temperatures {87.9, 77.9, 80.0, 72.5};
+    vector<double> temperatures = {87.9, 77.9, 80.0, 72.5};
 
     double average_temp {};
     double total {};

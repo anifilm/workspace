@@ -33,7 +33,7 @@ void fillVector(vector<Student>& newMyClass) {
     cout << "How many students are in your class? ";
     cin >> classSize;
 
-    for (int i {0}; i < classSize; i++) {
+    for (int i = 0; i < classSize; i++) {
         cout << "Student Name: ";
         cin >> name;
         cout << "Student Grade: ";
@@ -52,7 +52,7 @@ void printVector(const vector<Student>& newMyClass) {
 
     size_t size = newMyClass.size();
 
-    for (size_t i {0}; i < size; i++) {
+    for (size_t i = 0; i < size; i++) {
         cout << "Student Name: " << newMyClass[i].getName() << endl;
         cout << "Studnet Grade: " << newMyClass[i].getGrade() << endl;
 

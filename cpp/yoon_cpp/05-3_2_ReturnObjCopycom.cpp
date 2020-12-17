@@ -7,11 +7,9 @@ class SoSimple {
 private:
     int num;
 public:
-    SoSimple(int n)
-        : num {n} {
+    SoSimple(int n) : num(n) {
     }
-    SoSimple(const SoSimple& copy)
-        : num {copy.num} {
+    SoSimple(const SoSimple& copy) : num(copy.num) {
             cout << "called SoSimple(const SoSimple& copy)" << endl;
     }
     SoSimple& AddNum(int n) {   // 인자 전달시 복사 생성자 호출
@@ -31,7 +29,7 @@ SoSimple SimpleFuncObj(SoSimple ob) {
 
 int main() {
 
-    SoSimple obj {7};
+    SoSimple obj(7);
     SimpleFuncObj(obj).AddNum(30).ShowData();
     obj.ShowData();
 

@@ -14,7 +14,7 @@ public:
     }
     /*
     TwoNumber(int num1, int num2)
-        : num1 {num1}, num2 {num2} {
+        : num1(num1), num2(num2) {
     }
     */
     void ShowTwoNumber() {
@@ -25,7 +25,7 @@ public:
 
 int main() {
 
-    TwoNumber two {2, 4};
+    TwoNumber two(2, 4);
     two.ShowTwoNumber();
 
     return 0;

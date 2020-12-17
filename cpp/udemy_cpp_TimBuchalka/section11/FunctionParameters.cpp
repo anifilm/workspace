@@ -31,8 +31,9 @@ void print_vector(vector<string> v) {
 }
 
 int main() {
-    int num {10};
-    int another_num {20};
+
+    int num = 10;
+    int another_num = 20;
 
     cout << "num before calling pass_by_value1: " << num << endl;
     pass_by_value1(num);
@@ -46,7 +47,7 @@ int main() {
     cout << "\nname before calling pass_by_value2: " << name << endl;
     pass_by_value2(name);
     cout << "name after calling pass_by_value2: " << name << endl;
-    
+
     vector<string> stooges {"Larry", "Moe", "Curly"};
     cout << "\nstooges before calling pass_by_value3: ";
     print_vector(stooges);
@@ -54,6 +55,6 @@ int main() {
     cout << "stooges after calling pass_by_value3: ";
     print_vector(stooges);
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

@@ -26,13 +26,13 @@ Mystring::Mystring(const Mystring& source)
     : str {nullptr} {
         str = new char[std::strlen(source.str) + 1];
         std::strcpy(str, source.str);
- //       std::cout << "Copy constructor used" << std::endl;
+ //     std::cout << "Copy constructor used" << std::endl;
 
 }
 
 // Move constructor
 Mystring::Mystring(Mystring&& source)
-    :str(source.str) {
+    : str {source.str} {
         source.str = nullptr;
 //      std::cout << "Move constructor used" << std::endl;
 }
@@ -45,7 +45,6 @@ Mystring::~Mystring() {
 // Copy assignment
 Mystring& Mystring::operator=(const Mystring& rhs) {
 //  std::cout << "Using copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -57,7 +56,6 @@ Mystring& Mystring::operator=(const Mystring& rhs) {
 // Move assignment
 Mystring& Mystring::operator=(Mystring&& rhs) {
 //  std::cout << "Using move assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -93,7 +91,7 @@ std::istream& operator>>(std::istream& in, Mystring& rhs) {
 Mystring Mystring::operator-() const {
     char* buff = new char[std::strlen(str) + 1];
     std::strcpy(buff, str);
-    for (size_t i {0}; i < std::strlen(buff); i++)
+    for (size_t i = 0; i < std::strlen(buff); i++)
         buff[i] = std::tolower(buff[i]);
     Mystring temp {buff};
     delete[] buff;
@@ -116,14 +114,14 @@ Mystring& Mystring::operator+=(const Mystring& rhs) {
 
 Mystring Mystring::operator*(int n) const {
     Mystring temp;
-    for (int i {1}; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         temp = temp + *this;
     return temp;
     /*
     size_t buff_size = std::strlen(str) * n + 1;
     char *buff = new char[buff_size];
     std::strcpy(buff, "");
-    for (int i {1}; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         std::strcat(buff, str);
     Mystring temp {buff};
     delete[] buff;
@@ -137,13 +135,13 @@ Mystring& Mystring::operator*=(int n) {
 }
 
 Mystring& Mystring::operator++() {
-    for (size_t i {0}; i < std::strlen(str); i++)
+    for (size_t i = 0; i < std::strlen(str); i++)
         str[i] = std::toupper(str[i]);
     return *this;
 }
 
 Mystring Mystring::operator++(int) {
-    Mystring temp (*this);
+    Mystring temp = *this;
     operator++();
     return temp;
 }

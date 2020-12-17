@@ -32,10 +32,10 @@ public:
     void set_name(std::string name) { this->name = name; }
     std::string get_name() const { return name; }
 
-    void set_rating(std::string rating) {this->rating = rating;}
+    void set_rating(std::string rating) { this->rating = rating; }
     std::string get_rating() const { return rating; }
 
-    void set_watched(int watched) {this->watched = watched;}
+    void set_watched(int watched) { this->watched = watched; }
     int get_watched() const { return watched; }
 
     // Simply increment the watched attribute by 1

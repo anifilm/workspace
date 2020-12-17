@@ -6,9 +6,9 @@
 
 [main 함수의 예]
 int main(void) {
-    NameCard manClerk {"Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK};
+    NameCard manClerk("Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK);
     NameCard copy1 = manClerk;
-    NameCard manSenior {"Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR};
+    NameCard manSenior("Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR);
     NameCard copy2 = manSenior;
     copy1.ShowNameCardInfo();
     copy2.ShowNameCardInfo();
@@ -21,7 +21,7 @@ int main(void) {
 using namespace std;
 
 namespace COMP_POS {
-    enum {CLERK, SENIOR, ASSIST, MANAGER};
+    enum { CLERK, SENIOR, ASSIST, MANAGER };
 
     void ShowPositionInfo(int pos) {
         switch(pos) {
@@ -49,11 +49,11 @@ private:
     int position;
 public:
     NameCard(const char* _name, const char* _company, const char* _phone, int _pos)
-        : name {_name}, company {_company}, phone {_phone}, position {_pos} {
+        : name(_name), company(_company), phone(_phone), position(_pos) {
     }
     // 복사 생성자 (copy constructor), 정의하지 않아도 자동을 생성되며 사용 가능하다
     NameCard(const NameCard& copy)
-        : name {copy.name}, company {copy.company}, phone {copy.phone}, position {copy.position} {
+        : name(copy.name), company(copy.company), phone(copy.phone), position(copy.position) {
     }
     void ShowNameCardInfo() {
         cout << "이름: " << name << endl;
@@ -70,10 +70,10 @@ public:
 
 int main() {
 
-    NameCard manClerk {"Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK};
-    NameCard copy1 {manClerk};
-    NameCard manSenior {"Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR};
-    NameCard copy2 {manSenior};
+    NameCard manClerk("Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK);
+    NameCard copy1(manClerk);
+    NameCard manSenior("Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR);
+    NameCard copy2(manSenior);
     copy1.ShowNameCardInfo();
     copy2.ShowNameCardInfo();
 

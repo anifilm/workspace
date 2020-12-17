@@ -34,7 +34,7 @@ Now, from the function body of [amount_accumulated], declare and initialize the 
 
 using namespace std;
 
-int function_activation_count {0};
+int function_activation_count = 0;
 
 double a_penny_doubled_everyday(int, double amount = 0.01);
 

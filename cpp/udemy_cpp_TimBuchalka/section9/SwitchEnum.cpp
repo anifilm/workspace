@@ -11,7 +11,7 @@ int main() {
         left, right, up, down
     };
 
-    Direction heading {left};
+    Direction heading = left;
 
     switch (heading) {
         case left:

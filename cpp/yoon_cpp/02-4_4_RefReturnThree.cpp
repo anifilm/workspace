@@ -10,7 +10,7 @@ int RefRetFuncTwo(int& ref) {   // 반환형이 기본자료형 int이다.
 
 int main() {
 
-    int num1 {1};
+    int num1 = 1;
     int num2 = RefRetFuncTwo(num1);     // 함수의 반환값(ref)을 num2에 대입 (값을 전달 받는다)
     /*
     num1은 레퍼런스 전달로 함수를 통해 값이 2가 된다.

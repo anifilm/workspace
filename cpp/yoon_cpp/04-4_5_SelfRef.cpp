@@ -7,8 +7,7 @@ class SelfRef {
 private:
     int num;
 public:
-    SelfRef(int n)
-        : num {n} {
+    SelfRef(int n) : num(n) {
         cout << "객체생성" << endl;
     }
     SelfRef& Adder(int n) {

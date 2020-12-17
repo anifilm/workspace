@@ -194,7 +194,7 @@ Note that the parameter is a const reference parameter
 this function should NOT modify the list of numbers
 ***************************************************************/
 void handle_find(const vector<int>& v) {
-    int target{};
+    int target {};
     cout << "Enter the number to find: ";
     cin >> target;
     if ( find(v, target))
@@ -245,7 +245,7 @@ double calculate_mean(const vector<int>& v) {
     int total {};
     for (auto num : v)
         total += num;
-    return static_cast<double>(total)/v.size();
+    return static_cast<double>(total) / v.size();
 }
 
 /***************************************************************

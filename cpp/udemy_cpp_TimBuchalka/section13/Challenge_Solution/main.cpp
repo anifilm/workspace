@@ -69,7 +69,7 @@ int main() {
     increment_watched(my_movies,"Big");                   // OK
     increment_watched(my_movies,"Ice Age");               // OK
 
-   my_movies.display();    // Big and Ice Age watched count incremented by 1
+    my_movies.display();    // Big and Ice Age watched count incremented by 1
 
     increment_watched(my_movies,"XXX");     // XXX not found
 

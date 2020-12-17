@@ -11,8 +11,8 @@ void double_data(int* int_ptr) {
 
 int main() {
 
-    int value {10};
-    int* int_ptr {nullptr};
+    int value = 10;
+    int* int_ptr = nullptr;
 
     cout << "Value: " << value << endl;
     double_data(&value);

@@ -42,7 +42,7 @@ int main() {
     int age;
     int len;
 
-    for (int i {}; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
         cout << "이름: ";
         cin >> namestr;
         cout << "나이: ";

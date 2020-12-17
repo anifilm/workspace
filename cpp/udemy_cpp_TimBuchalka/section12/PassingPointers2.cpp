@@ -15,7 +15,7 @@ void swap(int* a, int* b) {
 
 int main() {
 
-    int x {100}, y {200};
+    int x = 100, y = 200;
     cout << "Before swap" << endl;
     cout << "x: " << x << "  y: " << y << endl;
 

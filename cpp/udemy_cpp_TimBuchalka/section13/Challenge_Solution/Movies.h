@@ -16,7 +16,7 @@ class Movies {
 private:
     std::vector<Movie> movies;
 public:
-    Movies();             // Constructor
+    Movies();           // Constructor
     ~Movies();          // Destructor
     /*************************************************************************
     add_movie expects the name of the move, rating and watched count

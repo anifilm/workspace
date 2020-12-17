@@ -21,15 +21,15 @@ using namespace std;
 
 int main() {
 
-    double base_cost {2.50};
+    double base_cost = 2.50;
 
-    const int tier1_threshold {100};
-    const int tier2_threshold {500};
+    const int tier1_threshold = 100;
+    const int tier2_threshold = 500;
 
-    int max_dimension_lenth {10};
+    int max_dimension_lenth = 10;
 
-    const double tier1_surcharge {0.1};
-    const double tier2_surcharge {0.25};
+    const double tier1_surcharge = 0.1;
+    const double tier2_surcharge = 0.25;
 
     int p_length {}, p_width {}, p_height {};
 

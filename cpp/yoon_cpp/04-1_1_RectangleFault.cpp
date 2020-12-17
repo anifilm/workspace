@@ -22,9 +22,9 @@ public:
 
 int main() {
 
-    Point pos1 {-2, 4};             // 잘못된 위치 정보
-    Point pos2 {5, 9};
-    Rectangle rec {pos2, pos1};     // 잘못된 생성 정보
+    Point pos1 = {-2, 4};           // 잘못된 위치 정보
+    Point pos2 = {5, 9};
+    Rectangle rec = {pos2, pos1};   // 잘못된 생성 정보
 
     rec.ShowRecInfo();
 

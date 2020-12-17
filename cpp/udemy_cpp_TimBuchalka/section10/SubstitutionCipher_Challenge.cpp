@@ -35,8 +35,8 @@ using namespace std;
 
 int main() {
 
-    string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
+    string alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string key = "XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr";
 
     string input_message {};
 
@@ -50,22 +50,22 @@ int main() {
     cout << "\nEncrypting message..." << endl;
 
     encrypt_msg = input_message;
-    for (size_t i {0}; i < encrypt_msg.length(); i++) {
-        for (size_t j {0}; j < alphabet.length(); j++) {
+    for (size_t i = 0; i < encrypt_msg.length(); i++) {
+        for (size_t j = 0; j < alphabet.length(); j++) {
             if (encrypt_msg.at(i) == alphabet.at(j)) {
                 encrypt_msg.at(i) = key.at(j);
                 break;
             }
         }
-    } 
+    }
 
     cout << "\nEncrypting message: " << encrypt_msg << endl;
 
     cout << "\nDecrypting message..." << endl;
 
     decrypt_msg = encrypt_msg;
-    for (size_t i {0}; i < decrypt_msg.length(); i++) {
-        for (size_t j {0}; j < key.length(); j++) {
+    for (size_t i = 0; i < decrypt_msg.length(); i++) {
+        for (size_t j = 0; j < key.length(); j++) {
             if (decrypt_msg.at(i) == key.at(j)) {
                 decrypt_msg.at(i) = alphabet.at(j);
                 break;
@@ -75,6 +75,6 @@ int main() {
 
     cout << "\nDecrypting message: " << decrypt_msg << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

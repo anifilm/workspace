@@ -14,45 +14,45 @@ using namespace std;
 // so we don't affect the passed in stack
 template <typename T>
 void display(std::stack<T> s) {
-	cout << "[ ";
-	while (!s.empty()) {
-		T elem = s.top();
-		s.pop();
-		cout << elem << " ";
-	}
-	cout << "]" << endl;
+    cout << "[ ";
+    while (!s.empty()) {
+        T elem = s.top();
+        s.pop();
+        cout << elem << " ";
+    }
+    cout << "]" << endl;
 }
 
 int main() {
 
-	std::stack<int> s1;
-	std::stack<int, vector<int>> s2;
-	std::stack<int, list<int>> s3;
-	std::stack<int, deque<int>> s4;
+    std::stack<int> s1;
+    std::stack<int, vector<int>> s2;
+    std::stack<int, list<int>> s3;
+    std::stack<int, deque<int>> s4;
 
-	for (int i: {1, 2, 3, 4, 5})
-		s1.push(i);
-	display(s1);
+    for (int i : {1, 2, 3, 4, 5})
+        s1.push(i);
+    display(s1);
 
-	s1.push(100);
-	display(s1);
+    s1.push(100);
+    display(s1);
 
-	s1.pop();
-	s1.pop();
-	display(s1);
+    s1.pop();
+    s1.pop();
+    display(s1);
 
-	while (!s1.empty())
-		s1.pop();
-	display(s1);
+    while (!s1.empty())
+        s1.pop();
+    display(s1);
 
-	cout << "Size: " << s1.size() << endl;
+    cout << "Size: " << s1.size() << endl;
 
-	s1.push(10);
-	display(s1);
+    s1.push(10);
+    display(s1);
 
-	s1.top() = 100;
-	display(s1);
+    s1.top() = 100;
+    display(s1);
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

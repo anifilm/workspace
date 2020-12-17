@@ -28,7 +28,7 @@ int main() {
         cout << temp << " and " << full_name << " are different" << endl;
     cout << "------------------------------" << endl;
 
-    for (size_t i {0}; i < strlen(full_name); i++) {
+    for (size_t i = 0; i < strlen(full_name); i++) {
 
         if (isalpha(full_name[i]))
             full_name[i] = toupper(full_name[i]);
@@ -44,6 +44,6 @@ int main() {
     cout << "Result of comparing " << temp << " and " << full_name << ": " << strcmp(temp, full_name) << endl;
     cout << "Result of comparing " << full_name << " and " << temp << ": " << strcmp(full_name, temp) << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

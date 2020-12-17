@@ -31,8 +31,9 @@ void print_vector(const vector<string>& v){
 }
 
 int main() {
-    int num {10};
-    int another_num {20};
+
+    int num = 10;
+    int another_num = 20;
 
     cout << "num before calling pass_by_ref1: " << num << endl;
     pass_by_ref1(num);

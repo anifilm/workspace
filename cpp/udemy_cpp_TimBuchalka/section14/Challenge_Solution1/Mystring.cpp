@@ -4,7 +4,7 @@
 
  // No-args constructor
 Mystring::Mystring()
-    : str{nullptr} {
+    : str {nullptr} {
     str = new char[1];
     *str = '\0';
 }
@@ -45,7 +45,6 @@ Mystring::~Mystring() {
 // Copy assignment
 Mystring& Mystring::operator=(const Mystring& rhs) {
 //  std::cout << "Using copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -114,7 +113,7 @@ bool Mystring::operator>(const Mystring& rhs) const {
 Mystring Mystring::operator-() const {
     char* buff = new char[std::strlen(str) + 1];
     std::strcpy(buff, str);
-    for (size_t i {0}; i<std::strlen(buff); i++)
+    for (size_t i = 0; i<std::strlen(buff); i++)
         buff[i] = std::tolower(buff[i]);
     Mystring temp {buff};
     delete[] buff;
@@ -140,7 +139,7 @@ Mystring& Mystring::operator+=(const Mystring& rhs)  {
 // repeat
 Mystring Mystring::operator*(int n) const {
     Mystring temp;
-    for (int i=1; i<= n; i++)
+    for (int i = 1; i<= n; i++)
         temp = temp + *this;
     return temp;
     /*
@@ -163,7 +162,7 @@ Mystring& Mystring::operator*=(int n) {
 
 // Pre-increment - make the string upper-case
 Mystring& Mystring::operator++()   {  // pre-increment
-    for (size_t i {0}; i < std::strlen(str); i++)
+    for (size_t i = 0; i < std::strlen(str); i++)
         str[i] = std::toupper(str[i]);
    return *this;
 }

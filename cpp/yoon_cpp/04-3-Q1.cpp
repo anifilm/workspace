@@ -19,7 +19,7 @@ public:
     }
     */
     Point(const int& x, const int& y)
-        : xpos {x}, ypos {y} {
+        : xpos(x), ypos(y) {
     }
     void ShowPointInfo() const {
         cout << "[" << xpos << ", " << ypos << "]" << endl;
@@ -38,7 +38,7 @@ public:
     }
     */
     Circle(const int& x, const int& y, const int& r)
-        : rad {r}, center {x, y} {
+        : rad(r), center(x, y) {
     }
     void ShowCircleInfo() const {
         cout << "radius: " << rad << endl;
@@ -58,7 +58,7 @@ public:
     }
     */
     Ring(int cix, int ciy, int cir, int cox, int coy, int cor)
-        : inCircle {cix, ciy, cir}, outCircle {cox, coy, cor} {
+        : inCircle(cix, ciy, cir), outCircle(cox, coy, cor) {
     }
     void ShowRingInfo() const {
         cout << "Inner Circle Info..." << endl;
@@ -70,7 +70,7 @@ public:
 
 int main() {
 
-    Ring ring {1, 1, 4, 2, 2, 9};
+    Ring ring(1, 1, 4, 2, 2, 9);
     ring.ShowRingInfo();
 
     return 0;

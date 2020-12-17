@@ -2,13 +2,13 @@
 #include <iostream>
 
 namespace Parent {
-    int num {0};
+    int num = 0;
 
     namespace SubOne {
-        int num {1};
+        int num = 1;
     }
     namespace SubTwo {
-        int num {2};
+        int num = 2;
     }
 }
 

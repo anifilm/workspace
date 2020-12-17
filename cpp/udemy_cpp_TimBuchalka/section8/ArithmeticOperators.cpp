@@ -18,9 +18,9 @@ using namespace std;
 
 int main() {
 
-    int num1 {200};
-    int num2 {100};
-    int result {0};
+    int num1 = 200;
+    int num2 = 100;
+    int result = 0;
 
     result = num1 + num2;
     cout << num1 << " + " << num2 << " = " << result << endl;

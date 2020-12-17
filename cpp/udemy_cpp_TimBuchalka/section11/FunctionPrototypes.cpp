@@ -11,7 +11,7 @@ double calc_area_circle(double);
 void area_circle();
 void volume_cylinder();
 
-const double pi {3.14159};
+const double pi = 3.14159;
 
 int main() {
 

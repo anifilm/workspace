@@ -19,7 +19,7 @@ private:
     const int& num;
 public:
     BBB(AAA& r, const int& n)
-        : ref {r}, num {n} {
+        : ref(r), num(n) {
         // empty constructor body
     }
     void ShowYourName() {
@@ -31,7 +31,7 @@ public:
 int main() {
 
     AAA obj1;
-    BBB obj2 {obj1, 20};
+    BBB obj2(obj1, 20);
     obj2.ShowYourName();
 
     return 0;

@@ -3,7 +3,7 @@
 
 int main() {
 
-    int num {20};
+    int num = 20;
 
     std::cout << "Hello, world!" << std::endl;
     std::cout << "Hello, " << "world!" << std::endl;

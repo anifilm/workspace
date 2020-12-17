@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-    Mystring larry {"Larry"};
-    Mystring moe {"Moe"};
+    Mystring larry = "Larry";
+    Mystring moe = "Moe";
     Mystring curly;
 
     cout << "Enter the third stooge's first name: ";
@@ -19,7 +19,7 @@ int main() {
     cout << "\nEnter the three stooges names separated by a space: ";
     cin >> larry >> moe >> curly;
 
-    cout << "The three stooges are " << larry << ", " << moe << ", and " << curly << endl; 
+    cout << "The three stooges are " << larry << ", " << moe << ", and " << curly << endl;
 
     cout << endl;
     return 0;

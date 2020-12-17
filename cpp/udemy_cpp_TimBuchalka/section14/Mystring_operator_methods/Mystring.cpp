@@ -51,7 +51,6 @@ Mystring::~Mystring() {
 // Copy assignment operator
 Mystring& Mystring::operator=(const Mystring& rhs) {
     std::cout << "Using copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -63,7 +62,6 @@ Mystring& Mystring::operator=(const Mystring& rhs) {
 // Move assignment operator
 Mystring& Mystring::operator=(Mystring&& rhs) {
     std::cout << "Using move assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -77,7 +75,7 @@ Mystring Mystring::operator-() const {
     char* buff = new char[strlen(str) + 1];
     strcpy(buff, str);
 
-    for (size_t i {0}; i < strlen(buff); i++)
+    for (size_t i = 0; i < strlen(buff); i++)
         buff[i] = tolower(buff[i]);
     Mystring temp {buff};
     delete[] buff;

@@ -12,7 +12,7 @@ int main() {
 
     size_t num_letters = letters.length();
 
-    int position {0};
+    int position = 0;
 
     // for each letter in the string
 
@@ -24,14 +24,14 @@ int main() {
         }
 
         // Display in order up to the current character
-        for (size_t j {0}; j < position; j++)
+        for (int j = 0; j < position; j++)
             cout << letters.at(j);
 
         // Display the current 'center' character
         cout << c;
 
         // Display the remaining characters in reverse order
-        for (int j {position - 1}; j >= 0; --j) {
+        for (int j = position - 1; j >= 0; --j) {
             // You can use this line to get rid of the size_t vs int warning if you want
             auto k = static_cast<size_t>(j);
             cout << letters.at(k);

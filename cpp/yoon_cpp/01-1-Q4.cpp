@@ -14,7 +14,7 @@ int CalSalary(int sales) {
 
 int main() {
 
-    int sales {};
+    int sales;
 
     while (1) {
         std::cout << "판매 금액을 만원 단위로 입력(-1 to end): ";

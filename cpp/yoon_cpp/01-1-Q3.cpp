@@ -7,12 +7,12 @@
 
 int main() {
 
-    int i, num;
+    int num;
 
     std::cout << "출력을 원하는 구구단 단수를 입력: ";
     std::cin >> num;
 
-    for (i = 1; i <= 9; i++)
+    for (int i = 1; i <= 9; i++)
         std::cout << num << " x " << i << " = " << num * i << std::endl;
 
     return 0;

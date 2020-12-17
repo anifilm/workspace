@@ -4,7 +4,7 @@
 
  // No-args constructor
 Mystring::Mystring()
-    : str{nullptr} {
+    : str {nullptr} {
     str = new char[1];
     *str = '\0';
 }
@@ -45,7 +45,6 @@ Mystring::~Mystring() {
  // Copy assignment
 Mystring& Mystring::operator=(const Mystring& rhs) {
 //  std::cout << "Using copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -114,7 +113,7 @@ bool operator>(const Mystring& lhs, const Mystring& rhs) {
 Mystring operator-(const Mystring& obj) {
     char* buff = new char[std::strlen(obj.str) + 1];
     std::strcpy(buff, obj.str);
-    for (size_t i {0}; i < std::strlen(buff); i++)
+    for (size_t i = 0; i < std::strlen(buff); i++)
         buff[i] = std::tolower(buff[i]);
     Mystring temp {buff};
     delete[] buff;
@@ -140,7 +139,7 @@ Mystring& operator+=(Mystring& lhs, const Mystring& rhs) {
 // Repeat
  Mystring operator*(const Mystring& lhs, int n)  {
     Mystring temp;
-    for (int i {1}; i<= n; i++)
+    for (int i = 1; i<= n; i++)
         temp = temp + lhs;
     return temp;
 }
@@ -153,7 +152,7 @@ Mystring& operator*=(Mystring& lhs, int n) {
 
 // Make uppercase - pre increment
 Mystring& operator++(Mystring& obj) {
-    for (size_t i {0}; i< std::strlen(obj.str); i++)
+    for (size_t i = 0; i< std::strlen(obj.str); i++)
         obj.str[i] = std::toupper(obj.str[i]);
     return obj;
 }

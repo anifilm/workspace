@@ -7,24 +7,24 @@
 using namespace std;
 
 class Person {
-	friend std::ostream &operator<<(std::ostream &os, const Person &p);
-	std::string name;
-	int age;
+    friend std::ostream& operator<<(std::ostream& os, const Person &p);
+    std::string name;
+    int age;
 public:
-	Person(): name {"Unknown"}, age {0} {}
-	Person(std::string name, int age): name {name}, age {age} {}
-	bool operator<(const Person &rhs) const {
-		// return this->age < rhs.age;
-		return this->name < rhs.name;
-	}
-	bool operator==(const Person &rhs) const {
-		return (this->name == rhs.name && this->age == rhs.age);
-	}
+    Person() : name {"Unknown"}, age {0} {}
+    Person(std::string name, int age) : name {name}, age {age} {}
+    bool operator<(const Person& rhs) const {
+        // return this->age < rhs.age;
+        return this->name < rhs.name;
+    }
+    bool operator==(const Person& rhs) const {
+        return (this->name == rhs.name && this->age == rhs.age);
+    }
 };
 
-std::ostream &operator<<(std::ostream &os, const Person &p) {
-	os << p.name << ":" << p.age;
-	return os;
+std::ostream& operator<<(std::ostream& os, const Person &p) {
+    os << p.name << ":" << p.age;
+    return os;
 }
 
 // This display the priority queue
@@ -33,50 +33,50 @@ std::ostream &operator<<(std::ostream &os, const Person &p) {
 // the priority queue being passed in
 template <typename T>
 void display(std::priority_queue<T> pq) {
-	cout << "[ ";
-	while (!pq.empty()) {
-		T elem = pq.top();
-		pq.pop();
-		cout << elem << " ";
-	}
-	cout << "]" << endl;
+    cout << "[ ";
+    while (!pq.empty()) {
+        T elem = pq.top();
+        pq.pop();
+        cout << elem << " ";
+    }
+    cout << "]" << endl;
 }
 
 void test1() {
-	cout << "\n== Test1 ==============================" << endl;
-	std::priority_queue<int> pq;
-	
-	for (int i: {3, 5, 7, 12, 23, 12, 4, 100, 0, 3, 5, 7})
-		pq.push(i);
+    cout << "\n== Test1 ==============================" << endl;
+    std::priority_queue<int> pq;
 
-	cout << "Size: " << pq.size() << endl;
-	cout << "Top: " << pq.top() << endl;
+    for (int i : {3, 5, 7, 12, 23, 12, 4, 100, 0, 3, 5, 7})
+        pq.push(i);
 
-	display(pq);
+    cout << "Size: " << pq.size() << endl;
+    cout << "Top: " << pq.top() << endl;
 
-	pq.pop();
-	display(pq);
+    display(pq);
+
+    pq.pop();
+    display(pq);
 }
 
 void test2() {
-	cout << "\n== Test2 ==============================" << endl;
-	std::priority_queue<Person> pq;
+    cout << "\n== Test2 ==============================" << endl;
+    std::priority_queue<Person> pq;
 
-	pq.push(Person {"A", 10});
-	pq.push(Person {"B", 1});
-	pq.push(Person {"C", 14});
-	pq.push(Person {"D", 18});
-	pq.push(Person {"E", 7});
-	pq.push(Person {"F", 27});
+    pq.push(Person {"A", 10});
+    pq.push(Person {"B", 1});
+    pq.push(Person {"C", 14});
+    pq.push(Person {"D", 18});
+    pq.push(Person {"E", 7});
+    pq.push(Person {"F", 27});
 
-	display(pq);
+    display(pq);
 }
 
 int main() {
 
-	test1();
-	// test2();
+    test1();
+    // test2();
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

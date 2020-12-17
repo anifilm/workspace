@@ -9,38 +9,38 @@
 using namespace std;
 
 int main() {
-	
-	ifstream in_file {"./Challenge_4/romeoandjuliet.txt"};
-	ofstream out_file {"./Challenge_4/romeoandjuliet_out.txt"};
 
-	if (!in_file) {
-		cerr << "Error opening input file" << endl;
-		return 1;
-	}
+    ifstream in_file {"./Challenge_4/romeoandjuliet.txt"};
+    ofstream out_file {"./Challenge_4/romeoandjuliet_out.txt"};
 
-	if (!out_file) {
-		cerr << "Error creating file" << endl;
-		return 1;
-	}
+    if (!in_file) {
+        cerr << "Error opening input file" << endl;
+        return 1;
+    }
 
-	string line {};
-	int line_number {0};
+    if (!out_file) {
+        cerr << "Error creating file" << endl;
+        return 1;
+    }
 
-	while (getline(in_file, line)) {
-		if (line == "")
-			out_file << endl;
-		else {
-			++line_number;
-			out_file << setw(7) << left << line_number
-				     << line << endl;
-		}
-	}
+    string line {};
+    int line_number = 0;
 
-	cout << "File copied" << endl;
+    while (getline(in_file, line)) {
+        if (line == "")
+            out_file << endl;
+        else {
+            ++line_number;
+            out_file << setw(7) << left << line_number
+                     << line << endl;
+        }
+    }
 
-	in_file.close();
-	out_file.close();
+    cout << "File copied" << endl;
 
-	cout << endl;	
-	return 0;
+    in_file.close();
+    out_file.close();
+
+    cout << endl;
+    return 0;
 }

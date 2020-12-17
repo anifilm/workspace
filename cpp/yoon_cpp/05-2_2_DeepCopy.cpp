@@ -34,7 +34,7 @@ public:
 
 int main() {
 
-    Person man1 {"Lee dong woo", 29};
+    Person man1("Lee dong woo", 29);
     Person man2 = man1;     // 복사 생성자 호출
     man1.ShowPersonInfo();
     man2.ShowPersonInfo();

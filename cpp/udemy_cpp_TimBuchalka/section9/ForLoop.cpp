@@ -38,9 +38,9 @@ int main() {
     //     cout << i << ((i % 10 == 0) ? "\n" : " ");
     // }
 
-    vector<int> nums {10, 20, 30, 40, 50};
+    vector<int> nums = {10, 20, 30, 40, 50};
 
-    for (int i {0}; i < nums.size(); i++)
+    for (size_t i = 0; i < nums.size(); i++)
         cout << nums[i] << endl;
 
     cout << endl;

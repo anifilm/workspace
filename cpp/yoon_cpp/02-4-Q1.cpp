@@ -18,7 +18,7 @@ void InvertNumber(int& ref) {
 
 int main() {
 
-    int num1 {1}, num2 {1};
+    int num1 = 1, num2 = 1;
 
     AddNumberOne(num1);
     cout << num1 << endl;

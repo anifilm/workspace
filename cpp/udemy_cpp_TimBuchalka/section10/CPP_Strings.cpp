@@ -7,13 +7,13 @@ using namespace std;
 int main() {
 
     string s0;
-    string s1 {"Apple"};
-    string s2 {"Banana"};
-    string s3 {"Kiwi"};
-    string s4 {"apple"};
-    string s5 {s1};                 // Apple
-    string s6 {s1, 0, 3};           // App
-    string s7 (10, 'X');            // XXXXXXXXXX
+    string s1 = "Apple";
+    string s2 = "Banana";
+    string s3 = "Kiwi";
+    string s4 = "apple";
+    string s5 = s1;                 // Apple
+    string s6(s1, 0, 3);            // App
+    string s7(10, 'X');             // XXXXXXXXXX
 
     // cout << s0 << endl;             // No garbage
     // cout << s0.length() << endl;    // empty string
@@ -38,10 +38,10 @@ int main() {
     cout << s2 << " > " << s1 << ": " << (s2 > s1) << endl;               // True     Banana > Apple
     cout << s4 << " < " << s5 << ": " << (s4 < s5) << endl;               // False    apple > Apple
     cout << s1 << " == " << "Apple" << ": " << (s1 == "Apple") << endl;   // True     Apple == Apple
-    
+
     // Assignment
     cout << "\nAssignment" << "\n----------------------------------------" << endl;
-    
+
     s1 ="Watermelon";
     cout << "s1 is now: " << s1 << endl;        // Watermelon
     s2 = s1;
@@ -54,7 +54,7 @@ int main() {
     cout << "s3 change first letter to 'C': " << s3 << endl;    // Crank
     s3.at(0) = 'P';
     cout << "s3 change first letter to 'P': " << s3 << endl;    // Prank
-    
+
     // Concatenation
     cout << "\nConcatenation" << "\n----------------------------------------" << endl;
 
@@ -68,12 +68,12 @@ int main() {
 
     s1 = "Apple";
 
-    for (size_t i {0}; i < s1.length(); i++)
+    for (size_t i = 0; i < s1.length(); i++)
         cout << s1.at(i);       // or s1[i]        Apple
     cout << endl;
 
     // Range-based for loop
-    for (char c: s1)
+    for (char c : s1)
         cout << c;              // Apple
     cout << endl;
 
@@ -82,15 +82,15 @@ int main() {
 
     s1 = "This is a test";
 
-    cout << s1.substr(0,4) << endl;         // This
-    cout << s1.substr(5,2) << endl;         // is
-    cout << s1.substr(10,4) << endl;        // test
+    cout << s1.substr(0, 4) << endl;         // This
+    cout << s1.substr(5, 2) << endl;         // is
+    cout << s1.substr(10, 4) << endl;        // test
 
     // Erase
     cout << "\nErase" << "\n----------------------------------------" << endl;
 
     s1 = "This is a test";
-    s1.erase(0,5);          // Erase This from s1 result in "is a test"
+    s1.erase(0, 5);          // Erase This from s1 result in "is a test"
     cout << "s1 is now: " << s1 << endl;        // is a test
 
     // getline
@@ -117,8 +117,8 @@ int main() {
     if (position != string::npos)
         cout << "Found " << word << " at position: " << position << endl;
     else
-        cout << "Sorry, " << word << " not found" << endl;    
+        cout << "Sorry, " << word << " not found" << endl;
 
-	cout << endl;	
-	return 0;
+    cout << endl;
+    return 0;
 }

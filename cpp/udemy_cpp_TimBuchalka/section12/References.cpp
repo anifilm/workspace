@@ -7,8 +7,8 @@ using namespace std;
 
 int main() {
 
-    int num {100};
-    int& ref {num};
+    int num = 100;
+    int& ref = num;
 
     cout << num << endl;
     cout << ref << endl;

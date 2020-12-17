@@ -14,17 +14,17 @@ int main() {
     int space_count = line_count;
     int word_count = 1;
 
-    for (int i {0}; i < line_count; i++) {
-        for (int j {0}; j < space_count; j++) {
+    for (int i = 0; i < line_count; i++) {
+        for (int j = 0; j < space_count; j++) {
             cout << ' ';
         }
-        for (int j {0}; j < word_count; j++) {
+        for (int j = 0; j < word_count; j++) {
             cout << input_string.at(j);
         }
-        for (int j {word_count-1}; j > 0; j--) {
+        for (int j = word_count-1; j > 0; j--) {
             cout << input_string.at(j-1);
         }
-        for (int j {0}; j < space_count; j++) {
+        for (int j = 0; j < space_count; j++) {
             cout << ' ';
         }
         space_count -= 1;

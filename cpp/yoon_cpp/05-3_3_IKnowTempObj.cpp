@@ -7,8 +7,7 @@ class Temporary {
 private:
     int num;
 public:
-    Temporary(int n)
-        : num {n} {
+    Temporary(int n) : num(n) {
             cout << "create obj: " << num << endl;
     }
     void ShowTempInfo() {

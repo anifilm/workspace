@@ -7,11 +7,9 @@ class SoSimple {
 private:
     int num;
 public:
-    SoSimple(int n)
-        : num {n} {
+    SoSimple(int n) : num(n) {
     }
-    SoSimple(const SoSimple& copy)
-        : num {copy.num} {
+    SoSimple(const SoSimple& copy) : num(copy.num) {
             cout << "called SoSimple(const SoSimple& copy)" << endl;
     }
     void ShowData() {
@@ -25,7 +23,7 @@ void SimpleFuncObj(SoSimple ob) {
 
 int main() {
 
-    SoSimple obj {7};
+    SoSimple obj(7);
     cout << "함수호출 전" << endl;
     SimpleFuncObj(obj);     // 호출이 되는 순간 객체 obj를 인자로 전달
                             // 매개변수 ob의 복사 생성자가 호출되고, 인자로 obj가 전달

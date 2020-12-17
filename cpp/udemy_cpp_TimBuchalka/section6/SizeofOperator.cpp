@@ -5,7 +5,6 @@
 #include <climits>      // make sure you include climits for interger types
                         // Similar information for floating point numbers
                         // is contained in <cfloat>
-
 using namespace std;
 
 int main() {
@@ -50,12 +49,12 @@ int main() {
 
     cout << "sizeof using variable names" << endl;
 
-    int age {21};
+    int age = 21;
     cout << "age is " << sizeof(age) << " bytes." << endl;
     // or
     cout << "age is " << sizeof age << " bytes." << endl;
 
-    double wage {22.24};
+    double wage = 22.24;
     cout << "wage is " << sizeof(wage) << " bytes." << endl;
     // or
     cout << "wage is " << sizeof wage << " bytes." << endl;

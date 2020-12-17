@@ -17,10 +17,10 @@ int func1(int a, int b) {
 }
 
 int main() {
-    int x {10};
-    int y {20};
+    int x = 10;
+    int y = 20;
     int z {};
-    z = func1(x ,y);
+    z = func1(x, y);
     cout << z << endl;
 
     cout << endl;

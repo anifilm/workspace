@@ -10,7 +10,7 @@ int& RefRetFuncOne(int& ref) {
 
 int main() {
 
-    int num1 {1};
+    int num1 = 1;
     int& num2 = RefRetFuncOne(num1);    // int& ref 참조자를 반환, 이를 다시 참조자에 저장하고 있다.
     /*
     int& ref = num1;

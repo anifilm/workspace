@@ -36,7 +36,6 @@ Mystring::~Mystring() {
 // Copy assignment
 Mystring& Mystring::operator=(const Mystring& rhs) {
     std::cout << "Copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] this->str;

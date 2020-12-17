@@ -7,14 +7,14 @@ using namespace std;
 
 int main() {
 
-    Mystring larry {"Larry"};
+    Mystring larry = "Larry";
     larry.display();                        // Larry : 5
 
     larry = -larry;
     larry.display();                        // larry : 5
 
     cout << boolalpha << endl;
-    Mystring moe {"Moe"};
+    Mystring moe = "Moe";
     Mystring stooge = larry;
 
     cout << (larry == moe) << endl;         // false
@@ -29,7 +29,7 @@ int main() {
 
     Mystring three_stooges = moe + " " + larry + " " + "Curly";
     three_stooges.display();                // Moe larry Curly : 15
-	
+
     cout << endl;
     return 0;
 }

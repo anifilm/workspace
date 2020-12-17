@@ -7,7 +7,7 @@ using std::endl;
 
 int main() {
 
-    int num {20};
+    int num = 20;
 
     cout << "Hello, world!" << endl;
     cout << "Hello, " << "world!" << endl;

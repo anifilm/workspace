@@ -20,7 +20,7 @@ void greeting(string name, string prefix, string suffix) {
 }
 
 int main() {
-    double cost {0};
+    double cost = 0;
     cost = calc_cost(100.0, 0.08, 4.25);        // will use no defualt 100 + 8 + 4.25
 
     cout << fixed << setprecision(2);
@@ -43,6 +43,6 @@ int main() {
     greeting("William Smith");
     greeting("Mary Howard", "Mrs.", "Ph.D.");
 
-	cout << endl;
-	return 0;
+    cout << endl;
+    return 0;
 }

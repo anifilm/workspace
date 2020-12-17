@@ -25,8 +25,8 @@ using namespace std;
 int calculate_pairs(vector<int> vec) {
     int result {};
     if (vec.size() > 1) {
-        for (int i {0}; i < vec.size() - 1; i++) {
-            for (int j {1}; j < vec.size(); j++) {
+        for (size_t i = 0; i < vec.size() - 1; i++) {
+            for (size_t j = 1; j < vec.size(); j++) {
                 if (i != j && i < j)
                     result += vec[i] * vec[j];
             }

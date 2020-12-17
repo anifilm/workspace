@@ -1,6 +1,6 @@
 // Section 6
 // Challenge
-/* 
+/*
     Frank's Carpet Cleaning Service
     Charges:
         $25 per small room
@@ -10,7 +10,7 @@
 
     Prompt the user for the number of small and large rooms they would like cleaned
     and provide an estimate such as:
-     
+
 Estimate for carpet cleaning service
 Number of small rooms: 3
 Number of large rooms: 1
@@ -32,18 +32,18 @@ int main() {
     cout << "Hello, welcome to anifilm's Carpet Ceaning Service" << endl;
     cout << "\nHow many small rooms would you like cleaned? ";
 
-    int number_of_small_rooms {0};
+    int number_of_small_rooms = 0;
     cin >> number_of_small_rooms;
 
     cout << "\nHow many large rooms would you like cleaned? ";
 
-    int number_of_large_rooms {0};
+    int number_of_large_rooms = 0;
     cin >> number_of_large_rooms;
 
-    const double price_per_small_room {20};
-    const double price_per_large_room {30};
-    const double sales_tax {0.06};
-    const int estimate_expiry {30};     // days
+    const double price_per_small_room = 20;
+    const double price_per_large_room = 30;
+    const double sales_tax = 0.06;
+    const int estimate_expiry = 30;     // days
 
     cout << "\nEstimate for carpet cleaning service" << endl;
     cout << "Number of small rooms: " << number_of_small_rooms << endl;

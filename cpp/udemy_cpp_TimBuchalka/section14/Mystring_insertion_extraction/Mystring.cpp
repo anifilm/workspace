@@ -50,7 +50,6 @@ Mystring::~Mystring() {
 // Copy assignment operator
 Mystring& Mystring::operator=(const Mystring& rhs) {
     std::cout << "Using copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -62,7 +61,6 @@ Mystring& Mystring::operator=(const Mystring& rhs) {
 // Move assignment operator
 Mystring& Mystring::operator=(Mystring&& rhs) {
     std::cout << "Using move assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;

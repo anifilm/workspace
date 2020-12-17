@@ -45,7 +45,6 @@ Mystring::~Mystring() {
 // Copy assignment
 Mystring& Mystring::operator=(const Mystring& rhs) {
 //  std::cout << "Using copy assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -57,7 +56,6 @@ Mystring& Mystring::operator=(const Mystring& rhs) {
 // Move assignment
 Mystring& Mystring::operator=(Mystring&& rhs) {
 //  std::cout << "Using move assignment" << std::endl;
-
     if (this == &rhs)
         return *this;
     delete[] str;
@@ -116,7 +114,7 @@ Mystring& operator+=(Mystring& lhs, const Mystring& rhs) {
 
 Mystring operator*(const Mystring& lhs, int n) {
     Mystring temp;
-    for (int i {1}; i <= n; i++)
+    for (int i = 1; i <= n; i++)
         temp = temp + lhs;
     return temp;
 }
@@ -127,7 +125,7 @@ Mystring& operator*=(Mystring& lhs, int n) {
 }
 
 Mystring& operator++(Mystring& obj) {
-    for (size_t i {0}; i < std::strlen(obj.str); i++)
+    for (size_t i = 0; i < std::strlen(obj.str); i++)
         obj.str[i] = std::toupper(obj.str[i]);
     return obj;
 }

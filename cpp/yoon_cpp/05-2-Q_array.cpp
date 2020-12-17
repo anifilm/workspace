@@ -6,9 +6,9 @@
 
 [main 함수의 예]
 int main(void) {
-    NameCard manClerk {"Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK};
+    NameCard manClerk("Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK);
     NameCard copy1 = manClerk;
-    NameCard manSenior {"Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR};
+    NameCard manSenior("Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR);
     NameCard copy2 = manSenior;
     copy1.ShowNameCardInfo();
     copy2.ShowNameCardInfo();
@@ -21,7 +21,7 @@ int main(void) {
 using namespace std;
 
 namespace COMP_POS {
-    enum {CLERK, SENIOR, ASSIST, MANAGER};
+    enum { CLERK, SENIOR, ASSIST, MANAGER };
 
     void ShowPositionInfo(int pos) {
         switch(pos) {
@@ -49,7 +49,7 @@ private:
     int position;
 public:
     NameCard(const char* _name, const char* _company, const char* _phone, int _pos)
-        : position {_pos} {
+        : position(_pos) {
             name = new char[strlen(_name) + 1];
             company = new char[strlen(_company) + 1];
             phone = new char[strlen(_phone) + 1];
@@ -85,10 +85,10 @@ public:
 
 int main() {
 
-    NameCard manClerk {"Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK};
-    NameCard copy1 {manClerk};
-    NameCard manSenior {"Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR};
-    NameCard copy2 {manSenior};
+    NameCard manClerk("Lee", "ABCEng", "010-1111-2222", COMP_POS::CLERK);
+    NameCard copy1(manClerk);
+    NameCard manSenior("Hong", "OrangeEng", "010-3333-4444", COMP_POS::SENIOR);
+    NameCard copy2(manSenior);
     copy1.ShowNameCardInfo();
     copy2.ShowNameCardInfo();
 

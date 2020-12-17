@@ -13,7 +13,7 @@
 
 // Implemention of the constructor
 Movie::Movie(std::string name, std::string rating, int watched)
-    : name(name), rating(rating), watched(watched) {
+    : name {name}, rating {rating}, watched {watched} {
 }
 
 //Implemention of the copy constructor

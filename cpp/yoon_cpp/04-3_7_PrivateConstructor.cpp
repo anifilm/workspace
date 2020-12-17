@@ -8,8 +8,7 @@ private:
     int num;
 public:
     // default 생성자
-    AAA()
-        : num {0} {
+    AAA() : num (0) {
             cout << "called default constructor" << endl;
     }
     // private 생성자를 호출하여 초기화 하는 함수를 구성
@@ -21,8 +20,7 @@ public:
     void ShowNum() const { cout << num << endl; }
 private:
     // private 생성자
-    AAA(int n)
-        : num {n} {
+    AAA(int n) : num(n) {
             cout << "called private constructor" << endl;
     }
 };

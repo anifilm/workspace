@@ -6,7 +6,6 @@
 using namespace std;
 
 class Base {
-
 private:
     int value;
 public:

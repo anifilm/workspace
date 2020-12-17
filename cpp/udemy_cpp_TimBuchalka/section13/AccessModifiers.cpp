@@ -9,7 +9,7 @@ using namespace std;
 class Player {
 private:
     // attributes
-    string name {"Player"};
+    string name = "Player";
     int health;
     int xp;
 
@@ -20,6 +20,7 @@ public:
 };
 
 int main() {
+
     Player frank;
     // frank.name = "Frank";                // compile error
     // cout << frank.health << endl;        // compile error

@@ -18,8 +18,8 @@ int main() {
     cout << num1 << " < " << num2 << " : " << (num1 < num2) << endl;
     cout << num1 << " <= " << num2 << " : " << (num1 <= num2) << endl;
 
-    const int lower {10};
-    const int upper {20};
+    const int lower = 10;
+    const int upper = 20;
 
     cout << "\nEnter an integer that is greater than " << lower << " : ";
     cin >> num1;

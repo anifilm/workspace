@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-    Mystring a {"Hello"};               // overloaded constructor
+    Mystring a = "Hello";               // overloaded constructor
     a = Mystring {"Hola"};              // overloaded constructor then move assignment
     a = "Bonjour";                      // overloaded constructor then move assignment
 
