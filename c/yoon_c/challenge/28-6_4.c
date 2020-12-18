@@ -19,8 +19,8 @@ typedef struct phonebook {
 } Node;
 
 Node* p = NULL;
-Node* prev = NULL;
 Node* head = NULL;
+Node* prev = NULL;
 Node* next = NULL;
 
 char buffer[MAX];
@@ -104,22 +104,32 @@ void InsertUserInfo() {
 }
 
 void DeleteUserInfo() {
+    p = head;
+    if (head == NULL) {
+        puts("리스트가 비어있습니다. 사용자 정보를 추가하십시오.\n");
+        return;
+    }
     printf("Input Name: ");
     gets(buffer);
-    p = head;
     while (1) {
         if (p == NULL) {
             puts("사용자 정보를 찾을 수 없습니다.");
             break;
         }
         if (strcmp(buffer, p->name) != 0) {
-            p = p->link;
+            prev = p;    // 이전 노드를 저장
+            p = p->link; // 다음 노드로 이동
         }
         else {
             // 삭제할 대상 찾기
             puts("Delete userInfo");
             printf("Name: %s\tPhone Number: %s\n", p->name, p->phoneNum);
-            // TODO: 노드 삭제 기능 추가
+            // 노드 삭제 기능 추가
+            if (head == p)
+                head = p->link;
+            else
+                prev->link = p->link;
+            free(p);
             break;
         }
     }
@@ -137,9 +147,13 @@ void DeleteUserInfo() {
 }
 
 void SearchUserInfo() {
+    p = head;
+    if (head == NULL) {
+        puts("리스트가 비어있습니다. 사용자 정보를 추가하십시오.\n");
+        return;
+    }
     printf("Input Name: ");
     gets(buffer);
-    p = head;
     while (1) {
         if (p == NULL) {
             puts("사용자 정보를 찾을 수 없습니다.");
