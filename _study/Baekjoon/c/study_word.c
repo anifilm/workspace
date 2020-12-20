@@ -30,11 +30,14 @@ baaa
 예제 출력 4
 A
 
+주의! 테스트 케이스에 공백하나가 입력된 경우를 확인 할 것!
+
 */
 #include <stdio.h>
+#define MAX_STRLEN 1000001
 
 int main() {
-    char str[1000001];
+    char str[MAX_STRLEN];
     int i, alphabet[26] = {0,};
     fgets(str, sizeof(str), stdin);
     for (i = 0; str[i] != '\0'; i++) {
@@ -42,7 +45,7 @@ int main() {
             str[i] = str[i] - 32;   // 대문자로 변경
         alphabet[str[i]-65]++;
     }
-    int max = 0; char max_alpha = '?';
+    int max = 0; char max_alpha = 0;
     for (i = 0; i < 26; i++) {
         if (alphabet[i] > max) {
             max = alphabet[i];
