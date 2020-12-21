@@ -20,7 +20,7 @@ Rectangle::Rectangle() : Rectangle(1) {
 }
 
 Rectangle::Rectangle(int w, int h) {
-    width = w, height = h;
+    width = w; height = h;
 }
 
 // Rectangle::Rectangle(int length) { width = height = length; }

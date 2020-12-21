@@ -27,7 +27,7 @@ public:
     void setValue(int x, int y);
     int calculate();
 };
-void Add::setValue(int x, int y) { a = x, b = y; }
+void Add::setValue(int x, int y) { a = x; b = y; }
 int Add::calculate() { return a + b; }
 
 class Sub {
@@ -37,7 +37,7 @@ public:
     void setValue(int x, int y);
     int calculate();
 };
-void Sub::setValue(int x, int y) { a = x, b = y; }
+void Sub::setValue(int x, int y) { a = x; b = y; }
 int Sub::calculate() { return a - b; }
 
 class Mul {
@@ -47,7 +47,7 @@ public:
     void setValue(int x, int y);
     int calculate();
 };
-void Mul::setValue(int x, int y) { a = x, b = y; }
+void Mul::setValue(int x, int y) { a = x; b = y; }
 int Mul::calculate() { return a * b; }
 
 class Div {
@@ -57,7 +57,7 @@ public:
     void setValue(int x, int y);
     int calculate();
 };
-void Div::setValue(int x, int y) { a = x, b = y; }
+void Div::setValue(int x, int y) { a = x; b = y; }
 int Div::calculate() { return a / b; }
 
 int main() {
