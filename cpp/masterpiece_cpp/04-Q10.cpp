@@ -13,6 +13,7 @@ Q10
 using namespace std;
 
 class Person {
+private:
     string name;
 public:
     Person() { this->name = ""; }
@@ -22,6 +23,7 @@ public:
 };
 
 class Family {
+private:
     Person* p;  // Person 배열 포인터
     int size;   // Person 배열의 크기, 가족 구성원 수
     string fName;

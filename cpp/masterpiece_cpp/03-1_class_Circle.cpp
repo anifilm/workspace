@@ -8,7 +8,6 @@ class Circle {
 public:
     // 멤버 변수
     int radius = 5; // C++11 부터 클래스 선언부에서 멤버 변수를 초기화할 수 있다.
-
     // 멤버 함수
     double getArea();
 };

@@ -14,6 +14,7 @@ Q12
 using namespace std;
 
 class Circle {
+private:
     int radius;     // 원의 반지름 값
     string name;    // 원의 이름
 public:

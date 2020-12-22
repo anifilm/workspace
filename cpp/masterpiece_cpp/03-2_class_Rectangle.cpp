@@ -8,7 +8,6 @@ class Rectangle {
 public:
     int width;
     int height;
-
     getArea();  // 면적을 계산하여 리턴하는 함수
 };
 

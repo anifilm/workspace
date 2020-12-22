@@ -21,7 +21,7 @@ int main() {
     cout << "텍스트의 끝은 ; 입니다." << STR_N << "개까지 가능합니다." << endl;
     cin.getline(str, STR_N, ';');
 
-    for (size_t i = 0; i < strlen(str); ++i) {
+    for (size_t i = 0; i < strlen(str); i++) {
         if (isalpha(tolower(str[i])) != 0) {
             alphabet[tolower(str[i]) - 97]++;
             num++;

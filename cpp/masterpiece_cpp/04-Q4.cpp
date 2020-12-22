@@ -12,6 +12,7 @@ Q4
 using namespace std;
 
 class Sample {
+private:
     int* p;
     int size;
 public:

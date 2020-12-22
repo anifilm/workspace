@@ -11,6 +11,7 @@ Q9
 using namespace std;
 
 class Person {
+private:
     string name;
     string phone;
 public:

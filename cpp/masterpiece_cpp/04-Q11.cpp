@@ -14,6 +14,7 @@ Q11
 using namespace std;
 
 class Container {   // 통 하나를 나타내는 클래스
+private:
     int size;   // 현재 저장량, 최대 저장량은 10
 public:
     Container() { size = 10; }
@@ -27,6 +28,7 @@ void Container::consume() { size -= 1; }
 int Container::getSize() { return size; }
 
 class CoffeeVendingMachine {    // 커피 자판기를 표현하는 클래스
+private:
     Container tong[3];  // tong[0]는 커피, tong[1]은 물, tong[2]는 설탕통을 나타냄
     bool checkEmpty();
     void selectEspresso();  // 에스프레소를 선택한 경우 (커피1, 물1 소모)
@@ -40,9 +42,9 @@ public:
 
 bool CoffeeVendingMachine::checkEmpty() {
     if (tong[0].getSize() == 0 || tong[1].getSize() == 0 || tong[2].getSize() == 0)
-        return 0;
+        return false;
     else
-        return 1;
+        return true;
 }
 
 void CoffeeVendingMachine::selectEspresso() {
@@ -116,8 +118,6 @@ void CoffeeVendingMachine::run() {
         }
     }
 }
-
-
 
 int main() {
     CoffeeVendingMachine coffee;

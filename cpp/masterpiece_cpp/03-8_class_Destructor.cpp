@@ -4,13 +4,12 @@
 using namespace std;
 
 class Circle {
-public:
+private:
     int radius;
-
+public:
     Circle();
     Circle(int r);
     ~Circle();  // 소멸자 선언
-
     double getArea();
 };
 

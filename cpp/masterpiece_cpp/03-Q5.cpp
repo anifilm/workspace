@@ -20,7 +20,7 @@ public:
 };
 
 Random::Random() {
-    srand(time(NULL));
+    srand((unsigned)time(0));
 }
 
 int Random::next() {

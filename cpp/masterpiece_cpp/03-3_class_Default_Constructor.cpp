@@ -4,12 +4,11 @@
 using namespace std;
 
 class Circle {
-public:
+private:
     int radius;
-
+public:
     Circle();       // 디폴트 생성자
     Circle(int r);  // 매개 변수 있는 생성자
-
     double getArea();
 };
 

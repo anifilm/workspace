@@ -4,13 +4,12 @@
 using namespace std;
 
 class Rectangle {
-public:
+private:
     int width, height;
-
+public:
     Rectangle();
     Rectangle(int w, int h);
     Rectangle(int length);
-
     bool isSquare();
 };
 
