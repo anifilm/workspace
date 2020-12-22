@@ -32,7 +32,7 @@ bool empty()                                        문자열의 크기가 0이�
 char& at(int pos)                                   pos 위치의 문자 리턴
 int find(const string& str)                         문자열의 처음부터 str을 검색하여 발견한 처음 인덱스 리턴, 없으면 -1 리턴
 int find(cosnt string& str, int pos)                문자열의 pos 위치부터 str을 검색하여 발견한 처음 인덱스 리턴, 없으면 -1 리턴
-int rfind(const string& str, int pos)               문자열의 pos 위치부터 str을 검색하여 마직막에 발견한 인덱스 리턴, 없으면 -1 리턴
+int rfind(const string& str, int pos)               문자열의 pos 위치부터 str을 검색하여 마지막에 발견한 인덱스 리턴, 없으면 -1 리턴
 int compare(const string& str)                      문자열과 str을 비교하여 같으면 0을, 사전 순으로 현재 문자열이 앞에 오면 음수, 뒤에 오면 양수 리턴
 string substr(int pos, int n)                       pos 위치부터 n개 문자를 새로운 서브스트링으로 생성, 리턴
 void swap(string& str)                              현재 객체의 문자열과 str의 문자열을 서로 바꿔치기 함
