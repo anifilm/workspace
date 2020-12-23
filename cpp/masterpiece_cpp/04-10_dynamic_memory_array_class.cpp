@@ -7,15 +7,11 @@ class Circle {
 private:
     int radius;
 public:
-    Circle();
+    Circle() { radius = 1; }
     ~Circle() {};
     void setRadius(int r) { radius = r; }
     double getArea() { return radius * radius * 3.14; }
 };
-
-Circle::Circle() {
-    radius = 1;
-}
 
 int main() {
 

@@ -13,7 +13,6 @@ public:
     bool isSquare();
 };
 
-
 // Rectangle::Rectangle() { width = height = 1; }
 Rectangle::Rectangle() : Rectangle(1) {
 }
