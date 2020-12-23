@@ -65,6 +65,7 @@ bool MyIntStack::pop(int& n) {
 }
 
 int main() {
+
     MyIntStack a(10);
     a.push(10);
     a.push(20);
@@ -76,5 +77,6 @@ int main() {
     cout << "스택 a에서 팝한 값 " << n << endl;
     b.pop(n);   // 스택 b 팝
     cout << "스택 b에서 팝한 값 " << n << endl;
+
     return 0;
 }

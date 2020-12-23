@@ -41,9 +41,11 @@ void swap(Circle& a, Circle& b) {
 }
 
 int main() {
+
     Circle a(10), b(20);
     cout << a.getRadius() << ' ' << b.getRadius() << endl;
     swap(a, b);
     cout << a.getRadius() << ' ' << b.getRadius() << endl;
+
     return 0;
 }

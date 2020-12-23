@@ -18,8 +18,10 @@ bool bigger(int a, int b, int& big) {
 }
 
 int main() {
+
     int a = 10, b = 20, big;
     if (bigger(a, b, big)) cout << "a와 b는 같다." << endl;
     else cout << "큰 수는 " << big << endl;
+
     return 0;
 }

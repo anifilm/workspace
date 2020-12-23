@@ -25,9 +25,11 @@ Buffer& append(Buffer& buf, string text) {
 }
 
 int main() {
+
     Buffer buf("Hello");
     Buffer& temp = append(buf, "Guys"); // buf의 문자열에 "Guys"를 덧붙임
     temp.print();   // "HelloGuys" 출력
     buf.print();    // "HelloGuys" 출력
+
     return 0;
 }
