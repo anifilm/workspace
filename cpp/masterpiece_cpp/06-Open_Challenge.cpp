@@ -13,6 +13,27 @@ main() 함수는 프로그램을 시작시키는 기능 정도로만 구현하�
 
 using namespace std;
 
+class Person {
+private:
+    string name;
+public:
+
+};
+
+class UpAndDownGame {
+public:
+    static int guessNumber;
+    static int minNumber;
+    static int maxNumber;
+
+    UpAndDownGame() { srand((unsigned)time(0)); }
+};
+
+// static 클래스 멤버 변수 초기화
+static int guessNumber = rand() % 100;
+static int minNumber = 0;
+static int maxNumber = 99;
+
 int main() {
 
     srand((unsigned)time(0));   // 항상 다른 랜덤수를 발생시키기 위한 seed 설정
