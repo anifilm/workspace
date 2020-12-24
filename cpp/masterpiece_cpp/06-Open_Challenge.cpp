@@ -17,28 +17,58 @@ class Person {
 private:
     string name;
 public:
-
+    string getName() { return name; }
+    void setName(string name) { this->name = name; }
 };
 
 class UpAndDownGame {
-public:
+private:
     static int guessNumber;
     static int minNumber;
     static int maxNumber;
-
-    UpAndDownGame() { srand((unsigned)time(0)); }
+public:
+    static void game();
 };
 
 // static 클래스 멤버 변수 초기화
-static int guessNumber = rand() % 100;
-static int minNumber = 0;
-static int maxNumber = 99;
+int UpAndDownGame::guessNumber;
+int UpAndDownGame::minNumber = 0;
+int UpAndDownGame::maxNumber = 99;
+
+void UpAndDownGame::game() {
+    cout << "Up & Down 게임을 시작합니다." << endl;
+    guessNumber = rand() % 100;
+    Person p[2];
+    p[0].setName("임채영");
+    p[1].setName("정흥규");
+    int i = 0, num;
+    bool isInput = true;
+    while (true) {
+        cout << "답은 " << minNumber << "과 " << maxNumber << "사이에 있습니다." << endl;
+        cout << p[i%2].getName() << ": ";
+        cin >> num;
+        if (num > minNumber && num < maxNumber) {
+            isInput = true;
+            if (num < guessNumber) minNumber = num;
+            else if (num > guessNumber) maxNumber = num;
+            else if (num == guessNumber) {
+                cout << p[i%2].getName() << "가 이겼습니다." << endl;
+                break;
+            }
+        }
+        else {
+            cout << "입력이 잘못되었습니다. 다시 입력하세요." << endl;
+            isInput = false;
+        }
+        if (isInput) {
+            isInput = true;
+            i++;
+        }
+    }
+}
 
 int main() {
-
-    srand((unsigned)time(0));   // 항상 다른 랜덤수를 발생시키기 위한 seed 설정
-    int n = rand(); // 0에서 RAND_MAX(32767)사이의 랜덤한 정수가 n에 발생
-    n = n % 100;    // n은 0에서 99사이의 정수
-
+    srand((unsigned)time(0));
+    UpAndDownGame::game();
     return 0;
 }
