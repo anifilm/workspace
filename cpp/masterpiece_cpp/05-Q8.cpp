@@ -16,7 +16,7 @@ class MyIntStack {
 private:
     int* p;     // 스택 메모리로 사용할 포인터
     int size;   // 스택의 최대 크기
-    int tos;    // 스택의 탑를 가리키는 인덱스
+    int top;    // 스택의 탑를 가리키는 인덱스
 public:
     MyIntStack();
     MyIntStack(int size);
@@ -27,40 +27,41 @@ public:
 };
 
 MyIntStack::MyIntStack() {
-    tos = 0;
+    top = -1;
     size = 1;
     p = new int[size];
 }
 
 MyIntStack::MyIntStack(int size) {
-    tos = 0;
+    top = -1;
     this->size = size;
     p = new int[size];
 }
 
 MyIntStack::MyIntStack(const MyIntStack& s) {
-    this->tos = s.tos;
+    this->top = s.top;
     this->size = s.size;
     this->p = new int[s.size];
-    for (int i = 0; i < s.tos; i++)
+    for (int i = 0; i < s.top; i++)
         this->p[i] = s.p[i];
 }
 
 MyIntStack::~MyIntStack() {
-    if (p) delete p;
+    if (p)
+        delete[] p;
 }
 
 bool MyIntStack::push(int n) {
-    if (tos == size) return false;
-    p[tos] = n;
-    tos++;
+    if (top == size - 1) return false;
+    top++;
+    p[top] = n;
     return true;
 }
 
 bool MyIntStack::pop(int& n) {
-    if (tos == 0) return false;
-    tos--;
-    n = p[tos];
+    if (top < 0) return false;
+    n = p[top];
+    top--;
     return true;
 }
 

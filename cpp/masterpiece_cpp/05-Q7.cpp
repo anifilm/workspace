@@ -15,7 +15,7 @@ using namespace std;
 class MyIntStack {
 private:
     int p[10];  // 최대 10개의 정수 저장
-    int tos;    // 스택의 탑을 가리키는 인덱스
+    int top;    // 스택의 탑을 가리키는 인덱스
 public:
     MyIntStack();
     bool push(int n);   // 정수 n을 스택에 푸시. 스택이 가득 차 있으면 false, 아니면 true 반환
@@ -23,20 +23,20 @@ public:
 };
 
 MyIntStack::MyIntStack() {
-    tos = 0;
+    top = -1;
 }
 
 bool MyIntStack::push(int n) {
-    if (tos == 10) return false;
-    p[tos] = n;
-    tos++;
+    if (top == 9) return false;
+    top++;
+    p[top] = n;
     return true;
 }
 
 bool MyIntStack::pop(int& n) {
-    if (tos == 0) return false;
-    tos--;
-    n = p[tos];
+    if (top < 0) return false;
+    n = p[top];
+    top--;
     return true;
 }
 
