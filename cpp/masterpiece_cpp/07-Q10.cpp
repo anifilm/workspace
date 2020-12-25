@@ -11,6 +11,7 @@ int 배열을 동적으로 할당받아 유지한다. 다음과 같이 연산이
 using namespace std;
 
 class Statistics {
+private:
     int* arr;
     int size;
 public:

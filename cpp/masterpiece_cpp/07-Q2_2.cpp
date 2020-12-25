@@ -11,6 +11,7 @@ Book 객체를 활용하는 사례이다.
 using namespace std;
 
 class Book {
+private:
     string title;
     int price, pages;
 public:

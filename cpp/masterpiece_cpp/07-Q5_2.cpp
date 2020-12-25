@@ -14,6 +14,7 @@ Q5
 using namespace std;
 
 class Color {
+private:
     int red, green, blue;
 public:
     Color() { red = green = blue = 0; }

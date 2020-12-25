@@ -17,7 +17,7 @@ int main() {
     if (singer == elvis)    // 문자열 비교
         cout << "맞았습니다.";
     else
-        cout << "틀렸습니다. " + elvis + " 입니다.";    // + 로 문자열 연결
+        cout << "틀렸습니다. " + elvis + " 입니다.";  // + 로 문자열 연결
 
     cout << endl;
     return 0;

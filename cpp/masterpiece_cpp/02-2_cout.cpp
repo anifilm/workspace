@@ -10,7 +10,7 @@ int main() {
 
     std::cout << c << 5.5 << '-' << n << "hello" << true << std::endl;
     std::cout << "n + 5 = " << n + 5 << std::endl;
-    std::cout << "면적은 " << area(n) << std::endl;    // 함수 area()의 리턴 값 출력
+    std::cout << "면적은 " << area(n) << std::endl;  // 함수 area()의 리턴 값 출력
 
     return 0;
 }

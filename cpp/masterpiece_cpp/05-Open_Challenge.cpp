@@ -14,6 +14,7 @@ Open Challenge - 영문 텍스트와 모스(Morse) 부호 변환기
 using namespace std;
 
 class Morse {
+private:
     string alphabet[26];    // 알파벳의 모스 부호 저장
     string digit[10];       // 숫자의 모스 부호 저장
     string slash, question, comma, period, plus, equal; // 특수 문자의 모스 부호 저장

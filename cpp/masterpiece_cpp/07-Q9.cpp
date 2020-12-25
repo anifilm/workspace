@@ -9,6 +9,7 @@ Q9
 using namespace std;
 
 class Circle {
+private:
     int radius;
 public:
     Circle(int radius = 0) { this->radius = radius; }

@@ -9,6 +9,7 @@ Q3
 using namespace std;
 
 class Book {
+private:
     string title;
     int price, pages;
 public:

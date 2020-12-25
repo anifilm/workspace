@@ -14,7 +14,7 @@ int main() {
     cin >> height;  // 키보드로부터 정수 값 높이를 읽어 height 변수에 저장
 
     int area = width * height;  // 사각형의 면적 계산
-    cout << "면적은 " << area << endl; // 면적을 출력하고 다음 줄로 넘어감
+    cout << "면적은 " << area << endl;  // 면적을 출력하고 다음 줄로 넘어감
 
     return 0;
 }

@@ -12,6 +12,7 @@ Q6
 using namespace std;
 
 class Matrix {
+private:
     int arr[4];
 public:
     Matrix() { for (int i = 0; i < 4; i++) arr[i] = 0; }
