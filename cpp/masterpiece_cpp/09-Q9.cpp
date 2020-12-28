@@ -33,7 +33,7 @@ public:
     int getAvailableCount() { return availableCount; }
 
     bool print(int pages);
-    void show() {}
+    virtual void show() = 0;  // 순수 virtual 함수 선언
 };
 
 bool Printer::print(int pages) {
@@ -48,7 +48,7 @@ bool Printer::print(int pages) {
     }
 }
 
-class InkJetPrinter : virtual public Printer {
+class InkJetPrinter : public Printer {
 private:
     int availableInk;
 public:
@@ -72,7 +72,7 @@ public:
     }
 };
 
-class LaserPrinter : virtual public Printer {
+class LaserPrinter : public Printer {
 private:
     int availableToner;
 public:
