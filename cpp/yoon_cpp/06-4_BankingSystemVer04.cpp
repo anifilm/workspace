@@ -1,7 +1,7 @@
 /*
-Banking System Ver 0.3
+Banking System Ver 0.4
 작성자: 임채영
-내 용 : Account 클래스 정의, 복사 생성자 정의
+내 용 : const 선언을 추가하여 코드의 안정성을 높임
 */
 #include <iostream>
 #include <cstring>
@@ -34,14 +34,14 @@ public:
             cusName = new char[strlen(ref.cusName) + 1];
             strcpy(cusName, ref.cusName);
     }
-    int GetAccID() { return accID; }
+    int GetAccID() const { return accID; }
     void Deposit(int money) { balance += money; }
     int Withdraw(int money) {   // 출금액 반환, 부족시 0반환
         if (balance < money) return 0;
         balance -= money;
         return money;
     }
-    void ShowAccInfo() {
+    void ShowAccInfo() const {
         cout << "계좌ID: " << accID << endl;
         cout << "이 름 : " << cusName << endl;
         cout << "잔 액 : " << balance << endl;

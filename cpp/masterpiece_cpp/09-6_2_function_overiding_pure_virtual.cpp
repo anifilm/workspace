@@ -12,7 +12,7 @@ public:
     Shape() { next = NULL; }
     virtual ~Shape() {}
     void paint();
-    Shape* add(Shape *p);
+    Shape* add(Shape* p);
     Shape* getNext() { return next; }
 };
 

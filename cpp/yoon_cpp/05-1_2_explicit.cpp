@@ -1,4 +1,3 @@
-// SoSimple sim2(sim1);
 #include <iostream>
 
 using namespace std;
@@ -11,7 +10,7 @@ public:
     SoSimple(int n1, int n2)
         : num1(n1), num2(n2) {
     }
-    // 복사 생성자 (copy constructor), 직접 정의하지 않아도 사용할 수 있다.
+    // 복사 생성자 (copy constructor), 직접 정의하지 않아도 자동 생성되어 사용 가능하다.
     explicit SoSimple(SoSimple& copy)
         : num1(copy.num1), num2(copy.num2) {
             cout << "called SoSimple(SoSimple& copy)" << endl;
