@@ -62,33 +62,66 @@ void Line::draw() {
     cout << "Line" << endl;
 }
 
-int main() {
+class UI {
+public:
+    static void start() {
+        cout << "그래픽 에디터입니다." << endl;
+    }
+    static int menu() {
+        int m;
+        cout << "삽입(1), 삭제(2), 모두보기(3), 종료(4): ";
+        cin >> m;
+        return m;
+    }
+    static int addShape() {
+        int s;
+        cout << "선(1), 원(2), 사각형(3): ";
+        cin >> s;
+        return s;
+    }
+    static int deleteShape() {
+        int d;
+        cout << "삭제하고자 하는 도형의 인덱스: ";
+        cin >> d;
+        return d;
+    }
+};
 
+class GraphicEditor : public Shape {
+private:
     Shape* pStart = NULL;
     Shape* pLast;
+    Shape* p;
+public:
+    GraphicEditor() {
+        pStart = new Circle();  // 처음에 원 도형을 생성한다.
+        pLast = pStart;
+    }
+    ~GraphicEditor() {
+        // 현재 연결된 모든 도형을 삭제한다.
+        p = pStart;
+        while (p != NULL) {
+            Shape* q = p->getNext();  // 다음 도형 주소 기억
+            delete p;  // 현재 도형 객체 소멸 (기본 클래스의 virtual 소멸자 호출)
+            p = q;  // 다음 도형의 주소를 p에 저장
+        }
+    }
+    void showAll() {
+        // 현재 연결된 모든 도형을 화면에 그린다.
+        p = pStart;
+        while (p != NULL) {
+            p->paint();
+            p = p->getNext();
+        }
+    }
+};
 
-    pStart = new Circle();  // 처음에 원 도형을 생성한다.
-    pLast = pStart;
+int main() {
 
     pLast = pLast->add(new Rect());  // 사각형 객체 생성
     pLast = pLast->add(new Circle());  // 원 객체 생성
     pLast = pLast->add(new Line());  // 선 객체 생성
     pLast = pLast->add(new Rect());  // 사각형 객체 생성
-
-    // 현재 연결된 모든 도형을 화면에 그린다.
-    Shape* p = pStart;
-    while (p != NULL) {
-        p->paint();
-        p = p->getNext();
-    }
-
-    // 현재 연결된 모든 도형을 삭제한다.
-    p = pStart;
-    while (p != NULL) {
-        Shape* q = p->getNext();  // 다음 도형 주소 기억
-        delete p;  // 현재 도형 객체 소멸 (기본 클래스의 virtual 소멸자 호출)
-        p = q;  // 다음 도형의 주소를 p에 저장
-    }
 
     return 0;
 }
