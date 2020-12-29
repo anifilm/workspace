@@ -18,17 +18,13 @@ public:
     Shape() { next = NULL; }
     virtual ~Shape() {}
     void paint();
-    Shape* add(Shape *p);
+    Shape* add(Shape* p);
     Shape* getNext() { return next; }
 };
 
 void Shape::paint() {
     draw();
 }
-/*
-void Shape::draw() {
-    cout << "-- Shape --" << endl;
-} */
 
 Shape* Shape::add(Shape* p) {
     this->next = p;
@@ -87,15 +83,18 @@ public:
     }
 };
 
-class GraphicEditor : public Shape {
+class GraphicEditor {
 private:
-    Shape* pStart = NULL;
+    Shape* pStart;
     Shape* pLast;
     Shape* p;
+    Shape* prev;
 public:
     GraphicEditor() {
-        pStart = new Circle();  // 처음에 원 도형을 생성한다.
-        pLast = pStart;
+        pStart = NULL;
+        // 처음에 원 도형을 생성한다.
+        // pStart = new Circle();
+        // pLast = pStart;
     }
     ~GraphicEditor() {
         // 현재 연결된 모든 도형을 삭제한다.
@@ -109,19 +108,88 @@ public:
     void showAll() {
         // 현재 연결된 모든 도형을 화면에 그린다.
         p = pStart;
+        int i = 0;
         while (p != NULL) {
+            cout << i << ": ";
             p->paint();
             p = p->getNext();
+            i++;
         }
     }
+    void run();
 };
+
+void GraphicEditor::run() {
+    UI::start();
+    while (true) {
+        switch (UI::menu()) {
+            case 1:
+                if (pStart == NULL) {
+                    switch (UI::addShape()) {
+                        case 1:
+                            pStart = new Line();  // 처음에 선 객체를 생성한다.
+                            pLast = pStart;
+                            break;
+                        case 2:
+                            pStart = new Circle();  // 처음에 원 객체를 생성한다.
+                            pLast = pStart;
+                            break;
+                        case 3:
+                            pStart = new Rect();  // 처음에 사각형 객체를 생성한다.
+                            pLast = pStart;
+                            break;
+                    }
+                }
+                else {
+                    switch (UI::addShape()) {
+                        case 1:
+                            pLast = pLast->add(new Line());  // 선 객체 생성
+                            break;
+                        case 2:
+                            pLast = pLast->add(new Circle());  // 원 객체 생성
+                            break;
+                        case 3:
+                            pLast = pLast->add(new Rect());  // 사각형 객체 생성
+                            break;
+                    }
+                }
+                break;
+            case 2: {
+                int d = UI::deleteShape();
+                int i = 0;
+                p = pStart;
+                while (p != NULL) {
+                    // TODO: 노드 삭제 기능 추후 재검토 할 것!
+                    if (d != i) {
+                        prev = p;
+                        p = p->getNext();
+                        i++;
+                    }
+                    else {
+                        if (pStart == p)
+                            pStart = p->getNext();
+                        else
+                            prev->add(p->getNext());
+                        delete p;
+                        break;
+                    }
+                }
+                break;
+            }
+            case 3:
+                showAll();
+                break;
+            case 4:
+                cout << "\n프로그램을 종료합니다." << endl;
+                return;
+        }
+    }
+}
 
 int main() {
 
-    pLast = pLast->add(new Rect());  // 사각형 객체 생성
-    pLast = pLast->add(new Circle());  // 원 객체 생성
-    pLast = pLast->add(new Line());  // 선 객체 생성
-    pLast = pLast->add(new Rect());  // 사각형 객체 생성
+    GraphicEditor ge;
+    ge.run();
 
     return 0;
 }
