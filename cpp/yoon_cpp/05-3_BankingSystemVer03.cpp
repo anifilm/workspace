@@ -34,6 +34,7 @@ public:
             cusName = new char[strlen(ref.cusName) + 1];
             strcpy(cusName, ref.cusName);
     }
+    ~Account() { delete[] cusName; }
     int GetAccID() { return accID; }
     void Deposit(int money) { balance += money; }
     int Withdraw(int money) {   // 출금액 반환, 부족시 0반환
@@ -47,7 +48,6 @@ public:
         cout << "잔 액 : " << balance << endl;
         cout << endl;
     }
-    ~Account() { delete[] cusName; }
 };
 
 Account* accArr[100];
@@ -57,7 +57,7 @@ int main() {
 
     int m_select;
 
-    while (1) {
+    while (true) {
         ShowMenu();
         cout << "선택: ";
         cin >> m_select;
@@ -83,7 +83,6 @@ int main() {
                 break;
         }
     }
-
     return 0;
 }
 

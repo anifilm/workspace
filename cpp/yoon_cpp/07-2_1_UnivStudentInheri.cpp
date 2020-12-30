@@ -39,11 +39,11 @@ public:
 
 int main() {
 
-    UnivStudent ustd1("Lee", 22, "Computer eng.");
-    ustd1.WhoAryYou();
+    UnivStudent st1("Lee", 22, "Computer eng.");
+    st1.WhoAryYou();
 
-    UnivStudent ustd2("Yoon", 21, "Electronic eng.");
-    ustd2.WhoAryYou();
+    UnivStudent st2("Yoon", 21, "Electronic eng.");
+    st2.WhoAryYou();
 
     return 0;
 }

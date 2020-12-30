@@ -31,7 +31,7 @@ int main() {
 
     int m_select;
 
-    while (1) {
+    while (true) {
         ShowMenu();
         cout << "선택: ";
         cin >> m_select;
@@ -57,7 +57,6 @@ int main() {
                 break;
         }
     }
-
     return 0;
 }
 
