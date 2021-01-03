@@ -18,13 +18,13 @@ T biggest(T arr[], int n) {
 
 int main() {
 
-    int x[] = {1, 10, 100, 5, 4};
+    int x[5] = {1, 10, 100, 5, 4};
     cout << biggest(x, 5) << endl;
 
-    double y[] = {1.1, 2.25, 7.2, 5.15, 5.3, 6.6};
+    double y[6] = {1.1, 2.25, 7.2, 5.15, 5.3, 6.6};
     cout << biggest(y, 6) << endl;
 
-    char z[] = {'a', 'd', 'z', 't', 'w'};
+    char z[5] = {'a', 'd', 'z', 't', 'w'};
     cout << biggest(z, 5) << endl;
 
     return 0;
