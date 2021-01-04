@@ -43,6 +43,7 @@ int main() {
     v.push_back(Word("bear", "곰"));
 
     srand((unsigned)time(0));
+    
     int n1;
     string answer;
     string bogi[4];
@@ -82,7 +83,7 @@ int main() {
         cin >> result;
 
         if (result != 1 && result != 2 && result != 3 && result != 4) {  // 순서 중요 먼저 1, 2, 3, 4 이외의 값인지 확인해야함
-            cout << "프로그램을 종료합니다." << endl;
+            cout << "\n프로그램을 종료합니다." << endl;
             break;
         }
         else if (answer == bogi[number[result - 1]])
