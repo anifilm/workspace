@@ -7,39 +7,48 @@ Q5
 
 */
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <iomanip>
+#include <random>
 
 using namespace std;
 
 class Random {
+    mt19937 mersenne;
 public:
     Random();
     int next();
-    int nextInRange(int s, int e);
 };
 
-Random::Random() {
-    srand(time(NULL));
-}
+Random::Random() {}
 
 int Random::next() {
-    return rand();
-}
-
-int Random::nextInRange(int s, int e) {
-    return s + rand() % (e - 1);
+    random_device rd;
+    mt19937 mersenne(rd());
+    uniform_int_distribution<> die(1, 45);
+    return die(mersenne);
 }
 
 int main() {
 
     Random r;
     cout << "-- 1에서 " << "45까지의 랜덤 정수 6개 --" << endl;
+    cout << endl << setw(8) << "[ ";
+    int lot[6];
+    // 난수 저장
     for (int i = 0; i < 6; i++) {
-        int n = r.nextInRange(1, 45);
-        cout << n << ' ';
+        lot[i] = r.next();
     }
-    cout << endl;
+    // 중복 체크 후 수정
+    for (int i = 0; i < 6; i++) {
+        for (int j = i+1; j < 6; j++) {
+            if (lot[i] == lot[j])
+                lot[j] = r.next();
+        }
+    }
+    // 난수 출력
+    for (int i = 0; i < 6; i++)
+        cout << lot[i] << ' ';
+    cout << "] " << endl;
 
     return 0;
 }
