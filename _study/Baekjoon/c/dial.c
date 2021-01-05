@@ -64,6 +64,6 @@ int main() {
     char str[16];
     scanf("%s", str);
     int num = stringIntSum(str, strlen(str));
-    printf("%d\n", num);
+    printf("%d", num);
     return 0;
 }

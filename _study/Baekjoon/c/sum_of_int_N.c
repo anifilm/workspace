@@ -39,6 +39,6 @@ long long sum(int* a, int n) {
 
 int main() {
     int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    printf("sum: %lld\n", sum(arr, 10));
+    printf("sum: %lld", sum(arr, 10));
     return 0;
 }

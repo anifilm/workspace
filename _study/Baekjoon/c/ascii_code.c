@@ -46,6 +46,6 @@ z
 int main() {
     char ch;
     scanf("%c", &ch);
-    printf("%d\n", ch);
+    printf("%d", ch);
     return 0;
 }

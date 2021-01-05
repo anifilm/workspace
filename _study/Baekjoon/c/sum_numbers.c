@@ -45,6 +45,6 @@ int main() {
         scanf("%c", &nums[i]);
         sum += nums[i]-48;
     }
-    printf("%d\n", sum);
+    printf("%d", sum);
     return 0;
 }

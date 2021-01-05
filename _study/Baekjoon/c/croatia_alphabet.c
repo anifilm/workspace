@@ -86,6 +86,6 @@ int main() {
     char str[101];
     scanf("%s", str);
     int count = countCroatiaAlphabet(str, strlen(str));
-    printf("%d\n", count);
+    printf("%d", count);
     return 0;
 }

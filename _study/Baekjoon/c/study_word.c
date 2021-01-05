@@ -55,8 +55,8 @@ int main() {
             max_alpha = '?';
     }
     if (max_alpha == '?')
-        printf("%c\n", max_alpha);
+        printf("%c", max_alpha);
     else
-        printf("%c\n", max_alpha + 65);
+        printf("%c", max_alpha + 65);
     return 0;
 }

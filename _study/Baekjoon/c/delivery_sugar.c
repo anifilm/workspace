@@ -50,6 +50,6 @@ int main() {
         numThree++;
     }
     count = n < 0 ? -1 : numThree + n/5;
-    printf("%d\n", count);
+    printf("%d", count);
     return 0;
 }

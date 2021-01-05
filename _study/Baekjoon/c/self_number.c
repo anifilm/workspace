@@ -64,9 +64,7 @@ int selfNum(int n) {
 }
 
 int main() {
-
     int i, arr[N] = {0,};
-
     for (i = 1; i < N; i++) {
         int idx = selfNum(i);
         if (idx <= N) {
@@ -75,6 +73,5 @@ int main() {
     }
     for (i = 1; i < N; i++)
         if (!arr[i]) printf("%d\n", i);
-
     return 0;
 }

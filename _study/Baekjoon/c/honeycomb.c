@@ -38,6 +38,6 @@ int main() {
         tmp = 6 * (count++);
         range += tmp;
     }
-    printf("%d\n", count);
+    printf("%d", count);
     return 0;
 }

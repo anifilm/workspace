@@ -28,19 +28,18 @@
 
 */
 #include <iostream>
+using namespace std;
 
 int main() {
     int a = 0, b = 0;
-    std::cin >> a >> b;
-
+    cin >> a >> b;
     if (a > 0 && b > 0)
-        std::cout << 1 << std::endl;
+        cout << 1 << '\n';
     else if (a < 0 && b > 0)
-        std::cout << 2 << std::endl;
+        cout << 2 << '\n';
     else if (a < 0 && b < 0)
-        std::cout << 3 << std::endl;
+        cout << 3 << '\n';
     else
-        std::cout << 4 << std::endl;
-
+        cout << 4 << '\n';
     return 0;
 }

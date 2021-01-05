@@ -42,11 +42,9 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 �
 int main() {
     int i, count, a, b;
     scanf("%d", &count);
-
     for (i = 0; i < count; i++) {
         scanf("%d %d", &a, &b);
         printf("%d\n", a + b);
     }
-
     return 0;
 }

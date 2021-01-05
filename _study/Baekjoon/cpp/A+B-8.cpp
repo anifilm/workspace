@@ -28,14 +28,15 @@ Case #5: 5 + 2 = 7
 
 */
 #include <iostream>
+using namespace std;
 
 int main() {
     int i, count, a = 0, b = 0;
-    std::cin >> count;
+    cin >> count;
     for (i = 0; i < count; i++) {
-        std::cin >> a >> b;
-        std::cout << "Case #" << i + 1 << ": " << a << " + " << b << " = ";
-        std::cout << a + b << std::endl;
+        cin >> a >> b;
+        cout << "Case #" << i + 1 << ": " << a << " + " << b << " = ";
+        cout << a + b << '\n';
     }
     return 0;
 }

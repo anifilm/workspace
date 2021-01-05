@@ -38,8 +38,8 @@ int main() {
     n1 = reverseStringToInt(a, strlen(a));
     n2 = reverseStringToInt(b, strlen(b));
     if (n1 > n2)
-        printf("%d\n", n1);
+        printf("%d", n1);
     else
-        printf("%d\n", n2);
+        printf("%d", n2);
     return 0;
 }

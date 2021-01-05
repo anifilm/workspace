@@ -39,11 +39,11 @@
 
 */
 #include <iostream>
+using namespace std;
 
 int main() {
     int hour = 0, min = 0;
-    std::cin >> hour >> min;
-
+    cin >> hour >> min;
     if (min < 45) {
         if (hour == 0) {
             hour += 24 - 1;
@@ -57,8 +57,6 @@ int main() {
     else {
         min -= 45;
     }
-
-    std::cout << hour << " " << min << std::endl;
-
+    cout << hour << " " << min << '\n';
     return 0;
 }

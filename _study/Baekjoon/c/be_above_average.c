@@ -45,7 +45,7 @@ int main() {
         for (i = 0; i < n; i++) {
             if (score[i] > average) up_avg_co++;
         }
-        printf("%.3lf%%\n", (double)up_avg_co / n * 100);
+        printf("%.3lf%%", (double)up_avg_co / n * 100);
         count++;
     }
 
