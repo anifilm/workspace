@@ -90,8 +90,8 @@ void CoffeeVendingMachine::show() {
 }
 
 void CoffeeVendingMachine::run() {
+    cout << "***** 커피 자판기를 작동합니다 *****" << endl;
     int choice;
-    cout << "***** 커피 자판기를 작동합니다. *****" << endl;
     while (true) {
         cout << "메뉴를 눌러주세요(1:에스프레소, 2:아메리카노, 3:설탕커피, 4:잔량보기, 5:채우기)" << endl;
         cout << ">> ";
@@ -120,7 +120,9 @@ void CoffeeVendingMachine::run() {
 }
 
 int main() {
+
     CoffeeVendingMachine coffee;
     coffee.run();
+
     return 0;
 }

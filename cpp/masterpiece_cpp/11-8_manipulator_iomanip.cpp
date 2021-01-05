@@ -32,7 +32,7 @@ resetioflags(long flags)     IO       flags에 지정된 플래그들을 해제
 setbase(int base)             O       base를 출력할 수의 진수로 지정
 setfill(char cFill)           I       필드를 출력하고 남은 공간을 cFill 문자로 채움
 setioflags(long flags)       IO       flags를 스트림 입출력 플래그로 설정
-setprecition(int np)          O       출력되는 수의 유효 숫자 자릿수를 np개로 설정. 소수점(.)은 제외
+setprecision(int np)          O       출력되는 수의 유효 숫자 자릿수를 np개로 설정. 소수점(.)은 제외
 setw(int minWidth)            O       필드의 최소 너비를 minWidth로 설정
 
 */
