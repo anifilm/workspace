@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    const char* file = "data.dat";
+    const char* file = "12-10_data.dat";
 
     ofstream fout;
     fout.open(file, ios::out | ios::binary);  // 바이너리 I/O, 쓰기 모드로 파일 열기
