@@ -31,6 +31,7 @@ int main() {
         ch = toupper(ch);  // 읽은 문자를 대문자로 변환
         fout.put(ch);  // 문자를 파일에 쓰기
     }
+    cout << srcFile << "을 " << destFile << "로 복사 완료" << endl;
 
     fin.close();   // 입력 파일 닫기
     fout.close();  // 출력 파일 닫기
