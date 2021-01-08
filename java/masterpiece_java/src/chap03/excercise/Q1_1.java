@@ -1,0 +1,18 @@
+/*
+Q1
+다음 프로그램에 대해 물음에 답하라.
+  (1) 무엇을 계산하는 코드이며 실행 결과 출력되는 내용은?
+      >> 0부터 99까지 2의 배수를 더하여 결과를 출력
+ */
+package chap03.excercise;
+
+public class Q1_1 {
+    public static void main(String[] args) {
+        int sum = 0, i = 0;
+        while (i < 100) {
+            sum = sum + i;
+            i += 2;
+        }
+        System.out.println(sum);
+    }
+}
