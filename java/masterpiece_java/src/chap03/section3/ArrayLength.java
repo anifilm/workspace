@@ -7,7 +7,7 @@ public class ArrayLength {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int intArray[] = new int[5];  // 배열 선언
+        int[] intArray = new int[5];  // 배열 선언
         int sum = 0;
 
         System.out.print(intArray.length + "개의 정수를 입력하세요 >> ");

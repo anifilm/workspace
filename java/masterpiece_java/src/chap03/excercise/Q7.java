@@ -8,7 +8,7 @@ package chap03.excercise;
 
 public class Q7 {
     public static void main(String[] args) {
-        int intArray[] = new int[10];
+        int[] intArray = new int[10];
         for (int i = 0; i < 10; i++)
             intArray[i] = (int)(1 + Math.random() * 10);
 

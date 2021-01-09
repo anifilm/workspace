@@ -26,7 +26,8 @@ class Circle2 {
 public class Q6_CircleManager {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Circle2 c[] = new Circle2[3];  // 3개의 Circle 배열 선언
+
+        Circle2[] c = new Circle2[3];  // 3개의 Circle 배열 선언
         for (int i = 0; i < c.length; i++) {
             System.out.print("x, y, radius >> ");
             double x = scanner.nextDouble();  // x값을 사용자에게 입력받음
@@ -34,6 +35,7 @@ public class Q6_CircleManager {
             int radius = scanner.nextInt();   // 반지름 값을 사용자에게 입력받음
             c[i] = new Circle2(x, y, radius);  // Circle 객체 생성
         }
+
         int bigCircle = 0;
         double bigArea = c[0].getArea();
         for (int i = 1; i < c.length; i++) {

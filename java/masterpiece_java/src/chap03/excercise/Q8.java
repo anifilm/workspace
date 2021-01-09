@@ -14,7 +14,7 @@ public class Q8 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("정수 몇개? ");
         int n = scanner.nextInt();
-        int intArray[] = new int[n];
+        int[] intArray = new int[n];
 
         for (int i = 0; i < intArray.length; i++) {
             intArray[i] = (int)(1 + Math.random() * 100);

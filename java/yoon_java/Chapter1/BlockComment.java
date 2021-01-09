@@ -6,7 +6,6 @@
 */
 
 class BlockComment {
-
     public static void main(String[] args) {
 
         /* 다음은 단순한 정수의 출력 */

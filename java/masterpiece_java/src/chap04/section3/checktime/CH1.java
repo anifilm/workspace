@@ -6,7 +6,6 @@
       public void Samp(int x) {
           this.id = x;
       }
-
       public void Samp() {
           System.out.println("생성자 호출");
           this(0);

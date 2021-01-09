@@ -9,7 +9,6 @@ package chap03.section2.checktime;
 
 public class CH1_3_do_while {
     public static void main(String[]args) {
-
         int i = 0;
         do {
             int j = 0;

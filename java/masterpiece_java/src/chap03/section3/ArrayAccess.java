@@ -7,7 +7,7 @@ public class ArrayAccess {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int intArray[] = new int[5];  // 배열 선언
+        int[] intArray = new int[5];  // 배열 선언
         int max = 0;  // 현재 가장 큰 수
 
         System.out.println("양수 5개를 입력하세요.");

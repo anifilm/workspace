@@ -26,7 +26,7 @@ public class Q8_PhoneBook {
 
         System.out.print("인원수 >> ");
         int n = scanner.nextInt();
-        Phone phone[] = new Phone[n];
+        Phone[] phone = new Phone[n];
         for (int i = 0; i < phone.length; i++) {
             System.out.print("이름과 전화번호(이름과 번호는 빈 칸없이 입력) >> ");
             String name = scanner.next();

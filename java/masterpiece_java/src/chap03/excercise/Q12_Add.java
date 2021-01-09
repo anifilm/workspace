@@ -10,7 +10,6 @@ package chap03.excercise;
 public class Q12_Add {
     public static void main(String[] args) {
         int sum = 0, n = 0;
-
         for (int i = 0; i < args.length; i++) {
             try {
                 n = Integer.parseInt(args[i]);

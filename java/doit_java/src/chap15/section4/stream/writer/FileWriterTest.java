@@ -8,7 +8,7 @@ public class FileWriterTest {
 
 		try (FileWriter fw = new FileWriter("src/chap15/writer.txt")) {
 			fw.write('A');	// 문자 하나 출력
-			char buf[] = {'B','C','D','E','F','G'};
+			char[] buf = {'B','C','D','E','F','G'};
 
 			fw.write(buf);	// 문자 배열 출력
 			fw.write("안녕하세요. 잘 써지네요");	// String 출력

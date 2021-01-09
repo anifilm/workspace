@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Q16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String GBB[] = {"가위", "바위", "보"};
+        String[] GBB = {"가위", "바위", "보"};
         String input;
 
         System.out.println("컴퓨터와 가위 바위 보 게임을 합니다.");

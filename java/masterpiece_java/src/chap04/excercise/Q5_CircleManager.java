@@ -29,7 +29,8 @@ class Circle {
 public class Q5_CircleManager {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Circle c[] = new Circle[3];  // 3개의 Circle 배열 선언
+
+        Circle[] c = new Circle[3];  // 3개의 Circle 배열 선언
         for (int i = 0; i < c.length; i++) {
             System.out.print("x, y, radius >> ");
             double x = scanner.nextDouble();  // x값을 사용자에게 입력받음

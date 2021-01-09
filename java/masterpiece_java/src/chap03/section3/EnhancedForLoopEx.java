@@ -5,8 +5,8 @@ public class EnhancedForLoopEx {
     enum Week {월, 화, 수, 목, 금, 토, 일}
 
     public static void main(String[] args) {
-        int n[] = {1, 2, 3, 4, 5};
-        String names[] = {"사과", "배", "바나나", "체리", "딸기", "포도"};
+        int[] n = {1, 2, 3, 4, 5};
+        String[] names = {"사과", "배", "바나나", "체리", "딸기", "포도"};
 
         int sum = 0;
         // 아래 향상된 for 문에서 k는 n[0], n[1], ..., n[4]로 반복

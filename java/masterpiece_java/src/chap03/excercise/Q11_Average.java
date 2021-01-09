@@ -10,10 +10,8 @@ package chap03.excercise;
 public class Q11_Average {
     public static void main(String[] args) {
         int sum = 0;
-
         for (int i = 0; i < args.length; i++)  // 인자 개수만큼 반복
             sum += Integer.parseInt(args[i]);  // 문자열을 정수(Integer형)로 변환하여 합산
-
         System.out.println("avg = " + (double)sum/args.length);
     }
 }

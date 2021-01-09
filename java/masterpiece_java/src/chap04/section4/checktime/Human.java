@@ -21,7 +21,6 @@ public class Human {
         this.height = height;
         this.weight = weight;
     }
-
     public void show() {
         System.out.println("이름은 " + name);
         System.out.println("나이는 " + age);
@@ -31,7 +30,7 @@ public class Human {
     }
 
     public static void main(String[] args) {
-        Human humans[] = new Human[5];
+        Human[] humans = new Human[5];
 
         humans[0] = new Human("홍길동", 21, 180.5, 73.2);
         humans[1] = new Human("임채영", 44, 169.8, 70.5);

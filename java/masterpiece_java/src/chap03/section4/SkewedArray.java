@@ -3,7 +3,7 @@ package chap03.section4;
 
 public class SkewedArray {
     public static void main(String[] args) {
-        int intArray[][] = new int[4][];  // 각 행의 레퍼런스 배열 생성
+        int[][] intArray = new int[4][];  // 각 행의 레퍼런스 배열 생성
         intArray[0] = new int[3];  // 첫째 행의 정수 3개의 배열 생성
         intArray[1] = new int[2];  // 둘째 행의 정수 2개의 배열 생성
         intArray[2] = new int[3];  // 셋째 행의 정수 3개의 배열 생성

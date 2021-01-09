@@ -4,7 +4,6 @@
 // 목    적: System.out.println 메소드의 기능 테스트
 
 class LineComment {
-
     public static void main(String[] args) {
 
         // 다음은 단순한 정수의 출력

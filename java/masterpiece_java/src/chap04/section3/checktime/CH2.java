@@ -2,6 +2,7 @@
 2. 다음 코드는 오류를 포함하고 있다. 이유를 설명하고 올바르게 수정하라.
   class ConstructorExample {
       int x;
+
       public void setX(int x) { this.x = x; }
       public int getX() { return x; }
       public ConstructorExample(int x) {
@@ -18,6 +19,7 @@ package chap04.section3.checktime;
 
 class ConstructorExample {
     int x;
+
     public ConstructorExample() { x = 1; }  // 디폴트 생성자 추가
     public ConstructorExample(int x) {
         this.x = x;

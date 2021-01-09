@@ -6,9 +6,8 @@ package chap03.section3.checktime;
 
 public class CH3 {
     public static void main(String[] args) {
-        int tenArray[] = new int[10];
+        int[] tenArray = new int[10];
         int sum = 0;
-
         for (int i = 0; i < tenArray.length; i++)
             tenArray[i] = i + 1;
 

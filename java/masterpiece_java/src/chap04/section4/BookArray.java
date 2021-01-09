@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 class Book {
     String title, author;
+
     public Book(String title, String author) {  // 생성자
         this.title = title;
         this.author = author;
@@ -14,7 +15,8 @@ class Book {
 public class BookArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Book book[] = new Book[2];
+
+        Book[] book = new Book[2];
 
         for (int i = 0; i < book.length; i++) {  // book.length = 2
             System.out.print("제목 >> ");

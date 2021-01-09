@@ -3,7 +3,7 @@ package chap03.section7;
 
 public class ArrayException {
     public static void main(String[] args) {
-        int intArray[] = new int[5];
+        int[] intArray = new int[5];
         intArray[0] = 0;
         try {
             for (int i = 0; i < 5; i++) {

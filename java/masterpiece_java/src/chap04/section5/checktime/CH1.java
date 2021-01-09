@@ -5,7 +5,7 @@
 package chap04.section5.checktime;
 
 public class CH1 {
-    static double getSum(double arr[]) {
+    static double getSum(double[] arr) {
         double sum = 0.0;
         for (int i = 0; i < arr.length; i++)
             sum += arr[i];
@@ -13,7 +13,7 @@ public class CH1 {
     }
 
     public static void main(String[] args) {
-        double doubleArray[] = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9};
+        double[] doubleArray = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9};
         System.out.println(getSum(doubleArray));
     }
 }
