@@ -1,7 +1,8 @@
+// 입력 오류 시 발생하는 예외 (InputMismatchException)
 package chap03.section7;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class InputException {
     public static void main(String[] args) {

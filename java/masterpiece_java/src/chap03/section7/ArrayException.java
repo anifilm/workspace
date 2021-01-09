@@ -1,3 +1,4 @@
+// 범위를 벗어난 배열의 접근 (ArrayIndexOutOfBoundsException)
 package chap03.section7;
 
 public class ArrayException {

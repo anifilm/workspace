@@ -1,3 +1,4 @@
+// 정수가 아닌 문자열을 정수로 변환할 때 예외 발생 (NumberFormatException)
 package chap03.section7;
 
 public class NumException {
