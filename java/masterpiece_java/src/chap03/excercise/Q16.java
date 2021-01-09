@@ -13,7 +13,45 @@ import java.util.Scanner;
 public class Q16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String GBB[] = {"가위", "바위", "보"};
+        String input;
 
+        System.out.println("컴퓨터와 가위 바위 보 게임을 합니다.");
+        while (true) {
+            int n = (int)(Math.random() * 3);
+            System.out.println(n);
+            System.out.print("가위 바위 보 >> ");
+            input = scanner.next();
+            if (input.equals("그만")) {
+                System.out.println("게임을 종료합니다.");
+                break;
+            }
+            System.out.print("사용자: " + input + ", 컴퓨터: " + GBB[n] + ", ");
+            if (input.equals("가위")) {  // 사용자가 가위인 경우
+                if (GBB[n].equals("가위"))
+                    System.out.println("비겼습니다.");
+                else if (GBB[n].equals("바위"))
+                    System.out.println("컴퓨터가 이겼습니다.");
+                else
+                    System.out.println("사용자가 이겼습니다.");
+            }
+            else if (input.equals("바위")) {  // 사용자가 바위인 경우
+                if (GBB[n].equals("가위"))
+                    System.out.println("사용자가 이겼습니다.");
+                else if (GBB[n].equals("바위"))
+                    System.out.println("비겼습니다.");
+                else
+                    System.out.println("컴퓨터가 이겼습니다.");
+            }
+            else {  // 사용자가 보인 경우
+                if (GBB[n].equals("가위"))
+                    System.out.println("컴퓨터가 이겼습니다.");
+                else if (GBB[n].equals("바위"))
+                    System.out.println("사용자가 이겼습니다.");
+                else
+                    System.out.println("비겼습니다.");
+            }
+        }
 
         scanner.close();
     }
