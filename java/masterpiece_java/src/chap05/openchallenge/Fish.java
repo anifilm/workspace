@@ -7,14 +7,18 @@ public class Fish extends GameObject {
 
     @Override
     public void move() {  // 한 번 움직이는 과정
+        // 좌,우 이동
         int n = (int)(Math.random() * 5);  // 0, 1, 2, 3, 4 중에서 0인 경우 +방향, 1인 경우 -방향, 나머지 정지
+
         if (n == 0) x += distance;
         else if (n == 1) x -= distance;
 
         if (x < 0) x= 0;
         if (x >= Game.MAX_X) x = Game.MAX_X - 1;
 
+        // 위,아래 이동
         n = (int)(Math.random() * 5);
+
         if (n == 0) y += distance;
         else if (n == 1) y -= distance;
 
