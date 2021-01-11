@@ -1,61 +1,58 @@
 /*
 Q11
-다수의 클래스를 만들고 활용하는 연습을 해보자. 더하기(+), 빼기(-), 곱하기(*), 나누기(/)를 수행하는 각 클래스 Add, Sub, Mul, Div를
-만들어라. 이들은 모두 다음 필드와 메서드를 가진다.
+철수 학생은 다음 3개의 필드와 메서드를 가진 4개의 클래스 Add, Sub, Mul, Div를 작성하려고 한다. (4장 실습 문제 11 참고)
  - int 타입의 a, b 필드: 2개의 피연산자
  - void setValue(int a, int b): 피연산자 값을 객체 내에 저장한다.
  - int calculate(): 클래스의 목적에 맞는 연산을 실행하고 결과를 반환한다.
 
-main() 메서드에서는 다음 실행 하례와 같이 두 정수와 연산자를 입력받고 Add, Sub, Mul, Div 중에서 이 연산을 실행할 수 있는 객체를 생성하고
-setValue()와 calculate()를 호출하여 결과를 출력하도록 작성하라. (참고: 이 문제는 상속을 이용하여 다시 작성하도록 5장의 실습문제로 이어진다.)
+곰곰히 생각해보니, Add, Sub, Mul, Div 클래스에 공통된 필드와 메서드가 존재하므로 새로운 추상 클래스 Calc를 작성하고 Calc를 상속받아
+만들면 되겠다고 생각했다. 그리고 main() 메서드에서 다음 실행 사례와 같이 2개의 정수와 연산자를 입력받은 후, Add, Sub, Mul, Div 중에서
+이 연산을 처리할 수 있는 객체를 생성하고 setValue()와 calculate()를 호출하여 그 결과 값을 화면에 출력하면 된다고 생각하였다. 철수처럼
+프로그램을 작성하라.
   (실행 결과 생략...)
 
  */
-package chap04.excercise;
+package chap05.excercise;
 
 import java.util.Scanner;
 
-class Add {
-    private int a, b;
+abstract class Calc {
+    protected int a, b;
     public void setValue(int a, int b) {
         this.a = a; this.b = b;
     }
+    abstract int calculate();
+}
+
+class Add extends Calc {
+    @Override
     public int calculate() {
         return a + b;
     }
 }
 
-class Sub {
-    private int a, b;
-    public void setValue(int a, int b) {
-        this.a = a; this.b = b;
-    }
+class Sub extends Calc {
+    @Override
     public int calculate() {
         return a + b;
     }
 }
 
-class Mul {
-    private int a, b;
-    public void setValue(int a, int b) {
-        this.a = a; this.b = b;
-    }
+class Mul extends Calc {
+    @Override
     public int calculate() {
         return a * b;
     }
 }
 
-class Div {
-    private int a, b;
-    public void setValue(int a, int b) {
-        this.a = a; this.b = b;
-    }
+class Div extends Calc {
+    @Override
     public int calculate() {
         return a / b;
     }
 }
 
-public class Q11_Calc {
+public class Q11 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
