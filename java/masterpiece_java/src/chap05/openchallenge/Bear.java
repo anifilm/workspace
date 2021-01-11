@@ -12,8 +12,8 @@ public class Bear extends GameObject {
     @Override
     public void move() {
         char c;
-        System.out.println("왼쪽(a), 아래(s), 위(d), 오른쪽(f)");
-        c = scanner.next().charAt(0);
+        System.out.print("왼쪽(a), 아래(s), 위(d), 오른쪽(f) >> ");
+        c = scanner.next().charAt(0);  // 문자 하나 입력받기
         switch (c) {
             case 'a':  // 왼쪽
                 x--;
