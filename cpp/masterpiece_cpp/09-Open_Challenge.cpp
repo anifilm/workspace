@@ -33,10 +33,6 @@ public:
         this->distance = distance;
     }
     virtual ~GameObject() {};  // 가상 소멸자
-
-    virtual void move() = 0;  // 이동한 후 새로운 위치로 x, y 변경
-    virtual char getShape() = 0;  // 객체의 모양을 나타내는 문자 반환
-
     int getX() { return x; }
     int getY() { return y; }
     bool collide(GameObject* p) {  // 이 객체가 객체 p와 충돌했으면 true 반환
@@ -45,6 +41,8 @@ public:
         else
             return false;
     }
+    virtual void move() = 0;  // 이동한 후 새로운 위치로 x, y 변경
+    virtual char getShape() = 0;  // 객체의 모양을 나타내는 문자 반환
 };
 
 class Human : public GameObject {
@@ -56,21 +54,23 @@ public:
         cout << "왼쪽(a), 아래(s), 위(d), 오른쪽(f) >> ";
         cin >> key;
         cout << endl;
-        if (key == 'a') {
-            if (y - distance < 0) y = 20 + y - distance;
-            else y -= distance;
-        }
-        else if (key == 's') {
-            if (x + distance > 9) x = x + distance - 10;
-            else x += distance;
-        }
-        else if (key == 'd') {
-            if (x - distance < 0) x = 10 + x - distance;
-            else x -= distance;
-        }
-        else if (key == 'f') {
-            if (y + distance > 19) y = y + distance - 20;
-            else y += distance;
+        switch (key) {
+            case 'a':  // 왼쪽
+                x -= distance;
+                if (x < 0) x = 0;
+                break;
+            case 'f':  // 오른쪽
+                x += distance;
+                if (x >= Game.MAX_X) x = Game.MAX_X - 1;
+                break;
+            case 'd':  // 위
+                y -= distance;
+                if (y < 0) y = 0;
+                break;
+            case 's':  // 아래
+                y += distance;
+                if (y >= Game.MAX_Y) y = Game.MAX_Y - 1;
+                break;
         }
     }
     virtual char getShape() { return 'H'; }
@@ -86,25 +86,25 @@ public:
         int num;
         num = rand() % 2;
         switch (num) {
-        case 0:
-            if (x - distance < 0) x = 10 + x - distance;
-            else x -= distance;
-            break;
-        case 1:
-            if (x + distance > 9) x = x + distance - 10;
-            else x += distance;
-            break;
+            case 0:
+                x -= distance;
+                if (x < 0) x = 0;
+                break;
+            case 1:
+                x += distance;
+                if (x >= Game.MAX_X) x = Game.MAX_X - 1;
+                break;
         }
         num = rand() % 2;
         switch (num) {
-        case 0:
-            if (y - distance < 0) y = 20 + y - distance;
-            else y -= distance;
-            break;
-        case 1:
-            if (y + distance > 19) y = y + distance - 20;
-            else y += distance;
-            break;
+            case 0:
+                y -= distance;
+                if (y < 0) y = 0;
+                break;
+            case 1:
+                y += distance;
+                if (y >= Game.MAX_Y) y = Game.MAX_Y - 1;
+                break;
         }
     }
     virtual char getShape() { return 'M'; }
@@ -120,35 +120,29 @@ public:
             count = 0;
     }
     virtual void move() {
-        int n1, n2;  // n1: 2/5확률, n2: 방향 선택
-        n1 = rand() % 5;
-        n2 = rand() % 4;
-        if (n1 >= 1 && n1 <= 2) {
-            switch (n2) {
-            case 0:
-                if (y - distance < 0) y = 20 + y - distance;
-                else y -= distance;
-                break;
-            case 1:
-                if (x + distance > 9) x = x + distance - 10;
-                else x += distance;
-                break;
-            case 2:
-                if (x - distance < 0) x = 10 + x - distance;
-                else x -= distance;
-                break;
-            case 3:
-                if (y + distance > 19) y = y + distance - 20;
-                else y += distance;
-                break;
-            }
-        }
+        int n;
+        n = rand() % 5;
+        if (n == 0) x += distance;
+        else if (n == 1) x -= distance;
+
+        if (x < 0) x= 0;
+        if (x >= Game.MAX_X) x = Game.MAX_X - 1;
+
+        n = rand() % 5;
+        if (n == 0) y += distance;
+        else if (n == 1) y -= distance;
+
+        if (y < 0) y = 0;
+        if (y >= Game.MAX_Y) y = Game.MAX_Y - 1;
     }
     virtual char getShape() { return '@'; }
 };
 
 class Game {
 public:
+    static const int MAX_X = 20;
+    static const int MAX_Y = 10;
+
     void run();
 };
 
