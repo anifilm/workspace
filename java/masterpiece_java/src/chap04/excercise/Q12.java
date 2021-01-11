@@ -16,8 +16,127 @@ Q12
  */
 package chap04.excercise;
 
+import java.util.Scanner;
+
+class Concert {
+    private Scanner scanner;
+    private String[] S;
+    private String[] A;
+    private String[] B;
+    private final int SEAT = 10;
+
+    public Concert() {
+        scanner = new Scanner(System.in);
+        S = new String[SEAT];
+        A = new String[SEAT];
+        B = new String[SEAT];
+        for (int i = 0; i < SEAT; i++) {
+            S[i] = "-----";
+            A[i] = "-----";
+            B[i] = "-----";
+        }
+    }
+    public void printSeat(String[] seat) {
+        for (int i = 0; i < seat.length; i++)
+            System.out.print(" " + seat[i] + " ");
+        System.out.println();
+    }
+    public void allPrint() {
+        System.out.print("S >> ");
+        printSeat(S);
+        System.out.print("A >> ");
+        printSeat(A);
+        System.out.print("B >> ");
+        printSeat(B);
+        System.out.println("*** 조회를 완료하였습니다 ***");
+    }
+    public void inputSeat(String[] seat) {
+        System.out.print("예약 이름 >> ");
+        String name = scanner.next();
+        while (true) {
+            System.out.print("번호 >> ");
+            int num = scanner.nextInt();
+            if (seat[num-1].equals("-----")) {
+                seat[num-1] = name;
+                break;
+            }
+            else {
+                System.out.println("다른 좌석을 선택하여 주십시오.");
+            }
+        }
+    }
+    public void deleteSeat(String[] seat) {
+        System.out.print("취소 이름 >> ");
+        String name = scanner.next();
+        for (int i = 0; i < seat.length; i++) {
+            if (name.equals(seat[i])) {
+                seat[i] = "-----";
+                break;
+            }
+        }
+    }
+    public void choiceSeat(String s) {
+        while (true) {
+            System.out.print("좌석구분 S(1), A(2), B(3) >> ");
+            int select = scanner.nextInt();
+            switch (select) {
+                case 1:
+                    System.out.print("S >> ");
+                    printSeat(S);
+                    if (s.equals("input"))
+                        inputSeat(S);
+                    else
+                        deleteSeat(S);
+                    return;
+                case 2:
+                    System.out.print("A >> ");
+                    printSeat(A);
+                    if (s.equals("input"))
+                        inputSeat(A);
+                    else
+                        deleteSeat(A);
+                    return;
+                case 3:
+                    System.out.print("B >> ");
+                    printSeat(B);
+                    if (s.equals("input"))
+                        inputSeat(B);
+                    else
+                        deleteSeat(B);
+                    return;
+                default:
+                    System.out.println("다시 입력하여 주십시오.");
+            }
+        }
+    }
+}
+
 public class Q12 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        Concert concert = new Concert();
+        System.out.println("명품콘서트홀 예약 시스템입니다.");
+        while(true) {
+            System.out.print("예약:1, 조회:2, 취소:3, 끝내기:4 >> ");
+            int select = scanner.nextInt();
+            switch(select) {
+                case 1:  // 예약
+                    concert.choiceSeat("input");
+                    break;
+                case 2:  // 조회
+                    concert.allPrint();
+                    break;
+                case 3:  // 취소
+                    concert.choiceSeat("delete");
+                    break;
+                case 4:  // 끝내기
+                    System.out.println("프로그램을 종료합니다.");
+                    scanner.close();
+                    return;
+                default :
+                    System.out.println("다시 입력하여 주십시오.");
+            }
+        }
     }
 }
