@@ -23,6 +23,9 @@ Food 클래스를 작성하라. 그리고 전체적인 게임을 진행하는 Ga
 
 using namespace std;
 
+static const int MAX_X = 20;
+static const int MAX_Y = 10;
+
 class GameObject {  // 추상 클래스
 protected:
     int distance;  // 한 번 이동 거리
@@ -61,7 +64,7 @@ public:
                 break;
             case 'f':  // 오른쪽
                 x += distance;
-                if (x >= Game.MAX_X) x = Game.MAX_X - 1;
+                if (x >= MAX_X) x = MAX_X - 1;
                 break;
             case 'd':  // 위
                 y -= distance;
@@ -69,7 +72,7 @@ public:
                 break;
             case 's':  // 아래
                 y += distance;
-                if (y >= Game.MAX_Y) y = Game.MAX_Y - 1;
+                if (y >= MAX_Y) y = MAX_Y - 1;
                 break;
         }
     }
@@ -92,7 +95,7 @@ public:
                 break;
             case 1:
                 x += distance;
-                if (x >= Game.MAX_X) x = Game.MAX_X - 1;
+                if (x >= MAX_X) x = MAX_X - 1;
                 break;
         }
         num = rand() % 2;
@@ -103,7 +106,7 @@ public:
                 break;
             case 1:
                 y += distance;
-                if (y >= Game.MAX_Y) y = Game.MAX_Y - 1;
+                if (y >= MAX_Y) y = MAX_Y - 1;
                 break;
         }
     }
@@ -125,24 +128,21 @@ public:
         if (n == 0) x += distance;
         else if (n == 1) x -= distance;
 
-        if (x < 0) x= 0;
-        if (x >= Game.MAX_X) x = Game.MAX_X - 1;
+        if (x < 0) x = 0;
+        if (x >= MAX_X) x = MAX_X - 1;
 
         n = rand() % 5;
         if (n == 0) y += distance;
         else if (n == 1) y -= distance;
 
         if (y < 0) y = 0;
-        if (y >= Game.MAX_Y) y = Game.MAX_Y - 1;
+        if (y >= MAX_Y) y = MAX_Y - 1;
     }
     virtual char getShape() { return '@'; }
 };
 
 class Game {
 public:
-    static const int MAX_X = 20;
-    static const int MAX_Y = 10;
-
     void run();
 };
 
@@ -154,11 +154,11 @@ void Game::run() {
     cout << "** Human의 Food 먹기 게임을 시작합니다 **" << endl;
     cout << endl;
     while (true) {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 20; j++) {
-                if (m->getX() == i && m->getY() == j) cout << m->getShape();	   // 순서 중요함 몬스터->헌터->음식 순으로 if문을
-                else if (h->getX() == i && h->getY() == j) cout << h->getShape();  // 만들어야 같은 위치가 되었을 때 출력할 문자의 순서가 됨
-                else if (f->getX() == i && f->getY() == j) cout << f->getShape();
+        for (int i = 0; i < MAX_Y; i++) {
+            for (int j = 0; j < MAX_X; j++) {
+                if (m->getY() == i && m->getX() == j) cout << m->getShape();	   // 순서 중요함 몬스터->헌터->음식 순으로 if문을
+                else if (h->getY() == i && h->getX() == j) cout << h->getShape();  // 만들어야 같은 위치가 되었을 때 출력할 문자의 순서가 됨
+                else if (f->getY() == i && f->getX() == j) cout << f->getShape();
                 else cout << '-';
             }
             cout << endl;
