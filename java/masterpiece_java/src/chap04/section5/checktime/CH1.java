@@ -1,5 +1,5 @@
 /*
-1. double 타입의 일차원 배열을 매개변수로 전달받아 배열의 합을 반환하는 getSum() 메서드를 작성하라.
+1. double 형의 일차원 배열을 매개변수로 전달받아 배열의 합을 반환하는 getSum() 메서드를 작성하라.
 
  */
 package chap04.section5.checktime;

@@ -1,11 +1,11 @@
 /*
-1. String 타입의 name, int 타입의 age, double 타입의 height, weight 등 네 개의 필드를 갖는 Human 클래스를 작성하라. 생성자를
-   작성하여 String 타입의 이름을 전달받아 멤버 name에 저장하라.
+1. String 형의 name, int 형의 age, double 형의 height, weight 등 네 개의 필드를 갖는 Human 클래스를 작성하라. 생성자를
+   작성하여 String 형의 이름을 전달받아 멤버 name에 저장하라.
 
 2. 문제1에 main() 메서드를 추가하여 레퍼런스 변수명을 aHuman으로 하고 Human 객체를 생성한 후 name 필드를 "홍길동"으로, age는 21,
    height는 180.5, weight는 73.2를 각각 대입하라.
 
-3. 배열의 크기가 5인 Human 타입의 객체 배열을 생성하라.
+3. 배열의 크기가 5인 Human 형의 객체 배열을 생성하라.
 
  */
 package chap04.section4.checktime;

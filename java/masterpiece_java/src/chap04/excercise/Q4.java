@@ -1,7 +1,7 @@
 /*
 Q4
 다음 멤버를 가지고 직사각형을 표현하는 Rectangle 클래스를 작성하라.
- - int 타입의 x, y, width, height 필드: 사각형을 구성하는 점과 크기 정보
+ - int 형의 x, y, width, height 필드: 사각형을 구성하는 점과 크기 정보
  - x, y, width, height 값을 매개변수로 받아 필드를 초기화하는 생성자
  - int square(): 사각형의 넓이 반환
  - void show(): 사각형의 좌표와 넓이를 화면에 출력
