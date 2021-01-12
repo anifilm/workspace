@@ -41,6 +41,7 @@ public class CalendarEx {
 
         System.out.println(hour + "시 " + minute + "분 " + second + "초 " + millisecond + "밀리초");
     }
+
     public static void main(String[] args) {
         Calendar now = Calendar.getInstance();
         printCalendar("현재 ", now);

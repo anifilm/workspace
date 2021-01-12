@@ -3,7 +3,7 @@ Q8
 
 
  */
-package cahp06.excercise;
+package chap06.excercise;
 
 public class Q8 {
 }
