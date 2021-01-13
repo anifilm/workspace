@@ -1,3 +1,4 @@
+// 대입 연산자와 증감 연산자 사용
 package chap02.section5;
 
 public class AssignmentIncDecOperator {

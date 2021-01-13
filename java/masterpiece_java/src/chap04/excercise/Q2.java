@@ -5,8 +5,6 @@ Grade 클래스를 작성해 보자. 3과목의 점수를 입력받아 Grade 객
 
  */
 package chap04.excercise;
-
-
 import java.util.Scanner;
 
 class Grade {

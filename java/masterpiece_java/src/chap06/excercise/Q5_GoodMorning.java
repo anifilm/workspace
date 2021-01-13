@@ -8,7 +8,7 @@ Calendar 객체를 생성하면 현재 시간을 알 수 있다. 프로그램을
 package chap06.excercise;
 import java.util.Calendar;
 
-public class Q5 {
+public class Q5_GoodMorning {
     public static void printCalendar(String msg, Calendar cal) {
         int year = cal.get(Calendar.YEAR);               // 년도
         int month = cal.get(Calendar.MONTH) + 1;         // 월(0~11)

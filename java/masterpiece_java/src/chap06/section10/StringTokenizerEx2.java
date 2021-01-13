@@ -1,6 +1,5 @@
 // StringTokenizer 클래스 매서드 활용
 package chap06.section10;
-
 import java.util.StringTokenizer;
 
 public class StringTokenizerEx2 {

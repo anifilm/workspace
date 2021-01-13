@@ -5,7 +5,6 @@ Scanner 클래스를 이용하여 2자리의 정수(10~99사이)를 입력받고
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
 public class Q2 {

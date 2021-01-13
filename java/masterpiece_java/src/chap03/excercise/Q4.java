@@ -10,7 +10,6 @@ Scanner를 이용하여 소문자 알파벳을 하나 입력받고 다음과 같
 
  */
 package chap03.excercise;
-
 import java.util.Scanner;
 
 public class Q4 {

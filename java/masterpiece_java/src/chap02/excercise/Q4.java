@@ -5,7 +5,6 @@ Scanner 클래스로 정수 3개를 입력받고 3개의 숫자 중 중간 크�
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
 public class Q4 {

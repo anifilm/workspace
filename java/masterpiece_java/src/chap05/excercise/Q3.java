@@ -5,7 +5,6 @@ Converter 클래스를 상속받아 원화를 달러로 변환하는 Won2Dollar 
 
  */
 package chap05.excercise;
-
 import java.util.Scanner;
 
 abstract class Converter {

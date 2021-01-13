@@ -6,10 +6,9 @@ Scanner 클래스를 이용하여 정수로 된 돈의 액수를 입력받아 �
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
-public class Q3 {
+public class Q3_ChangeMoney {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

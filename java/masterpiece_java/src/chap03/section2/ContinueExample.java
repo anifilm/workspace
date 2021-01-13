@@ -1,6 +1,5 @@
 // continue 문을 이용하여 양수 합 구하기
 package chap03.section2;
-
 import java.util.Scanner;
 
 public class ContinueExample {

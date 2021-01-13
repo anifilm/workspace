@@ -1,6 +1,5 @@
 // 0으로 나누기 예외 발생으로 프로그램이 강제 종료되는 경우
 package chap03.section7;
-
 import java.util.Scanner;
 
 public class DivideByZero {

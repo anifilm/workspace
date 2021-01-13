@@ -9,7 +9,6 @@ Q5
 
  */
 package chap04.excercise;
-
 import java.util.Scanner;
 
 class Circle {

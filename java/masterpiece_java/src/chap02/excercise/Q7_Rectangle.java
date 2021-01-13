@@ -6,10 +6,9 @@ Q7
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
-public class Q7 {
+public class Q7_Rectangle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -17,7 +16,8 @@ public class Q7 {
         int x = scanner.nextInt();
         int y = scanner.nextInt();
 
-        if ((x > 100 && x < 200) && (y > 100 && y < 200))
+        // 점이 사각형 안에 있는 경우
+        if (x >= 100 && x <= 200 && y >= 100 && y <= 200)
             System.out.println("(" + x + ", " + y + ")는 사각형 안에 있습니다.");
         else
             System.out.println("(" + x + ", " + y + ")는 사각형 밖에 있습니다.");

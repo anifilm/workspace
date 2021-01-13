@@ -6,10 +6,9 @@ Q9
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
-public class Q9 {
+public class Q9_CircleInclusion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

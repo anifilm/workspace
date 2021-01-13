@@ -15,15 +15,14 @@ Q12
 
  */
 package chap04.excercise;
-
 import java.util.Scanner;
 
 class Concert {
-    private Scanner scanner;
+    private final int SEAT = 10;
     private String[] S;
     private String[] A;
     private String[] B;
-    private final int SEAT = 10;
+    private Scanner scanner;
 
     public Concert() {
         scanner = new Scanner(System.in);

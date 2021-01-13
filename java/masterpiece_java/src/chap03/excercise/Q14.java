@@ -9,7 +9,6 @@ Q14
 
  */
 package chap03.excercise;
-
 import java.util.Scanner;
 
 public class Q14 {

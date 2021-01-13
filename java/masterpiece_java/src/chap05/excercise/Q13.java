@@ -7,6 +7,7 @@ package chap05.excercise;
 
 interface Shape2 {
     final double PI = 3.14;         // 상수
+
     void draw();                    // 도형을 그리는 추상 메서드
     double getArea();               // 도형의 면적을 반환하는 추상 메서드
     default public void redraw() {  // 디폴트 메서드

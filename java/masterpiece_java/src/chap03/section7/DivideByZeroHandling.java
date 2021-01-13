@@ -1,6 +1,5 @@
 // 0으로 나눌 때 발생하는 ArithmeticException 예외 처리
 package chap03.section7;
-
 import java.util.Scanner;
 
 public class DivideByZeroHandling {

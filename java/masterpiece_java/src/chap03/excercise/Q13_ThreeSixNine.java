@@ -6,7 +6,7 @@ Q13
  */
 package chap03.excercise;
 
-public class Q13 {
+public class Q13_ThreeSixNine {
     public static void main(String[] args) {
         int num = 1;
         while (num < 100) {

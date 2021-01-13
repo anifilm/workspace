@@ -1,6 +1,5 @@
 // static을 이용한 환율 계산기
 package chap04.section8;
-
 import java.util.Scanner;
 
 class CurrencyConverter {

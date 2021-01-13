@@ -1,6 +1,5 @@
 // break 문을 이용하여 while 문 벗어나기
 package chap03.section2;
-
 import java.util.Scanner;
 
 public class BreakExample {

@@ -10,7 +10,7 @@ package chap06.excercise;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Q7_1 {
+public class Q7_1_WordCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

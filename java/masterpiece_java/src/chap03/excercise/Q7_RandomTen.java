@@ -6,7 +6,7 @@ Q7
  */
 package chap03.excercise;
 
-public class Q7 {
+public class Q7_RandomTen {
     public static void main(String[] args) {
         int[] intArray = new int[10];
         for (int i = 0; i < 10; i++)

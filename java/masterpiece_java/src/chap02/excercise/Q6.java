@@ -6,7 +6,6 @@ Q6
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
 public class Q6 {

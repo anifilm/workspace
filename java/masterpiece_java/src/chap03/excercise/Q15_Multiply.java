@@ -16,7 +16,6 @@ Q15
 
  */
 package chap03.excercise;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -4,7 +4,6 @@ Point를 상속받아 색을 가진 점을 나타내는 ColorPoint 클래스를 
   (main() 메서드, 실행 결과 생략...)
 
  */
-
 package chap05.excercise;
 
 class ColorPoint2 extends Point {

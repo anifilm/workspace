@@ -9,7 +9,7 @@ Scanner를 이용하여 한 라인을 읽고, 공백으로 분리된 어절이 �
 package chap06.excercise;
 import java.util.Scanner;
 
-public class Q7_2 {
+public class Q7_2_WordCount {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

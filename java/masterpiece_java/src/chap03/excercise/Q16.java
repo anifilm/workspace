@@ -7,7 +7,6 @@ Q16
 
  */
 package chap03.excercise;
-
 import java.util.Scanner;
 
 public class Q16 {

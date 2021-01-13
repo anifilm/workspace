@@ -1,6 +1,5 @@
 // -1이 입력될 때까지 입력된 수의 평균 구하기
 package chap03.section1;
-
 import java.util.Scanner;
 
 public class WhileSample {

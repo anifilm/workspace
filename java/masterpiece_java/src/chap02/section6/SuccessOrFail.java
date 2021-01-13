@@ -1,6 +1,5 @@
 // if 문 활용
 package chap02.section6;
-
 import java.util.Scanner;
 
 public class SuccessOrFail {

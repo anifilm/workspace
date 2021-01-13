@@ -1,5 +1,4 @@
 package chap05.openchallenge;
-
 import java.util.Scanner;
 
 public class Bear extends GameObject {

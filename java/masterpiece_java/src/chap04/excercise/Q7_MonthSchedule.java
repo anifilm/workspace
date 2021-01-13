@@ -8,7 +8,6 @@ MonthSchedule 클래스에는 Day 객체 배열과 적절한 필드, 메서드�
 
  */
 package chap04.excercise;
-
 import java.util.Scanner;
 
 class Day {

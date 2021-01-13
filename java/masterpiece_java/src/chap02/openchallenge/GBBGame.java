@@ -6,7 +6,6 @@ Open Challenge - 가위바위보 게임
 
  */
 package chap02.openchallenge;
-
 import java.util.Scanner;
 
 public class GBBGame {

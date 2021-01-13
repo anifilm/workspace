@@ -1,5 +1,4 @@
 package chap06.section3.app;
-
 import chap06.section3.lib.Calculator;
 
 public class GoodCalc extends Calculator {

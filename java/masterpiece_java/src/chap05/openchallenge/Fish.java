@@ -4,7 +4,6 @@ public class Fish extends GameObject {
     public Fish(int x, int y, int distance) {
         super(x, y, distance);
     }
-
     @Override
     public void move() {  // 한 번 움직이는 과정
         // 좌,우 이동

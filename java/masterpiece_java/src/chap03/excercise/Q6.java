@@ -8,12 +8,12 @@ Q6
 
  */
 package chap03.excercise;
-
 import java.util.Scanner;
 
 public class Q6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int[] unit = {50000, 10000, 1000, 500, 100, 50, 10, 1};
         String[][] unit_call = {
                 {"오만원권", "매"},

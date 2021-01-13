@@ -1,6 +1,5 @@
 // /와 % 산술 연산
 package chap02.section5;
-
 import java.util.Scanner;
 
 public class ArithmeticOperator {

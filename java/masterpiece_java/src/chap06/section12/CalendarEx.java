@@ -1,6 +1,5 @@
 // Calendar를 활용하여 현재 날짜와 시간을 알아내기/날짜 시간 설정하기
 package chap06.section12;
-
 import java.util.Calendar;
 
 public class CalendarEx {

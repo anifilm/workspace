@@ -1,6 +1,5 @@
 // 중첩 if-else 문 사례
 package chap02.section6;
-
 import java.util.Scanner;
 
 public class NestedIf {

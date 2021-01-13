@@ -10,6 +10,7 @@ package chap03.excercise;
 public class Q10 {
     public static void main(String[] args) {
         int[][] intArray = new int[4][4];
+
         for (int i = 0; i < 10; i++) {
             int x = (int)(Math.random() * 4);
             int y = (int)(Math.random() * 4);

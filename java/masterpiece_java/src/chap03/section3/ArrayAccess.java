@@ -1,6 +1,5 @@
 // 배열에 입력받은 수 중 제일 큰 수 찾기
 package chap03.section3;
-
 import java.util.Scanner;
 
 public class ArrayAccess {

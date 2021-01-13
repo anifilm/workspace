@@ -12,7 +12,6 @@ setValue()와 calculate()를 호출하여 결과를 출력하도록 작성하라
 
  */
 package chap04.excercise;
-
 import java.util.Scanner;
 
 class Add {
@@ -51,7 +50,14 @@ class Div {
         this.a = a; this.b = b;
     }
     public int calculate() {
-        return a / b;
+        int result = 0;
+        try {
+            result = a / b;
+        }
+        catch(ArithmeticException e) {
+            System.out.print("0으로 나눌 수 없습니다.");
+        }
+        return result;
     }
 }
 

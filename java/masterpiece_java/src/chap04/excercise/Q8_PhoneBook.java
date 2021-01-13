@@ -5,7 +5,6 @@ Q8
 
  */
 package chap04.excercise;
-
 import java.util.Scanner;
 
 class Phone {

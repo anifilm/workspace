@@ -6,12 +6,12 @@ Q8
 
  */
 package chap03.excercise;
-
 import java.util.Scanner;
 
 public class Q8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("정수 몇개? ");
         int n = scanner.nextInt();
         int[] intArray = new int[n];
@@ -21,7 +21,8 @@ public class Q8 {
             // 중복 제거
             for (int j = 0; j < i; j++) {
                 if (intArray[i] == intArray[j]) {
-                    i--; break;
+                    i--;
+                    break;
                 }
             }
         }

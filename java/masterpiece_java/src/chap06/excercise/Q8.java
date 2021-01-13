@@ -4,7 +4,6 @@ Q8
 
  */
 package chap06.excercise;
-
 import java.util.Scanner;
 
 public class Q8 {

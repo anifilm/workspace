@@ -9,7 +9,6 @@ n명이 참가하는 끝말잇기 게임을 만들어 보자. 처음 단어는 "
 
  */
 package chap04.openchallenge;
-
 import java.util.Scanner;
 
 class Player {

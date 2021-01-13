@@ -7,7 +7,6 @@ GraphicEditor 클래스를 작성하라.
 
  */
 package chap05.excercise;
-
 import java.util.Scanner;
 
 abstract class Shape {
@@ -136,6 +135,7 @@ public class Q12_GraphicEditor {
             }
         }
     }
+
     public static void main(String[] args) {
         Q12_GraphicEditor editor = new Q12_GraphicEditor();
         editor.run();

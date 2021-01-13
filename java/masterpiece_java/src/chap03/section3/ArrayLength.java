@@ -1,6 +1,5 @@
 // 배열 원소의 평균 구하기
 package chap03.section3;
-
 import java.util.Scanner;
 
 public class ArrayLength {

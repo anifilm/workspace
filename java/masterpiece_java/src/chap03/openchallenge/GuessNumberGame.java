@@ -7,7 +7,6 @@ Open Challenge - 카드 번호 맞추기 게임 (up & down 게임)
 
  */
 package chap03.openchallenge;
-
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -15,6 +14,7 @@ import java.util.Scanner;
 public class GuessNumberGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int low, high;  // 카드에 적힌 수의 범위
         int card;       // 카드에 적힌 번호 값 (숨기는 값, 정답)
         Random r = new Random();  // 난수 발생기 생성

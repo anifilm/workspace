@@ -5,16 +5,17 @@ Scanner 클래스를 이용하여 원화는 입력받아 달러로 바꾸어 다
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
-public class Q1 {
+public class Q1_Won2Dollar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        final double rate = 1100.0;
         System.out.print("원화를 입력하세요(단위 원) >> ");
         int won = scanner.nextInt();
-        System.out.println(won + "원은 $" + ((double)won / 1100) + "입니다.");
+        double dollar = won / rate;
+        System.out.println(won + "원은 $" + dollar + "입니다.");
 
         scanner.close();
     }

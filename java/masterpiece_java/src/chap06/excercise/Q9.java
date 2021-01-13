@@ -10,10 +10,11 @@ import java.util.Scanner;
 
 class Player {
     private String name;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
 
     public Player(String name) {
         this.name = name;
+        scanner = new Scanner(System.in);
     }
     public String getName() { return name; }
     public int turn() {

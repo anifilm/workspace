@@ -8,7 +8,6 @@ Q11
   (2) switch 문을 이용하여 프로그램을 작성하라.
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
 public class Q11_1 {
@@ -19,14 +18,14 @@ public class Q11_1 {
         int month = scanner.nextInt();
         String season;
 
-        if (month == 12 || month >= 1 && month < 3)  // 12, 1, 2
-            season = "겨울";
-        else if (month >= 3 && month < 6)  // 3~5
+        if (month >= 3 && month < 6)  // 3~5
             season = "봄";
         else if (month >= 6 && month < 9)  // 6~8
             season = "여름";
         else if (month >= 9 && month < 12) // 9~11
             season = "가을";
+        else if (month == 12 || month >= 1 && month < 3)  // 12, 1, 2
+            season = "겨울";
         else
             season = "잘못입력";
 

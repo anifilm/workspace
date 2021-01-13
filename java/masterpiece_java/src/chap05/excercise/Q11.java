@@ -13,15 +13,15 @@ Q11
 
  */
 package chap05.excercise;
-
 import java.util.Scanner;
 
-abstract class Calc {
+abstract class Calc {  // 추상 클래스
     protected int a, b;
+
     public void setValue(int a, int b) {
         this.a = a; this.b = b;
     }
-    abstract int calculate();
+    abstract int calculate();  // 추상 메서드
 }
 
 class Add extends Calc {
@@ -60,32 +60,30 @@ public class Q11 {
         int num1 = scanner.nextInt();
         int num2 = scanner.nextInt();
         char op = scanner.next().charAt(0);
-        int result = 0;
+        Calc result;
         switch (op) {
             case '+':
-                Add add = new Add();
-                add.setValue(num1, num2);
-                result = add.calculate();
+                result = new Add();
                 break;
             case '-':
-                Sub sub = new Sub();
-                sub.setValue(num1, num2);
-                result = sub.calculate();
+                result = new Sub();
                 break;
             case '*':
-                Mul mul = new Mul();
-                mul.setValue(num1, num2);
-                result = mul.calculate();
+                result = new Mul();
                 break;
             case '/':
-                Div div = new Div();
-                div.setValue(num1, num2);
-                result = div.calculate();
+                result = new Div();
                 break;
             default:
                 System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+                scanner.close();
+                return;
         }
-        if (result > 0) System.out.println(result);
+        result.setValue(num1, num2);  // 피연산자 a와 b 값을 객체에 저장
+        if (result instanceof Div && num2 == 0)  // 0으로 나누는 경우
+            System.out.println("계산할 수 없습니다.");
+        else
+            System.out.println(result.calculate());
 
         scanner.close();
     }

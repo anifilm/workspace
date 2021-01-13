@@ -3,7 +3,6 @@
 
  */
 package chap06.section10.checktime;
-
 import java.util.StringTokenizer;
 
 public class CH2 {

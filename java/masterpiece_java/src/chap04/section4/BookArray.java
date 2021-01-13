@@ -1,6 +1,5 @@
 // 객체 배열 만들기 연습
 package chap04.section4;
-
 import java.util.Scanner;
 
 class Book {

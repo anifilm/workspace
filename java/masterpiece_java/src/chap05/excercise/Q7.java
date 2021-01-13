@@ -4,7 +4,6 @@ Point를 상속받아 3차원의 점을 나타내는 Point3D 클래스를 작성
   (main() 메서드, 실행 결과 생략...)
 
  */
-
 package chap05.excercise;
 
 class Point3D extends Point {

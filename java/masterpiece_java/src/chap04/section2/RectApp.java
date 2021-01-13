@@ -1,6 +1,5 @@
 // Rectangle 클래스 만들기 연습
 package chap04.section2;
-
 import java.util.Scanner;
 
 class Rectangle {

@@ -6,7 +6,6 @@ Open Challenge - 영문자 히스토그램 만들기
 
  */
 package chap06.openchallenge;
-
 import java.util.Scanner;
 
 public class AlphabetHistogramApp {
@@ -16,7 +15,6 @@ public class AlphabetHistogramApp {
         for (int i = 0; i < histoData.length; i++)
             histoData[i] = 0;  // 초기에 카운팅 값을 모두 0으로 설정
     }
-
     // 키보드로부터 문자열을 읽어 스트링 버퍼에 저장
     public String readString() {
         System.out.println("영문 텍스트를 입력하고 세미콜론을 입력하세요.");
@@ -31,7 +29,6 @@ public class AlphabetHistogramApp {
         scanner.close();
         return sb.toString();  // 스트링 퍼버의 문자열을 스트링으로 반환
     }
-
     // 입력받은 문자들로부터 히스토그램의 데이터를 생성
     public void makeHistogram(String text) {
         String s = text.toString();  // 스트링 버퍼의 문자열을 스트링으로 반환
@@ -46,7 +43,6 @@ public class AlphabetHistogramApp {
             }
         }
     }
-
     // 히스토그램을 출력
     public void drawHistogram() {
         System.out.println("\n히스토그램을 그립니다.");
@@ -58,7 +54,6 @@ public class AlphabetHistogramApp {
             System.out.println();
         }
     }
-
     // 키보드로부터 알파벳 문자를 읽고 히스토그램을 그리는 핵심 메서드
     public void run() {
         String s = readString();

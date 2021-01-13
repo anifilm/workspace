@@ -1,6 +1,5 @@
 // StringTokenizer 객체 생성시 문자열 분리
 package chap06.section10;
-
 import java.util.StringTokenizer;
 
 public class StringTokenizerEx {

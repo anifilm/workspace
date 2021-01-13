@@ -6,10 +6,9 @@ Scanner를 이용하여 삼각형의 변의 길이를 나타내는 정수를 3�
 
  */
 package chap02.excercise;
-
 import java.util.Scanner;
 
-public class Q5 {
+public class Q5_Triagle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -18,6 +17,7 @@ public class Q5 {
         int num2 = scanner.nextInt();
         int num3 = scanner.nextInt();
 
+        // 두변의 합이 다른 한변보다 작은 경우
         if ((num1 + num2) < num3 || (num1 + num3) < num2 || (num2 + num3) < num1)
             System.out.println("삼각형이 되지 않습니다.");
         else

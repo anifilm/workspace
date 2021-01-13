@@ -1,5 +1,4 @@
 package chap02.section4;
-
 import java.util.Scanner;
 
 public class ScannerEx {
