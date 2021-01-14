@@ -1,13 +1,13 @@
 /*
-Q12
-텍스트로 입출력하는 간단한 그래픽 편집기를 만들어 보자. 본문 5.6절과 5.7절에서 사례로 든 추상 클래스 Shape과 Line, Rect, Circle
-클래스 코드를 잘 완성하고 이를 활용하여 아래 실행 예시처럼 "삽입", "삭제", "모두보기", "종료"의 4가지 그래픽 편집 기능을 가진
-GraphicEditor 클래스를 작성하라.
+Q10
+Vector<Shape>의 백터를 이용하여 그래픽 편집기를 만들어 보자. 본문 5.6절과 5.7절에서 사례로 든 추상 클래스 Shape과 Line, Rect, Circle
+클래스 코드를 잘 완성하고 이를 활용하여 "삽입", "삭제", "모두 보기", "종료"의 4가지 그래픽 편집 기능의 프로그램을 작성하라. 6장 실습문제
+12번을 Vector<Shape>을 이용하여 재작성하는 연습니다. Vector를 이용하면 6장 실습문제 12번보다 훨씬 간단히 작성됨을 경험할 수 있다.
   (실행 결과 생략...)
 
  */
-package chap05.excercise;
-import java.util.Scanner;
+package chap07.excercise;
+import java.util.*;
 
 abstract class Shape {
     private Shape next;
@@ -36,13 +36,12 @@ class Circle extends Shape {
     }
 }
 
-public class Q12_GraphicEditor {
-    private Shape start, last;
+public class Q10_GraphicEditor {
+    Vector<Shape> v;
     private Scanner scanner;
 
-    public Q12_GraphicEditor() {
-        start = null;  // 시작 노드
-        last = null;  // 끝 노드
+    public Q10_GraphicEditor() {
+        v = new Vector<>();
         scanner = new Scanner(System.in);
     }
     public void insert(int n) {  // 노드 삽입
@@ -61,52 +60,18 @@ public class Q12_GraphicEditor {
                 System.out.println("다시 입력하여 주십시오.");
                 return;
         }
-        if (start == null) {  // 시작 노드가 아무것도 가리키지 않으면
-            start = obj;  //  start와 last가 새로운 obj를 가리키게 함
-            last = start;
-        }
-        else {
-            last.setNext(obj);  // 끝 노드에 새로운 obj를 연결하고
-            last = obj;  // 끝 노드는 새로 만들어진 노드를 가리키게 함
-        }
+        v.add(obj);
     }
-    public void delete(int n) {  // n번째 노드 삭제, TODO: 삭제 구문 최적화 검토
-        Shape cur = start;  // 현재 노드
-        Shape prev = start;
-        int i;
-        if (n == 0) {  // 첫 번째 노드를 삭제하는 경우
-            if (start == last) {  // 노드가 한개일 경우
-                start = last = null;
-                return;
-            }
-            else {  // 노드가 두개 이상
-                start = start.getNext();
-                return;
-            }
-        }
-        for (i = 1; i < n; i++) {
-            prev = cur;  // 현재 노드를 저장한 후
-            cur = cur.getNext();  // 다음 노드로 이동
-            if (cur == null) {  // 노드 수가 입력 값보다 작을 때
-                System.out.println("삭제할 수 없습니다.");
-                return;
-            }
-        }
-        if (i == n) {  // 끝 노드를 가리킬 때
-            prev.setNext(cur.getNext());
-            last = prev;
-        }
-        else  // 끝 노드가 아니라면 이전 노드가 다음 노드를 가리킴
-            prev.setNext(cur.getNext());
+    public void delete(int n) {  // n번째 노드 삭제
+        if (v.size() == 0 || v.size() <= n)
+            System.out.println("삭제할 수 없습니다.");
+        else
+            v.remove(n);
     }
     public void print() {  // 전체 노드 출력
-        Shape p = start;
-        int i = 0;
-        while (p != null) {
+        for (int i = 0; i < v.size(); i++) {
             System.out.print(i + ": ");
-            p.draw();
-            p = p.getNext();
-            i++;
+            v.get(i).draw();
         }
     }
     public void run() {
@@ -137,7 +102,7 @@ public class Q12_GraphicEditor {
     }
 
     public static void main(String[] args) {
-        Q12_GraphicEditor editor = new Q12_GraphicEditor();
+        Q10_GraphicEditor editor = new Q10_GraphicEditor();
         editor.run();
     }
 }

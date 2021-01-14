@@ -28,6 +28,12 @@ public class WrapperEx {
 
 /*
 
+기본 타입과 그에 대응하는 Wrapper 클래스
+
+기본 타입       byte   short   int       long   char        float   double   boolean
+Wrapper클래스   Byte   Short   Integer   Long   Character   Float   Double   Boolean
+
+
 Wrapper 클래스의 활용
 
 Integer 클래스의 주요 메서드
