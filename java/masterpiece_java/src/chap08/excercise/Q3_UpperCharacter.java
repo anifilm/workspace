@@ -1,21 +1,21 @@
 /*
-Q2
-앞서 저장한 phone.txt 파일을 읽어 화면에 출력하라.
-  (실행 결과 생략...)
+Q3
+system.ini 파일을 읽어 소문자를 모두 대문자로 바꾸어 출력하라.
 
  */
 package chap08.excercise;
 import java.io.*;
 
-public class Q2 {
+public class Q3_UpperCharacter {
     public static void main(String[] args) {
         FileReader fin = null;
-        File file = new File("src/chap08/phone.txt");
+        File file = new File("src/chap08/system.ini");
         try {
             fin = new FileReader(file);
             System.out.println(file.getPath() + "를 출력합니다.");
             int ch;
             while ((ch = fin.read()) != -1) {
+                ch = Character.toUpperCase(ch);  // 대문자로 변경
                 System.out.print((char)ch);
             }
             fin.close();
