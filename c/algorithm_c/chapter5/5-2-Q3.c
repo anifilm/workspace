@@ -1,5 +1,7 @@
-// Q3 배열 a의 모든 요소의 최대공약수를 구하는 다음 함수를 작성하세요.
-// int gcd_array(const int a[], int n);
+/* Q3
+배열 a의 모든 요소의 최대공약수를 구하는 다음 함수를 작성하세요.
+  int gcd_array(const int a[], int n);
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

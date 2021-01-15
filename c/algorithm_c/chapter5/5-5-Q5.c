@@ -1,4 +1,6 @@
-// Q5 오른쪽의 recur3 함수를 다시 비재귀적으로 구현하세요.
+/* Q5
+오른쪽의 recur3 함수를 다시 비재귀적으로 구현하세요.
+*/
 #include <stdio.h>
 #include "5-5_IntStack.h"
 

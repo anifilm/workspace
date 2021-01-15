@@ -1,7 +1,9 @@
-// Q19 qsort 함수를 사용하여 아래 두 배열을 오름차순으로 정렬하는 프로그램을 작성
-// 하세요. 프로그램에서 정렬하는 부분의 코드는 각각 독립적인 함수로 구현하세요.
-// char a[][7] = {"LISP", "C", "Ada", "Pascal"};
-// char* p[] = {"LISP", "C", "Ada", "Pascal"};
+/* Q19
+qsort 함수를 사용하여 아래 두 배열을 오름차순으로 정렬하는 프로그램을 작성
+하세요. 프로그램에서 정렬하는 부분의 코드는 각각 독립적인 함수로 구현하세요.
+  char a[][7] = {"LISP", "C", "Ada", "Pascal"};
+  char* p[] = {"LISP", "C", "Ada", "Pascal"};
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

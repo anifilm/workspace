@@ -1,7 +1,9 @@
-// Q20 퀵 정렬 알고리즘을 사용하여 qsort 함수와 같은 형식으로 호출할 수 있는 아래의
-// 함수를 직접 작성하세요.
-// void q_sort(void* base, size_t nmemb, size_t size,
-//             int(*compar)(const void*, const void*));
+/* Q20
+퀵 정렬 알고리즘을 사용하여 qsort 함수와 같은 형식으로 호출할 수 있는 아래의
+함수를 직접 작성하세요.
+  void q_sort(void* base, size_t nmemb, size_t size,
+              int(*compar)(const void*, const void*));
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

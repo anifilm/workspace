@@ -1,4 +1,6 @@
-// Q18 방법 2을 사용하여 Q16의 quick 함수 (재귀, 비재귀 버전)를 수정하세요.
+/* Q18
+방법 2을 사용하여 Q16의 quick 함수 (재귀, 비재귀 버전)를 수정하세요.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

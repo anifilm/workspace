@@ -1,4 +1,6 @@
-// Q7 실습 5-6의 move 함수를 비재귀적으로 수정하세요.
+/* Q7
+실습 5-6의 move 함수를 비재귀적으로 수정하세요.
+*/
 #include <stdio.h>
 #include "5-5_IntStack.h"
 
