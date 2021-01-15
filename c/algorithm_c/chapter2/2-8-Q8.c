@@ -1,5 +1,7 @@
-// Q8 배열 b의 모든 요소를 배열 a에 복사하는 함수를 작성하세요. (n은 요소 개수입니다.)
-// void ary_copy(int a[], const int b[], int n);
+/* Q8
+배열 b의 모든 요소를 배열 a에 복사하는 함수를 작성하세요. (n은 요소 개수입니다.)
+  void ary_copy(int a[], const int b[], int n);
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

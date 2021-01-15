@@ -1,6 +1,5 @@
 // 1, 2, ..., n의 합을 구합니다. (양수만 입력)
 package chap01.section2;
-
 import java.util.Scanner;
 
 public class SumForPos {

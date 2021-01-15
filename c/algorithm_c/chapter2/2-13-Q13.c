@@ -1,11 +1,16 @@
-// Q13 날짜를 나타내는 구조체가 오른쪽 처럼 주어져 있습니다. 아래의 함수를 작성하세요.
-// 1. y년 m월 d일을 나타내는 구조체를 반환하는 함수
-// Date Dateof(int y, int m, int d);
-// 2. 날짜 x의 n일 이후의 날짜를 반환하는 함수
-// Date After(Date x, int n);
-// 3. 날짜 x의 n일 이전의 날짜를 반환하는 함수
-// Date Before(Date x, int n);
-// 이 외에도 다양한 함수를 스스로 설계하여 작성해 보세요.
+/* Q13
+날짜를 나타내는 구조체가 오른쪽 처럼 주어져 있습니다. 아래의 함수를 작성하세요.
+1. y년 m월 d일을 나타내는 구조체를 반환하는 함수
+  Date Dateof(int y, int m, int d);
+
+2. 날짜 x의 n일 이후의 날짜를 반환하는 함수
+  Date After(Date x, int n);
+
+3. 날짜 x의 n일 이전의 날짜를 반환하는 함수
+  Date Before(Date x, int n);
+
+이 외에도 다양한 함수를 스스로 설계하여 작성해 보세요.
+*/
 #include <stdio.h>
 
 typedef struct {

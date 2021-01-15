@@ -1,4 +1,6 @@
-// Q6 요소의 값이 내림차순으로 정렬된 long형 배열에서의 검색을 bsearch 함수를 사용하여 프로그램을 작성하세요.
+/* Q6
+요소의 값이 내림차순으로 정렬된 long형 배열에서의 검색을 bsearch 함수를 사용하여 프로그램을 작성하세요.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

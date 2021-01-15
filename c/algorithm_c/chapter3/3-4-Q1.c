@@ -1,4 +1,6 @@
-// Q1 실습 3-3의 search 함수를 while문이 아니라 for문을 사용하여 수정한 프로그램을 작성하세요.
+/* Q1
+실습 3-3의 search 함수를 while문이 아니라 for문을 사용하여 수정한 프로그램을 작성하세요.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

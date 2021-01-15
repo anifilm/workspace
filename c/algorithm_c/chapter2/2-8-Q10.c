@@ -1,5 +1,7 @@
-// Q10 배열 a의 모든 요소의 순서를 뒤섞는 shuffle 함수를 작성하세요. (n은 요소 개수입니다.)
-// void shuffle(int a[], int n);
+/* Q10
+배열 a의 모든 요소의 순서를 뒤섞는 shuffle 함수를 작성하세요. (n은 요소 개수입니다.)
+  void shuffle(int a[], int n);
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

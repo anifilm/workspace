@@ -1,5 +1,7 @@
-// Q11 dayofyear 함수를 변수 i와 days를 사용하지 않고 구현해 보세요.
-// 또한 for문이 아닌 while문을 사용하세요.
+/* Q11
+dayofyear 함수를 변수 i와 days를 사용하지 않고 구현해 보세요.
+또한 for문이 아닌 while문을 사용하세요.
+*/
 #include <stdio.h>
 
 // 각 달의 일수

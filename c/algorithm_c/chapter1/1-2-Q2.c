@@ -1,5 +1,7 @@
-// Q2 세 값의 최소값을 구하는 min3 함수를 작성하세요.
-// int min3(int a, int b, int c);
+/* Q2
+세 값의 최소값을 구하는 min3 함수를 작성하세요.
+  int min3(int a, int b, int c);
+*/
 #include <stdio.h>
 
 // a, b, c의 최소값을 구합니다.

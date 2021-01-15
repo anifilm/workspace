@@ -1,6 +1,8 @@
-// Q8 bsearch 함수와 같은 형식으로 호출할 수 있는 다음 함수를 이진 검색 알고리즘을 사용하여 작성하세요.
-// void *binsearch(const void *key, const void *base, size_t nmemb, size_t size,
-//                 int(*compar)(const void *, const void *));
+/* Q8
+bsearch 함수와 같은 형식으로 호출할 수 있는 다음 함수를 이진 검색 알고리즘을 사용하여 작성하세요.
+  void *binsearch(const void *key, const void *base, size_t nmemb, size_t size,
+                  int(*compar)(const void *, const void *));
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

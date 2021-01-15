@@ -1,11 +1,12 @@
-/* Q9
-정수 a, b를 포함하여 그 사이의 모든 정수의 합을 구하는 아래 함수를 작성하세요.
-static int sumof(int a, int b)
+/* Q10
+양의 정수를 입력하고 자릿수를 출력하는 프로그램을 작성하세요. 예를 들어 125를 입력하면
+'그 수는 3자리 입니다.' 라고 출력하고, 1314를 입력하면 '그 수는 4자리 입니다.' 라고
+출력하면 됩니다.
  */
 package chap01.section2;
 import java.util.Scanner;
 
-public class Q9 {
+public class Q11 {
     static int sumof(int a, int b) {
         int sum = 0;
         if (a < b) {
