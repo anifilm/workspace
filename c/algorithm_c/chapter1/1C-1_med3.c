@@ -18,7 +18,7 @@ int med3(int a, int b, int c) {
         return b;
 }
 
-int main(void) {
+int main() {
 
     int a, b, c;
 

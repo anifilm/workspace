@@ -22,7 +22,7 @@ int sumof(int a, int b) {
     return sum;
  }
 
-int main(void) {
+int main() {
 
     puts("a부터 b까지의 합을 구합니다.");
 

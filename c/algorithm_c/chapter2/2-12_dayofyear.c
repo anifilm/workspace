@@ -22,7 +22,7 @@ int dayofyear(int y, int m, int d) {
     return days;
 }
 
-int main(void) {
+int main() {
 
     int year, month, day;       // 년, 월, 일
     int retry;                  // 한번 더?

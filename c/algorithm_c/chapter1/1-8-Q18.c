@@ -23,7 +23,7 @@ void nrpira(int n) {
     }
 }
 
-int main(void) {
+int main() {
 
     int n;
     do {

@@ -31,7 +31,7 @@ void dist_vision(const PhysCheck dat[], int n, int dist[]) {
     }
 }
 
-int main(void) {
+int main() {
 
     int i, j;
     PhysCheck x[] = {

@@ -1,7 +1,7 @@
 // 1000 이하의 소수를 나열합니다. (버전 1)
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     int i, n;
     unsigned long counter = 0;  // 나눗셈 횟수

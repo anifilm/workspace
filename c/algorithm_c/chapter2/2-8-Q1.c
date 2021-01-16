@@ -15,7 +15,7 @@ int minof(const int a[], int n) {
     return min;
 }
 
-int main(void) {
+int main() {
 
     int i;
     int* height;    // 배열의 첫번째 요소의 포인터

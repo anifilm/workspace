@@ -1,7 +1,7 @@
 // 2자리의 양수(10~99)를 입력합니다.
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     printf("2자리 정수를 입력하세요.\n");
 

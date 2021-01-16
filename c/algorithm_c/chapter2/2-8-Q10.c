@@ -19,7 +19,7 @@ void shuffle(int a[], int n) {
     }
 }
 
-int main(void) {
+int main() {
 
     int i;
     int* x;         // 배열의 첫번째 요소의 포인터

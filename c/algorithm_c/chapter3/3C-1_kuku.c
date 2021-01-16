@@ -31,7 +31,7 @@ void kuku2(int calc(int, int)) {
     }
 }
 
-int main(void) {
+int main() {
 
     puts("덧셈표");
     kuku(sum);

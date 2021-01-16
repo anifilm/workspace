@@ -12,7 +12,7 @@ int int_cmpr(const int *a, const int *b) {
         return 0;
 }
 
-int main(void) {
+int main() {
 
     int i, nx, ky;
     int* x;                 // 배열의 첫번째 요소에 대한 포인터

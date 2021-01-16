@@ -1,7 +1,7 @@
 // 1000 이하의 소수를 나열합니다. (버전 3)
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     int i, n;
     int prime[500];             // 소수를 저장하는 배열

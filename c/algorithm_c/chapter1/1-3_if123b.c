@@ -1,7 +1,7 @@
 // 입력받은 정수 값의 부호(양수/음수/0)를 판단
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     int n;
 

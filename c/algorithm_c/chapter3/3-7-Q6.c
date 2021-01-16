@@ -14,7 +14,7 @@ int long_cmpr(const long* a, const long* b) {
         return 0;
 }
 
-int main(void) {
+int main() {
 
     int i, nx, ky;
     long* x;                 // 배열의 첫번째 요소에 대한 포인터

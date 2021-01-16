@@ -14,7 +14,7 @@ int npcmp(const Person* x, const Person* y) {
     return strcmp(x->name, y->name);
 }
 
-int main(void) {
+int main() {
 
     Person x[] = {                                      // 배열 요소는 이름의 오름차순으로
             {"Choi", 179, 79},       // 정렬되어 있지 않으면 안됩니다.

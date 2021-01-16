@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int main() {
 
     int i;
     int* a;     // 배열의 첫번째 요소의 포인터

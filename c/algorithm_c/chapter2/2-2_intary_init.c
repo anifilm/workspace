@@ -1,7 +1,7 @@
 // 배열의 요소 개수와 각 요소의 값을 출력합니다.
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     int i;
     int a[5] = {1, 2, 3, 4, 5};

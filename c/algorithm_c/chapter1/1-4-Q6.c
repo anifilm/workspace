@@ -4,7 +4,7 @@
 */
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     puts("1부터 n까지의 합을 구합니다.");
 

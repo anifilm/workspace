@@ -55,7 +55,7 @@ void triangleRU(int n) {
     }
 }
 
-int main(void) {
+int main() {
 
     int n;
     do {

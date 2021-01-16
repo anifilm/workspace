@@ -92,7 +92,7 @@ int Print(Date x) {
     printf("%4d년 %2d월 %2d일 (%s)", x.y, x.m, x.d, ws[(y + y / 4 - y / 100 + y / 400 + (13 * m + 8) / 5 + d) % 7]);
 }
 
-int main(void) {
+int main() {
 
     int n;      // 며칠 이전 또는 이후
     int year, month, day;       // 년, 월, 일

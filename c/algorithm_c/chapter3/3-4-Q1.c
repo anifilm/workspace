@@ -15,7 +15,7 @@ int search(int a[], int n, int key) {
     return i == n ? -1 : i;
 }
 
-int main(void) {
+int main() {
 
     int i, nx, ky, idx;
     int* x;                 // 배열의 첫번째 요소에 대한 포인터

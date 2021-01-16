@@ -12,7 +12,7 @@ int min3(int a, int b, int c) {
     return min;
 }
 
-int main(void) {
+int main() {
 
     printf("min(%d, %d, %d) = %d\n", 3, 2, 1, min3(3, 2, 1));
     printf("min(%d, %d, %d) = %d\n", 3, 2, 2, min3(3, 2, 2));

@@ -1,7 +1,7 @@
 // 1, 2, ..., n의 합을 구합니다. (for문)
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     puts("1부터 n까지의 합을 구합니다.");
 

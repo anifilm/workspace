@@ -28,7 +28,7 @@ void ary_reverse(int a[], int n) {
     printf("역순 정렬을 종료합니다.\n");
 }
 
-int main(void) {
+int main() {
 
     int i;
     int* x;         // 배열의 첫번째 요소의 포인터

@@ -74,7 +74,7 @@ int med3(int a, int b, int c) {
     }
 }
 
-int main(void) {
+int main() {
 
     int a, b, c;
 

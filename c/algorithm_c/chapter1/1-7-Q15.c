@@ -3,7 +3,7 @@
 */
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     int h, w, i, j;
 

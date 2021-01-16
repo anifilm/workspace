@@ -1,7 +1,7 @@
 // 곱셈표를 출력합니다.
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     printf("\t\t----- 곱셈표 -----\n");
 

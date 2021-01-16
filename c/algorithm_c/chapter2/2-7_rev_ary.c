@@ -12,7 +12,7 @@ void ary_reverse(int a[], int n) {
         swap(int, a[i], a[n - i - 1]);
 }
 
-int main(void) {
+int main() {
 
     int i;
     int* x;         // 배열의 첫번째 요소의 포인터

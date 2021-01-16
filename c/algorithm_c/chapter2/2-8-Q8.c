@@ -11,7 +11,7 @@ void ary_copy(int a[], const int b[], int n) {
         a[i] = b[i];
 }
 
-int main(void) {
+int main() {
 
     int i;
     int *x, *y;     // 배열의 첫번째 요소의 포인터

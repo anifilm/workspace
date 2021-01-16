@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
+int main() {
 
     int* x;
     x = (int*)calloc(1, sizeof(int));     // int형 포인터에 메모리 할당

@@ -4,7 +4,7 @@
 */
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     int r, c, i, j;
 

@@ -16,7 +16,7 @@ int search_idx(const int a[], int n, int key, int idx[]) {
     return count;
 }
 
-int main(void) {
+int main() {
 
     int i, nx, ky;
     int no;                     // ky와 일치하는 요소의 개수

@@ -13,7 +13,7 @@ int min4(int a, int b, int c, int d) {
     return min;
 }
 
-int main(void) {
+int main() {
 
     printf("min(%d, %d, %d, %d) = %d\n", 3, 2, 1, 4, min4(3, 2, 1, 4));
     printf("min(%d, %d, %d, %d) = %d\n", 3, 2, 2, 1, min4(3, 2, 2, 1));

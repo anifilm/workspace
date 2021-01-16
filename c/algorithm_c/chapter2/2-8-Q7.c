@@ -22,7 +22,7 @@ int card_convr(unsigned x, int n, char d[]) {
     return digits;
 }
 
-int main(void) {
+int main() {
 
     int i;
     unsigned no;    // 변환하는 정수

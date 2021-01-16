@@ -9,7 +9,7 @@ int max3(int a, int b, int c) {
     return max;
 }
 
-int main(void) {
+int main() {
 
     printf("max(%d, %d, %d) = %d\n", 3, 2, 1, max3(3, 2, 1));     // a > b > c
     printf("max(%d, %d, %d) = %d\n", 3, 2, 2, max3(3, 2, 2));     // a > b = c

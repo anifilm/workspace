@@ -3,7 +3,7 @@
 
 #define N 5     // 배열의 요소 개수
 
-int main(void) {
+int main() {
 
     int i;
     int a[N];   // 배열 선언

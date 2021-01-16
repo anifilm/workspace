@@ -1,7 +1,7 @@
 // 1, 2, ..., n의 합을 구합니다. (do문에서 양의 정수만을 n 값으로 입력합니다)
 #include <stdio.h>
 
-int main(void) {
+int main() {
 
     puts("1부터 n까지의 합을 구합니다.");
 
