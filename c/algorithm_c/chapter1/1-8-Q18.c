@@ -26,13 +26,12 @@ void nrpira(int n) {
 int main(void) {
 
     int n;
+    do {
+        printf("몇 단 삼각형입니까?: ");
+        scanf("%d", &n);    // 단의 수로 양수를 입력합니다.
+    } while (n <= 0);
 
-    // do {
-    //     printf("몇 단 삼각형입니까?: ");
-    //     scanf("%d", &n);        // 단의 수로 양수를 입력합니다.
-    // } while (n <= 0);
-
-    nrpira(5);
+    nrpira(n);
 
     return 0;
 }

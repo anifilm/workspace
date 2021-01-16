@@ -24,18 +24,14 @@ int sumof(int a, int b) {
 
 int main(void) {
 
-    int a, b, s, e;
-    int sum;
-
-    // a = 3, b = 5;
-    a = 6, b = 4;
-
     puts("a부터 b까지의 합을 구합니다.");
-    printf("a의 값: %d\n", a); // scanf("%d", &a);
-    printf("b의 값: %d\n", b); // scanf("%d", &b);
 
-    sum = sumof(a, b);
+    int a, b;
+    printf("a의 값: %d\n", a); scanf("%d", &a);
+    printf("b의 값: %d\n", b); scanf("%d", &b);
 
+    int sum = sumof(a, b);
+    int s, e;
     if (a > b) {
         s = b;
         e = a;

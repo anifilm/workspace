@@ -3,10 +3,9 @@
 
 int main(void) {
 
-    int n;
-
     printf("2자리 정수를 입력하세요.\n");
 
+    int n;
     do {
         printf("수는: ");
         scanf("%d", &n);

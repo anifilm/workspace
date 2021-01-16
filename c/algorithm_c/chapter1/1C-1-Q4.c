@@ -79,12 +79,12 @@ int main(void) {
     int a, b, c;
 
     printf("세 정수의 중앙값을 구합니다.\n");
-    // printf("a의 값: "); scanf("%d", &a);
-    // printf("b의 값: "); scanf("%d", &b);
-    // printf("c의 값: "); scanf("%d", &c);
+    printf("a의 값: "); scanf("%d", &a);
+    printf("b의 값: "); scanf("%d", &b);
+    printf("c의 값: "); scanf("%d", &c);
 
-    // printf("중앙값은 %d 입니다.\n", med3(a, b, c));
-
+    printf("중앙값은 %d 입니다.\n", med3(a, b, c));
+/*
     printf("med(%d, %d, %d) = %d\n", 3, 2, 1, med3(3, 2, 1));     // a > b > c
     printf("med(%d, %d, %d) = %d\n", 3, 2, 2, med3(3, 2, 2));     // a > b = c
     printf("med(%d, %d, %d) = %d\n", 3, 1, 2, med3(3, 1, 2));     // a > c > b
@@ -98,6 +98,6 @@ int main(void) {
     printf("med(%d, %d, %d) = %d\n", 1, 3, 2, med3(1, 3, 2));     // b > c > a
     printf("med(%d, %d, %d) = %d\n", 2, 3, 3, med3(2, 3, 3));     // b = c > a
     printf("med(%d, %d, %d) = %d\n", 1, 2, 3, med3(1, 2, 3));     // c > b > a
-
+*/
     return 0;
 }

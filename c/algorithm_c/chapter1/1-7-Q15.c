@@ -7,13 +7,11 @@ int main(void) {
 
     int h, w, i, j;
 
-    h = 3, w = 7;
-
     puts("직사각형을 출력합니다.");
     printf("높이: %d\n", h);
-    // scanf("%d", &h);
+    scanf("%d", &h);
     printf("너비: %d\n", w);
-    // scanf("%d", &w);
+    scanf("%d", &w);
 
     for (i = 1; i <= h; i++) {
         for (j = 1; j <= 7; j++)

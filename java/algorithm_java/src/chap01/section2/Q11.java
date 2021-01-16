@@ -7,29 +7,21 @@ package chap01.section2;
 import java.util.Scanner;
 
 public class Q11 {
-    static int sumof(int a, int b) {
-        int sum = 0;
-        if (a < b) {
-            for (int i = a; i <= b; i++)
-                sum += i;
-        }
-        else {
-            for (int i = b; i <= a; i++)
-                sum += i;
-        }
-        return sum;
-    }
-
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.println("a부터 b까지의 합을 구합니다.");
-        System.out.print("a의 값: ");
-        int a = stdIn.nextInt();
-        System.out.print("b의 값: ");
-        int b = stdIn.nextInt();
+        System.out.println("양의 정수값의 자릿수를 구합니다.");
+        int num;
+        do {
+            System.out.print("정수값: ");
+            num = stdIn.nextInt();
+        } while (num <= 0);
 
-        int sum = sumof(a, b);    // 합
-        System.out.println(a + "부터 " + b + "까지의 합은 " + sum + "입니다.");
+        int count = 0;
+        while (num > 0) {
+            num /= 10;
+            count++;
+        }
+        System.out.println("그 수는 " + count + "자리 입니다.");
     }
 }
