@@ -28,7 +28,7 @@ public class Q2_Gstack<E> {
             max = 0;
         }
     }
-    // 스택에 x를 푸시
+    // 스택에 데이터를 푸시
     public E push(E x) throws OverflowIntStackException {
         if (ptr >= max)  // 스택이 가득 참
             throw new OverflowIntStackException();

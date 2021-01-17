@@ -35,7 +35,7 @@ public class Q3_IntStackX {
             max = 0;
         }
     }
-    // 스택에 x를 푸시
+    // 스택에 데이터를 푸시
     public int push(AorB sw, int x) throws OverflowIntStackException {
         if (ptrA >= ptrB + 1)  // 스택이 가득 참
             throw new OverflowIntStackException();
