@@ -20,7 +20,7 @@ public class Q5 {
             int pCenter = (pLeft + pRight) / 2;  // 중앙 요소의 인덱스
             if (a[pCenter] == key) {
                 while (pCenter > pLeft) {  // key와 같은 맨 앞의 요소를 검색
-                    if (a[pCenter-1] < key)
+                    if (a[pCenter - 1] < key)
                         break;
                     pCenter--;
                 }
@@ -49,7 +49,7 @@ public class Q5 {
             do {
                 System.out.print("x[" + i + "]: ");
                 x[i] = stdIn.nextInt();
-            } while (x[i] < x[i-1]);  // 바로 앞의 요소의 값보다 작다면 다시 입력
+            } while (x[i] < x[i - 1]);  // 바로 앞의 요소의 값보다 작다면 다시 입력
         }
 
         System.out.print("검색할 값: ");  // 키 값을 입력

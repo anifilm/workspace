@@ -6,18 +6,18 @@
 
 // 버블 정렬 함수 3
 void bubble(int a[], int n) {
-    int k = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
-    while (k < n - 1) {
+    int i = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
+    while (i < n - 1) {
         int j;
         int last = n - 1;   // 마지막으로 교환을 수행한 위치를 저장합니다.
-        for (j = n - 1; j > k; j--) {
-            // printf("%d %d\n", k, j);
+        for (j = n - 1; j > i; j--) {
+            // printf("%d %d\n", i, j);
             if (a[j - 1] > a[j]) {
                 swap(int, a[j - 1], a[j]);
                 last = j;
             }
         }
-        k = last;
+        i = last;
     }
 }
 

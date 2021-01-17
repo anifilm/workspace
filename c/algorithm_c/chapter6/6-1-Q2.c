@@ -23,9 +23,9 @@
 
 // 버블 정렬 함수
 void bubble(int a[], int n) {
+    int c_count = 0;  // 비교 횟수
+    int s_count = 0;  // 교환 횟수
     int i, j, k;
-    int c_count = 0;    // 비교 횟수
-    int s_count = 0;    // 교환 횟수
     for (i = 0; i < n - 1; i++) {
         printf("패스 %d:\n", i + 1);
         for (j = n - 1; j > i; j--) {
@@ -36,14 +36,14 @@ void bubble(int a[], int n) {
             if (a[j - 1] > a[j]) {
                 printf("%d+%d ", a[j - 1], a[j]);
                 swap(int, a[j - 1], a[j]);
-                s_count++;      // 교환 횟수 증가
+                s_count++;  // 교환 횟수 증가
             } else
                 printf("%d-%d ", a[j - 1], a[j]);
             // 숫자 출력 2
             for (k = j; k < n - 1; k++)
                 printf("%d ", a[k]);
             printf("\n");
-            c_count++;          // 비교 횟수 증가
+            c_count++;  // 비교 횟수 증가
         }
         printf("\n");
     }

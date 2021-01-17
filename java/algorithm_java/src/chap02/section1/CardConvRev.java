@@ -38,7 +38,7 @@ public class CardConvRev {
             dno = cardConvR(no, cd, cno);  // no를 cd진수로 변환
 
             System.out.print(cd + "진수로는 ");
-            for (int i = dno-1; i >= 0; i--)  // 윗자리부터 차례로 출력
+            for (int i = dno - 1; i >= 0; i--)  // 윗자리부터 차례로 출력
                 System.out.print(cno[i]);
             System.out.println("입니다.");
 

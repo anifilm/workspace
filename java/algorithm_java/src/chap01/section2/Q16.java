@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class Q16 {
     static void spira(int n) {
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n-1-i; j++)
+            for (int j = 0; j < n - 1 - i; j++)
                 System.out.print(" ");
-            for (int k = 0; k < 1+i*2; k++)
+            for (int k = 0; k < 1 + i * 2; k++)
                 System.out.print("*");
             System.out.println();
         }

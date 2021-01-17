@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class Q15 {
     static void triangleLB(int n) {  // 왼쪽 아래가 직각인 이등변 삼각형을 출력
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < 1+i; j++)
+            for (int j = 0; j < 1 + i; j++)
                 System.out.print("*");
             System.out.println();
         }
     }
     static void triangleLU(int n) {  // 왼쪽 위가 직각인 이등변 삼각형을 출력
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n-i; j++)
+            for (int j = 0; j < n - i; j++)
                 System.out.print("*");
             System.out.println();
         }
@@ -29,16 +29,16 @@ public class Q15 {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++)
                 System.out.print(" ");
-            for (int k = 0; k < n-i; k++)
+            for (int k = 0; k < n - i; k++)
                 System.out.print("*");
             System.out.println();
         }
     }
     static void triangleRB(int n) {  // 오른쪽 아래가 직각인 이등변 삼각형을 출력
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n-1-i; j++)
+            for (int j = 0; j < n - 1 - i; j++)
                 System.out.print(" ");
-            for (int k = 0; k < 1+i; k++)
+            for (int k = 0; k < 1 + i; k++)
                 System.out.print("*");
             System.out.println();
         }

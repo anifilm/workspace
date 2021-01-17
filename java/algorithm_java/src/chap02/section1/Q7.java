@@ -15,17 +15,17 @@ public class Q7 {
             if (digits == 0)
                 System.out.printf("\n%2d| %8d\n", r, x);
             else
-                System.out.printf("%2d| %8d ... %c\n", r, x, d[digits-1]);
+                System.out.printf("%2d| %8d ... %c\n", r, x, d[digits - 1]);
             System.out.println("  +----------");
             x /= r;
             digits++;
         } while (x != 0);
         // 변환 과정 출력 마지막
-        System.out.printf("    %8d ... %c\n", x, d[digits-1]);
+        System.out.printf("    %8d ... %c\n", x, d[digits - 1]);
         // 배열 요소를 역순으로 정렬
-        for (int i = 0; i < digits/2; i++) {  // d[0] ~ d[digits-1]
+        for (int i = 0; i < digits / 2; i++) {  // d[0] ~ d[digits-1]
             char tmp = d[i];
-            d[i] = d[digits-1-i];
+            d[i] = d[digits - 1 - i];
             d[digits-1-i] = tmp;
         }
         return digits;

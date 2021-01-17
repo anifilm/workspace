@@ -19,53 +19,59 @@
 
 // 양방향 버블 정렬 함수
 void bubble(int a[], int n) {
-    int left = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
-    int right = n - 1;
+    int c_count = 0;  // 비교 횟수
+    int s_count = 0;  // 교환 횟수
     int p_count = 1;
+
+    int left = 0;  // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
+    int right = n - 1;
+    int last = right;
     while (left < right) {
-        int i, j;
-        int last = n - 1;   // 마지막으로 교환을 수행한 위치를 저장합니다.
-        printf("패스 %d: (홀수번째)\n", p_count);
-        for (j = n - 1; j > left; j--) {
+        int j, k;
+        printf("패스 %d: (홀수번째)\n", p_count++);
+        for (j = right; j > left; j--) {
             // 숫자 출력 1
-            for (i = 0; i < j - 1; i++)
-                printf("%d ", a[i]);
+            for (k = 0; k < j - 1; k++)
+                printf("%d ", a[k]);
             if (a[j - 1] > a[j]) {
                 printf("%d+%d ", a[j - 1], a[j]);
                 swap(int, a[j - 1], a[j]);
+                s_count++;
                 last = j;
             } else
                 printf("%d-%d ", a[j - 1], a[j]);
             // 숫자 출력 2
-            for (i = j; i < n - 1; i++)
-                printf("%d ", a[i]);
+            for (k = j + 1; k < n; k++)
+                printf("%d ", a[k]);
             printf("\n");
+            c_count++;
         }
         left = last;
-        p_count++;
 
-        if (left < right) {
-            printf("\n패스 %d: (짝수번째)\n", p_count);
-            for (j = last; j < right; j++) {
-                // 숫자 출력 1
-                for (i = 0; i < j; i++)
-                    printf("%d ", a[i]);
-                if (a[j] > a[j + 1]) {
-                    printf("%d+%d ", a[j], a[j + 1]);
-                    swap(int, a[j], a[j + 1]);
-                    last = j;
-                } else
-                    printf("%d-%d ", a[j], a[j + 1]);
-                // 숫자 출력 2
-                for (i = j + 1; i < n - 1; i++)
-                    printf("%d ", a[i]);
-                printf("\n");
-            }
+        if (left >= right) break;  // 종료 시점 확인 (짝수번째 실행하지 않도록 추가)
+        printf("\n패스 %d: (짝수번째)\n", p_count++);
+        for (j = left; j < right; j++) {
+            // 숫자 출력 1
+            for (k = 0; k < j; k++)
+                printf("%d ", a[k]);
+            if (a[j] > a[j + 1]) {
+                printf("%d+%d ", a[j], a[j + 1]);
+                swap(int, a[j], a[j + 1]);
+                s_count++;
+                last = j;
+            } else
+                printf("%d-%d ", a[j], a[j + 1]);
+            // 숫자 출력 2
+            for (k = j + 2; k < n; k++)
+                printf("%d ", a[k]);
             printf("\n");
-            right = last;
-            p_count++;
+            c_count++;
         }
+        printf("\n");
+        right = last;
     }
+    printf("\n비교를 %d회 했습니다.\n", c_count);
+    printf("교환을 %d회 했습니다.\n", s_count);
 }
 
 int main() {

@@ -9,31 +9,37 @@
 
 // 버블 정렬 함수 3
 void bubble(int a[], int n) {
-    int k = 0;              // a[k]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
+    int c_count = 0;  // 비교 횟수
+    int s_count = 0;  // 교환 횟수
     int p_count = 1;
-    while (k < n - 1) {
-        int i, j;
-        int last = n - 1;   // 마지막으로 교환을 수행한 위치를 저장합니다.
-        printf("패스 %d:\n", p_count);
-        for (j = n - 1; j > k; j--) {
+
+    int i = 0;  // a[i]보다 앞쪽의 요소는 정렬을 마친 상태입니다.
+    while (i < n - 1) {
+        int j, k;
+        int last = n - 1;  // 마지막으로 교환을 수행한 위치를 저장합니다.
+        printf("패스 %d:\n", p_count++);
+        for (j = n - 1; j > i; j--) {
             // 숫자 출력 1
-            for (i = 0; i < j - 1; i++)
-                printf("%d ", a[i]);
+            for (k = 0; k < j - 1; k++)
+                printf("%d ", a[k]);
             if (a[j - 1] > a[j]) {
                 printf("%d+%d ", a[j - 1], a[j]);
                 swap(int, a[j - 1], a[j]);
+                s_count++;
                 last = j;
             } else
                 printf("%d-%d ", a[j - 1], a[j]);
             // 숫자 출력 2
-            for (i = j; i < n - 1; i++)
-                printf("%d ", a[i]);
+            for (k = j; k < n - 1; k++)
+                printf("%d ", a[k]);
             printf("\n");
+            c_count++;
         }
         printf("\n");
-        k = last;
-        p_count++;
+        i = last;
     }
+    printf("\n비교를 %d회 했습니다.\n", c_count);
+    printf("교환을 %d회 했습니다.\n", s_count);
 }
 
 int main() {

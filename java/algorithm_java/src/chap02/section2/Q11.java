@@ -49,7 +49,7 @@ class YMD {
                 temp.year--;
                 temp.month = 12;
             }
-            temp.day += mdays[isLeap(temp.day)][temp.month-1];
+            temp.day += mdays[isLeap(temp.day)][temp.month - 1];
         }
         return temp;
     }

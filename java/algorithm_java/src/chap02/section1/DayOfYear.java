@@ -16,7 +16,7 @@ public class DayOfYear {
     static int dayOfYear(int y, int m, int d) {
         int days = d;  // 일 수
         for (int i = 1; i < m; i++)  // 1월~(m-1)월의 일 수를 더함
-            days += mdays[isLeap(y)][i-1];
+            days += mdays[isLeap(y)][i - 1];
         return days;
     }
 

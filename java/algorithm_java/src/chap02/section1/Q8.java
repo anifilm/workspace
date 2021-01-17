@@ -18,7 +18,7 @@ public class Q8 {
     // 서기 y년 m월 d일의 그 해 경과 일 수를 구함
     static int dayOfYear(int y, int m, int d) {
         while (--m != 0) {
-            d += mdays[isLeap(y)][m-1];
+            d += mdays[isLeap(y)][m - 1];
         }
         return d;
     }

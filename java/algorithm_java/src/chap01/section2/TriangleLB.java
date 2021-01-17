@@ -14,7 +14,7 @@ public class TriangleLB {
         } while (n <= 0);
 
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < 1+i; j++)
+            for (int j = 0; j < 1 + i; j++)
                 System.out.print("*");
             System.out.println();
         }

@@ -20,7 +20,7 @@ public class Q2 {
     }
     // 배열 a의 요소를 역순으로 정렬
     static void reverse(int[] a) {
-        for (int i = 0; i < a.length/2; i++) {
+        for (int i = 0; i < a.length / 2; i++) {
             print(a);
             swap(a, i, a.length - 1 - i);
         }

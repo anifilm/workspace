@@ -15,10 +15,10 @@ public class Q6 {
             x /= r;
         } while (x != 0);
         // 배열 요소를 역순으로 정렬
-        for (int i = 0; i < digits/2; i++) {  // d[0] ~ d[digits-1]
+        for (int i = 0; i < digits / 2; i++) {  // d[0] ~ d[digits - 1]
             char tmp = d[i];
-            d[i] = d[digits-1-i];
-            d[digits-1-i] = tmp;
+            d[i] = d[digits - 1 - i];
+            d[digits - 1 - i] = tmp;
         }
         return digits;
     }

@@ -35,7 +35,7 @@ public class BinSearch {
             do {
                 System.out.print("x[" + i + "]: ");
                 x[i] = stdIn.nextInt();
-            } while (x[i] < x[i-1]);  // 바로 앞의 요소의 값보다 작다면 다시 입력
+            } while (x[i] < x[i - 1]);  // 바로 앞의 요소의 값보다 작다면 다시 입력
         }
 
         System.out.print("검색할 값: ");  // 키 값을 입력

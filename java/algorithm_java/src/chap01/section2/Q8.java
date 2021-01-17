@@ -14,7 +14,7 @@ public class Q8 {
         int n = stdIn.nextInt();
 
         int sum = 0;    // 합
-        sum = (1+n) * n/2;
+        sum = (1 + n) * n / 2;
         System.out.println("1부터 " + n + "까지의 합은 " + sum + "입니다.");
 
         sum = 0;
