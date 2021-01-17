@@ -2,7 +2,7 @@
 버블 정렬의 각 패스에서 비교, 교환은 처음(왼쪽)부터 수행해도 됩니다. (각 패스에서 가장 큰 값의 요소가 끝으로
 옮겨집니다.) 그렇게 수정한 프로그램을 작성하세요.
  */
-package chap06.section1;
+package chap06.section2;
 import java.util.Scanner;
 
 public class Q1 {

@@ -10,7 +10,7 @@
 버블 정렬을 개선한 이 알고리즘은 양방향 버블 정렬(bidirection bubble sort) 또는 칵테일 정렬(cocktail
 sort), 셰이커 정렬(shaker sort)이라는 이름으로 알려져 있습니다.
  */
-package chap06.section1;
+package chap06.section2;
 import java.util.Scanner;
 
 public class Q5 {
