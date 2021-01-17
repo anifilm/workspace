@@ -3,7 +3,7 @@
 요소수를 반환하는 메서드를 작성하세요. 예를 들어 요소수가 8일 배열 a의 요소가 {1, 9, 2, 9, 4, 6, 7, 9}
 이고 key가 9면 배열 idx에 {1, 3, 7}을 저장하고 3을 반환합니다.
  */
-package chap03.section2;
+package chap03.section3;
 import java.util.Scanner;
 
 public class Q3 {

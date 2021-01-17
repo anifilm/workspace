@@ -9,8 +9,8 @@ public class Q10 {
     static final int VMAX = 21;  // 시력 분포 (0.0에서 0.1 단위로 21개)
 
     static class PhyscData {
-        String name;  // 이름
-        int height;  // 키
+        String name;   // 이름
+        int height;    // 키
         double vision; // 시력
 
         // 생성자
@@ -42,13 +42,13 @@ public class Q10 {
         Scanner stdIn = new Scanner(System.in);
 
         PhyscData[] x = {
-            new PhyscData("박현규", 162, 0.2),
-            new PhyscData("함진아", 173, 0.7),
-            new PhyscData("최윤미", 175, 0.1),
-            new PhyscData("홍연의", 171, 1.5),
-            new PhyscData("이수진", 168, 0.2),
-            new PhyscData("김영준", 174, 0.3),
-            new PhyscData("박용규", 169, 0.2),
+                new PhyscData("박현규", 162, 0.2),
+                new PhyscData("함진아", 173, 0.4),
+                new PhyscData("최윤미", 175, 0.1),
+                new PhyscData("홍연의", 171, 0.1),
+                new PhyscData("이수진", 168, 0.2),
+                new PhyscData("김영준", 174, 0.3),
+                new PhyscData("박용규", 169, 0.2),
         };
         int[] vdist = new int[VMAX];  // 시력 분포
 

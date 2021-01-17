@@ -3,7 +3,7 @@
 있는 요소의 인덱스를 출력하고, 검색 범위의 맨 앞 요소 위에 <-, 맨 끝 요소 위에 ->, 현재 검색하고
 있는 중앙 요소 위에 +를 출력하세요.
 */
-package chap03.section2;
+package chap03.section3;
 import java.util.Scanner;
 
 public class Q4 {
