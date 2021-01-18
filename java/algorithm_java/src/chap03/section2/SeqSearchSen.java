@@ -23,7 +23,7 @@ public class SeqSearchSen {
 
         System.out.print("요소수: ");
         int num = stdIn.nextInt();
-        int[] x = new int[num + 1];  // 요소수 num+1
+        int[] x = new int[num + 1];  // 요소수 num + 1
 
         for (int i = 0; i < num; i++) {
             System.out.print("x[" + i + "]: ");

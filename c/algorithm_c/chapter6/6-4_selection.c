@@ -8,10 +8,10 @@
 void selection(int a[], int n) {
     int i, j;
     for (i = 0; i < n - 1; i++) {
-        int min = i;
+        int min = i;  // 아직 정렬되지 않은 부분에서 가장 작은 요소의 인덱스를 기록
         for (j = i + 1; j < n; j++)
             if (a[j] < a[min]) min = j;
-        swap(int, a[i], a[min]);
+        swap(int, a[i], a[min]);  // 아직 정렬되지 않은 부분의 첫 요소와 가장 작은 요소를 교환
     }
 }
 

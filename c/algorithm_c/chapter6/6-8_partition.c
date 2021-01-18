@@ -11,6 +11,7 @@ void partition(int a[], int n) {
     int pr = n - 1;     // 오른쪽 커서
     int x = a[n / 2];   // 피벗은 가운데 요소를 선택합니다.
 
+    // 배열 a를 피벗 x를 기준으로 낮은 값 그룹과 높은 값 그룹으로 재정렬
     do {
         while(a[pl] < x) pl++;
         while(a[pr] > x) pr--;
@@ -22,18 +23,18 @@ void partition(int a[], int n) {
     } while (pl <= pr);
 
     printf("피벗의 값은 %d입니다.\n", x);
-    printf("피벗 이하의 그룹\n");             // 피벗 이하의 그룹
-    for (i = 0; i <= pl - 1; i++)            // a[0] ~ a[pl - 1]
+    printf("피벗 이하의 그룹\n");
+    for (i = 0; i <= pl - 1; i++)  // a[0] ~ a[pl - 1]
         printf("%d ", a[i]);
     putchar('\n');
     if (pl > pr + 1) {
-        printf("피벗과 일치하는 그룹\n");     // 피벗과 같은 그룹
+        printf("피벗과 일치하는 그룹\n");
         for (i = pr + 1; i <= pl - 1; i++)  // a[pr + 1] ~ a[pl - 1]
             printf("%d ", a[i]);
         putchar('\n');
     }
-    printf("피벗 이상의 그룹\n");             // 피벗 이상의 그룹
-    for (i = pr + 1; i < n; i++)            // a[pr + 1] ~ a[n - 1]
+    printf("피벗 이상의 그룹\n");
+    for (i = pr + 1; i < n; i++)  // a[pr + 1] ~ a[n - 1]
         printf("%d ", a[i]);
     putchar('\n');
 }

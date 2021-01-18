@@ -8,62 +8,37 @@ qsort 함수를 사용하여 아래 두 배열을 오름차순으로 정렬하�
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct {
-    char name[10];  // 이름
-    int height;     // 키
-    int weight;     // 몸무게
-} Person;
-
-// Person형 비교 함수 (이름 오름차순 정렬)
-int npcmp(const Person* x, const Person* y) {
-    return strcmp(x->name, y->name);
+// 문자열 배열(n1 x n2의 2차원 배열)을 오름차순으로 정렬
+void sort_2dstr(char* p, int n1, int n2) {
+    qsort(p, n1, n2, (int(*)(const void*, const void*))strcmp);
 }
 
-// Person형 비교 함수 (키 오름차순 정렬)
-int hpcmp(const Person* x, const Person* y) {
-    return x->height < y->height ? -1 : x->height > y->height ? 1 : 0;
+// x, y가 가리키는 문자열 비교 함수
+static int pstrcmp(const void* x, const void* y) {
+    return strcmp(*(const char**)x, *(const char**)y);
 }
 
-// Person형 비교 함수 (몸무게 내리차순 정렬)
-int wpcmp(const Person* x, const Person* y) {
-    return x->weight < y->weight ? 1 : x->weight > y->weight ? -1 : 0;
-}
-
-// 사람 no명의 데이터 출력
-void print_person(const Person x[], int no) {
-    int i;
-    for (i = 0; i < no; i++)
-        printf("%-10s %dcm   %dkg\n", x[i].name, x[i].height, x[i].weight);
+// 문자열을 가리키는 p를 오름차순으로 정렬
+void sort_pvstr(char* p[], int n) {
+    qsort(p, n, sizeof(char*), pstrcmp);
 }
 
 int main() {
 
-    Person x[] = {
-        {"sunmi", 170, 52},
-        {"yoobin", 180, 70},
-        {"sohee", 172, 63},
-        {"jinha", 165, 50}
-    };
+    int  i;
+    char a[][7] = {"LISP", "C", "Ada", "Pascal"};
+    char* p[] = {"LISP", "C", "Ada", "Pascal"};
 
-    int nx = sizeof(x) / sizeof(x[0]);  // 배열 x의 요소 개수
+    sort_2dstr(&a[0][0], 4, 7);
+    sort_pvstr(p, 4);
 
-    puts("정렬 전");
-    print_person(x, nx);
+    puts("오름차순으로 정렬했습니다.");
 
-    // 이름 오름차순으로 정렬
-    qsort(x, nx, sizeof(Person), (int(*)(const void*, const void*))npcmp);
-    puts("\n이름 오름차순으로 정렬 후");
-    print_person(x, nx);
+    for (i = 0; i < 4; i++)
+        printf("a[%d] = %s\n", i, a[i]);
 
-    // 키 오름차순으로 정렬
-    qsort(x, nx, sizeof(Person), (int(*)(const void*, const void*))hpcmp);
-    puts("\n키 오름차순으로 정렬 후");
-    print_person(x, nx);
-
-    // 몸무게 내림차순으로 정렬
-    qsort(x, nx, sizeof(Person), (int(*)(const void*, const void*))wpcmp);
-    puts("\n몸무게 내림차순으로 정렬 후");
-    print_person(x, nx);
+    for (i = 0; i < 4; i++)
+        printf("p[%d] = %s\n", i, p[i]);
 
     return 0;
 }

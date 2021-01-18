@@ -2,6 +2,7 @@
 아래 형식으로 동작하는 quick_sort 함수를 구현하세요. 두번째 매개변수인 n은
 요소의 개수 입니다.
   void quick_sort(int a[], int n);
+
 */
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,6 +1,5 @@
 /* Q15
-실습 6-9, 6-10의 quick 함수를 요소의 개수가 적은 그룹을 먼저 나누는 함수로
-수정하세요.
+실습 6-9, 6-10의 quick 함수를 요소의 개수가 적은 그룹을 먼저 나누는 함수로 수정하세요.
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,6 +21,12 @@ void quick(int a[], int left, int right) {
             pr--;
         }
     } while (pl <= pr);
+
+    // 요소의 개수가 많은 그룹을 먼저 푸시 하도록 swap
+    if (pr - left < right - pl) {
+        swap(int, pl, left);
+        swap(int, pr, right);
+    }
 
     if (left < pr) quick(a, left, pr);
     if (pl < right) quick(a, pl, right);

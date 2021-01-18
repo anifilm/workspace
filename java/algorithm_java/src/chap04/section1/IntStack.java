@@ -1,4 +1,4 @@
-//
+// int형 스택
 package chap04.section1;
 
 public class IntStack {

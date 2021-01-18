@@ -20,10 +20,13 @@
 void selection(int a[], int n) {
     int i, j, k;
     for (i = 0; i < n - 1; i++) {
-        int min = i;
-        for (j = i + 1; j < n; j++)
-            if (a[j] < a[min]) min = j;
-        // 기호 출력
+        int min = i;  // 아직 정렬되지 않은 부분에서 가장 작은 요소의 인덱스를 기록
+        for (j = i + 1; j < n; j++) {
+            if (a[j] < a[min])
+                min = j;
+        }
+
+        // 교환 과정 출력
         for (k = 0; k < n; k++) {
             if (a[i] == a[k])
                 printf(" * ");
@@ -33,11 +36,11 @@ void selection(int a[], int n) {
                 printf("   ");
         }
         printf("\n");
-        // 숫자 출력
         for (k = 0; k < n; k++)
             printf(" %d ", a[k]);
         printf("\n");
-        swap(int, a[i], a[min]);
+
+        swap(int, a[i], a[min]);  // 아직 정렬되지 않은 부분의 첫 요소와 가장 작은 요소를 교환
     }
 }
 

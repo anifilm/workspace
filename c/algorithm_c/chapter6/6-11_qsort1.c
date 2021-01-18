@@ -41,7 +41,7 @@ int main() {
         nx,                                         // 요소의 개수
         sizeof(int),                                // 요소의 크기
         (int(*)(const void*, const void*))int_cmp   // 비교 함수
-        );
+    );
 
     printf("\n오름차순으로 정렬했습니다.\n");
     for (i = 0; i < nx; i++)

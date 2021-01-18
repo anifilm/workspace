@@ -25,7 +25,7 @@ int main() {
     puts("단순 삽입 정렬 (a[0]을 보초로 사용)");
     printf("요소 개수: ");
     scanf("%d", &nx);
-    x = (int*)calloc(nx + 1, sizeof(int));    // a[0]를 보초로 사용하기 때문에 n + 1개의 배열을 생성
+    x = (int*)calloc(nx + 1, sizeof(int));  // a[0]를 보초로 사용하기 때문에 nx + 1개의 배열을 생성
 
     for (i = 1; i < nx + 1; i++) {
         printf("x[%d]: ", i);

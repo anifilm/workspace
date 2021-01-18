@@ -12,17 +12,16 @@
 // 이진 삽입 정렬 함수
 void bin_insertion(int a[], int n) {
     int i, j;
-
     for (i = 1; i < n; i++) {
         int key = a[i];
-        int pl = 0;		// 검색 범위의 첫 인덱스
-        int pr = i - 1; // 검색 범위의 끝 인덱스
-        int pc;			// 검색 범위의 가운데 인덱스
-        int pd;			// 삽입하는 위치의 인덱스
+        int pl = 0;		 // 검색 범위의 첫 인덱스
+        int pr = i - 1;  // 검색 범위의 끝 인덱스
+        int pc;			 // 검색 범위의 가운데 인덱스
+        int pd;			 // 삽입하는 위치의 인덱스
 
         do {
             pc = (pl + pr) / 2;
-            if (a[pc] == key)		// 검색 성공
+            if (a[pc] == key)  //검색 성공
                 break;
             else if (a[pc] < key)
                 pl = pc + 1;

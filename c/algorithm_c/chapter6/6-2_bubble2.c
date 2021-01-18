@@ -10,7 +10,6 @@ void bubble(int a[], int n) {
     for (i = 0; i < n - 1; i++) {
         int exchg = 0;      // 패스에서 시도한 교환 횟수
         for (j = n - 1; j > i; j--) {
-            // printf("%d %d\n", i, j);
             if (a[j - 1] > a[j]) {
                 swap(int, a[j - 1], a[j]);
                 exchg++;

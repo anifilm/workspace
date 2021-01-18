@@ -12,7 +12,6 @@ void bubble(int a[], int n) {
     int i, j;
     for (i = n - 1; i > 0; i--) {
         for (j = 0; j < i; j++) {
-            // printf("%d %d\n", i, j);
             if (a[j] > a[j + 1])
                 swap(int, a[j], a[j + 1]);
         }

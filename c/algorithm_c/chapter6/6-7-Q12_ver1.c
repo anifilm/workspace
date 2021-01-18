@@ -12,8 +12,10 @@ int shell(int a[], int n) {
     for (h = n / 2; h > 0; h /= 2) {
         for (i = h; i < n; i++) {
             int tmp = a[i];
-            for (j = i - h; j >= 0 && a[j] > tmp; j -= h)
+            for (j = i - h; j >= 0 && a[j] > tmp; j -= h) {
                 a[j + h] = a[j];
+                count++;
+            }
             a[j + h] = tmp;
             count++;
         }

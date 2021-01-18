@@ -5,7 +5,9 @@
 // 셀 정렬 함수
 void shell(int a[], int n) {
     int i, j, h;
+    // 1. 4-정렬 → 2-정렬 ... 순으로 진행
     for (h = n / 2; h > 0; h /= 2) {
+        // 2. 단순 삽입 정렬을 수행
         for (i = h; i < n; i++) {
             int tmp = a[i];
             for (j = i - h; j >= 0 && a[j] > tmp; j -= h)
