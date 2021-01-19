@@ -15,7 +15,6 @@ public class ExceptionHandling2 {
 				try {
 					fis.close();	// try 블록에서 파일 리소스를 닫는 close() 메서드 호출
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

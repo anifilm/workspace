@@ -16,7 +16,6 @@ public class ThrowsException {                                // 두 예외를 �
         try {
             test.loadClass("a.txt", "java.lang.String");    // 메서드를 호출할 때 예외를 처리함
         } catch (FileNotFoundException | ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

@@ -59,9 +59,10 @@ public class HangManGameApp {
             int index = r.nextInt(newWord.length());
             char ch = newWord.charAt(index);
             for (int j = 0; j < newWord.length(); j++) {
-                // 같은 문자가 있으면 같이 숨겨진다. TODO: 수정 필요
-                if (hiddenWord.charAt(j) == ch)
+                if (hiddenWord.charAt(j) == ch) {
                     hiddenWord.setCharAt(j, '-');
+                    break;  // 같은 문자를 두번 숨기지 않도록 루프 중단
+                }
             }
         }
     }

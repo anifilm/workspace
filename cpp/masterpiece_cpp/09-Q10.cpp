@@ -89,6 +89,7 @@ private:
     Shape* pLast;
     Shape* p;
     Shape* prev;
+
 public:
     GraphicEditor() {
         pStart = NULL;
@@ -159,7 +160,6 @@ void GraphicEditor::run() {
                 int i = 0;
                 p = pStart;
                 while (p != NULL) {
-                    // TODO: 노드 삭제 기능 추후 재검토 할 것!
                     if (d != i) {
                         prev = p;
                         p = p->getNext();

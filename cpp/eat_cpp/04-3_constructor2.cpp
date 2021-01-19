@@ -54,7 +54,7 @@ void Marine::show_status() {
 
 int main() {
 
-    Marine* marines[100];       // TODO:포인터 배열 선언 추가 학습 필요
+    Marine* marines[100];
 
     marines[0] = new Marine(2, 3);      // new 동적 메모리 할당
     marines[1] = new Marine(3, 5);
