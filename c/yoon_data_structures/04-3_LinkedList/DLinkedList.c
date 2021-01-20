@@ -1,4 +1,4 @@
-// 더미 노드(Dummy Node) 기반의 단순 연결 리스트 구현
+// 연결 리스트에서의 정렬기준 설정과 관련된 부분
 #include <stdio.h>
 #include <stdlib.h>
 #include "DLinkedList.h"
@@ -30,7 +30,20 @@ void FInsert(List* plist, LData data) {
 
 // 정렬 기준에 근거하여 노드를 추가
 void SInsert(List* plist, LData data) {
-    // 04-3에서 추가 예정
+    Node* newNode = (Node*)malloc(sizeof(Node));  // 새 노드 작성
+    Node* pred = plist->head;  // pred는 더미 노드를 가리킴
+    newNode->data = data;  // 새 노드에 데이터 저장
+
+    // 새 노드가 들어갈 위치를 찾기 위한 반복문
+    while (pred->next != NULL && plist->comp(data, pred->next->data) != 0) {
+        pred = pred->next;  // 다음 노드로 이동
+    }
+
+    newNode->next = pred->next;  // 새 노드의 오른쪽을 연결
+    pred->next = newNode;  // 새 노드의 왼쪽을 연결
+
+    (plist->numOfData)++;  // 저장된 노드의 수를 하나 증가시킴
+
 }
 
 int LFirst(List* plist, LData* pdata) {
@@ -72,5 +85,5 @@ int LCount(List* plist) {
 }
 
 void SetSortRule(List* plist, int (*comp)(LData d1, LData d2)) {
-    // 04-3에서 추가 예정
+    plist->comp = comp;
 }

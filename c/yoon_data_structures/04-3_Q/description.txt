@@ -1,0 +1,8 @@
+문제 04-3 [연결 리스트에 구조체 변수의 주소 값 저장하기]
+앞서 Chapter 03에서는 다음의 파일들을 하나의 프로젝트로 묶어서 컴파일하고 그 결과를 확인하였다.
+
+  Point.h, Point.c, ArrayList.h, ArrayList.c PointListMain.c
+
+이번에도 PointListMain.c의 main 함수를 변겨하지 않고 컴파일하여 그 결과를 확인하고자 한다.
+단, ArrayList.c, ArrayList.c를 대신해서 DLinkedList.h, DLinkedList.c를 사용해서 그 결과
+를 확인해야 한다. 물론 그 과정에서 typedef 선언 및 헤더파일 선언의 일부 변경은 있을 수 있다.

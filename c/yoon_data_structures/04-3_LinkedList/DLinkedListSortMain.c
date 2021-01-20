@@ -1,6 +1,13 @@
-// 더미 노드(Dummy Node) 기반의 단순 연결 리스트 구현
+// 정렬의 기준을 설정하기 위한 함수 정의
 #include <stdio.h>
 #include "DLinkedList.h"
+
+int WhoIsPrecede(int d1, int d2) {
+    if (d1 < d2)
+        return 0;  // d1이 정렬 순서상 앞선다.
+    else
+        return 1;  // d2가 정렬 순서상 앞서거나 같다.
+}
 
 int main() {
 
@@ -8,6 +15,8 @@ int main() {
     List list;
     int data;
     ListInit(&list);
+
+    SetSortRule(&list, WhoIsPrecede);  // 정렬의 기준을 등록
 
     // 5개의 데이터 저장
     LInsert(&list, 11);
