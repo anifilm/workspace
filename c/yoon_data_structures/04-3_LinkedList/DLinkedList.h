@@ -1,4 +1,4 @@
-// 더미 노드(Dummy Node) 기반의 단순 연결 리스트 구현
+// 정렬 기능이 추가된 연결 리스트의 구조체와 헤더파일의 정의
 #ifndef __D_LINKED_LIST_H__
 #define __D_LINKED_LIST_H__
 

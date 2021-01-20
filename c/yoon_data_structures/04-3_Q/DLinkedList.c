@@ -56,13 +56,13 @@ int LNext(List* plist, LData* pdata) {
 }
 
 LData LRemove(List* plist) {
-    Node* rpos = plist->cur;   // 소멸 대상의 주소 값을 rpos에 저장
-    LData rdata = rpos->data;  // 소멸 대상의 데이터를 rdata에 저장
+    Node* rpos = plist->cur;   // 삭제 대상의 주소 값을 rpos에 저장
+    LData rdata = rpos->data;  // 삭제 대상의 데이터를 rdata에 저장
 
-    plist->before->next = plist->cur->next;  // 소멸 대상을 리스트에서 제거
+    plist->before->next = plist->cur->next;  // 삭제 대상을 리스트에서 제거
     plist->cur = plist->before;  // cur가 가리키는 위치를 재조정
 
-    free(rpos);  // 리스트에서 제거된 노드 소멸
+    free(rpos);  // 리스트에서 제거된 노드 메모리 해제
     (plist->numOfData)--;  // 저장된 데이터의 수 하나 감소
     return rdata;  // 제거된 노드의 데이터 반환
 }
