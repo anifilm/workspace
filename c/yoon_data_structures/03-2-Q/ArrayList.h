@@ -8,7 +8,7 @@
 #define LIST_LEN 100     // 리스트의 최대 크기
 typedef NameCard* LData;  // LData에 대한 typedef 선언 (NameCard*로 수정됨)
 
-typedef struct _ArrayList {  // 배열 기반 리스트를 정의한 구조체
+typedef struct _arraylist {  // 배열 기반 리스트를 정의한 구조체
     LData arr[LIST_LEN];     // 리스트의 저장소인 배열
     int numOfData;           // 저장된 데이터의 수
     int curPosition;         // 데이터 참조 위치를 기록

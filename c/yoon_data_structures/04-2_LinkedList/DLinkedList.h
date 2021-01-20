@@ -12,7 +12,7 @@ typedef struct _node {
     struct _node* next;
 } Node;
 
-typedef struct _linkedList {
+typedef struct _linkedlist {
     Node* head;  // 더미 노드를 가리키는 멤버
     Node* cur;   // 참조 및 삭제를 돕는 멤버
     Node* before;   // 삭제를 돕는 멤버

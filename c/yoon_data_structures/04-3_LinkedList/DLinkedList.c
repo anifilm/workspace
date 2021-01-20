@@ -43,7 +43,6 @@ void SInsert(List* plist, LData data) {
     pred->next = newNode;  // 새 노드의 왼쪽을 연결
 
     (plist->numOfData)++;  // 저장된 노드의 수를 하나 증가시킴
-
 }
 
 int LFirst(List* plist, LData* pdata) {
