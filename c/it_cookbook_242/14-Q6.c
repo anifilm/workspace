@@ -1,20 +1,22 @@
-// 06 13장 과제 8번의 영한사전을 바탕으로 프로그램을 빠져나갈 때 현재 사전의 내용을 파일에
-// 저장하려 한다. 프로그램이 실행되면 이전에 저장한 파일을 읽어들이려 한다. 과제 8번의 소스
-// 코드에 아래 내용을 추가하고 수정하여 이러한 기능을 구현하라.
+/* 06
+13장 과제 8번의 영한사전을 바탕으로 프로그램을 빠져나갈 때 현재 사전의 내용을 파일에 저장하려 한다. 프로그램이
+실행되면 이전에 저장한 파일을 읽어들이려 한다. 과제 8번의 소스 코드에 아래 내용을 추가하고 수정하여 이러한 기능
+을 구현하라.
 
-// 첫 실행:
-// > Enter a word to search.
-// > computation theory ([Enter])
-// > No such word in current dictionary. Enter the meaning.
-// > 계산 이론. 알고리즘의 효율에 관한 이론
-// > Enter a word to search.
-// > quit ([Enter])
+  첫 실행:
+  > Enter a word to search.
+  > computation theory ([Enter])
+  > No such word in current dictionary. Enter the meaning.
+  > 계산 이론. 알고리즘의 효율에 관한 이론
+  > Enter a word to search.
+  > quit ([Enter])
 
-// 둘째 실행:
-// > Enter a word to search.
-// > computation theory ([Enter])
-// > 계산 이론. 알고리즘의 효율에 관한 이론
-// > Enter a word to search.
+  둘째 실행:
+  > Enter a word to search.
+  > computation theory ([Enter])
+  > 계산 이론. 알고리즘의 효율에 관한 이론
+  > Enter a word to search.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

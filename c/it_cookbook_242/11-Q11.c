@@ -1,14 +1,14 @@
-// 11 char** p = (char**)malloc(sizeof(char*) * 2);
-// 위 선언에 의해 2개 요소로 이루어진 포인터 배열 p[0], p[1]을 생성할 수 있다. 이후 두 개의
-// 문자열을 별도로 입력받아 각각을 p[0], p[1]이 가리키는 배열에 저장하되 realoc을 써서 필요한
-// 만큼 공간을 확보하여 저장할 수 있다. 이후 swap 함수를 호출하여 p[0], p[1] 포인터 자체를
-// 교환한 후 p[0], p[1]이 가리키는 이름을 출력할 수 있다. 다음 프로그램을 완성하여 이러한
-// 일련의 작업을 수행하라.
-// > Enter first string.
-// > Seoul ([Enter])
-// > Enter second string.
-// > Los Angeles ([Enter])
-// > first string became Los Angeles, second string became Seoul.
+/* 11 char** p = (char**)malloc(sizeof(char*) * 2);
+위 선언에 의해 2개 요소로 이루어진 포인터 배열 p[0], p[1]을 생성할 수 있다. 이후 두 개의 문자열을 별도로 입력받아
+각각을 p[0], p[1]이 가리키는 배열에 저장하되 realoc을 써서 필요한 만큼 공간을 확보하여 저장할 수 있다. 이후 swap
+함수를 호출하여 p[0], p[1] 포인터 자체를 교환한 후 p[0], p[1]이 가리키는 이름을 출력할 수 있다. 다음 프로그램을
+완성하여 이러한 일련의 작업을 수행하라.
+  > Enter first string.
+  > Seoul ([Enter])
+  > Enter second string.
+  > Los Angeles ([Enter])
+  > first string became Los Angeles, second string became Seoul.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

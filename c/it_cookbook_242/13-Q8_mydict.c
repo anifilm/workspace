@@ -1,14 +1,15 @@
-// 08 다음 프로그램을 완성하여 영한사전을 만들어 보라. 단, 입력된 단어가 현재 사전에 있으면
-// 그 뜻을 디스플레이하고 그렇지 않으면 그 단어를 사전에 추가해야 한다. 프로그램은 "quit"를
-// 입력할 때까지 계속 실행해야 한다.
-// > Enter a word to search.
-// > confess ([Enter])
-// > 자백하다. 고백하다. 시인하다. ([Enter])
-// > Enter a word to search.
-// > confess ([Enter])
-// > 자백하다. 고백하다. 시인하다.
-// > Enter a word to search.
-// > quit
+/* 08
+다음 프로그램을 완성하여 영한사전을 만들어 보라. 단, 입력된 단어가 현재 사전에 있으면 그 뜻을 디스플레이하고 그렇지
+않으면 그 단어를 사전에 추가해야 한다. 프로그램은 "quit"를 입력할 때까지 계속 실행해야 한다.
+  > Enter a word to search.
+  > confess ([Enter])
+  > 자백하다. 고백하다. 시인하다. ([Enter])
+  > Enter a word to search.
+  > confess ([Enter])
+  > 자백하다. 고백하다. 시인하다.
+  > Enter a word to search.
+  > quit
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

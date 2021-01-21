@@ -1,3 +1,7 @@
+/* 03
+first.txt와 second.txt를 입력받은 후, first.txt 끝에 second.txt를 이어 붙여 새로운 파일인 merge.txt에 저장하는
+프로그램을 작성하라. 단, 입력 텍스트 파일이 존재하지 않을 경우 오류 메시지를 내보내고 프로그램을 종료해야 한다.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

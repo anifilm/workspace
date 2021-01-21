@@ -1,5 +1,7 @@
-// 05 다음 프로그램을 완성하여 저자명을 입력하면 그 저자의 책에 관한 모든 정보를 출력하는
-// 프로그램을 작성하라. 단, 저자는 한 번만 나타난다고 가정하라.
+/* 05
+다음 프로그램을 완성하여 저자명을 입력하면 그 저자의 책에 관한 모든 정보를 출력하는 프로그램을 작성하라. 단, 저자는
+한 번만 나타난다고 가정하라.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -39,9 +41,10 @@ int main() {
     gets(name);
     // look_up 함수의 리턴 값을 대입
     srch = look_up(name, shelf, sizeof(shelf) / sizeof(bookType));
-    if (srch != NULL)   // srch가 널이 아니면
+    if (srch != NULL) {  // srch가 널이 아니면
         // 제목, 저자, 발행연월을 출력
         printf("%s %s %d %d\n", srch->title, srch->author, srch->date.year, srch->date.month);
+    }
 
     return 0;
 }

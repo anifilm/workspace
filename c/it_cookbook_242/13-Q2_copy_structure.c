@@ -1,5 +1,6 @@
-// 02 구조체 b를 구조체 a로 복사하여 출력하기 위한 프로그램을 완성하라 단, copy_structure
-// 함수는 반드시 깊은 복사를 해야 한다.
+/* 02
+구조체 b를 구조체 a로 복사하여 출력하기 위한 프로그램을 완성하라 단, copy_structure 함수는 반드시 깊은 복사를 해야 한다.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

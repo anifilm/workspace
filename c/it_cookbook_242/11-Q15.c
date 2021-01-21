@@ -1,13 +1,14 @@
-// 15 행과 열 수를 입력받아 동적 배열을 만들고 배열 데이터를 입력받아 그것을 제곱한 값을 출력
-// 하는 프로그램을 작성하라.
-// > Enter row and column.
-// > 3 2 ([Enter])
-// > Enter the value of array elements.
-// > 1 2 3 4 5 6 ([Enter])
-// > The result is
-// > 1      4
-// > 9      16
-// > 25     36
+/* 15
+행과 열 수를 입력받아 동적 배열을 만들고 배열 데이터를 입력받아 그것을 제곱한 값을 출력하는 프로그램을 작성하라.
+  > Enter row and column.
+  > 3 2 ([Enter])
+  > Enter the value of array elements.
+  > 1 2 3 4 5 6 ([Enter])
+  > The result is
+  > 1      4
+  > 9      16
+  > 25     36
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

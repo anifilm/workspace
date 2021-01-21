@@ -1,6 +1,7 @@
-// 09 stdlib.h에 등록된 quick sort 함수와 마찬가지로 bubble sort도 범용 함수로 만들어 볼
-// 수 있다. 다음 프로그램을 완성하여 정수 배열이나 문자 배열에 대해 동일한 방식으로 bubble
-// sort를 호출할 수 있도록 만들어 보라.
+/* 09
+stdlib.h에 등록된 quick sort 함수와 마찬가지로 bubble sort도 범용 함수로 만들어 볼 수 있다. 다음 프로그램을 완성하여
+정수 배열이나 문자 배열에 대해 동일한 방식으로 bubble sort를 호출할 수 있도록 만들어 보라.
+*/
 #include <stdio.h>
 #include <string.h>
 #define STRLEN 10                   // 문자열 최대 길이

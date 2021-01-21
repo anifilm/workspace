@@ -1,5 +1,7 @@
-// 02 gets로 문장을 입력받아 정적 배열에 저장한 후 첫번째는 puts로, 두번째는 printf("%s")로,
-// 세번째는 fprintf(%s)로, 네번째는 printf("%c")로 출력하는 프로그램을 작성하라.
+/* 02
+gets로 문장을 입력받아 정적 배열에 저장한 후 첫번째는 puts로, 두번째는 printf("%s")로, 세번째는 fprintf(%s)로,
+네번째는 printf("%c")로 출력하는 프로그램을 작성하라.
+*/
 #include <stdio.h>
 #include <string.h>
 

@@ -1,4 +1,6 @@
-// 05 두 정수의 합을 구하는 다음 프로그램을 완성하라
+/* 05
+두 정수의 합을 구하는 다음 프로그램을 완성하라.
+*/
 #include <stdio.h>
 
 int add_numbers(int x, int y) {
