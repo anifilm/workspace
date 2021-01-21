@@ -3,8 +3,8 @@
 #define __C_LINKED_LIST_H__
 #include "Employee.h"
 
-#define TRUE  1
-#define FALSE 0
+#define TRUE   1
+#define FALSE  0
 
 typedef Employee* LData;
 

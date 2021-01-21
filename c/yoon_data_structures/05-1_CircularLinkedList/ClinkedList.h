@@ -2,8 +2,8 @@
 #ifndef __C_LINKED_LIST_H__
 #define __C_LINKED_LIST_H__
 
-#define TRUE  1
-#define FALSE 0
+#define TRUE   1
+#define FALSE  0
 
 typedef int LData;
 
