@@ -1,7 +1,9 @@
-// 19 입력 문장에서 영어 모음이 몇 번 나오는지를 판단하여 출력하는 프로그램을 작성해 보라.
-// > Enter a sentence.
-// > What a beautiful day. ([Enter])
-// > Vowel appears 8 times.
+/* 19
+입력 문장에서 영어 모음이 몇 번 나오는지를 판단하여 출력하는 프로그램을 작성해 보라.
+  > Enter a sentence.
+  > What a beautiful day. ([Enter])
+  > Vowel appears 8 times.
+*/
 #include <stdio.h>
 
 int is_vowel(char c) {

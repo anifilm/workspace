@@ -89,7 +89,10 @@ int main() {
 }
 
 /*
-TODO:
-닫는 괄호가 하나 더 많은 경우 "Illegal expression"을 출력하지 않고
-"Stack empty"를 출력하는 문제를 수정할 필요가 있음
+
+((ch = getchar()) != 'q' && ((a == b) && (c != d)))
+
+닫는 괄호가 더 많은 경우에는 "Illegal expression"을 출력하지 않고
+"Stack empty"를 출력하게 된다.
+
 */

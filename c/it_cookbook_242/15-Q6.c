@@ -24,7 +24,7 @@
 
 struct stack {
     int top;
-    int data[MAX];
+    char data[MAX];
 };
 typedef struct stack stackType;
 
@@ -41,36 +41,36 @@ int is_full(stackType* sp) {
     return (sp->top == (MAX - 1));
 }
 
-void push(stackType* sp, const int item) {
+void push(stackType* sp, const char item) {
     sp->data[++(sp->top)] = item;
 }
 
-int pop(stackType* sp) {
+char pop(stackType* sp) {
     return sp->data[(sp->top)--];
 }
 
 int main() {
 
     char ch;
-    stackType mystack;
+    stackType mystack1;
     stackType mystack2;
 
     printf("Enter a string.\n");
-    init(&mystack);
+    init(&mystack1);
     init(&mystack2);
     while ((ch = getchar()) != '\n') {
         if (ch == '*') {
-            if (is_empty(&mystack)) {
+            if (is_empty(&mystack1)) {
                 printf("Stack empty.\n");
                 exit(1);
             } else
-                pop(&mystack);
+                pop(&mystack1);
         } else
-            push(&mystack, ch);
+            push(&mystack1, ch);
     }
 
-    while (!is_empty(&mystack))
-        push(&mystack2, pop(&mystack));
+    while (!is_empty(&mystack1))
+        push(&mystack2, pop(&mystack1));
 
     while (!is_empty(&mystack2))
         printf("%c", pop(&mystack2));

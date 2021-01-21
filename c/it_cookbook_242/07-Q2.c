@@ -1,15 +1,17 @@
-// 02 본문에서 언급한 달력 프로그램을 마저 완성하라. 단, print the calendar 부분을 담당하는 별도의
-// 함수를 만들되 그 함수만 따로 떼어 테스트하는 프로그램을 작성해야 한다. 이후 모든 함수를 모아서
-// 전체적인 프로그램을 완성한다.
+/* 02
+본문에서 언급한 달력 프로그램을 마저 완성하라. 단, print the calendar 부분을 담당하는 별도의 함수를
+만들되 그 함수만 따로 떼어 테스트하는 프로그램을 작성해야 한다. 이후 모든 함수를 모아서 전체적인
+프로그램을 완성한다.
+*/
 #include <stdio.h>
-#define true 1
-#define false 0
+#define TRUE   1
+#define FALSE  0
 
 int leap_year(int y) {
-    if ((y % 4 == 0 && y % 100 != 0) || (y % 4 == 0 && y % 400 == 0))
-        return true;
+    if (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0))
+        return TRUE;
     else
-        return false;
+        return FALSE;
 }
 
 // 서기 1년 1월 1일 부터 작년 말까지의 날짜 수를 돌려주는 함수

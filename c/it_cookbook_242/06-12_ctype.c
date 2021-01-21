@@ -21,7 +21,7 @@ int main() {
 
 /*
 
-    함수 원형            의미              리턴값
+함수 원형            의미              리턴값
 int isalpha(int)    알파벳인지 확인    1(true), 0(false)
 int isdigit(int)    숫자인지 확인      1(true), 0(false)
 int islower(int)    소문자인지 확인    1(true), 0(false)

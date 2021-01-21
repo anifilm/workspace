@@ -13,7 +13,7 @@
 
 struct stack {
     int top;
-    int data[MAX];
+    char data[MAX];
 };
 typedef struct stack stackType;
 
@@ -30,11 +30,11 @@ int is_full(stackType* sp) {
     return (sp->top == (MAX - 1));
 }
 
-void push(stackType* sp, const int item) {
+void push(stackType* sp, const char item) {
     sp->data[++(sp->top)] = item;
 }
 
-int pop(stackType* sp) {
+char pop(stackType* sp) {
     return sp->data[(sp->top)--];
 }
 
@@ -50,15 +50,17 @@ int main() {
             if (is_full(&mystack)) {    // 스택이 꽉 찼으면
                 printf("Stack full.\n");
                 exit(1);
-            } else
+            } else {
                 push(&mystack, ch);     // 스택 푸시
+            }
         }
         if (ch == ')') {
             if (is_empty(&mystack)) {   // 스택이 비었으면
                 printf("Stack empty.\n");
                 exit(1);
-            } else
+            } else {
                 pop(&mystack);          // 스택 팝
+            }
         }
     }
     is_empty(&mystack) ? printf("Legal expression.\n") : printf("Illegal expression.\n");
@@ -67,7 +69,10 @@ int main() {
 }
 
 /*
-TODO:
-닫는 괄호가 하나 더 많은 경우 "Illegal expression"을 출력하지 않고
-"Stack empty"를 출력하는 문제를 수정할 필요가 있음
+
+((ch = getchar()) != 'q' && ((a == b) && (c != d)))
+
+닫는 괄호가 더 많은 경우에는 "Illegal expression"을 출력하지 않고
+"Stack empty"를 출력하게 된다.
+
 */

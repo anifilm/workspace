@@ -1,7 +1,9 @@
-// 02 아래 함수를 호출하되 알파벳 소문자 하나를 입력받아 그것이 자음이면 Consonant라고
-// 출력하고 모음이면 Vowel이라고 출력하는 프로그램을 작성하라. 입출력 형식은 자유로이
-// 할 수 있다.
-// int is_vowel(char c)
+/* 02
+아래 함수를 호출하되 알파벳 소문자 하나를 입력받아 그것이 자음이면 Consonant라고 출력하고 모음이면 Vowel이라고
+출력하는 프로그램을 작성하라. 입출력 형식은 자유로이 할 수 있다.
+  int is_vowel(char c);
+
+*/
 #include <stdio.h>
 
 int is_vowel(char c) {

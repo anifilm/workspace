@@ -1,9 +1,11 @@
-// 10 양의 정수 a, b를 입력받아 a의 b 제곱을 출력하는 프로그램을 작성하되 재귀 함수로 구현해
-// 보라.
-// int power(int a, int b);
-// > Enter base and multiplier.
-// > 2 5 ([Enter])
-// > 2 to the power of 5 is 32
+/* 10
+양의 정수 a, b를 입력받아 a의 b 제곱을 출력하는 프로그램을 작성하되 재귀 함수로 구현해 보라.
+  int power(int a, int b);
+
+  > Enter base and multiplier.
+  > 2 5 ([Enter])
+  > 2 to the power of 5 is 32
+*/
 #include <stdio.h>
 
 int power(int a, int b) {

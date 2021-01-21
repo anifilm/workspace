@@ -1,5 +1,6 @@
-// 06 다음 소스코드를 실행해 보고 a의 결과값이 왜 그렇게 되는지 소스코드에 주석을 달아
-// 설명하라.
+/* 06
+다음 소스코드를 실행해 보고 a의 결과값이 왜 그렇게 되는지 소스코드에 주석을 달아 설명하라.
+*/
 #include <stdio.h>
 
 int main() {
@@ -20,5 +21,5 @@ int main() {
 
     printf("After calaulation, a becomes %d\n", a);
 
-	return 0;
+    return 0;
 }

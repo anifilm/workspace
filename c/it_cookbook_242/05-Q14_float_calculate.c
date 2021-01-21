@@ -1,12 +1,14 @@
-// 14 계산기 프로그램을 수정하여 프로그램이 시작하면 부동 소수 연산인지 정수 연산인지 물어본 후에
-// 결과를 출력하는 프로그램을 작성하라.
-// 힌트 부동 소수 버전의 float_calualte와 정수 버전의 int_calculate라는 두 새의 함수를 작성하고
-// 어떤 계산을 원하는지에 따라 서로 다른 함수를 호출해야 한다.
-// > Enter 1 for floating point calculation, 2 for integer calculation.
-// > 2 ([Enter])
-// > Enter an expression. For EXAMPLE, 2 + 5
-// > 23 % 4 ([Enter])
-// > 23 % 4 = 3
+/* 14
+계산기 프로그램을 수정하여 프로그램이 시작하면 부동 소수 연산인지 정수 연산인지 물어본 후에 결과를 출력하는
+프로그램을 작성하라.
+힌트 부동 소수 버전의 float_calualte와 정수 버전의 int_calculate라는 두 새의 함수를 작성하고 어떤 계산을
+원하는지에 따라 서로 다른 함수를 호출해야 한다.
+  > Enter 1 for floating point calculation, 2 for integer calculation.
+  > 2 ([Enter])
+  > Enter an expression. For EXAMPLE, 2 + 5
+  > 23 % 4 ([Enter])
+  > 23 % 4 = 3
+*/
 #include <stdio.h>
 
 void float_calculate(double op1, char op, double op2) {

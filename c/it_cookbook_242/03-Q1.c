@@ -1,4 +1,11 @@
-// 01 두개의 자연수를 입력받아 첫번째 수를 두번째 수로 나눈 몫과 나머지를 출력하라.
+/* 01
+두개의 자연수를 입력받아 첫번째 수를 두번째 수로 나눈 몫과 나머지를 출력하라.
+  > Enter dividend.
+  > 21 ([Enter])
+  > Enter divisor.
+  > 4 ([Enter])
+  > Quotient is 5. Remainder is 1.
+*/
 #include <stdio.h>
 
 int main() {

@@ -7,19 +7,16 @@
 
 // 이 파일 내부에서만 사용할 함수이기 때문에 static으로 선언
 static void increment(int *value) {
-    // 참조 호출에 의해 배열 원본 요소를 1만큼 증가시킴
-    (*value)++;
+    (*value)++;  // 참조 호출에 의해 배열 원본 요소를 1만큼 증가시킴
 }
-
 static void decrement(int *value) {
-    // 참조 호출에 의해 배열 원본 요소를 1만큼 감소시킴
-    (*value)--;
+    (*value)--;  // 참조 호출에 의해 배열 원본 요소를 1만큼 감소시킴
 }
 
 void for_each_element(int v[], int len, void (*fp)(int*)) {
     int i;                      // 이 함수는 단순히 배열 각 요소에 대해
     for (i = 0; i < len; i++)   // 전달된 함수를 가하는 역할을 수행
-        fp(&v[i]);               // 전달된 어떤 함수라도 실행하기 때문에 범용
+        fp(&v[i]);              // 전달된 어떤 함수라도 실행하기 때문에 범용
 }
 
 int main() {
