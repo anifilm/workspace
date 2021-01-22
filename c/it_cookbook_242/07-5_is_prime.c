@@ -1,13 +1,13 @@
 #include <stdio.h>
-#define true 1
-#define false 0
+#define TRUE   1
+#define FALSE  0
 
 int is_prime(int n) {
-    int divider, remainder, prime = true;
+    int divider, remainder, prime = TRUE;
     for (divider = 2; divider < n; divider++) {
         remainder = n % divider;
         if (remainder == 0) {
-            prime = false;
+            prime = FALSE;
             break;
         }
     }

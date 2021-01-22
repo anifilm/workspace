@@ -1,12 +1,12 @@
 #include <stdio.h>
-#define true 1
-#define false 0
+#define TRUE   1
+#define FALSE  0
 
 int leap_year(int y) {
-    if ((y % 4 == 0 && y % 100 != 0) || (y % 4 == 0 && y % 400 == 0))
-        return true;
+    if (y % 4 == 0 && (y % 100 != 0 || y % 400 == 0))
+        return TRUE;
     else
-        return false;
+        return FALSE;
 }
 
 // 금월 1년 1월 1일 부터 전달 말까지의 날짜 수

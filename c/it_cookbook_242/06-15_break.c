@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define true 1
-#define false 0
+#define TRUE   1
+#define FALSE  0
 
 int main() {
 
@@ -10,15 +10,14 @@ int main() {
     scanf("%d", &max);
 
     for (num = 2; num <= max; num++) {
-        is_prime = true;
+        is_prime = TRUE;
         for (i = 2; i < num; i++) {
             if (num % i == 0) {
-                is_prime = false;
+                is_prime = FALSE;
                 break;
             }
         }
-        is_prime ? printf("%d is a prime number.\n", num) :
-                   printf("%d is NOT a prime number.\n", num);
+        is_prime ? printf("%d is a prime number.\n", num) : printf("%d is NOT a prime number.\n", num);
     }
 
     return 0;

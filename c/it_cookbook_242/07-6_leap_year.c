@@ -1,15 +1,15 @@
 #include <stdio.h>
-#define true 1
-#define false 0
+#define TRUE   1
+#define FALSE  0
 
 // 윤년인지 평년인지 판단하는 함수
 int leap_year(int y) {
     if ((y % 4 == 0 && y % 100 != 0) || (y % 4 == 0 && y % 400 == 0))
         // 4로 나누어 떨어지는 동시에 100으로 나누어 떨어지지 않거나,
         // 4로 나누어 떨어지는 동시에 400으로 나누어 떨어지면 윤년
-        return true;
+        return TRUE;
     else
-        return false;
+        return FALSE;
 }
 
 int main() {
