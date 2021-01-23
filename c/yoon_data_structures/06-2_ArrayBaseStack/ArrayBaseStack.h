@@ -1,3 +1,4 @@
+// 배열 기반 스택의 구현 논리와 헤더파일 정의
 #ifndef __AB_STACK_H__
 #define __AB_STACK_H__
 

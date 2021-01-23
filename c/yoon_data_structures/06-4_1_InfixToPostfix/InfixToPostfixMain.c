@@ -1,4 +1,3 @@
-// 중위 표기법을 후위 표기법으로 바꾸는 프로그램의 구현
 #include <stdio.h>
 #include "InfixToPostfix.h"
 

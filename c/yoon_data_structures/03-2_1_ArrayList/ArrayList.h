@@ -1,4 +1,4 @@
-// 리스트! 배열을 기반으로 구현하기 1: 헤더 파일의 정의
+// 배열 기반 리스트 헤더 파일의 정의
 #ifndef __ARRAY_LIST_H__
 #define __ARRAY_LIST_H__
 

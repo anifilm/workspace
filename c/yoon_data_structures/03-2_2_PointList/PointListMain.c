@@ -1,4 +1,3 @@
-// 리스트에 구조체 변수 저장하기 2: 구조체 Point와 관련 함수들의 정의
 #include <stdio.h>
 #include <stdlib.h>
 #include "ArrayList.h"

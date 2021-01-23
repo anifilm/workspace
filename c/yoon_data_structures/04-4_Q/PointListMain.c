@@ -1,4 +1,3 @@
-// 정렬의 기준을 설정하기 위한 함수 정의
 #include <stdio.h>
 #include <stdlib.h>
 #include "DLinkedList.h"

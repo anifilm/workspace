@@ -1,4 +1,3 @@
-// 변형된 원형 연결 리스트의 구현
 #include <stdio.h>
 #include "CLinkedList.h"
 

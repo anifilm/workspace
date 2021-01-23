@@ -1,4 +1,3 @@
-// 더미 노드(Dummy Node) 기반의 단순 연결 리스트 구현
 #ifndef __D_LINKED_LIST_H__
 #define __D_LINKED_LIST_H__
 #include "Point.h"

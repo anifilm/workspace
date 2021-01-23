@@ -1,4 +1,3 @@
-// 변형된 원형 연결 리스트의 헤더파일
 #ifndef __C_LINKED_LIST_H__
 #define __C_LINKED_LIST_H__
 

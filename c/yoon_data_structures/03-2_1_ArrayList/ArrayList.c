@@ -1,4 +1,4 @@
-// 배열 기반의 리스트 구현 하나로 묶기
+// 배열 기반의 리스트 구현
 #include <stdio.h>
 #include "ArrayList.h"
 

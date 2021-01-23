@@ -1,3 +1,4 @@
+// 연결 리스트 기반 스택의 논리와 헤더파일 정의
 #ifndef __LB_STACK_H__
 #define __LB_STACK_H__
 

@@ -1,3 +1,4 @@
+// 배열 기반 스택의 구현
 #include <stdio.h>
 #include <stdlib.h>
 #include "ArrayBaseStack.h"

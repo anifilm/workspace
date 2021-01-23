@@ -1,4 +1,3 @@
-// 후위 표기벅으로 표현된 수식을 계산하는 프로그램의 구현
 #include <stdio.h>
 #include "PostCalculator.h"
 
