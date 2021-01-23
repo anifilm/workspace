@@ -11,7 +11,7 @@ int main() {
     int i, word_count = 0, word_len = 0;
 
     printf("문자열 입력: ");
-    while (scanf("%[^\n]s", str) == 0) {
+    while (scanf_s("%[^\n]s", str, MAX_LENGTH - 1) == 0) {
         printf("문자열이 제대로 입력되지 않았습니다.\n");
         rewind(stdin);
         printf("문자열을 다시 입력: ");
@@ -21,7 +21,7 @@ int main() {
     for (i = 0; str[i] != 0 && word_count < MAX_WORD_COUNT; i++) {
         if (str[i] == ' ') {
             // 공백 문자를 만나면 하나의 단어를 완성하기 위해
-            // 구성죽인 문자열의 끝에 'NULL 문자'를 추가한다
+            // 구성중인 문자열의 끝에 'NULL 문자'를 추가한다.
             word_list[word_count][word_len] = 0;
             word_count++;
             word_len = 0;   // 다음 단어를 구성하기 위해 길이를 초기화
