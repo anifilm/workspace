@@ -1,0 +1,19 @@
+문제 07-1 [덱을 기반으로 큐를 구현하기]
+여러분도 덱을 큐처럼 사용할 수 있다는 사실을 알고 있을 것이다. 따라서 덱을 이용해서 큐를 구현해보기로 하겠다.
+다음 두 파일을 만들어서 덱을 기반으로 하여 큐를 구현해 보자.
+
+ - 큐의 구현을 위한 헤더파일    DequeBaseQueue.h
+ - 큐를 구현하고 있는 소스파일  DequeBaseQueue.c
+
+큐의 구현에 사용되는 덱의 헤더파일과 소스파일은 다음과 같다. 이 둘은 앞서 우리가 만든것들이다.
+
+ - 큐의 구현에 사용되는 헤더파일 Deque.h
+ - 큐의 구현에 사용되는 소스파일 Deque.c
+
+그리고 큐의 헤더파일에는 다음 함수들이 선언되어야 한다.
+
+ - void QueueInit(Queue* pq);            큐의 초기화
+ - int QIsEmpty(Queue* pq);              큐가 비었는지 확인
+ - void Enqueue(Queue* pq, Data data);   enqueue 연산의 함수
+ - Data Dequeue(Queue* pq);              dequeue 연산의 함수
+ - Data QPeek(Queue* pq);                peek 연산의 함수
