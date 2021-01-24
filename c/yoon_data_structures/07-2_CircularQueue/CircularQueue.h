@@ -2,8 +2,8 @@
 #ifndef __C_QUEUE_H__
 #define __C_QUEUE_H__
 
-#define TRUE       1
-#define FALSE      0
+#define TRUE   1
+#define FALSE  0
 
 #define QUE_LEN  100
 typedef int Data;

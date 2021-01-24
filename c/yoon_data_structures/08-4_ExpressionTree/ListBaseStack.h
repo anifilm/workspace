@@ -1,11 +1,11 @@
-// 연결 리스트 기반 스택의 구현 논리와 헤더파일 정의
 #ifndef __LB_STACK_H__
 #define __LB_STACK_H__
+#include "BinaryTree2.h"
 
 #define TRUE   1
 #define FALSE  0
 
-typedef int Data;
+typedef BTreeNode* Data;
 
 typedef struct _node {  // 연결 리스트의 노드를 표현한 구조체
     Data data;

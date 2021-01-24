@@ -1,8 +1,8 @@
 #ifndef __NAME_CARD_H__
 #define __NAME_CARD_H__
 
-#define NAME_LEN  30
-#define PHONE_LEN 30
+#define NAME_LEN   30
+#define PHONE_LEN  30
 
 typedef struct _namecard {
     char name[NAME_LEN];

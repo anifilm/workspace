@@ -2,8 +2,8 @@
 #define __ARRAY_LIST_H__
 #include "NameCard.h"
 
-#define TRUE        1     // '참'을 표현하기 위한 매크로 정의
-#define FALSE       0     // '거짓'을 표현하기 위한 매크로 정의
+#define TRUE   1  // '참'을 표현하기 위한 매크로 정의
+#define FALSE  0  // '거짓'을 표현하기 위한 매크로 정의
 
 #define LIST_LEN  100     // 리스트의 최대 크기
 typedef NameCard* LData;  // LData에 대한 typedef 선언 (NameCard*로 수정됨)
