@@ -1,5 +1,4 @@
 // 연결 리스트에서의 정렬기준 설정과 관련된 부분
-#include <stdio.h>
 #include <stdlib.h>
 #include "DLinkedList.h"
 

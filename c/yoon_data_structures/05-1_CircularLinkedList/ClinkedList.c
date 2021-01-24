@@ -1,5 +1,4 @@
 // 변형된 원형 연결 리스트의 구현
-#include <stdio.h>
 #include <stdlib.h>
 #include "CLinkedList.h"
 

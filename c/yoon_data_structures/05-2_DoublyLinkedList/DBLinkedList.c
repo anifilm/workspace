@@ -1,5 +1,4 @@
 // 양방향 연결 리스트의 구현
-#include <stdio.h>
 #include <stdlib.h>
 #include "DBLinkedList.h"
 
