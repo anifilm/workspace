@@ -15,7 +15,7 @@ int main() {
 
     int arr[] = {3, 5, 2, 4, 9};
     int idx;
-    int len = sizeof(arr)/sizeof(int);
+    int len = sizeof(arr) / sizeof(int);
 
     idx = LSearch(arr, len, 4);
     if (idx == -1)

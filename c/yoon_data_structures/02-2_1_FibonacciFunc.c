@@ -12,8 +12,7 @@ int Fibo(int n) {
 
 int main() {
 
-    int i;
-    for (i = 1; i < 15; i++)
+    for (int i = 1; i < 15; i++)
         printf("%d ", Fibo(i));
     printf("\n");
 

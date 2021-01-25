@@ -6,7 +6,6 @@ int main() {
     int arr[10];
     int readCount = 0;
     int readData;
-    int i;
 
     while (1) {
         printf("자연수 입력: ");
@@ -15,7 +14,7 @@ int main() {
         arr[readCount++] = readData;
     }
 
-    for (i = 0; i < readCount; i++)
+    for (int i = 0; i < readCount; i++)
         printf("%d ", arr[i]);
     printf("\n");
 

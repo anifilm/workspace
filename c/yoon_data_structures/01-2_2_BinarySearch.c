@@ -24,7 +24,7 @@ int main() {
 
     int arr[] = {1, 3, 5, 7, 9};
     int idx;
-    int len = sizeof(arr)/sizeof(int);
+    int len = sizeof(arr) / sizeof(int);
 
     idx = BSearch(arr, len, 7);
     if (idx == -1)

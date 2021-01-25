@@ -31,21 +31,21 @@ int main() {
     int idx;
 
     // 배열 arr1을 대상으로, 저장되지 않은 정수 1을 찾으라고 명령
-    idx = BSearch(arr1, sizeof(arr1)/sizeof(int), 1);
+    idx = BSearch(arr1, sizeof(arr1) / sizeof(int), 1);
     if (idx == -1)
         printf("탐색 실패\n");
     else
         printf("타겟 저장 인덱스: %d\n", idx);
 
     // 배열 arr2을 대상으로, 저장되지 않은 정수 1을 찾으라고 명령
-    idx = BSearch(arr2, sizeof(arr2)/sizeof(int), 1);
+    idx = BSearch(arr2, sizeof(arr2) / sizeof(int), 1);
     if (idx == -1)
         printf("탐색 실패\n");
     else
         printf("타겟 저장 인덱스: %d\n", idx);
 
     // 배열 arr3을 대상으로, 저장되지 않은 정수 1을 찾으라고 명령
-    idx = BSearch(arr3, sizeof(arr3)/sizeof(int), 1);
+    idx = BSearch(arr3, sizeof(arr3) / sizeof(int), 1);
     if (idx == -1)
         printf("탐색 실패\n");
     else
