@@ -15,7 +15,7 @@ public:
     }
 };
 
-class Police{
+class Police {
 private:
     int handcuffs;  // 소유한 수값의 수
     Gun* pistol;    // 소유하고 있는 권총
