@@ -1,7 +1,7 @@
 /*
 파일이름: AccountHandler.cpp
 작성자: 임채영
-업데이트: [2020-12-31] 파일버전 0.7
+업데이트: [2021-01-25] 파일버전 0.8
 */
 #include "BankingCommonDecl.h"
 #include "AccountHandler.h"
