@@ -1,5 +1,5 @@
-#ifndef __POINT_TEMPLATE_H_
-#define __POINT_TEMPLATE_H_
+#ifndef __POINT_TEMPLATE_H__
+#define __POINT_TEMPLATE_H__
 
 template <class T>
 class Point {
