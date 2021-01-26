@@ -1,6 +1,6 @@
+// System.out.println에 대한 다양한 활용
 class SystemOutPrintln {
     public static void main(String[] args) {
-
         System.out.println(7);
         System.out.println(3.15);
         System.out.println("3 + 5 = " + 8);
