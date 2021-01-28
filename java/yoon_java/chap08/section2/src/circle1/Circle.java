@@ -1,12 +1,12 @@
 package src.circle1;
 
 public class Circle {
-    double radius;
     final double PI;
+    double radius;
 
     public Circle(double r) {
-        radius = r;
         PI = 3.14;
+        radius = r;
     }
     // 원의 넓이 반환
     public double getArea() {
