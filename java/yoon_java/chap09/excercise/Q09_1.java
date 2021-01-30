@@ -8,13 +8,13 @@
 
  */
 class Point {
-    int xpos, ypos;
+    int xPos, yPos;
 
     public Point(int x, int y) {
-        xpos = x; ypos = y;
+        xPos = x; yPos = y;
     }
     public void showPointInfo() {
-        System.out.println("[" + xpos + ", " + ypos + "]");
+        System.out.println("[" + xPos + ", " + yPos + "]");
     }
 }
 
