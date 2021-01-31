@@ -17,9 +17,15 @@ def get_number_of_subjects():
     # """
     #
     # ===Modify codes below=================
-    number_of_subjects = None
+    number_of_subjects = int(input("과목수를 입력하세요: "))
     # ======================================
     return number_of_subjects
+
+
+# get_average_score 함수 생성하기
+def get_average_score(total_score, number_of_subjects):
+    average_score = total_score / number_of_subjects
+    return average_score
 
 
 # Help Funtion - 수정하지 말 것
@@ -57,7 +63,7 @@ def main():
     number_of_subjects = get_number_of_subjects()
     total_score = sum_of_scores(number_of_subjects)
     average_score = get_average_score(
-        total_score=total_score, number_of_subjects=number_of_subjects)
+        total_score = total_score, number_of_subjects = number_of_subjects)
     print_exam_grader(average_score)
 
     print("===========================")
