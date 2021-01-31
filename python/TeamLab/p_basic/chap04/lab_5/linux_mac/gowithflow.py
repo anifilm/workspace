@@ -20,7 +20,7 @@ def sum_of_list(list_data):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    result = sum(list_data)
 
     # ==================================
     return result
@@ -51,7 +51,8 @@ def merge_and_sort(list_data_a, list_data_b):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    result = list_data_a + list_data_b
+    result.sort()
 
     # ==================================
     return result
@@ -82,7 +83,14 @@ def delete_a_list_element(list_data, element_value):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    result = 0
+    for i in list_data:
+        if (i != element_value):
+            continue
+        else:
+            list_data.remove(element_value)
+            result = list_data
+            break
 
     # ==================================
     return result
@@ -110,7 +118,10 @@ def comparison_list_size(list_data_a, list_data_b):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    if len(list_data_a) >= len(list_data_b):
+        result = list_data_a
+    else:
+        result = list_data_b
 
     # ==================================
     return result
@@ -137,7 +148,10 @@ def odd_even_check(a, b):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    if (a + b) % 2 == 0:
+        result = "Even"
+    else:
+        result = "Odd"
 
     # ==================================
     return result
@@ -162,7 +176,10 @@ def discount_price(price):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    if price >= 100000:
+        result = price * 0.8
+    else:
+        result = price * 0.9
 
     # ==================================
     return result
@@ -188,7 +205,7 @@ def find_smallest_value(list_data):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    result = min(list_data)
 
     # ==================================
     return result
@@ -212,7 +229,11 @@ def binary_converter(decimal_number):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    result = ''
+    while decimal_number > 0:
+        remainder = decimal_number % 2
+        decimal_number = decimal_number // 2
+        result = str(remainder) + result
 
     # ==================================
     return result.strip()
@@ -227,7 +248,7 @@ def number_of_cases(list_data):
     #     ※ 반환되는 list에는 문자열 Type만 들어 있으며
     #        list_data 안에 숫자형 값이 있을 경우 문자열로 변환하여 처리
     #     ※ 중복되는 값은 삭제된 후 반환 되어야 함
-    #     ※ 최종결과는 Sorting된 후에 반환되어야 함 
+    #     ※ 최종결과는 Sorting된 후에 반환되어야 함
     # Examples:
     #   >>> import gowithflow as gwf
     #   >>> a = ['a', 'b', 'c']
@@ -244,7 +265,12 @@ def number_of_cases(list_data):
     # 한 줄 이상의 코드로 작성 가능하나,
     # 반드시 결과 값을 result 변수에 할당하여 반환
 
-    result = None
+    result = []
+    for i in list_data:
+        for j in list_data:
+            result.append(str(i) + str(j))
+    result = list(set(result))
+    result.sort()
 
     # ==================================
     return result
