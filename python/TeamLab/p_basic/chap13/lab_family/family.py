@@ -2,7 +2,7 @@ line_counter = 0    # 파일의 총 줄수를 세는 변수
 data_header = []    # data의 필드값을 저장하는 list
 family_list = []    # cutomer 개별 List를 저장하는 List
 
-with open("family_data.csv") as family_data:   # customer.csv 파일을 customer_data 객체에 저장
+with open("./family_data.csv") as family_data:   # customer.csv 파일을 customer_data 객체에 저장
 
     while 1:
         data = family_data.readline()     # customer.csv에 한줄씩 data 변수에 저장
