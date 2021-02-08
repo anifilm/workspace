@@ -1,9 +1,10 @@
 class Person:
-    # 멤버변수 선언
-    age = None
-    name = None
-    is_married = None
-    number_of_children = None
+    # 생성자를 통한 멤버변수 선언 및 초기화
+    def __init__(self):
+        self.age = None
+        self.name = None
+        self.is_married = None
+        self.number_of_children = None
 
 
 def main():

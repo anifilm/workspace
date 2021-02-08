@@ -1,11 +1,12 @@
 class Order:
-    # 멤버변수 선언
-    order_id = None
-    customer_id = None
-    order_date = None
-    customer_name = None
-    product_id = None
-    shipping_address = None
+    # 생성자를 통한 멤버변수 선언 및 초기화
+    def __init__(self):
+        self.order_id = None
+        self.customer_id = None
+        self.order_date = None
+        self.customer_name = None
+        self.product_id = None
+        self.shipping_address = None
 
 
 def main():
