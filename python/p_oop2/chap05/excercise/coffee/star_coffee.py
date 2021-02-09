@@ -1,4 +1,4 @@
-from .menu import *
+from menu import Menu
 
 class StarCoffee:
     def __init__(self):

@@ -1,4 +1,4 @@
-from .menu import *
+from menu import Menu
 
 class BeanCoffee:
     def __init__(self):

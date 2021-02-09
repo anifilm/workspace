@@ -1,5 +1,7 @@
-from coffee_module.menu import Menu
-from coffee_module import *
+from person import Person
+from star_coffee import StarCoffee
+from bean_coffee import BeanCoffee
+from menu import Menu
 
 
 def main():
