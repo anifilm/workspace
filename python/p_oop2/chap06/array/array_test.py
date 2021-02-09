@@ -1,3 +1,5 @@
+# 파이썬 리스트 사용 (자바 배열 예제)
+
 def main():
     arr = list(range(10))  # 길이가 10인 리스트 생성
     total = 0; num = 1
