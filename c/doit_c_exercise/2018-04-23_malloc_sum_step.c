@@ -18,11 +18,11 @@ int main() {
                 scanf("%d", p + i);
             }
 
-            printf("\n입력된 값 확인: ");
-            for (i = 0; i < count; i++) {
-                printf("%d, ", *(p + i));
+            printf("\n입력된 값 확인: %d", *(p));
+            for (i = 1; i < count; i++) {
+                printf(", %d", *(p + i));
             }
-            printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+            printf("\n");
 
             printf("\n입력된 값을 모두 합산 합니다.\n");
             for (i = 0; i < count; i++) {

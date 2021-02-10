@@ -19,10 +19,10 @@ int main() {
         }
     }
 
-    printf("sorted data[7] = {");
-    for (i = 0; i < 7; i++)
-        printf("%d, ", data[i]);
-    printf("\b\b}\n");  // 마지막 출력에서 콤마(,) 삭제 후 } 추가
+    printf("sorted data[7] = {%d", data[0]);
+    for (i = 1; i < 7; i++)
+        printf(", %d", data[i]);
+    printf("}\n");
 
     return 0;
 }

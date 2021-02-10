@@ -14,9 +14,11 @@ int main() {
     }
     printf("\n");
 
-    for (i = 0; i < count; i++)
-        printf("%d, ", num[i]);
-    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+    // 배열 출력
+    printf("[%d", num[0]);
+    for (i = 1; i < count; i++)
+        printf(", %d", num[i]);
+    printf("]\n");
 
     return 0;
 }

@@ -9,6 +9,7 @@ int main() {
     for (i = 0;i < MAX_ITEM; i++) {
         printf("%d번 정수값 입력: ", i + 1);
         scanf("%d", &temp);
+        // 정수 입력시 홀수는 앞에서 부터 짝수는 뒤에서 부터 저장한다.
         if (temp % 2 == 1)
             data[odd_count++] = temp;
         else {
@@ -17,10 +18,10 @@ int main() {
         }
     }
 
-    printf("\n배열에 저장된 값 출력: ");
-    for (i = 0; i < MAX_ITEM; i++)
-        printf("%d, ", data[i]);
-    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+    printf("\n배열에 저장된 값 출력: %d", data[0]);
+    for (i = 1; i < MAX_ITEM; i++)
+        printf(", %d", data[i]);
+    printf("\n");
 
     printf("홀수의 개수: %d개, 짝수의 개수: %d개\n", odd_count, even_count);
 

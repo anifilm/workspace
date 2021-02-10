@@ -7,14 +7,15 @@ int main() {
     int num_list[MAX_COUNT] = {5, 2, 6, 1, 3};
     int i, min, max;
 
-    printf("배열 항목: ");
+    // 배열 항목 출력, 최대값과 최소값 저장
     min = max = num_list[0];
-    for (i = 0; i < MAX_COUNT; i++) {
-        printf("%d, ", num_list[i]);
+    printf("배열 항목: %d", num_list[0]);
+    for (i = 1; i < MAX_COUNT; i++) {
+        printf(", %d", num_list[i]);
         if (num_list[i] < min) min = num_list[i];
         if (num_list[i] > max) max = num_list[i];
     }
-    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+    printf("\n");
 
     printf("최소값: %d, 최대값: %d\n", min, max);
 

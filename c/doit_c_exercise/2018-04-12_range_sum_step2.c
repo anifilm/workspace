@@ -11,17 +11,19 @@ int main() {
     scanf("%d", &end);
 
     printf("%d ~ %d: ", begin, end);
+    // 범위 숫자를 출력
+    printf("%d", begin++);
     for ( ; begin <= end; begin++) {
-        printf("%d, ", begin);
+        printf(", %d", begin);
         if (begin % 2 == 1)
             odd_sum += begin;
         else
             even_sum += begin;
         total_sum += begin;
     }
-    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+    printf("\n");
 
-    printf("\nOdd Sum = %d, Even Sum = %d\n", odd_sum, even_sum);
+    printf("Odd Sum = %d, Even Sum = %d\n", odd_sum, even_sum);
 
     printf("Total Sum = %d\n", total_sum);
 

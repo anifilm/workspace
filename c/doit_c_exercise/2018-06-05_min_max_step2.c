@@ -17,14 +17,15 @@ int main() {
         count++;
     }
 
-    printf("\n입력한 정수 목록: ");
+    // 입력한 정수 출력, 최대값과 최소값 저장
     min = max = num_list[0];
-    for (i = 0; i < count; i++) {
-        printf("%d, ", num_list[i]);
+    printf("\n입력한 정수 목록: %d", num_list[0]);
+    for (i = 1; i < count; i++) {
+        printf(", %d", num_list[i]);
         if (num_list[i] < min) min = num_list[i];
         if (num_list[i] > max) max = num_list[i];
     }
-    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+    printf("\n");
 
     printf("최소값: %d, 최대값: %d\n", min, max);
 

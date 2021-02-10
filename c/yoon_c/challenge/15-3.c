@@ -35,10 +35,10 @@ int main() {
         else arr[e_cnt--] = temp;
     }
 
-    printf("\n배열 요소의 출력: [");
-    for (i = 0; i < 10; i++)
-        printf("%d, ", arr[i]);
-    printf("\b\b]\n");  // 마지막 출력에서 콤마(,) 제거 후 ] 출력
+    printf("\n배열 요소의 출력: [%d", arr[0]);
+    for (i = 1; i < 10; i++)
+        printf(", %d", arr[i]);
+    printf("]\n");  // 마지막 출력에서 콤마(,) 제거 후 ] 출력
 
     return 0;
 }

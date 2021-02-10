@@ -4,9 +4,11 @@
 
 void DisplayList(int a_data[], int a_count) {
     int i;
-    for (i = 0; i < a_count; i++)
-        printf("%d, ", a_data[i]);
-    printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+    // 배열 출력
+    printf("[%d", a_data[0]);
+    for (i = 1; i < a_count; i++)
+        printf(", %d", a_data[i]);
+    printf("]\n");
 }
 
 void InsertData(int a_data[], int a_count, int a_num) {

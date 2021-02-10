@@ -17,11 +17,13 @@ int main() {
             break;
         }
 
+        // 범위 숫자를 출력
+        printf("%d", begin++);
         for ( ; begin <= end; begin++) {
-            printf("%d, ", begin);
+            printf(", %d", begin);
             sum += begin;
         }
-        printf("\b\b \n");  // 마지막 출력에서 콤마(,) 제거
+        printf("\n");
 
         printf("Sum = %d\n\n", sum);
     }
