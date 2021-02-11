@@ -3,7 +3,7 @@
 단, 아래 함수를 작성하고 호출하여 ch가 숫자를 나타내는지 판정하라.
   int is_digit(int ch);
 
-  > Enter a 3-letter word:
+  > Enter a 3-letter word.
   > k16 ([Enter])
   > Digit appears 2 times.
 */
@@ -20,7 +20,7 @@ int main() {
 
     char c1, c2, c3, result = 0;
 
-    printf("Enter a 3-letter word: ");
+    printf("Enter a 3-letter word.\n");
     scanf("%c%c%c", &c1, &c2, &c3);
 
     result += is_digit(c1);

@@ -3,7 +3,7 @@
 심판이 1에서 10점까지 점수를 줄 경우 선수가 받는 점수를 계산해 보라. 단, 세 심판이 모두 서로 다른 점수를 준다고
 가정하라.
 힌트 입력 점수 중 어느 하나가 최대이거나 최소이면 해당 점수를 0으로 놓아 덧셈 계산에서 제외할 수 있다.
-  > Enter scores of three judges:
+  > Enter scores of three judges.
   > 10 5 7 ([Enter])
   > The player gets 7
 */
@@ -15,7 +15,7 @@ int main() {
 
     int first, second, third;
 
-    printf("Enter scores of three judges: ");
+    printf("Enter scores of three judges.\n");
     scanf("%d %d %d", &first, &second, &third);
 
     printf("The player gets %d\n", get_mid(first, second, third));

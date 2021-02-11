@@ -4,9 +4,9 @@
 또, 18.5 이상 25.0 미만이면 정상 체중(Normal), 25.0 이상이면 과체중(Overweight)으로 분류한다. 예를 들어,
 몸무게 72kg에 키 1.76m 인 경우 체질량 지수는 74 / (1.76)² = 23.8 로서 정상 체중이다. 몸무게와 키를 입력받아
 BMI 평가 결과를 출력하는 프로그램을 작성하라.
-  > Enter your height:
+  > Enter your height.
   > 176 ([Enter])
-  > Enter your weight:
+  > Enter your weight.
   > 73 ([Enter])
   > Your BMI is 23.57. It is normal.
 */
@@ -30,10 +30,10 @@ int main() {
 
     double height, weight;
 
-    printf("Enter your height: ");
+    printf("Enter your height.\n");
     scanf("%lf", &height);
 
-    printf("Enter your weight: ");
+    printf("Enter your weight.\n");
     scanf("%lf", &weight);
 
     view_bmi_res(calc_bmi(height, weight));

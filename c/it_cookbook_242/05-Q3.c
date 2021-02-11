@@ -10,7 +10,7 @@ int main() {
 
     int unit_price, quantity, total_price;
 
-    printf("단가와 개수를 입력하세요: ");
+    printf("단가와 개수를 입력하세요.\n");
     scanf("%d %d", &unit_price, &quantity);
 
     if (quantity > 10)

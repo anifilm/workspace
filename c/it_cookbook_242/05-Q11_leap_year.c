@@ -4,7 +4,7 @@
 아닌지를 출력하는 프로그램을 작성하라.
   int leap_year(int y);
 
-  > Enter year:
+  > Enter year.
   > 2000 ([Enter])
   > 2000 is a leap year.
 */
@@ -21,7 +21,7 @@ int main() {
 
     int year;
 
-    printf("Enter year: ");
+    printf("Enter year.\n");
     scanf("%d", &year);
 
     if (leap_year(year) == 1)

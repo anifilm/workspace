@@ -5,9 +5,9 @@
 하여 요금이 계산되면 여기에 세금 13.7% (부가가치세 10%, 전력산업 기반기금 3.7%)가 추가되어 청구액이 결정
 된다. 전력 사용량을 입력받아 청구액을 계산하는 프로그램을 작성하라.
 힌트 사용량은 정수형, 요금은 double형, 청구액은 요금에 1.137을 곱한 후 정수형으로 형변환을 한다.
-  > Enter monthly amount in Kwh:
+  > Enter monthly amount in Kwh.
   > 500 ([Enter])
-  > Enter 1 if summer or winter, 0 of not:
+  > Enter 1 if summer or winter, 0 of not.
   > 1 ([Enter])
   > Including tax, you pay 167821 won.
 */
@@ -31,10 +31,10 @@ int main() {
 
     int amount, season;
 
-    printf("Enter monthly amount in Kwh: ");
+    printf("Enter monthly amount in Kwh.\n");
     scanf("%d", &amount);
 
-    printf("Enter 1 if summer or winter, 0 of not: ");
+    printf("Enter 1 if summer or winter, 0 of not.\n");
     scanf("%d", &season);
 
     printf("Including tax, you pay %d won.", calc_pay(amount, season));
