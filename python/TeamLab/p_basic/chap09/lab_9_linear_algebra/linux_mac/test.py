@@ -56,14 +56,8 @@ class TestResult(unittest.TextTestResult):
         self.tests_run.append([test.id(), 1])
 
 
-with urllib.request.urlopen('http://datasets.lablup.ai/private/python-tests/unit_test_file_io_example.py') as response:
+with urllib.request.urlopen('http://datasets.lablup.ai/private/python-tests/unit_test_linear_algebra.py') as response:
     test_code = response.read()
-
-with urllib.request.urlopen('http://datasets.lablup.ai/private/python-tests/example.txt') as response:
-    example_txt = response.read().decode('utf-8')
-    f = open("example.txt","w")
-    f.write(example_txt)
-    f.close()
 
 test_module = types.ModuleType(
     'test_code',

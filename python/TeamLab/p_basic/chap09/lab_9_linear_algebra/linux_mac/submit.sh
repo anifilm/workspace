@@ -4,5 +4,5 @@ if [ $# -eq 0 ]
 then
   echo "Please give hash key as argument."
 else
-  backend.ai run --exec "python test.py stock_data_crawler.py $1" python3 test.py stock_data_crawler.py
+  backend.ai run --exec "python test.py basic_linear_algebra.py $1" python3 test.py basic_linear_algebra.py
 fi
