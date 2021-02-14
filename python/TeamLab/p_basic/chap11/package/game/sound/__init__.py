@@ -1,3 +1,4 @@
-__all__ = ['echo']
+__all__ = ['echo', 'wav']
 
 from . import echo
+from . import wav

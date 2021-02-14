@@ -1,3 +1,4 @@
-__all__ = ['run']
+__all__ = ['run', 'test']
 
 from . import run
+from . import test
