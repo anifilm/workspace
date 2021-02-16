@@ -1,6 +1,6 @@
 function addNumber(a, b) {
-    var sum = a + b;
-    return sum;
+  var sum = a + b;
+  return sum;
 }
 
 var num1 = parseInt(prompt("첫 번째 숫자 : "));

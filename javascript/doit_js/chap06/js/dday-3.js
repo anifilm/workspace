@@ -9,12 +9,12 @@ document.querySelector("#accent").innerText = passedDay + "일";  // #accent 영
 
 // 기념일 계산을 calcDate() 함수로 변경
 function calcDate(days) {
-    var future = toFirst + days * (1000 * 60 * 60 * 24);  // 처음 만난 날에 days일을 더해줌
-    var someday = new Date(future);  // future 값을 사용해 Date 객체의 인스턴스를 생성
-    var year = someday.getFullYear();  // '연도'를 가져와 year 변수에 저장
-    var month = someday.getMonth();    // '월'을 가져와 month 변수에 저장
-    var date = someday.getDate();      // '일'을 가져와 date 변수에 저장
-    document.querySelector("#date" + days).innerText = year + "년 " + month + "월 " + date + "일";
+  var future = toFirst + days * (1000 * 60 * 60 * 24);  // 처음 만난 날에 days일을 더해줌
+  var someday = new Date(future);  // future 값을 사용해 Date 객체의 인스턴스를 생성
+  var year = someday.getFullYear();  // '연도'를 가져와 year 변수에 저장
+  var month = someday.getMonth();    // '월'을 가져와 month 변수에 저장
+  var date = someday.getDate();      // '일'을 가져와 date 변수에 저장
+  document.querySelector("#date" + days).innerText = year + "년 " + month + "월 " + date + "일";
 }
 
 calcDate(100);  // 100일 기념일을 계산해서 출력

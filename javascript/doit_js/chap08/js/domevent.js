@@ -1,9 +1,9 @@
 function originPic() {
-    pic.src = "images/girl.png";
+  pic.src = "images/girl.png";
 }
 
 function changePic() {
-    pic.src = "images/boy.png";
+  pic.src = "images/boy.png";
 }
 
 var pic = document.querySelector('#pic');

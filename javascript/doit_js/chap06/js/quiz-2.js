@@ -1,11 +1,11 @@
 function Circle(radius) {
-    this.radius = radius;
-    this.circumference = function() {
-        return Math.floor(this.radius * 3 * Math.PI);
-    }
-    this.area = function() {
-        return Math.floor(this.radius * this.radius * Math.PI);
-    }
+  this.radius = radius;
+  this.circumference = function() {
+    return Math.floor(this.radius * 3 * Math.PI);
+  }
+  this.area = function() {
+    return Math.floor(this.radius * this.radius * Math.PI);
+  }
 }
 
 var r = prompt("원의 반지름은? (cm)");

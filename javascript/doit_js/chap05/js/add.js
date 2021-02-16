@@ -1,4 +1,4 @@
 function addNumber() {
-    var sum = 10 + 20;
-    alert(sum);
+  var sum = 10 + 20;
+  alert(sum);
 }

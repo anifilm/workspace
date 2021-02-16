@@ -1,8 +1,8 @@
 var member1 = {
-    name: "홍길동",
-    id: 123,
-    age: 25,
-    address: "서울"
+  name: "홍길동",
+  id: 123,
+  age: 25,
+  address: "서울"
 }
 
 document.write("<h2>" + member1.name + "</h2>");

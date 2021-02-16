@@ -1,10 +1,10 @@
 body {
-    text-align:center;
+  text-align:center;
 }
 #heading {
-    color:blue;
+  color:blue;
 }
 #text {
-    color:gray;
-    font-size:15px;
+  color:gray;
+  font-size:15px;
 }

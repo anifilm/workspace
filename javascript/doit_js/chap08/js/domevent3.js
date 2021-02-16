@@ -1,17 +1,17 @@
 function originPic() {
-    pic.src = "images/girl.png";
+  pic.src = "images/girl.png";
 }
 
 function changePic() {
-    pic.src = "images/boy.png";
+  pic.src = "images/boy.png";
 }
 
 function originStyle() {
-    pic.style.border = "none";
+  pic.style.border = "none";
 }
 
 function changeStyle() {
-    pic.style.border = "1px solid #222";
+  pic.style.border = "1px solid #222";
 }
 
 var pic = document.querySelector('#pic');

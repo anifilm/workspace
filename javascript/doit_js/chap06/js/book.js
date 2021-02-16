@@ -1,8 +1,8 @@
 function Book(title, author, volume, price) {
-    this.title = title;    // 제목
-    this.author = author;  // 저자
-    this.volume = volume;  // 분량
-    this.price = price;    // 가격
+  this.title = title;    // 제목
+  this.author = author;  // 저자
+  this.volume = volume;  // 분량
+  this.price = price;    // 가격
 }
 
 var html = new Book("웹 표준의 정석", "Ko", "608", "28,000");
@@ -13,5 +13,5 @@ var bookList = [html, youtube, python];
 
 document.write("<h1>책 제목으로 살펴보기</h1>");
 for (var i = 0; i < bookList.length; i++) {
-    document.write("<p>" + bookList[i].title + "</p>");
+  document.write("<p>" + bookList[i].title + "</p>");
 }
