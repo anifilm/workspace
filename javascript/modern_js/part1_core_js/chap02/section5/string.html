@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <script>
+    // 문자형
+    // 자바스크립트에선 문자열(string)을 따옴표로 묶습니다.
+    let str = "Hello";
+    let str2 = 'Single quites are ok too';
+    let phrase = `can embed another ${str}`;
+
+    // 따옴표는 세 종류가 있습니다.
+    // 1. 큰 따옴표: "Hello"
+    // 2. 작은 따옴표: 'Hello'
+    // 3. 역 따옴표(백틱,backtick): `Hello`
+
+    let name = "john";
+
+    // 변수를 문자열 중간에 삽입
+    alert(`Hello, ${name}!`); // Hello, John!
+
+    // 표현식을 문자열 중간에 삽입
+    alert(`the result is ${1+2}`); // the result is 3
+
+    alert("the result is ${1 + 2}"); // the result is ${1 + 2} (큰따옴표는 확장 기능을 지원하지 않습니다.)
+
+  </script>
+
+</body>
+
+</html>
