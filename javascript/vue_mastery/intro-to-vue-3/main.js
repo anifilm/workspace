@@ -7,8 +7,8 @@ const app = Vue.createApp({
       inStock: true,
       details: ['50% cotton', '30% wool', '20% polyster'],
       variants: [
-        { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
-        { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' },
+        { id: 2234, color: '#1ab371', image: './assets/images/socks_green.jpg' },
+        { id: 2235, color: '#31425e', image: './assets/images/socks_blue.jpg' },
       ]
     }
   },
