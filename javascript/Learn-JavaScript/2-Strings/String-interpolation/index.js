@@ -3,7 +3,7 @@
  * @param {string} lastName
  */
 function getFullName(firstName, lastName){
-  return `${firstName} ${lastName}`;
+    return `${firstName} ${lastName}`;
 }
 
 //sample usage

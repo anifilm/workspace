@@ -3,7 +3,7 @@
  * @param {number} b
  */
 function multiply(a, b){
-  return a * b;
+    return a * b;
 }
 
 //sample usage

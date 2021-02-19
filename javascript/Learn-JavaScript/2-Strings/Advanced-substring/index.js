@@ -2,8 +2,8 @@
  * @param {string} name
  */
 function getThreeChars(name){
-  //start from the 2nd character
-  return name.substring(1, 4);
+    //start from the 2nd character
+    return name.substring(1, 4);
 }
 
 //sample usage

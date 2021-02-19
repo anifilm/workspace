@@ -2,7 +2,7 @@
  * @param {string} text
  */
 function removeExtraWhitespace(text){
-  return text.trim();
+    return text.trim();
 }
 
 //sample usage

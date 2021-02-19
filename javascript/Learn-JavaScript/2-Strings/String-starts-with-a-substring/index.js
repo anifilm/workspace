@@ -2,7 +2,7 @@
  * @param {string} description
  */
 function amsterdamIsFirstWord(description){
-  return description.startsWith("Amsterdam");
+    return description.startsWith("Amsterdam");
 }
 
 //sample usage

@@ -3,7 +3,7 @@
  * @param {number} b
  */
 function divisionRemainder(a, b){
-  return a % b;
+    return a % b;
 }
 
 //sample usage

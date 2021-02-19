@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function sayHello(name = "user"){
-  return `Hello ${name}`;
+    return `Hello ${name}`;
 }
 
 //sample usage

@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function getNameLength(name){
-  return name.length;
+    return name.length;
 }
 
 //sample usage

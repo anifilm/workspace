@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function getFirstCharacter(name){
-  return name[0];
+    return name[0];
 }
 
 //sample usage

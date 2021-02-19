@@ -2,9 +2,9 @@
  * @param {number} age
  */
 function canVote(age){
-  if (age >= 18) {
-    return true;
-  }
+    if (age >= 18) {
+        return true;
+    }
 }
 
 //sample usage

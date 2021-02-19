@@ -2,7 +2,7 @@
 * @param {string} string
 */
 function convertStringToNumber(string){
-  return parseInt(string);
+    return parseInt(string);
 }
 
 //sample usage

@@ -2,7 +2,7 @@
  * @param {array} elements
  */
 function getNumberOfElements(elements){
-  return elements.length;
+    return elements.length;
 }
 
 //sample usage

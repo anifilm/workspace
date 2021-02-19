@@ -2,7 +2,7 @@
  * @param {number} number
  */
 function convertNumberToString(number){
-  return number.toString();
+    return number.toString();
 }
 
 //sample usage

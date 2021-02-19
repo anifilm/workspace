@@ -3,7 +3,7 @@
  * @param {string} lastNameInitial
  */
 function concatInitials(firstNameInitial, lastNameInitial){
-  return firstNameInitial + lastNameInitial;
+    return firstNameInitial + lastNameInitial;
 }
 
 //sample usage

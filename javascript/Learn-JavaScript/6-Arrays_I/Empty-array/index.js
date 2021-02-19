@@ -1,5 +1,5 @@
 function getEmptyArray(){
-  return [];
+    return [];
 }
 
 //sample usage

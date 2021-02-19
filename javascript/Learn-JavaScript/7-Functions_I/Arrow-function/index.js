@@ -3,7 +3,7 @@
  * @param {number} b
  */
 const sum = (a, b) => {
-  return a + b;
+    return a + b;
 }
 
 //sample usage

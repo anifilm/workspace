@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function nameInLowerCase(name){
-  return name.toLowerCase();
+    return name.toLowerCase();
 }
 
 //sample usage

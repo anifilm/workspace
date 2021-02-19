@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function getLastCharacter(name){
-  return name[name.length-1];
+    return name[name.length-1];
 }
 
 //sample usage

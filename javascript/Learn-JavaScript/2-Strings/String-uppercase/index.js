@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function nameInUpperCase(name){
-  return name.toUpperCase();
+    return name.toUpperCase();
 }
 
 //sample usage

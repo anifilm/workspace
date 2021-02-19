@@ -2,7 +2,7 @@
  * @param {string} name
  */
 function skipFirstCharacter(name){
-  return name.substring(1);
+    return name.substring(1);
 }
 
 //sample usage
