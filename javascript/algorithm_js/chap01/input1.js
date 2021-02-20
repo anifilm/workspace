@@ -1,27 +1,6 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const prompt = require('prompt-sync')();
 
-console.log("정수 세 개를 입력하세요.");
+console.log("이름을 입력하세요.");
+const name = prompt(">> ");
 
-let input = []
-rl.on("line", function(line){
-  input = line.split(' ').map((el) => parseInt(el));
-  rl.close();
-})
-
-rl.on("close", function(){
-  // 입력 값
-  let a = input[0];
-  let b = input[1];
-  let c = input[2];
-
-  // 연산 본문
-  let max = a;
-  if (b > max) max = b;
-  if (c > max) max = c;
-
-  console.log(`최대값은 ${max}입니다.`);
-})
+console.log(`안녕하세요? ${name} 님`);
