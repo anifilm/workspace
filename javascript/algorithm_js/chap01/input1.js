@@ -13,15 +13,15 @@ rl.on("line", function(line){
 })
 
 rl.on("close", function(){
-// 입력 값
+  // 입력 값
   let a = input[0];
   let b = input[1];
   let c = input[2];
 
-// 연산 본문
+  // 연산 본문
   let max = a;
   if (b > max) max = b;
   if (c > max) max = c;
 
-  console.log(`최대값은 ${max} 입니다.`);
+  console.log(`최대값은 ${max}입니다.`);
 })
