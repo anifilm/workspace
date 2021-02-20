@@ -11,8 +11,8 @@ def get_file_contents(filename):
     # >>> fie.get_file_contents("1984.txt").split("\n")[0]
     # GEORGE ORWELL
     # ===Modify codes below=============
-    contents = None
-
+    with open(filename, "r") as file:
+        contents = file.read()
     # ==================================
     return contents
 
@@ -27,8 +27,8 @@ def get_number_of_characters_with_blank(filename):
     # >>> fie.get_number_of_characters_with_blank("1984.txt")
     # 558841
     # ===Modify codes below=============
-    result = None
-
+    contents = get_file_contents(filename)
+    result = len(contents)
     # ==================================
     return result
 
@@ -44,8 +44,11 @@ def get_number_of_characters_without_blank(filename):
     # >>> fie.get_number_of_characters_without_blank("1984.txt")
     # 459038
     # ===Modify codes below=============
-    result = None
-
+    contents = get_file_contents(filename)
+    contents = contents.replace(" ", "")
+    contents = contents.replace("\t", "")
+    contents = contents.replace("\n", "")
+    result = len(contents)
     # ==================================
     return result
 
@@ -61,10 +64,11 @@ def get_number_of_lines(filename):
     # >>> fie.get_number_of_lines("1984.txt")
     # 1414
     # ===Modify codes below=============
-    result = None
-
+    with open(filename, "r") as file:
+        contents = file.readlines()
+    result = len(contents)
     # ==================================
-    return None
+    return result
 
 def get_number_of_target_words(filename, target_words):
     # '''
@@ -82,7 +86,9 @@ def get_number_of_target_words(filename, target_words):
     # >>> fie.get_number_of_words("1984.txt", "and")
     # 2750
     # ===Modify codes below=============
-    result = None
-
+    contents = get_file_contents(filename)
+    contents_upper = contents.upper()
+    count_target = contents_upper.count(target_words.upper())
+    result = count_target
     # ==================================
     return result

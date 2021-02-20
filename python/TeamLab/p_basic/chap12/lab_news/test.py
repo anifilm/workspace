@@ -1,6 +1,5 @@
 def get_inupt(text):
-    return list(map(int, text.split()))
-
+    return list(map(int,text.split()))
 
 line_info = get_inupt("6 2")
 map_list = []
