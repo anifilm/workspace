@@ -1,0 +1,14 @@
+:root {
+    --light-gray: #DADCE0;
+    --blue-gray: #f2f5f8;
+    --light-blue: #1B9CE2;
+}
+
+body {
+    background-color: var(--blue-gray);
+    margin: 0;
+}
+
+#map {
+  height: 100vh;
+}
