@@ -1,6 +1,6 @@
 # file.readline(): 한 줄씩 파일 끝까지 출력
 
-with open("./i_have_a_dream.txt", 'r') as file:
+with open("../i_have_a_dream.txt", 'r') as file:
     i = 0
     while True:
         line = file.readline()

@@ -4,15 +4,15 @@
 
 import os
 
-if not os.path.isdir("log"):
-    os.mkdir("log")
+if not os.path.isdir("./log"):
+    os.mkdir("./log")
 
-if not os.path.exists("log/count_log.txt"):
-    file = open("log/count_log.txt", 'w', encoding="utf8")
+if not os.path.exists("./log/count_log.txt"):
+    file = open("./log/count_log.txt", 'w', encoding="utf8")
     file.write("기록이 시작됩니다.\n")
     file.close()
 
-with open("log/count_log.txt", 'a', encoding="utf8") as file:
+with open("./log/count_log.txt", 'a', encoding="utf8") as file:
     import random, datetime
     for i in range(1, 11):
         stamp = str(datetime.datetime.now())
