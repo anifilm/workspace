@@ -1,6 +1,4 @@
 const readline = require('readline');
-
-// 인터페이스 객체를 만들자.
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout

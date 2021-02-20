@@ -4,7 +4,10 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-console.log("정수 세 개를 입력하세요.");
+// 세 정수를 입력받아 최대값 구하기
+console.log('세 정수의 최대값을 구합니다.');
+
+process.stdout.write("세 개의 정수를 입력하세요: ");
 
 let input = []
 rl.on("line", function(line){
