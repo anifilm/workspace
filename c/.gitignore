@@ -1,5 +1,4 @@
 *.o
 *.gch
 *.exe
-*.url
-*.bat
+
