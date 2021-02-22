@@ -1,5 +1,5 @@
 // 가로 세로가 정수이고 넓이가 area인 직사각형에서 변의 길이를 나열하기
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 let area = Number(prompt('직사각형의 넓이를 입력하세요: '))

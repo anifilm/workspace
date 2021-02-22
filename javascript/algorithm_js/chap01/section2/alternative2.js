@@ -1,6 +1,5 @@
 // +와 -를 번갈아 출력하기 2
-const println = require('./modules/println.js')
-const print = require('./modules/print.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')();
 
 println('+와 -를 번갈아 출력합니다.')

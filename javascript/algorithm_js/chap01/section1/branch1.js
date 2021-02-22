@@ -1,5 +1,5 @@
 // 3개로 분기하는 조건문
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 let n = Number(prompt('정수를 입력하세요: '))

@@ -1,5 +1,5 @@
 // 입력받은 정수값의 부호(양수, 음수, 0) 출력하기
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 let n = Number(prompt('정수를 입력하세요: '))

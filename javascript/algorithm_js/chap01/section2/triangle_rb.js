@@ -1,6 +1,5 @@
 // 오른쪽 아래가 직각인 이등변 삼각형으로 * 출력하기
-const println = require('./modules/println.js')
-const print = require('./modules/print.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 println('왼쪽 아래가 직각인 이등변 삼각형을 출력합니다.')

@@ -1,5 +1,5 @@
 // 세 정수를 입력받아 최대값 구하기
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 println('세 정수의 최대값을 구합니다.')

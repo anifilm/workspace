@@ -1,5 +1,5 @@
 // 2자리 양수(10 ~ 99) 입력받기
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 println('2자리 양수를 입력하세요.')

@@ -1,5 +1,5 @@
 // 시퀀스 요소의 최대값 출력하기
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 function max_of(a){

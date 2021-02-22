@@ -1,5 +1,5 @@
 // 세 정수의 최댓값을 구하기
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 
 function max3(a, b, c) {
   /* a, b, c의 최댓값을 구하여 반환 */

@@ -1,5 +1,5 @@
 // a부터 b까지 정수의 합 구하기 (for 문)
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 println('a부터 b까지의 합을 구합니다.')

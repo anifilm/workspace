@@ -1,6 +1,5 @@
 // 구구단 곱셈표 출력하기
-const println = require('./modules/println.js')
-const print = require('./modules/print.js')
+const {print, println} = require('./modules/print')
 
 for (let i = 0; i < 66; i++)
   print('-')

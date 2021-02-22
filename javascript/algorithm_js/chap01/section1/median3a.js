@@ -1,5 +1,5 @@
 // 세 정수값을 입력받아 중앙값을 구하기 2
-const println = require('./modules/println.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 function med3(a, b, c) {

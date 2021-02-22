@@ -1,6 +1,5 @@
 // *를 n개 출력하되 w개마다 줄바꿈하기 2
-const println = require('./modules/println.js')
-const print = require('./modules/print.js')
+const {print, println} = require('./modules/print')
 const prompt = require('prompt-sync')()
 
 println('*를 출력합니다.')
