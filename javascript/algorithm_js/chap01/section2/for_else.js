@@ -1,11 +1,12 @@
 // 10~99 사이의 난수 n개 생성하기(13이 나오면 중단)
 const getRandomInt = require('./modules/randomInt.js')
 const {print, println} = require('./modules/print')
-const prompt = require('prompt-sync')()
+const range = require('./modules/range')
+const input = require('prompt-sync')()
 
-let n = Number(prompt('난수의 개수를 입력하세요: '))
+let n = Number(input('난수의 개수를 입력하세요: '))
 
-for (let i = 0; i < n; i++) {
+for (let i of range(n)) {
   let r = getRandomInt(10, 99)
   print(r + ' ')
   if (r == 13) {

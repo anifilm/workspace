@@ -1,8 +1,8 @@
 // 4개로 분기하는 조건문
 const {print, println} = require('./modules/print')
-const prompt = require('prompt-sync')()
+const input = require('prompt-sync')()
 
-let n = Number(prompt('정수를 입력하세요: '))
+let n = Number(input('정수를 입력하세요: '))
 
 if (n == 1)
   println('A')

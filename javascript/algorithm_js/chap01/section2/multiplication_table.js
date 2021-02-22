@@ -1,17 +1,18 @@
 // 구구단 곱셈표 출력하기
 const {print, println} = require('./modules/print')
+const range = require('./modules/range')
 
-for (let i = 0; i < 66; i++)
+for (let i in range(66))
   print('-')
 println()
 
-for (let i = 1; i < 10; i++) {  // 행 루프
-  for (let j = 1; j < 10; j++)  // 열 루프
+for (let i of range(1, 10)) {  // 행 루프
+  for (let j of range(1, 10))  // 열 루프
     print(`${i * j}\t`)
   println()  // 행 변경
 }
 
-for (let i = 0; i < 66; i++)
+for (let i in range(66))
   print('-')
 println()
 
