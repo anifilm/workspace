@@ -1,6 +1,4 @@
 .ipynb_checkpoints
 __pycache__
-*.url
-*.bat
 _github
-_master
+
