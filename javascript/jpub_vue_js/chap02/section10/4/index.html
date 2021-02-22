@@ -8,11 +8,11 @@
 <body>
   <div id="app">
     <ul>
-      <li v-for="item in list"
-        v-bind:key="item.id"
-        v-bind:class="{ strong: item.hp > 300 }">
+      <li v-for="(item, index) in list" v-bind:key="item.id" v-if="item.hp">
         ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
-        <span v-if="item.hp > 300">강하다!</span>
+        <span v-if="item.hp < 50">빈사 상태!</span>
+        <!-- 버튼은 v-for 내부에 만들기 -->
+        <button v-on:click="doAttack(index)">공격하기</button>
       </li>
     </ul>
   </div>
