@@ -8,6 +8,6 @@ let n = Number(input('n값을 입력하세요: '))
 
 let sum = 0
 for (let i of range(1, n + 1))
-    sum += i;  // sum에 i를 더함
+  sum += i;  // sum에 i를 더함
 
 println(`1부터 ${n}까지 정수의 합은 ${sum}입니다.`)
