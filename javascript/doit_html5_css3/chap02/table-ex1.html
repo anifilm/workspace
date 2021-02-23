@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>표 만들기</title>
+  <style>
+    table, th, td {
+      border:1px solid #ccc;
+    }
+    td {
+      padding:5px;  /* 셀 테두리와 내용 사이의 간격(패딩) */
+    }
+  </style>
+</head>
+<body>
+  <table> <!-- 2행 2열 테이블 -->
+    <caption> <!-- 테이블에 제목 붙이기 (표의 위쪽 중앙에 표시) -->
+      재무상태표
+    </caption>
+    <tr>
+      <td rowspan="2">자산:현금,
+                  <br>현금외 자산</td>
+      <td>부채: 차입금</td>
+    </tr>
+    <tr>
+      <td>자본: 자본금, 이익잉여금</td>
+    </tr>
+  </table>
+</body>
+</html>

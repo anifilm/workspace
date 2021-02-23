@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>표 만들기</title>
+  <style>
+    table, th, td {
+      border:1px solid #ccc;
+    }
+    th, td {
+      width:120px;  /* 셀의 너비 */
+      padding:10px; /* 셀 테두리와 내용 사이의 간격(패딩) */
+    }
+    thead, tfoot {
+      background : #eeeeee;  /* thead와 tfoot의 배경 색 */
+    }
+  </style>
+</head>
+<body>
+  <table> <!-- 6행 4열 테이블 -->
+    <caption> <!-- 테이블에 제목 붙이기 (표의 위쪽 중앙에 표시) -->
+      요안도라 객실
+    </caption>
+    <thead>
+      <tr>
+        <th>방 이름</th>
+        <th>대상</th>
+        <th>크기</th>
+        <th>가격</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>유채방</th>
+        <td>여성 도미토리</td>
+        <td rowspan="3">4인실</td>
+        <td rowspan="4">1인 20,000원</td>
+      </tr>
+      <tr>
+        <th rowspan="2">동백방</th>
+        <td>동성 도미토리</td>
+      </tr>
+      <tr>
+        <td>가족 1팀</td>
+      </tr>
+      <tr>
+        <th>천혜향방</th>
+        <td>-</td>
+        <td>2인실</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">바깥채 전체를 렌트합니다.</th>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
