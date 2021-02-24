@@ -4,7 +4,7 @@ Q3
 
 """
 # 1.
-all([1, 2, abs(-3)-3])
+all([1, 2, abs(-3)-3])  # False
 
 # 2.
-chr(ord('a')) == 'a'
+chr(ord('a')) == 'a'    # True

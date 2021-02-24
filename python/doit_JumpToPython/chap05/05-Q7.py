@@ -4,3 +4,6 @@ Q7
 [-8, 2, 7, 5, -3, 5, 0, 1]
 
 """
+lst = [-8, 2, 7, 5, -3, 5, 0, 1]
+result = min(lst) + max(lst)  # -8 + 7
+print(result)  # -1
