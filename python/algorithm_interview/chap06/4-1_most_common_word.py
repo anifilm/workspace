@@ -1,4 +1,4 @@
-# 가장 흔한 단어 (리스르 컴프리헨션, Counter 객체 사용)
+# 가장 흔한 단어 (리스트 컴프리헨션, Counter 객체 사용)
 
 from typing import List
 import collections
@@ -12,8 +12,10 @@ class Solution:
         # for word in words:
         #     counts[word] += 1
         # return max(counts, key=counts.get)
+
         counts = collections.Counter(words)
         return counts.most_common(1)[0][0]
+
 
 def main():
     sol = Solution()
