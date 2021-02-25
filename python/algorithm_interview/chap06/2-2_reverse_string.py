@@ -1,6 +1,6 @@
 # 문자열 뒤집기 (파이썬다운 방식)
 
-from typing import List
+from typing import *
 
 class Solution:
     def reverseString(self, s: List[str]) -> None:

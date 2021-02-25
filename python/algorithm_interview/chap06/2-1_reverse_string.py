@@ -1,6 +1,6 @@
 # 문자열 뒤집기 (투 포인터를 이용한 스왑)
 
-from typing import List
+from typing import *
 
 class Solution:
     def reverseString(self, s: List[str]) -> None:

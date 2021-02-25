@@ -1,6 +1,6 @@
 # 로그 파일 재정렬 (람다와 + 연산자를 이용)
 
-from typing import List
+from typing import *
 
 class Solution:
     def reorderLogFiles(self, logs: List[str]) -> List[str]:

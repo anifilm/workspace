@@ -1,6 +1,6 @@
 # 가장 흔한 단어 (리스트 컴프리헨션, Counter 객체 사용)
 
-from typing import List
+from typing import *
 import collections
 import re
 
