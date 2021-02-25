@@ -1,4 +1,4 @@
-// c로 구현
+// 유효한 팰린드롬 (c로 구현)
 #include <stdio.h>
 #include <stdbool.h>
 #include <ctype.h>

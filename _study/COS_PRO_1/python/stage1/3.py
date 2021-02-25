@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# UTF-8 encoding when using korean
 def func_a(numA, numB, exp):
     if exp == '+':
         return numA + numB

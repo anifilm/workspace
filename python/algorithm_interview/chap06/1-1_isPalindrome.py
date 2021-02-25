@@ -1,4 +1,4 @@
-# 리스트로 변환
+# 유효한 팰린드롬 (리스트로 변환)
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:

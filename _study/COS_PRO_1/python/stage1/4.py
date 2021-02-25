@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-# UTF-8 encoding when using korean
-
 def solution(num):
     num += 1
     str_num = str(num)[::-1]

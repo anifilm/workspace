@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-# UTF-8 encoding when using korean
-
 def func_a(string, length):
     padZero = ""
     padSize = length - len(string)
