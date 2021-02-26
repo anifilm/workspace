@@ -1,4 +1,4 @@
-// axios로 네이버 영화 페이지에서 이미지 다운로드하기
+// axios로 네이버 영화 페이지 화면 스크린샷 저장하기
 const xlsx = require('xlsx');
 const puppeteer = require('puppeteer');
 const axios = require('axios');
@@ -24,8 +24,15 @@ fs.readdir('poster', (err) => {
 
 const crawler = async () => {
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({
+      headless: false,
+      args: ['--window-size=1920,1080'] // 크롬 창 크기 옵션
+    });
     const page = await browser.newPage();
+    await page.setViewport({ // 화면 디스플레이 영역 설정
+      width: 1920,
+      height: 1080,
+    });
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36');
     add_to_sheet(ws, 'C1', 's', '평점');
     for (const [i, r] of records.entries()) {
@@ -50,6 +57,16 @@ const crawler = async () => {
       }
       await page.waitForTimeout(3000);
       if (result.img) {
+        await page.screenshot({ // 페이지 스크린샷 저장
+          path: `screenshot/${r.제목}.png`, // 저장경로 및 파일명
+          fullPage: true, // 전체 화면 옵션
+          //clip: { // 영역 지정 옵션
+          //  x: 100,
+          //  y: 100,
+          //  width: 300,
+          //  height: 300,
+          }
+        });
         const imgResult = await axios.get(result.img.replace(/\?.*$/, ''), {
           responseType: 'arraybuffer',
         })
