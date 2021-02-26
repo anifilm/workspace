@@ -9,7 +9,7 @@ const records = xlsx.utils.sheet_to_json(ws);
 
 const crawler = async () => {
   add_to_sheet(ws, 'C1', 's', '평점');
-  await Promise.all(records.map(async (r) => {
+  for (const [i, r] of records.entries()) {
     const response = await axios.get(r.링크);
     if (response.status === 200) {
       const html = response.data;
@@ -17,9 +17,10 @@ const crawler = async () => {
       const text = $('.score.score_left .star_score').text();
       console.log(r.제목, '평점', text.trim());
       const newCell = 'C' + (i + 2);
-      add_to_sheet(ws, newCell, 'n', text.trim());
+      add_to_sheet(ws, newCell, 'n', parseFloat(text.trim()));
     }
-  }));
+  }
   xlsx.writeFile(workbook, 'xlsx/result.xlsx');
 };
+
 crawler();
