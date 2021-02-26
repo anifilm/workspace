@@ -5,10 +5,10 @@ function newRegister() {
   newP.appendChild(newText); // newText 노드를 newP 노드의 자식 노드로 연결
 
   var delBtn = document.createElement("span"); // 새 span 요소 만들기
-  var delText = document.createTextNode("X"); // 새 텍스트 노드 만들기
+  var delText = document.createTextNode("X");  // 새 텍스트 노드 만들기
   delBtn.setAttribute("class", "del"); // 버튼에 class 속성 설정하기
   delBtn.appendChild(delText); // 텍스트 노드를 button 요소의 자식 요소로 추가하기
-  newP.appendChild(delBtn); // del 버튼을 p 요소의 자식 요소로 추가하기
+  newP.appendChild(delBtn);    // del 버튼을 p 요소의 자식 요소로 추가하기
 
   var nameList = document.querySelector("#nameList"); // #nameList 가져옴
   //nameList.appendChild(newP); // newP 노드를 nameList 노드의 자식 노드로 연결
