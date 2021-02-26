@@ -1,3 +1,4 @@
+// 가져온 평점을 새로운 xlsx 파일로 저장하기
 const xlsx = require('xlsx');
 const axios = require('axios');
 const cheerio = require('cheerio');

@@ -1,3 +1,4 @@
+// xlsx 목록에 있는 영화 페이지에서 평점 가져오기
 const xlsx = require('xlsx');
 const axios = require('axios'); // ajax 라이브러리
 const cheerio = require('cheerio'); // html 파싱

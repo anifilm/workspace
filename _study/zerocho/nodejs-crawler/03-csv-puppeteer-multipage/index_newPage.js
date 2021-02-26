@@ -1,3 +1,4 @@
+// puppeteer 실행해보기
 const parse = require('csv-parse/lib/sync');
 const fs = require('fs');
 const puppeteer = require('puppeteer');

@@ -1,3 +1,4 @@
+// csv의 목록에 있는 영화 페이지에서 평점 가져오기
 const parse = require('csv-parse/lib/sync');
 const fs = require('fs');
 const puppeteer = require('puppeteer');

@@ -1,3 +1,4 @@
+// 가져온 평점을 새로운 csv에 저장하기
 const parse = require('csv-parse/lib/sync');
 const stringify = require('csv-stringify/lib/sync');
 const fs = require('fs');

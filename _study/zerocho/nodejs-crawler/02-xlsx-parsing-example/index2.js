@@ -1,6 +1,7 @@
+// xlsx 파일에서 영화목록에 있는 데이터 가져오기 2
 const xlsx = require('xlsx');
-const axios = require('axios'); // ajax 라이브러리
-const cheerio = require('cheerio'); // html 파싱
+//const axios = require('axios'); // ajax 라이브러리
+//const cheerio = require('cheerio'); // html 파싱
 
 const workbook = xlsx.readFile('xlsx/data.xlsx');
 

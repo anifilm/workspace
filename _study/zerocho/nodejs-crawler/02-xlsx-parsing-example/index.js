@@ -1,3 +1,4 @@
+// xlsx 파일에서 영화목록에 있는 데이터 가져오기
 const xlsx = require('xlsx');
 
 const workbook = xlsx.readFile('xlsx/data.xlsx');

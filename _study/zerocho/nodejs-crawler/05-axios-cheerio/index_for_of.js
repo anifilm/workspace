@@ -1,3 +1,4 @@
+// 크롤링시 for of 사용시
 const xlsx = require('xlsx');
 const axios = require('axios'); // ajax 라이브러리
 const cheerio = require('cheerio'); // html 파싱
