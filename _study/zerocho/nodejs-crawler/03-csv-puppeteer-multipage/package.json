@@ -1,0 +1,16 @@
+{
+  "name": "03-csv-puppeteer-multipage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "HeiYoung",
+  "license": "MIT",
+  "dependencies": {
+    "csv-parse": "^4.4.6",
+    "csv-stringify": "^5.3.0",
+    "puppeteer": "^1.13.0"
+  }
+}
