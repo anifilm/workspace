@@ -9,3 +9,8 @@ Q7 한 줄 구구단
 2 4 6 8 10 12 14 16 18
 
 """
+
+user_input = int(input('구구단을 출력할 숫자를 입력하세요(2~9): '))
+
+for i in range(1, 10):
+    print(user_input * i, end=' ')
