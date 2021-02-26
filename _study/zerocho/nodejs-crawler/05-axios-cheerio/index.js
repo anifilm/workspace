@@ -17,7 +17,7 @@ const crawler = async () => {
     const response = await axios.get(r.링크);
     if (response.status === 200) { // 응답이 성공한 경우
       const html = response.data;
-      const $ = cheerio.load(html); // 제이쿼리를 사용할 수 있다.
+      const $ = cheerio.load(html); // 제이쿼리 선택자를 사용할 수 있다.
       const text = $('.score.score_left .star_score').text();
       console.log(r.제목, '평점', text.trim());
     }
