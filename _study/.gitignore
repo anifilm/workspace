@@ -1,4 +1,5 @@
 META-INF
+node_modules
 *.o
 *.gch
 *.pdb
