@@ -7,10 +7,8 @@ println('a부터 b까지의 합을 구합니다.')
 let a = Number(input('정수 a를 입력하세요: '))
 let b = Number(input('정수 b를 입력하세요: '))
 
-if (a > b) {
-  let tmp = a
-  a = b
-  b = tmp
+if (a > b) {  // a와 b를 오름차순으로 정렬
+  [a, b] = [b, a]  // 구조 분해 할당을 통한 값 스왑
 }
 
 let sum = 0;
