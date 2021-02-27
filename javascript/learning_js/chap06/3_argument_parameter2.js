@@ -1,7 +1,9 @@
+// 6.3 함수와 매개변수
+
 function f(x) {
-    console.log(`f 내부: x=${x}`);
-    x = 5;
-    console.log(`f 내부: x=${x} (할당 후)`);
+  console.log(`f 내부: x=${x}`);
+  x = 5;
+  console.log(`f 내부: x=${x} (할당 후)`);
 }
 
 let x = 3;

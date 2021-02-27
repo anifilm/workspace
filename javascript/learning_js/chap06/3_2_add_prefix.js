@@ -1,4 +1,5 @@
 // 6.3.2 매개 변수 해체 (확산 연산자(...) 사용)
+
 function addPrefix(prefix, ...words) {
     // 나중에 더 좋은 방법을 배웁니다.
     const prefixedWords = [];

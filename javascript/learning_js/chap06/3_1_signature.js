@@ -1,3 +1,5 @@
+// 6.3.1 매개변수가 함수를 결정하는가?
+
 function f(x) {
     return `in f: x=${x}`;
 }

@@ -1,3 +1,5 @@
+// 6.3.3 매개변수 기본값
+
 function f(a, b = "default", c = 3) {
     return `${a} - ${b} - ${c}`;
 }

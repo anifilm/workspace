@@ -1,3 +1,5 @@
+// chapter 6 함수
+
 function sayHello() {
     // 함수 바디는 여는 중괄호로 시작하고
 
