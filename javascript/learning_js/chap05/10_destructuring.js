@@ -5,10 +5,10 @@ const obj = { b: 2, c: 3, d: 4 };
 
 // 해체 할당
 const {a, b, c} = obj;
-a; // undefined: obj에는 "a" 프로퍼티가 없습니다.
-b; // 2
-c; // 3
-d; // ReferenceError: "d"는 정의 되지 않았습니다.
+a;  // undefined: obj에는 "a" 프로퍼티가 없습니다.
+b;  // 2
+c;  // 3
+d;  // ReferenceError: "d"는 정의 되지 않았습니다.
 
 // 객체 해체를 할당만으로 사용하게 되는 경우에는 반드시 괄호를 사용해야 합니다.
 const obj = { b: 2, c: 3, d: 4 };
@@ -26,23 +26,23 @@ const arr = [1, 2, 3]; // 배열 선언
 
 // 배열 해체 할당
 let [x, y] = arr;
-x; // 1
-y; // 2
-z; // ReferenceError: "z"는 정의 되지 않았습니다.
+x;  // 1
+y;  // 2
+z;  // ReferenceError: "z"는 정의 되지 않았습니다.
 
 // 확산 연산자 spread operator (...)를 사용하면 남은 요소를 새 배열에 할당 할 수 있습니다.
 const arr = [1, 2, 3, 4, 5];
 
 let [x, y, ...rest] = arr;
-x; // 1
-y; // 2
-rest; // [3, 4, 5]
+x;  // 1
+y;  // 2
+rest;  // [3, 4, 5]
 
 // 배열 해체를 활용하여 변수의 값을 서로 바꿀 수 있습니다.
 let a = 5, b = 10;
 [a, b] = [b, a];
-a; // 10
-b; // 5
+a;  // 10
+b;  // 5
 
 /*
 NOTE_ 배열 해체는 꼭 배열에만 사용할 수 있는 것은 아닙니다. 9장에서 배울 이터러블 객체에는
