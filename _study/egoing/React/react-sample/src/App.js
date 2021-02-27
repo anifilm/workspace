@@ -4,7 +4,10 @@ class Subject extends Component {
   render() {
     return (
       <header>
-        <h1>{this.props.title}</h1>
+        <h1><a href="/" onClick={function (ev){
+          ev.preventDefault();
+          this.props.onClick();
+        }.bind(this)}>{this.props.title}</a></h1>
         {this.props.sub}
       </header>
     );
@@ -13,11 +16,6 @@ class Subject extends Component {
 
 class TOC extends Component {
   render() {
-    // let list = [
-    //   <li><a href="1.html">HTML</a></li>,
-    //   <li><a href="2.html">CSS</a></li>,
-    //   <li><a href="3.html">JavaScript</a></li>
-    // ];
     let list = [];
     let i = 0;
     while (i < this.props.data.length){
@@ -58,12 +56,13 @@ class Content extends Component {
 
 class App extends Component {
   state = {
+    mode: 'read',
     selected_content_id:1,
     contents:[
       {id:1, title:'HTML', desc:"HTML is for imformation"},
       {id:2, title:'CSS', desc:"CSS is for design"},
-      {id:3, title:'JavaScript', desc:"JavaScript is for interaction"}
-    ]
+      {id:3, title:'JavaScript', desc:"JavaScript is for interaction"},
+    ],
   }
   getSelectedContent(){
     let i = 0;
@@ -75,19 +74,44 @@ class App extends Component {
       i += 1;
     }
   }
+  getContentComponet(){
+    if (this.state.mode === 'read'){
+      return <Content data={this.getSelectedContent()}></Content>
+    } else if (this.state.mode === 'welcome'){
+      return <Content data={{
+        title: 'Welcome',
+        desc: 'Hello, React!!!',
+      }}></Content>
+    }
+  }
+  getControlComponent(){
+    return [
+      <a href="/create">create</a>,
+      <a href="/update">update</a>,
+      <input type="button" href="/delete" onClick={function(){
+        var newContents = this.state.contents.filter(function(el){
+          if (el.id !== this.state.selected_content_id){
+            return el;
+          }
+        }.bind(this))
+      }.bind(this)} value="delete"></input>,
+    ];
+  }
   render() {
     return (
       <div className="App">
 
-        <Subject title="WEB" sub="World wide web"></Subject>
-        <TOC onSelect={function(id){
-          console.log('App', id);
+        <Subject onClick={function (){
+          this.setState({mode:'welcome'});
+        }.bind(this)} title="WEB" sub="World wide web"></Subject>
+        <TOC onSelect={function (id){
           this.setState({
-            selected_content_id: id
+            selected_content_id: id,
+            mode: 'read',
           });
         }.bind(this)} data={this.state.contents}></TOC>
-        <Content data={this.getSelectedContent()}></Content>
-
+        {this.getControlComponent()}
+        {this.getContentComponet()}
       </div>
     );
   }
