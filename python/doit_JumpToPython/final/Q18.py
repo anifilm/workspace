@@ -6,6 +6,6 @@ Q18 문자열 검색
 >>> import re
 >>> p = re.compile("[a-z]+")
 >>> m = p.search("5 python")
->>> m.start() + m.end()
+>>> m.start() + m.end()  # 10 출력
 
 """

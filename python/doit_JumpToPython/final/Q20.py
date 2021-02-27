@@ -8,3 +8,11 @@ lee@myhome.co.kr 등과 매칭된다. 긍정형 전방 탐색 기법을 사용�
 .*[@].*[.].*$
 
 """
+
+import re
+
+pat = re.compile(".*[@].*[.](?=com$|net$).*$")
+
+print(pat.match("pahkey@gmail.com"))
+print(pat.match("kim@daum.net"))
+print(pat.match("lee@myhome.co.kr"))

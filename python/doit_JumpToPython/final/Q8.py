@@ -18,3 +18,14 @@ BBB
 AAA
 
 """
+
+file = open("./Q8_abc.txt", 'r')
+lines = file.readlines()
+file.close()
+
+lines.reverse()
+
+file = open("./Q8_result.txt", 'w')
+for line in lines:
+    file.write(line)
+file.close()

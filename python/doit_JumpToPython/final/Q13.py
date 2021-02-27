@@ -9,3 +9,31 @@ DashInsert 함수는 숫자로 구성된 문자열을 입력받은 뒤 문자열
 출력 예시: 454*67-9-3
 
 """
+
+def dash_insert(st):
+    lst = list(st)
+    rst = []
+    if int(lst[0]) % 2 == 0:
+        odd = True
+    else:
+        odd = False
+    rst.append(lst[0])
+
+    for i in range(1, len(lst)):
+        if int(lst[i]) % 2 == 0:
+            if odd == True:
+                rst.append('*')
+            rst.append(lst[i])
+            odd = True
+        else:
+            if odd == False:
+                rst.append('-')
+            rst.append(lst[i])
+            odd = False
+
+    return ''.join(rst)
+
+
+s = "4546793"
+result = dash_insert(s)
+print(result)

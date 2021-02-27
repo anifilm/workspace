@@ -9,16 +9,16 @@ Q14 문자열 압축하기
 
 """
 
-def zipper(zip_str):
+def comp_str(st):
     s_str = []
-    s_str.append(zip_str[0])
+    s_str.append(st[0])
     count = 1
-    for i in range(1, len(zip_str)):
-        if zip_str[i-1] == zip_str[i]:
+    for i in range(1, len(st)):
+        if st[i-1] == st[i]:
             count += 1
         else:
             s_str.append(str(count))
-            s_str.append(zip_str[i])
+            s_str.append(st[i])
             count = 1
     else:
         s_str.append(str(count))
@@ -26,5 +26,5 @@ def zipper(zip_str):
 
 
 s = "aaabbcccccca"
-result = zipper(s)
+result = comp_str(s)
 print(result)
