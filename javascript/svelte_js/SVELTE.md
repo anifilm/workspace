@@ -8,7 +8,7 @@ $ npx degit sveltejs/template my-svelte-project
 
 $ cd my-svelte-project
 
-# to use  run:
+# to use TypeScript run:
 # node scripts/setupTypeScript.js
 
 $ npm install
