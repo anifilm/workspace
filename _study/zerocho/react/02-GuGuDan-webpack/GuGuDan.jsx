@@ -15,7 +15,7 @@ const GuGuDan = () => {
       setFirst(Math.ceil(Math.random() * 9));
       setSecond(Math.ceil(Math.random() * 9));
       setValue('');
-      inputEl.current.focus();
+      inputRef.current.focus();
     } else {
       setResult('땡');
       setValue('');

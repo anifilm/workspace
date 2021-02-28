@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map', // hidden-source-map
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.js', '.jsx'],
   },
 
   entry: {
