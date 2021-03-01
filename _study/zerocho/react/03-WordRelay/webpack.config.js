@@ -2,7 +2,7 @@ const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  name: 'wordrelay-setting',
+  name: 'word-relay-dev',
   mode: 'development', // 실서비스: production
   devtool: 'inline-source-map', // hidden-source-map
   resolve: {
@@ -37,10 +37,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'app.js',
-    publicPath: '/dist/',
+    publicPath: '/dist',
   }, // 출력
   devServer: {
-    publicPath: '/dist/',
+    publicPath: '/dist',
     hot: true,
   },
 };
