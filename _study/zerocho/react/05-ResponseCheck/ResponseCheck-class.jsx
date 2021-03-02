@@ -51,8 +51,13 @@ class ResponseCheck extends Component {
 
   renderAverage = () => {
     const { result } = this.state;
-    return result.length === 0 ? null :
-      <div>평균 시간: {result.reduce((a, c) => a + c) / result.length}ms</div>;
+    return (
+      result.length === 0 ? null :
+        <React.Fragment>
+          <div>평균 시간: {(result.reduce((a, c) => a + c) / result.length).toFixed(2)}ms |
+          <button onClick={this.onReset}>리셋</button></div>
+        </React.Fragment>
+    );
   };
 
   render() {
