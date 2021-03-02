@@ -1,10 +1,3 @@
-프로젝트 설치
-$ npm install
-
-프로젝트 실행
-$ npm start
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
