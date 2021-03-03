@@ -5,7 +5,6 @@
 
 # Class 작성하기
 class Person
-
     def initialize(name, age)
         @name = name
         @age = age
@@ -14,7 +13,6 @@ class Person
     def describe
         puts "I'm #{@name} and #{@age} years old."
     end
-
 end
 
 # 객체 생성하기
@@ -46,7 +44,6 @@ class Person
     def name=(value) # setter
         @name = value
     end
-
 end
 
 # 상수 참조
@@ -91,14 +88,13 @@ class Person
     @name = name
     @age = age
   end
-
 end
 
 
 # 클래스 메서드
 
 # 클래스 메서드: 클래스를 대상으로 호출할 수 있는 메소드
-# 인스턴스를 생성하는 .new 도 클래스 메소드 중 하나입니다.
+# 인스턴스를 생성하는 .new 도 클래스 메소드 중 하나
 
 # 클래스 메서드를 정의하기 위해서는 메서드명 앞에 self를 붙여서 정의한다.
 # self는 해당 메서드가 속한 클래스를 가리키게 된다.
@@ -110,7 +106,6 @@ class Person
   def self.all
     # code
   end
-
 end
 
 Person.all
@@ -134,7 +129,6 @@ class Person
   def self.counter
     return @@count
   end
-
 end
 
 alice = Person.new("Alice")
@@ -145,7 +139,7 @@ puts "Number of Person: #{Person.counter}" # Number of Person: 2
 
 # 싱글톤 메서드
 
-# 클래스에 정의한 메소드 외에, 해당 인스턴스 고유의 메소드를 가질수 있습니다.
+# 클래스에 정의한 메소드 외에, 해당 인스턴스 고유의 메소드를 가질수 있다.
 
 class Foo
 end
