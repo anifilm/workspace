@@ -6,4 +6,5 @@ node_modules
 *.pdb
 *.class
 *.exe
+test.*
 
