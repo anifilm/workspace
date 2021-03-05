@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import Ball from './Ball';
 
 function getWinNumbers() {
@@ -16,83 +16,53 @@ function getWinNumbers() {
   return [...winNumbers, bonusNumber];
 }
 
-class className extends Component {
-  state = {
-    winNumbers: getWinNumbers(), // 당첨 숫자들
-    winBalls: [],
-    bonus: null, // 보너스 공
-    redo: false,
-  };
+const Lotto = () => {
+  const lottoNumbers = useMemo(() => getWinNumbers(), []); // 당첨 숫자들
+  const [winNumbers, setWinNumbers] = useState(lottoNumbers);
+  const [winBalls, setWinBalls] = useState([]);
+  const [bonus, setBonus] = useState(null); // 보너스 공
+  const [redo, setRedo] = useState(false);
+  const timeouts = useRef([]);
 
-  timeouts = [];
-
-  runTimeouts = () => {
-    console.log('runTimeouts');
-    const { winNumbers } = this.state;
+  useEffect(() => {
+    console.log('useEffect');
     for (let i = 0; i < winNumbers.length - 1; i++) {
-      this.timeouts[i] = setTimeout(() => {
-        this.setState((prevState) => {
-          return {
-            winBalls: [...prevState.winBalls, winNumbers[i]],
-          };
-        });
+      timeouts.current[i] = setTimeout(() => {
+        setWinBalls(prevBalls => [...prevBalls, winNumbers[i]]);
       }, (i + 1) * 800);
     }
-    this.timeouts[6] = setTimeout(() => {
-      this.setState({
-        bonus: winNumbers[6],
-        redo: true,
-      });
+    timeouts.current[6] = setTimeout(() => {
+      setBonus(winNumbers[6]);
+      setRedo(true);
     }, 6000);
-  };
+    return () => { // componentWillUnmount
+      timeouts.current.forEach((v) => {
+        clearTimeout(v);
+      });
+    };
+  }, [timeouts.current]); // 빈 배열이면 componentDidMount와 동일
+  // 배열에 요소가 있으면 componentDidMount와 componentDidUpdate 둘 다 수행
 
-  componentDidMount() {
-    console.log('didMount');
-    this.runTimeouts();
-    console.log('로또 숫자를 생성합니다.');
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log('didUpdate');
-    if (this.state.winBalls.length === 0) {
-      this.runTimeouts();
-    }
-    if (prevState.winNumbers !== this.state.winNumbers) {
-      console.log('로또 숫자를 생성합니다.');
-    }
-  }
-
-  componentWillUnmount() {
-    this.timeouts.forEach((v) => {
-      clearTimeout(v);
-    });
-  }
-
-  onClickRedo = () => {
+  const onClickRedo = useCallback(() => {
     console.log('onClickRedo');
-    this.setState({
-      winNumber: getWinNumbers(), // 당첨 숫자들
-      winBalls: [],
-      bonus: null, // 보너스 공
-      redo: false,
-    });
-    this.timeouts = [];
-  };
+    setWinNumbers(getWinNumbers()); // 당첨 숫자들
+    setWinBalls([]);
+    setBonus(null); // 보너스 공
+    setRedo(false);
+    timeouts.current = [];
+  }, []);
 
-  render() {
-    const { winBalls, bonus, redo } = this.state;
-    return (
-      <div>
-        <div>예측 결과</div>
-        <div id="결과창">
-          {winBalls.map((v) => <Ball key={v} number={v} />)}
-        </div>
-        <div>보너스</div>
-        {bonus && <Ball number={bonus} />}
-        {redo && <button onClick={this.onClickRedo}>한번 더!</button>}
+  return (
+    <div>
+      <div>예측 결과</div>
+      <div id="결과창">
+        {winBalls.map((v) => <Ball key={v} number={v} />)}
       </div>
-    );
-  }
-}
+      <div>보너스</div>
+      {bonus && <Ball number={bonus} />}
+      {redo && <button onClick={onClickRedo}>한번 더!</button>}
+    </div>
+  );
+};
 
-export default className;
+export default Lotto;
