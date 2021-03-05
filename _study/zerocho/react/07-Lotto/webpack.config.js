@@ -2,7 +2,7 @@ const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  name: 'rsp-dev',
+  name: 'lotto-dev',
   mode: 'development', // 실서비스: production
   devtool: 'inline-source-map', // hidden-source-map
   resolve: {
