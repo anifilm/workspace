@@ -53,22 +53,22 @@ class ResponseCheck extends Component {
     const { result } = this.state;
     return (
       result.length === 0 ? null :
-        <React.Fragment>
+        <>
           <div>평균 시간: {(result.reduce((a, c) => a + c) / result.length).toFixed(2)}ms |
           <button onClick={this.onReset}>리셋</button></div>
-        </React.Fragment>
+        </>
     );
   };
 
   render() {
     const { state, message } = this.state;
     return (
-      <React.Fragment>
+      <>
         <div id='screen' className={state} onClick={this.onClickScreen}>
           {message}
         </div>
         {this.renderAverage()}
-      </React.Fragment>
+      </>
     );
   }
 }

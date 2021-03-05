@@ -65,7 +65,7 @@ const RSP = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div id="computer" style={{ background: `url(./image/rsp.jpg) ${imgCoord} 0` }} />
       <div className="message">{result}</div>
       <div className="message">현재 {score}점</div>
@@ -75,7 +75,7 @@ const RSP = () => {
         <button id="rock" className="btn" onClick={onClickBtn('바위')}>바위</button>
         <button id="paper" className="btn" onClick={onClickBtn('보')}>보</button>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

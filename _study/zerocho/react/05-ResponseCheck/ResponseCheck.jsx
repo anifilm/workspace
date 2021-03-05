@@ -39,20 +39,20 @@ const ResponseCheck = () => {
   const renderAverage = () => {
     return (
       result.length === 0 ? null :
-        <React.Fragment>
+        <>
           <div>평균 시간: {(result.reduce((a, c) => a + c) / result.length).toFixed(2)}ms |
           <button onClick={onReset}>리셋</button></div>
-        </React.Fragment>
+        </>
     );
   };
 
   return (
-    <React.Fragment>
+    <>
       <div id='screen' className={state} onClick={onClickScreen}>
         {message}
       </div>
       {renderAverage()}
-    </React.Fragment>
+    </>
   );
 };
 
