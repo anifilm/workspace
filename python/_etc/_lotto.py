@@ -7,3 +7,6 @@ random 모듈을 사용하여 로또 번호(1~45 사이의 숫자 6개)를 생�
 import random
 
 print(random.sample(range(1, 46), 6))
+
+print(random.sample(range(1, 5), 1))
+print(random.sample(range(0, 9), 6))

@@ -57,7 +57,7 @@ const Lotto = () => {
   }, [winNumbers]);
 
   return (
-    <div>
+    <>
       <div>예측 결과</div>
       <div id="결과창">
         {winBalls.map((v) => <Ball key={v} number={v} />)}
@@ -65,7 +65,7 @@ const Lotto = () => {
       <div>보너스</div>
       {bonus && <Ball number={bonus} />}
       {redo && <button onClick={onClickRedo}>한번 더!</button>}
-    </div>
+    </>
   );
 };
 
