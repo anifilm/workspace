@@ -21,7 +21,7 @@ module.exports = {
             targets: {
               browsers: ['last 2 chrome versions'], }, // browserslist
             debug: true,
-          }, ],
+          },],
           '@babel/preset-react',
         ],
         plugins: [
@@ -29,7 +29,7 @@ module.exports = {
           'react-refresh/babel',
         ],
       },
-    }, ],
+    },],
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),

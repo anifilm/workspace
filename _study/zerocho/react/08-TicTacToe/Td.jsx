@@ -1,7 +1,9 @@
 import React, { useCallback, memo } from 'react';
 import { CLICK_CELL } from './TicTacToe';
 
-const Td = ({ rowIndex, cellIndex, dispatch, cellData }) => {
+const Td = memo(({ rowIndex, cellIndex, dispatch, cellData }) => {
+  console.log('td rendered');
+
   const onClickTd = useCallback(() => {
     if (cellData) {
       console.log(rowIndex, cellIndex);
@@ -13,6 +15,6 @@ const Td = ({ rowIndex, cellIndex, dispatch, cellData }) => {
   return (
     <td onClick={onClickTd}>{cellData}</td>
   );
-};
+});
 
 export default Td;
