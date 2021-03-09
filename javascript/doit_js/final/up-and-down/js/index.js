@@ -37,7 +37,7 @@ function finding(e) {
 
 function showHint(upAndDown) {
   let selOutput = document.querySelector('#display');
-  selOutput.innerHTML = `${upAndDown}`;
+  selOutput.innerHTML = upAndDown;
 }
 
 function showCount(count) {
