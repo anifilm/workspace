@@ -1,4 +1,5 @@
 node_modules
 dist
 __new__
+__init__.*
 *.exe
