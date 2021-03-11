@@ -25,10 +25,12 @@
       </ul>
       <div id="showResult"></div>
     </div>
+
     <script>
       function showPrice() {
         var originPrice = document.querySelector("#oPrice").value;
         var rate = document.querySelector("#rate").value;
+
         if (originPrice != 0 && rate != 0) {
           var savedPrice = originPrice * (rate / 100);
           var resultPrice = originPrice - savedPrice;

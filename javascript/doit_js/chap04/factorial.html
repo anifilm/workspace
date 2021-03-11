@@ -12,10 +12,12 @@
       var n = prompt("숫자를 입력하세요."); // 몇까지 곱할 것인지를 프롬프트 창으로 입력받아 변수에 저장
       var nFact = 1; // 팩토리얼 계산 결과값을 저장할 변수
       var i = 2; // 반복문에 사용할 카운터 변수
+
       while (i <= n) { // i = n까지 반복
         nFact *= i; // nFact = nFact * i
         i++;
       }
+
       document.write(n + "!= " + nFact);
     </script>
   </body>
