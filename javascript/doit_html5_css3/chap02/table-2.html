@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>표 만들기</title>
-  <style>
-    table, th, td {
-      border:1px solid #ccc;
-    }
-    th {
-      padding:15px;   /* 셀 테두리와 내용 사이의 간격(패딩) */
-    }
-    tr > td:nth-child(odd) {
-      width:120px;  /* 홀수번째 열의 너비 : 120px */
-    }
-    tr > td:nth-child(even) {
-      width:300px;  /* 짝수번째 열의 너비 : 120px */
-    }
-  </style>
-</head>
-<body>
-  <table> <!-- 3행 4열 테이블 -->
-    <tr>
-      <th>이름</th>   <!-- 제목 1열 -->
-      <td></td>      <!-- 내용 2열 -->
-      <th>연락처</th> <!-- 제목 3열 -->
-      <td></td>      <!-- 내용 4열 -->
-    </tr>
-    <tr>
-      <th>주소</th> <!-- 제목 1열 -->
-      <td colspan="3"></td> <!-- 3열 합치기 -->
-    </tr>
-    <tr>
-      <th>자기소개</th> <!-- 제목 1열 -->
-      <td colspan="3"></td> <!-- 3열 합치기 -->
-    </tr>
-  </table>
-</body>
+    <style>
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+      th {
+        padding: 15px; /* 셀 테두리와 내용 사이의 간격(패딩) */
+      }
+      tr > td:nth-child(odd) {
+        width: 120px; /* 홀수번째 열의 너비 : 120px */
+      }
+      tr > td:nth-child(even) {
+        width: 300px; /* 짝수번째 열의 너비 : 120px */
+      }
+    </style>
+  </head>
+  <body>
+    <table> <!-- 3행 4열 테이블 -->
+      <tr>
+        <th>이름</th>   <!-- 제목 1열 -->
+        <td></td>      <!-- 내용 2열 -->
+        <th>연락처</th> <!-- 제목 3열 -->
+        <td></td>      <!-- 내용 4열 -->
+      </tr>
+      <tr>
+        <th>주소</th> <!-- 제목 1열 -->
+        <td colspan="3"></td> <!-- 3열 합치기 -->
+      </tr>
+      <tr>
+        <th>자기소개</th> <!-- 제목 1열 -->
+        <td colspan="3"></td> <!-- 3열 합치기 -->
+      </tr>
+    </table>
+  </body>
 </html>
