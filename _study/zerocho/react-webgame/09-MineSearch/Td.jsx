@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, useState, useRef } from 'react';
+import React, { useContext, useCallback, useMemo, memo } from 'react';
 import { CLICK_MINE, CODE, FLAG_CELL, NORMALIZE_CELL, OPEN_CELL, QUESTION_CELL, TableContext } from './MineSearch';
 
 const getTdStyle = (code) => {
@@ -49,7 +49,7 @@ const getTdText = (code) => {
   }
 };
 
-const Td = ({ rowIndex, cellIndex }) => {
+const Td = memo(({ rowIndex, cellIndex }) => {
   const { tableData, dispatch, halted } = useContext(TableContext);
 
   const onClickTd = useCallback(() => {
@@ -97,7 +97,10 @@ const Td = ({ rowIndex, cellIndex }) => {
     }
   }, [tableData[rowIndex][cellIndex], halted]);
 
-  return (
+  // console.log('td randered');
+
+  return useMemo(() => (
+    // console.log(real td rendered);
     <td
       style={getTdStyle(tableData[rowIndex][cellIndex])}
       onClick={onClickTd}
@@ -105,7 +108,9 @@ const Td = ({ rowIndex, cellIndex }) => {
     >
       {getTdText(tableData[rowIndex][cellIndex])}
     </td>
-  );
-};
+  ), [tableData[rowIndex][cellIndex]]);
+});
+
+// useMemo 사용 이외에도 컴포넌트를 분리하는 방법도 있다. (8-8에서 설명함)
 
 export default Td;
