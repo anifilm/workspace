@@ -29,6 +29,7 @@ module.exports = {
           'react-refresh/babel',
         ],
       },
+      exclude: path.join(__dirname, 'node_modules'),
     },],
   },
   plugins: [
@@ -40,6 +41,7 @@ module.exports = {
     publicPath: '/dist',
   }, // 출력
   devServer: {
+    historyApiFallback: true,
     publicPath: '/dist',
     hot: true,
   },
