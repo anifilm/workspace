@@ -29,7 +29,6 @@ IntelliJ Java Maven Webapp 설정 방법
 
 6. pom.xml 오른 클릭 -> Maven -> Reload project 선택
 
-
 7. src/main 오른 클릭 -> New -> Directory -> java 폴더 생성
 
 8. Add Configuration...
@@ -41,7 +40,7 @@ IntelliJ Java Maven Webapp 설정 방법
     Deployment 탭 선택
 
     + 추가
-    Artifact... -> chap00:wap exploded 선택
+    Artifact... -> chap01:wap exploded 선택
 
-    Application context: /
+    Application context: /chap01
 
