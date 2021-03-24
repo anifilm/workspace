@@ -26,16 +26,16 @@ public class CalculatorServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // 클라이언트에서 보낸 값을 꺼낸다.
-        String op = req.getParameter("op");
-        double v1 = Double.parseDouble(req.getParameter("v1"));
-        double v2 = Double.parseDouble(req.getParameter("v2"));
+        String op = request.getParameter("op");
+        double v1 = Double.parseDouble(request.getParameter("v1"));
+        double v2 = Double.parseDouble(request.getParameter("v2"));
 
         // 클라이언트로 출력하기 위해 준비한다.
-        resp.setContentType("text/html; charset=UTF-8");
-        PrintWriter out = resp.getWriter();
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
         out.println("<html><body>");
         out.println("<h1>계산 결과</h1>");

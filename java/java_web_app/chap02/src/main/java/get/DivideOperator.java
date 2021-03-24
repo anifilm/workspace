@@ -1,7 +1,6 @@
 package get;
 
 public class DivideOperator implements Operator {
-
 	@Override
 	public String getName() {
 		return "/";

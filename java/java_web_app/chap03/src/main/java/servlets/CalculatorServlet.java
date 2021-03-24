@@ -13,15 +13,15 @@ public class CalculatorServlet extends GenericServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    public void service(ServletRequest servletRequest, ServletResponse servletResponse)
+    public void service(ServletRequest request, ServletResponse response)
             throws ServletException, IOException {
-        int a = Integer.parseInt(servletRequest.getParameter("a"));
-        int b = Integer.parseInt(servletRequest.getParameter("b"));
+        int a = Integer.parseInt(request.getParameter("a"));
+        int b = Integer.parseInt(request.getParameter("b"));
 
-        servletResponse.setContentType("text/plain");
-        servletResponse.setCharacterEncoding("UTF-8");
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
 
-        PrintWriter writer = servletResponse.getWriter();
+        PrintWriter writer = response.getWriter();
         writer.println("a=" + a + ", " + "b=" + b + "의 계산결과 입니다.");
         writer.println("a + b = " + (a + b));
         writer.println("a - b = " + (a - b));

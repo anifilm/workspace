@@ -1,7 +1,6 @@
 package get;
 
 public class MultipleOperator implements Operator {
-
 	@Override
 	public String getName() {
 		return "*";
