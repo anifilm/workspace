@@ -5,32 +5,41 @@
 <web-app>
   <display-name>chap04</display-name>
 
-  <!-- 서블릿 선언 -->
-  <servlet>
-    <servlet-name>MemberUpdateServlet</servlet-name>
-    <servlet-class>spms.servlets.MemberUpdateServlet</servlet-class>
-    <init-param>
-      <param-name>driver</param-name>
-      <param-value>com.mysql.jdbc.Driver</param-value>
-    </init-param>
-    <init-param>
-      <param-name>url</param-name>
-      <param-value>jdbc:mysql://localhost/java_web_app_chap04</param-value>
-    </init-param>
-    <init-param>
-      <param-name>username</param-name>
-      <param-value>root</param-value>
-    </init-param>
-    <init-param>
-      <param-name>password</param-name>
-      <param-value>lcy0200</param-value>
-    </init-param>
-  </servlet>
+  <!-- 컨텍스트 초기화 파라미터 -->
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost/java_web_app_chap04</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>lcy0200</param-value>
+  </context-param>
 
-  <!-- 서블릿을 URL과 연결 -->
-  <servlet-mapping>
-    <servlet-name>MemberUpdateServlet</servlet-name>
-    <url-pattern>/member/update</url-pattern>
-  </servlet-mapping>
+  <!-- 필터 선언 -->
+  <!--
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>spms.filters.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  -->
 
+  <!-- 필터 URL 매핑 -->
+  <!--
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  -->
 </web-app>
