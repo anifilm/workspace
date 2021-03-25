@@ -1,4 +1,4 @@
-<%@ page import="spms.vo.Member" %>
+<%--<%@ page import="spms.vo.Member" %>--%>
 <%@ page
   contentType="text/html;charset=UTF-8"
   language="java"

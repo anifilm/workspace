@@ -12,7 +12,9 @@
   <a href="calc/Calculator.jsp">바로가기</a>
   <h2>회원목록 로그인</h2>
   <a href="auth/login">바로가기</a>
-  <h2>EL 표기법</h2>
+  <h2>EL 문법</h2>
   <a href="el/El01.jsp">바로가기</a>
+  <h2>JSTL</h2>
+  <a href="jstl/Jstl01.jsp">바로가기</a>
 </body>
 </html>

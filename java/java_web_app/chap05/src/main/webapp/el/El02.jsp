@@ -1,5 +1,4 @@
 <%@ page isELIgnored="false" %> <%-- EL 문법 사용시 추가 필요 --%>
-<%@ page import="java.util.ListResourceBundle" %>
 <%@ page import="java.util.ResourceBundle" %>
 <%@ page import="spms.vo.Member" %>
 <%@ page import="java.util.HashMap" %>

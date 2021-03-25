@@ -22,6 +22,7 @@ public class AppInitServlet extends HttpServlet {
                     sc.getInitParameter("url"),
                     sc.getInitParameter("username"),
                     sc.getInitParameter("password"));
+
             sc.setAttribute("conn", conn);
 
         } catch(Throwable e) {
@@ -39,7 +40,7 @@ public class AppInitServlet extends HttpServlet {
             if (conn != null && conn.isClosed() == false) {
                 conn.close();
             }
-        } catch (Exception e) { }
 
+        } catch (Exception e) { }
     }
 }

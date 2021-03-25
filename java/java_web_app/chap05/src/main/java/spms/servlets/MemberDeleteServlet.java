@@ -1,5 +1,7 @@
 package spms.servlets;
 
+import spms.dao.MemberDao;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Statement;
 
 @WebServlet("/member/delete")
 public class MemberDeleteServlet extends HttpServlet {
@@ -19,21 +20,24 @@ public class MemberDeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Connection conn = null;
-        Statement stmt = null;
+        //Connection conn = null;
+        //Statement stmt = null;
 
         try {
             ServletContext sc = this.getServletContext();
-            //Class.forName(sc.getInitParameter("driver"));
-            //conn = DriverManager.getConnection(
-            //        sc.getInitParameter("url"),
-            //        sc.getInitParameter("username"),
-            //        sc.getInitParameter("password"));
-            // ServletContext에 보관된 Connection 객체 사용
+            Connection conn = (Connection) sc.getAttribute("conn");
+
+            /* ServletContext에 보관된 Connection 객체 사용
             conn = (Connection) sc.getAttribute("conn");
             stmt = conn.createStatement();
             stmt.executeUpdate(
                     "DELETE FROM MEMBERS WHERE MNO=" + request.getParameter("no"));
+             */
+
+            MemberDao memberDao = new MemberDao();
+            memberDao.setConnection(conn);
+
+            memberDao.delete(Integer.parseInt(request.getParameter("no")));
 
             response.sendRedirect("list");
 
@@ -44,9 +48,10 @@ public class MemberDeleteServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
             rd.forward(request, response);
 
-        } finally {
+        }
+        /* finally {
             try { if (stmt != null) stmt.close(); } catch(Exception e) { }
             //try { if (conn != null) conn.close(); } catch(Exception e) { }
-        }
+        } */
     }
 }

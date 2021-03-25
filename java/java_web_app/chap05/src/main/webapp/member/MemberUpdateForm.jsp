@@ -12,10 +12,10 @@
 <body>
   <jsp:include page="/Header.jsp"/>
   <h1>회원 정보</h1>
-<%-- EL 문법 사용 --%>
 <%--<jsp:useBean id="member"
                  scope="request"
                  class="spms.vo.Member"/>--%>
+  <%-- EL 문법 사용 --%>
   <form action="update" method="post">
     번호: <input type="text" name="no" value="${member.no}" readonly><br>
     이름: <input type="text" name="name" value="${member.name}"><br>
