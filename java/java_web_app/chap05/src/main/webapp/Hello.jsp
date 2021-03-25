@@ -4,10 +4,9 @@
   pageEncoding="UTF-8" %>
 <html>
 <head>
-  <title>chap04</title>
+  <title>Hello</title>
 </head>
 <body>
-  <h2>회원목록</h2>
-  <a href="member/list">바로가기</a>
+  <p>안녕하세요</p>
 </body>
 </html>
