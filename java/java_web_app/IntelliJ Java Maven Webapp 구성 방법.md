@@ -17,21 +17,39 @@ IntelliJ Java Maven Webapp 설정 방법
 
 5. pom.xml dependency 추가
 
-- 서블릿 추가
+- 서블릿
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
+
+- JSTL
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>javax.servlet.jsp.jstl</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+
+- mysql
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.23</version>
+    </dependency>
+
 - 파일 업로드
     <dependency>
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
       <version>1.4</version>
     </dependency>
-- mysql
-
 
 [파일 수정 후]
 

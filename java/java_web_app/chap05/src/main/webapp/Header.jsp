@@ -16,5 +16,9 @@
     <%= member.getName() %>
     <a style="color: white;" href="<%= request.getContextPath() %>/auth/logout">로그아웃</a>
   </span>
+  <% } else { %>
+  <span style="float: right;">
+    <a style="color: gray;" href="<%= request.getContextPath() %>/auth/login">로그인</a>
+  </span>
   <% } %>
 </div>
