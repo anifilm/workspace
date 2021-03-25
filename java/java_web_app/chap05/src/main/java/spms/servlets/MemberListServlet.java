@@ -52,19 +52,32 @@ public class MemberListServlet extends HttpServlet {
                         .setNo(rs.getInt("MNO"))
                         .setName(rs.getString("MNAME"))
                         .setEmail(rs.getString("EMAIL"))
-                        .setCreateDate(rs.getDate("CRE_DATE")));
+                        .setCreatedDate(rs.getDate("CRE_DATE")));
             }
 
             // request에 회원 목록 데이터를 보관한다.
-            request.setAttribute("members", members);;
+            request.setAttribute("members", members);
 
-            // UI 출력 코드를 제거하고, UI 생성 및 출력을 JSP에게 위임한다.
-            RequestDispatcher rd = request.getRequestDispatcher(
-                    "/member/MemberList.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/member/MemberList.jsp");
             rd.include(request, response);
+
+            /* UI 출력 코드를 제거하고, UI 생성 및 출력을 JSP에게 위임한다.
+            PrintWriter out = response.getWriter();
+            out.println("<html><head><title>회원목록</title></head>");
+            out.println("<body><h1>회원목록</h1>");
+            out.println("<p><a href='add'>신규 회원</a></p>");
+            while(rs.next()) {
+                out.println(
+                        rs.getInt("MNO") + ", " + "<a href='update?no=" + rs.getInt("MNO") + "'>" +
+                        rs.getString("MNAME") + "</a>, " + rs.getString("EMAIL") + ", " +
+                        rs.getDate("CRE_DATE") + "<a href='delete?no=" + rs.getInt("MNO") + "'>&nbsp;[삭제]</a><br>");
+            }
+            out.println("</body></html>");
+            */
 
         } catch (Exception e) {
             //throw new ServletException(e);
+            e.printStackTrace();
             request.setAttribute("error", e);
             RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
             rd.forward(request, response);

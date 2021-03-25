@@ -26,7 +26,7 @@
   <%= member.getNo() %>,
   <a href="update?no=<%= member.getNo() %>"><%= member.getName() %></a>,
   <%= member.getEmail() %>,
-  <%= member.getCreateDate() %>
+  <%= member.getCreatedDate() %>
   <a href="delete?no=<%= member.getNo() %>">[삭제]</a><br>
   <% } %><br>
   <jsp:include page="/Tail.jsp"/>

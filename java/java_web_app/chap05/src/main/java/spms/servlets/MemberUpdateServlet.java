@@ -1,5 +1,8 @@
 package spms.servlets;
 
+import spms.vo.Member;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 @SuppressWarnings("serial")
@@ -23,18 +25,36 @@ public class MemberUpdateServlet extends HttpServlet {
 
         try {
             ServletContext sc = this.getServletContext();
-            Class.forName(sc.getInitParameter("driver"));
-            conn = DriverManager.getConnection(
-                    sc.getInitParameter("url"),
-                    sc.getInitParameter("username"),
-                    sc.getInitParameter("password"));
+            //Class.forName(sc.getInitParameter("driver"));
+            //conn = DriverManager.getConnection(
+            //        sc.getInitParameter("url"),
+            //        sc.getInitParameter("username"),
+            //        sc.getInitParameter("password"));
+            // ServletContext에 보관된 Connection 객체 사용
+            conn = (Connection) sc.getAttribute("conn");
             stmt = conn.createStatement();
             rs = stmt.executeQuery(
                     "SELECT MNO,EMAIL,MNAME,CRE_DATE FROM MEMBERS" +
                     " WHERE MNO=" + request.getParameter("no"));
-            rs.next();
 
+            if (rs.next()) {
+                request.setAttribute("member",
+                        new Member()
+                        .setNo(rs.getInt("MNO"))
+                        .setEmail(rs.getString("EMAIL"))
+                        .setName(rs.getString("MNAME"))
+                        .setCreatedDate(rs.getDate("CRE_DATE")));
+            }
+            else {
+                throw new Exception("해당 번호의 회원을 찾을 수 없습니다.");
+            }
+
+            RequestDispatcher rd = request.getRequestDispatcher("/member/MemberUpdateForm.jsp");
+            rd.forward(request, response);
+
+            /* UI 출력 코드를 제거하고, UI 생성 및 출력을 JSP에게 위임한다.
             response.setContentType("text/html; charset=UTF-8");
+
             PrintWriter out = response.getWriter();
             out.println("<html><head><title>회원정보</title></head>");
             out.println("<body><h1>회원정보</h1>");
@@ -49,14 +69,19 @@ public class MemberUpdateServlet extends HttpServlet {
             out.println("<input type='button' value='취소'" + " onclick='location.href=\"list\"'>");
             out.println("</form>");
             out.println("</body></html>");
+             */
 
         } catch (Exception e) {
-            throw new ServletException(e);
+            //throw new ServletException(e);
+            e.printStackTrace();
+            request.setAttribute("error", e);
+            RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
+            rd.forward(request, response);
 
         } finally {
-            try {if (rs != null) rs.close();} catch(Exception e) {}
-            try {if (stmt != null) stmt.close();} catch(Exception e) {}
-            try {if (conn != null) conn.close();} catch(Exception e) {}
+            try { if (rs != null) rs.close(); } catch(Exception e) { }
+            try { if (stmt != null) stmt.close(); } catch(Exception e) { }
+            //try { if (conn != null) conn.close(); } catch(Exception e) { }
         }
     }
 
@@ -71,11 +96,13 @@ public class MemberUpdateServlet extends HttpServlet {
 
         try {
             ServletContext sc = this.getServletContext();
-            Class.forName(sc.getInitParameter("driver"));
-            conn = DriverManager.getConnection(
-                    sc.getInitParameter("url"),
-                    sc.getInitParameter("username"),
-                    sc.getInitParameter("password"));
+            //Class.forName(sc.getInitParameter("driver"));
+            //conn = DriverManager.getConnection(
+            //        sc.getInitParameter("url"),
+            //        sc.getInitParameter("username"),
+            //        sc.getInitParameter("password"));
+            // ServletContext에 보관된 Connection 객체 사용
+            conn = (Connection) sc.getAttribute("conn");
             stmt = conn.prepareStatement(
                     "UPDATE MEMBERS SET EMAIL=?,MNAME=?,MOD_DATE=now()"
                     + " WHERE MNO=?");
@@ -87,11 +114,15 @@ public class MemberUpdateServlet extends HttpServlet {
             response.sendRedirect("list");
 
         } catch (Exception e) {
-            throw new ServletException(e);
+            //throw new ServletException(e);
+            e.printStackTrace();
+            request.setAttribute("error", e);
+            RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
+            rd.forward(request, response);
 
         } finally {
             try { if (stmt != null) stmt.close(); } catch(Exception e) { }
-            try { if (conn != null) conn.close(); } catch(Exception e) { }
+            //try { if (conn != null) conn.close(); } catch(Exception e) { }
         }
     }
 }

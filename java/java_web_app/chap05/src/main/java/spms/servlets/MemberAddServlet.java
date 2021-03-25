@@ -1,5 +1,6 @@
 package spms.servlets;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 @WebServlet("/member/add")
@@ -20,7 +19,12 @@ public class MemberAddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        RequestDispatcher rd = request.getRequestDispatcher("/member/MemberForm.jsp");
+        rd.forward(request, response);
+
+        /* UI 출력 코드를 제거하고, UI 생성 및 출력을 JSP에게 위임한다.
         response.setContentType("text/html; charset=UTF-8");
+
         PrintWriter out = response.getWriter();
         out.println("<html><head><title>회원 등록</title></head>");
         out.println("<body><h1>회원 등록</h1>");
@@ -29,10 +33,10 @@ public class MemberAddServlet extends HttpServlet {
         out.println("이메일: <input type='text' name='email'><br>");
         out.println("암호: <input type='password' name='password'><br>");
         out.println("<input type='submit' value='추가'>");
-        //out.println("<input type='reset' value='취소'>"); // 취소 기능, 목록 보기로 되돌아 가도록 수정
         out.println("<input type='button' value='취소'" + " onclick='location.href=\"list\"'>");
         out.println("</form>");
         out.println("</body></html>");
+         */
     }
 
     @Override
@@ -46,11 +50,13 @@ public class MemberAddServlet extends HttpServlet {
 
         try {
             ServletContext sc = this.getServletContext();
-            Class.forName(sc.getInitParameter("driver"));
-            conn = DriverManager.getConnection(
-                    sc.getInitParameter("url"),
-                    sc.getInitParameter("username"),
-                    sc.getInitParameter("password"));
+            //Class.forName(sc.getInitParameter("driver"));
+            //conn = DriverManager.getConnection(
+            //        sc.getInitParameter("url"),
+            //        sc.getInitParameter("username"),
+            //        sc.getInitParameter("password"));
+            // ServletContext에 보관된 Connection 객체 사용
+            conn = (Connection) sc.getAttribute("conn");
             stmt = conn.prepareStatement(
                     "INSERT INTO MEMBERS(EMAIL,PWD,MNAME,CRE_DATE,MOD_DATE)"
                     + " VALUES (?,?,?,NOW(),NOW())");
@@ -59,6 +65,9 @@ public class MemberAddServlet extends HttpServlet {
             stmt.setString(3, request.getParameter("name"));
             stmt.executeUpdate();
 
+            response.sendRedirect("list");
+
+            /*
             response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
             out.println("<html><head><title>회원등록결과</title>");
@@ -71,12 +80,18 @@ public class MemberAddServlet extends HttpServlet {
 
             // 리프레시 정보를 응답 헤더에 추가
             //response.addHeader("Refresh", "1;url=list");
+            */
 
         } catch (Exception e) {
-            throw new ServletException(e);
+            //throw new ServletException(e);
+            e.printStackTrace();
+            request.setAttribute("error", e);
+            RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
+            rd.forward(request, response);
+
         } finally {
             try { if (stmt != null) stmt.close(); } catch(Exception e) { }
-            try { if (conn != null) conn.close(); } catch(Exception e) { }
+            //try { if (conn != null) conn.close(); } catch(Exception e) { }
         }
     }
 }

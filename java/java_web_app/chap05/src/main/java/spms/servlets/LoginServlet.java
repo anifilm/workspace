@@ -54,8 +54,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("../member/list");
             }
             else {
-                RequestDispatcher rd = request.getRequestDispatcher(
-                        "/auth/LogInFail.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/auth/LogInFail.jsp");
                 rd.forward(request, response);
             }
 
