@@ -1,7 +1,7 @@
 using System;
 
 class DirectTypeCheck {
-    static void Main() {
+    static void Main(string[] args) {
         // 직접적인 GetType() 메서드 활용
         Console.WriteLine((273).GetType());
         Console.WriteLine((522731033265L).GetType());

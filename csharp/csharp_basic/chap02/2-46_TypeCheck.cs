@@ -1,7 +1,7 @@
 using System;
 
 class TypeCheck {
-    static void Main() {
+    static void Main(string[] args) {
         // GetType() 메서드 활용
         int    _int    = 273;
         long   _long   = 522731033265;

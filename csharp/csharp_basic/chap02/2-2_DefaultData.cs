@@ -1,7 +1,7 @@
 using System;
 
 class DefaultData {
-    static void Main() {
+    static void Main(string[] args) {
         // 2-2: 정수
         Console.WriteLine(52);
         Console.WriteLine();
@@ -45,8 +45,8 @@ class DefaultData {
 
         // 2-17: 예외
         // 실행 중단되므로 주석 처리
-        // Console.WriteLine("안녕하세요"[100]);
-        // Console.WriteLine();
+        //Console.WriteLine("안녕하세요"[100]);
+        //Console.WriteLine();
 
         // 2-18: 문자 덧셈
         Console.WriteLine('가' + '힣');

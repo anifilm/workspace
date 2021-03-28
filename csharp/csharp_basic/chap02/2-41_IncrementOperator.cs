@@ -1,7 +1,7 @@
 using System;
 
 class IncrementOperator {
-    static void Main() {
+    static void Main(string[] args) {
         // 증감연산자
         int number = 10;
         number++;

@@ -1,7 +1,7 @@
 using System;
 
 class ImplicitConversion {
-    static void Main() {
+    static void Main(string[] args) {
         // 자동 자료형 변환
         int intNumber = 2147483647;
         long intToLong = intNumber; // int 자료형을 long 자료형으로 자동 형변환

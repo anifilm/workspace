@@ -1,7 +1,7 @@
 using System;
 
 class Variables {
-    static void Main() {
+    static void Main(string[] args) {
         // 2-24: 오버플로우
         int a1 = 2147483640;
         int b1 = 52273;
@@ -46,6 +46,6 @@ class Variables {
 
         // 2-35: sizeof 연산자와 string 자료형
         // 오류 발생하므로 주석 처리
-        // Console.WriteLine("string: " + sizeof(string));
+        //Console.WriteLine("string: " + sizeof(string));
     }
 }

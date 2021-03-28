@@ -1,7 +1,7 @@
 using System;
 
 class LogicalNot {
-    static void Main() {
+    static void Main(string[] args) {
         // 논리 부정 연산자
         Console.WriteLine(!true);
         Console.WriteLine(!false);

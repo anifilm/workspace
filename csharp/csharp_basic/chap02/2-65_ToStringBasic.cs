@@ -1,7 +1,7 @@
 using System;
 
 class ToStringBasic {
-    static void Main() {
+    static void Main(string[] args) {
         // 기본 자료형을 문자열로 변환
         Console.WriteLine((52).ToString() + "\t" + (52).ToString().GetType());
         Console.WriteLine((52.273).ToString() + "\t" + (52.273).ToString().GetType());

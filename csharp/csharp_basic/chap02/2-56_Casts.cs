@@ -1,12 +1,12 @@
 using System;
 
 class Casts {
-    static void Main() {
+    static void Main(string[] args) {
         // 2-56: 자료형 변환
         // 오류 발생하므로 주석 처리
-    //  long longNumber = 2147483647L + 2147483647L;
-    //  int intNumber = longNumber; // 큰 자료형에서 작은 자료형으로는 묵시적 형변환 안됨
-    //  Console.WriteLine(intNumber);
+        //long longNumber = 2147483647L + 2147483647L;
+        //int intNumber = longNumber; // 큰 자료형에서 작은 자료형으로는 묵시적 형변환 안됨
+        //Console.WriteLine(intNumber);
 
         // 2-57: 강제 자료형 변환
         var a = (int)10.0;
@@ -21,14 +21,14 @@ class Casts {
 
         // 2-63: 문자열을 숫자로 변환
         // 오류 발생하므로 주석 처리
-    //  string numberString = "52273";
-    //  int intNumber = (int)numberString;
-    //  Console.WriteLine(intNumber);
+        //string numberString = "52273";
+        //int intNumber = (int)numberString;
+        //Console.WriteLine(intNumber);
 
         // 2-64: 숫자로 변환할 수 없는 문자열을 변환하는 경우
         // 예외 발생하므로 주석 처리
-    //  Console.WriteLine(int.Parse("52.273"));
-    //  Console.WriteLine(int.Parse("abc"));
+        //Console.WriteLine(int.Parse("52.273"));
+        //Console.WriteLine(int.Parse("abc"));
 
         // 2-68: 간단한 문자열 변환
         int number = 52273;

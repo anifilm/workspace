@@ -1,7 +1,7 @@
 using System;
 
 class StringVariable {
-    static void Main() {
+    static void Main(string[] args) {
         // 문자열 변수 생성
         string message = "안녕하세요";
 

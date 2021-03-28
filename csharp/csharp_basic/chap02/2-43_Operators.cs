@@ -1,7 +1,7 @@
 using System;
 
 class Operators {
-    static void Main() {
+    static void Main(string[] args) {
         // 2-43: 후위 증감 연산자
         int number1 = 10;
         Console.WriteLine(number1);

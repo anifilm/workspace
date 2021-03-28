@@ -1,7 +1,7 @@
 using System;
 
 class DoubleToString {
-    static void Main() {
+    static void Main(string[] args) {
         // 소수점 제거
         double number = 52.273103;
         Console.WriteLine(number.ToString("0.0"));

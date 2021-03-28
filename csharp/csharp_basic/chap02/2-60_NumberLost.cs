@@ -1,7 +1,7 @@
 using System;
 
 class NumberLost {
-    static void Main() {
+    static void Main(string[] args) {
         // 숫자 손상
         long longNumber = 2147483647L + 2147483647L;
         int longToInt = (int)longNumber; // long 자료형을 int 자료형으로 변환

@@ -1,7 +1,7 @@
 using System;
 
 class StringTo {
-    static void Main() {
+    static void Main(string[] args) {
         // 문자열을 숫자로 변환
         Console.WriteLine(int.Parse("52") + "\t" + int.Parse("52").GetType());
         Console.WriteLine(long.Parse("273") + "\t" + long.Parse("273").GetType());
