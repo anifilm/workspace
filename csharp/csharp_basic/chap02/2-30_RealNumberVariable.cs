@@ -1,14 +1,10 @@
 using System;
 
-class RealNumberVariable {
-    static void Main(string[] args) {
-        // 실수 변수 생성
-        double a = 52.273;
-        double b = 103.32;
+// 실수 변수 생성
+double a = 52.273;
+double b = 103.32;
 
-        Console.WriteLine(a + b);
-        Console.WriteLine(a - b);
-        Console.WriteLine(a * b);
-        Console.WriteLine(a / b);
-    }
-}
+Console.WriteLine(a + b);
+Console.WriteLine(a - b);
+Console.WriteLine(a * b);
+Console.WriteLine(a / b);

@@ -1,14 +1,10 @@
 using System;
 
-class StringTo {
-    static void Main(string[] args) {
-        // 문자열을 숫자로 변환
-        Console.WriteLine(int.Parse("52") + "\t" + int.Parse("52").GetType());
-        Console.WriteLine(long.Parse("273") + "\t" + long.Parse("273").GetType());
-        Console.WriteLine(float.Parse("52.273") + "\t" + float.Parse("52.273").GetType());
-        Console.WriteLine(double.Parse("103.32") + "\t" + double.Parse("103.32").GetType());
-    }
-}
+// 문자열을 숫자로 변환
+Console.WriteLine(int.Parse("52") + "\t" + int.Parse("52").GetType());
+Console.WriteLine(long.Parse("273") + "\t" + long.Parse("273").GetType());
+Console.WriteLine(float.Parse("52.273") + "\t" + float.Parse("52.273").GetType());
+Console.WriteLine(double.Parse("103.32") + "\t" + double.Parse("103.32").GetType());
 
 /*
 문자열을 숫자로 변환하는 메서드

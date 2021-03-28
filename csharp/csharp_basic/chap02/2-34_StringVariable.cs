@@ -1,13 +1,9 @@
 using System;
 
-class StringVariable {
-    static void Main(string[] args) {
-        // 문자열 변수 생성
-        string message = "안녕하세요";
+// 문자열 변수 생성
+string message = "안녕하세요";
 
-        Console.WriteLine(message + "!");
-        Console.WriteLine(message[0]);
-        Console.WriteLine(message[1]);
-        Console.WriteLine(message[2]);
-    }
-}
+Console.WriteLine(message + "!");
+Console.WriteLine(message[0]);
+Console.WriteLine(message[1]);
+Console.WriteLine(message[2]);
