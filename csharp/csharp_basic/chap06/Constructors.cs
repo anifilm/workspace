@@ -1,7 +1,7 @@
 using System;
 
 class Constructors {
-    static void main(string[] args) {
+    static void Main(string[] args) {
         //
 
     }

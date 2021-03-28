@@ -1,7 +1,7 @@
 using System;
 
 class StructCopy {
-    static void main(string[] args) {
+    static void Main(string[] args) {
         //
 
     }

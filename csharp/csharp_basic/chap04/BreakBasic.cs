@@ -1,7 +1,7 @@
 using System;
 
 class BreakBasic {
-    static void main(string[] args) {
+    static void Main(string[] args) {
         //
 
     }

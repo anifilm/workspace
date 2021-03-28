@@ -1,7 +1,7 @@
 using System;
 
 class FileProcess {
-    static void main(string[] args) {
+    static void Main(string[] args) {
         //
 
     }

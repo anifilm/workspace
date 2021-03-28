@@ -1,7 +1,7 @@
 using System;
 
 class ConditionWithString {
-    static void main(string[] args) {
+    static void Main(string[] args) {
         //
 
     }

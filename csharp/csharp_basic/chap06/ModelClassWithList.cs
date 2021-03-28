@@ -1,7 +1,7 @@
 using System;
 
 class ModelClassWithList {
-    static void main(string[] args) {
+    static void Main(string[] args) {
         //
 
     }
