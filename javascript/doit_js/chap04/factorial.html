@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>팩토리얼 계산하기</title>
-    <link rel="stylesheet" href="css/factorial.css">
-  </head>
-  <body>
-    <script>
-      var n = prompt("숫자를 입력하세요."); // 몇까지 곱할 것인지를 프롬프트 창으로 입력받아 변수에 저장
-      var nFact = 1; // 팩토리얼 계산 결과값을 저장할 변수
-      var i = 2; // 반복문에 사용할 카운터 변수
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>팩토리얼 계산하기</title>
+  <link rel="stylesheet" href="css/factorial.css">
+</head>
+<body>
+  <script>
+    var n = prompt("숫자를 입력하세요."); // 몇까지 곱할 것인지를 프롬프트 창으로 입력받아 변수에 저장
+    var nFact = 1; // 팩토리얼 계산 결과값을 저장할 변수
+    var i = 2; // 반복문에 사용할 카운터 변수
 
-      while (i <= n) { // i = n까지 반복
-        nFact *= i; // nFact = nFact * i
-        i++;
-      }
+    while (i <= n) { // i = n까지 반복
+      nFact *= i; // nFact = nFact * i
+      i++;
+    }
 
-      document.write(n + "!= " + nFact);
-    </script>
-  </body>
+    document.write(n + "!= " + nFact);
+  </script>
+</body>
 </html>
