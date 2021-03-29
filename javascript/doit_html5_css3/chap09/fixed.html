@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <title>CSS 포지셔닝</title>
   <style>
-
+    #fx {
+      position: fixed; /* 브라우저 창을 기준으로 좌표값을 사용해 위치 지정 (고정 위치) */
+      top: 5px;        /* 지정된 요소는 다른 요소 위에 오버 된다. */
+      left: 5px;
+      width: 50px;
+      height: 50px;
+      background: #ff6a00;
+    }
+    #content {
+      width: 400px;
+    }
+    p {
+      line-height: 30px;
+    }
   </style>
 </head>
 <body>

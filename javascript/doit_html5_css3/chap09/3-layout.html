@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>CSS 레이아웃 - 2단 레이아웃</title>
+  <title>CSS 레이아웃 - 3단 레이아웃</title>
   <meta charset="UTF-8">
   <style>
-
+    div {
+      padding: 20px;
+      border: 1px solid #ccc; /* div 요소에 테두리 표시 */
+    }
+    #container { /* 콘텐츠 전체를 감싸는 컨테이너 요소의 너비 지정 및 화면 중앙에 배치 */
+      width: 960px;
+      margin: 0 auto;
+    }
+    #header {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    #left-sidebar {
+      width: 150px;
+      float: left; /* 왼쪽으로 플로팅 */
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background: #eee;
+    }
+    #contents {
+      width: 490px;
+      float: left; /* 왼쪽으로 플로팅 */
+      margin-bottom: 20px;
+    }
+    #right-sidebar {
+      width: 150px;
+      float: right; /* 오른쪽으로 플로팅 */
+      margin-bottom: 20px;
+      background: #eee;
+    }
+    #footer {
+      clear: both; /* 양쪽 플로팅 해제 */
+    }
   </style>
 </head>
 <body>
