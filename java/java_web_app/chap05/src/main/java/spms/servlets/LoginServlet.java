@@ -29,33 +29,14 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Connection conn = null;
-        //PreparedStatement stmt = null;
-        //ResultSet rs = null;
 
         try {
             ServletContext sc = this.getServletContext();
-            Connection conn = (Connection) sc.getAttribute("conn");
-            /*
-            conn = (Connection) sc.getAttribute("conn");
-            stmt = conn.prepareStatement(
-                    "SELECT MNAME,EMAIL FROM MEMBERS"
-                    + " WHERE EMAIL=? AND PWD=?");
-            stmt.setString(1, request.getParameter("email"));
-            stmt.setString(2, request.getParameter("password"));
-            rs = stmt.executeQuery();
+            //Connection conn = (Connection) sc.getAttribute("conn");
 
-            if (rs.next()) {
-                Member member = new Member()
-                        .setEmail(rs.getString("EMAIL"))
-                        .setName(rs.getString("MNAME"));
-                HttpSession session = request.getSession();
-                session.setAttribute("member", member);
-                response.sendRedirect("../member/list");
-            } */
-
-            MemberDao memberDao = new MemberDao();
-            memberDao.setConnection(conn);
+            //MemberDao memberDao = new MemberDao();
+            //memberDao.setConnection(conn);
+            MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
 
             Member member = memberDao.exist(
                     request.getParameter("email"),
@@ -74,9 +55,5 @@ public class LoginServlet extends HttpServlet {
         } catch (Exception e) {
             throw new ServletException(e);
         }
-        /* finally {
-            try { if (rs != null) rs.close(); } catch (Exception e) { }
-            try { if (stmt != null) stmt.close(); } catch (Exception e) { }
-        } */
     }
 }

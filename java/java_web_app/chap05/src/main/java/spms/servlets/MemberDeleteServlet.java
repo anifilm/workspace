@@ -20,22 +20,14 @@ public class MemberDeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Connection conn = null;
-        //Statement stmt = null;
 
         try {
             ServletContext sc = this.getServletContext();
-            Connection conn = (Connection) sc.getAttribute("conn");
+            //Connection conn = (Connection) sc.getAttribute("conn");
 
-            /* ServletContext에 보관된 Connection 객체 사용
-            conn = (Connection) sc.getAttribute("conn");
-            stmt = conn.createStatement();
-            stmt.executeUpdate(
-                    "DELETE FROM MEMBERS WHERE MNO=" + request.getParameter("no"));
-             */
-
-            MemberDao memberDao = new MemberDao();
-            memberDao.setConnection(conn);
+            //MemberDao memberDao = new MemberDao();
+            //memberDao.setConnection(conn);
+            MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
 
             memberDao.delete(Integer.parseInt(request.getParameter("no")));
 
@@ -49,9 +41,5 @@ public class MemberDeleteServlet extends HttpServlet {
             rd.forward(request, response);
 
         }
-        /* finally {
-            try { if (stmt != null) stmt.close(); } catch(Exception e) { }
-            //try { if (conn != null) conn.close(); } catch(Exception e) { }
-        } */
     }
 }

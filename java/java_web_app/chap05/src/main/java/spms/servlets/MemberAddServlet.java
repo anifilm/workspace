@@ -28,29 +28,14 @@ public class MemberAddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // CharacterEncodingFilter에서 처리
-        //request.setCharacterEncoding("UTF-8");
-
-        //Connection conn = null;
-        //PreparedStatement stmt = null;
 
         try {
             ServletContext sc = this.getServletContext();
-            Connection conn = (Connection) sc.getAttribute("conn");
+            //Connection conn = (Connection) sc.getAttribute("conn");
 
-            /* ServletContext에 보관된 Connection 객체 사용
-            conn = (Connection) sc.getAttribute("conn");
-            stmt = conn.prepareStatement(
-                    "INSERT INTO MEMBERS(EMAIL,PWD,MNAME,CRE_DATE,MOD_DATE)"
-                    + " VALUES (?,?,?,NOW(),NOW())");
-            stmt.setString(1, request.getParameter("email"));
-            stmt.setString(2, request.getParameter("password"));
-            stmt.setString(3, request.getParameter("name"));
-            stmt.executeUpdate();
-             */
-
-            MemberDao memberDao = new MemberDao();
-            memberDao.setConnection(conn);
+            //MemberDao memberDao = new MemberDao();
+            //memberDao.setConnection(conn);
+            MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
 
             memberDao.insert(new Member()
                     .setEmail(request.getParameter("email"))
@@ -67,9 +52,5 @@ public class MemberAddServlet extends HttpServlet {
             rd.forward(request, response);
 
         }
-        /* finally {
-            try { if (stmt != null) stmt.close(); } catch(Exception e) { }
-            //try { if (conn != null) conn.close(); } catch(Exception e) { }
-        } */
     }
 }
