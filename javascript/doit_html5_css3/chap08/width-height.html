@@ -1,14 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="UTF-8">
-		<title>박스모델</title>
-		<style>
-
-		</style>
-	</head>
-	<body>
-		<div class="box1"></div>
-		<div class="box2"></div>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<title>박스모델</title>
+	<style>
+		.box1 {
+			width: 400px; /* 고정 너비 */
+			height: 100px; /* 높이 */
+			background: #ff6a00;
+		}
+		.box2 {
+			width: 50%; /* 가변 너비 - 브라우저 창 너비의 50% */
+			height: 100px; /* 높이 */
+			background: #0094ff;
+		}
+		div {
+			margin: 10px; /* div 영역 사이의 여백 */
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
 </html>
