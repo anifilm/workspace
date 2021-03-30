@@ -4,7 +4,34 @@
   <meta charset="UTF-8">
   <title>HTML5 레이아웃</title>
   <style>
-
+    body {
+      font-family: "맑은 고딕", "고딕", "굴림";
+    }
+    section {
+      padding: 20px;
+      width: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .multi {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      -webkit-column-rule: 2px dotted #000;
+      -moz-column-rule: 2px dotted #000;
+      column-rule: 2px dotted #000;
+      text-align: justify;
+    }
+    .no-col {
+      background:#f0f0f0;
+      margin:10px 3px;
+      padding:20px;
+      border-radius:5px;
+      -webkit-column-span:all;
+      -moz-column-span:all;
+      column-span: all; /* 단을 합쳐서 표시 */
+    }
   </style>
 </head>
 <body>

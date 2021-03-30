@@ -4,7 +4,28 @@
   <meta charset="UTF-8">
   <title>HTML5 레이아웃</title>
   <style>
-
+    body {
+      font-family: "맑은 고딕", "고딕", "굴림";
+    }
+    section {
+      padding: 20px;
+      width: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .multi {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 4;
+      -webkit-column-rule: 2px dotted #000;
+      -moz-column-rule: 2px dotted #000;
+      column-rule: 2px dotted #000;
+      text-align: justify;
+    }
+    .multi h3 {
+      break-before: column; /* 해당 요소를 기준으로 단을 나눈다. */
+    }
   </style>
 </head>
 <body>

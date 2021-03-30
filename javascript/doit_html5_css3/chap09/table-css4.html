@@ -4,7 +4,24 @@
   <meta charset="UTF-8">
   <title>표 스타일</title>
   <style>
-
+    body {
+      font-family: "맑은 고딕", "고딕", "굴림";
+    }
+    .schedule {
+      border-collapse: separate;
+      margin: 20px;
+    }
+    td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+    #tb1 td {
+      empty-cells: show; /* 빈 셀의 테두리 표시 */
+    }
+    #tb2 td {
+      empty-cells: hide; /* 빈 셀 표시하지 않음 */
+    }
   </style>
 </head>
 <body>

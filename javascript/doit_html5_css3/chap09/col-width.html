@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <title>HTML5 레이아웃</title>
   <style>
-
+    body {
+      font-family: "맑은 고딕", "고딕", "굴림";
+    }
+    .multi {
+      -webkit-column-width: 120px;
+      -moz-column-width: 120px;
+      column-width: 120px; /* 단의 너비를 120px로 설정 */
+      /* 화면 너비에 따라 단의 개수가 달라진다. */
+    }
   </style>
 </head>
 <body>

@@ -4,7 +4,29 @@
   <meta charset="UTF-8">
   <title>HTML5 레이아웃</title>
   <style>
-
+    body {
+      font-family: "맑은 고딕", "고딕", "굴림";
+      text-align: center;
+    }
+    div {
+      padding: 20px;
+      width: 600px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .multi {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+      column-gap: 20px; /* 단의 너비 설정 */
+      -webkit-column-rule: 2px dotted #000;
+      -moz-column-rule: 2px dotted #000;
+      column-rule: 2px dotted #000; /* 구분선 설정 */
+      text-align: justify;
+    }
   </style>
 </head>
 <body>
