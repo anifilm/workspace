@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 
+// 5-18: 모델 클래스
+class Student {
+    public string name;
+    public int grade;
+}
+
 class ModelClassWithList {
-
-    // 5-18: 모델 클래스
-    class Student {
-        public string name;
-        public int grade;
-    }
-
     static void Main(string[] args) {
         // 5-19: 모델 클래스와 List 클래스
         List<Student> list = new List<Student>();
@@ -24,6 +23,7 @@ class ModelClassWithList {
         foreach (var item in list) {
             Console.WriteLine(item.name + ": " + item.grade);
         }
+        Console.WriteLine();
 
         // 5-20: 리스트와 모델 클래스 동시 초기화
         List<Student> list2 = new List<Student>() {

@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 
+class Student {
+    public string name;
+    public int grade;
+}
+
 class ElementRemoveWithReverse {
-
-    class Student {
-        public string name;
-        public int grade;
-    }
-
     static void Main(string[] args) {
 
         List<Student> list = new List<Student>();

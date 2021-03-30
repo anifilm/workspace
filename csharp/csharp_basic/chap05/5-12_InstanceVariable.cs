@@ -1,12 +1,11 @@
 using System;
 
+class Product {
+    public string name;
+    public int price;
+}
+
 class InstanceVariable {
-
-    class Product {
-        public string name;
-        public int price;
-    }
-
     static void Main(string[] args) {
         // 인스턴스 변수 생성과 사용
         Product product = new Product();
