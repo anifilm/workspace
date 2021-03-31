@@ -27,6 +27,7 @@ IntelliJ Java Maven Webapp 설정 방법
 
 [파일 수정 후]
 
+
 6. pom.xml 오른 클릭 -> Maven -> Reload project 선택
 
 7. src/main 오른 클릭 -> New -> Directory -> java 폴더 생성
