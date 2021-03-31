@@ -1,17 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Fluid Image</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  video { 
-	  max-width:100%;
-  }
-</style>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fluid Image</title>
+  <style>
+		#wrapper {
+			margin: 0 auto;
+		}
+    video {
+			max-width: 100%; /* 미디어 가변 크기 */
+    }
+  </style>
 </head>
-
 <body>
-	<video src="cars.mp4" controls></video>
+	<div id="wrapper">
+		<p align="middle"> <!-- 미디어 화면 중앙 정렬 -->
+			<video src="media/cars.mp4" controls></video>
+		</p>
+	</div>
 </body>
 </html>
