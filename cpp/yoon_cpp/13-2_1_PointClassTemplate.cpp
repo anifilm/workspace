@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <class T>
+template <typename T>
 class Point {
 private:
     T xpos, ypos;

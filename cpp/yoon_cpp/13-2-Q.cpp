@@ -14,7 +14,7 @@ using namespace std;
 
 class Point;
 
-template <class T>
+template <typename T>
 class SmartPtr {
 private:
     T* posptr;

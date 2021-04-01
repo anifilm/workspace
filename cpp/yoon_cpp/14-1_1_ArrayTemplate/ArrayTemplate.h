@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-template <class T>
+template <typename T>
 class BoundCheckArray {
 private:
     T* arr;
@@ -19,17 +19,17 @@ public:
     int GetArrLen() const;
 };
 
-template <class T>
+template <typename T>
 BoundCheckArray<T>::BoundCheckArray(int len) : arrlen(len) {
     arr = new T[len];
 }
 
-template <class T>
+template <typename T>
 BoundCheckArray<T>::~BoundCheckArray() {
     delete[] arr;
 }
 
-template <class T>
+template <typename T>
 T& BoundCheckArray<T>::operator[](int idx) {
     if (idx < 0 || idx >= arrlen) {
         std::cout << "Array index out of bound exception" << std::endl;
@@ -38,7 +38,7 @@ T& BoundCheckArray<T>::operator[](int idx) {
     return arr[idx];
 }
 
-template <class T>
+template <typename T>
 T BoundCheckArray<T>::operator[](int idx) const {
     if (idx < 0 || idx >= arrlen) {
         std::cout << "Array index out of bound exception" << std::endl;
@@ -47,7 +47,7 @@ T BoundCheckArray<T>::operator[](int idx) const {
     return arr[idx];
 }
 
-template <class T>
+template <typename T>
 int BoundCheckArray<T>::GetArrLen() const {
     return arrlen;
 }

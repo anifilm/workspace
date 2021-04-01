@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-template <class T>
+template <typename T>
 class Point {
 private:
     T xpos, ypos;
@@ -13,10 +13,10 @@ public:
     void ShowPosition() const;
 };
 
-template <class T>
+template <typename T>
 Point<T>::Point(T x, T y) : xpos(x), ypos(y) {}
 
-template <class T>
+template <typename T>
 void Point<T>::ShowPosition() const {
     std::cout << '[' << xpos << ", " << ypos << ']' << std::endl;
 }
