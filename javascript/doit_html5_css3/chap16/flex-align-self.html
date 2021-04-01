@@ -1,35 +1,34 @@
 ﻿<!DOCTYPE html>
-
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>플렉스 박스</title>
-	<style>
-		#container {
-			width: 500px;
-			height: 100px;
-			margin: 0 auto 20px;
-			display: flex;
-			align-items:center;
-			border: 2px solid black;
-		}			
-		#container div {
-			width:100px;
-			border: 2px solid black;
-			background:#ccc;
-		}
-		#box1 {
-			align-self:flex-start;
-		}
-		h1 {
-			text-align:center;
-		}
-		p {
-			font-weight:bold;
-			text-align:center;
-			font-weight:bold;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <title>플렉스 박스</title>
+  <style>
+    #container {
+      width: 500px;
+      height: 100px;
+      margin: 0 auto 20px;
+      display: flex; /* 플렉스 컨테이너 지정 */
+      align-items: center; /* 플렉스 항목을 세로축의 중앙에 배치 */
+      border: 2px solid red;
+    }
+    #container div {
+      width: 100px;
+      border: 2px solid black;
+      background: #ccc;
+    }
+    #box1 { /* 첫 번째 박스는 세로축의 시작점에 배치 */
+      align-self: flex-start;
+    }
+    h1 {
+      text-align: center;
+    }
+    p {
+      font-weight: bold;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 	<div id="container">
@@ -37,6 +36,5 @@
 		<div id="box2"><p>2</p></div>
 		<div id="box3"><p>3</p></div>
 	</div>
-
 </body>
 </html>

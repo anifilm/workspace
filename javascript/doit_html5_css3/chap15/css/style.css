@@ -1,18 +1,18 @@
+/* 미디어 쿼리를 사용한 화면 구성 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background: rgb(9, 100, 160);
 }
 
+/* 기본값, 모바일 레이아웃 (width:768px 이하) */
 #container {
   width: 320px;
   margin: 50px auto;
 }
-
 .card {
   position: relative;
   width: 300px;
@@ -21,11 +21,57 @@ body {
   border: 1px solid #0f0f0f33;
   background-color: #ffffff;
 }
-
 .words {
   position: absolute;
   left: 10px; /* 텍스트 left 위치 */
   top: 300px; /* 텍스트 top 위치 */
   padding: 10px;
   text-align: center;
+}
+
+/* 태블릿 레이아웃 */
+@media screen and (min-width:768px) and (max-width:1719px) {
+  #container {
+    width: 570px; /* 카드 너비 설정 */
+    margin: 50px auto;
+  }
+  .card {
+    position: relative;
+    width: 550px;
+    height: 250px;
+    margin: 20px 10px;
+    border: 1px solid #0f0f0f33;
+    background-color: #ffffff;
+  }
+  .words {
+    position: absolute;
+    width: 200px;
+    left: 310px; /* 텍스트 left 위치 */
+    top: 50px; /* 텍스트 top 위치 */
+    text-align: center;
+  }
+}
+
+/* 데스크톱 레이아웃 */
+@media screen and (min-width:1720px) {
+  #container {
+    width: 1710px; /* 카드 너비 설정 */
+    margin: 50px auto;
+  }
+  .card {
+    position: relative;
+    float: left; /* 카드를 가로로 배치 */
+    width: 550px;
+    height: 250px;
+    margin: 10px;
+    border: 1px solid #0f0f0f33;
+    background-color: #ffffff;
+  }
+  .words {
+    position: absolute;
+    width: 200px;
+    left: 310px; /* 텍스트 left 위치 */
+    top: 50px; /* 텍스트 top 위치 */
+    text-align: center;
+  }
 }
