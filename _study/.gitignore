@@ -1,5 +1,12 @@
 META-INF
 node_modules
+vendor
+dist
+.idea
+out
+target
+__using_assets__
+__new__
 .env
 *.o
 *.gch
