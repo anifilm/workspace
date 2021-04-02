@@ -1,4 +1,5 @@
-// ES6 문법 (템플릿 문자열)
+// ES6의 문자열 사용 방법 알아보기 (템플릿 문자열)
+
 var string1 = '안녕하세요';
 var string2 = '반갑습니다.';
 var greeting = `${string1} ${string2}`;

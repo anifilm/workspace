@@ -1,4 +1,5 @@
-// ES6 예제, 전개 연산자(Spread Operator)
+// ES6의 객체 전개 연산자(Spread Operator) 사용 방법 알아보기
+
 var objectOne = { one: 1, two: 2, other: 0 };
 var objectTwo = { three: 3, four: 4, other: -1 };
 

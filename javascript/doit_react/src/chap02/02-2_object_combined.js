@@ -1,4 +1,5 @@
-// ES5 예제
+// 기존 문법으로 객체의 키나 값을 추출할 때 객체 내장 함수 사용 예제
+
 var objectOne = { one: 1, two: 2, other: 0 };
 var objectTwo = { three: 3, four: 4, other: -1 };
 

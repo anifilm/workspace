@@ -1,4 +1,5 @@
-// ES5 문법
+// 기존 문법으로 배열의 일부 요소를 잘라내거나 연결하는 예제
+
 var array1 = ['one', 'two'];
 var array2 = ['three', 'four'];
 

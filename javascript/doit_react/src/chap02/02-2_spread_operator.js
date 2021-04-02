@@ -1,4 +1,5 @@
-// ES6 문법, 전개 연산자(Spread Operator)
+// ES6의 배열 전개 연산자(Spread Operator) 사용 방법 알아보기
+
 var array1 = ['one', 'two'];
 var array2 = ['three', 'four'];
 
