@@ -6,15 +6,17 @@
   <body>
     <div id="app">
       <child-component v-on:show-log="printText"></child-component>
-      <!--       하위 컴포넌트의 이벤트명, 상위 컴포넌트의 메서드명 -->
+      <!--                     ↑          ↑                    -->
+      <!--      하위 컴포넌트의 이벤트명, 상위 컴포넌트의 메서드명     -->
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       Vue.component('child-component', {
-        template: '<button v-on:click="showLog">show</button>', <!-- 버튼 요소 추가 -->
-        methods: { <!-- 메서드 추가 -->
+        template: '<button v-on:click="showLog">show</button>', // 버튼 요소 추가
+        methods: { // 메서드 추가
           showLog: function() {
-            this.$emit('show-log'); <!-- 이벤트 발생 로직 -->
+            this.$emit('show-log'); // 이벤트 발생 로직
           }
         }
       });
