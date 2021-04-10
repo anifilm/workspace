@@ -1,3 +1,4 @@
+// 독릭 클래스로 Action 이벤트 리스너 작성
 package chap10.section3;
 
 import javax.swing.*;

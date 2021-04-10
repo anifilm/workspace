@@ -1,3 +1,4 @@
+// 3개의 버튼 컴포넌트를 가진 스윙 프레임 만들기
 package chap09.section3;
 
 import javax.swing.*;
