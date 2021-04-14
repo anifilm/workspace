@@ -2,25 +2,25 @@ using System;
 using System.Collections.Generic;
 
 class Product : IComparable {
-    public string name { get; set; }
-    public int price { get; set; }
+    public string Name { get; set; }
+    public int Price { get; set; }
 
     public override string ToString() {
-        return name + ": " + price + "원";
+        return Name + ": " + Price + "원";
     }
 
     public int CompareTo(object obj) {
-        return this.price.CompareTo((obj as Product).price);
+        return this.Price.CompareTo((obj as Product).Price);
     }
 }
 class IComparableBasic {
     static void Main(string[] args) {
         // 기본 클래스와 자료 생성
         List<Product> list = new List<Product>() {
-            new Product() { name = "고구마", price = 1500 },
-            new Product() { name = "사과", price = 2400 },
-            new Product() { name = "바나나", price = 1000 },
-            new Product() { name = "배", price = 3000 }
+            new Product() { Name = "고구마", Price = 1500 },
+            new Product() { Name = "사과", Price = 2400 },
+            new Product() { Name = "바나나", Price = 1000 },
+            new Product() { Name = "배", Price = 3000 }
         };
         list.Sort();
 
