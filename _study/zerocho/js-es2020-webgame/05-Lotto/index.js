@@ -1,5 +1,7 @@
 // 길이가 45인 배열을 생성하고 1부터 1씩 증가시킨 정수를 배열에 추가
-const candidate = Array(45).fill().map((v, i) => i + 1);
+const candidate = Array(45)
+  .fill()
+  .map((v, i) => i + 1);
 
 const shuffle = [];
 while (candidate.length > 0) {
