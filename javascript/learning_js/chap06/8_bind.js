@@ -1,7 +1,7 @@
 // 6.8 call과 apply, bind
 
-const bruce = { name: "Bruce" };
-const madeline = { name: "Madeline" };
+const bruce = { name: 'Bruce' };
+const madeline = { name: 'Madeline' };
 
 function update(birthYear, occupation) {
   this.birthYear = birthYear;
@@ -16,9 +16,9 @@ call이나 apply, 다른 bind와 함께 호출하더라도 this 값이 bruce가 
 
 const updateBruce = update.bind(bruce);
 
-updateBruce(1904 "actor"]);
+updateBruce(1904, 'actor');
 // bruce는 이제 { name: "Bruce", birthYear: 1904, occupation: "actor"} 입니다.
-updateBruce.call(madeline, 1274, 'king']);
+updateBruce.call(madeline, 1274, 'king');
 // bruce는 이제 { name: "Bruce", birthYear: 1274, occupation: "king"} 입니다.
 // madeline은 변하지 않았습니다.
 
@@ -35,5 +35,5 @@ bind에 매개변수를 넘기면 항상 그 매개변수를 받으면서 호출
 */
 
 const updateBruce1949 = update.bind(bruce, 1949);
-updateBruce1949("singer, songwriter");
+updateBruce1949('singer, songwriter');
 // bruce는 이제 { name: "Bruce", birthYear: 1949, occupation: "singer, songwriter"} 입니다.

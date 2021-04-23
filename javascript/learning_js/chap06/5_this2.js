@@ -4,10 +4,11 @@
 // 이 예제에는 메서드 안에 보조 함수가 있습니다.
 const o = {
   name: 'Julie',
-  greetBackwards: function() {
+  greetBackwards: function () {
     function getReverseName() {
       let nameBackwards = '';
-      for (let i = this.name.length-1; i >= 0; i--) { // this.name~ 에서 오류 발생
+      for (let i = this.name.length - 1; i >= 0; i--) {
+        // this.name~ 에서 오류 발생
         nameBackwards += this.name[i];
       }
       return nameBackwards;

@@ -10,14 +10,20 @@
 이름 붙은 함수를 만들 수는 없습니다.
 */
 
-const f1 = function() { return "hello!"; }
+const f1 = function () {
+  return 'hello!';
+};
 // 또는
-const f1 = () => "hello!";
+const f1 = () => 'hello!';
 
-const f2 = function(name) { return `Hello, ${name}!`; }
+const f2 = function (name) {
+  return `Hello, ${name}!`;
+};
 // 또는
-const f2 = name => `Hello, ${name}!`;
+const f2 = (name) => `Hello, ${name}!`;
 
-const f3 = function(a, b) { return a + b; }
+const f3 = function (a, b) {
+  return a + b;
+};
 // 또는
 const f3 = (a, b) => a + b;

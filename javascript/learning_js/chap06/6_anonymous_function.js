@@ -6,7 +6,7 @@
 */
 
 // 이 예제는 결과적으로 함수 선언과 동등합니다.
-const f = function() {
+const f = function () {
   // ...
 };
 
@@ -16,7 +16,7 @@ const f = function() {
 */
 const g = function f() {
   // ...
-}
+};
 
 /*
 위와 같이 함수를 만들면 이름 g에 우선순위가 있습니다. 그리고 함수 바깥에서 함수에 접근할 때는

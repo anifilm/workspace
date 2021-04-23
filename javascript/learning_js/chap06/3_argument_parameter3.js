@@ -5,7 +5,7 @@ function f(o) {
 }
 
 let o = {
-  message: "초기 값"
+  message: '초기 값',
 };
 console.log(`f를 호출하기 전: o.message="${o.message}"`);
 

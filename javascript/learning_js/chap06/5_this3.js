@@ -26,11 +26,11 @@ o에 연결하지만, greetBackwards 안에서 getReverseName을 호출하면 th
 // 이런 문제를 해결하기 위해 널리 사용하는 방법은 다른 변수에 this를 할당하는 겁니다.
 const o = {
   name: 'Julie',
-  greetBackwards: function() {
+  greetBackwards: function () {
     const self = this;
     function getReverseName() {
       let nameBackwards = '';
-      for (let i = self.name.length-1; i >= 0; i--) {
+      for (let i = self.name.length - 1; i >= 0; i--) {
         nameBackwards += self.name[i];
       }
       return nameBackwards;
@@ -39,4 +39,4 @@ const o = {
   },
 };
 
-o.greetBackwards()  // "eiluJ si emen ym, olleH"
+o.greetBackwards(); // "eiluJ si emen ym, olleH"

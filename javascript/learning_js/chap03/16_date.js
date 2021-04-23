@@ -8,14 +8,14 @@
 */
 
 // 현재 날짜와 시간을 나타내는 객체를 만들 때는 new Date()를 사용합니다.
-const new = new Date();
-now;  // Fri Dec 16 2016 09:20:16 GMT+0900 (KST)
+const now = new Date();
+now; // Fri Dec 16 2016 09:20:16 GMT+0900 (KST)
 
 // 특정 날짜에 해당하는 객체를 만들 때는 다음과 같이 합니다.
-const halloween = new Date(2016, 9, 31);  // 월은 0에서 시작합니다. 즉 9는 10월 입니다.
+const halloween = new Date(2016, 9, 31); // 월은 0에서 시작합니다. 즉 9는 10월 입니다.
 
 // 특정 날짜와 시간에 해당하는 객체를 만들 때는 다음과 같이 합니다.
-const halloweenParty = new Date(2016, 9,31, 19, 0);  // 19:00 = 7:00 pm
+const halloweenParty = new Date(2016, 9,31, 19, 0); // 19:00 = 7:00 pm
 
 // 날짜 객체를 만들면 다음과 같이 각 부분을 가져올 수 있습니다.
 halloweenParty.getFullYear();     // 2016

@@ -6,16 +6,16 @@
 call 메서드는 모든 함수에서 사용할 수 있으며, this를 특정 값으로 지정할 수 있습니다.
 */
 
-const bruce = { name: "Bruce" };
-const madeline = { name: "Madeline" };
+const bruce = { name: 'Bruce' };
+const madeline = { name: 'Madeline' };
 
 // 이 함수는 어떤 객체에도 연결되지 않았지만 this를 사용합니다.
 function greet() {
   return `Hello, I'm ${this.name}!`;
 }
 
-greet();              // "Hello, I'm undefined!" - this는 어디에도 묶이지 않았습니다.
-greet.call(bruce);    // "Hello, I'm Bruce!"     - this는 bruce 입니다.
+greet(); // "Hello, I'm undefined!" - this는 어디에도 묶이지 않았습니다.
+greet.call(bruce); // "Hello, I'm Bruce!"     - this는 bruce 입니다.
 greet.call(madeline); // "Hello, I'm Madeline!"  - this는 madeline 입니다.
 
 /*

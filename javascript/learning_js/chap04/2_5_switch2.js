@@ -1,19 +1,19 @@
 switch (totalBet) {
-    case 7:
-        totalBet = funds;
-        break;
-    case 13:
-        funds = funds - 1;  // 1 펜스를 기부합니다!
-    //  break;  // 사용자에 의한 break문 생략
-    case 11:
-        totalBet = 0;
-        break;
-    case 21:
-        totalBet = 21;
-        break;
-    default:
-        console.log("No superstition here!");
-        break;
+  case 7:
+    totalBet = funds;
+    break;
+  case 13:
+    funds = funds - 1; // 1 펜스를 기부합니다!
+  //break; // 사용자에 의한 break문 생략
+  case 11:
+    totalBet = 0;
+    break;
+  case 21:
+    totalBet = 21;
+    break;
+  default:
+    console.log('No superstition here!');
+    break;
 }
 
 /*

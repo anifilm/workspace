@@ -1,5 +1,5 @@
 const obj = {};
-obj.color = "yellow";
+obj.color = 'yellow';
 
 console.log(obj.color);
 
@@ -9,14 +9,13 @@ console.log(obj.color);
 프로퍼티 이름이 유효한 식별자여도 대괄호로 접근할 수 있습니다.
 */
 
-obj["not an identifier"] = 3;
+obj['not an identifier'] = 3;
 
-console.log(obj["not an identifier"]);  // 3
-console.log(obj["color"]);  // "yellow"
-
+console.log(obj['not an identifier']); // 3
+console.log(obj['color']); // "yellow"
 
 // 심볼 프로퍼티에 접근할 때도 대괄호를 사용합니다.
 const SIZE = Symbol();
 obj[SIZE] = 8;
 
-console.log(obj[SIZE]);  // 8
+console.log(obj[SIZE]); // 8

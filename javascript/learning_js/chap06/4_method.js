@@ -8,12 +8,16 @@
 
 // 객체 리터럴에서도 메서드를 추가할 수 있습니다.
 const o = {
-  name: 'Wallace',  // 원시 값 프로퍼티
-  bark: function() { return 'Woof!'; }, // 함수 프로퍼티(메서드)
-}
+  name: 'Wallace', // 원시 값 프로퍼티
+  bark: function () {
+    return 'Woof!';
+  }, // 함수 프로퍼티(메서드)
+};
 
 // ES6에서는 간편하게 메서드를 추가할 수 있는 문법이 새로 생겼습니다.
 const o = {
-  name: 'Wallace',  // 원시 값 프로퍼티
-  bark() { return 'Woof!'; }, // 함수 프로퍼티(메서드)
-}
+  name: 'Wallace', // 원시 값 프로퍼티
+  bark() {
+    return 'Woof!';
+  }, // 함수 프로퍼티(메서드)
+};

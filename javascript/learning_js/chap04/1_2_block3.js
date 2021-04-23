@@ -1,4 +1,4 @@
-let funds = 50;  // 시작 조건
+let funds = 50; // 시작 조건
 
 while (funds > 1 && funds < 100)
-    funds = funds + 2;
+  funds = funds + 2;

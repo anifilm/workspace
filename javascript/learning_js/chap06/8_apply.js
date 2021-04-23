@@ -1,7 +1,7 @@
 // 6.8 call과 apply, bind
 
-const bruce = { name: "Bruce" };
-const madeline = { name: "Madeline" };
+const bruce = { name: 'Bruce' };
+const madeline = { name: 'Madeline' };
 
 function update(birthYear, occupation) {
   this.birthYear = birthYear;
@@ -26,8 +26,8 @@ apply는 배열 요소를 함수 매개변수로 사용해야 할 때 유용합�
 */
 
 const arr = [2, 3, -5, 15, 7];
-Math.min.apply(null, arr);  // -5
-Math.max.apply(null, arr);  // 15
+Math.min.apply(null, arr); // -5
+Math.max.apply(null, arr); // 15
 
 /*
 this의 값에 null을 쓴 이유는 Math.min과 Max.max가 this와 관계없이 동작하기 때문입니다.
@@ -38,7 +38,7 @@ this 값이 중요하므로 call을 사용해야 하지만, Math.min과 Math.max
 없으므로 확산 연산자를 그대로 사용할 수 있습니다.
 */
 
-const newBruce = [1940, "martial artist"];
-updat.call(bruce, ...newBruce);  // apply(bruce, newBruce)와 같습니다.
-Math.min(...arr);  // -5
-Math.max(...arr);  // 15
+const newBruce = [1940, 'martial artist'];
+updat.call(bruce, ...newBruce); // apply(bruce, newBruce)와 같습니다.
+Math.min(...arr); // -5
+Math.max(...arr); // 15
