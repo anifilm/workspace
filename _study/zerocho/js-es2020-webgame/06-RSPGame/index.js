@@ -1,12 +1,16 @@
 const computerTag = document.querySelector("#computer");
+const rockTag = document.querySelector("#rock");
+const scissorsTag = document.querySelector("#scissors");
+const paperTag = document.querySelector("#paper");
 computerTag.style.background = `url(image/rsp.jpg) 0 0`;
 
-let computerChoice = "rock";
 const rspCoord = {
   rock: "0", // 바위
   scissors: "-150px", // 가위
   paper: "-300px", // 보
 };
+
+let computerChoice = "rock";
 
 const intervalMaker = () => {
   return setInterval(() => {
@@ -25,10 +29,6 @@ const intervalMaker = () => {
 
 let intervalId = intervalMaker();
 
-const rockTag = document.querySelector("#rock");
-const scissorsTag = document.querySelector("#scissors");
-const paperTag = document.querySelector("#paper");
-
 // 가위: 1, 바위: 0, 보: -1
 // 나\컴퓨터  가위   바위    보
 //   가위     0      1      2
@@ -40,9 +40,16 @@ const score = {
   paper: -1,
 };
 
+const buttonControl = (value) => {
+  rockTag.disabled = value;
+  scissorsTag.disabled = value;
+  paperTag.disabled = value;
+};
+
 const clickButton = (myChoice) => {
   return () => {
     clearInterval(intervalId);
+    buttonControl(true);
     const myScore = score[myChoice];
     const computerScore = score[computerChoice];
     const diff = myScore - computerScore;
@@ -56,6 +63,7 @@ const clickButton = (myChoice) => {
     }
     scoreTag.textContent = accScore;
     setTimeout(() => {
+      buttonControl(false);
       intervalId = intervalMaker();
     }, 1000);
   };
