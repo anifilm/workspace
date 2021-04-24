@@ -1,3 +1,5 @@
+// 3.12 객체
+
 const obj = {};
 obj.color = 'yellow';
 

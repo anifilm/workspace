@@ -1,9 +1,10 @@
+// 1.10 Hello, World
+
 $(document).ready(function () {
   'use strict';
   paper.install(window);
   paper.setup(document.getElementById('mainCanvas'));
 
-  // 1.9 사용자 입력 처리하기
   var tool = new Tool();
 
   var c = Shape.Circle(200, 200, 80);

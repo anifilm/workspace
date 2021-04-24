@@ -1,3 +1,5 @@
+// 4.2.7 for...of 루프
+
 const hand = [randFace(), randFace(), randFace()];
 for (let face of hand)
   console.log(`You rolled...${face}`);

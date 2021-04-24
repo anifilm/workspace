@@ -1,3 +1,5 @@
+// 4.2.5 switch 문
+
 switch (totalBet) {
   case 7:
     totalBet = funds;

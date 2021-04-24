@@ -1,3 +1,5 @@
+// 4.1.3 공백
+
 while (funds > 1 && funds < 100)
 
 funds = funds + 2

@@ -1,3 +1,5 @@
+// 4.2.5 switch 문
+
 function adjustBet(totalBet, funds) {
   switch (totalBet) {
     case 7:
