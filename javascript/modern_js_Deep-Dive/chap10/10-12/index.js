@@ -2,20 +2,16 @@
 var person = {
   name: 'Lee'
 };
-
 // 마침표 표기법에 의한 프로퍼티 접근
 console.log(person.name); // "Lee"
-
 // 대괄호 표기법에 의한 프로퍼티 접근
 console.log(person['name']); // "Lee"
-
 
 // 예제 10-13
 /*
 var person = {
   name: 'Lee'
 };
-
 console.log(person[name]); // ReferenceError: name is not defined
 
 대괄호 표기법을 사용하는 경우 대괄호 프로퍼티 접근 연산자 내부에 지정하는 프로퍼티
@@ -23,12 +19,10 @@ console.log(person[name]); // ReferenceError: name is not defined
 로 감싸지 않은 이름을 프로퍼티 키로 사용하면 자바스크립트 엔진은 식별자로 해석한다.
 */
 
-
 // 예제 10-14
 var person = {
   name: 'Lee'
 };
-
 console.log(person.age); // undefined
 
 /*
@@ -36,13 +30,11 @@ console.log(person.age); // undefined
 이때 ReferenceError가 발생하지 않는데 주의하자.
 */
 
-
 // 예제 10-15
 var person = {
   'last-name': 'Lee',
   1: 10,
 };
-
 //person.'last-name'; // SyntaxError: Unexpected string
 //person.last-name; // 브라우저 환경: NaN
                     // Node.js 환경: ReferenceError: name is not defined

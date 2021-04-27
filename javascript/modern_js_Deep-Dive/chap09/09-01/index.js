@@ -9,7 +9,6 @@ console.log(typeof str, str); // string "10"
 // x 변수의 값이 변경된 것은 아니다.
 console.log(typeof x, x); // number 10
 
-
 // 예제 09-02
 var x = 10;
 

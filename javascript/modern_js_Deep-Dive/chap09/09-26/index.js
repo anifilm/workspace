@@ -7,7 +7,6 @@ var elem = null;
 var value = elem?.value;
 console.log(value); // undefined
 
-
 // 예제 09-27
 // 옵셔널 체이닝 연산자 ?.가 도입되기 이전 논리 연산자 &&를 사용한 단축 평가
 // 를 통해 변수가 null 또는 undefined인지 확인했다.
@@ -18,7 +17,6 @@ var elem = null;
 var value = elem && elem.value;
 console.log(value); // null
 
-
 // 예제 09-28
 var str = '';
 
@@ -26,8 +24,7 @@ var str = '';
 var length = str && str.length;
 
 // 문자열의 길이(length)를 참조하지 못한다.
-console.log(length); // ''
-
+console.log(length); // ""
 
 // 예제 09-29
 var str = '';

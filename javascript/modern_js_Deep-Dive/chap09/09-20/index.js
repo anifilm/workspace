@@ -12,7 +12,6 @@ if (done) message = '완료';
 message = done && '완료';
 console.log(message); // "완료"
 
-
 // 예제 09-21
 // 조건이 Falsy 값(거짓으로 평가되는 값)일 때 무언가를 해야 한다면
 // 논리합(||) 연산자 표현식으로 if 문을 대체할 수 있다.
@@ -26,7 +25,6 @@ if (!done) message = '미완료';
 // done이 false라면 message에 '미완료'를 할당
 message = done || '미완료';
 console.log(message); // "미완료"
-
 
 // 예제 09-22
 // 삼항 조건 연산자는 if...else 문을 대체할 수 있다.

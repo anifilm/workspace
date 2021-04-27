@@ -7,11 +7,9 @@ while (count < 3) {
   count++;
 }
 
-
 // 예제 08-15
 // 무한루프
 //while (true) {}
-
 
 // 예제 08-16
 var count = 0;

@@ -11,10 +11,8 @@ score = 100;
 console.log(score); // 100
 console.log(copy);  // 80
 
-
 // 예제 11-07
 var score = 80;
-
 // copy 변수에는 score 변수의 값 80이 복사되어 할단된다.
 var copy = score;
 
@@ -26,10 +24,8 @@ console.log(score === copy); // true
 하지만 score 변수와 copy 변수의 값 80은 다른 메모리 공간에 저장된 별개의 값이다.
 */
 
-
 // 예제 11-08
 var score = 80;
-
 // copy 변수에는 score 변수의 값 80이 복사되어 할당된다.
 var copy = score;
 
