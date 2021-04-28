@@ -80,4 +80,16 @@ println repeatStr.replaceAll('I', 'she')
 // 문자열에서 해당 문자(또는 문자열)를 처음에 해당하는 문자만 변경
 println repeatStr.replaceFirst('I', 'she')
 
-println "hello" << "test"
+// Uppercase and lowercase
+println("Uppercase " + name.toUpperCase());
+println("Lowercase " + name.toLowerCase());
+
+// <=> returns -1 if 1st string is before 2nd
+// 1 if the opposite and 0 if equal
+// 문자열 사전순 비교
+// 앞의 문자열이 사전순 앞에 있다면 -1
+// 앞의 문자열이 사전순 뒤에 있다면 1
+// 문자열이 같다면 0
+println 'Ant <=> Banana ' + ('Ant' <=> 'Banana')
+println 'Banana <=> Ant ' + ('Banana' <=> 'Ant')
+println 'Ant <=> Ant ' + ('Ant' <=> 'Ant')
