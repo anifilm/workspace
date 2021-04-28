@@ -26,6 +26,7 @@ println 'Index of r ' + name.indexOf('r') // 2
 // You can also get a slice
 // 문자열 슬라이스 사용
 println '1st 3 Characters ' + name[0..2] // "Der"
+println '1st 3 Characters ' + name[0..-3] // "Der"
 
 // Get specific Characters
 println 'Every Other Character ' + name[0,2,4] // "Drk"
@@ -60,4 +61,23 @@ println 'repeatStr.length() : ' + repeatStr.length()
 println 'repeatStr.size() : ' + repeatStr.size()
 
 // Remove first occurance
+// 문자열은 immutable 객체 (remove 연산은 비파괴적인 결과이며 재할당을 필요로 함)
 println repeatStr - 'What '
+
+// Split the string
+// 공백을 기준으로 문자열을 잘라서 리스트로 변환
+println repeatStr.split(' ')
+println repeatStr.split() // 매개변수 기본값은 공백
+// 문자열을 문자 단위로 리스트 변환 (공백 포함)
+println repeatStr.split('')
+println repeatStr.toList()
+
+// Replace all strings
+// 문자열에서 모든 공백을 '-'로 변경
+println repeatStr.replace(' ', '-')
+// 문자열에서 해당 문자(또는 문자열)를 찾아 모두 변경
+println repeatStr.replaceAll('I', 'she')
+// 문자열에서 해당 문자(또는 문자열)를 처음에 해당하는 문자만 변경
+println repeatStr.replaceFirst('I', 'she')
+
+println "hello" << "test"
