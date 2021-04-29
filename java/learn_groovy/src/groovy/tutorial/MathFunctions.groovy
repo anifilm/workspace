@@ -13,8 +13,8 @@ println 'Math.sqrt(9) = ' + (Math.sqrt(9))
 println 'Math.cbrt(27) = ' + (Math.cbrt(27))
 println 'Math.ceil(2.45) = ' + (Math.ceil(2.45))
 println 'Math.floor(2.45) = ' + (Math.floor(2.45))
-println 'Math.min(2,3) = ' + (Math.min(2,3))
-println 'Math.max(2,3) = ' + (Math.max(2,3))
+println 'Math.min(2,3) = ' + (Math.min(2, 3))
+println 'Math.max(2,3) = ' + (Math.max(2, 3))
 
 // Number to the power of e
 println 'Math.log(2) = ' + (Math.log(2))

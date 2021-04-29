@@ -29,7 +29,7 @@ println '1st 3 Characters ' + name[0..2] // "Der"
 println '1st 3 Characters ' + name[0..-3] // "Der"
 
 // Get specific Characters
-println 'Every Other Character ' + name[0,2,4] // "Drk"
+println 'Every Other Character ' + name[0, 2, 4] // "Drk"
 
 // Get characters starting at index
 // 'Derek'.substring(1) 인덱스 1부터 끝까지
@@ -37,7 +37,7 @@ println 'Substring at 1 ' + name.substring(1) // "errk"
 
 // Get characters at index up to another
 // 'Derek'.substring(1,4) 인덱스 1부터 4이전 까지
-println 'Substring at 1 to 4 ' + name.substring(1,4) // "ere"
+println 'Substring at 1 to 4 ' + name.substring(1, 4) // "ere"
 
 // Concatenate strings
 // 문자열 연결
