@@ -25,7 +25,7 @@ git add [filename]				// 커밋 리스트에 파일 추가
 
 git add .
 
-git commit -m "설명"			// 커밋 등록
+git commit -m "설명"			    // 커밋 등록
 
 
 git remote add origin https://github.com/...
