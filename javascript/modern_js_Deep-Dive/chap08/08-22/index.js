@@ -1,3 +1,6 @@
+// 8.4 break 문
+
+// 예제 08-22
 var string = 'Hello World!';
 var search = 'l';
 var index;

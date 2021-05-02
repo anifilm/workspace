@@ -1,3 +1,5 @@
+// 9.2.3 불리언 타입으로 변환
+
 // 예제 09-11
 if ('') console.log('1');
 if (true) console.log('2');

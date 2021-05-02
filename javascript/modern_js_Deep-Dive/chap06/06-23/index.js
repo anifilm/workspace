@@ -1,3 +1,6 @@
+// 6.10 동적 타이핑
+
+// 예제 06-23
 var foo;
 console.log(typeof foo); // undefined
 

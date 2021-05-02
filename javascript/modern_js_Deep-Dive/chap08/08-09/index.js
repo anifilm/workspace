@@ -1,3 +1,6 @@
+// 8.2.2 switch 문
+
+// 예제 08-09
 var year = 2000; // 2000년은 윤년으로 2월이 29일이다
 var month = 2;
 var days = 0;

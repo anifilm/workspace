@@ -1,3 +1,6 @@
+// 6.7 심벌 타입
+
+// 예제 06-20
 // 심벌값 생성
 var key = Symbol('key');
 console.log(typeof key); // symbol

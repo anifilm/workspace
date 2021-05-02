@@ -1,3 +1,8 @@
+// 8.2 조건문
+
+// 8.2.2 switch 문
+
+// 예제 08-08
 // 월을 영어로 변환한다. (11 -> 'November')
 var month = 11;
 var monthName;
