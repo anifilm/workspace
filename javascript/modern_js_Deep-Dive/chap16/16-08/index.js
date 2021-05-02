@@ -60,7 +60,7 @@ Object.defineProperty(person, 'fullName', {
 
 descriptor = Object.getOwnPropertyDescriptor(person, 'fullName');
 console.log('fullName', descriptor);
-// fullName { get: f, set: f, enumerable: true, configurable: true }
+// fullName { get: ƒ, set: ƒ, enumerable: true, configurable: true }
 
 person.fullName = 'Heegun Lee';
 console.log(person); // { firstName: "Heegun", lastName: "Lee" }

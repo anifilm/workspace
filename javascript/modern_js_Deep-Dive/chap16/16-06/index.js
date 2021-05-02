@@ -39,4 +39,4 @@ console.log(descriptor);
 // 프로퍼티 어트리뷰트를 갖는다.
 descriptor = Object.getOwnPropertyDescriptor(person, 'fullName');
 console.log(descriptor);
-// { get: f, set: f, enumerable: true, configurable: true }
+// { get: ƒ, set: ƒ, enumerable: true, configurable: true }
