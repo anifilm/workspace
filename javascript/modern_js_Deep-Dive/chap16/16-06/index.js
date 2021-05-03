@@ -1,3 +1,6 @@
+// 16.3.2 접근자 프로퍼티
+
+// 예제 16-06
 const person = {
   // 데이터 프로퍼티
   firstName: 'Ungmo',

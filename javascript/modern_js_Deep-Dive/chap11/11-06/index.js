@@ -1,7 +1,8 @@
+// 11.1.3 값에 의한 전달
+
 // 예제 11-06
-// 값에 의한 전달 (값 복사 전달)
 var score = 80;
-var copy = score;
+var copy = score; // 값 복사
 
 console.log(score); // 80
 console.log(copy);  // 80
@@ -13,7 +14,7 @@ console.log(copy);  // 80
 
 // 예제 11-07
 var score = 80;
-// copy 변수에는 score 변수의 값 80이 복사되어 할단된다.
+// copy 변수에는 score 변수의 값 80이 복사되어 할당된다.
 var copy = score;
 
 console.log(score, copy); // 80 80

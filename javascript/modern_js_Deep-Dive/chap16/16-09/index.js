@@ -1,3 +1,6 @@
+// 16.4 프로퍼티 정의
+
+// 예제 16-09
 const person = {};
 
 Object.defineProperties(person, {

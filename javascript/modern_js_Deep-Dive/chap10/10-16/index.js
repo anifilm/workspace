@@ -1,3 +1,5 @@
+// 10.6 프로퍼티 값 갱신
+
 // 예제 10-16
 var person = {
   name: 'Lee'
@@ -5,6 +7,8 @@ var person = {
 // person 객체에 name 프로퍼티가 존재하므로 name 프로퍼티의 값이 갱신된다.
 person.name = 'Kim';
 console.log(person); // { name: "Kim" }
+
+// 10.7 프로퍼티 동적 생성
 
 // 예제 10-17
 var person = {
@@ -14,6 +18,8 @@ var person = {
 // 따라서 person 객체에 age 프로퍼티가 동적으로 생성되고 값이 할당된다.
 person.age = 20;
 console.log(person); // { name: "Lee", age: 20 }
+
+// 10.8 프로퍼티 삭제
 
 // 예제 09-18
 var person = {

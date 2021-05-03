@@ -1,3 +1,6 @@
+// 16.5.4 불변 객체
+
+// 예제 16-14
 function deepFreeze(target) {
   // 객체가 아니거나 동결된 객체는 무시하고 객체이고 동결되지 않은 객체만 동결한다.
   if (target && typeof target === 'object' && !Object.isFrozen(taget)) {

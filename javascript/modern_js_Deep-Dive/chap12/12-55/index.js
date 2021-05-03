@@ -1,3 +1,6 @@
+// 12.7.4 콜백 함수
+
+// 예제 12-55
 // 콜백 함수를 사용하는 고차 함수 map
 var res = [1, 2, 3].map(function (item) {
   return item * 2;

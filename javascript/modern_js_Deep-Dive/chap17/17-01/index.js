@@ -1,5 +1,6 @@
 // 17.1 Object 생성자 함수
 
+// 예제 17-01
 // 빈 객체의 생성
 const person = new Object();
 

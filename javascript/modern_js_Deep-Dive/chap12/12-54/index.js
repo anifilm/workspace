@@ -1,3 +1,6 @@
+// 12.7.4 콜백 함수
+
+// 예제 12-54
 // 콜백 함수를 사용한 이벤트 처리
 // myButton 버튼을 클릭하면 콜백 함수를 실행한다.
 document.getElementById('myButton').addEventListener('click', function () {

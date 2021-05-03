@@ -1,3 +1,5 @@
+// 12.5.2 인수 확인
+
 // 예제 12-22
 function add(x, y) {
   return x + y;

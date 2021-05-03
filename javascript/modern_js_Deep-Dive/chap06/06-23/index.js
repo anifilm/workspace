@@ -25,5 +25,5 @@ console.log(typeof foo); // object
 foo = []; // 배열
 console.log(typeof foo); // object
 
-foo = function () {}; // 함수
+foo = function () { }; // 함수
 console.log(typeof foo); // function

@@ -1,3 +1,6 @@
+// 12.6 참조에 의한 전달과 외부 상태의 변경
+
+// 예제 12-33
 // 매개변수 primitive는 원시 값을 전달받고, 매개변수 obj는 객체를 전달받는다.
 function changeVal(primitive, obj) {
   primitive += 100;

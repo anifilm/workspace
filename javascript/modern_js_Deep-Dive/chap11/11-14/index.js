@@ -1,5 +1,8 @@
+// 얕은 복사(shallow copy)와 깊은 복사(deep copy)
+
 // 예제 11-14
 const o = { x: { y: 1 } };
+
 // 얕은 복사
 const c1 = { ...o };
 console.log(c1 === o); // false
@@ -16,11 +19,13 @@ console.log(c2.x === o.x); // false
 
 // 예제 11-15
 const v = 1;
+
 // "깊은 복사"라고 부르기도 한다.
 const c1 = v;
 console.log(c1 === v); // true
 
 const o = { x: 1 };
+
 // "얕은 복사"라고 부르기도 한다.
 const c2 = o;
 console.log(c2 === o); // true

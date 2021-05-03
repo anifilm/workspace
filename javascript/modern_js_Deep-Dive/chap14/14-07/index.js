@@ -1,3 +1,6 @@
+// 14.3.3 모듈 패턴
+
+// 예제 14-07
 var Counter = (function () {
   // private 변수
   var num = 0;

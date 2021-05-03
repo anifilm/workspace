@@ -1,7 +1,10 @@
+// 17.1 Object 생성자 함수
+
 /*
 자바스크립트 Object 생성자 함수 이외에도 String, Number, Boolean, Function, Array, Date, RegExp, Promise 등의 빌트인 생성자 함수를 제공한다.
 */
 
+// 예제 17-02
 // String 생성자 함수에 의한 String 객체 생성
 const strObj = new String('Lee');
 console.log(typeof strObj); // object

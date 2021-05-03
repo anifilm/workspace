@@ -1,3 +1,6 @@
+// 15.3.4 const 키워드와 객체
+
+// 예제 15-19
 const person = {
   name: 'Lee'
 };
