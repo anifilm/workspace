@@ -1,6 +1,6 @@
 package groovy.book.chap05
 
-import groovy.book.chap05.console.*
+import groovy.book.console.*
 
 print 'Please enter your name and age: '
 def name = Console.readString()

@@ -1,4 +1,4 @@
-package groovy.book.chap05.console
+package groovy.book.console
 
 class Console {
     def static readString() {
