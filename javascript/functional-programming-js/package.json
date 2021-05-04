@@ -9,7 +9,7 @@
     "jscheck": "^0.2.0",
     "lodash": "^4.17.21",
     "performance-now": "^2.1.0",
-    "qunitjs": "^2.4.1",
+    "qunit": "^2.15.0",
     "ramda": "^0.27.1",
     "rxjs": "^7.0.0",
     "rxjs-es": "*",

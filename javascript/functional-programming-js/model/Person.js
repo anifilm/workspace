@@ -4,40 +4,40 @@
  * 저자: 루이스 아텐시오
  */
 exports.Person = class Person {
-    constructor(ssn,firstname, lastname, birthYear = null, address = null) {
-        this._ssn = ssn;
-        this._firstname = firstname;
-        this._lastname = lastname;
-        this._birthYear = birthYear;
-        this._address = address;
-    }
+  constructor(ssn, firstname, lastname, birthYear = null, address = null) {
+    this._ssn = ssn;
+    this._firstname = firstname;
+    this._lastname = lastname;
+    this._birthYear = birthYear;
+    this._address = address;
+  }
 
-    get ssn() {
-        return this._ssn;
-    }
+  get ssn() {
+    return this._ssn;
+  }
 
-    get firstname() {
-        return this._firstname;
-    }
+  get firstname() {
+    return this._firstname;
+  }
 
-    set firstname(firstname) {
-        this._firstname = firstname;
-        return this;
-    }
+  set firstname(firstname) {
+    this._firstname = firstname;
+    return this;
+  }
 
-    get lastname() {
-        return this._lastname;
-    }
+  get lastname() {
+    return this._lastname;
+  }
 
-    get birthYear() {
-        return this._birthYear;
-    }
+  get birthYear() {
+    return this._birthYear;
+  }
 
-    get address() {
-        return this._address;
-    }
+  get address() {
+    return this._address;
+  }
 
-    get fullname() {
-        return `${this._firstname} ${this._lastname}`;
-    }
+  get fullname() {
+    return `${this._firstname} ${this._lastname}`;
+  }
 };
