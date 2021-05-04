@@ -50,5 +50,5 @@ def custs = [
 ]
 
 for (cust in custs) {
-    println "$cust.value: $cust.key"
+    println "${cust.value}: ${cust.key}"
 }

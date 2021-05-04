@@ -5,7 +5,7 @@ def name = 'Derek'
 // A string surrounded by single quotes is taken literally
 // but backslashed characters are recognized
 println 'I am ${name}'
-println "I am $name"
+println "I am ${name}"
 
 // Triple quoted strings continue over many lines
 // It is possible to strip that character by escaping the newline with a backslash:

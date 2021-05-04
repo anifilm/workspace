@@ -45,7 +45,7 @@ def doubleList(list) {
 }
 
 def sumAll(int... num) { // 매개변수로 수열을 리스트로 받는다.
-    def sum = 0;
+    def sum = 0
     num.each{ sum += it }
     return sum
 }
