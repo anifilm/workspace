@@ -1,0 +1,34 @@
+{
+  "name": "functional-programming-js",
+  "description": "Code samples for Functional Programming in JavaScript",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@reactivex/rxjs": "^6.6.7",
+    "babel-preset-es2015": "^6.24.1",
+    "blanket": "^1.2.3",
+    "jscheck": "^0.2.0",
+    "lodash": "^4.17.21",
+    "performance-now": "^2.1.0",
+    "qunitjs": "^2.4.1",
+    "ramda": "^0.27.1",
+    "rxjs": "^7.0.0",
+    "rxjs-es": "*",
+    "sinon": "^10.0.0",
+    "sinon-qunit": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node5"
+    ]
+  },
+  "scripts": {
+    "chap01": "qunit chap01/tests.js",
+    "chap02": "qunit chap02/tests.js",
+    "chap03": "qunit chap03/tests.js",
+    "chap04": "qunit chap04/tests.js",
+    "chap05": "qunit chap05/tests.js",
+    "chap06": "qunit chap06/tests.js",
+    "chap07": "qunit chap07/tests.js",
+    "chap08": "qunit chap08/tests.js"
+  }
+}

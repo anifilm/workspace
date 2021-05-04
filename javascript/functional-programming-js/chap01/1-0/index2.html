@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1.2 함수형 프로그래밍이란?</title>
+</head>
+<body>
+  <div id="msg"></div>
+
+  <script>
+    function printMessage(elementId, format, message) {
+      document.querySelector(`#${elementId}`).innerHTML =
+        `<${format}>${message}</${format}>`;
+    }
+
+    printMessage('msg', 'h1', 'Hello World');
+  </script>
+</body>
+</html>
