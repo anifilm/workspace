@@ -1,10 +1,10 @@
-const sortDesc = arr => {
-  arr.sort(
-    (a, b) => b - a
-  );
-}
+const input = [80, 90, 100];
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-sortDesc(arr);
+const sum = (total, current) => total + current;
+const total = arr => arr.reduce(sum);
+const size = arr => arr.length;
+const divide = (a, b) => a / b;
+const average = arr => divide(total(arr), size(arr));
 
-console.log(arr);
+const result = average(input);
+console.log(result);
