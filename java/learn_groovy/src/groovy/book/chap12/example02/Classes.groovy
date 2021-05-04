@@ -1,8 +1,12 @@
-package groovy.book.chap12
+package groovy.book.chap12.example02
 
 // 12.1 Classes
 
 // Two object instances
+class Account {
+    def number  // account number
+    def balance // current balance
+}
 
 // create two instances
 def acc1 = new Account(number: 'ABC123', balance: 1200)

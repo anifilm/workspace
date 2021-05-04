@@ -1,9 +1,9 @@
-package groovy.book.chap12
+package groovy.book.chap12.example07
 
 // 12.1 Classes
 
 // A constructor method
-class Account7 {
+class Account {
     def number  // account number
     def balance // current balance
 
@@ -28,9 +28,9 @@ class Account7 {
 
 // populate a list with the instances
 def accounts = [
-    new Account7('ABC123', 1200),
-    new Account7('PQR456', 200),
-    new Account7('XYZ789', 123)
+    new Account('ABC123', 1200),
+    new Account('PQR456', 200),
+    new Account('XYZ789', 123)
 ]
 
 // now display each
@@ -38,4 +38,4 @@ accounts.each { acc ->
     println acc // automacally cal toString
 }
 
-//def acc = new Account7(number: 'ABC123', balance: 1200) // No matching constructor
+//def acc = new Account(number: 'ABC123', balance: 1200) // No matching constructor

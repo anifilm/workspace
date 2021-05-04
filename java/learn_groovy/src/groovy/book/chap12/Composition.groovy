@@ -1,14 +1,33 @@
 package groovy.book.chap12
 
+
 // 12.2 Composition
 
 // Banking example
+class Account {
+    def number  // account number
+    def balance // current balance
+
+    def credit(amount) {
+        balance += amount
+    }
+
+    def debit(amount) { // only of there are sufficient funds
+        if (balance >= amount)
+            balance -= amount
+    }
+
+    String toString() { // redefinition
+        return "Account: ${number} with balance: ${balance}"
+    }
+}
+
 class Bank {
     def name           // name of bank
     def accounts = [:] // accounts opened with the bank
 
     def openAccount(number, balance) {
-        def acc = new Account6(number: number, balance: balance)
+        def acc = new Account(number: number, balance: balance)
         accounts[number] = acc
     }
 

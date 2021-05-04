@@ -1,9 +1,9 @@
-package groovy.book.chap12
+package groovy.book.chap12.example04
 
 // 12.1 Classes
 
 // Using the implicit getter and setter methods
-class Account4 {
+class Account {
     def number  // account number
     def balance // current balance
 
@@ -22,7 +22,7 @@ class Account4 {
 }
 
 // create a new instance
-def acc = new Account4(number: 'ABC123', balance: 1200)
+def acc = new Account(number: 'ABC123', balance: 1200)
 acc.display()
 
 // credit transaction

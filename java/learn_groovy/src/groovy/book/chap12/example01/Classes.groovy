@@ -1,4 +1,4 @@
-package groovy.book.chap12
+package groovy.book.chap12.example01
 
 // 12.1 Classes
 

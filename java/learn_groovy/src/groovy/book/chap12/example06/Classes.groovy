@@ -1,9 +1,9 @@
-package groovy.book.chap12
+package groovy.book.chap12.example06
 
 // 12.1 Classes
 
-// lists of accounts
-class Account5 {
+// Redefining method toString
+class Account {
     def number  // account number
     def balance // current balance
 
@@ -21,15 +21,14 @@ class Account5 {
     }
 }
 
-// create a new instance
-def acc1 = new Account5(number: 'ABC123', balance: 1200)
-def acc2 = new Account5(number: 'PQR456', balance: 200)
-def acc3 = new Account5(number: 'XYZ789', balance: 123)
-
 // populate a list with the instances
-def accounts = [acc1, acc2, acc3]
+def accounts = [
+    new Account(number: 'ABC123', balance: 1200),
+    new Account(number: 'PQR456', balance: 200),
+    new Account(number: 'XYZ789', balance: 123)
+]
 
 // now display each
 accounts.each { acc ->
-    println acc.toString()
+    println acc // automacally cal toString
 }
