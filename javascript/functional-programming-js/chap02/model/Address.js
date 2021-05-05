@@ -1,4 +1,4 @@
-class Address {
+exports.Address = class Address {
   constructor(country, state, city, zip, street) {
     this._country = country;
     this._state = state;

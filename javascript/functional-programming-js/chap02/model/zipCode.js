@@ -21,3 +21,7 @@ function zipCode(code, location) {
 
 const princetonZip = zipCode('08544', '3345');
 princetonZip.toString(); // -> "08544-3345"
+
+module.exports = {
+  zipCode: zipCode
+};

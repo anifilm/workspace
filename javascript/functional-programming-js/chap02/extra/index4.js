@@ -1,24 +1,12 @@
-function coordinate(lat, long) {
-  let _lat = lat;
-  let _long = long;
+'use strict';
+const R = require('ramda');
+const { Person } = require('../model/Person');
 
-  return {
-    latitude: function () {
-      return _lat;
-    },
-    longitude: function () {
-      return _long;
-    },
-    translate: function (dx, dy) {
-      return coordinate(_lat + dx, _long + dy);
-    },
-    toString: function () {
-      return '(' + _lat + ', ' + _long + ')';
-    }
-  };
-}
+var person = new Person('Alonzo', 'Church', '444-44-4444');
+var lastnameLens = R.lensProp('_lastname');
 
-const greenwich = coordinate(51.4778, 0.0015);
-greenwich.toString(); // -> "(51.4778, 0.0015)"
+R.view(lastnameLens, person); // -> 'Church'
 
-greenwich.translate(10, 10).toString(); // -> "(61.4778, 10.0015)"
+var newPerson = R.set(lastnameLens, 'Mourning', person);
+newPerson._lastname; // -> 'Morning'
+console.log(newPerson._lastname);

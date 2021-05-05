@@ -1,23 +1,18 @@
-function zipCode(code, location) {
-  let _code = code;
-  let _location = location || '';
+'use strict';
+const { Person } = require('../model/Person');
+const { Address } = require('../model/Address');
+const { zipCode } = require('../model/zipCode');
 
-  return {
-    code: function () {
-      return _code;
-    },
-    location: function () {
-      return _location;
-    },
-    fromString: function (str) {
-      let parts = str.split('-');
-      return zipCode(parts[0], parts[1]);
-    },
-    toString: function () {
-      return _code + '-' + _location;
-    },
-  };
-}
+var person = new Person('Haskell', 'Curry', '444-44-4444');
+person.address = new Address(
+  'US',
+  'NJ',
+  'Princeton',
+  zipCode('08544', '1234'),
+  'Alexander St.',
+);
 
-const princetonZip = zipCode('08544', '3345');
-princetonZip.toString(); // -> "08544-3345"
+person = Object.freeze(person);
+
+person.address._country = 'France'; // -> 허용!
+person.address.country; // -> 'France'

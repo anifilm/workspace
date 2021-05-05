@@ -1,6 +1,7 @@
-const Person = require('../../model/Person.js').Person;
-const Student = require('../../model/Student.js').Student;
-const Address = require('../../model/Address.js').Address;
+'use strict';
+//const { Person } = require('../model/Person');
+//const { Student } = require('../model/Student');
+//const { Address } = require('../model/Address');
 
 var selector = (country, school) =>
   (student) =>

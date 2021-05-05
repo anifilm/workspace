@@ -1,6 +1,6 @@
-const Person = require('../../model/Person.js').Person;
-const Student = require('../../model/Student.js').Student;
-const Address = require('../../model/Address.js').Address;
+'use strict';
+const { Student } = require('../model/Student');
+const { Address } = require('../model/Address');
 
 // Person 클래스
 function peopleInSameCountry(friends) {
