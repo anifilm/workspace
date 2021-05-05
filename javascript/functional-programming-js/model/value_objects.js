@@ -24,6 +24,7 @@ function coordinate(lat, long) {
 function zipCode(code, location) {
   let _code = code;
   let _location = location || '';
+
   return {
     code: function () {
       return _code;

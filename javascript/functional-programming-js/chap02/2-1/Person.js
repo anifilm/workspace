@@ -1,6 +1,6 @@
 // 코드 2-1 Person/Student 클래스 정의
 
-exports.Person = class Person {
+class Person {
   constructor(firstname, lastname, ssn) {
     this._firstname = firstname;
     this._lastname = lastname;
@@ -41,3 +41,14 @@ exports.Person = class Person {
     return `Person(${this._firstname}, ${this._lastname})`;
   }
 }
+
+class Student extends Person {
+  constructor(ssn, firstname, lastname, school, birthYear = null, address = null) {
+    super(ssn, firstname, lastname, birthYear, address);
+    this._school = school;
+  }
+
+  get school() {
+    return this._school;
+  }
+};
