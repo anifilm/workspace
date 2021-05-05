@@ -19,9 +19,9 @@ function coordinate(lat, long) {
 }
 
 const greenwich = coordinate(51.4778, 0.0015);
-greenwich.toString(); // -> "(51.4778, 0.0015)"
+greenwich.toString(); //-> "(51.4778, 0.0015)"
 
-greenwich.translate(10, 10).toString(); // -> "(61.4778, 10.0015)"
+greenwich.translate(10, 10).toString(); //-> "(61.4778, 10.0015)"
 
 module.exports = {
   coordinate: coordinate

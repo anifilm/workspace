@@ -14,5 +14,5 @@ person.address = new Address(
 
 person = Object.freeze(person);
 
-person.address._country = 'France'; // -> 허용!
-person.address.country; // -> 'France'
+person.address._country = 'France'; //-> 허용!
+person.address.country; //-> 'France'

@@ -13,4 +13,4 @@ var findStudentsBy = (friends, selector) =>
 
 findStudentsBy([curry, turing, church, kleene],
   selector('US', 'Princeton')
-); // -> [church, kleene]
+); //-> [church, kleene]

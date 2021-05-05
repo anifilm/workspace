@@ -40,4 +40,4 @@ var kleene = new Student('Stephen', 'Kleene', '444-44-4444', 'Princeton');
 kleene.address = new Address('US');
 
 var church = studentsInSameCountryAndSchool([curry, turing, kleene]);
-// -> [kleene]
+//-> [kleene]
