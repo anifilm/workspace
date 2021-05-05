@@ -9,7 +9,7 @@ const run = R.compose;
 const curry = R.curry;
 
 // 본문 1장에서는 모의 저장 객체를 사용합니다.
-const db = require('../helper').db;
+const { db } = require('../helper');
 
 // 코드 1-4 showStudent 프로그램을 분해
 const find = curry((db, id) => {

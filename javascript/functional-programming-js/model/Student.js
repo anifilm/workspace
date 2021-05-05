@@ -2,7 +2,7 @@
  * Person에서 파생된 Student 타입
  * 저자: 루이스 아텐시오
  */
-const Person = require('./Person.js').Person;
+const { Person } = require('./Person');
 
 exports.Student = class Student extends Person {
   constructor(ssn, firstname, lastname, school, birthYear = null, address = null) {
