@@ -1,4 +1,4 @@
-package groovy.book.chap13.iteration2
+package groovy.book.chap13.iteration02
 
 // 13.3 Interation 2: Augment the Model
 

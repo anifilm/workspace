@@ -1,7 +1,6 @@
-package groovy.book.chap13.iteration3
+package groovy.book.chap13.iteration03
 
 import groovy.book.console.*
-import org.fusesource.jansi.internal.CLibrary
 
 // 13.4 Interation 3: Reinstate the User Interface
 

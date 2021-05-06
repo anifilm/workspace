@@ -1,4 +1,4 @@
-package groovy.book.chap13.iteration1
+package groovy.book.chap13.iteration01
 
 // 13.2 Interation 1: An Initial Model
 
