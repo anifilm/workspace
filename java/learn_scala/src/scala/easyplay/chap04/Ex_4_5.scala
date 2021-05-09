@@ -8,7 +8,7 @@ object Ex_4_5 {
     flyingWhale.fly
   }
 
-  class Animal extends Flying with Swimming {}
+  class Animal extends Flying with Swimming
 
   trait Swimming {
     def swim = println("수영을 합니다. 촤아~")
