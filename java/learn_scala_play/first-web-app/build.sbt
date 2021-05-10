@@ -1,4 +1,4 @@
-name := """first-app"""
+name := """first-web-app"""
 organization := "com.example"
 
 version := "1.0-SNAPSHOT"
