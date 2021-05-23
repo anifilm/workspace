@@ -3,3 +3,4 @@ dist
 __new__
 __init__.*
 *.exe
+*.pdf
