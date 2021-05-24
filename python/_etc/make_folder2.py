@@ -7,3 +7,5 @@ for i in range(1, 11):
             os.mkdir(str(i) + "-0" + str(j))
         else:
             os.mkdir(str(i) + "-" + str(j))
+
+print("폴더 생성을 완료하였습니다.")

@@ -6,3 +6,5 @@ for i in range(1, 30):
         os.mkdir("./chap0" + str(i))
     else:
         os.mkdir("./chap" + str(i))
+
+print("폴더 생성을 완료하였습니다.")

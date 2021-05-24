@@ -16,3 +16,5 @@ for i in range(1, 30):
         f.write("\n")
         f.write("//\n")
         f.close()
+
+print("폴더와 파일 생성을 완료하였습니다.")
