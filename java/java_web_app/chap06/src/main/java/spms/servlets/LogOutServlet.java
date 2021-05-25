@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+// 프런트 컨트롤러 적용
 @WebServlet("/auth/logout")
 public class LogOutServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -19,6 +20,7 @@ public class LogOutServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate();
 
-        response.sendRedirect("login");
+        //response.sendRedirect("login");
+        request.setAttribute("viewUrl", "redirect:login.do");
     }
 }

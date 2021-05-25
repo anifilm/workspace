@@ -2,7 +2,6 @@ package spms.servlets;
 
 import spms.dao.MemberDao;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-// ServletContext에 보관된 MemberDao 사용하기
+// 프런트 컨트롤러 적용
 @WebServlet("/member/delete")
 public class MemberDeleteServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -27,13 +26,15 @@ public class MemberDeleteServlet extends HttpServlet {
 
             memberDao.delete(Integer.parseInt(request.getParameter("no")));
 
-            response.sendRedirect("list");
+            //response.sendRedirect("list");
+            request.setAttribute("viewUrl", "redirect:list.do");
 
         } catch (Exception e) {
-            e.printStackTrace();
-            request.setAttribute("error", e);
-            RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
-            rd.forward(request, response);
+            //e.printStackTrace();
+            //request.setAttribute("error", e);
+            //RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
+            //rd.forward(request, response);
+            throw new ServletException(e);
         }
     }
 }
