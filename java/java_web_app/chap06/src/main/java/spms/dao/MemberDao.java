@@ -50,7 +50,6 @@ public class MemberDao {
         } finally {
             try { if (rs != null) rs.close(); } catch(Exception e) { }
             try { if (stmt != null) stmt.close(); } catch(Exception e) { }
-            //if (connection != null) connPool.returnConnection(connection);
             try { if (connection != null) connection.close(); } catch(Exception e) { }
         }
     }
