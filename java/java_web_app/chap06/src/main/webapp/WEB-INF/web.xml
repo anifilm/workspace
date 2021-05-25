@@ -3,5 +3,32 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>chap06</display-name>
+
+  <!-- 컨텍스트 초기화 파라미터 -->
+  <context-param>
+    <param-name>driver</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost/java_web_app_chap04</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>lcy0200</param-value>
+  </context-param>
+
+  <!-- 필터 선언 -->
+
+  <!-- 필터 URL 매핑 -->
+
+  <!-- 서블릿 선언 -->
+
+  <!-- 서블릿을 URL과 연결 -->
+
 </web-app>

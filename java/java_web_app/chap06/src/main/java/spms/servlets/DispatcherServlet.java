@@ -29,18 +29,18 @@ public class DispatcherServlet extends HttpServlet {
                 pageControllerPath = "/member/add";
                 if (request.getParameter("email") != null) {
                     request.setAttribute("member", new Member()
-                        .setEmail(request.getParameter("email"))
-                        .setPassword(request.getParameter("password"))
-                        .setName(request.getParameter("name")));
+                           .setEmail(request.getParameter("email"))
+                           .setPassword(request.getParameter("password"))
+                           .setName(request.getParameter("name")));
                 }
             }
             else if ("/member/update.do".equals(servletPath)) {
                 pageControllerPath = "/member/update";
                 if (request.getParameter("email") != null) {
                     request.setAttribute("member", new Member()
-                            .setNo(Integer.parseInt(request.getParameter("no")))
-                            .setEmail(request.getParameter("email"))
-                            .setName(request.getParameter("name")));
+                           .setNo(Integer.parseInt(request.getParameter("no")))
+                           .setEmail(request.getParameter("email"))
+                           .setName(request.getParameter("name")));
                 }
             }
             else if ("/member/delete.do".equals(servletPath)) {

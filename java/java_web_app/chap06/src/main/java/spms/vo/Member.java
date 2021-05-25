@@ -3,12 +3,12 @@ package spms.vo;
 import java.util.Date;
 
 public class Member {
-    protected int 		no;
-    protected String 	name;
-    protected String 	email;
-    protected String 	password;
-    protected Date		createdDate;
-    protected Date		modifiedDate;
+    protected int       no;
+    protected String    name;
+    protected String    email;
+    protected String    password;
+    protected Date      createdDate;
+    protected Date      modifiedDate;
 
     public int getNo() {
         return no;
@@ -17,6 +17,7 @@ public class Member {
         this.no = no;
         return this;
     }
+
     public String getName() {
         return name;
     }
@@ -24,6 +25,7 @@ public class Member {
         this.name = name;
         return this;
     }
+
     public String getEmail() {
         return email;
     }
@@ -31,6 +33,7 @@ public class Member {
         this.email = email;
         return this;
     }
+
     public String getPassword() {
         return password;
     }
@@ -38,6 +41,7 @@ public class Member {
         this.password = password;
         return this;
     }
+
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -45,6 +49,7 @@ public class Member {
         this.createdDate = createdDate;
         return this;
     }
+
     public Date getModifiedDate() {
         return modifiedDate;
     }
