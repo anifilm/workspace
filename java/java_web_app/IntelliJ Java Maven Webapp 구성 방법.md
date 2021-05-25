@@ -51,6 +51,14 @@ IntelliJ Java Maven Webapp 설정 방법
       <version>1.4</version>
     </dependency>
 
+- DBCP2 (chap05, 5.13.3 DataSource의 적용)
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+      <version>2.8.0</version>
+    </dependency>
+
+
 [파일 수정 후]
 
 
