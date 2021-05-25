@@ -25,7 +25,6 @@ public class MemberListServlet extends HttpServlet {
             MemberDao memberDao = (MemberDao)sc.getAttribute("memberDao");
 
             request.setAttribute("members", memberDao.selectList());
-
             request.setAttribute("viewUrl", "/member/MemberList.jsp");
 
         } catch (Exception e) {

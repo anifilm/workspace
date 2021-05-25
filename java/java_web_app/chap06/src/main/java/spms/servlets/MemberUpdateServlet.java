@@ -49,9 +49,9 @@ public class MemberUpdateServlet extends HttpServlet {
             MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
 
             memberDao.update(new Member()
-                    .setNo(Integer.parseInt(request.getParameter("no")))
-                    .setName(request.getParameter("name"))
-                    .setEmail(request.getParameter("email")));
+                     .setNo(Integer.parseInt(request.getParameter("no")))
+                     .setName(request.getParameter("name"))
+                     .setEmail(request.getParameter("email")));
 
             response.sendRedirect("list");
 

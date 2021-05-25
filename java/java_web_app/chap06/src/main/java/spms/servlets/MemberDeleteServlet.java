@@ -34,7 +34,6 @@ public class MemberDeleteServlet extends HttpServlet {
             request.setAttribute("error", e);
             RequestDispatcher rd = request.getRequestDispatcher("/Error.jsp");
             rd.forward(request, response);
-
         }
     }
 }

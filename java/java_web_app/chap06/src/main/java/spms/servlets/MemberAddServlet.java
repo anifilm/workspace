@@ -34,9 +34,9 @@ public class MemberAddServlet extends HttpServlet {
             MemberDao memberDao = (MemberDao) sc.getAttribute("memberDao");
 
             memberDao.insert(new Member()
-                    .setEmail(request.getParameter("email"))
-                    .setPassword(request.getParameter("password"))
-                    .setName(request.getParameter("name")));
+                     .setEmail(request.getParameter("email"))
+                     .setPassword(request.getParameter("password"))
+                     .setName(request.getParameter("name")));
 
             response.sendRedirect("list");
 

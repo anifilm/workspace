@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@SuppressWarnings("serial")
 @WebServlet("*.do")
 public class DispatcherServlet extends HttpServlet {
     @Override
