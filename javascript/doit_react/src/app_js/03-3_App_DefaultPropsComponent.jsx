@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import ForceUpdateExample from './chap03/03-4/ForceUpdateExample';
+import DefaultPropsComponent from './chap03/03-3/DefaultDefaultPropsComponent';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <ForceUpdateExample />
-      </div>
+      <DefaultPropsComponent />
     );
   }
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ForceUpdateExample from './chap03/03-4/ForceUpdateExample';
+import StateExample from './chap03/03-4/StateExample';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <ForceUpdateExample />
+        <StateExample />
       </div>
     );
   }

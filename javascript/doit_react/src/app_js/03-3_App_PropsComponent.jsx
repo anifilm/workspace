@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import ForceUpdateExample from './chap03/03-4/ForceUpdateExample';
+import PropsComponent from './chap03/03-3/PropsComponent';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <ForceUpdateExample />
-      </div>
+      <PropsComponent name="두잇 리액트" />
     );
   }
 }
