@@ -1,4 +1,4 @@
-// GridLayout으로 입력 폼 만들기
+// 예제 9-5 GridLayout으로 입력 폼 만들기
 package chap09.section7;
 
 import javax.swing.*;

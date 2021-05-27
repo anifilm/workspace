@@ -1,4 +1,4 @@
-// 300x300 크기의 스윙 프레임 만들기
+// 예제 9-1 300x300 크기의 스윙 프레임 만들기
 package chap09.section3;
 
 import javax.swing.*;

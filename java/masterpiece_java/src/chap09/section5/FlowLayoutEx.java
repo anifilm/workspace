@@ -1,4 +1,4 @@
-// FlowLayout 배치관리자 활용
+// 예제 9-3 FlowLayout 배치관리자 활용
 package chap09.section5;
 
 import javax.swing.*;

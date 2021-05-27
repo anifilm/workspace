@@ -1,4 +1,4 @@
-// BorderLayout 배치관리자를 사용하는 예
+// 예제 9-4 BorderLayout 배치관리자를 사용하는 예
 package chap09.section6;
 
 import javax.swing.*;

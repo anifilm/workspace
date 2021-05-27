@@ -1,10 +1,9 @@
-// 마우스로 문자열 이동시키기 - 마우스 이벤트 연습
+// 예제 10-4 마우스로 문자열 이동시키기 - 마우스 이벤트 연습
 package chap10.section3;
 
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class MouseListenerEx extends JFrame {
     private JLabel la = new JLabel("Hello");  // "Hello"를 출력하기 위한 레이블

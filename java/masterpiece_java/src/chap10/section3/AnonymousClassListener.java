@@ -1,10 +1,9 @@
-// 익명 클래스로 Action 이벤트 리스너 만들기
+// 예제 10-3 익명 클래스로 Action 이벤트 리스너 만들기
 package chap10.section3;
 
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AnonymousClassListener extends JFrame {
     public AnonymousClassListener() {
