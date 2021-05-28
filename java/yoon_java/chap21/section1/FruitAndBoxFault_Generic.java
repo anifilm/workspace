@@ -27,8 +27,8 @@ class FruitAndBoxFault_Generic {
         Box<Apple> aBox = new Box<Apple>();
         Box<Orange> oBox = new Box<Orange>();
 
-        aBox.set("Apple");  // 프로그래머의 실수
-        oBox.set("Orange"); // 프로그래머의 실수
+        //aBox.set("Apple");  // 프로그래머의 실수
+        //oBox.set("Orange"); // 프로그래머의 실수
 
         Apple ap = aBox.get();
         Orange og = oBox.get();
