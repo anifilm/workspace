@@ -18,10 +18,7 @@ object ShapesDrawingDriver {
 }
 
 class ShapesDrawingDriver(drawerActor: ActorRef) extends Actor {
-
   import Messages._
-
-  implicit val ec = scala.concurrent.ExecutionContext.global
 
   def receive = {
     case Start =>
@@ -32,7 +29,7 @@ class ShapesDrawingDriver(drawerActor: ActorRef) extends Actor {
       drawerActor ! Exit
     case Finished =>
       println(s"ShapesDrawingDriver: cleaning up...")
-      context.system.terminate().foreach(t => println(s"terminated: $t"))
+      context.system.shutdown()
     case response: Response =>
       println("ShapesDrawingDriver: Response = " + response)
     case unexpected =>
