@@ -14,4 +14,4 @@ case class Circle(center: Point, radius: Double) extends Shape
 
 case class Rectangle(lowerLeft: Point, height: Double, width: Double) extends Shape
 
-case class Triable(point1: Point, point2: Point, point3: Point) extends Shape
+case class Triangle(point1: Point, point2: Point, point3: Point) extends Shape
