@@ -4,8 +4,8 @@ case class Point(x: Double = 0.0, y: Double = 0.0)
 
 abstract class Shape() {
   /**
-   * Draw takes a function argument. Each shape will pass a stringized
-   * version of itself to this function, which does the "drawing".
+   * draw는 함수를 인자로 받는다. 각 함수는 '그리기'를 담당한다.
+   * 각 Shape는 자신을 문자열로 바꾼 결과를 그 함수에 전달할 것이다.
    */
   def draw(f: String => Unit): Unit = f(s"draw: ${this.toString}")
 }
