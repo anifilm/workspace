@@ -29,8 +29,7 @@ car_detail_3 = [
 ]
 
 # 리스트 구조
-# 관리가 불편
-# 인덱스 접근시 실수 가능성, 삭제 불편
+# 관리 불편, 인덱스 접근시 실수 가능성, 삭제 불편
 car_company_list = ['Ferrari', 'BMW', 'Audi']
 car_detail_list = [
     {'color': 'white', 'horsepower': 400, 'price': 8000},
@@ -53,7 +52,7 @@ car_dicts = [
     {'car_campany': 'Audi', 'car_detail': {'color': 'silver', 'horsepower': 300, 'price': 6000}}
 ]
 
-# pop(key, 'default')
+#pop(key, 'default')
 del car_dicts[1]
 print(car_dicts)
 print()
@@ -86,7 +85,7 @@ print(car1.__dict__)
 print(car2.__dict__)
 print(car3.__dict__)
 
-# print(dir(car1))
+#print(dir(car1)) # 인스턴스 객체 car1의 모든 메타 정보를 출력
 print()
 
 # 리스트 선언
@@ -101,4 +100,4 @@ print()
 # 반복(__str__)
 for x in car_list:
     print(x)
-    # print(repr(x))
+    #print(repr(x))
