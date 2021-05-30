@@ -18,10 +18,10 @@ class Car():
         Car.car_count += 1
 
     def __str__(self):
-        return 'str : {} - {}'.format(self._company, self._details)
+        return 'str: {} - {}'.format(self._company, self._details)
 
     def __repr__(self):
-        return 'repr : {} - {}'.format(self._company, self._details)
+        return 'repr: {} - {}'.format(self._company, self._details)
 
     def __del__(self):
         Car.car_count -= 1

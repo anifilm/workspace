@@ -65,10 +65,10 @@ class Car():
         self._details = details
 
     def __str__(self):
-        return 'str : {} - {}'.format(self._company, self._details)
+        return 'str: {} - {}'.format(self._company, self._details)
 
     def __repr__(self):
-        return 'repr : {} - {}'.format(self._company, self._details)
+        return 'repr: {} - {}'.format(self._company, self._details)
 
     def __reduce__(self):
         pass

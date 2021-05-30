@@ -18,13 +18,12 @@ class Car():
         self._details = details
 
     def __str__(self):
-        return 'str : {} - {}'.format(self._company, self._details)
+        return 'str: {} - {}'.format(self._company, self._details)
 
     def __repr__(self):
-        return 'repr : {} - {}'.format(self._company, self._details)
+        return 'repr: {} - {}'.format(self._company, self._details)
 
-    # Instance Method
-    # self: 객체의 고유한 속성 값을 사용
+    # Instance Method, self: 객체의 고유한 속성 값을 사용
     def detail_info(self):
         print('Current ID: {}'.format(id(self)))
         print('Car Detail Info: {} {}'.format(self._company, self._details.get('price')))
@@ -34,7 +33,7 @@ class Car():
         return 'Before car Price -> company: {}, price: {}'.format(self._company, self._details.get('price'))
 
     # Instance Method
-    def get_price_culc(self):
+    def get_price_calc(self):
         return 'Before car Price -> company: {}, price: {}'.format(self._company, self._details.get('price') * Car.price_per_raice)
 
     # Class Method
@@ -70,24 +69,24 @@ print(car2._details['price'])
 print(car1.get_price())
 print(car2.get_price())
 
-# 가격 인상(클래스 메소드 미사용)
+# 가격 인상(클래스 변수에 직접 접근, 클래스 메서드 미사용)
 Car.price_per_raice = 1.4
 
 # 가격 정보(인상 후)
-print(car1.get_price_culc())
-print(car2.get_price_culc())
+print(car1.get_price_calc())
+print(car2.get_price_calc())
 
-# 가격 인상(클래스 메소드 사용)
+# 가격 인상(클래스 메서드 사용)
 Car.raise_price(1.6)
 
 # 가격 정보(인상 후)
-print(car1.get_price_culc())
-print(car2.get_price_culc())
+print(car1.get_price_calc())
+print(car2.get_price_calc())
 
-# 인스턴스 호출(스테틱 메소스)
+# 인스턴스 호출(스태틱 메서스)
 print(car1.is_bmw(car1))
 print(car2.is_bmw(car2))
 
-# 클래스로 호출(스테틱 메소드)
+# 클래스로 호출(스태틱 메서드)
 print(Car.is_bmw(car1))
 print(Car.is_bmw(car2))
