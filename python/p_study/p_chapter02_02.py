@@ -42,8 +42,8 @@ print(id(car2))
 print(id(car3))
 print()
 
-print(car1._company == car2._company)
-print(car1 is car2)
+print(car1._company == car2._company) # false 값 비교
+print(car1 is car2) # false 인스턴스 비교, 같은 아이덴티티 인가?
 print()
 
 # dir & __dict__ 확인
@@ -55,7 +55,7 @@ print(car1.__dict__)
 print(car2.__dict__)
 print()
 
-# Doctring
+# Docstring
 print(Car.__doc__)
 
 # 실행
@@ -66,11 +66,11 @@ Car.detail_info(car1)
 Car.detail_info(car2)
 
 # 에러
-# Car.detail_info()
+#Car.detail_info()
 
 # 비교
 print(car1.__class__, car2.__class__)
-print(id(car1.__class__), id(car2.__class__))
+print(id(car1.__class__), id(car2.__class__), id(car3.__class__))
 
 # 공유확인
 print(car1.car_count)
@@ -89,4 +89,4 @@ print(car1.car_count)
 print(Car.car_count)
 
 # 인스턴스 네임스페이스에 없으면 상위에서 검색
-# 즉 동일한 이름으로 변수 생성 가능(인스턴스 검색후 -> 상위(클래스 변수, 부모클래스 변수))
+# 즉, 동일한 이름으로 변수 생성 가능(인스턴스 검색후 -> 상위(클래스 변수, 부모클래스 변수))
