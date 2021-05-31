@@ -1,7 +1,7 @@
 # Chapther03-02
 # Special Method(Magic Method)
 # 파이썬의 핵심 -> 시퀀스(Sequence), 반복(Iterator), 함수(Function), 클래스(Class)
-# 클래스 안에 정의할 수 있는 특별한(Built-in) 메소스
+# 클래스 안에 정의할 수 있는 특별한(Built-in) 메서드
 
 # 클래스 예제 2
 # 벡터(x, y)
@@ -37,7 +37,7 @@ v1 = Vector(5, 7)
 v2 = Vector(23, 35)
 v3 = Vector()
 
-# 매직 메소드 출력
+# 매직 메서드 출력
 print(Vector.__init__.__doc__)
 print(Vector.__repr__.__doc__)
 print(Vector.__add__.__doc__)
