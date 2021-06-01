@@ -2,7 +2,8 @@ package scala.book.chap03
 
 object Ex2_1 {
   def main(args: Array[String]): Unit = {
-    // 리스트 3.1 배열을 타입으로 파라미터화하기
+    // 리스트 3.1 배열을 타입으로 파라미터화하기 1
+
     val greetStrings = new Array[String](3)
 
     greetStrings(0) = "Hello"

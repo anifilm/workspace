@@ -2,7 +2,7 @@ package scala.book.chap03
 
 object Ex2_2 {
   def main(args: Array[String]): Unit = {
-    // 리스트 3.1 배열을 타입으로 파라미터화하기
+    // 리스트 3.1 배열을 타입으로 파라미터화하기 2
 
     // 좀 더 명시적으로 코드를 만들고 싶은 기분이라면, 다음과 같이 greetStrings의 타입을 지정할 수도 있다.
     val greetStrings: Array[String] = new Array[String](3)
