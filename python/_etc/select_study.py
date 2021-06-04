@@ -58,6 +58,7 @@ study_list = [
     '제로초 Vue.js 기본 강좌',
     'Do it! Vue.js 입문',
     'Vue.js 트위터 클론코딩 - 인프런',
+    'Vue.js 프로젝트 투입 일주일 전',
     'Do it! 코틀린 프로그래밍',
     '깡샘의 코틀린 프로그래밍',
     #'깡샘의 안드로이드 프로그래밍',
@@ -79,7 +80,7 @@ study_list = [
     'Laravel로 Morden PHP 기반 Restful API 구축',
     '라라벨 배우기 (블로그 만들기)',
     'Laravel ChatApp (Jetstream)',
-    'Programming Scala 4/e',
+    'Programming in Scala 4/e',
     'Scala Cookbook',
     'Learning Scala',
     'Programming Scala 2nd',
@@ -87,8 +88,11 @@ study_list = [
     #'Java의 정석',
     'Svelte 인프런',
     '파이썬 동시성 프로그래밍',
+    'JVM 언어 입문',
     #'머신러닝 Tensorflow.js',
     #'TLS 구현으로 배우는 암호학',
+    #'JavaScript: The definitive guide',
+    #'Programming Typescript',
 ]
 
 random.shuffle(study_list)
