@@ -4,7 +4,7 @@ const app = new Vue({
     first: Math.ceil(Math.random() * 9),
     second: Math.ceil(Math.random() * 9),
     value: '',
-    result: '',
+    result: ''
   },
   methods: {
     onSubmitForm(e) {
@@ -20,6 +20,6 @@ const app = new Vue({
         this.value = '';
         this.$refs.answer.focus();
       }
-    },
-  },
+    }
+  }
 });

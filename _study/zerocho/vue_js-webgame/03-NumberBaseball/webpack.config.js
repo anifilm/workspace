@@ -5,22 +5,20 @@ module.exports = {
   mode: 'development',
   devtool: 'eval',
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue']
   },
   entry: {
-    app: path.join(__dirname, 'main.js'),
+    app: path.join(__dirname, 'main.js')
   },
   module: {
     rules: [{
       test: /\.vue$/,
-      use: 'vue-loader',
-    }],
+      use: 'vue-loader'
+    }]
   },
-  plugins: [
-    new VueLoaderPlugin(),
-  ],
+  plugins: [new VueLoaderPlugin()],
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'dist'),
-  },
+    path: path.join(__dirname, 'dist')
+  }
 };

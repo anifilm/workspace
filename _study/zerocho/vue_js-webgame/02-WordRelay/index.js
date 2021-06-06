@@ -3,7 +3,7 @@ const app = new Vue({
   data: {
     word: '제로초',
     result: '',
-    value: '',
+    value: ''
   },
   methods: {
     onSubmitForm(e) {
@@ -17,5 +17,5 @@ const app = new Vue({
       this.value = '';
       this.$refs.answer.focus();
     }
-  },
+  }
 });
