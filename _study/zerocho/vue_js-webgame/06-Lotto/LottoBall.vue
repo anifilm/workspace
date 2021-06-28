@@ -14,19 +14,19 @@ export default {
       let background;
       if (this.number <= 10) {
         color = 'white';
-    background = 'Gold';
+        background = 'Gold';
       } else if (this.number <= 20) {
         color = 'white';
-    background = 'CornflowerBlue';
+        background = 'CornflowerBlue';
       } else if (this.number <= 30) {
         color = 'white';
-    background = 'Crimson';
+        background = 'Crimson';
       } else if (this.number <= 40) {
         color = 'white';
-    background = 'DarkGray';
+        background = 'DarkGray';
       } else {
         color = 'white';
-    background = 'SeaGreen';
+        background = 'SeaGreen';
       }
       return {
         color,
