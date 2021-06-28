@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import LottoGenetrator from './LottoGenetrator';
+import LottoGenerator from './LottoGenerator';
 
 new Vue({
-  render: createElement => createElement(LottoGenetrator)
+  render: createElement => createElement(LottoGenerator)
 }).$mount('#root');

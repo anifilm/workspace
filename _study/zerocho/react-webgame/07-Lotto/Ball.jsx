@@ -14,7 +14,7 @@ const Ball = memo(({ number }) => {
     background = 'Crimson';
   } else if (number <= 40) {
     color = 'White';
-    background = 'DarkGrey';
+    background = 'DarkGray';
   } else {
     color = 'White';
     background = 'SeaGreen';

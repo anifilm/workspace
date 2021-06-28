@@ -61,7 +61,7 @@ function colorize(number, tag) {
     tag.style.backgroundColor = 'Crimson';
   } else if (number <= 40) {
     tag.style.color = 'white';
-    tag.style.backgroundColor = 'DarkGrey';
+    tag.style.backgroundColor = 'DarkGray';
   } else {
     tag.style.color = 'white';
     tag.style.backgroundColor = 'SeaGreen';
