@@ -1,4 +1,4 @@
-제로초의 Vue.js 강좌
+제로초 Vue.js 강좌
 https://www.youtube.com/playlist?list=PLcqDmjxt30RsdnPeU0ogHFMoggSQ_d7ao
 
 
