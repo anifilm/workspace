@@ -14,8 +14,8 @@ module.exports = {
     'vue' // 세미콜론 규칙 설정
   ],
   rules: {
-    'semi': ['error', 'always'], // 세미콜론 규칙 설정
+    semi: ['error', 'always'], // 세미콜론 규칙 설정
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
-}
+};
