@@ -4,20 +4,17 @@ const solution = (str) => {
   let answer = '';
   // 입력받은 문자열을 배열로 변환
   const arr = str.split(' ');
-  // 배열의 중복 값에 대한 개수 구하기
+  // 배열의 중복 값 개수 구하기
   let obj = {};
-  arr.forEach((e) => {
-    obj[e] = (obj[e] || 0) + 1;
-  });
-  // 가장 많은 표를 받은 사람과 표수를 추출
-  let max = 0;
-  for (let key in obj) {
-    if (max < obj[key]) {
-      max = obj[key];
-      answer = key;
-    }
+  for (let idx in arr) {
+    let val = arr[idx];
+    obj[val] = obj[val] === undefined ? 1 : (obj[val] = obj[val] + 1);
   }
-  return `${answer}(이)가 총 ${max}표로 반장이 되었습니다.`;
+  // 가장 많은 표를 받은 사람을 추출
+  answer = Object.keys(obj).reduce(function (a, b) {
+    return obj[a] > obj[b] ? a : b;
+  });
+  return `${answer}(이)가 총 ${obj[answer]}표로 반장이 되었습니다.`;
 };
 
 ps.main(async () => {

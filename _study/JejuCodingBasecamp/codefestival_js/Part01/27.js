@@ -5,7 +5,6 @@ const solution = (names, scores) => {
   for (let i = 0; i < names.length; i++) {
     answer[names[i]] = scores[i];
   }
-
   return answer;
 };
 

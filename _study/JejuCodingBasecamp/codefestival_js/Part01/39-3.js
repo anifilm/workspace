@@ -2,13 +2,8 @@ const ps = require('../modules/ps');
 
 const solution = (str) => {
   let answer = '';
-  // 문자열을 배열로 변환
-  const arr = str.split('');
-  // 'q'를 'e'로 변환하여 저장
-  for (let val of arr) {
-    if (val === 'q') answer += 'e';
-    else answer += val;
-  }
+  // 정규 표현식 사용
+  answer = str.replace(/q/gi, 'e');
 
   return answer;
 };

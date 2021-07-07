@@ -1,14 +1,13 @@
 const ps = require('../modules/ps');
 
+// 함수 사용
+function replaceAll(str, searchChr, replaceChr) {
+  return str.split(searchChr).join(replaceChr);
+}
+
 const solution = (str) => {
   let answer = '';
-  // 문자열을 배열로 변환
-  const arr = str.split('');
-  // 'q'를 'e'로 변환하여 저장
-  for (let val of arr) {
-    if (val === 'q') answer += 'e';
-    else answer += val;
-  }
+  answer = replaceAll(str, 'q', 'e');
 
   return answer;
 };
