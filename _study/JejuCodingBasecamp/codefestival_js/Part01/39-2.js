@@ -1,13 +1,9 @@
 const ps = require('../modules/ps');
 
-// 함수 사용
-function replaceAll(str, searchChr, replaceChr) {
-  return str.split(searchChr).join(replaceChr);
-}
-
 const solution = (str) => {
   let answer = '';
-  answer = replaceAll(str, 'q', 'e');
+  // 문자열 replace 함수 사용
+  answer = str.replace('q', 'e');
 
   return answer;
 };
