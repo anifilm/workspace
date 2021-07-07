@@ -4,3 +4,4 @@ __new__
 __init__.*
 *.exe
 *.pdf
+*.lnk
