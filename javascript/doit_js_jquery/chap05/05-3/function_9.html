@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>함수</title>
+    <script>
+			// 즉시 실행 함수(IIFE) 정의 1
+      (function () {
+        var num = 100;
+        function menu() {
+          num += 100;
+          alert(num);
+        }
+        menu(); // 내부에 정의된 함수 호출
+      })();
+
+			// 즉시 실행 함수(IIFE) 정의 2
+      (function () {
+        var num = 100;
+        function menu() { // 내부에 정의된 함수에 대한 호출이 없다.
+          alert(num);
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
