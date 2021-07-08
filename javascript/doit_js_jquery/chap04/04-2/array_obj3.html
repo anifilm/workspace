@@ -3,25 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <title>배열객체</title>
+  </head>
+  <body>
     <script>
       var greenArr = ['교대', '방배', '강남'];
       var yellowArr = ['미금', '정자', '수서'];
 
       greenArr.splice(2, 1, '서초', '역삼');
       console.log(greenArr);
-			// ['교대', '방배', '서초', '역삼']
+      // ['교대', '방배', '서초', '역삼']
 
       var data1 = yellowArr.pop(); // '수서'
       var data2 = yellowArr.shift(); // '미금'
 
       yellowArr.push(data2);
       console.log(yellowArr);
-			// ['정자', '미금']
+      // ['정자', '미금']
 
       yellowArr.unshift(data1);
       console.log(yellowArr);
-			// ['수서', '정자', '미금']
+      // ['수서', '정자', '미금']
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

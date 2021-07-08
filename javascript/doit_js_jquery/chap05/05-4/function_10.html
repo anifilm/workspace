@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>함수</title>
+  </head>
+  <body>
     <script>
-			// 객체 생성자 함수
+      // 객체 생성자 함수
       function CheckWeight(name, height, weight) {
         this.userName = name;
         this.userHeight = height;
@@ -12,7 +14,7 @@
         this.minWeight;
         this.maxWeight;
 
-				// 객체 생성자 함수의 메서드 (객체 생성시 마다 메모리에 추가된다. 메모리 낭비 가능성)
+        // 객체 생성자 함수의 메서드 (객체 생성시 마다 메모리에 추가된다. 메모리 낭비 가능성)
         this.getInfo = function () {
           var str = '';
           str += '이름: ' + this.userName + ', ';
@@ -37,7 +39,7 @@
         };
       }
 
-			// 객체 생성
+      // 객체 생성
       var jang = new CheckWeight('장보리', 168, 62);
       var park = new CheckWeight('박달재', 180, 88);
       console.log(jang);
@@ -45,11 +47,10 @@
 
       document.write(jang.getInfo());
       document.write(jang.getResult());
-			document.write('<br><br>');
+      document.write('<br><br>');
 
-			document.write(park.getInfo());
+      document.write(park.getInfo());
       document.write(park.getResult());
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

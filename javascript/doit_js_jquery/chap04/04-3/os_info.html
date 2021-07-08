@@ -2,11 +2,13 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>운영체제 및 스크린 정보</title>
     <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
     />
+    <title>운영체제 및 스크린 정보</title>
+  </head>
+  <body>
     <script>
       var info = navigator.userAgent.toLowerCase();
       var osImg = null;
@@ -29,6 +31,5 @@
       document.write('모니터 해상도 너비:' + sc_w + 'px', '<br>');
       document.write('모니터 해상도 높이:' + sc_h + 'px', '<br>');
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

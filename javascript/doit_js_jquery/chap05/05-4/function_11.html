@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>함수</title>
+  </head>
+  <body>
     <script>
-			// 객체 생성자 함수
+      // 객체 생성자 함수
       function CheckWeight(name, height, weight) {
         this.userName = name;
         this.userHeight = height;
@@ -13,7 +15,7 @@
         this.maxWeight;
       }
 
-			// 객체 생성자 함수에 대한 메서드를 프로토타입 함수로 등록
+      // 객체 생성자 함수에 대한 메서드를 프로토타입 함수로 등록
       CheckWeight.prototype.getInfo = function () {
         var str = '';
         str += '이름: ' + this.userName + ', ';
@@ -44,14 +46,13 @@
 
       document.write(jang.getInfo());
       document.write(jang.getResult());
-			document.write('<br><br>');
+      document.write('<br><br>');
 
-			document.write(park.getInfo());
+      document.write(park.getInfo());
       document.write(park.getResult());
-			document.write('<br><br>');
+      document.write('<br><br>');
 
       document.write(jang.getResult === park.getResult);
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>함수</title>
+  </head>
+  <body id="theBody">
+    <button onclick="chColor()">배경 색상 바꾸기</button>
+
     <script>
       function chColor() {
         var arrColor = ['#ff0', '#6c0', '#fcf', '#cf0', '#39f'];
@@ -11,8 +15,5 @@
         bodyTag.style.backgroundColor = arrColor[arrNum];
       }
     </script>
-  </head>
-  <body id="theBody">
-    <button onclick="chColor()">배경 색상 바꾸기</button>
   </body>
 </html>

@@ -14,11 +14,21 @@
       #galleryZone input[type='image'] {
         margin: 0 8px;
       }
-			#photo {
-				margin: 100px;
-				height: 200px;
-			}
+      #photo {
+        margin: 100px;
+        height: 200px;
+      }
     </style>
+  </head>
+  <body>
+    <div id="galleryZone">
+      <p><img src="images/pic_1.jpg" id="photo" alt="" /></p>
+      <p>
+        <button onclick="gallery(0)">이전</button>
+        <button onclick="gallery(1)">다음</button>
+      </p>
+    </div>
+
     <script>
       var num = 1;
 
@@ -41,14 +51,5 @@
         imgTag.setAttribute('src', 'images/pic_' + num + '.jpg');
       }
     </script>
-  </head>
-  <body>
-    <div id="galleryZone">
-      <p><img src="images/pic_1.jpg" id="photo" alt="" /></p>
-      <p>
-        <button onclick="gallery(0)">이전</button>
-        <button onclick="gallery(1)">다음</button>
-      </p>
-    </div>
   </body>
 </html>
