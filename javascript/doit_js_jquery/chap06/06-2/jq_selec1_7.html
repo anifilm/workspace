@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>선택자</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <h1>인접 관계 선택자</h1>
+    <ul id="wrap">
+      <li>리스트1
+        <ul>
+          <li id="list_1">리스트1-1</li>
+          <li>리스트1-2</li>
+        </ul>
+      </li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+    </ul>
+
+    <script>
+      $(function () {
+        $('#list_1').parent()
+          .css('background-color', '#ff0')
+          .css('border', '2px solid #f00');
+      });
+    </script>
+  </body>
+</html>
