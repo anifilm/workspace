@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>선택자</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+      <li>내용1-1</li>
+      <li>내용1-2</li>
+      <li>내용1-3</li>
+    </ul>
+    <ul id="menu2">
+      <li>내용2-1</li>
+      <li>내용2-2</li>
+      <li>내용2-3</li>
+    </ul>
+
+    <script>
+      $(function () {
+        var arr1 = [
+          {
+            area: '서울',
+            name: '무대리',
+          },
+          {
+            area: '부산',
+            name: '홍과장',
+          },
+          {
+            area: '대전',
+            name: '박사장',
+          },
+          {
+            area: '서울',
+            name: '빅마마',
+          },
+        ];
+
+        var arr2 = $.map(arr1, function(obj, idx) {
+          if (obj.area === '서울') {
+            return obj; // 해당 요소를 반환
+          }
+        });
+        console.log(arr2);
+        console.log("==== The End 1 ====");
+
+        var arr3 = $.grep(arr1, function (obj, idx) {
+          if (obj.area === '서울') {
+            return true; // true인 경우 해당 요소를 반환
+          } else {
+            return false;
+          }
+        })
+        console.log(arr3);
+        console.log("==== The End 2 ====");
+
+      });
+    </script>
+  </body>
+</html>

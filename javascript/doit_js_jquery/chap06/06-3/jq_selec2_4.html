@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>선택자</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <h1>탐색 선택자</h1>
+    <ul>
+      <li>내용1-1</li>
+      <li>내용1-2</li>
+      <li>내용1-3</li>
+    </ul>
+    <ul>
+      <li>내용2-1</li>
+      <li>내용2-2</li>
+      <li>내용2-3</li>
+    </ul>
+
+    <script>
+      $(function () {
+				// 각 그룹별 첫번째 요소
+        $('li:first-of-type').css({ 'background-color': '#ff0' });
+				// 각 그룹별 마지막 요소
+        $('li:last-of-type').css({ 'background-color': '#0ff' });
+      });
+    </script>
+  </body>
+</html>

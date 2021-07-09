@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>탐색 선택자</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        var arr1 = ['서울', '대전', '부산', '전주'];
+        var arr2 = ['한국', '미국', '일본', '중국'];
+        var obj = {
+          name: '정부장',
+          area: '서울',
+        };
+
+        var idxNum = $.inArray('부산', arr1); // 대상 배열에서 '부산'을 찾아 인덱스를 반환
+        console.log(idxNum); // 2
+
+        var okArray1 = $.isArray(arr1); // 대상이 배열이므로  true를 반환
+        var okArray2 = $.isArray(obj);  // 대상이 객체이므로 false를 반환
+        console.log(okArray1); // true
+        console.log(okArray2); // false
+
+        $.merge(arr2, arr1); // 두 배열을 하나의 배열로 묶는다.
+        console.log(arr2);
+				// ['한국', '미국', '일본', '중국', '서울', '대전', '부산', '전주']
+      });
+    </script>
+  </body>
+</html>

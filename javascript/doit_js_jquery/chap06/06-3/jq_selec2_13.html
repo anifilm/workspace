@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>탐색 선택자</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div id="outer_wrap">
+      <h1>콘텐츠 탐색 선택자</h1>
+      <section id="inner_1">
+        <h1>contains( ), contents( ), has( )</h1>
+        <p><span>내용1</span></p>
+        <p><strong>내용2</strong></p>
+        <p><span>내용3</span></p>
+      </section>
+      <section id="inner_2">
+        <h1>not( ), end( )</h1>
+        <p>내용4</p>
+        <p>내용5</p>
+        <p>내용6</p>
+      </section>
+    </div>
+
+    <script>
+      $(function () {
+				// id="inner_1" 하위 p 태그 요소중 '내용1'의 텍스트를 포함하는 요소를 선택
+        $('#inner_1 p:contains(내용1)').css({ 'background-color': '#ff0' });
+				// id="inner_1" 하위 p 태그 요소중 <strong>을 포함하는 요소를 선택
+        $('#inner_1 p:has(strong)').css({ 'background-color': '#0ff' });
+				// id="outer_wrap" 하위 요소중 (한 단계) 가까운 하위 요소들만 선택
+        $('#outer_wrap').contents().css({ border: '1px dashed #00f' });
+				// id="inner_2" 하위 p 태그 요소중 첫번째 요소를 제외한 나머지 요소를 선택
+        $('#inner_2 p').not(':first').css({ 'background-color': '#0f0' });
+				// id="inner_2" 하위 p 태그 요소중 두번째 요소부터 마지막 요소까지 선택
+        $('#inner_2 p').eq(2).end().css({ color: '#f00' });
+      });
+    </script>
+  </body>
+</html>
