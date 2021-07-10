@@ -12,9 +12,12 @@
 
     <script>
       $(function () {
+        // h1 태그이면서 class="title"를 가지는 요소를 선택
         $('h1.title')
-          .css('background-color', '#ff0')
-          .css('border', '2px solid #f00');
+          .css({
+            'background-color': '#ff0',
+            'border': '2px solid #f00'
+          });
       });
     </script>
   </body>

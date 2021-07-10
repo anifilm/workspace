@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>객체 조작 및 생성</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <ul id="listZone">
+      <li>리스트</li>
+    </ul>
+
+    <script>
+      $(function () {
+        // 새 요소를 리스트 맨 뒤에 추가
+        $('#listZone').append('<li>append</li>');
+        $('<li>appendTo</li>').appendTo('#listZone');
+        // 새 요소를 리스트 맨 앞에 추가
+        $('#listZone').prepend('<li>prepend</li>');
+        $('<li>prependTo</li>').prependTo('#listZone');
+      });
+    </script>
+  </body>
+</html>

@@ -18,11 +18,20 @@
     <script>
       $(function () {
 				// 인덱스 2
-        $('#menu li:eq(2)').css({ 'background-color': '#ff0' });
+        $('#menu li:eq(2)')
+          .css({
+            'background-color': '#ff0'
+          });
 				// 인덱스 2보다 작은 요소
-        $('#menu li:lt(2)').css({ 'background-color': '#0ff' });
+        $('#menu li:lt(2)')
+          .css({
+            'background-color': '#0ff'
+          });
 				// 인덱스 2보다 큰 요소
-        $('#menu li:gt(2)').css({ 'background-color': '#f0f' });
+        $('#menu li:gt(2)')
+          .css({
+            'background-color': '#f0f'
+          });
       });
     </script>
   </body>

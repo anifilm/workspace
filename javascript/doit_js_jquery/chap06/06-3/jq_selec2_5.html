@@ -22,11 +22,20 @@
     <script>
       $(function () {
 				// id="menu1" 하위 첫번째 요소
-        $('#menu1 li:nth-child(1)').css({ 'background-color': '#ff0' });
+        $('#menu1 li:nth-child(1)')
+          .css({
+            'background-color': '#ff0'
+          });
 				// id="menu1" 하위 두번째 요소부터 2의 배수 요소들을 선택
-        $('#menu1 li:nth-child(2n)').css({ border: '2px dashed #f00' });
+        $('#menu1 li:nth-child(2n)')
+          .css({
+            border: '2px dashed #f00'
+          });
 				// id="menu2" 하위 뒤에서 첫번째 요소
-        $('#menu2 li:nth-last-child(1)').css({ 'background-color': '#0ff' });
+        $('#menu2 li:nth-last-child(1)')
+          .css({
+            'background-color': '#0ff'
+          });
       });
     </script>
   </body>

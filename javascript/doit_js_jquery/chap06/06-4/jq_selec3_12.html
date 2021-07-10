@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>객체 조작 및 생성</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <section class="box1">
+      <h2>제목1</h2>
+      <div>내용1</div>
+      <div>내용2</div>
+    </section>
+    <section class="box2">
+      <h2>제목2</h2>
+      <div>내용3</div>
+      <div>내용4</div>
+    </section>
+
+    <script>
+      $(function () {
+        // 모든 h2 태그의 요소를 새 요소로 변경
+        $('h2').replaceWith('<h3>replace method</h3>');
+        // 모든 div 태그의 요소를 새 요소로 변경
+        $('<p>Change</p>').replaceAll('div');
+      });
+    </script>
+  </body>
+</html>

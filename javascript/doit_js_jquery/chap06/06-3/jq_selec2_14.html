@@ -25,16 +25,24 @@
     <script>
       $(function () {
 				// id="inner_1" 하위 요소중 class="txt1"을 선택한다.
-        $('#inner_1').find('.txt1').css({ 'background-color': '#ff0' });
+        $('#inner_1').find('.txt1')
+          .css({
+            'background-color': '#ff0'
+          });
 				// id="inner_1" 하위 p 태그 요소중 class="txt2"을 선택한다.
-        $('#inner_1 p').filter('.txt2').css({ 'background-color': '#0ff' });
+        $('#inner_1 p').filter('.txt2')
+          .css({
+            'background-color': '#0ff'
+          });
 
         $('#inner_2 p')
           .filter(function (idx, obj) {
             //console.log(idx);
             return idx % 2 == 0;
           })
-          .css({ 'background-color': '#0f0' });
+          .css({
+            'background-color': '#0f0'
+          });
       });
     </script>
   </body>
