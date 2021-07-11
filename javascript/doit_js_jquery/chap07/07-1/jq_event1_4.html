@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <p>
+      <img src="http://place-hold.it/300X300" class="img1" />
+    </p>
+
+    <script>
+      $(function () {
+        $(document).ready(function () {
+          var h1 = $('.img1').height();
+          console.log('ready: ', h1); // ready: 0
+        });
+
+        $(window).on('load', function () {
+          var h2 = $('.img1').height();
+          console.log('load: ', h2); // load: 300
+        });
+      });
+    </script>
+  </body>
+</html>
