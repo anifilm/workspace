@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div class="wrap"></div>
+
+    <script>
+      $(function () {
+        $.ajax({
+          url: 'https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml',
+          dataType: 'xml',
+          success: function (data) {
+            console.log(data);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div class="wrap"></div>
+
+    <script>
+      $(function () {
+        var href = 'http://localhost/chap09/member.php?callback=myFunc';
+        $.ajax({
+          url: href,
+          dataType: 'jsonp',
+        }).done(function myFunc(data) {
+          if (data.length > 0) {
+            var $table = $('<table />');
+
+            data.forEach(function (o) {
+              $id = o.id;
+              $name = o.name;
+              $email = o.email;
+
+              var trTag = $('<tr />');
+              trTag.append(
+                $('<td />').text($id),
+                $('<td />').text($name),
+                $('<td />').text($email),
+              );
+
+              $table.append(trTag);
+            });
+
+            $('.wrap').append($table);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

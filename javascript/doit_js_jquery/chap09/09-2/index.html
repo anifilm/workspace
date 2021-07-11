@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div class="wrap"></div>
+
+    <script>
+      $(function () {
+        $.ajax({
+          url: 'news.php',
+          dataType: 'xml',
+          success: function (data) {
+            var $items = $(data).find('item');
+
+            if ($items.length > 0) {
+              $items = $items.slice(0, 10);
+
+              var $ulTag = $('<ul />');
+
+              $.each($items, function (idx, obj) {
+                var $title = $(obj).find('title').text();
+                var $link = $(obj).find('link').text();
+
+                var $aTag = $('<a />')
+                  .attr({
+                    href: $link,
+                    target: '_blank'
+                  })
+                  .text($title);
+
+                var $liTag = $('<li />').append($aTag);
+
+                $ulTag.append($liTag);
+              });
+
+              $('.wrap').append($ulTag);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

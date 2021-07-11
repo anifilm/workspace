@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <div class="wrap"></div>
+
+    <script>
+      $(function () {
+        var href = 'http://localhost/chap09/member.php?callback=myFunc';
+        $.ajax({
+          url: href,
+          dataType: 'jsonp',
+        }).done(function myFunc(data) {
+          console.log(data);
+        });
+      });
+    </script>
+  </body>
+</html>
