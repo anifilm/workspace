@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+  </head>
+  <body>
+    <p><button id="btn1">버튼1</button></p>
+    <p><button id="btn2">버튼2</button></p>
+    <p class="txt"></p>
+
+    <script>
+      $(function () {
+        $('#btn1')
+          .data({ 'text': 'javascript' })
+          .on({
+            'mouseover': overFunc,
+            'mouseout': outFunc
+          });
+
+        $('#btn2')
+          .data({ 'text': 'welcome!' })
+          .on({
+            'mouseover focus': overFunc,
+            'mouseout blur': outFunc
+          });
+
+        function overFunc() {
+          $('.txt').text($(this).data('text'));
+        }
+        function outFunc() {
+          $('.txt').text('');
+        }
+      });
+    </script>
+  </body>
+</html>

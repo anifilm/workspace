@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 20px;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .gnb {
+        width: 400px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .gnb li {
+        width: 25%;
+        float: left;
+        padding: 5px;
+      }
+      .gnb li a {
+        border: 1px solid #000;
+        display: block;
+        padding: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="gnb">
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+    </ul>
+
+    <script>
+      $(function () {
+        var beforeMenu = null;
+        $('.gnb > li > a').on('mouseover focus', function () {
+          if (beforeMenu)
+					  beforeMenu.css({ background: 'none' });
+          $(this).css({ 'background-color': '#0ff' });
+          beforeMenu = $(this);
+        });
+        $('.gnb').on('mouseleave', function () {
+          if (beforeMenu)
+					  beforeMenu.css({ background: 'none' });
+        });
+      });
+    </script>
+  </body>
+</html>
