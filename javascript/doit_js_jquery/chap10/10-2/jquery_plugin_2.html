@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Plugin</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"></script>
+    <script src="src/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <p>
+      <label for="startDate">날짜선택</label>
+      <input type="text" name="startDate" id="startDate">
+      </p>
+
+    <script>
+      $(function () {
+        $('#startDate').datepicker({
+          minDate: +1,
+          maxDate: '+1M'
+        });
+      });
+    </script>
+  </body>
+</html>
