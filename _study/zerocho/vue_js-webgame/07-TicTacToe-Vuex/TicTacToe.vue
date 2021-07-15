@@ -1,110 +1,26 @@
 <template>
   <div>
     <div>{{ turn }}님의 턴입니다.</div>
-    <table-component :table-data="tableData"></table-component>
+    <table-component />
     <div v-if="winner">{{ winner }}님의 승리!</div>
     <div v-else-if="draw">무승부입니다.</div>
   </div>
 </template>
 
 <script>
-import TableComponent from './TableComponent';
-import EventBus from './EventBus';
+import { mapState } from 'vuex';
+import { CLICK_CELL, CHANGE_TURN, SET_WINNER, NO_WINNER, RESET_GAME } from './store';
+import TableComponent from './TableComponent.vue';
 
 export default {
   components: {
     TableComponent
   },
-  data() {
-    return {
-      tableData: [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
-      ],
-      turn: 'O',
-      winner: '',
-      win: false,
-      draw: false
-    };
-  },
-  methods: {
-    onChangeData() {
-      this.$set(this.tableData[1], 0, 'X'); // Vue.set과 동일
-    },
-    onClickTd(rowIndex, cellIndex) {
-      if (this.win) return;
-      console.log(rowIndex, cellIndex);
-
-      this.$set(
-        this.tableData[rowIndex],
-        cellIndex,
-        this.turn
-      );
-
-      if (
-        this.tableData[rowIndex][0] === this.turn &&
-        this.tableData[rowIndex][1] === this.turn &&
-        this.tableData[rowIndex][2] === this.turn
-      ) {
-        this.win = true;
-      }
-      if (
-        this.tableData[0][cellIndex] === this.turn &&
-        this.tableData[1][cellIndex] === this.turn &&
-        this.tableData[2][cellIndex] === this.turn
-      ) {
-        this.win = true;
-      }
-      if (
-        this.tableData[0][0] === this.turn &&
-        this.tableData[1][1] === this.turn &&
-        this.tableData[2][2] === this.turn
-      ) {
-        this.win = true;
-      }
-      if (
-        this.tableData[0][2] === this.turn &&
-        this.tableData[1][1] === this.turn &&
-        this.tableData[2][0] === this.turn
-      ) {
-        this.win = true;
-      }
-
-      if (this.win) { // 이긴 경우: 3줄 달성
-        this.winner = this.turn;
-        //this.turn = 'O';
-        //rootData.tableData = [
-        //  ['', '', ''],
-        //  ['', '', ''],
-        //  ['', '', '']
-        //];
-      } else { // 무승부
-        let all = true; // all이 true면 무승부라는 뜻
-        this.tableData.forEach(row => { // 무승부 검사
-          row.forEach(cell => {
-            if (!cell) {
-              all = false;
-            }
-          });
-        });
-        if (all) { // 무승부
-          this.winner = '';
-          this.draw = true;
-          //this.turn = 'O';
-          //rootData.tableData = [
-          //  ['', '', ''],
-          //  ['', '', ''],
-          //  ['', '', '']
-          //];
-        } else {
-          this.turn = this.turn === 'O' ? 'X' : 'O';
-        }
-      }
-    }
-  },
-  created() {
-    EventBus.$on('clickTd', this.onClickTd);
+  computed: {
+    ...mapState(['winner', 'turn', 'draw'])
+    //winner() { return this.$store.state.winner; },
+    //turn() { return this.$store.state.turn; },
+    //draw() { return this.$store.state.draw; }
   }
 };
 </script>

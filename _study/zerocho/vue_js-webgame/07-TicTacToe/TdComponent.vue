@@ -15,6 +15,7 @@ export default {
 
       const rootData = this.$root.$data;
       //console.log(rootData);
+
       this.$set(
         rootData.tableData[this.rowIndex],
         this.cellIndex,
