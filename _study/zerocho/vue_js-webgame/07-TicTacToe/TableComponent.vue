@@ -16,6 +16,8 @@ export default {
   props: {
     tableData: Array
   },
-  components: { TrComponent }
+  components: {
+    TrComponent
+  }
 };
 </script>

@@ -10,12 +10,14 @@
 </template>
 
 <script>
-import TrComponent from './TrComponent.vue';
+import TrComponent from './TrComponent';
 
 export default {
   props: {
     tableData: Array
   },
-  components: { TrComponent }
+  components: {
+    TrComponent
+  }
 };
 </script>

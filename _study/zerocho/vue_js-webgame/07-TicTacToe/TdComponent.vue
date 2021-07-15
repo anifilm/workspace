@@ -53,7 +53,7 @@ export default {
 
       if (win) { // 이긴 경우: 3줄 달성
         rootData.winner = rootData.turn;
-        rootData.turn = 'O';
+        //rootData.turn = 'O';
         //rootData.tableData = [
         //  ['', '', ''],
         //  ['', '', ''],
@@ -70,7 +70,8 @@ export default {
         });
         if (all) { // 무승부
           rootData.winner = '';
-          rootData.turn = 'O';
+          rootData.draw = true;
+          //rootData.turn = 'O';
           //rootData.tableData = [
           //  ['', '', ''],
           //  ['', '', ''],

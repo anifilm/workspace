@@ -11,14 +11,16 @@
 </template>
 
 <script>
-import TdComponent from './TdComponent.vue';
+import TdComponent from './TdComponent';
 
 export default {
   props: {
     rowData: Array,
     rowIndex: Number
   },
-  components: { TdComponent },
+  components: {
+    TdComponent
+  },
   data() {
     return {
       parent: '내가 니 애비다.'

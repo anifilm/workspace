@@ -3,6 +3,7 @@
     <div>{{ turn }}님의 턴입니다.</div>
     <table-component :table-data="tableData"></table-component>
     <div v-if="winner">{{ winner }}님의 승리!</div>
+    <div v-else-if="draw">무승부입니다.</div>
   </div>
 </template>
 
@@ -10,7 +11,9 @@
 import TableComponent from './TableComponent.vue';
 
 export default {
-  components: { TableComponent },
+  components: {
+    TableComponent
+  },
   data() {
     return {
       tableData: [
@@ -19,7 +22,8 @@ export default {
         ['', '', '']
       ],
       turn: 'O',
-      winner: ''
+      winner: '',
+      draw: false
     };
   },
   methods: {

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import LottoBall from './LottoBall.vue';
+import LottoBall from './LottoBall';
 
 function getWinNumbers() {
   const candidate = Array(45)

@@ -18,7 +18,9 @@ export default {
     rowData: Array,
     rowIndex: Number
   },
-  components: { TdComponent },
+  components: {
+    TdComponent
+  },
   data() {
     return {
       parent: '내가 니 애비다.'
