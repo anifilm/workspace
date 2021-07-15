@@ -14,7 +14,6 @@ import TdComponent from './TdComponent';
 
 export default {
   props: {
-    //rowData: Array,
     rowIndex: Number
   },
   components: {

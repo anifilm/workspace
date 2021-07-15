@@ -8,7 +8,6 @@ import { CLICK_CELL, CHANGE_TURN, SET_WINNER, NO_WINNER, RESET_GAME } from './st
 
 export default {
   props: {
-    //cellData: String,
     rowIndex: Number,
     cellIndex: Number
   },

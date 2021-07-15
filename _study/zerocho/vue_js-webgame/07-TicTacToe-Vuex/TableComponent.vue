@@ -12,9 +12,6 @@
 import TrComponent from './TrComponent';
 
 export default {
-  props: {
-    //tableData: Array
-  },
   components: {
     TrComponent
   },

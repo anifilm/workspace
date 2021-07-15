@@ -9,7 +9,6 @@
 
 <script>
 import { mapState } from 'vuex';
-import { CLICK_CELL, CHANGE_TURN, SET_WINNER, NO_WINNER, RESET_GAME } from './store';
 import TableComponent from './TableComponent.vue';
 
 export default {
@@ -18,9 +17,6 @@ export default {
   },
   computed: {
     ...mapState(['winner', 'turn', 'draw'])
-    //winner() { return this.$store.state.winner; },
-    //turn() { return this.$store.state.turn; },
-    //draw() { return this.$store.state.draw; }
   }
 };
 </script>
