@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      // 숫자형(number type)은 정수 및 부동소수점 숫자(floating point numebr)를 나타냅니다.
+      alert(1 / 0); // 무한대
+      alert(Infinity); // 무한대
+      alert('숫자가 아님' / 2); // NaN
+      alert('숫자가 아님' / 2 + 5); // NaN
+
+      // BigInt
+      // BigInt형은 표준으로 채택된 지 얼마 안 된 자료형으로, 길이에 상관없이 정수를 나타낼 수 있습니다.
+      // BigInt형 값은 정수 리터럴 끝에 'n'을 붙이면 만들 수 있습니다.
+
+      // 끝에 'n'이 붙으면 BigInt형 자료입니다.
+      const bigInt = 1234567890123456789012345678901234567890n;
+    </script>
+  </body>
+</html>
