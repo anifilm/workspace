@@ -10,8 +10,8 @@
         >
           {{ cellData }}
         </td>
-      </tr></table-component
-    >
+      </tr>
+    </table-component>
 
     <div v-if="winner">
       {{ winner }}님의 승리!<br />
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     onClickTd(rowIndex, cellIndex) {
-      if (this.cellData || this.win) return;
+      if (this.tableData[rowIndex][cellIndex] || this.win) return;
 
       this.$store.commit('CLICK_CELL', { row: rowIndex, cell: cellIndex });
 
@@ -80,7 +80,6 @@ export default {
 
       if (win) { // 이긴 경우: 3줄 달성
         this.$store.commit(SET_WINNER, this.turn);
-        //this.$store.commit(RESET_GAME);
       } else { // 무승부
         let all = true; // all이 true면 무승부라는 뜻
         this.tableData.forEach(row => { // 무승부 검사
@@ -92,7 +91,6 @@ export default {
         });
         if (all) { // 무승부
           this.$store.commit(NO_WINNER);
-          //this.$store.commit(RESET_GAME);
         } else {
           this.$store.commit(CHANGE_TURN);
         }
