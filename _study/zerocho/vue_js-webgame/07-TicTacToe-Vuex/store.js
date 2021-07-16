@@ -46,11 +46,12 @@ export default new Vuex.Store({
     },
     [RESET_GAME](state) {
       state.turn = 'O';
+      state.winner = '';
       state.tableData = [
         ['', '', ''],
         ['', '', ''],
         ['', '', '']
-      ]
+      ];
     }
   },
   // 비동기를 사용하거나 여러 뮤테이션을 연달아 실행할 때

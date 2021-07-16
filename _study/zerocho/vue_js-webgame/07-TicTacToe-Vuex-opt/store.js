@@ -45,12 +45,15 @@ export default new Vuex.Store({
       state.draw = true;
     },
     [RESET_GAME](state) {
-      state.turn = 'O';
       state.tableData = [
         ['', '', ''],
         ['', '', ''],
         ['', '', '']
-      ]
+      ];
+      state.turn = 'O';
+      state.winner = '';
+      state.win = false;
+      state.draw = false;
     }
   },
   // 비동기를 사용하거나 여러 뮤테이션을 연달아 실행할 때
