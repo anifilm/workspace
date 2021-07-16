@@ -31,7 +31,7 @@ import TableComponent from './TableComponent';
 
 export default {
   components: {
-    TableComponent,
+    TableComponent
   },
   computed: {
     ...mapState(['tableData', 'turn', 'winner', 'draw', 'win'])
