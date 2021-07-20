@@ -1,6 +1,7 @@
-node_modules
-dist
-__new__
+node_modules/
+package-lock.json
+dist/
+__new__/
 __init__.*
 *.exe
 *.pdf

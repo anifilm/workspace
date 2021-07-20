@@ -1,9 +1,9 @@
 .DS_Store
 .vscode
 .vs
-bin
-obj
-Properties
+bin/
+obj/
+Properties/
 *.config
 *.exe
 __init__.cs

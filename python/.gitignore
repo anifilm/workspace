@@ -1,6 +1,6 @@
 !_etc/.vscode
 !Inflearn/.vscode
-.ipynb_checkpoints
-__pycache__
-venv
+.ipynb_checkpoints/
+__pycache__/
+venv/
 *.pdf
