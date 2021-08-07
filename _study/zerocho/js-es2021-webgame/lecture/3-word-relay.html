@@ -8,19 +8,51 @@
   <h2>3. 끝말잇기</h2>
   <div><span id="order">1</span>번째 참가자</div>
   <div>제시어: <span id="word"></span></div>
-  <input type="text">
-  <button>입력</button>
+  <form>
+    <input type="text">
+    <button>입력</button>
+  </form>
 
   <script>
     const number = parseInt(prompt('몇 명이 참가하나요?'));
-    console.log(number);
-
+    //console.log(number);
     const $input = document.querySelector('input');
-    console.log($input);
     const $button = document.querySelector('button');
-    console.log($button);
     const $order = document.querySelector('#order');
-    console.log($order);
+    const $word = document.querySelector('#word');
+
+    let word; // 제시어
+    let newWord; // 새로 입력한 단어
+
+    const onInput = (e) => {
+      //console.log(e.target.value);
+      newWord = e.target.value;
+    };
+    const onClick = (e) => {
+      e.preventDefault();
+      //console.log('click');
+      if (!word || word[word.length-1] === newWord[0]) {
+        // 올바른가
+        word = newWord;
+        $word.textContent = word;
+        const order = Number($order.textContent);
+        if (order+1 > number) {
+          $order.textContent = 1;
+        }
+        else {
+          $order.textContent = order+1;
+        }
+      }
+      else {
+        // 올바르지 않은가
+        alert('올바르지 않은 단어입니다.');
+      }
+      $input.value = '';
+      $input.focus();
+    }
+
+    $input.addEventListener('input', onInput);
+    $button.addEventListener('click', onClick);
   </script>
 </body>
 </html>
