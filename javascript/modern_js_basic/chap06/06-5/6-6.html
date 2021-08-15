@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas의 기본</title>
+  </head>
+  <body>
+    <canvas id="mycanvas" width="640" height="400"></canvas>
+
+    <script>
+      // canvas 요소 가져오기
+      var canvas = document.querySelector('#mycanvas');
+      // canvas 렌더링 컨텍스트 가져오기
+      var ctx = canvas.getContext('2d');
+      strokeRoudedRect(ctx,  10, 10, 100, 80, 10);
+      strokeRoudedRect(ctx, 150, 10, 100, 80, 30);
+
+      function strokeRoudedRect(ctx, x, y, width, height, radius) {
+        ctx.moveTo(x+radius, y);
+        ctx.arcTo(x+width, y       , x+width, y+height, radius);
+        ctx.arcTo(x+width, y+height, x      , y+height, radius);
+        ctx.arcTo(x      , y+height, x      , y       , radius);
+        ctx.arcTo(x      , y       , x+width, y       , radius);
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>
