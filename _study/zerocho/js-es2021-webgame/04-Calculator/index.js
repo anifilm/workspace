@@ -6,8 +6,11 @@ let isCalculate = false;
 const $operator = document.querySelector('#operator');
 const $result = document.querySelector('#result');
 
+$result.value = '0';
+
 const onClickNumber = (event) => {
   if (!operator) {
+    if ($result.value === '0') $result.value = '';
     numOne += event.target.textContent;
     $result.value += event.target.textContent;
     return;
@@ -61,30 +64,32 @@ document.querySelector('#minus').addEventListener('click', onClickOperator('-'))
 document.querySelector('#divide').addEventListener('click', onClickOperator('/'));
 document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));
 
-const onClickCalculate = (() => {
+const onClickCalculate = () => {
   if (numTwo) {
     switch (operator) {
       case '+':
-        $result.value = parseInt(numOne) + parseInt(numTwo);
+        result = parseInt(numOne) + parseInt(numTwo);
         break;
       case '-':
-        $result.value = numOne - numTwo;
+        result = parseInt(numOne) - parseInt(numTwo);
         break;
       case '*':
-        $result.value = numOne * numTwo;
+        result = parseInt(numOne) * parseInt(numTwo);
         break;
       case '/':
-        $result.value = numOne / numTwo;
+        result = parseInt(numOne) / parseInt(numTwo);
         break;
       default:
         break;
     }
   }
   numOne = $result.value;
-});
+};
 
 document.querySelector('#calculate').addEventListener('click', () => {
   onClickCalculate();
+  numTwo = '';
+	operator = '';
   isCalculate = false;
 });
 
@@ -93,6 +98,6 @@ document.querySelector('#clear').addEventListener('click', () => {
   operator = '';
   numTwo = '';
   $operator.value = '';
-  $result.value = '';
+  $result.value = '0';
   isCalculate = false;
 });
