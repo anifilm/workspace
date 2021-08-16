@@ -3,9 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <title>렛츠기릿 자바스크립트</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    #result {
+      width: 180px;
+      height: 50px;
+      margin: 5px;
+      text-align: right;
+    }
+    #operator {
+      width: 50px;
+      height:50px;
+      margin: 5px;
+      text-align: center;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+  </style>
 </head>
 <body>
-  <h2>타이틀</h2>
+  <h2>계산기</h2>
+  <input id="operator" readonly>
+  <input type="number" id="result" readonly>
+  <div class="row">
+    <button id="num-7">7</button>
+    <button id="num-8">8</button>
+    <button id="num-9">9</button>
+    <button id="plus">+</button>
+  </div>
+  <div class="row">
+    <button id="num-4">4</button>
+    <button id="num-5">5</button>
+    <button id="num-6">6</button>
+    <button id="minus">-</button>
+  </div>
+  <div class="row">
+    <button id="num-1">1</button>
+    <button id="num-2">2</button>
+    <button id="num-3">3</button>
+    <button id="divide">/</button>
+  </div>
+  <div class="row">
+    <button id="clear">C</button>
+    <button id="num-0">0</button>
+    <button id="calculate">=</button>
+    <button id="multiply">X</button>
+  </div>
 
   <script>
     // 여기에 자바스크립트를 작성...
