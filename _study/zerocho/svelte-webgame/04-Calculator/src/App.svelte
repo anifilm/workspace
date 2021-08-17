@@ -1,23 +1,35 @@
 <script>
   let numOne = '';
-  let operator = '';
   let numTwo = '';
+  let operator = '';
   let isCalculate = false;
+  let minus = false;
 
   let result = '0';
 
   const onClickNumber = (event) => {
-    //console.log(event.target.textContent);
+    // 숫자가 '012'가 되지 않도록 제거
+    if (result === '0') result = '';
     if (!operator) {
-      if (result === '0') result = '';
-      numOne += event.target.textContent;
-      result += event.target.textContent;
+      // 이전 계산 결과가 있는 상태에서 숫자 입력시 숫자 초기화
+      if (isCalculate) {
+        numOne = '';
+        result = '';
+        isCalculate = false;
+      }
+      // 마이너스 숫자를 입력할 수 있도록 수정
+      if (minus) {
+        numOne -= event.target.textContent;
+        result -= event.target.textContent;
+        minus = false;
+      } else {
+        numOne += event.target.textContent;
+        result += event.target.textContent;
+      }
       return;
     }
     // 이 아래로는 operator가 존재하는 경우에만 실행됨
-    if (!numTwo) {
-      result = '';
-    }
+    if (!numTwo) result = '';
     // 연산자 클릭을 통한 연속 계산시
     if (isCalculate) {
       numTwo = '';
@@ -26,23 +38,32 @@
     }
     numTwo += event.target.textContent;
     result += event.target.textContent;
-    //console.log(numOne, operator, numTwo);
   };
   const onClickOperator = (op) => () => {
+    // 마이너스 숫자를 입력할 수 있도록 수정
+    if (!numOne) {
+      if (op === '+') {
+        minus = false;
+      } else if (op === '-') {
+        minus = true;
+      } else {
+        alert('숫자를 먼저 입력하세요.');
+      }
+      return;
+    }
     // 연산자 클릭을 통한 연속 계산시
     if (numTwo) {
       calculate();
+      numTwo = '';
       isCalculate = true;
     }
-    if (numOne) {
-      operator = op;
-      if (op === '*') operator = 'x';
-      else operator = op;
-    } else {
-      console.log('숫자를 먼저 입력하세요.');
-    }
+    operator = op;
   };
   const calculate = () => {
+    if (!numOne) {
+      alert('숫자를 먼저 입력하세요.');
+      return;
+    }
     if (numTwo) {
       switch (operator) {
         case '+':
@@ -51,31 +72,34 @@
         case '-':
           result = parseInt(numOne) - parseInt(numTwo);
           break;
-        case '*':
+        case 'x':
           result = parseInt(numOne) * parseInt(numTwo);
           break;
-        case '/':
+        case '÷':
           result = parseInt(numOne) / parseInt(numTwo);
           break;
         default:
           break;
       }
     }
+    console.log(`${numOne} ${operator} ${numTwo} = ${result}`);
     numOne = result;
   };
 	const onClickCalculate = () => {
 		calculate();
+    // 다음 계산을 하기 위한 상태 초기화
 		numTwo = '';
 		operator = '';
-  	isCalculate = false;
+  	isCalculate = true;
+    minus = false;
 	}
   const onClickClear = () => {
     numOne = '';
-    operator = '';
     numTwo = '';
     operator = '';
-    result = '0';
     isCalculate = false;
+    minus = false;
+    result = '0';
   };
 </script>
 
@@ -99,13 +123,13 @@
       <button id="num-1" on:click={onClickNumber}>1</button>
       <button id="num-2" on:click={onClickNumber}>2</button>
       <button id="num-3" on:click={onClickNumber}>3</button>
-      <button id="divide" on:click={onClickOperator('/')}>/</button>
+      <button id="divide" on:click={onClickOperator('÷')}>÷</button>
     </div>
     <div class="row">
       <button id="clear" on:click={onClickClear}>C</button>
       <button id="num-0" on:click={onClickNumber}>0</button>
       <button id="calculate" on:click={onClickCalculate}>=</button>
-      <button id="multiply" on:click={onClickOperator('*')}>x</button>
+      <button id="multiply" on:click={onClickOperator('x')}>×</button>
     </div>
   </div>
 </main>
