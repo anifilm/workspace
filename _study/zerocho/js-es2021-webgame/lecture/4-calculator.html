@@ -46,13 +46,13 @@
     <button id="num-1">1</button>
     <button id="num-2">2</button>
     <button id="num-3">3</button>
-    <button id="divide">/</button>
+    <button id="divide">÷</button>
   </div>
   <div class="row">
     <button id="clear">C</button>
     <button id="num-0">0</button>
     <button id="calculate">=</button>
-    <button id="multiply">X</button>
+    <button id="multiply">x</button>
   </div>
 
   <script>
@@ -60,6 +60,7 @@
     let numTwo = '';
     let operator = '';
     let isCalculate = false;
+    let minus = false;
 
     const $operator = document.querySelector('#operator');
     const $result = document.querySelector('#result');
@@ -76,11 +77,25 @@
           $result.value = '';
           isCalculate = false;
         }
+      // 마이너스 숫자를 입력할 수 있도록 수정
+      if (minus) {
+        numOne -= event.target.textContent;
+        $result.value -= event.target.textContent;
+        minus = false;
+      } else {
         numOne += event.target.textContent;
         $result.value += event.target.textContent;
+      }
         return;
       }
+      // 이 아래로는 operator가 존재하는 경우에만 실행됨
       if (!numTwo) $result.value = '';
+      // 연산자 클릭을 통한 연속 계산시
+      if (isCalculate) {
+        numTwo = '';
+        $result.value = '';
+        isCalculate = false;
+      }
       numTwo += event.target.textContent;
       $result.value += event.target.textContent;
     }
@@ -98,9 +113,22 @@
 
     const onClickOperator = (op) => {
       return () => {
+        // 마이너스 숫자를 입력할 수 있도록 수정
         if (!numOne) {
-          alert('숫자를 먼저 입력하세요.');
+          if (op === '+') {
+            minus = false;
+          } else if (op === '-') {
+            minus = true;
+          } else {
+            alert('숫자를 먼저 입력하세요.');
+          }
           return;
+        }
+        // 연산자 클릭을 통한 연속 계산시
+        if (numTwo) {
+          calculate();
+          numTwo = '';
+          isCalculate = true;
         }
         operator = op;
         $operator.value = op;
@@ -109,14 +137,14 @@
 
     document.querySelector('#plus').addEventListener('click', onClickOperator('+'));
     document.querySelector('#minus').addEventListener('click', onClickOperator('-'));
-    document.querySelector('#divide').addEventListener('click', onClickOperator('/'));
-    document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));
-    document.querySelector('#calculate').addEventListener('click', () => {
+    document.querySelector('#multiply').addEventListener('click', onClickOperator('x'));
+    document.querySelector('#divide').addEventListener('click', onClickOperator('÷'));
+
+    const calculate = () => {
       if (!numOne) {
         alert('숫자를 먼저 입력하세요.');
         return;
       }
-      console.log(numOne, operator, numTwo);
       if (numTwo) {
         switch (operator) {
           case '+':
@@ -125,21 +153,27 @@
           case '-':
             $result.value = parseInt(numOne) - parseInt(numTwo);
             break;
-          case '*':
+          case 'x':
             $result.value = parseInt(numOne) * parseInt(numTwo);
             break;
-          case '/':
+          case '÷':
             $result.value = parseInt(numOne) / parseInt(numTwo);
             break;
           default:
             break;
         }
       }
-      // 다음 계산을 하기 위한 상태 초기화
+      console.log(`${numOne} ${operator} ${numTwo} = ${$result.value}`);
       numOne = $result.value;
+    };
+
+    document.querySelector('#calculate').addEventListener('click', () => {
+      calculate();
+      // 다음 계산을 하기 위한 상태 초기화
       numTwo = '';
       operator = '';
       isCalculate = true;
+      minus = false;
       $operator.value = '';
     });
     document.querySelector('#clear').addEventListener('click', () => {
@@ -148,11 +182,10 @@
       numTwo = '';
       operator = '';
       isCalculate = false;
+      minus = false;
       $operator.value = '';
       $result.value = '0'; // 숫자 디스플레이 초기상태
     });
-
-
   </script>
 </body>
 </html>
