@@ -13,10 +13,10 @@
     <script>
       document.querySelector('#button').onclick = function () {
         // input 요소에 입력된 몸부게 데이터와 키 데이터를 가져온다.
-        var h = parseFloat(document.querySelector('#height').value);
-        var w = parseFloat(document.querySelector('#weight').value);
+        let h = parseFloat(document.querySelector('#height').value);
+        let w = parseFloat(document.querySelector('#weight').value);
         // 체질량 지수를 bmi라는 id를 가진 요소(output 요소)에 기록한다.
-        var bmi = document.querySelector('#bmi');
+        let bmi = document.querySelector('#bmi');
         h = h / 100;
         bmi.innerHTML = (w/h/h).toFixed(1);
       };

@@ -9,15 +9,11 @@
 
     <script>
       function displayTime() {
-        var d = new Date();
+        let d = new Date();
         console.log('현재 시각은 ' + d.toLocaleString() + ' 입니다.');
       }
 
-      //window.onload = function () {
-      //  var button = document.querySelector('#button');
-      //  button.onclick = displayTime;
-      //};
-      var button = document.querySelector('#button');
+      let button = document.querySelector('#button');
       button.onclick = displayTime;
     </script>
   </body>

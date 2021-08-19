@@ -15,11 +15,11 @@
 
     <script>
       // canvas 요소 가져오기
-      var canvas = document.querySelector('#mycanvas');
+      let canvas = document.querySelector('#mycanvas');
       // canvas 렌더링 컨텍스트 가져오기
-      var ctx = canvas.getContext('2d');
+      let ctx = canvas.getContext('2d');
       // 이미지 객체 생성하기
-      var img = new Image();
+      let img = new Image();
       // 이미지를 읽어 들인 후 canvas에 그리기
       img.onload = function () {
         ctx.drawImage(img, 0, 0);

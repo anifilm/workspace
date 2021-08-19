@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>뉴턴-랩슨 법으로 제곱근 구하기</title>
+  </head>
+  <body>
+    <script>
+      let EPSILON = 1.0e-10;
+      let d, nNew, xOld;
+      let n = parseFloat(prompt('정수를 입력하세요.'));
+      xOld = (n > 1) ? n : 1.0;
+      do {
+        xNew = xOld - (xOld * xOld - n) / (2.0 * xOld);
+        d = (xOld - xNew) / xOld;
+        xOld = xNew;
+      } while (d > EPSILON);
+      document.write(`sqrt(${n}) = ${xNew}`);
+      console.log(Math.sqrt(n));
+    </script>
+  </body>
+</html>
