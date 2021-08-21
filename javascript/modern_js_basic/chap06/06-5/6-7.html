@@ -11,15 +11,16 @@
     </style>
   </head>
   <body>
+    <h2>예제 6-7 URL이 가리키는 이미지 파일을 Canvas로 읽어 들이기</h2>
     <canvas id="mycanvas" width="640" height="400"></canvas>
 
     <script>
       // canvas 요소 가져오기
-      let canvas = document.querySelector('#mycanvas');
+      const canvas = document.querySelector('#mycanvas');
       // canvas 렌더링 컨텍스트 가져오기
-      let ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d');
       // 이미지 객체 생성하기
-      let img = new Image();
+      const img = new Image();
       // 이미지를 읽어 들인 후 canvas에 그리기
       img.onload = function () {
         ctx.drawImage(img, 0, 0);

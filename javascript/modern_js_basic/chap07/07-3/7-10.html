@@ -5,10 +5,12 @@
     <title>에라토스테네스의 체로 쌍둥이 소수 구하기</title>
   </head>
   <body>
+    <h2>예제 7-10 에라토스테네스의 체로 쌍둥이 소수 구하기</h2>
+
     <script>
       let n = parseInt(prompt('n?'));
       // 에라토스테네스의 체로 입력받은 n까지의 소수를 구한다.
-      let p = []; // 아래의 i가 소수면 p[i] = true, 합성수면 p[i] = false로 처리한다.
+      const p = []; // 아래의 i가 소수면 p[i] = true, 합성수면 p[i] = false로 처리한다.
       for (let i = 2; i <= n; i++) {
         p[i] = true; // 2~n에 있는 모든 정수에 기본값을 true로 지정.
       }

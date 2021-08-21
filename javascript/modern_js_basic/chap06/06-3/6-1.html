@@ -5,11 +5,12 @@
     <title>시각을 콘솔에 표시하기</title>
   </head>
   <body>
+    <h2>예제 6-1 콘솔에 시각 표식하기</h2>
     <button onclick="displayTime()">click</button>
 
     <script>
       function displayTime() {
-        let d = new Date();
+        const d = new Date();
         console.log('현재 시각은 ' + d.toLocaleString() + ' 입니다.');
       }
     </script>

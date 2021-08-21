@@ -1,3 +1,5 @@
+// 예제 7-3 이항 연산을 하는 함수
+
 function binaryOperation(op, a, b) {
   switch (op) {
     case '+':

@@ -1,3 +1,5 @@
+// 예제 7-6 이진 검색
+
 function binarySearch(n, arr) {
   let len = arr.length;
   let left = 0, right = len - 1;

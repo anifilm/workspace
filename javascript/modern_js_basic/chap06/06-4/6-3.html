@@ -5,17 +5,15 @@
     <title>스톱워치</title>
   </head>
   <body>
+    <h2>예제 6-3 스톱워치</h2>
     <p id="display">0.00</p>
     <button id="start">start</button>
     <button id="stop">stop</button>
 
     <script>
-      //window.onload = function () {
-      //  // ...
-      //};
-      let startButton = document.querySelector('#start'); // start 버튼 요소
-      let stopButton = document.querySelector('#stop'); // stop 버튼 요소
-      let display = document.querySelector('#display'); // 결과를 표시하는 요소
+      const startButton = document.querySelector('#start'); // start 버튼 요소
+      const stopButton = document.querySelector('#stop'); // stop 버튼 요소
+      const display = document.querySelector('#display'); // 결과를 표시하는 요소
       let startTime, timer;
       startButton.onclick = start; // start 버튼 활성화
       function start() {
@@ -24,7 +22,7 @@
         startTime = new Date();
         // 0.01초마다 경과한 시간을 표시
         timer = setInterval(() => {
-          let now = new Date();
+          const now = new Date();
           // display에 경과한 시간 쓰기
           display.innerHTML = ((now - startTime) / 1000).toFixed(2);
         }, 10);

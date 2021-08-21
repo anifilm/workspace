@@ -5,6 +5,7 @@
     <title>고혈압 여부 확인하기</title>
   </head>
   <body>
+    <h2>예제 7-2 고혈압 여부 확인하기</h2>
     <p>수축기 혈압(최고 혈압): <input type="number" id='highpressure'></p>
     <p>이완기 혈압(최저 혈압): <input type="number" id='lowpressure'></p>
     <p id="judgement">이곳에 판정 결과가 표시됩니다.</p>
@@ -17,7 +18,7 @@
         // 이완기 혈압(최저 혈압)을 구한다.
         let lp = parseFloat(document.querySelector('#lowpressure').value);
         // 판정 결과를 내보낼 HTML 요소
-        let judgement = document.querySelector('#judgement');
+        const judgement = document.querySelector('#judgement');
         // 고혈압 여부를 판정하여 HTML 요소에 출력한다.
         if (hp < 120 && lp < 80) {
           judgement.innerHTML = '당신의 혈압은 정상 입니다.';

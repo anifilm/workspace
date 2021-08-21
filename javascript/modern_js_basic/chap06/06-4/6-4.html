@@ -5,6 +5,7 @@
     <title>체질량지수 계산하기</title>
   </head>
   <body>
+    <h2>예제 6-4 체질량지수 계산하기</h2>
     <p>키: <input type="number" id="height" /> cm</p>
     <p>몸무게: <input type="number" id="weight" /> kg</p>
     <p>당신의 체질량 지수는 <output id="bmi">??</output> 입니다.</p>
@@ -16,7 +17,7 @@
         let h = parseFloat(document.querySelector('#height').value);
         let w = parseFloat(document.querySelector('#weight').value);
         // 체질량 지수를 bmi라는 id를 가진 요소(output 요소)에 기록한다.
-        let bmi = document.querySelector('#bmi');
+        const bmi = document.querySelector('#bmi');
         h = h / 100;
         bmi.innerHTML = (w/h/h).toFixed(1);
       };

@@ -1,3 +1,5 @@
+// 예제 7-5 순차 검색
+
 function linearSearch(n, arr) {
   let len = arr.length;
   let i = 0;

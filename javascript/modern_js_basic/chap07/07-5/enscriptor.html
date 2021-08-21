@@ -16,7 +16,7 @@
     </style>
   </head>
   <body>
-    <h2>원판 암호기를 활용한 암호화</h2>
+    <h2>7.5.2 원판 암호기를 활용한 암호화</h2>
     <p>키워드: <input type="text" id="keyword" /></p>
     <p>평문:  <input type="text" id="plaintext" /></p>
     <p>암호문: <input type="text" id="ciphertext" /></p>
@@ -24,7 +24,7 @@
     <button id="decipher">복호화</button>
 
     <script>
-      var enscriptor = Enscriptor();
+      const enscriptor = Enscriptor();
       // 평문을 암호화
       document.querySelector('#cipher').onclick = function () {
         let keyword = document.querySelector('#keyword').value;

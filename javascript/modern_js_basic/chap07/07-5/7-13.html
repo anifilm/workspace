@@ -19,6 +19,7 @@
     }
   </style>
   <body>
+    <h2>예제 7-13 망델브로 집합 그리기</h2>
     <canvas id="mycanvas" width="800" height="640"></canvas>
     <div>중심 좌표(<span id="xc"></span>, <span id="yc"></span>) ← 마우스로 클릭하면 바뀝니다. </div>
     <div>
@@ -28,10 +29,10 @@
     </div>
 
     <script>
-      let canvas = document.querySelector('#mycanvas');
-      let ctx = canvas.getContext('2d');
-      let width = canvas.width;
-      let height = canvas.height;
+      const canvas = document.querySelector('#mycanvas');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
       // 중심점을 설정하고 그린다.
       let xc = -0.6, yc = 0;
       draw();
@@ -68,16 +69,16 @@
       // mag: 확대 배율
       // maxit: 최대 반복 횟수
       function mandelbrot(c, xc, yc, mag, maxit) {
-        let w = c.canvas.width;
-        let h = c.canvas.height;
-        let xmin = xc - 1/mag;
-        let xmax = xc + 1/mag;
-        let ymin = yc - (xmax-xmin) * h/w/2;
-        let ymax = yc + (xmax-xmin) * h/w/2;
-        let dx = (xmax-xmin)/w;
-        let dy = (ymax-ymin)/h;
+        const w = c.canvas.width;
+        const h = c.canvas.height;
+        const xmin = xc - 1/mag;
+        const xmax = xc + 1/mag;
+        const ymin = yc - (xmax-xmin) * h/w/2;
+        const ymax = yc + (xmax-xmin) * h/w/2;
+        const dx = (xmax-xmin)/w;
+        const dy = (ymax-ymin)/h;
         // 색상 구분용 색상(반지름 2 안에 있던 횟수로 색을 구분한다.)
-        let color = [];
+        const color = [];
         color[0] = 'black'; // 망델브로 집합의 점 색상은 검은색으로 한다.
         let L = 255, dL = 255 / maxit;
         for (let i = maxit; i > 0; i--) {

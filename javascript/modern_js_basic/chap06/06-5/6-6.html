@@ -5,13 +5,14 @@
     <title>Canvas의 기본</title>
   </head>
   <body>
+    <h2>예제 6-6 모서리가 둥근 사각형을 그리는 함수</h2>
     <canvas id="mycanvas" width="640" height="400"></canvas>
 
     <script>
       // canvas 요소 가져오기
-      let canvas = document.querySelector('#mycanvas');
+      const canvas = document.querySelector('#mycanvas');
       // canvas 렌더링 컨텍스트 가져오기
-      let ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d');
       strokeRoudedRect(ctx,  10, 10, 100, 80, 10);
       strokeRoudedRect(ctx, 150, 10, 100, 80, 30);
 

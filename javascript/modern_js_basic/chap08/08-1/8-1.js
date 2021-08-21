@@ -8,7 +8,6 @@ function norm(x) {
     }
     return sum;
   }
-
   const sum2 = sumSquare();
   return Math.sqrt(sum2);
 }

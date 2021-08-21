@@ -10,18 +10,18 @@ for (var i = 0, sum = 0; i < a.length; i++) {
 console.log(sum); // 29
 
 
-var a = [
+const a = [
   [2, 4, 6, 8],
   [1, 5, 12, 3],
   [7, 6, 8, 5],
   [5, 15, 3, 4],
   [3, 2, 9, 4]
 ];
-var max = Number.NEGATIVE_INFINITY;
+let max = Number.NEGATIVE_INFINITY;
 mainloop:
-for (var i = 0; i < a.length; i++) {
+for (let i = 0; i < a.length; i++) {
   var average = 0;
-  for (var j = 0; j < a[i].length; j++) {
+  for (let j = 0; j < a[i].length; j++) {
     // 배열에 10보다 큰수가 있으면 평균값 출력없이 처음으로 되돌아간다.
     if (a[i][j] > 10) continue mainloop;
     average += a[i][j];
