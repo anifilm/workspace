@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>반복문 안에서 클로저 만들기</title>
+  </head>
+  <body>
+    <h2>예제 8-11 반복문 안에서 클로저 만들기</h2>
+    <button>0</button>
+    <button>1</button>
+    <button>2</button>
+
+    <script>
+      let elm = document.querySelectorAll('button');
+      for (var _i = 0; _i < elm.length; _i++) {
+        let i = _i;
+        elm[i].onclick = function () {
+          console.log(i);
+        };
+      }
+    </script>
+  </body>
+</html>
