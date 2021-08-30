@@ -7,7 +7,9 @@ const App = () => {
   return (
     <>
       <AppRouter isLoggedIn={isLoggedIn} />
-      <footer>&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
+      <footer>
+        &copy; {new Date().getFullYear()} Twitter. (clone app)
+      </footer>
     </>
   );
 };
