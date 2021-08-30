@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AppRouter from './Router';
+import AppRouter from 'components/Router';
 import { authService } from 'fbase';
 
 const App = () => {
