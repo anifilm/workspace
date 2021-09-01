@@ -7,7 +7,7 @@ function* gen() {
   yield 3; // 포인트 3
 }
 
-var iter = gen();
+const iter = gen();
 console.log(iter.next()); // Object {value: 1, done: false}
 console.log(iter.next()); // Object {value: 2, done: false}
 console.log(iter.next()); // Object {value: 3, done: false}
