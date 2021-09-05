@@ -1,5 +1,5 @@
-!_etc/.vscode
-!Inflearn/.vscode
+!_etc/.vscode/
+!Inflearn/.vscode/
 .ipynb_checkpoints/
 __pycache__/
 venv/
