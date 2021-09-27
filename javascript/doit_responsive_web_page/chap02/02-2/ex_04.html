@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>고정 크기의 마진과 패딩을 위해 calc 함수 이용하기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #wrap {
+        width: 90%; /* 960px */
+        height: 500px;
+        margin: 0 auto;
+        border: 4px solid #000;
+      }
+      #wrap div {
+        width: calc(100% - 100px);
+        height: 200px;
+        margin: 50px;
+        background: #f7e041;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div></div>
+    </div>
+  </body>
+</html>
