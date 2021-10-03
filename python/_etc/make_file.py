@@ -1,4 +1,4 @@
-import os
+# import os
 
 # 파일 생성
 for i in range(1, 30):
