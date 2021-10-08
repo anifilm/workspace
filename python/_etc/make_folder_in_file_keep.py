@@ -4,17 +4,14 @@ import os
 chap_num = 12
 
 # 폴더 안에 해당 파일 생성
-dir_name = ""
+dir_name = "chap00"
 file_name = ".keep"
 
 for i in range(1, chap_num+1):
-    if i < 10:
-        dir_name = "./chap0" + str(i)  # chap01...
-    else:
-        dir_name = "./chap" + str(i)   # chap10...
+    dir_name = f"chap{i:02}"  # chap01...
     os.mkdir(dir_name)
     f = open(dir_name + "/" + file_name, "w")
-    # f.write("\n")
+    # f.write("\n")  # 파일안에 작성할 내용
     f.close()
 
 print("폴더와 파일 생성을 완료하였습니다.")

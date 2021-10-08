@@ -7,17 +7,14 @@ chap_num = 12
 sect_num = 20
 
 # 폴더 안에 해당 파일 생성
-dir_name = ""
-file_name = ""
+dir_name = "chap00"
+file_name = "0-0_.cs"
 
 for i in range(1, chap_num+1):
-    if i < 10:
-        dir_name = "./chap0" + str(i)  # chap01...
-    else:
-        dir_name = "./chap" + str(i)   # chap10...
+    dir_name = f"chap{i:02}"  # chap01...
     os.mkdir(dir_name)
     for j in range(1, sect_num+1):
-        file_name = str(i) + "-" + str(j) + "_.cs"  # 9-12_.cs
+        filename = f"{i}-{j}_.cs"  # 8-9_.cs
         f = open(dir_name + "/" + file_name, "w")
         f.write("using System;\n")
         f.write("\n")

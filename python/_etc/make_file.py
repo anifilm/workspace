@@ -4,10 +4,13 @@
 chap_num = 12
 sect_num = 20
 
+filename = "0-0_.cs"
+
 # 파일 생성
 for i in range(1, chap_num+1):
     for j in range(1, sect_num+1):
-        f = open(str(i) + "-" + str(j) + "_.cs", "w")  # 9-12.cs
+        filename = f"{i}-{j}_.cs" # 8-9_.cs
+        f = open(filename, "w")
         f.write("using System\n")
         f.write("\n")
         f.write("//\n")
