@@ -6,9 +6,12 @@ const makeFolder = (dirname) => {
   }
 };
 
-let dirname = './chap01';
+// 몇개의 폴더를 생성?
+const chapNum = 12
 
-for (let i = 1; i < 20; i++) {
+let dirname = 'chap00';
+
+for (let i = 1; i <= chapNum; i++) {
   if (i < 10)
     dirname = `./chap0${i}`;
   else

@@ -17,7 +17,7 @@ for i in range(1, chap_num+1):
         dir_name = "./chap" + str(i)   # chap10...
     os.mkdir(dir_name)
     for j in range(1, sect_num+1):
-        file_name = str(i) + "-" + str(j) + "_.cs"  # 9-12.cs
+        file_name = str(i) + "-" + str(j) + "_.cs"  # 9-12_.cs
         f = open(dir_name + "/" + file_name, "w")
         f.write("using System;\n")
         f.write("\n")
