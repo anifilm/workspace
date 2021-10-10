@@ -2,6 +2,7 @@ import requests
 import os.path
 import pickle
 import random
+import time
 
 # 지정된 회차의 당첨번호를 크롤링하여 가져옴
 def get_lotto_numbers(episode):
@@ -62,6 +63,14 @@ def main():
             pickle.dump(old_lotto_numbers, f)
         print("기존 당첨번호를 파일로 저장하였습니다.")
 
+    print("\n--- 최근 10회차 당첨결과 ---")
+    # 기존 당첨번호 최근 10회차 출력 (확인용)
+    s = len(old_lotto_numbers) - 10
+    e = len(old_lotto_numbers)
+    for i in range(s, e):
+        print(f"{s+1}회 {old_lotto_numbers[i]}")
+        s += 1
+    print()
 
     # 기존 당첨번호에 해당하지 않는 숫자 조합을 저장
     my_lotto_numbers = []
@@ -69,10 +78,11 @@ def main():
     while len(my_lotto_numbers) < 5:
         list_of_numbers = list(range(1, 46))
         random.shuffle(list_of_numbers)
-
-        numbers = list_of_numbers[:6]
+        numbers = sorted(list_of_numbers[:6])
+        print("번호생성", numbers)
 
         if numbers not in old_lotto_numbers or numbers not in my_lotto_numbers:
+            print("번호저장")
             my_lotto_numbers.append(numbers)
 
     # 결과를 파일로 저장
@@ -81,9 +91,6 @@ def main():
         f.write(str(nums) + "\n")
     f.close()
     print("\n로또 번호를 생성하여 파일로 저장하였습니다.")
-
-    # 결과를 화면에 출력
-    print(*my_lotto_numbers, sep="\n")
 
 
 if __name__ == '__main__':

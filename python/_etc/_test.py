@@ -11,9 +11,7 @@ def get_lotto_numbers(episode):
     request = requests.get("https://www.dhlottery.co.kr/common.do", params=params)
     response = request.json()
 
-    # 정보를 가져올수 없다면 -1을 반환
-    if response["returnValue"] == "fail":
-        return -1
+    print(response)
 
     num_list = []
     for i in range(1, 7):
@@ -22,5 +20,5 @@ def get_lotto_numbers(episode):
     return num_list
 
 
-old_number = get_lotto_numbers(1)
+old_number = get_lotto_numbers(256)
 print(old_number)
