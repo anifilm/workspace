@@ -2,7 +2,6 @@ import requests
 import os.path
 import pickle
 import random
-import time
 
 # 지정된 회차의 당첨번호를 크롤링하여 가져옴
 def get_lotto_numbers(episode):
