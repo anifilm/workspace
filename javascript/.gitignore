@@ -1,8 +1,12 @@
 node_modules/
 package-lock.json
 dist/
+.idea/
+out/
+target/
+__using_assets__/
 __new__/
-__init__.*
+.env
 *.exe
-*.pdf
 *.lnk
+*.pdf
