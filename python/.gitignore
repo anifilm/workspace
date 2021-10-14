@@ -7,4 +7,5 @@ Include/
 Lib/
 Scripts/
 
+.env
 *.pdf
