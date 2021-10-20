@@ -18,14 +18,14 @@ def load_tokens(filename):
     return tokens
 
 # refresh_token으로 access_token 갱신하는 함수
-def update_tokens(app_key, filename) : 
+def update_tokens(app_key, filename):
     tokens = load_tokens(filename)
 
     url = "https://kauth.kakao.com/oauth/token"
     data = {
-        "grant_type" : "refresh_token",
-        "client_id"  : app_key,
-        "refresh_token" : tokens['refresh_token']
+        "grant_type": "refresh_token",
+        "client_id" : app_key,
+        "refresh_token": tokens['refresh_token'],
     }
     response = requests.post(url, data=data)
 
@@ -55,7 +55,7 @@ def send_message(filename, template):
     
     # JSON 형식 -> 문자열 변환
     payload = {
-        "template_object" : json.dumps(template)
+        "template_object": json.dumps(template)
     }
 
     # 카카오톡 보내기
