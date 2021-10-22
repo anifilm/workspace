@@ -3,9 +3,8 @@
 __pycache__/
 
 # for venv
-Include/
-Lib/
-Scripts/
+venv/
+!pyvenv.cfg
 
 .env
 *.pdf
