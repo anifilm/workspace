@@ -3,8 +3,11 @@
 __pycache__/
 
 # for venv
-venv/
-!pyvenv.cfg
+etc/
+Include/
+Lib/
+Scripts/
+share/
 
 .env
 *.pdf
