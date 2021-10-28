@@ -7,8 +7,8 @@ let coffee = {
 
 let property;
 
-for (property in coffee) {
-  console.log(property + ": " + coffee[property]);
+for (let property in coffee) {
+  console.log(`${property}: ${coffee[property]}`);
 }
 // name: Americano
 // price: 3000
