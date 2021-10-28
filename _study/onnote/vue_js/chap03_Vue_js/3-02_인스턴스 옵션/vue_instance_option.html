@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <h2>Vue 인스턴스 옵션</h2>
+    <div id="app">
+      <p>{{ message }}</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app', // el 속성 (Vue 인스턴스가 마운트되는 화면 요소)
+        data: { // data 속성 (인스턴스의 상태/데이터)
+          message: 'Hello Vue!'
+        }
+      });
+    </script>
+  </body>
+</html>
