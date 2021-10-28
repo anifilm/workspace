@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>singleton</title>
+  </head>
+  <body>
+    <script src="../common/js/calc_common.js"></script>
+    <script src="./js/operation_singleton.js"></script>
+    <script>
+      let singleton = CALC.singleton
+
+      let calculatorSingleton = singleton.OperationSingleton.getInstance();
+
+      let firstNumber = 100;
+      let secondNumber = 20;
+
+      calculatorSingleton.operate(singleton.OperationSingleton.ADD_OPERATION, firstNumber, secondNumber);
+      calculatorSingleton.operate(singleton.OperationSingleton.SUBSTRACT_OPERATION, firstNumber, secondNumber);
+      calculatorSingleton.operate(singleton.OperationSingleton.MULTIPLY_OPERATION, firstNumber, secondNumber);
+      calculatorSingleton.operate(singleton.OperationSingleton.DIVIDE_OPERATION, firstNumber, secondNumber);
+    </script>
+  </body>
+</html>
