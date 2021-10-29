@@ -36,7 +36,6 @@ console.log(coffee.price); // 3000
 console.log(coffee.getName()); // Americano
 
 coffee.setName('Cappuccino');
-
 console.log(coffee.getName()); // Cappuccino
 
 coffee.display(); // Cappuccino
