@@ -5,8 +5,8 @@ let coffee = {};
 Object.defineProperty(coffee, 'name', {
   value: 'Americano',
   enumerable: true,
-  writable: true,
   configurable: true,
+  writable: true,
 });
 
 console.log('name' in coffee); // true
@@ -14,10 +14,10 @@ console.log('name' in coffee); // true
 // enumerable: true
 console.log(coffee.propertyIsEnumerable('name')); // true
 
-// writable: true
-coffee.name = 'Cappuccino';
-console.log(coffee.name); // Cappuccino
-
 // configurable: true
 delete coffee.name;
 console.log('name' in coffee); // false
+
+// writable: true
+coffee.name = 'Cappuccino';
+console.log(coffee.name); // Cappuccino

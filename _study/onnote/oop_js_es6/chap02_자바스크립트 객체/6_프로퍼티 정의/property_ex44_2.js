@@ -8,8 +8,8 @@ Object.defineProperty(coffee, 'name', {
 
 /* 다음의 기본값을 가진다.
   enumerable: false,
-  writable: false,
   configurable: false,
+  writable: false,
 */
 
 console.log('name' in coffee); // true
@@ -17,10 +17,10 @@ console.log('name' in coffee); // true
 // enumerable: false
 console.log(coffee.propertyIsEnumerable('name')); // false
 
-// writable: false
-coffee.name = 'Cappuccino';
-console.log(coffee.name); // Americano
-
 // configurable: false
 delete coffee.name;
 console.log('name' in coffee); // true
+
+// writable: false
+coffee.name = 'Cappuccino';
+console.log(coffee.name); // Americano
