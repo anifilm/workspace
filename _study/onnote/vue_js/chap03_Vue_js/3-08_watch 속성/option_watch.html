@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <h2>Vue watch 속성</h2>
+    <div id="app">
+      메인보드의 가격: <input type="text" v-on:input="price = $event.target.value" v-bind:value="price">
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          price: 112053
+        },
+        watch: {
+          price: function (nextValue, prevValue) {
+            console.log('price의 변경 이전 값:', prevValue);
+            console.log('price의 변경된 이후 값:', nextValue);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

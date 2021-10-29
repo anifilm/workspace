@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <h2>Vue filters 속성</h2>
+    <h2>Vue methods 속성</h2>
     <div id="app">
       <div>
         <ul>
@@ -19,10 +19,10 @@
         <ul>
           <li v-for="item in items" v-bind:key="item.name">
             {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{
-            item.price * item.quantity | numberWithDelimiter }}원
+            item.price * item.quantity }}원
           </li>
         </ul>
-        <p>합계: {{ totalPrice | numberWithDelimiter }}원</p>
+        <p>합계: {{ totalPrice }}원</p>
       </div>
     </div>
 
@@ -55,14 +55,6 @@
             return this.items.reduce((sum, item) => {
               return sum + item.price * item.quantity;
             }, 0);
-          }
-        },
-        filters: {
-          numberWithDelimiter(value) {
-            if (!value) {
-              return '0';
-            }
-            return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
           }
         }
       });

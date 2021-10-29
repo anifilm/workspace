@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <h2>Vue data 속성</h2>
+    <div id="app">
+    </div>
+
+    <script>
+      const items = [
+        {
+          name: 'CPU',
+          price: 462984,
+          quantity: 1
+        },
+        {
+          name: '메인보드',
+          price: 112053,
+          quantity: 1
+        },
+        {
+          name: '메모리',
+          price: 112053,
+          quantity: 2
+        }
+      ];
+
+      new Vue({
+        el: '#app',
+        data: {
+          items: items
+        }
+      });
+    </script>
+  </body>
+</html>
