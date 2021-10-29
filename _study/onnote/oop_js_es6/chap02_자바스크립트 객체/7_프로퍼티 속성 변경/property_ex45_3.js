@@ -1,7 +1,6 @@
 // 7.3 writable 속성
 
-let coffee = {
-};
+let coffee = {};
 
 Object.defineProperty(coffee, 'name', {
   value: 'Americano',

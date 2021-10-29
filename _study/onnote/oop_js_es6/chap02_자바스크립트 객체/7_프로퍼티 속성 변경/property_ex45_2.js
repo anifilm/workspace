@@ -1,7 +1,6 @@
 // 7.2 configurable 속성
 
-let coffee = {
-};
+let coffee = {};
 
 Object.defineProperty(coffee, 'name', {
   value: 'Americano',
