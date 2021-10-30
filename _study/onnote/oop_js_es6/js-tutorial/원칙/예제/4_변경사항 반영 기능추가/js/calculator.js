@@ -1,18 +1,18 @@
-CALC.createNameSpace('CALC.ocp.after.Calculator');
+CALC.createNameSpace('CALC.lsp.after.Calculator');
 
-CALC.ocp.after.Calculator = (function () {
+CALC.lsp.after.Calculator = (function () {
   class Calculator {
     constructor() {
-      this.operation = null;
+
     }
 
-    calculate(firstNumber, secondNumber) {
-      let answer = this.operation.operate(firstNumber, secondNumber);
+    calculate(operation, firstNumber, secondNumber) {
+      if (operation.isInvalidNumber(firstNumber, secondNumber)) {
+        return -999;
+      }
+
+      let answer = operation.operate(firstNumber, secondNumber);
       return answer;
-    }
-
-    setOperation(operation) {
-      this.operation = operation;
     }
 
     toString() {

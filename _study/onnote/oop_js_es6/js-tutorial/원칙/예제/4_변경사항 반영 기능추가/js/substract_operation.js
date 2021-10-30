@@ -1,7 +1,7 @@
-CALC.createNameSpace('CALC.ocp.after.SubstractOperation');
+CALC.createNameSpace('CALC.lsp.after.SubstractOperation');
 
-CALC.ocp.after.SubstractOperation = (function () {
-  let AbstractOperation = CALC.ocp.after.AbstractOperation;
+CALC.lsp.after.SubstractOperation = (function () {
+  let AbstractOperation = CALC.lsp.after.AbstractOperation;
 
   class SubstractOperation extends AbstractOperation {
     constructor() {

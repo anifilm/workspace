@@ -1,7 +1,7 @@
-CALC.createNameSpace('CALC.ocp.after.MultiplyOperation');
+CALC.createNameSpace('CALC.lsp.after.MultiplyOperation');
 
-CALC.ocp.after.MultiplyOperation = (function () {
-  let AbstractOperation = CALC.ocp.after.AbstractOperation;
+CALC.lsp.after.MultiplyOperation = (function () {
+  let AbstractOperation = CALC.lsp.after.AbstractOperation;
 
   class MultiplyOperation extends AbstractOperation {
     constructor() {
