@@ -1,4 +1,2 @@
 타입 파이썬! 올바른 class 사용법과 객체지향 프로그래밍
 인프런 윤상석
-
-https://www.inflearn.com/course/타입-파이썬/dashboard
