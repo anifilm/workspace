@@ -1,12 +1,8 @@
-CALC.createNameSpace('CALC.isp.after.Calculator');
+CALC.createNameSpace('CALC.isp.before.Calculator');
 
-CALC.isp.after.Calculator = (function () {
-  let IDisplayable = CALC.isp.after.IDisplayable;
-
-  class Calculator extends IDisplayable {
+CALC.isp.before.Calculator = (function () {
+  class Calculator {
     constructor() {
-      super();
-
       this.operation = null;
     }
 
@@ -19,7 +15,8 @@ CALC.isp.after.Calculator = (function () {
       this.operation = operation;
     }
 
-    display(operation, firstNumber, secondNumber) {
+    // 인터페이스 메서드명 변경
+    newDisplay(operation, firstNumber, secondNumber) {
       let answer = operation.operate(firstNumber, secondNumber);
       let operator = operation.getOperator();
 

@@ -1,13 +1,13 @@
-CALC.createNameSpace('CALC.lsp.after.Client')
+CALC.createNameSpace('CALC.isp.after.Client')
 
-CALC.lsp.after.Client = (function () {
+CALC.isp.after.Client = (function () {
   class Client {
     constructor() {
 
     }
 
     main() {
-      let after = CALC.lsp.after;
+      let after = CALC.isp.after;
 
       let calculator = new after.Calculator();
 
@@ -15,22 +15,12 @@ CALC.lsp.after.Client = (function () {
       let secondNumber = 20;
 
       let operation = new after.AddOperation();
-      let answer = calculator.calculate(operation, firstNumber, secondNumber);
-      console.log(`${firstNumber} + ${secondNumber} = ${answer}`);
+      let calcClient = new after.CalcClient();
+      let answer = calcClient.request(calculator, operation, firstNumber, secondNumber);
+      console.log(`answer = ${answer}`);
 
-      operation = new after.SubstractOperation();
-      answer = calculator.calculate(operation, firstNumber, secondNumber);
-      console.log(`${firstNumber} - ${secondNumber} = ${answer}`);
-
-      operation = new after.MultiplyOperation();
-      answer = calculator.calculate(operation, firstNumber, secondNumber);
-      console.log(`${firstNumber} * ${secondNumber} = ${answer}`);
-
-      // 나누기 연산기능 호출
-      secondNumber = 0;
-      operation = new after.DivideOperation();
-      answer = calculator.calculate(operation, firstNumber, secondNumber);
-      console.log(`${firstNumber} / ${secondNumber} = ${answer}`);
+      let displayClient = new after.DisplayClient();
+      displayClient.request(calculator, operation, firstNumber, secondNumber);
     }
 
     toString() {

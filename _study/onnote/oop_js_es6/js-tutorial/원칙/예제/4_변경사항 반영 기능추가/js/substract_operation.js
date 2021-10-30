@@ -1,7 +1,7 @@
-CALC.createNameSpace('CALC.lsp.after.SubstractOperation');
+CALC.createNameSpace('CALC.isp.after.SubstractOperation');
 
-CALC.lsp.after.SubstractOperation = (function () {
-  let AbstractOperation = CALC.lsp.after.AbstractOperation;
+CALC.isp.after.SubstractOperation = (function () {
+  let AbstractOperation = CALC.isp.after.AbstractOperation;
 
   class SubstractOperation extends AbstractOperation {
     constructor() {
@@ -10,6 +10,10 @@ CALC.lsp.after.SubstractOperation = (function () {
 
     operate(firstNumber, secondNumber) {
       return firstNumber - secondNumber;
+    }
+
+    getOperator() {
+      return '-';
     }
 
     toString() {

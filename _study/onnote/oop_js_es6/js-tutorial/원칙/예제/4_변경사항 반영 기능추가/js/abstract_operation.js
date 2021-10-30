@@ -1,6 +1,6 @@
-CALC.createNameSpace('CALC.lsp.after.AbstractOperation');
+CALC.createNameSpace('CALC.isp.after.AbstractOperation');
 
-CALC.lsp.after.AbstractOperation = (function () {
+CALC.isp.after.AbstractOperation = (function () {
   class AbstractOperation {
     constructor() {
 
@@ -10,8 +10,8 @@ CALC.lsp.after.AbstractOperation = (function () {
       throw new Error('You have to implement the method doSomething!');
     }
 
-    isInvalidNumber(firstNumber, secondNumber) {
-      return false;
+    getOperator() {
+      throw new Error('You have to implement the method doSomething!');
     }
 
     toString() {

@@ -1,7 +1,7 @@
-CALC.createNameSpace('CALC.isp.after.DivideOperation');
+CALC.createNameSpace('CALC.isp.before.DivideOperation');
 
-CALC.isp.after.DivideOperation = (function () {
-  let AbstractOperation = CALC.isp.after.AbstractOperation;
+CALC.isp.before.DivideOperation = (function () {
+  let AbstractOperation = CALC.isp.before.AbstractOperation;
 
   class DivideOperation extends AbstractOperation {
     constructor() {
