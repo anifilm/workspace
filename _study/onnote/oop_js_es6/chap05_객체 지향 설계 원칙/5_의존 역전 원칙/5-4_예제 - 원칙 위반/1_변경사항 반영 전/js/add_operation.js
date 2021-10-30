@@ -6,7 +6,7 @@ CALC.dip.before.AddOperation = (function () {
 
     }
 
-    operate(firstNumber, secondNumber) {
+    add(firstNumber, secondNumber) {
       return firstNumber + secondNumber;
     }
 

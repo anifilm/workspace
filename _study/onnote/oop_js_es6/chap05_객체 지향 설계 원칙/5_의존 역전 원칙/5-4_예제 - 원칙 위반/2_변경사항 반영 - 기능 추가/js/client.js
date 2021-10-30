@@ -1,13 +1,13 @@
-CALC.createNameSpace('CALC.ocp.before.Client')
+CALC.createNameSpace('CALC.dip.before.Client')
 
-CALC.ocp.before.Client = (function () {
+CALC.dip.before.Client = (function () {
   class Client {
     constructor() {
 
     }
 
     main() {
-      let before = CALC.ocp.before;
+      let before = CALC.dip.before;
 
       let calculator = new before.Calculator();
 
@@ -16,22 +16,22 @@ CALC.ocp.before.Client = (function () {
 
       let operation = new before.AddOperation();
       calculator.setAddOperation(operation);
-      let answer = calculator.add(firstNumber, secondNumber);
+      let answer = calculator.calculate('+', firstNumber, secondNumber);
       console.log(`${firstNumber} + ${secondNumber} = ${answer}`);
 
       operation = new before.SubstractOperation();
       calculator.setSubstractOperation(operation);
-      answer = calculator.substract(firstNumber, secondNumber);
+      answer = calculator.calculate('-', firstNumber, secondNumber);
       console.log(`${firstNumber} - ${secondNumber} = ${answer}`);
 
       operation = new before.MultiplyOperation();
       calculator.setMultiplyOperation(operation);
-      answer = calculator.multiply(firstNumber, secondNumber);
+      answer = calculator.calculate('*', firstNumber, secondNumber);
       console.log(`${firstNumber} * ${secondNumber} = ${answer}`);
       // 나누기 연산기능 호출
       operation = new before.DivideOperation();
       calculator.setDivideOperation(operation);
-      answer = calculator.divide(firstNumber, secondNumber);
+      answer = calculator.calculate('/', firstNumber, secondNumber);
       console.log(`${firstNumber} / ${secondNumber} = ${answer}`);
     }
 
