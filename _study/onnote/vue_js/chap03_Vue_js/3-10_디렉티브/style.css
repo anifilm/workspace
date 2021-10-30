@@ -43,10 +43,6 @@ input {
 	border: 2px solid #ced4da;
 }
 
-input[type=checkbox], input[type=radio] {
-	width: 30px;
-}
-
 textarea {
 	width: 300px;
 	height: 60px;

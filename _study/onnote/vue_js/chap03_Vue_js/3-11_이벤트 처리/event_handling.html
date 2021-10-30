@@ -7,17 +7,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <h2>Vue 컴포넌트</h2>
+    <h2>Vue 이벤트 처리</h2>
     <div id="app">
       <form v-on:submit.prevent="onSubmit">
         <table>
           <tr>
             <td>사용자 아이디</td>
-            <td><input type="text" v-model="userId"></td>
+            <td><input type="text" v-bind:value="userId" v-on:input="userId = $event.target.value"></td>
           </tr>
           <tr>
             <td>비밀번호</td>
-            <td><input type="password" v-model="userPw"></td>
+            <td><input type="password" v-bind:value="userPw" v-on:change="userPw = $event.target.value"></td>
           </tr>
           <tr>
             <td>소개</td>
@@ -26,15 +26,43 @@
           <tr>
             <td>개발자 여부</td>
             <td>
-              <input type="checkbox" id="chkdev" v-model="developer">
-              <label for="chkdev">developer</label>
+              <input type="checkbox" v-on:change="handleCheckBox">
+              <span>handleCheckBox</span>
+            </td>
+          </tr>
+          <tr>
+            <td>개발자 여부</td>
+            <td>
+              <input type="checkbox" v-on:change="handleCheckBox()">
+              <span>handleCheckBox()</span>
+            </td>
+          </tr>
+          <tr>
+            <td>개발자 여부</td>
+            <td>
+              <input type="checkbox" v-on:change="handleCheckBox2">
+              <span>handleCheckBox2</span>
+            </td>
+          </tr>
+          <tr>
+            <td>개발자 여부</td>
+            <td>
+              <input type="checkbox" v-on:change="handleCheckBox2($event)">
+              <span>handleCheckBox2($event)</span>
+            </td>
+          </tr>
+          <tr>
+            <td>개발자 여부</td>
+            <td>
+              <input type="checkbox" v-on:change="handleCheckBox3('checked!')">
+              <span>handleCheckBox3('checked!')</span>
             </td>
           </tr>
           <tr>
             <td>외국인 여부</td>
             <td>
-              <input type="checkbox" id="chkfor" v-model="foreigner" true-value="yes" false-value="no">
-              <label for="chkfor">foreigner</label>
+              <input type="checkbox" v-on:change="handleCheckBox4('checked!', $event)">
+              <span>handleCheckBox4('checked!', $event)</span>
             </td>
           </tr>
           <tr>
@@ -113,6 +141,23 @@
             console.log('gender:', gender);
             console.log('nationality:', nationality);
             console.log('carList:', carList);
+          },
+          // 인자없는 메서드
+          handleCheckBox() {
+            console.log('handleCheckBox');
+          },
+          // event 인자를 가진 메서드
+          handleCheckBox2(event) {
+            console.log('handleCheckBox2 event:', event);
+          },
+          // 메서드 인자를 가진 메서드
+          handleCheckBox3(message) {
+            console.log('handleCheckBox3 message:', message);
+          },
+          // 메서드 인자와 event 인자를 가진 메서드
+          handleCheckBox4(message, event) {
+            console.log('handleCheckBox4 message:', message);
+            console.log('handleCheckBox4 event:', event);
           }
         }
       });
