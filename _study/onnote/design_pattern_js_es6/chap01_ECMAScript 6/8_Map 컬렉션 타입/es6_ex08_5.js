@@ -1,6 +1,6 @@
 // 8.5 데이터 값 읽기
 
-let map = new Map();
+const map = new Map();
 
 map.set('Apple', 'red');
 map.set('Melon', 'green');

@@ -1,6 +1,6 @@
 // 7.1 비구조화 할당 이전 방식
 
-let coffee = {
+const coffee = {
   name: 'Americano',
   price: 3000,
 };

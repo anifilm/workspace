@@ -12,7 +12,7 @@ for (let name of coffeeNames) {
 
 // 6.2 문자열을 이루는 문자 요소를 순회한다.
 
-let str = 'hi!';
+const str = 'hi!';
 
 for (let ch of str) {
   console.log(ch);
@@ -24,7 +24,7 @@ for (let ch of str) {
 
 // 6.3 for in 문처럼 객체의 프로퍼티를 열거하지 않는다.
 
-let coffee = {
+const coffee = {
   name: 'Americano',
   getName: function () {
     return this.name;

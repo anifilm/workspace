@@ -1,6 +1,6 @@
 // 8.7 데이터 삭제
 
-let map = new Map();
+const map = new Map();
 
 map.set('Apple', 'red');
 map.set('Melon', 'green');
