@@ -1,6 +1,6 @@
 <template>
   <v-toolbar-title>
-    <h1>TODO Application</h1>
+    <h2>TODO Application</h2>
   </v-toolbar-title>
 </template>
 
