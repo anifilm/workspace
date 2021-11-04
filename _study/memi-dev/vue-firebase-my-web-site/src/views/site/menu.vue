@@ -15,9 +15,9 @@
     <v-list>
       <v-list-group
         v-for="(item, i) in items"
-        :key="i"
+        v-bind:key="i"
         v-model="item.active"
-        :prepend-icon="item.icon"
+        v-bind:prepend-icon="item.icon"
         no-action
       >
         <template v-slot:activator>
@@ -28,8 +28,8 @@
 
         <v-list-item
           v-for="subItem in item.subItems"
-          :key="subItem.title"
-          :to="subItem.to"
+          v-bind:key="subItem.title"
+          v-bind:to="subItem.to"
         >
           <v-list-item-content>
             <v-list-item-title v-text="subItem.title"></v-list-item-title>
@@ -42,7 +42,9 @@
 
 <script>
 export default {
-  props: ['menu'],
+  props: [
+    'menu'
+  ],
   data() {
     return {
       items: [
