@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <h2>Vue 컴포넌트</h2>
+    <div id="app">
+      <ul>
+        <li v-for="item in items" v-bind:key="item.name">
+          {{ item.name }}의 가격: <input type="text" v-on:input="item.price = $event.target.value" v-bind:value="item.price" />
+        </li>
+      </ul>
+      <hr>
+      <!-- 지역 컴포넌트 표시 -->
+      <item-list v-bind:items="items"></item-list>
+    </div>
+
+    <div id="app2">
+      <ul>
+        <li v-for="item in items" v-bind:key="item.name">
+          {{ item.name }}의 가격: <input type="text" v-on:input="item.price = $event.target.value" v-bind:value="item.price" />
+        </li>
+      </ul>
+      <hr>
+      <!-- 지역 컴포넌트 표시(표시되지 않는다.) -->
+      <item-list v-bind:items="items"></item-list>
+    </div>
+
+    <script>
+      const ItemList = {
+        // 컴포넌트 내용
+        props: ['items'],
+        template: `
+          <div>
+            <ul>
+              <li v-for="item in items" v-bind:key="item.name">
+                {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{ item.price * item.quantity }}원
+              </li>
+            </ul>
+            <p>합계: {{ totalPrice }}원</p>
+          </div>`,
+        computed: {
+          totalPrice() {
+            return this.items.reduce((sum, item) => {
+              return sum + item.price * item.quantity;
+            }, 0);
+          }
+        }
+      };
+
+      const items = [
+        {
+          name: 'CPU',
+          price: 462984,
+          quantity: 1
+        },
+        {
+          name: '메인보드',
+          price: 112053,
+          quantity: 1
+        },
+        {
+          name: '메모리',
+          price: 112053,
+          quantity: 2
+        }
+      ];
+
+      // 뷰 인스턴스 #1
+      new Vue({
+        el: '#app',
+        data: {
+          items: items
+        },
+        // 지역 컴포넌트 등록
+        components: {
+          'item-list': ItemList
+        }
+      });
+      // 뷰 인스턴스 #2
+      new Vue({
+        el: '#app2',
+        data: {
+          items: items
+        }
+      });
+    </script>
+  </body>
+</html>

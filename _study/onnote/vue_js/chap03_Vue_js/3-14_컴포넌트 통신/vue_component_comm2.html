@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js sample</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <h2>Vue 컴포넌트 통신</h2>
+    <div id="app">
+      <ul>
+        <li v-for="item in items" v-bind:key="item.name">
+          <!-- v-bind 속성(props)을 통해 하위 컴포넌트로 데이터를 보낸다. -->
+          <!-- v-bind:[하위 props data 속성 이름]="[상위 data 속성 이름]" -->
+          <item-input v-bind:item="item"></item-input>
+        </li>
+      </ul>
+      <hr />
+      <item-list v-bind:items="items"></item-list>
+    </div>
+
+    <script>
+      // 컴포넌트 내용
+      const ItemInput = {
+        // 상위에서 전달되는 props 속성 이름 정의
+        props: ['item'],
+        template: `
+          <div>
+            {{ item.name }}의 가격: <input type="text" v-on:input="item.price = $event.target.value" v-bind:value="item.price" />
+          </div>`
+      };
+      // 컴포넌트 내용
+      const ItemList = {
+        // 상위에서 전달되는 props 속성 이름 정의
+        props: ['items'],
+        template: `
+          <div>
+            <ul>
+              <li v-for="item in items" v-bind:key="item.name">
+                {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{ item.price * item.quantity }}원
+              </li>
+            </ul>
+            <p>합계: {{ totalPrice }}원</p>
+          </div>`,
+        computed: {
+          totalPrice() {
+            return this.items.reduce((sum, item) => {
+              return sum + item.price * item.quantity;
+            }, 0);
+          }
+        }
+      };
+
+      const items = [
+        {
+          name: 'CPU',
+          price: 462984,
+          quantity: 1
+        },
+        {
+          name: '메인보드',
+          price: 112053,
+          quantity: 1
+        },
+        {
+          name: '메모리',
+          price: 112053,
+          quantity: 2
+        }
+      ];
+
+      new Vue({
+        el: '#app',
+        data: {
+          items: items
+        },
+        // 지역 컴포넌트 등록
+        components: {
+          'item-input': ItemInput,
+          'item-list': ItemList
+        }
+      });
+    </script>
+  </body>
+</html>
