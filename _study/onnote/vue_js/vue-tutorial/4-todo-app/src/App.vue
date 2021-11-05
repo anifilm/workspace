@@ -6,12 +6,12 @@
     </v-app-bar>
 
     <v-main>
-      <TodoInput />
-      <TodoList />
+      <TodoInput v-on:addTodo="addTodo" />
+      <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="removeTodo" />
     </v-main>
 
     <v-footer app>
-      <TodoFooter />
+      <TodoFooter v-on:clearDone="clearDone" />
     </v-footer>
   </v-app>
 </template>
@@ -29,6 +29,26 @@ export default {
     TodoInput,
     TodoList,
     TodoFooter
+  },
+  data() {
+    return {
+      todoItems: [
+        '아침먹기',
+        '점심먹기',
+        '저녁먹기'
+      ]
+    }
+  },
+  methods: {
+    clearDone() {
+      this.todoItems = [];
+    },
+    addTodo(todoItem) {
+      this.todoItems.push(todoItem);
+    },
+    removeTodo(todoItem, index) {
+      this.todoItems.splice(index, 1);
+    }
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row class="mt-5">
-      <v-col cols="7" offset="2">
+    <v-row class="mt-5" row wrap align-center>
+      <v-col cols="8" offset="2">
         <v-text-field
           label="할 일을 입력하세요."
           solo
@@ -11,7 +11,7 @@
         ></v-text-field>
       </v-col>
       <v-col cols="2">
-        <v-btn large class="primary mt-1" v-on:click="addTodo">추가</v-btn>
+        <v-btn right large class="primary" v-on:click="addTodo">추가</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -29,7 +29,9 @@ export default {
     addTodo() {
       if (this.newTodoItem.trim() !== '') {
         const value = this.newTodoItem && this.newTodoItem.trim();
-        console.log('addTodo:', value);
+        //console.log('addTodo:', value);
+        // 입력된 Todo 항목값을 인자 값으로 추가하여 이벤트 전달
+        this.$emit('addTodo', value);
       }
       this.clearInput();
     },
