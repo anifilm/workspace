@@ -8,6 +8,5 @@
     "python.linting.flake8Args": [
         "--max-line-length=120",
         "--ignore=E265,E302,E501"
-    ],
-    "git.ignoreLimitWarning": true
+    ]
 }
