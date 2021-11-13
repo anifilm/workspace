@@ -14,5 +14,6 @@ __new__/
 *.pdb
 *.class
 *.exe
-test.*
+*.zip
 
+test.*
