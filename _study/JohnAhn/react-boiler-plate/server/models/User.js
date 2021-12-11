@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const jwt = require('jsonwebtoken');
 const moment = require('moment');
-
-require('dotenv').config();
-const jwt = require(process.env.JWT_SECRET);
 
 const userSchema = mongoose.Schema({
   name: {
