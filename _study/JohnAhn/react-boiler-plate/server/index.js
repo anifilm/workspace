@@ -5,20 +5,15 @@ const cookieParser = require('cookie-parser');
 
 const { User } = require('./models/User');
 
-require('dotenv').config();
-const userId = process.env.USER_ID;
-const userPw = process.env.USER_PW;
+const config = require('./config/key');
 
 const mongoose = require('mongoose');
 mongoose
-  .connect(
-    `mongodb+srv://${userId}:${userPw}@cluster0.hpa4f.mongodb.net/react-boiler-plate?retryWrites=true&w=majority`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      //useCreateIndex: true,
-    },
-  )
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    //useCreateIndex: true,
+  })
   .then(() => {
     console.log('MongoDB connecting Success!!');
   })
