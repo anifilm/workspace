@@ -12,12 +12,14 @@
     "react-app-polyfill": "^2.0.0",
     "react-dom": "^16.14.0",
     "react-icons": "^4.3.1",
+    "react-image-gallery": "^1.2.7",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^3.4.4",
     "redux": "^4.1.2",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.4.1",
+    "socket.io-client": "^4.4.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
