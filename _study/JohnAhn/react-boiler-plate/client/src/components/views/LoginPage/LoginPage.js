@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
-import { loginUser } from '../../../_actions/user_actions';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { loginUser } from "../../../_actions/user_actions";
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
+import { useDispatch } from "react-redux";
 
 const LoginPage = (props) => {
   const dispatch = useDispatch();
@@ -58,4 +61,4 @@ const LoginPage = (props) => {
   );
 };
 
-export default LoginPage;
+export default withRouter(LoginPage);
