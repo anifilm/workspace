@@ -11,6 +11,7 @@ const Footer = () => {
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: '1rem',
+        background: '#eee',
       }}
     >
       <p>
