@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'antd';
+import { Menu, Icon, Badge } from 'antd';
 import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
@@ -32,6 +32,16 @@ const RightMenu = (props) => {
   } else {
     return (
       <Menu mode={props.mode}>
+        <Menu.Item key="cart" style={{ paddingBottom: 3 }}>
+          <Badge>
+            <a href="/user/cart" style={{ marginRight: -22, color: '#667777' }}>
+              <Icon
+                type="shopping-cart"
+                style={{ fontSize: 30, marginBottom: 3 }}
+              />
+            </a>
+          </Badge>
+        </Menu.Item>
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
         </Menu.Item>
