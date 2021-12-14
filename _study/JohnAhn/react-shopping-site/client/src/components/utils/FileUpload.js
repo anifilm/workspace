@@ -40,8 +40,8 @@ const FileUpload = (props) => {
         {({ getRootProps, getInputProps }) => (
           <div
             style={{
-              width: '300px',
-              height: '240px',
+              width: '240px',
+              height: '220px',
               border: '1px solid lightgray',
               display: 'flex',
               alignItems: 'center',
@@ -70,7 +70,7 @@ const FileUpload = (props) => {
         {images.map((image, index) => (
           <div key={index} onClick={() => deleteHandler(image)}>
             <img
-              style={{ minWidth: '300px', width: '300px', height: '240px' }}
+              style={{ minWidth: '240px', width: '240px', height: '220px' }}
               src={`http://localhost:5000/${image}`}
               alt={`productImg-${index}`}
             />
