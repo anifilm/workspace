@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const RightMenu = (props) => {
+  // 인증 정보를 리덕스 state에서 가져오므로 느리다.(TODO: 개선 필요)
   const user = useSelector((state) => state.user);
 
   const logoutHandler = () => {
@@ -18,7 +19,15 @@ const RightMenu = (props) => {
     });
   };
 
-  if (user.userData && !user.userData.isAuth) {
+  if (user.userData && user.userData.isAuth) {
+    return (
+      <Menu mode={props.mode}>
+        <Menu.Item key="logout">
+          <a onClick={logoutHandler}>Logout</a>
+        </Menu.Item>
+      </Menu>
+    );
+  } else {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="app">
@@ -26,14 +35,6 @@ const RightMenu = (props) => {
         </Menu.Item>
         <Menu.Item key="mail">
           <a href="/login">Signin</a>
-        </Menu.Item>
-      </Menu>
-    );
-  } else {
-    return (
-      <Menu mode={props.mode}>
-        <Menu.Item key="logout">
-          <a onClick={logoutHandler}>Logout</a>
         </Menu.Item>
       </Menu>
     );

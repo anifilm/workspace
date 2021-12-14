@@ -6,6 +6,7 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 const LeftMenu = (props) => {
+  // 인증 정보를 리덕스 state에서 가져오므로 느리다.(TODO: 개선 필요)
   const user = useSelector((state) => state.user);
 
   return (
@@ -25,12 +26,12 @@ const LeftMenu = (props) => {
         </MenuItemGroup>
       </SubMenu>
       */}
-      {(user.userData && !user.userData.isAuth) || (
+      {(user.userData && user.userData.isAuth) && (
         <Menu.Item key="history">
           <a href="/history">History</a>
         </Menu.Item>
       )}
-      {(user.userData && !user.userData.isAuth) || (
+      {(user.userData && user.userData.isAuth) && (
         <Menu.Item key="upload">
           <a href="/product/upload">Upload</a>
         </Menu.Item>
