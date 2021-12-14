@@ -16,8 +16,8 @@ const FileUpload = (props) => {
     Axios.post('/api/product/uploadImage', formData, config).then(
       (response) => {
         if (response.data.success) {
-          setImages([...images, response.data.image]);
-          props.refreshFunction([...images, response.data.image]);
+          setImages([...images, response.data.filePath]);
+          props.refreshFunction([...images, response.data.filePath]);
         } else {
           alert('Failed to save the Image in Server');
         }
@@ -68,7 +68,7 @@ const FileUpload = (props) => {
         }}
       >
         {images.map((image, index) => (
-          <div onClick={() => deleteHandler(image)}>
+          <div key={index} onClick={() => deleteHandler(image)}>
             <img
               style={{ minWidth: '300px', width: '300px', height: '240px' }}
               src={`http://localhost:5000/${image}`}
