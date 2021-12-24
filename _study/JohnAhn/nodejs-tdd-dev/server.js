@@ -14,11 +14,16 @@ mongoose
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      //useCreateIndex: true,
       //useFindAndModify: false,
     },
   )
-  .then(() => console.log('MongoDb Connected...'))
-  .catch((err) => console.log(err));
+  .then(() => {
+    console.log('MongoDB connecting Success!!');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.use(express.json());
 
