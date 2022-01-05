@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const session = require('express-session');
 const path = require('path');
 
 const app = express();
@@ -12,22 +11,24 @@ app.set('port', port);
 // 미들웨어
 app.use(morgan('dev'));
 app.use(express.json()); // bodyParser 대신 사용
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser('cookiepasswordhere'));
-app.use('/', express.static(path.join(__dirname, 'public')));
-app.use(session({
-  resave: false,
-  saveUninitialized: false,
-  secret: 'cookiepasswordhere',
-  cookie: {
-    httpOnly: true,
-    secure: false,
-  },
-  name: 'session-cookie',
-}));
 
 // 라우터
 app.get('/', (req, res) => {
+  req.cookies; // { mycookie: 'test' }
+  // 쿠키 설정
+  res.cookie('name', encodeURIComponent(name), {
+    expires: new Date(),
+    httpOnly: true,
+    path: '/',
+  });
+  // 쿠키 삭제
+  res.clearCookie('name', encodeURIComponent(name), {
+    httpOnly: true,
+    path: '/',
+  });
+
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 

@@ -1,7 +1,4 @@
 const express = require('express');
-const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
 const path = require('path');
 
 const app = express();
@@ -10,21 +7,17 @@ const port = process.env.PORT || '3000';
 app.set('port', port);
 
 // 미들웨어
-app.use(morgan('dev'));
-app.use(express.json()); // bodyParser 대신 사용
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('cookiepasswordhere'));
-app.use('/', express.static(path.join(__dirname, 'public')));
-app.use(session({
-  resave: false,
-  saveUninitialized: false,
-  secret: 'cookiepasswordhere',
-  cookie: {
-    httpOnly: true,
-    secure: false,
-  },
-  name: 'session-cookie',
-}));
+app.use((req, res, next) => {
+  console.log('모든 요청에 실행하고 싶다면...');
+  next();
+}, (req, res, next) => {
+  try {
+    console.log(error_test);
+  }
+  catch (err) {
+    next(err);
+  }
+});
 
 // 라우터
 app.get('/', (req, res) => {
