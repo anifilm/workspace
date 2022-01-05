@@ -2,3 +2,10 @@ a {
   color: blue;
   text-decoration: none;
 }
+#list div {
+  margin-top: 10px;
+}
+#list div span {
+  display: inline-block;
+  min-width: 130px;
+}
