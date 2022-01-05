@@ -1,0 +1,7 @@
+{
+  "watch": ["lecture"],
+  "ignore": ["db/*"],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
