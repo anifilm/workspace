@@ -10,11 +10,11 @@ app.set('port', port);
 
 // 미들웨어
 app.use(morgan('dev'));
-app.use(express.json()); // bodyParser 대신 사용
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('cookiepasswordhere'));
 //   (요청 경로)               (실제 경로)
 app.use('/', express.static(path.join(__dirname, 'public'))); // 미들웨어의 순서도 중요!
+app.use(express.json()); // bodyParser 대신 사용
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser('cookiesecret'));
 
 // 라우터
 app.get('/', (req, res) => {

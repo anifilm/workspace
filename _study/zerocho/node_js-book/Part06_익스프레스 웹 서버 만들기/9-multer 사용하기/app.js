@@ -26,6 +26,40 @@ app.use(session({
   name: 'session-cookie',
 }));
 
+// multer
+const multer = require('multer');
+const fs = require('fs');
+
+try {
+  fs.readdirSync(path.join(__dirname, 'public/upload'));
+}
+catch (err) {
+  console.error('upload 폴더가 없으므로 해당 폴더를 생성합니다.');
+  fs.mkdirSync(path.join(__dirname, 'public/upload'));
+}
+const upload = multer({
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, path.join(__dirname, 'public/upload/'));
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname);
+      done(null, path.basename(file.originalname, ext) + '_' + Date.now() + ext);
+    },
+  }),
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB
+  },
+});
+// 파일 전송 라우터
+app.get('/upload', (req, res) => {
+  res.sendFile(path.join(__dirname, 'multipart.html'));
+});
+app.post('/upload', upload.single('image'), (req, res) => {
+  console.log(req.file);
+  res.send('ok');
+});
+
 // 라우터
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
