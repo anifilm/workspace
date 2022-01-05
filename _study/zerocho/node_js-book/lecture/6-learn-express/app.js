@@ -29,7 +29,6 @@ app.use(session({
   name: 'session-cookie',
 }));
 
-// multer
 const multer = require('multer');
 const fs = require('fs');
 
