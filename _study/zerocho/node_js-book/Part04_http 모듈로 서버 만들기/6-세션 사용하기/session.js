@@ -10,6 +10,8 @@ const parseCookies = (cookie='') => {
   }, {});
 }
 
+const session = {}; // 세션 정보 저장용
+
 http
   .createServer(async (req, res) => {
     const cookies = parseCookies(req.headers.cookie); // { mycookie: 'test' }
@@ -17,21 +19,30 @@ http
     if (req.url.startsWith('/login')) { // 주소가 /login으로 시작하는 경우
       const { query } = url.parse(req.url);
       const { name } = qs.parse(query);
+
+      const uniqueInt = Date.now();
       const expires = new Date();
       expires.setMinutes(expires.getMinutes() + 10); // 쿠키 유효시간 10분으로 설정
+
+      // 사용자의 세션 정보를 서버에 저장
+      session[uniqueInt] = {
+        name,
+        expires,
+      };
+      // 사용자의 세션 정보를 클라이언트 쿠키를 통해 저장
       res.writeHead(302, {
         Location: '/',
-        'Set-Cookie': `name=${encodeURIComponent(name)}; Expires=${expires.toGMTString()}; HttpOnly; Path=/`,
+        'Set-Cookie': `session=${uniqueInt}; Expires=${expires.toGMTString()}; HttpOnly; Path=/`,
       });
       res.end();
     }
-    else if (cookies.name) { // name이라는 쿠키가 있는 경우
+    else if (cookies.session && session[cookies.session].expires > new Date()) { // 세션 쿠키가 존재하고 만료 기간이 지나지 않았다면
       res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
-      res.end(`${cookies.name}님 안녕하세요.`);
+      res.end(`${session[cookies.session].name}님 안녕하세요.`);
     }
     else {
       try {
-        const data = await fs.readFile('./cookie2.html');
+        const data = await fs.readFile('./session.html');
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         res.end(data);
       }
