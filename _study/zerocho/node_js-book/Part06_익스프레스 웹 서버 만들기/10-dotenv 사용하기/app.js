@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const path = require('path');
-
+// dotenv
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -29,7 +29,6 @@ app.use(session({
   name: 'session-cookie',
 }));
 
-// multer
 const multer = require('multer');
 const fs = require('fs');
 
