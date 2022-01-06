@@ -17,11 +17,11 @@ async function getUser() {
     users.map(function (user) {
       const row = document.createElement('tr');
       row.addEventListener('click', () => {
-        getComment(user.id);
+        getComment(user._id);
       });
       // 로우 셀 추가
       let td = document.createElement('td');
-      td.textContent = user.id;
+      td.textContent = user._id;
       row.appendChild(td);
       td = document.createElement('td');
       td.textContent = user.name;
@@ -51,10 +51,10 @@ async function getComment(id) {
       // 로우 셀 추가
       const row = document.createElement('tr');
       let td = document.createElement('td');
-      td.textContent = comment.id;
+      td.textContent = comment._id;
       row.appendChild(td);
       td = document.createElement('td');
-      td.textContent = comment.User.name;
+      td.textContent = comment.commenter.name;
       row.appendChild(td);
       td = document.createElement('td');
       td.textContent = comment.comment;
@@ -67,7 +67,7 @@ async function getComment(id) {
           return alert('내용을 반드시 입력하셔야 합니다');
         }
         try {
-          await axios.patch(`/comments/${comment.id}`, { comment: newComment });
+          await axios.patch(`/comments/${comment._id}`, { comment: newComment });
           getComment(id);
         } catch (err) {
           console.error(err);
@@ -77,7 +77,7 @@ async function getComment(id) {
       remove.textContent = '삭제';
       remove.addEventListener('click', async () => { // 삭제 클릭시
         try {
-          await axios.delete(`/comments/${comment.id}`);
+          await axios.delete(`/comments/${comment._id}`);
           getComment(id);
         }
         catch (err) {

@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const userId = process.env.USER_ID;
-const userPw = process.env.USER_PW;
+const userId = process.env.MONGO_DB_USER_ID;
+const userPw = process.env.MONGO_DB_USER_PW;
 
 const uri = `mongodb+srv://${userId}:${userPw}@cluster0.yhhud.mongodb.net/nodejs-book?retryWrites=true&w=majority`;
 
