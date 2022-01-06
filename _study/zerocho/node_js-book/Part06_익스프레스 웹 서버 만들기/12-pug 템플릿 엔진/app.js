@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const path = require('path');
-const nunjucks = require('nunjucks');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -16,12 +15,9 @@ const app = express();
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-// 템플릿 엔진
-app.set('view engine', 'html');
-nunjucks.configure('views', {
-  express: app,
-  watch: true,
-});
+// 템플릿 엔진, pug
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 // 미들웨어
 app.use(morgan('dev'));

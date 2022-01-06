@@ -16,7 +16,7 @@ const app = express();
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-// 템플릿 엔진
+// 템플릿 엔진, nunjucks
 app.set('view engine', 'html');
 nunjucks.configure('views', {
   express: app,
