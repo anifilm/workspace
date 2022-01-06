@@ -1,5 +1,3 @@
-const { default: axios } = require("axios");
-
 // 사용자 이름을 눌렀을 때 댓글 로딩
 document.querySelectorAll('#user-list tr').forEach((el) => {
   el.addEventListener('click', function () {

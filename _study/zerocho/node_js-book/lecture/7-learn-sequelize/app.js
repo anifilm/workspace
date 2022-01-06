@@ -18,7 +18,7 @@ app.set('port', port);
 
 // 템플릿 엔진
 app.set('view engine', 'html');
-nunjucks.configure('views', {
+nunjucks.configure(path.join(__dirname, 'views'), {
   express: app,
   watch: true,
 });
@@ -45,7 +45,7 @@ app.use('/comments', commentsRouter);
 
 // 404 Not Found
 app.use((req, res, next) => {
-  const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
+  const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
   error.status = 404;
   next(error);
 });

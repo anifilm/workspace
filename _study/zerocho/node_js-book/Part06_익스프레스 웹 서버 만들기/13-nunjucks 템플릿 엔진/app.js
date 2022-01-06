@@ -18,7 +18,7 @@ app.set('port', port);
 
 // 템플릿 엔진, nunjucks
 app.set('view engine', 'html');
-nunjucks.configure('views', {
+nunjucks.configure(path.join(__dirname, 'views'), {
   express: app,
   watch: true,
 });
