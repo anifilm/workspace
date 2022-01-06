@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "lcy0200",
+    "password": null,
     "database": "nodejs_book",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -9,14 +9,14 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "nodejs_book_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "nodejs_book",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
