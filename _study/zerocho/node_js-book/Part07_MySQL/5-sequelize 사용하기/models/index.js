@@ -5,7 +5,7 @@ dotenv.config();
 
 const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config')[env];
-config.password = process.env.DB_PASSWORD;
+config.password = process.env.MYSQL_USER_PW;
 
 const db = {};
 
