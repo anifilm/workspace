@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ title }}</h1>
-<p>join</p>
+<div class="timeline">
+  <form action="/auth/join" mathod="POST" id="join-form">
+    <div class="input-group">
+      <label for="join-email">이메일</label>
+      <input type="email" name="email" id="join-email"></div>
+    <div class="input-group">
+      <label for="join-nick">닉네임</label>
+      <input type="text" name="nick" id="join-nick"></div>
+    <div class="input-group">
+      <label for="join-password">비밀번호</label>
+      <input type="password" name="password" id="join-password">
+    </div>
+    <button type="submit" class="btn" id="join-btn">회원가입</button>
+  </form>
+</div>
 {% endblock %}
 
 {% block script %}

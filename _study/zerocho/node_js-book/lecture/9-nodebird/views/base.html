@@ -11,6 +11,42 @@
   </head>
   <body>
     <div class="container">
+      <div class="profile-wrap">
+        <div class="profile">
+          {% if user and user.id %}
+          <div class="user-name">{{ '안녕하세요! ' + user.nick + '님' }}</div>
+          <div class="half">
+            <div>팔로잉</div>
+            <div class="count following-count">{{ followingCount }}</div>
+          </div>
+          <div class="half">
+            <div>팔로워</div>
+            <div class="count follower-count">{{ followerCount }}</div>
+          </div>
+          <input type="hidden" id="my-id" value="{{ user.id }}">
+          <a href="/profile" class="btn" id="my-profile">내 프로필</a>
+          <a href="/auth/logout" class="btn" id="logout">로그아웃</a>
+          {% else %}
+          <form action="/auth/login" method="POST" id="login-form">
+            <div class="input-group">
+              <label for="email">이메일</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+            <div class="input-group">
+              <label for="password">비밀번호</label>
+              <input type="password" name="password" id="password" required>
+            </div>
+            <a href="/join" class="btn" id="join">회원가입</a>
+            <button type="submit" class="btn" id="login">로그인</button>
+            <a href="/auth/kakao" class="btn" id="kakao">카카오톡</a>
+          </form>
+          {% endif %}
+        </div>
+        <footer>
+          Made by&nbsp;
+          <a href="https://www.zerocho.com" target="_blank">ZeroCho</a>
+        </footer>
+      </div>
       {% block content %}
       {% endblock %}
     </div>
