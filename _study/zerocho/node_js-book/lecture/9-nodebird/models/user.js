@@ -4,7 +4,7 @@ module.exports = class User extends Sequelize.Model {
   static init(sequelize) {
     return super.init({
       email: {
-        typy: Sequelize.STRING(40),
+        type: Sequelize.STRING(40),
         allowNull: true,
         unique: true,
       },
@@ -37,7 +37,7 @@ module.exports = class User extends Sequelize.Model {
     });
   }
 
-  static associations(db) {
+  static associate(db) {
     db.User.hasMany(db.Post);
     db.User.belongsToMany(db.User, {
       foreignKey: 'followingId',
@@ -50,4 +50,4 @@ module.exports = class User extends Sequelize.Model {
       through: 'Follow',
     });
   }
-}
+};
