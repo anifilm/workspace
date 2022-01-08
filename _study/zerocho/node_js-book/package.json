@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "nodemon ./lecture/8-learn-mongoose/app.js"
+    "start": "nodemon ./lecture/9-nodebird/app.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
