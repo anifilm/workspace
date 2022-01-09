@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AppRouter from 'components/Router';
-import { authService } from 'fbase';
+import { authService } from '../config/firebase-config';
 
 const App = () => {
   const [init, setInit] = useState(false);
@@ -17,10 +17,8 @@ const App = () => {
   }, []);
   return (
     <>
-      {init? <AppRouter isLoggedIn={isLoggedIn} /> : 'Initializing...'}
-      <footer>
-        &copy; {new Date().getFullYear()} Twitter. (clone app)
-      </footer>
+      {init ? <AppRouter isLoggedIn={isLoggedIn} /> : 'Initializing...'}
+      <footer>&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
     </>
   );
 };
