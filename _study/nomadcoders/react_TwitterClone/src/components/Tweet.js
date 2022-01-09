@@ -14,16 +14,16 @@ const Tweet = ({ tweetObj, isOwner }) => {
   const toggleEditing = () => {
     setEditing((prev) => !prev);
   };
+  const onChange = (event) => {
+    const { value } = event.target;
+    setEditTweet(value);
+  };
   const onSubmit = async (event) => {
     event.preventDefault();
     await dbService.doc(`tweets/${tweetObj.id}`).update({
       tweet: editTweet,
     });
     setEditing(false);
-  };
-  const onChange = (event) => {
-    const { value } = event.target;
-    setEditTweet(value);
   };
 
   return (

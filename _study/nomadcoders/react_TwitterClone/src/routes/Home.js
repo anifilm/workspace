@@ -6,17 +6,6 @@ const Home = ({ userObj }) => {
   const [tweet, setTweet] = useState('');
   const [tweets, setTweets] = useState([]);
 
-  /*const getTweets = async () => {
-    const dbTweets = await dbService.collection('tweets').get();
-    dbTweets.forEach((document) => {
-      const tweetObject = {
-        ...document.data(),
-        id: document.id,
-      };
-      setTweets((prev) => [tweetObject, ...prev]);
-    });
-  };*/
-
   useEffect(() => {
     dbService.collection('tweets').onSnapshot((snapshot) => {
       const tweetArray = snapshot.docs.map((doc) => ({
@@ -27,6 +16,10 @@ const Home = ({ userObj }) => {
     });
   }, []);
 
+  const onChange = (event) => {
+    const { value } = event.target;
+    setTweet(value);
+  };
   const onSubmit = async (event) => {
     event.preventDefault();
     await dbService.collection('tweets').add({
@@ -35,10 +28,6 @@ const Home = ({ userObj }) => {
       createdAt: Date.now(),
     });
     setTweet('');
-  };
-  const onChange = (event) => {
-    const { value } = event.target;
-    setTweet(value);
   };
 
   return (
