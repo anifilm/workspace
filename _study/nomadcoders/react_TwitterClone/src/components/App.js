@@ -40,7 +40,7 @@ const App = () => {
             isLoggedIn={Boolean(userObj)}
             userObj={userObj}
           />
-          <footer class="footer">&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
+          <footer className="footer">&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
         </div>
       ) : (
         'Initializing...'

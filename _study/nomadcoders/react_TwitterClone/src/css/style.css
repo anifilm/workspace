@@ -48,7 +48,7 @@ form {
 
 .container {
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -191,7 +191,7 @@ form {
   margin-top: 20px;
   background-color: white;
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -202,21 +202,22 @@ form {
 
 .tweet h4 {
   font-size: 14px;
+  line-height: 1.4;
 }
 .tweet img {
   right: -10px;
   top: 20px;
   /*position: absolute;*/
+  /*width: 380px;
+  height: 380px;*/
   border-radius: 3px;
-  width: 280px;
-  /*height: 280px;*/
   margin-top: 10px;
 }
 
 .tweet__actions {
   position: absolute;
-  right: 10px;
-  top: 15px;
+  top: 20px;
+  right: 20px;
   color: gray;
   opacity: 30%;
 }
@@ -234,6 +235,16 @@ form {
 }
 .tweet__actions span:last-child:hover {
   color: #DE3163;
+}
+
+.tweet__creatorName {
+  margin-bottom: 12px;
+}
+.tweet__createdAt {
+  margin-left: 10px;
+  font-size: 12px;
+  color: gray;
+  text-align: right;
 }
 
 /* Auth */

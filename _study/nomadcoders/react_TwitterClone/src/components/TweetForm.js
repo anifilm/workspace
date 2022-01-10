@@ -40,8 +40,10 @@ const TweetFactory = ({ userObj }) => {
       const response = await uploadFileRef.putString(imageFile, 'data_url');
       uploadFileUrl = await response.ref.getDownloadURL();
     }
+
     const newTweet = {
       creatorId: userObj.uid,
+      creatorName: userObj.displayName,
       tweet: tweet,
       imageUrl: uploadFileUrl,
       createdAt: Date.now(),

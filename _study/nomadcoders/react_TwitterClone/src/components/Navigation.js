@@ -7,7 +7,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 const Navigation = ({ userObj }) => {
   return (
     <nav>
-      <ul style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}>
+      <ul style={{ display: 'flex', justifyContent: 'center', marginTop: 34 }}>
         <li>
           <Link
             to="/"

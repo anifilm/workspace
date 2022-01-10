@@ -6,15 +6,6 @@ const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
   const [editing, setEditing] = useState(false);
   const [editNickname, setEditNickname] = useState(userObj.displayName ?? '');
-  //const [tweet, setTweet] = useState('');
-
-  /*const getMyTweets = async () => {
-    const tweets = await dbService
-      .collection('tweets')
-      .where('creatorId', '==', userObj.uid)
-      .get();
-    console.log(tweets.docs.map((doc) => doc.data()));
-  };*/
 
   const toggleEditing = () => {
     setEditing((prev) => !prev);
@@ -37,11 +28,6 @@ const Profile = ({ userObj, refreshUser }) => {
     authService.signOut();
     history.push('/');
   };
-
-  /*useEffect(() => {
-    getMyTweets();
-    // eslint-disable-next-line
-  }, []);*/
 
   return (
     <div className="profileContainer">
