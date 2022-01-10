@@ -21,6 +21,7 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
               display: 'flex',
               justifyContent: 'center',
             }}
+            // TODO: 이부분에서 warning 발생!
           >
             <Route exact path="/">
               <Home userObj={userObj} />
