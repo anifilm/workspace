@@ -49,7 +49,6 @@ const Tweet = ({ tweetObj, isOwner }) => {
           {tweetObj.imageUrl && <img src={tweetObj.imageUrl} width="300px" alt="uploadedImage" />}
           {isOwner && (
             <>
-              <br />
               <button onClick={toggleEditing}>edit</button>
               <button onClick={onDeleteClick}>delete</button>
             </>
