@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { dbService } from '../config/firebase-config';
+import { v4 as uuidv4 } from 'uuid';
+import { dbService, storageService } from '../config/firebase-config';
+
 import Tweet from '../components/Tweet';
 
 const Home = ({ userObj }) => {
   const [tweet, setTweet] = useState('');
   const [tweets, setTweets] = useState([]);
+  const [imageFile, setImageFile] = useState('');
+  const imageInputRef = React.useRef();
 
   useEffect(() => {
     dbService.collection('tweets').onSnapshot((snapshot) => {
@@ -20,14 +24,36 @@ const Home = ({ userObj }) => {
     const { value } = event.target;
     setTweet(value);
   };
+  const onFileChange = (event) => {
+    const { files } = event.target;
+    const imageFile = files[0];
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setImageFile(event.target.result);
+    }
+    reader.readAsDataURL(imageFile);
+  }
+  const onClearImageFile = () => {
+    imageInputRef.current.value = '';
+    setImageFile('');
+  }
   const onSubmit = async (event) => {
     event.preventDefault();
-    await dbService.collection('tweets').add({
+    let uploadFileUrl = '';
+    if (imageFile) {
+      const uploadFileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
+      const response = await uploadFileRef.putString(imageFile, 'data_url');
+      uploadFileUrl = await response.ref.getDownloadURL();
+    }
+    const newTweet = {
       creatorId: userObj.uid,
       tweet: tweet,
+      imageUrl: uploadFileUrl,
       createdAt: Date.now(),
-    });
+    }
+    await dbService.collection('tweets').add(newTweet);
     setTweet('');
+    onClearImageFile();
   };
 
   return (
@@ -41,6 +67,16 @@ const Home = ({ userObj }) => {
           maxLength={120}
         />
         <input type="submit" value="Tweet" />
+        <br />
+        <input type="file" accept="image/*" onChange={onFileChange} ref={imageInputRef} />
+        <br />
+        {imageFile &&
+          <div>
+            <button onClick={onClearImageFile}>Clear Image File</button>
+            <br />
+            <img src={imageFile} width="300px" alt="attachedImage" />
+          </div>
+        }
       </form>
       <div>
         {tweets.map((tweet) => (
