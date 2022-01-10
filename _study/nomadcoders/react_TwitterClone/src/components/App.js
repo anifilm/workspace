@@ -34,15 +34,17 @@ const App = () => {
   return (
     <>
       {init ? (
-        <AppRouter
-          refreshUser={refreshUser}
-          isLoggedIn={Boolean(userObj)}
-          userObj={userObj}
-        />
+        <div>
+          <AppRouter
+            refreshUser={refreshUser}
+            isLoggedIn={Boolean(userObj)}
+            userObj={userObj}
+          />
+          <footer class="footer">&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
+        </div>
       ) : (
         'Initializing...'
       )}
-      <footer class="footer">&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
     </>
   );
 };

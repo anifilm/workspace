@@ -44,7 +44,7 @@ const Profile = ({ userObj, refreshUser }) => {
   }, []);*/
 
   return (
-    <div className="container">
+    <div className="profileContainer">
       {editing ? (
         <>
           <form onSubmit={onSubmit} className="profileForm">

@@ -82,6 +82,14 @@ form {
 
 /* Profile Page */
 
+.profileContainer {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+}
+
 .profileForm {
   /*border-bottom: 1px solid rgba(255, 255, 255, 0.9);*/
   padding-bottom: 20px;
