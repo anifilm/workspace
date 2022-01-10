@@ -5,7 +5,7 @@ import { authService, dbService } from '../config/firebase-config';
 const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
   const [editing, setEditing] = useState(false);
-  const [editNickname, setEditNickname] = useState(userObj.displayName);
+  const [editNickname, setEditNickname] = useState(userObj.displayName ?? '');
   //const [tweet, setTweet] = useState('');
 
   /*const getMyTweets = async () => {
