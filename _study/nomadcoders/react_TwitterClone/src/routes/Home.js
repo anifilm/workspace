@@ -18,9 +18,9 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       <TweetForm userObj={userObj} />
-      <>
+      <div>
         {tweets.map((tweet) => (
           <Tweet
             key={tweet.id}
@@ -28,8 +28,8 @@ const Home = ({ userObj }) => {
             isOwner={tweet.creatorId === userObj.uid}
           />
         ))}
-      </>
-    </>
+      </div>
+    </div>
   );
 };
 

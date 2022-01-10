@@ -44,27 +44,35 @@ const Profile = ({ userObj, refreshUser }) => {
   }, []);*/
 
   return (
-    <>
+    <div className="container">
       {editing ? (
         <>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="profileForm">
             <input
               type="text"
               value={editNickname}
               onChange={onChange}
               placeholder="Your Nickname"
+              className="formInput"
             />
-            <input type="submit" value="Update Nickname" />
+            <input
+              type="submit"
+              value="Update Nickname"
+              className="formBtn"
+              style={{ marginTop: 10 }}
+            />
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
+          <span onClick={toggleEditing} className="formBtn cancelBtn">Cancel</span>
         </>
       ) : (
         <>
-          <button onClick={toggleEditing}>Edit Profile</button>
-          <button onClick={onLogOutClick}>Log Out</button>
+          <span onClick={toggleEditing} className="formBtn">Edit Profile</span>
+          <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+            Log Out
+          </span>
         </>
       )}
-    </>
+    </div>
   );
 };
 

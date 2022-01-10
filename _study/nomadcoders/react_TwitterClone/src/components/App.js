@@ -42,8 +42,7 @@ const App = () => {
       ) : (
         'Initializing...'
       )}
-      <br />
-      <footer>&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
+      <footer class="footer">&copy; {new Date().getFullYear()} Twitter. (clone app)</footer>
     </>
   );
 };
