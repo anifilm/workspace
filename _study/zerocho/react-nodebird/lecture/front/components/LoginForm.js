@@ -5,11 +5,11 @@ import styled from 'styled-components';
 
 import useInput from '../hooks/useInput';
 
-const ButtonWrapper = styled.div`
-  margin-top: 10px;
-`;
 const FormWrapper = styled(Form)`
   padding: 10px;
+`;
+const ButtonWrapper = styled.div`
+  margin-top: 10px;
 `;
 
 const LoginForm = () => {
@@ -28,7 +28,7 @@ const LoginForm = () => {
       </div>
       <div>
         <label htmlFor="user-password">비밀번호</label>
-        <Input name="user-password" value={password} onChagne={onChangePassword} type="password" required />
+        <Input name="user-password" value={password} onChange={onChangePassword} type="password" required />
       </div>
       <ButtonWrapper>
         <Button type="primary" htmlType="submit" loading={false}>로그인</Button>
