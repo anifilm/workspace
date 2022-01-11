@@ -6,7 +6,7 @@ const dummy = {
   Posts: [],
   Followings: [],
   Followers: [],
-  isLoggedIn: false,
+  //isLoggedIn: false,
 };
 
 const UserProfile = () => {
