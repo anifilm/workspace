@@ -8,7 +8,7 @@ import useInput from '../hooks/useInput';
 const Signup = () => {
   return (
     <div>
-      Signup
+      회원가입 페이지
     </div>
   );
 };
