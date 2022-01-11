@@ -2,7 +2,6 @@ import React, { useState, useCallback  } from 'react';
 import Head from 'next/head';
 import { Form, Input, Checkbox, Button } from 'antd';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import AppLayout from '../components/AppLayout';
 import useInput from '../hooks/useInput';
@@ -13,14 +12,6 @@ const ErrorMessage = styled.div`
 const ButtonWrapper = styled.div`
   margin-top: 10px;
 `;
-
-const TextInput = ({ value }) => {
-  return <div>{value}</div>;
-};
-
-TextInput.propTypes = {
-  value: PropTypes.string,
-};
 
 const Signup = () => {
   const [id, onChangeId] = useInput('');
@@ -57,7 +48,6 @@ const Signup = () => {
         <title>회원 가입 | NodeBird</title>
       </Head>
       <Form onFinish={onSubmit} style={{ padding: 10 }}>
-        <TextInput value="123123" />
         <div>
           <label htmlFor="user-id">아이디</label>
           <Input
