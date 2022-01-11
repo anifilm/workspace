@@ -6,8 +6,9 @@ import styled from 'styled-components';
 import AppLayout from '../components/AppLayout';
 import useInput from '../hooks/useInput';
 
-const ErrorMessage = styled.div`
+const ErrorMessage = styled.span`
   color: red;
+  margin-left: 5px;
 `;
 const ButtonWrapper = styled.div`
   margin-top: 10px;
@@ -78,6 +79,7 @@ const Signup = () => {
         </div>
         <div>
           <label htmlFor="user-password-check">비밀번호 확인</label>
+          {passwordError && <ErrorMessage>(비밀번호가 일치하지 않습니다.)</ErrorMessage>}
           <Input
             type="password"
             name="user-password-check"
@@ -85,11 +87,10 @@ const Signup = () => {
             onChange={onChangePasswordCheck}
             required
           />
-          {passwordError && <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>}
         </div>
         <div>
           <Checkbox name="user-term" checked={term} onChange={onChangeTerm}>회원가입 약관에 동의합니다.</Checkbox>
-          {termError && <ErrorMessage>약관에 동의하셔야 합니다.</ErrorMessage>}
+          {termError && <ErrorMessage>(약관에 동의하셔야 합니다.)</ErrorMessage>}
         </div>
         <ButtonWrapper>
           <Button type="primary" htmlType="submit">회원가입</Button>
