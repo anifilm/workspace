@@ -7,9 +7,12 @@ import useInput from '../hooks/useInput';
 
 const Signup = () => {
   return (
-    <div>
-      회원가입 페이지
-    </div>
+    <AppLayout>
+      <Head>
+        <title>회원 가입 | NodeBird</title>
+      </Head>
+      <div>회원가입 페이지</div>
+    </AppLayout>
   );
 };
 

@@ -3,17 +3,6 @@ import Link from 'next/link';
 import { Menu, Input, Row, Col } from 'antd';
 import PropTypes from 'prop-types';
 
-import LoginForm from './LoginForm';
-import UserProfile from './UserProfile';
-
-const dummy = {
-  nickname: '제로초',
-  Post: [],
-  Followings: [],
-  Followers: [],
-  isLoggedIn: false,
-};
-
 const AppLayout = ({ children }) => {
   return (
     <div>
@@ -33,7 +22,7 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={8}>
         <Col xs={24} md={6}>
-          {dummy.isLoggedIn ? <UserProfile /> : <LoginForm />}
+          왼쪽 메뉴
         </Col>
         <Col xs={24} md={12}>
           {children}
