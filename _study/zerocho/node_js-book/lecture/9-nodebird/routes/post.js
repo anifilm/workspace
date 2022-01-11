@@ -10,8 +10,7 @@ const router = express.Router();
 
 try {
   fs.readdirSync(path.join(__dirname, '../public/upload'));
-}
-catch (err) {
+} catch (err) {
   console.error('upload 폴더가 없으므로 해당 폴더를 생성합니다.');
   fs.mkdirSync(path.join(__dirname, '../public/upload'));
 }
@@ -22,7 +21,10 @@ const upload = multer({
     },
     filename(req, file, done) {
       const ext = path.extname(file.originalname);
-      done(null, path.basename(file.originalname, ext) + '_' + Date.now() + ext);
+      done(
+        null,
+        path.basename(file.originalname, ext) + '_' + Date.now() + ext,
+      );
     },
   }),
   limits: {
@@ -47,19 +49,18 @@ router.post('/', isLoggedIn, upload2.none(), async (req, res, next) => {
     const hashtags = req.body.content.match(/#[^\s#]*/g);
     if (hashtags) {
       const result = await Promise.all(
-        hashtags.map(tag => {
+        hashtags.map((tag) => {
           return Hashtag.findOrCreate({
             where: { title: tag.slice(1).toLowerCase() },
-          })
+          });
         }),
       );
-      await post.addHashtags(result.map(r => r[0]));
+      await post.addHashtags(result.map((r) => r[0]));
     }
     res.redirect('/');
-  }
-  catch (error) {
-    console.error(error);
-    next(error);
+  } catch (err) {
+    console.error(err);
+    next(err);
   }
 });
 

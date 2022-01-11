@@ -14,6 +14,7 @@ const passportConfig = require('./passport');
 const pagesRouter = require('./routes/pages');
 const authRouter = require('./routes/auth');
 const postRouter = require('./routes/post');
+const userRouter = require('./routes/user');
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.use(passport.session());
 app.use('/', pagesRouter);
 app.use('/auth', authRouter);
 app.use('/post', postRouter);
+app.use('/user', userRouter);
 
 // 404 Not Found
 app.use((req, res, next) => {

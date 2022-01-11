@@ -23,7 +23,11 @@
             <div class="count follower-count">{{ followerCount }}</div>
           </div>
           <input type="hidden" id="my-id" value="{{ user.id }}">
-          <a href="/profile" class="btn" id="my-profile">내 프로필</a>
+            {% if url == '/profile' %}
+            <a href="/" class="btn" id="my-profile">트윗 목록</a>
+            {% else %}
+            <a href="/profile" class="btn" id="my-profile">내 프로필</a>
+            {% endif %}
           <a href="/auth/logout" class="btn" id="logout">로그아웃</a>
           {% else %}
           <form action="/auth/login" method="POST" id="login-form">

@@ -24,9 +24,9 @@ module.exports = () => {
         });
         done(null, newUser);
       }
-    } catch (error) {
-      console.error(error);
-      done(error);
+    } catch (err) {
+      console.error(err);
+      done(err);
     }
   }));
 };
