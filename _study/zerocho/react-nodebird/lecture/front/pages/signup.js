@@ -10,6 +10,9 @@ const ErrorMessage = styled.span`
   color: red;
   margin-left: 5px;
 `;
+const DivWrapper = styled.div`
+  margin-bottom: 10px;
+`;
 const ButtonWrapper = styled.div`
   margin-top: 10px;
 `;
@@ -49,7 +52,7 @@ const Signup = () => {
         <title>회원 가입 | NodeBird</title>
       </Head>
       <Form onFinish={onSubmit} style={{ padding: 10 }}>
-        <div>
+        <DivWrapper>
           <label htmlFor="user-id">아이디</label>
           <Input
             name="user-id"
@@ -57,8 +60,8 @@ const Signup = () => {
             onChange={onChangeId}
             required
           />
-        </div>
-        <div>
+        </DivWrapper>
+        <DivWrapper>
           <label htmlFor="user-nick">닉네임</label>
           <Input
             name="user-nick"
@@ -66,8 +69,8 @@ const Signup = () => {
             onChange={onChangeNick}
             required
           />
-        </div>
-        <div>
+        </DivWrapper>
+        <DivWrapper>
           <label htmlFor="user-password">비밀번호</label>
           <Input
             type="password"
@@ -76,8 +79,8 @@ const Signup = () => {
             onChange={onChangePassword}
             required
           />
-        </div>
-        <div>
+        </DivWrapper>
+        <DivWrapper>
           <label htmlFor="user-password-check">비밀번호 확인</label>
           {passwordError && <ErrorMessage>(비밀번호가 일치하지 않습니다.)</ErrorMessage>}
           <Input
@@ -87,11 +90,11 @@ const Signup = () => {
             onChange={onChangePasswordCheck}
             required
           />
-        </div>
-        <div>
+        </DivWrapper>
+        <DivWrapper>
           <Checkbox name="user-term" checked={term} onChange={onChangeTerm}>회원가입 약관에 동의합니다.</Checkbox>
           {termError && <ErrorMessage>(약관에 동의하셔야 합니다.)</ErrorMessage>}
-        </div>
+        </DivWrapper>
         <ButtonWrapper>
           <Button type="primary" htmlType="submit">회원가입</Button>
         </ButtonWrapper>
