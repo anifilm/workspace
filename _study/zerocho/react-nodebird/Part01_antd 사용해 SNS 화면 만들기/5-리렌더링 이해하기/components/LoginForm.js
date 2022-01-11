@@ -11,8 +11,8 @@ const FormWrapper = styled(Form)`
 const DivWrapper = styled.div`
   margin-bottom: 10px;
 `;
-const ButtonWrapper = styled.div`
-  margin-top: 10px;
+const ButtonWrapper = styled(Button)`
+  margin-left: 10px;
 `;
 
 const LoginForm = () => {
@@ -33,10 +33,10 @@ const LoginForm = () => {
         <label htmlFor="user-password">비밀번호</label>
         <Input name="user-password" value={password} onChange={onChangePassword} type="password" required />
       </DivWrapper>
-      <ButtonWrapper>
+      <div>
         <Button type="primary" htmlType="submit" loading={false}>로그인</Button>
-        <Link href="/signup"><a><Button>회원가입</Button></a></Link>
-      </ButtonWrapper>
+        <Link href="/signup"><a><ButtonWrapper style={{ marginLeft: '10px' }}>회원가입</ButtonWrapper></a></Link>
+      </div>
     </FormWrapper>
   );
 };

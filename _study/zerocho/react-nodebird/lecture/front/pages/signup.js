@@ -13,9 +13,6 @@ const ErrorMessage = styled.span`
 const DivWrapper = styled.div`
   margin-bottom: 10px;
 `;
-const ButtonWrapper = styled.div`
-  margin-top: 10px;
-`;
 
 const Signup = () => {
   const [id, onChangeId] = useInput('');
@@ -95,9 +92,9 @@ const Signup = () => {
           <Checkbox name="user-term" checked={term} onChange={onChangeTerm}>회원가입 약관에 동의합니다.</Checkbox>
           {termError && <ErrorMessage>(약관에 동의하셔야 합니다.)</ErrorMessage>}
         </DivWrapper>
-        <ButtonWrapper>
+        <div>
           <Button type="primary" htmlType="submit">회원가입</Button>
-        </ButtonWrapper>
+        </div>
       </Form>
     </AppLayout>
   );
