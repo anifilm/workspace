@@ -261,7 +261,7 @@ form {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
 }
 
 .authBtn {
@@ -271,7 +271,7 @@ form {
   padding: 10px 0px;
   font-size: 12px;
   text-align: center;
-  width: 150px;
+  width: 200px;
   background: white;
   cursor: pointer;
 }
@@ -279,7 +279,7 @@ form {
 /* AuthForm */
 
 .authInput {
-  max-width: 320px;
+  max-width: 420px;
   width: 100%;
   padding: 10px;
   border-radius: 30px;
