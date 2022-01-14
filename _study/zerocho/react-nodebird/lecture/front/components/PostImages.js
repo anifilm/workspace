@@ -15,6 +15,7 @@ const PostImages = ({ images }) => {
     setShowImagesZoom(false);
   }, []);
 
+  // TODO: 케루셀 이미지를 바로 볼수 있도록 하는 것을 고려해 볼 것
   if (images.length === 1) {
     return (
       <>
