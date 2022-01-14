@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import { Card, Button, Avatar, Popover, List, Comment } from 'antd';
@@ -11,7 +10,6 @@ import {
   MessageOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import styled from 'styled-components';
 
 import PostImages from './PostImages';
 import CommentForm from './CommentForm';
