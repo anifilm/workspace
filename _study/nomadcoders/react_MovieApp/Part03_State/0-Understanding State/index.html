@@ -13,19 +13,24 @@
 
     <script type="text/babel">
       const root = document.querySelector('#root');
-      const App = () => {
-        const [counter, setCounter] = React.useState(0);
-        const onClickHandler = () => {
-          setCounter(counter + 1);
-        };
+      let counter = 0;
+      const countUp = () => {
+        counter += 1;
+        reRender();
+      }
+      const Container = () => {
         return (
           <div>
             <h3>Total clicks: {counter}</h3>
-            <button onClick={onClickHandler}>Click me</button>
+            <button onClick={countUp}>Click me</button>
           </div>
           )
         };
-      ReactDOM.render(<App />, root);
+      render();
+
+      function render() {
+        ReactDOM.render(<Container />, root);
+      }
     </script>
   </body>
 </html>
