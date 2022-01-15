@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>State Practice</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const root = document.querySelector('#root');
+      const App = () => {
+        const [amount, setAmount] = React.useState(0);
+        const [flipped, setFlipped] = React.useState(false);
+
+        const onChangeHandler = (event) => {
+          setAmount(event.target.value);
+        }
+        const onClickHandleFocus = (event) => {
+          event.target.select()
+        };
+        const resetHandler = () => {
+          setAmount(0)
+        };
+        const onFlipHandler = () => {
+          setFlipped((prev) => !prev);
+          if (flipped) { // minutes
+            setAmount(amount * 60)
+          } else { // hours
+            setAmount(amount / 60)
+          }
+        };
+
+        return (
+          <div>
+            <h1 className="title">Super Converter</h1>
+            <div>
+              <label htmlFor="minutes">Minutes </label>
+              <input
+                type="number"
+                id="minutes"
+                value={flipped ? Math.round(amount * 60) : amount}
+                onChange={onChangeHandler}
+                onClick={onClickHandleFocus}
+                placeholder="Minutes"
+                disabled={flipped}
+              />
+            </div>
+            <div>
+              <label htmlFor="hours">Hours </label>
+              <input
+                type="number"
+                id="hours"
+                value={flipped ? amount : Math.round(amount / 60)}
+                onChange={onChangeHandler}
+                onClick={onClickHandleFocus}
+                placeholder="Hours"
+                disabled={!flipped}
+              />
+            </div>
+            <button onClick={resetHandler}>Reset</button>
+            <button onClick={onFlipHandler}>Flipped</button>
+          </div>
+        );
+      };
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

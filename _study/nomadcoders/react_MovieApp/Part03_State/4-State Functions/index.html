@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Understanding State</title>
+    <title>State Functions</title>
 
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -13,24 +13,20 @@
 
     <script type="text/babel">
       const root = document.querySelector('#root');
-      let counter = 0;
-      const countUp = () => {
-        counter += 1;
-        reRender();
-      }
-      const Container = () => {
+      const App = () => {
+        const [counter, setCounter] = React.useState(0);
+        const onClickHandler = () => {
+          //setCounter(counter + 1);
+          setCounter((current) => current + 1);
+        };
         return (
           <div>
             <h3>Total clicks: {counter}</h3>
-            <button onClick={countUp}>Click me</button>
+            <button onClick={onClickHandler}>Click me</button>
           </div>
         );
       };
-      render();
-
-      function render() {
-        ReactDOM.render(<Container />, root);
-      }
+      ReactDOM.render(<App />, root);
     </script>
   </body>
 </html>

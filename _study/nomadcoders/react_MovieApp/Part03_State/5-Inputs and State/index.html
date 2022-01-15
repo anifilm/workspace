@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>setState</title>
+    <title>Inputs and State</title>
 
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -14,11 +14,20 @@
     <script type="text/babel">
       const root = document.querySelector('#root');
       const App = () => {
-        const [counter, setCounter] = React.useState(0);
+        const [minutes, setMinutes] = React.useState(0);
+
+        const onChangeHandler = (event) => {
+          setMinutes(event.target.value);
+        }
+
         return (
           <div>
-            <h3>Total clicks: {counter}</h3>
-            <button onClick={() => setCounter(counter + 1)}>Click me</button>
+            <h1 className="title">Super Converter</h1>
+            <label htmlFor="minutes">Minutes </label>
+            <input type="number" id="minutes" value={minutes} onChange={onChangeHandler}placeholder="Minutes" />
+            <h4>You want to convert {minutes}</h4>
+            <label htmlFor="hours">Hours </label>
+            <input type="number" id="hours" placeholder="Hours" />
           </div>
         );
       };
