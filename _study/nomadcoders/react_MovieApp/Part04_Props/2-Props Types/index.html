@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memo</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/prop-types@15.8.1/prop-types.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Btn = ({ label, fontSize=12 }) => {
+        return (
+          <button
+            style={{
+              backgroundColor: 'tomato',
+              color: 'white',
+              margin: '5px',
+              padding: '10px 20px',
+              border: 0,
+              borderRadius: 10,
+              fontSize,
+            }}
+          >
+            {label}
+          </button>
+        );
+      };
+
+      Btn.propTypes = {
+        label: PropTypes.string.isRequired,
+        fontSize: PropTypes.number,
+      };
+
+      const App = () => {
+        return (
+          <div>
+            <Btn label="Save Changes" fontSize={18} />
+            <Btn label="Continue" />
+          </div>
+        );
+      };
+
+      const root = document.querySelector('#root');
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

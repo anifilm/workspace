@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Props</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Btn = ({ label }) => {
+        return <button style={{
+          backgroundColor: 'tomato',
+          color: 'white',
+          margin: '5px',
+          padding: '10px 20px',
+          border: 0,
+          borderRadius: 10,
+        }}>{label}</button>;
+      };
+
+      const App = () => {
+        return (
+          <div>
+            <Btn label="Save Changes" />
+            <Btn label="Continue" />
+          </div>
+        );
+      };
+
+      const root = document.querySelector('#root');
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

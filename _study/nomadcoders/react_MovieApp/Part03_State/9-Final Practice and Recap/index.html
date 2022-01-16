@@ -12,8 +12,6 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      const root = document.querySelector('#root');
-
       const MinutesToHours = () => {
         const [amount, setAmount] = React.useState(0);
         const [inverted, setInverted] = React.useState(false);
@@ -142,6 +140,8 @@
           </div>
         );
       };
+
+      const root = document.querySelector('#root');
       ReactDOM.render(<App />, root);
     </script>
   </body>
