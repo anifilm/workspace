@@ -17,7 +17,7 @@
         const [counter, setCounter] = React.useState(0);
         const onClickHandler = () => {
           //setCounter(counter + 1);
-          setCounter((current) => current + 1);
+          setCounter((prev) => prev + 1);
         };
         return (
           <div>
