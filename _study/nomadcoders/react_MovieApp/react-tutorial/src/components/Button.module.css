@@ -1,0 +1,8 @@
+.btn {
+  background-color: tomato;
+  color: white;
+  margin: 5px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 10px;
+}
