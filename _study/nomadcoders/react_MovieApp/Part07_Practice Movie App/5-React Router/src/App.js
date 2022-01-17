@@ -11,7 +11,7 @@ const App = () => {
         <Route path="/hello">
           <h1>Hello, React!</h1>
         </Route>
-        <Route path="/movie/:id">
+        <Route path="/movie">
           <Detail />
         </Route>
         <Route path="/">
