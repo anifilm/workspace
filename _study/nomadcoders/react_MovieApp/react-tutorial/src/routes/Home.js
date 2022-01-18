@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Movie from '../components/Movie';
 
+import styles from './Home.module.css';
+
 const api_key = process.env.REACT_APP_TMDB_API_KEY;
 
 const Home = () => {
@@ -18,7 +20,7 @@ const Home = () => {
   const getMovies = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}`);
     const json = await response.json();
-    //console.log(json.results);
+    console.log(json.results);
     setMovies(json.results);
     setLoading(false);
   };
@@ -47,22 +49,26 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1>The Movies! {loading || `(${movies.length})`}</h1>
-      <form onSubmit={onSubmit}>
-        <input type="text" value={search} onChange={onChange} placeholder="search for..." />
-        <button>search</button>
-      </form>
+    <div className={styles.container}>
+      <div className={styles.search}>
+        <form onSubmit={onSubmit}>
+          <input type="text" value={search} onChange={onChange} placeholder="search for..." />
+          <button>search</button>
+        </form>
+      </div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loader}>
+          <span>Loading...</span>
+        </div>
       ) : (
-        <div>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
               id={movie.id}
               coverImg={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               title={movie.title}
+              year={movie.release_date}
               summary={movie.overview}
               genres={genres}
               genresIds={movie.genre_ids}
