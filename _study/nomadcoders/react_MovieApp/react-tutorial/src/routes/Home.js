@@ -1,24 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import Movie from '../components/Movie';
 
+const api_key = process.env.REACT_APP_TMDB_API_KEY;
+
 const Home = () => {
   const [loading, setLoading] = useState(true);
+  const [genres, setGenres] = useState([]);
   const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState('');
 
-  const getMovies = async () => {
-    const response = await fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=rating`);
+  const getGenres = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`);
     const json = await response.json();
-    setMovies(json.data.movies);
+    //console.log(json.genres);
+    setGenres(json.genres);
+  }
+  const getMovies = async () => {
+    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}`);
+    const json = await response.json();
+    //console.log(json.results);
+    setMovies(json.results);
+    setLoading(false);
+  };
+  const searchMovies = async (data) => {
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${data}`);
+    const json = await response.json();
+    //console.log(json.results);
+    setMovies(json.results);
     setLoading(false);
   };
 
   useEffect(() => {
+    getGenres();
     getMovies();
   }, []);
+
+  const onChange = (event) => {
+    setSearch(event.target.value);
+  };
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (search.trim() === '') return;
+    setLoading(true);
+    searchMovies(search.trim());
+    //setSearch('');
+  };
 
   return (
     <div>
       <h1>The Movies! {loading || `(${movies.length})`}</h1>
+      <form onSubmit={onSubmit}>
+        <input type="text" value={search} onChange={onChange} placeholder="search for..." />
+        <button>search</button>
+      </form>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -27,10 +61,11 @@ const Home = () => {
             <Movie
               key={movie.id}
               id={movie.id}
-              coverImg={movie.medium_cover_image}
+              coverImg={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
+              summary={movie.overview}
+              genres={genres}
+              genresIds={movie.genre_ids}
             />
           ))}
         </div>
