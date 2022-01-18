@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Movie from '../components/Movie';
 
 import styles from './Home.module.css';
@@ -10,6 +10,7 @@ const Home = () => {
   const [genres, setGenres] = useState([]);
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState('');
+  const inputRef = useRef();
 
   const getGenres = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`);
@@ -40,19 +41,30 @@ const Home = () => {
   const onChange = (event) => {
     setSearch(event.target.value);
   };
+  const onClick = () => {
+    inputRef.current.select();
+  }
   const onSubmit = (event) => {
     event.preventDefault();
     if (search.trim() === '') return;
     setLoading(true);
     searchMovies(search.trim());
     //setSearch('');
+    inputRef.current.blur();
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.search}>
         <form onSubmit={onSubmit}>
-          <input type="text" value={search} onChange={onChange} placeholder="search for..." />
+          <input
+            type="text"
+            value={search}
+            onChange={onChange}
+            onClick={onClick}
+            placeholder="search for..."
+            ref={inputRef}
+          />
           <button>search</button>
         </form>
       </div>
@@ -66,7 +78,7 @@ const Home = () => {
             <Movie
               key={movie.id}
               id={movie.id}
-              coverImg={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              coverImg={movie.poster_path}
               title={movie.title}
               year={movie.release_date}
               summary={movie.overview}
