@@ -7,9 +7,23 @@ import styles from './Movie.module.css';
 const Movie = ({ id, coverImg, title, year, summary, genres, genresIds }) => {
   return (
     <div className={styles.movie}>
-      {coverImg ? <img src={`https://image.tmdb.org/t/p/w500/${coverImg}`} alt={title} className={styles.movie__img} /> : <img src={`https://m.media-amazon.com/images/S/sash/4FyxwxECzL-U1J8.png`} alt={title} className={styles.movie__img} />}
+      {coverImg ? (
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${coverImg}`}
+          alt={title}
+          className={styles.movie__img}
+        />
+      ) : (
+        <img
+          src={`https://m.media-amazon.com/images/S/sash/4FyxwxECzL-U1J8.png`}
+          alt={title}
+          className={styles.movie__img}
+        />
+      )}
       <div>
-        <h2 className={styles.movie__title}><Link to={`/movie/${id}`}>{title}</Link></h2>
+        <h2 className={styles.movie__title}>
+          <Link to={`/movie/${id}`}>{title}</Link>
+        </h2>
         <h3 className={styles.movie__year}>{year}</h3>
         <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
         <ul className={styles.movie__genres}>
