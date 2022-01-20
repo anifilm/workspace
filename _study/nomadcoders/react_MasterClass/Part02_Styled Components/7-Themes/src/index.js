@@ -4,12 +4,12 @@ import { ThemeProvider } from 'styled-components';
 import App from './App';
 
 const darkTheme = {
+  bgColor: '#111',
   textColor: 'whitesmoke',
-  backgroundColor: '#111',
 };
 const lightTheme = {
+  bgColor: 'whitesmoke',
   textColor: '#111',
-  backgroundColor: 'whitesmoke',
 };
 
 ReactDOM.render(
