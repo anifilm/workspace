@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -11,9 +11,7 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
 `;
-const CoinsList = styled.ul`
-  //
-`;
+const CoinsList = styled.ul``;
 const Coin = styled.li`
   background-color: white;
   color: ${(props) => props.theme.bgColor};
@@ -21,7 +19,7 @@ const Coin = styled.li`
   margin-bottom: 10px;
   a {
     padding: 20px;
-    transition: color .2s ease-in;
+    transition: color 0.2s ease-in;
     display: block;
   }
   &:hover {
@@ -37,33 +35,33 @@ const Title = styled.h1`
 
 const coins = [
   {
-    id: "btc-bitcoin",
-    name: "Bitcoin",
-    symbol: "BTC",
+    id: 'btc-bitcoin',
+    name: 'Bitcoin',
+    symbol: 'BTC',
     rank: 1,
     is_new: false,
     is_active: true,
-    type: "coin",
+    type: 'coin',
   },
   {
-    id: "eth-ethereum",
-    name: "Ethereum",
-    symbol: "ETH",
+    id: 'eth-ethereum',
+    name: 'Ethereum',
+    symbol: 'ETH',
     rank: 2,
     is_new: false,
     is_active: true,
-    type: "coin",
+    type: 'coin',
   },
   {
-    id: "hex-hex",
-    name: "HEX",
-    symbol: "HEX",
+    id: 'hex-hex',
+    name: 'HEX',
+    symbol: 'HEX',
     rank: 3,
     is_new: false,
     is_active: true,
-    type: "token",
+    type: 'token',
   },
-]
+];
 
 const Coins = () => {
   return (
