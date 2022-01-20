@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 interface ContainerProps {
@@ -19,17 +19,16 @@ const Container = styled.div<ContainerProps>`
 interface CircleProps {
   bgColor: string;
   borderColor?: string; // string 또는 undefined
-  text?: string; // string 또는 undefined
 }
 
-const Circle = ({ bgColor, borderColor, text='default text' }: CircleProps) => {
+const Circle = ({ bgColor, borderColor }: CircleProps) => {
+  const [value, setValue] = useState<string>('');
+
   return (
     <Container
       bgColor={bgColor}
       borderColor={borderColor ?? bgColor} // borderColor가 undefined인 경우 bgColor를 사용
-    >
-      {text}
-    </Container>
+    />
   );
 };
 
