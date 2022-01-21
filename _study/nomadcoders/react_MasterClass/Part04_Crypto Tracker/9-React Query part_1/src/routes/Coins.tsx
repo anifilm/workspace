@@ -1,8 +1,8 @@
 //import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useQuery } from 'react-query';
 import styled from 'styled-components';
 
+import { useQuery } from 'react-query';
 import { fetchCoins } from '../api';
 
 const Container = styled.div`
@@ -48,7 +48,7 @@ const Img = styled.img`
   margin-right: 10px;
 `;
 
-interface CoinInterface {
+interface CoinData {
   id: string;
   name: string;
   symbol: string;
@@ -59,9 +59,9 @@ interface CoinInterface {
 }
 
 const Coins = () => {
-  const { isLoading, data } = useQuery<CoinInterface[]>('allCoins', fetchCoins);
+  const { isLoading, data } = useQuery<CoinData[]>('allCoins', fetchCoins);
 
-  /*const [coins, setCoins] = useState<CoinInterface[]>([]);
+  /*const [coins, setCoins] = useState<CoinData[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
