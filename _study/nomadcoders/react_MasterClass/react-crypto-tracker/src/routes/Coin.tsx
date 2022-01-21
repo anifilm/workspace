@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
 import {
   useParams,
   useLocation,
@@ -139,10 +139,6 @@ interface PriceData {
 }
 
 const Coin = () => {
-  //const [loading, setLoading] = useState(true);
-  //const [info, setInfo] = useState<InfoData>();
-  //const [priceInfo, setPriceInfo] = useState<PriceData>();
-
   const { coinId } = useParams<RouteParams>();
   const { state } = useLocation<RouteState>();
   const priceMatch = useRouteMatch('/:coinId/price');
@@ -152,22 +148,6 @@ const Coin = () => {
   const { isLoading: tickersLoading, data: tickersData } = useQuery<PriceData>(['tickers', coinId], () => fetchCoinTickers(coinId));
 
   const loading = infoLoading || tickersLoading;
-
-  /*useEffect(() => {
-    (async () => {
-      const infoResponse = await fetch(
-        `https://api.coinpaprika.com/v1/coins/${coinId}`,
-      );
-      const infoData = await infoResponse.json();
-      const priceResponse = await fetch(
-        `https://api.coinpaprika.com/v1/tickers/${coinId}`,
-      );
-      const priceData = await priceResponse.json();
-      setInfo(infoData);
-      setPriceInfo(priceData);
-      setLoading(false);
-    })();
-  }, [coinId]);*/
 
   return (
     <Container>
