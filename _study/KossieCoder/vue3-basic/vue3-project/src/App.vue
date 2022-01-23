@@ -8,13 +8,13 @@ export default {
     const name = 'Kossie Coder1';
     return {
       name
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
-  .name {
-    color: red;
-  }
+.name {
+  color: red;
+}
 </style>
