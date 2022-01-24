@@ -1,4 +1,4 @@
-const { createAsyncThunk } = require('@reduxjs/toolkit');
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const delay = (time, value) => new Promise((resolve, reject) => {
   setTimeout(() => {

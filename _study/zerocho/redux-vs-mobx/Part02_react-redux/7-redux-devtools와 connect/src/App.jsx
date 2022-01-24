@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const { logIn, logOut } = require('./actions/user');
+import { logIn, logOut } from './actions/user.js';
 
 class App extends Component {
   onLogin = () => {

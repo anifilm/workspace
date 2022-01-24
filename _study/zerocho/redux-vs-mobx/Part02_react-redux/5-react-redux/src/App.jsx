@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-const { logIn, logOut } = require('./actions/user');
+import { logIn, logOut } from './actions/user.js';
 
 const App = () => {
   const user = useSelector((state) => state.user);

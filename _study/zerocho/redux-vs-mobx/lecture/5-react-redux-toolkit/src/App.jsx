@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { logIn } from './actions/user';
-import userSlice from './reducers/userSlice';
+import { logIn } from './actions/user.js';
+import userSlice from './reducers/userSlice.js';
 
 const App = () => {
   const user = useSelector((state) => state.user);
