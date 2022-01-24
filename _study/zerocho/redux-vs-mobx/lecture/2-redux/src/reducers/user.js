@@ -3,7 +3,7 @@ const initialState = {
   data: null,
 };
 
-const userReducer  = (prevState=initialState, action) => {
+const userReducer = (prevState=initialState, action) => {
   switch (action.type) {
     case 'LOG_IN_REQUEST':
       return {
@@ -33,4 +33,4 @@ const userReducer  = (prevState=initialState, action) => {
   }
 };
 
-export default userReducer ;
+export default userReducer;

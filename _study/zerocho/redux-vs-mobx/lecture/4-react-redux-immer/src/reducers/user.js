@@ -29,4 +29,4 @@ const userReducer = (prevState=initialState, action) => {
   });
 };
 
-export default userReducer ;
+export default userReducer;
