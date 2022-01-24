@@ -16,12 +16,12 @@ const userReducer = createSlice({
   },
   extraReducers: (builder) => builder
     .addCase(logIn.pending, (state, action) => {
-      state.data = null;
       state.isLoggingIn = true;
+      state.data = null;
     })
     .addCase(logIn.fulfilled, (state, action) => {
-      state.data = action.payload;
       state.isLoggingIn = false;
+      state.data = action.payload;
     })
     .addCase(logIn.rejected, (state, action) => {
       state.error = action.payload;
