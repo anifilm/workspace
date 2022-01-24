@@ -8,7 +8,7 @@ const App = () => {
   const posts = useSelector((state) => state.posts);
   const dispatch = useDispatch();
 
-  const onClick = useCallback(() => {
+  const onLogin = useCallback(() => {
     dispatch(logIn({
       id: 'zerocho',
       password: 'password',
@@ -28,7 +28,7 @@ const App = () => {
         <div>로그인 해주세요.</div>
       )}
       {!user.data ? (
-        <button onClick={onClick}>로그인</button>
+        <button onClick={onLogin}>로그인</button>
       ) : (
         <button onClick={onLogout}>로그아웃</button>
       )}

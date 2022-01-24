@@ -1,39 +1,48 @@
-import React, { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 const { logIn, logOut } = require('./actions/user');
 
-const App = () => {
-  const user = useSelector((state) => state.user);
-  const posts = useSelector((state) => state.posts);
-  const dispatch = useDispatch();
-
-  const onClick = useCallback(() => {
-    dispatch(logIn({
+class App extends Component {
+  onLogin = () => {
+    this.props.dispatchLogIn({
       id: 'zerocho',
-      password: 'password',
-    }));
-  }, []);
-  const onLogout = useCallback(() => {
-    dispatch(logOut());
-  }, []);
+      password: '비밀번호',
+    });
+  };
+  onLogout = () => {
+    this.props.dispatchLogOut();
+  };
 
-  return (
-    <div>
-      {user.isLoggingIn ? (
-        <div>로그인 중...</div>
-      ) : user.data ? (
-        <div>{user.data.nickname}님 안녕하세요.</div>
-      ) : (
-        <div>로그인 해주세요.</div>
-      )}
-      {!user.data ? (
-        <button onClick={onClick}>로그인</button>
-      ) : (
-        <button onClick={onLogout}>로그아웃</button>
-      )}
-    </div>
-  );
+  render() {
+    const { user } = this.props;
+    return (
+      <div>
+        {user.isLoggingIn ? (
+          <div>로그인 중...</div>
+        ) : user.data ? (
+          <div>{user.data.nickname}님 안녕하세요.</div>
+        ) : (
+          <div>로그인 해주세요.</div>
+        )}
+        {!user.data ? (
+          <button onClick={this.onLogin}>로그인</button>
+        ) : (
+          <button onClick={this.onLogout}>로그아웃</button>
+        )}
+      </div>
+    );
+  }
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  user: state.user,
+  posts: state.posts,
+}); // reselect
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatchLogIn: (data) => dispatch(logIn(data)),
+  dispatchLogOut: () => dispatch(logOut()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
