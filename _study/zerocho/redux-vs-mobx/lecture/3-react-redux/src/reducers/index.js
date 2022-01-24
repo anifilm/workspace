@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import postReducer from './post.js';
 import userReducer from './user.js';
+import postReducer from './post.js';
 
 const reducer = combineReducers({
   user: userReducer,
