@@ -18,21 +18,15 @@ const initialState = {
 };
 
 const firstMiddleware = (store) => (next) => (action) => {
+  console.log('before dispatch', store.getState());
   console.log('logging:', action); // dispatch 전에 실행
   next(action);
-  //console.log('changed'); // dispatch 후에 실행
+  console.log('changed'); // dispatch 후에 실행
+  console.log('after dispatch', store.getState());
 }
-
-const thunkMiddleware = (store) => (next) => (action) => {
-  if (typeof action === 'function') { // 비동기
-    return action(store.dispatch, store.getState);
-  }
-  return next(action); // 동기
-};
 
 const enhancer = applyMiddleware(
   firstMiddleware,
-  thunkMiddleware,
 );
 
 const store = createStore(reducer, initialState, enhancer);
@@ -40,7 +34,7 @@ const store = createStore(reducer, initialState, enhancer);
   console.log('changed'); // 화면을 바꿔주는 코드는 여기서
 });*/
 
-console.log('1st', store.getState());
+//console.log('1st', store.getState());
 
 // --------------------------------------
 
@@ -50,7 +44,7 @@ store.dispatch(logIn({
   admin: true,
 }));
 
-console.log('2nd', store.getState());
+//console.log('2nd', store.getState());
 
 /*store.dispatch(addPost({
   userId: 1,
