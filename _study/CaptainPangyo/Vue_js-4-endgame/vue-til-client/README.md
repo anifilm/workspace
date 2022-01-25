@@ -1,29 +1,4 @@
-# vue-til-client
+## Vue.js 끝장내기 - 실무에 필요한 모든 것 (캡틴판교, 인프런)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+학습 내용
+Vue.js 끝장내기 학습 2022-01-25
