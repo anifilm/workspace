@@ -40,7 +40,7 @@ const App = () => {
       ) : user.data ? (
         <>
           <div>{user.data.nickname}님 안녕하세요.</div>
-          {totalPrices}
+          {totalPrices}원
         </>
       ) : (
         <div>로그인 해주세요.</div>
