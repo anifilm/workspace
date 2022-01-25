@@ -29,12 +29,12 @@ function getLottoNumber(total=45, get=6) {
   // get개의 번호를 추출
   for (let i = 0; i < get; i++) {
     // allNumber 섞기
-    const breakNumber = Math.floor(Math.random() * allNumber.length+1);
+    const breakNumber = Math.floor(Math.random() * allNumber.length);
     do { console.log('shuffle!');
       shuffle(allNumber);
       console.log(allNumber);
       sleep(100);
-    } while (Math.floor(Math.random() * allNumber.length+1) !== breakNumber);
+    } while (Math.floor(Math.random() * allNumber.length) !== breakNumber);
     sleep(500);
     // 배열의 첫번째 요소를 추출
     const getNumber = allNumber.splice(breakNumber, 1)[0];
