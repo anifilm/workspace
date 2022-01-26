@@ -27,7 +27,7 @@ export const loginRequestAction = (data) => {
     data,
   };
 };
-/*export const loginSuccessAction = (data) => {
+export const loginSuccessAction = (data) => {
   return {
     type: 'LOG_IN_SUCCESS',
     data,
@@ -38,14 +38,14 @@ export const loginFailureAction = (data) => {
     type: 'LOG_IN_FAILURE',
     data,
   };
-};*/
+};
 
 export const logoutRequestAction = () => {
   return {
     type: 'LOG_OUT_REQUEST',
   };
 };
-/*export const logoutSuccessAction = () => {
+export const logoutSuccessAction = () => {
   return {
     type: 'LOG_OUT_SUCCESS',
   };
@@ -54,7 +54,7 @@ export const logoutFailureAction = () => {
   return {
     type: 'LOG_OUT_FAILURE',
   };
-};*/
+};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -69,10 +69,7 @@ const userReducer = (state = initialState, action) => {
         ...state,
         isLoggingIn: false,
         isLoggedIn: true,
-        me: {
-          ...action.data,
-          nickname: '제로초'
-        },
+        me: action.data,
       };
     case 'LOG_IN_FAILURE':
       return {

@@ -2,7 +2,7 @@ export const initialState = {
   mainPosts: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const postReducer = (state = initialState, action) => {
   switch (action.type) {
 
     default: {
@@ -11,4 +11,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default postReducer;

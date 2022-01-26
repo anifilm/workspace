@@ -46,7 +46,7 @@ const dummyPost = {
   Comments: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
       return {
@@ -63,4 +63,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default postReducer;
