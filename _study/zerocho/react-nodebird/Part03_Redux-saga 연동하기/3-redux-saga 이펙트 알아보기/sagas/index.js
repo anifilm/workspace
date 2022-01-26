@@ -65,9 +65,11 @@ function* addPost(action) {
 function* watchLogin() {
   yield take('LOG_IN_REQUEST', logIn);
 }
+
 function* watchLogOut() {
   yield take('LOG_OUT_REQUEST', logOut);
 }
+
 function* watchAddPost() {
   yield take('ADD_POST_REQUEST', addPost);
 }

@@ -46,6 +46,7 @@ function* logOut() {
 function* watchLogin() {
   yield takeLatest('LOG_IN_REQUEST', logIn);
 }
+
 function* watchLogOut() {
   yield takeLatest('LOG_OUT_REQUEST', logOut);
 }

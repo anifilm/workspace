@@ -56,7 +56,7 @@ export const logoutFailureAction = () => {
   };
 };
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state=initialState, action) => {
   switch (action.type) {
     case 'LOG_IN_REQUEST':
       return {

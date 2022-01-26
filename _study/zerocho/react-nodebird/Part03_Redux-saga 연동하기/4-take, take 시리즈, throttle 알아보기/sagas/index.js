@@ -67,9 +67,11 @@ function* addPost(action) {
 function* watchLogin() {
   yield takeLatest('LOG_IN_REQUEST', logIn);
 }
+
 function* watchLogOut() {
   yield takeLatest('LOG_OUT_REQUEST', logOut);
 }
+
 function* watchAddPost() {
   yield takeLatest('ADD_POST_REQUEST', addPost);
 }

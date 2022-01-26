@@ -46,7 +46,7 @@ const dummyPost = {
   Comments: [],
 };
 
-const postReducer = (state = initialState, action) => {
+const postReducer = (state=initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
       return {
