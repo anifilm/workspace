@@ -31,9 +31,8 @@ const userReducer = (state=initialState, action) => {
         isLoggedIn: false,
         user: null,
       }
-    default: {
+    default:
       return state;
-    }
   }
 };
 

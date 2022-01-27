@@ -94,9 +94,8 @@ const userReducer = (state=initialState, action) => {
         ...state,
         isLoggingOut: false,
       }
-    default: {
+    default:
       return state;
-    }
   }
 };
 

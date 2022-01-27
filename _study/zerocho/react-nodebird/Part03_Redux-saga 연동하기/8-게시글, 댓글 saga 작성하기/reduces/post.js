@@ -97,14 +97,13 @@ const postReducer = (state=initialState, action) => {
         addPostDone: false,
         addPostError: null,
       };
-    case ADD_POST_SUCCESS: {
+    case ADD_POST_SUCCESS:
       return {
         ...state,
         addPostLoading: false,
         addPostDone: true,
         mainPosts: [dummyPost(action.data), ...state.mainPosts],
       };
-    }
     case ADD_POST_FAILURE:
       return {
         ...state,
@@ -139,11 +138,8 @@ const postReducer = (state=initialState, action) => {
         addCommentDone: false,
         addCommentError: action.error,
       };
-    default: {
-      return {
-        ...state,
-      };
-    }
+    default:
+      return state;
   }
 };
 

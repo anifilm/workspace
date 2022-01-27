@@ -132,9 +132,8 @@ const userReducer = (state=initialState, action) => {
         signUpDone: false,
         signUpError: action.error,
       };
-    default: {
+    default:
       return state;
-    }
   }
 };
 

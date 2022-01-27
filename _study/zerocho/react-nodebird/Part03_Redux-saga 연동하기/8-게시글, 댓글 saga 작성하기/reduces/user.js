@@ -152,9 +152,8 @@ const userReducer = (state=initialState, action) => {
         chagneNicknameDone: false,
         chagneNicknameError: action.error,
       };
-    default: {
+    default:
       return state;
-    }
   }
 };
 

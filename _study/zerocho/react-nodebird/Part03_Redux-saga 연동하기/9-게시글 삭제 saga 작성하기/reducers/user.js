@@ -171,9 +171,8 @@ const userReducer = (state=initialState, action) => {
           Posts: state.me.Posts.filter((v) => v.id !== action.data),
         },
       };
-    default: {
+    default:
       return state;
-    }
   }
 };
 

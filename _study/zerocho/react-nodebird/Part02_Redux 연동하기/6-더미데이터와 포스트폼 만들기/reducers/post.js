@@ -48,18 +48,14 @@ const dummyPost = {
 
 const postReducer = (state=initialState, action) => {
   switch (action.type) {
-    case ADD_POST: {
+    case ADD_POST:
       return {
         ...state,
         mainPosts: [dummyPost, ...state.mainPosts],
         postAdded: true,
       };
-    }
-    default: {
-      return {
-        ...state,
-      };
-    }
+    default:
+      return state;
   }
 };
 
