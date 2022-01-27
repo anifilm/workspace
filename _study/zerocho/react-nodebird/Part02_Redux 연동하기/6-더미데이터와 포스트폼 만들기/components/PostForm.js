@@ -6,10 +6,10 @@ import { Form, Input, Button } from 'antd';
 import { addPost } from '../reducers/post';
 
 const PostForm = () => {
+  const dispatch = useDispatch();
   const { imagePaths, postAdded } = useSelector((state) => state.post);
 
   const [text, setText] = useState('');
-  const dispatch = useDispatch();
   const imageInput = useRef();
 
   const onClickImageUpload = useCallback(() => {
@@ -50,7 +50,7 @@ const PostForm = () => {
         {imagePaths.map((v) => {
           return (
             <div key={v} style={{ display: 'inline-block' }}>
-              <img src="{`http://localhost:3000/${v}`}" alt={v} style={{ width: '200px' }} />
+              <img src={`http://localhost:3000/${v}`} alt={v} style={{ width: '200px' }} />
               <div><Button>제거</Button></div>
             </div>
           );

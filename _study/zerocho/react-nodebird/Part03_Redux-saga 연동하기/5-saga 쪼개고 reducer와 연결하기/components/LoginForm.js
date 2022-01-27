@@ -20,7 +20,6 @@ const ButtonWrapper = styled(Button)`
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-
   const { isLoggingIn } = useSelector((state) => state.user);
 
   const [id, onChangeId] = useInput('');
@@ -35,15 +34,34 @@ const LoginForm = () => {
     <FormWrapper onFinish={onSubmitForm}>
       <DivWrapper>
         <label htmlFor="user-id">아이디</label>
-        <Input name="user-id" value={id} onChange={onChangeId} required />
+        <Input
+          name="user-id"
+          value={id}
+          onChange={onChangeId}
+          required
+        />
       </DivWrapper>
       <DivWrapper>
         <label htmlFor="user-password">비밀번호</label>
-        <Input name="user-password" value={password} onChange={onChangePassword} type="password" required />
+        <Input
+          type="password"
+          name="user-password"
+          value={password}
+          onChange={onChangePassword}
+          required
+        />
       </DivWrapper>
       <div>
-        <Button type="primary" htmlType="submit" loading={isLoggingIn}>로그인</Button>
-        <Link href="/signup"><a><ButtonWrapper style={{ marginLeft: '10px' }}>회원가입</ButtonWrapper></a></Link>
+        <Button type="primary" htmlType="submit" loading={isLoggingIn}>
+          로그인
+        </Button>
+        <Link href="/signup">
+          <a>
+            <ButtonWrapper style={{ marginLeft: '10px' }}>
+              회원가입
+            </ButtonWrapper>
+          </a>
+        </Link>
       </div>
     </FormWrapper>
   );

@@ -71,20 +71,25 @@ const PostCard = ({ post }) => {
           description={<PostCardContent postData={post.content} />}
         />
       </Card>
-      {commentFormOpened && <div>
-        <CommentForm post={post} />
-        <List header={
-          `${post.Comments.length}개의 댓글`
-        } itemlayout="horizontal" dataSource={post.Comments} renderItem={(item) => (
-          <li>
-            <Comment
-              author={item.User.nickname}
-              avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
-              content={item.content}
-            />
-          </li>
-        )} />
-      </div>}
+      {commentFormOpened && (
+        <div>
+          <CommentForm post={post} />
+          <List
+            header={`${post.Comments.length}개의 댓글`}
+            itemlayout="horizontal"
+            dataSource={post.Comments}
+            renderItem={(item) => (
+              <li>
+                <Comment
+                  author={item.User.nickname}
+                  avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
+                  content={item.content}
+                />
+              </li>
+            )}
+          />
+        </div>
+      )}
     </div>
   );
 };
