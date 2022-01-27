@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import { Card, Button, Avatar, Popover, List, Comment } from 'antd';
@@ -11,7 +10,6 @@ import {
   MessageOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import styled from 'styled-components';
 
 import PostImages from './PostImages';
 import CommentForm from './CommentForm';
@@ -96,7 +94,7 @@ const PostCard = ({ post }) => {
 
 PostCard.propTypes = {
   post: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.string, // shortId 적용으로 number에서 string으로 수정
     User: PropTypes.object,
     content: PropTypes.string,
     createdAt: PropTypes.object,
