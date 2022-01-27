@@ -51,7 +51,7 @@ const postReducer = (state=initialState, action) => {
     case ADD_POST: {
       return {
         ...state,
-        mainPost: [dummyPost, ...state.mainPosts],
+        mainPosts: [dummyPost, ...state.mainPosts],
         postAdded: true,
       };
     }

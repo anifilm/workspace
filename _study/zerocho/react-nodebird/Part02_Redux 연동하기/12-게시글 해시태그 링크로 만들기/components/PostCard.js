@@ -16,10 +16,10 @@ import CommentForm from './CommentForm';
 import PostCardContent from './PostCardContent';
 
 const PostCard = ({ post }) => {
+  const id = useSelector((state) => state.user.me?.id);
+
   const [liked, setLiked] = useState(false);
   const [commentFormOpened, setCommentFormOpened] = useState(false);
-
-  const id = useSelector((state) => state.user.me?.id);
 
   const onToggleLike = useCallback(() => {
     setLiked((prev) => !prev);

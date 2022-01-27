@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import { Card, Button, Avatar, Popover, List, Comment } from 'antd';
@@ -11,16 +10,15 @@ import {
   MessageOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import styled from 'styled-components';
 
 import PostImages from './PostImages';
 import CommentForm from './CommentForm';
 
 const PostCard = ({ post }) => {
+  const id = useSelector((state) => state.user.me?.id);
+
   const [liked, setLiked] = useState(false);
   const [commentFormOpened, setCommentFormOpened] = useState(false);
-
-  const id = useSelector((state) => state.user.me?.id);
 
   const onToggleLike = useCallback(() => {
     setLiked((prev) => !prev);

@@ -53,7 +53,7 @@ function* addPost(action) {
     yield delay(1000);
     yield put({
       type: 'ADD_POST_SUCCESS',
-      content: action.data,
+      data: action.data,
     });
   }
   catch (err) {

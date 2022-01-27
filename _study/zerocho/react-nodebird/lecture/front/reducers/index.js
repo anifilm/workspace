@@ -5,7 +5,7 @@ import user from './user';
 import post from './post';
 
 const rootReducer = combineReducers({
-  index: (state = {}, action) => {
+  index: (state={}, action) => {
     switch (action.type) {
       case HYDRATE:
         console.log('HYDRATE', action);

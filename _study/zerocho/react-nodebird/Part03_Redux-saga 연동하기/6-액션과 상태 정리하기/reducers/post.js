@@ -91,7 +91,7 @@ const postReducer = (state=initialState, action) => {
         ...state,
         addPostLoading: false,
         addPostDone: true,
-        mainPost: [dummyPost, ...state.mainPosts],
+        mainPosts: [dummyPost, ...state.mainPosts],
       };
     }
     case ADD_POST_FAILURE:
@@ -113,7 +113,7 @@ const postReducer = (state=initialState, action) => {
         ...state,
         addCommentLoading: false,
         addCommentDone: true,
-        //mainPost: [dummyPost, ...state.mainPosts],
+        //mainPosts: [dummyPost, ...state.mainPosts],
       };
     }
     case ADD_COMMENT_FAILURE:
