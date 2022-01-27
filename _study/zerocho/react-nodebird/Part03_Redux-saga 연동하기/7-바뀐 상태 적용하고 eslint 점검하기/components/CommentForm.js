@@ -21,7 +21,7 @@ const CommentForm = ({ post }) => {
   }, [addCommentDone]);
 
   const onSubmitComment = useCallback(() => {
-    console.log(post.id, commentText);
+    //console.log(post.id, commentText);
     dispatch({
       type: ADD_COMMENT_REQUEST,
       data: {
@@ -44,7 +44,7 @@ const CommentForm = ({ post }) => {
           type="primary"
           htmlType="submit"
           loading={addCommentLoading}
-          style={{ position: 'absolute', right: 0, bottom: '-40px' }}
+          style={{ position: 'absolute', right: 0, bottom: '-40px', zIndex: 1 }}
         >
           등록
         </Button>
