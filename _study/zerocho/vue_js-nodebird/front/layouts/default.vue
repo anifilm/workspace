@@ -1,18 +1,28 @@
 <template>
   <v-app>
     <nav>
-      <v-toolbar dark color="green">
+      <v-toolbar color="green" dark>
         <v-toolbar-title>
           <nuxt-link to="/">NodeBird</nuxt-link>
         </v-toolbar-title>
         <v-spacer />
         <v-toolbar-items>
-          <v-text-field
-            label="검색"
-            hide-details
-            prepend-icon="mdi-magnify"
-            :style="{ display: 'flex', alignItems: 'center' }"
-          />
+          <v-form v-on:submit.prevent="onSearchHashtag">
+            <div
+              v-bind:style="{
+                display: 'flex',
+                height: '100%',
+                alignItems: 'center',
+              }"
+            >
+              <v-text-field
+                v-model="hashtag"
+                label="검색"
+                hide-details
+                prepend-icon="mdi-magnify"
+              />
+            </div>
+          </v-form>
           <v-btn
             text
             nuxt
@@ -44,7 +54,7 @@
 </template>
 
 <script>
-import LoginForm from '~/components/LoginForm.vue';
+import LoginForm from '~/components/LoginForm';
 
 export default {
   components: {
@@ -55,14 +65,17 @@ export default {
       title: 'NordBird',
     };
   },
-  computed: {
-    name() {
-      return this.$store.state.posts.name;
-    },
+  data() {
+    return {
+      hashtag: '',
+    };
   },
   methods: {
-    onChangeName() {
-      this.$store.commit('posts/BYE');
+    onSearchHashtag() {
+      this.$router.push({
+        path: `/hashtag/${this.hashtag}`,
+      });
+      this.hashtag = '';
     },
   },
 };
