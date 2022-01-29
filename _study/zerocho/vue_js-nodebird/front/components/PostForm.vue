@@ -11,7 +11,10 @@
           v-bind:hide-details="hideDetails"
           v-bind:success="success"
           v-bind:success-messages="successMessages"
-          v-bind:rules="[(v) => this.rulesState === 'ins' ? !!v || '내용을 입력하세요.' : true]"
+          v-bind:rules="[
+            (v) =>
+              this.rulesState === 'ins' ? !!v || '내용을 입력하세요.' : true,
+          ]"
           v-on:input="onChangeTextarea"
         />
         <div style="margin-top: 10px">
@@ -34,11 +37,11 @@ export default {
       success: false,
       successMessages: '',
       content: '',
-      rulesState: ''
+      rulesState: '',
     };
   },
   computed: {
-    ...mapState('users', ['me'])
+    ...mapState('users', ['me']),
   },
   methods: {
     onChangeTextarea(value) {
@@ -61,16 +64,17 @@ export default {
         return;
       }
       if (this.$refs.form.validate()) {
-        this.$store.dispatch('posts/add', {
-          content: this.content,
-          User: {
-            nickname: this.me.nickname
-          },
-          Comments: [],
-          Images: [],
-          id: String(Date.now()),
-          createdAt: Date.now()
-        })
+        this.$store
+          .dispatch('posts/add', {
+            content: this.content,
+            User: {
+              nickname: this.me.nickname,
+            },
+            Comments: [],
+            Images: [],
+            id: String(Date.now()),
+            createdAt: Date.now(),
+          })
           .then(() => {
             this.content = '';
             this.hideDetails = false;
@@ -82,11 +86,9 @@ export default {
             //
           });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

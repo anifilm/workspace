@@ -14,11 +14,11 @@ import PostCard from '~/components/PostCard';
 export default {
   components: {
     PostForm,
-    PostCard
+    PostCard,
   },
   data() {
     return {
-      name: 'Nuxt.js'
+      name: 'Nuxt.js',
     };
   },
   computed: {
@@ -27,11 +27,9 @@ export default {
     },
     mainPosts() {
       return this.$store.state.posts.mainPosts;
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

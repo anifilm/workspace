@@ -1,5 +1,5 @@
 export const state = () => ({
-  hello: 'vuex'
+  hello: 'vuex',
 });
 
 export const mutations = {
@@ -7,6 +7,6 @@ export const mutations = {
     state.hello = 'goodbye';
   },
   addMainPost() {
-
-  }
+    //
+  },
 };

@@ -1,8 +1,14 @@
 export const state = () => ({
   me: null,
   followerList: [],
-  followingList: []
+  followingList: [],
+  hasMoreFollower: true,
+  hasMoreFollowing: true,
 });
+
+const totalFollowers = 8;
+const totlaFollowings = 6;
+const limit = 3;
 
 export const mutations = {
   setMe(state, payload) {
@@ -10,6 +16,38 @@ export const mutations = {
   },
   changeNickname(state, payload) {
     state.me.nickname = payload.nickname;
+  },
+  addFollower(state, payload) {
+    state.followerList.push(payload);
+  },
+  addFollowing(state, payload) {
+    state.followingList.push(payload);
+  },
+  removeFollower(state, payload) {
+    const index = state.followerList.findIndex((v) => v.id === payload.id);
+    state.followerList.splice(index, 1);
+  },
+  removeFolling(state, payload) {
+    const index = state.followingList.findIndex((v) => v.id === payload.id);
+    state.followingList.splice(index, 1);
+  },
+  loadFollowing(state) {
+    const diff = totlaFollowings - state.followingList.length;
+    const fakeUsers = Array(diff > limit ? limit : diff).fill().map((v) => ({
+      id: Math.random().toString(),
+      nickname: Math.floor(Math.random() * 1000),
+    }));
+    state.followingList = state.followingList.concat(fakeUsers);
+    state.hasMoreFollowing = fakeUsers.length === limit;
+  },
+  loadFollowers(state) {
+    const diff = totlaFollowers - state.followerList.length;
+    const fakeUsers = Array(diff > limit ? limit : diff).fill().map((v) => ({
+      id: Math.random().toString(),
+      nickname: Math.floor(Math.random() * 1000),
+    }));
+    state.followerList = state.followerList.concat(fakeUsers);
+    state.hasMoreFollower = fakeUsers.length === limit;
   }
 };
 
@@ -26,5 +64,27 @@ export const actions = {
   },
   changeNickname({ commit }, payload) {
     commit('changeNickname', payload);
-  }
+  },
+  addFollowing({ commit }, payload) {
+    commit('addFollowing', payload);
+  },
+  addFollower({ commit }, payload) {
+    commit('addFollower', payload);
+  },
+  removeFollowing({ commit }, payload) {
+    commit('removeFollowing', payload); // 비동기 요청
+  },
+  removeFollower({ commit }, payload) {
+    commit('removeFollower', payload); // 비동기 요청
+  },
+  loadFollowers({ commit, state }, payload) {
+    if (state.hasMoreFollower) {
+      commit('loadFollowers');
+    }
+  },
+  loadFollowings({ commit, state }, payload) {
+    if (state.hasMoreFollowing) {
+      commit('loadFollowings');
+    }
+  },
 };

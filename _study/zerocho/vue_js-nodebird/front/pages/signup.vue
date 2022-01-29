@@ -36,7 +36,7 @@
             <v-checkbox
               label="약관에 동의합니다."
               v-model="terms"
-              v-bind:rules="[(v) => !!v ||'약관에 동의해야 합니다.']"
+              v-bind:rules="[(v) => !!v || '약관에 동의해야 합니다.']"
               required
             />
             <v-btn type="submit" color="green" dark>회원가입</v-btn>
@@ -51,7 +51,7 @@
 export default {
   head() {
     return {
-      title: '회원가입'
+      title: '회원가입',
     };
   },
   data() {
@@ -66,12 +66,8 @@ export default {
         (v) => !!v || '이메일은 필수 항목입니다.',
         (v) => /.+@.+/.test(v) || '이메일이 유효하지 않습니다.',
       ],
-      nicknameRules: [
-        (v) => !!v || '닉네임은 필수 항목입니다.'
-      ],
-      passwordRules: [
-        (v) => !!v || '비밀번호는 필수 항목입니다.',
-      ],
+      nicknameRules: [(v) => !!v || '닉네임은 필수 항목입니다.'],
+      passwordRules: [(v) => !!v || '비밀번호는 필수 항목입니다.'],
       passwordCheckRules: [
         (v) => !!v || '비밀번호 확인은 필수 항목입니다.',
         (v) => v === this.password || '비밀번호가 일치하지 않습니다.',
@@ -82,24 +78,23 @@ export default {
     onSubmitForm() {
       if (this.$refs.form.validate()) {
         //alert('회원가입 시도');
-        this.$store.dispatch('users/signUp', {
-          email: this.email,
-          nickname: this.nickname
-        })
+        this.$store
+          .dispatch('users/signUp', {
+            email: this.email,
+            nickname: this.nickname,
+          })
           .then(() => {
             this.$router.push({
-              path: '/'
+              path: '/',
             });
           })
           .catch(() => {
             alert('회원가입 실패');
           });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

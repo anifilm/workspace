@@ -53,17 +53,17 @@ import CommentForm from '~/components/CommentForm';
 
 export default {
   components: {
-    CommentForm
+    CommentForm,
   },
   props: {
     post: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      commentOpened: false
+      commentOpened: false,
     };
   },
   methods: {
@@ -75,13 +75,11 @@ export default {
     },
     onRemovePost() {
       this.$store.dispatch('posts/remove', {
-        id: this.post.id
+        id: this.post.id,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

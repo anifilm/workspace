@@ -1,5 +1,10 @@
 <template>
-  <v-form ref="form" v-model="valid" style="position: relative" v-on:submit.prevent="onSubmitForm">
+  <v-form
+    ref="form"
+    v-model="valid"
+    style="position: relative"
+    v-on:submit.prevent="onSubmitForm"
+  >
     <v-textarea
       v-model="content"
       filled
@@ -8,7 +13,9 @@
       v-bind:hide-details="hideDetails"
       v-bind:success="success"
       v-bind:success-messages="successMessages"
-      v-bind:rules="[(v) => this.rulesState === 'ins' ? !!v || '내용을 입력하세요.' : true]"
+      v-bind:rules="[
+        (v) => (this.rulesState === 'ins' ? !!v || '내용을 입력하세요.' : true),
+      ]"
       v-on:input="onChangeTextarea"
     />
     <v-btn type="submit" color="blue" dark absolute top right>댓글 등록</v-btn>
@@ -20,8 +27,8 @@ export default {
   props: {
     postId: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -30,13 +37,13 @@ export default {
       success: false,
       successMessages: '',
       content: '',
-      rulesState: ''
+      rulesState: '',
     };
   },
   computed: {
     me() {
       return this.$store.state.users.me;
-    }
+    },
   },
   methods: {
     onChangeTextarea(value) {
@@ -60,14 +67,15 @@ export default {
         return;
       }
       if (this.$refs.form.validate()) {
-        this.$store.dispatch('posts/addComment', {
-          id: Date.now(),
-          postId: this.postId,
-          content: this.content,
-          User: {
-            nickname: this.me.nickname
-          }
-        })
+        this.$store
+          .dispatch('posts/addComment', {
+            id: Date.now(),
+            postId: this.postId,
+            content: this.content,
+            User: {
+              nickname: this.me.nickname,
+            },
+          })
           .then(() => {
             this.content = '';
             this.hideDetails = false;
@@ -79,11 +87,9 @@ export default {
             //
           });
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

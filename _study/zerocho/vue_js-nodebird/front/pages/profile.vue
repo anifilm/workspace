@@ -36,32 +36,28 @@ import FollowList from '~/components/FollowList';
 
 export default {
   components: {
-    FollowList
+    FollowList,
   },
   head() {
     return {
-      title: '프로필'
+      title: '프로필',
     };
   },
   data() {
     return {
       valid: false,
       nickname: '',
-      nicknameRules: [
-        (v) => !!v || '닉네임을 입력하세요.'
-      ]
+      nicknameRules: [(v) => !!v || '닉네임을 입력하세요.'],
     };
   },
   methods: {
     onChangeNickname() {
       this.$store.dispatch('users/changeNickname', {
-        nickname: this.nickname
+        nickname: this.nickname,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
