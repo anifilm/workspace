@@ -4,7 +4,13 @@
       <v-img />
       <v-card-text>
         <div>
-          <h3>{{ post.User.nickname }}</h3>
+          <h3>
+            <nuxt-link v-bind:to="'/user/' + post.id">{{ post.User.nickname }}</nuxt-link>
+          </h3>
+        </div>
+      </v-card-text>
+      <v-card-text>
+        <div>
           <div>{{ post.content }}</div>
         </div>
       </v-card-text>
@@ -39,7 +45,7 @@
             <span>{{ c.User.nickname[0] }}</span>
           </v-list-item-avatar>
           <v-list-item-content>
-            <h3>{{ c.User.nickname }}</h3>
+            <h4>{{ c.User.nickname }}</h4>
             <div>{{ c.content }}</div>
           </v-list-item-content>
         </v-list-item>
@@ -82,4 +88,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+</style>
