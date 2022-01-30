@@ -71,7 +71,7 @@ export const actions = {
         },
       )
       .then((res) => {
-        commit('setMe', payload);
+        commit('setMe', res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -84,7 +84,7 @@ export const actions = {
         password: payload.password,
       })
       .then((res) => {
-        commit('setMe', payload);
+        commit('setMe', res.data);
       })
       .catch((err) => {
         console.error(err);
