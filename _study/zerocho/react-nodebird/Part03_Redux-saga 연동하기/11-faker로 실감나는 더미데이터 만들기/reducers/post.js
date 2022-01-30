@@ -58,7 +58,7 @@ initialState.mainPosts = initialState.mainPosts.concat(
       },
       content: faker.lorem.paragraph(),
       Images: [{
-        src: `https://picsum.photos/id/${Math.floor(Math.random()*1200)+10}/600/300`,
+        src: `https://picsum.photos/id/${Math.floor(Math.random()*1000)+20}/600/300`,
       }],
       Comments: [{
         User: {
