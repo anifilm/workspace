@@ -1,6 +1,7 @@
 export const state = () => ({
   mainPosts: [],
   hasMorePost: true,
+  imagePaths: [],
 });
 
 const totalPosts = 51;
@@ -17,7 +18,7 @@ export const mutations = {
           id: 1,
           nickname: '제로초',
         },
-        content: `Hello infinite scrolling~ ${Math.random()}`,
+        content: `안녕하세요. 테스트용 ${Math.random()}번 게시글 입니다.`,
         Comments: [],
         Images: [],
       }));
@@ -35,6 +36,12 @@ export const mutations = {
     const index = state.mainPosts.findIndex((v) => v.id === payload.postId);
     state.mainPosts[index].Comments.unshift(payload);
   },
+  concatImagePaths(state, payload) {
+    state.imagePaths = state.imagePaths.concat(payload);
+  },
+  removeImagePath(state, payload) {
+    state.imagePaths.splice(payload, 1);
+  },
 };
 
 export const actions = {
@@ -45,12 +52,40 @@ export const actions = {
   },
   add({ commit }, payload) {
     // 서버에 게시글 등록 요청
-    commit('addMainPost', payload);
+    this.$axios
+      .post(
+        'http://localhost:5000/post',
+        {
+          content: payload.content,
+          imagePaths: state.imagePaths,
+        },
+        {
+          withCredentials: true,
+        },
+      )
+      .then((res) => {
+        commit('addMainPost', payload);
+      })
+      .catch(() => {
+        //
+      });
   },
   remove({ commit }, payload) {
     commit('removeMainPost', payload);
   },
   addComment({ commit }, payload) {
     commit('addComment', payload);
+  },
+  uploadImages({ commit }, payload) {
+    this.$axios
+      .post('http://localhost:5000/post/images', payload, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        commit('concatImagePaths', res.data);
+      })
+      .catch(() => {
+        //
+      });
   },
 };

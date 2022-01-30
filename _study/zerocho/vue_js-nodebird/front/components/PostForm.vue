@@ -19,7 +19,32 @@
         />
         <div style="margin-top: 10px">
           <v-btn type="submit" color="green" dark absolute right>등록</v-btn>
-          <v-btn>이미지 업로드</v-btn>
+          <input
+            type="file"
+            ref="imageInput"
+            multiple
+            hidden
+            v-on:change="onChangeImages"
+          />
+          <v-btn type="button" v-on:click="onClickImageUpload"
+            >이미지 업로드</v-btn
+          >
+          <div>
+            <div
+              v-for="(p, i) in imagePaths"
+              v-bind:key="p"
+              style="display: inline-block"
+            >
+              <img
+                v-bind:src="`http://localhost:5000/${p}`"
+                v-bind:alt="p"
+                style="width: 200px"
+              />
+              <div>
+                <button v-on:click="onRemoveImage(i)">제거</button>
+              </div>
+            </div>
+          </div>
         </div>
       </v-form>
     </v-container>
@@ -42,6 +67,7 @@ export default {
   },
   computed: {
     ...mapState('users', ['me']),
+    ...mapState('posts', ['imagePaths']),
   },
   methods: {
     onChangeTextarea(value) {
@@ -86,6 +112,20 @@ export default {
             //
           });
       }
+    },
+    onClickImageUpload() {
+      this.$refs.imageInput.click();
+    },
+    onChangeImages(e) {
+      console.log(e.target.files);
+      const imageFormData = new FormData();
+      [].forEach.call(e.target.files, (f) => {
+        image.FormData.append('image', f);
+      });
+      this.$store.dispatch('posts/uploadImages', imageFormData);
+    },
+    onRemoveImage(index) {
+      this.$store.commit('posts/removeImagePath', index);
     },
   },
 };

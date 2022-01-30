@@ -33,34 +33,78 @@ export const mutations = {
   },
   loadFollowings(state) {
     const diff = totalFollowings - state.followingList.length;
-    const fakeUsers = Array(diff > limit ? limit : diff).fill().map((v) => ({
-      id: Math.random().toString(),
-      nickname: Math.floor(Math.random() * 1000) + '번 팔로워',
-    }));
+    const fakeUsers = Array(diff > limit ? limit : diff)
+      .fill()
+      .map((v) => ({
+        id: Math.random().toString(),
+        nickname: Math.floor(Math.random() * 1000) + '번 팔로워',
+      }));
     state.followingList = state.followingList.concat(fakeUsers);
     state.hasMoreFollowing = fakeUsers.length === limit;
   },
   loadFollowers(state) {
     const diff = totalFollowers - state.followerList.length;
-    const fakeUsers = Array(diff > limit ? limit : diff).fill().map((v) => ({
-      id: Math.random().toString(),
-      nickname: Math.floor(Math.random() * 1000) + '번 팔로잉',
-    }));
+    const fakeUsers = Array(diff > limit ? limit : diff)
+      .fill()
+      .map((v) => ({
+        id: Math.random().toString(),
+        nickname: Math.floor(Math.random() * 1000) + '번 팔로잉',
+      }));
     state.followerList = state.followerList.concat(fakeUsers);
     state.hasMoreFollower = fakeUsers.length === limit;
-  }
+  },
 };
 
 export const actions = {
   signUp({ commit, state }, payload) {
     // 서버에 회원가입 요청
-    commit('setMe', payload);
+    this.$axios
+      .post(
+        'http://localhost:5000/user',
+        {
+          email: payload.email,
+          nickname: payload.nickname,
+          password: payload.password,
+        },
+        {
+          withCredentials: true,
+        },
+      )
+      .then((res) => {
+        commit('setMe', payload);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
   logIn({ commit }, payload) {
-    commit('setMe', payload);
+    this.$axios
+      .post('http://localhost:5000/user/login', {
+        email: payload.email,
+        password: payload.password,
+      })
+      .then((res) => {
+        commit('setMe', payload);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
-  logOut({ commit }, payload) {
-    commit('setMe', null);
+  logOut({ commit }) {
+    this.$axios
+      .post(
+        'http://localhost:5000/user/logout',
+        {},
+        {
+          withCredentials: true,
+        },
+      )
+      .then((res) => {
+        commit('setMe', null);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
   changeNickname({ commit }, payload) {
     commit('changeNickname', payload);
