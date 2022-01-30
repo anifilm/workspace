@@ -27,7 +27,7 @@ router.post('/images', isLoggedIn, upload.array('image'), (req, res) => {
 });
 
 router.post('/', isLoggedIn, async (req, res, next) => {
-  console.log('작성확인');
+  console.log('logger:', req.body.content, req.user);
   try {
     const hashtags = req.body.content.match(/#[^\s#]+/g);
     const newPost = await db.Post.create({
