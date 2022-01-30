@@ -93,13 +93,6 @@ export default {
         this.$store
           .dispatch('posts/add', {
             content: this.content,
-            User: {
-              nickname: this.me.nickname,
-            },
-            Comments: [],
-            Images: [],
-            id: String(Date.now()),
-            createdAt: Date.now(),
           })
           .then(() => {
             this.content = '';
