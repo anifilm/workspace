@@ -74,10 +74,24 @@ export default {
       ],
     };
   },
+  computed: {
+    me() {
+      return this.$store.state.users.me;
+    },
+  },
+  watch: {
+    me(value) {
+      if (value) {
+        this.$router.push({
+          path: '/',
+        });
+      }
+    },
+  },
   methods: {
     onSubmitForm() {
       if (this.$refs.form.validate()) {
-        console.log('회원가입 시도');
+        //console.log('회원가입 시도');
         this.$store
           .dispatch('users/signUp', {
             email: this.email,
@@ -95,6 +109,7 @@ export default {
       }
     },
   },
+  middleware: 'anonymous',
 };
 </script>
 
