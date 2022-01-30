@@ -9,10 +9,10 @@ const router = express.Router();
 
 const upload = multer({
   storage: multer.diskStorage({
-    destination(req, res, done) {
+    destination(req, file, done) {
       done(null, 'uploads');
     },
-    filename(req, res, done) {
+    filename(req, file, done) {
       const ext = path.extname(file.originalname);
       const basename = path.basename(file.originalname, ext);
       done(null, basename + Date.now() + ext);
@@ -27,6 +27,7 @@ router.post('/images', isLoggedIn, upload.array('image'), (req, res) => {
 });
 
 router.post('/', isLoggedIn, async (req, res, next) => {
+  console.log('작성확인');
   try {
     const hashtags = req.body.content.match(/#[^\s#]+/g);
     const newPost = await db.Post.create({
@@ -40,7 +41,7 @@ router.post('/', isLoggedIn, async (req, res, next) => {
       await newPost.addHashtags(result.map(r => r[0]));
     }
     const fullPost = await db.Post.findOne({
-      where: { id: newPost, id },
+      where: { id: newPost.id },
       include: [{
         model: db.User,
         attributes: ['id', 'nickname'],

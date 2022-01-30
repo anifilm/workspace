@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     charset: 'utf8mb3',
-    collate: 'utb8mb3_general_ci',
+    collate: 'utf8mb3_general_ci',
   });
 
   Post.associate = (db) => {

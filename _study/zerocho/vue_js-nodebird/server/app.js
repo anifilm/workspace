@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
-const session = require('session');
+const session = require('express-session');
 const cookie = require('cookie-parser');
 const morgan = require('morgan');
 

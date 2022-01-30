@@ -1,8 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const db = require('../modles');
-const { idLoggedIn, isNotLoggedIn, isLoggedIn } = require('./middlewares');
+const db = require('../models');
+const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 
 const router = express.Router();
 
@@ -43,11 +43,12 @@ router.post('/', isNotLoggedIn, async (req, res, next) => {
     })(req, res, next);
   }
   catch (err) {
-    console.error(`Error: ${err.message}`);
+    console.error(err);
+    return next(err);
   }
 });
 
-router.post('login', isNotLoggedIn, (req, res, next) => {
+router.post('/login', isNotLoggedIn, (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
       console.error(err);
