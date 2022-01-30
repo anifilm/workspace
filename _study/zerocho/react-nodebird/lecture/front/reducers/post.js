@@ -3,37 +3,9 @@ import shortId from 'shortid';
 import faker from 'faker';
 
 export const initialState = {
-  mainPosts: [{
-    id: '1',
-    User: {
-      id: 1,
-      nickname: '제로초',
-    },
-    content: '첫번째 게시글 #해시태그 #익스프레스',
-    Images: [{
-      src: 'https://bookthumb-phinf.pstatic.net/cover/137/995/13799585.jpg?udate=20180726',
-    }, {
-      src: 'https://gimg.gilbut.co.kr/book/BN001958/rn_view_BN001958.jpg',
-    }, {
-      src: 'https://gimg.gilbut.co.kr/book/BN001998/rn_view_BN001998.jpg',
-    }],
-    Comments: [{
-      id: shortId.generate(),
-      User: {
-        id: shortId.generate(),
-        nickname: 'nero',
-      },
-      content: '우와 개정판이 나왔군요',
-    }, {
-      id: shortId.generate(),
-      User: {
-        id: shortId.generate(),
-        nickname: 'hero',
-      },
-      content: '얼른 사고싶어요',
-    }]
-  }],
+  mainPosts: [],
   imagePaths: [],
+  hasMorePosts: true,
   loadPostsLoading: false,
   loadPostsDone: false,
   loadPostsError: null,
@@ -48,9 +20,10 @@ export const initialState = {
   addCommentError: null,
 };
 
-initialState.mainPosts = initialState.mainPosts.concat(
-  Array(20).fill().map(() => {
-    return {
+export const generateDummyPost = (number) =>
+  Array(number)
+    .fill()
+    .map(() => ({
       id: shortId.generate(),
       User: {
         id: shortId.generate(),
@@ -58,18 +31,18 @@ initialState.mainPosts = initialState.mainPosts.concat(
       },
       content: faker.lorem.paragraph(),
       Images: [{
-        src: `https://picsum.photos/id/${Math.floor(Math.random()*1200)+10}/600/300`,
+        src: `https://picsum.photos/id/${Math.floor(Math.random() * 1000) + 10}/600/300`,
       }],
-      Comments: [{
-        User: {
-          id: shortId.generate(),
-          nickname: faker.name.findName(),
+      Comments: [
+        {
+          User: {
+            id: shortId.generate(),
+            nickname: faker.name.findName(),
+          },
+          content: faker.lorem.sentence(),
         },
-        content: faker.lorem.sentence(),
-      }],
-    };
-  })
-);
+      ],
+    }));
 
 export const LOAD_POSTS_REQUEST = 'LOAD_POSTS_REQUEST';
 export const LOAD_POSTS_SUCCESS = 'LOAD_POSTS_SUCCESS';
@@ -120,6 +93,23 @@ const dummyComment = (data) => ({
 const postReducer = (state=initialState, action) => {
   return produce(state, (draft) => {
     switch (action.type) {
+      case LOAD_POSTS_REQUEST:
+        draft.loadPostLoading = true;
+        draft.loadPostDone = false;
+        draft.loadPostError = null;
+        break;
+      case LOAD_POSTS_SUCCESS:
+        draft.loadPostLoading = false;
+        draft.loadPostDone = true;
+        //draft.mainPosts = action.data.concat(draft.mainPosts);
+        draft.mainPosts = draft.mainPosts.concat(action.data); // 기존 더미 데이터 아래에 새로운 더미 데이터를 추가
+        draft.hasMorePosts = draft.mainPosts.length < 200;
+        break;
+      case LOAD_POSTS_FAILURE:
+        draft.loadPostLoading = false;
+        draft.loadPostDone = false;
+        draft.loadPostError = action.error;
+        break;
       case ADD_POST_REQUEST:
         draft.addPostLoading = true;
         draft.addPostDone = false;
