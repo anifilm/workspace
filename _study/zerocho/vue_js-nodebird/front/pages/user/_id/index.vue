@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <post-form v-if="me" />
     <div>
       <post-card v-for="p in mainPosts" v-bind:key="p.id" v-bind:post="p" />
     </div>
@@ -13,7 +12,6 @@ import PostCard from '~/components/PostCard';
 
 export default {
   components: {
-    PostForm,
     PostCard,
   },
   data() {
@@ -30,7 +28,7 @@ export default {
     },
     hasMorePost() {
       return this.$store.state.posts.hasMorePost;
-    }
+    },
   },
   fetch({ store }) {
     store.dispatch('posts/loadPosts');
@@ -56,5 +54,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

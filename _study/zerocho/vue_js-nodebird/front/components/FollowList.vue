@@ -15,7 +15,7 @@
           <v-list-item-title>{{ user.nickname }}</v-list-item-title>
         </v-list-item-content>
         <v-list-item-action>
-          <v-icon v-on:click="remove(user.id)">mid-minus-circle-outline</v-icon>
+          <v-icon v-on:click="remove(user.id)">mdi-minus-circle-outline</v-icon>
         </v-list-item-action>
       </v-list-item>
     </v-col>
@@ -25,7 +25,6 @@
 <script>
 export default {
   props: {
-    abc: Array,
     users: {
       type: Array,
       required: true,
