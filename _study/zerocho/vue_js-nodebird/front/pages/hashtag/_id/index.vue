@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     onScroll() {
-      console.log('scroll');
+      //console.log('scroll');
       if (
         window.scrollY + document.documentElement.clientHeight >
         document.documentElement.scrollHeight - 300

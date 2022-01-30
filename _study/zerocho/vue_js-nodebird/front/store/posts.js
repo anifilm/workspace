@@ -18,7 +18,7 @@ export const mutations = {
           id: 1,
           nickname: '제로초',
         },
-        content: `안녕하세요. 테스트용 ${Math.random()}번 게시글 입니다.`,
+        content: `안녕하세요. 테스트용 ${Math.floor(Math.random() * 1000)}번 게시글 입니다.`,
         Comments: [],
         Images: [],
       }));
