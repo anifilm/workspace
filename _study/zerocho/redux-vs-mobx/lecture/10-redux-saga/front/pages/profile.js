@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Router from 'next/router';
-import { useSelector } from 'react-redux';
 import Head from 'next/head';
+import { useSelector } from 'react-redux';
 
 import NicknameEditForm from '../components/NicknameEditForm';
 import AppLayout from '../components/AppLayout';

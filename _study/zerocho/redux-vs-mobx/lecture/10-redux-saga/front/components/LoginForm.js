@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import { Button, Form, Input } from 'antd';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
+import { Button, Form, Input } from 'antd';
 
 import useInput from '../hooks/useInput';
 import { loginAction } from '../reducers/user';

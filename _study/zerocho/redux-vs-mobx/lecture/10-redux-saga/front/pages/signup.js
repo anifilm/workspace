@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Form, Input, Checkbox, Button } from 'antd';
-import { useDispatch } from 'react-redux';
+import Router from 'next/router';
 import Head from 'next/head';
+import { useDispatch, useSelector } from 'react-redux';
+import { Form, Input, Checkbox, Button } from 'antd';
 
 import { signUpAction } from '../reducers/user';
 import AppLayout from '../components/AppLayout';

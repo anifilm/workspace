@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import { Card, Button, Avatar, Popover, List, Comment } from 'antd';
-import PropTypes from 'prop-types';
-import { RetweetOutlined, HeartTwoTone, HeartOutlined, MessageOutlined, EllipsisOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
-import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Card, Button, Avatar, Popover, List, Comment } from 'antd';
+import { RetweetOutlined, HeartTwoTone, HeartOutlined, MessageOutlined, EllipsisOutlined } from '@ant-design/icons';
 
 import CommentForm from './CommentForm';
 import PostCardContent from './PostCardContent';
