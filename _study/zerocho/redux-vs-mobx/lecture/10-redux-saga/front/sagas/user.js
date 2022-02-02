@@ -24,5 +24,7 @@ function* watchLogin() {
 }
 
 export default function* userSaga() {
-  yield all([fork(watchLogin)]);
+  yield all([
+    fork(watchLogin),
+  ]);
 }
