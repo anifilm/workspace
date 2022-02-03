@@ -16,15 +16,12 @@ class App extends Component {
       password: 'password',
     });
   };
-
   onLogout = () => {
     userStore.logOut();
   };
-
   onChangeName = (e) => {
     this.state.name = e.target.value;
   };
-
   onChangePassword = (e) => {
     this.state.password = e.target.value;
   };
