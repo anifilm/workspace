@@ -1,3 +1,3 @@
 {
-    "terminal.integrated.cwd": ".\\lecture\\front"
+    "terminal.integrated.cwd": "./lecture/server"
 }
