@@ -30,21 +30,28 @@ function getLottoNumber(total=45, get=6) {
   for (let i = 0; i < get; i++) {
     // allNumber 섞기
     const breakNumber = Math.floor(Math.random() * allNumber.length);
-    do { console.log('shuffle!');
+    do {
+      //console.log('shuffle!');
       shuffle(allNumber);
-      console.log(allNumber);
-      sleep(100);
+      //console.log(allNumber);
+      //sleep(100);
     } while (Math.floor(Math.random() * allNumber.length) !== breakNumber);
-    sleep(500);
+    //sleep(500);
     // 배열의 첫번째 요소를 추출
     const getNumber = allNumber.splice(breakNumber, 1)[0];
-    console.log('\ngetBall:', getNumber, '\n');
+    //console.log('\ngetBall:', getNumber, '\n');
+    //sleep(500);
     myNumber.push(getNumber);
-    sleep(500);
   }
   return myNumber;
 }
 
-const result = getLottoNumber();
+const result = [];
+for (let i = 0; i < 5; i++) {
+  result.push(getLottoNumber());
+}
 console.log('이번주 로또 추천번호');
-console.log(result);
+for (let i = 0; i < 5; i++) {
+  console.log(result[i]);
+  //console.log(result[i].sort((a, b) => a - b));
+}
