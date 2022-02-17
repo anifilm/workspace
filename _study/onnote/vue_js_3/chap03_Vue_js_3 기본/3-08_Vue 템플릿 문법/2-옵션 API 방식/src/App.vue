@@ -1,5 +1,5 @@
 <template>
-  <h2>Vue 템플릿 문법 (컴포지션 API 방식)</h2>
+  <h2>Vue 템플릿 문법 (기존 옵션 API 방식)</h2>
   <h1>{{ message }}</h1>
   <ul>
     <li v-for="item in items" v-bind:key="item.name">
@@ -9,12 +9,10 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
-  setup() {
-    const message = ref('Hello Vue!');
-    const items = ref([
+  data() {
+    const message = 'Hello Vue!';
+    const items = [
       {
         name: 'CPU',
         price: 462984,
@@ -30,11 +28,11 @@ export default {
         price: 112053,
         quantity: 2,
       },
-    ]);
+    ];
 
     return {
-      message,
-      items,
+      message: message,
+      items: items,
     };
   },
 };

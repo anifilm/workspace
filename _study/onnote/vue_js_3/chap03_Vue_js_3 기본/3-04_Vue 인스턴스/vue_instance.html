@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <h2>Vue 인스턴스 마운트 메서드를 사용하여 생성</h2>
+    <h2>Vue 인스턴스 생성</h2>
     <div id="app">
       <p>{{ message }}</p>
     </div>
@@ -16,13 +16,12 @@
       // 로딩 및 Vue가 전역 변수로 정의되었는지 확인
       console.assert(typeof Vue !== 'undefined');
       // 뷰 인스턴스 생성
-      var vm = new Vue({
+      new Vue({
+        el: '#app',
         data: {
-          message: 'Hello Vue!'
-        }
+          message: 'Hello Vue!',
+        },
       });
-      // 화면 요소가 생성되면 마운트
-      vm.$mount('#app');
     </script>
   </body>
 </html>

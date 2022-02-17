@@ -16,13 +16,11 @@
       // 로딩 및 Vue가 전역 변수로 정의되었는지 확인
       console.assert(typeof Vue !== 'undefined');
       // 뷰 인스턴스 생성
-      var vm = new Vue({
+      new Vue({
         data: {
-          message: 'Hello Vue!'
-        }
-      });
-      // 화면 요소가 생성되면 마운트
-      vm.$mount('#app');
+          message: 'Hello Vue!',
+        },
+      }).$mount('#app');
     </script>
   </body>
 </html>
