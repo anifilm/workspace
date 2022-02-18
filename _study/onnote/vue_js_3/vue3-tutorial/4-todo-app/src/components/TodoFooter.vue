@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
   name: 'TodoFooter',
-  setup() {
+  emits: ['remove-all'],
+  setup(props, context) {
     const clearTodo = () => {
-      console.log('clearTodo');
+      //console.log('clearTodo');
+      context.emit('remove-all');
     }
 
     return {

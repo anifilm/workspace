@@ -13,16 +13,19 @@ import { ref } from 'vue';
 
 export default {
   name: 'TodoList',
-  setup() {
-    const todos = ref(['todo1', 'todo2', 'todo3']);
+  props: ['todos'],
+  emits: ['remove-todo'],
+  setup(props, context) {
+    //const todos = ref(['todo1', 'todo2', 'todo3']);
 
     const removeTodo = (index) => {
-      console.log('removeTodo');
-      todos.value.splice(index, 1);
+      //console.log('removeTodo');
+      //todos.value.splice(index, 1);
+      context.emit('remove-todo', index);
     }
 
     return {
-      todos,
+      //todos,
       removeTodo,
     };
   },

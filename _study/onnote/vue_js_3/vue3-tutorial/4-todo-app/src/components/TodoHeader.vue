@@ -5,17 +5,8 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
   name: 'TodoHeader',
-  setup() {
-    let counter = ref(0);
-
-    return {
-      counter
-    };
-  }
 };
 </script>
 

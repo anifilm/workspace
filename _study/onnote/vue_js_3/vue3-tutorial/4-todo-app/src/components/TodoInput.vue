@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="newTodo" v-on:keypress.enter="addTodo" />
-    <button>추가</button>
+    <button v-on:click="addTodo">추가</button>
   </div>
 </template>
 
@@ -10,13 +10,15 @@ import { ref } from 'vue';
 
 export default {
   name: 'TodoInput',
-  setup() {
+  emits: ['add-todo'],
+  setup(props, context) {
     const newTodo = ref('');
 
     const addTodo = () => {
       if (newTodo.value !== '') {
         const inputValue = newTodo.value && newTodo.value.trim();
-        console.log('addTodo inputValue', inputValue);
+        //console.log('addTodo inputValue', inputValue);
+        context.emit('add-todo', inputValue);
         clearInput();
       }
     };
