@@ -1,12 +1,10 @@
 <template>
-  <h2>Vue props 속성 (컴포지션 API 방식)</h2>
-  <!-- v-bind 속성(props)을 통해 하위 컴포넌트로 데이터를 보낸다. -->
-  <!-- v-bind:[하위 props data 속성 이름]="[상위 data 속성 이름]" -->
-  <item-main v-bind:items="items"></item-main>
+  <h2>Vue Provide / Inject</h2>
+  <item-main></item-main>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, provide } from 'vue'; // provide 함수 임포트
 import ItemMain from './components/ItemMain.vue';
 
 export default {
@@ -32,10 +30,8 @@ export default {
         quantity: 2,
       },
     ]);
-
-    return {
-      items,
-    };
+    // 공유할 데이터 정의 (provide 상위 컴포넌트가 하위 컴포넌트들과 데이터 공유시 정의)
+    provide('items', items);
   },
 };
 </script>
