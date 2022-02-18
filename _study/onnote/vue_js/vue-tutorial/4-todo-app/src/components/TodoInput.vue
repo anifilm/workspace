@@ -21,8 +21,8 @@
 export default {
   data() {
     return {
-      newTodoItem: ''
-    }
+      newTodoItem: '',
+    };
   },
   methods: {
     // Todo 항목 추가
@@ -38,7 +38,7 @@ export default {
     // Todo 항목을 추가한 후 입력된 텍스트를 지운다.
     clearInput() {
       this.newTodoItem = '';
-    }
-  }
-}
+    },
+  },
+};
 </script>

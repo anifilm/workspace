@@ -6,17 +6,19 @@
     </v-app-bar>
 
     <v-main>
-      <TodoInput v-on:addTodo="addTodo" />
-      <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="removeTodo" />
+      <TodoInput v-on:addTodo="onAddTodo" />
+      <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="onRemoveTodo" />
     </v-main>
 
     <v-footer app>
-      <TodoFooter v-on:clearDone="clearDone" />
+      <TodoFooter v-on:clearDone="onClearDone" />
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 import TodoHeader from '@/components/TodoHeader';
 import TodoInput from '@/components/TodoInput';
 import TodoList from '@/components/TodoList';
@@ -28,27 +30,25 @@ export default {
     TodoHeader,
     TodoInput,
     TodoList,
-    TodoFooter
+    TodoFooter,
   },
-  data() {
-    return {
-      todoItems: [
-        '아침먹기',
-        '점심먹기',
-        '저녁먹기'
-      ]
-    }
+  computed: {
+    //todoItems() {
+    //  return this.$store.state.todoItems;
+    //}
+    ...mapState(['todoItems']),
   },
   methods: {
-    clearDone() {
-      this.todoItems = [];
+    ...mapActions(['addTodo', 'removeTodo', 'clearDone']),
+    onAddTodo(todoItem) {
+      this.addTodo(todoItem);
     },
-    addTodo(todoItem) {
-      this.todoItems.push(todoItem);
+    onRemoveTodo(todoItem, index) {
+      this.removeTodo(index);
     },
-    removeTodo(todoItem, index) {
-      this.todoItems.splice(index, 1);
-    }
-  }
+    onClearDone() {
+      this.clearDone();
+    },
+  },
 };
 </script>

@@ -15,8 +15,8 @@ export default {
     // 모든 완료된 Todo 항목을 삭제
     clearTodo() {
       //console.log('clearDone');
-      this.$emit('clearDone')
-    }
-  }
-}
+      this.$emit('clearDone');
+    },
+  },
+};
 </script>
