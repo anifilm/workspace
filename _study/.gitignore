@@ -15,6 +15,7 @@ __new__/
 *.class
 *.exe
 *.zip
+*.lnk
 
 _강의자료_/
 
