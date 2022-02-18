@@ -7,17 +7,17 @@
 <script>
 export default {
   name: 'TodoFooter',
-  emits: ['remove-all'],
+  emits: ['clear-all'],
   setup(props, context) {
     const clearTodo = () => {
       //console.log('clearTodo');
-      context.emit('remove-all');
-    }
+      context.emit('clear-all');
+    };
 
     return {
-      clearTodo
+      clearTodo,
     };
-  }
+  },
 };
 </script>
 

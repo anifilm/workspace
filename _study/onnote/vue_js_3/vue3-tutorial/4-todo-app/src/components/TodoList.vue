@@ -22,7 +22,7 @@ export default {
       //console.log('removeTodo');
       //todos.value.splice(index, 1);
       context.emit('remove-todo', index);
-    }
+    };
 
     return {
       //todos,

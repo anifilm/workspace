@@ -2,7 +2,7 @@
   <TodoHeader></TodoHeader>
   <TodoInput v-on:add-todo="addTodo"></TodoInput>
   <TodoList v-bind:todos="todos" v-on:remove-todo="removeTodo"></TodoList>
-  <TodoFooter v-on:remove-all="clearAll"></TodoFooter>
+  <TodoFooter v-on:clear-all="clearAll"></TodoFooter>
 </template>
 
 <script>
@@ -24,21 +24,21 @@ export default {
   setup() {
     const todos = ref([]);
 
-    const clearAll = () => {
-      todos.value.length = 0;
-    };
     const addTodo = (todo) => {
       todos.value.push(todo);
     };
     const removeTodo = (index) => {
       todos.value.splice(index, 1);
     };
+    const clearAll = () => {
+      todos.value.length = 0;
+    };
 
     return {
       todos,
-      clearAll,
       addTodo,
       removeTodo,
+      clearAll,
     };
   },
 };
