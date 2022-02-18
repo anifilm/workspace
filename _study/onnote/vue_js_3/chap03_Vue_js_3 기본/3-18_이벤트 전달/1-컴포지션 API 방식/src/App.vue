@@ -1,17 +1,18 @@
 <template>
-  <h2>Vue data 속성 (컴포지션 API 방식)</h2>
-  <h1>{{ message }}</h1>
-  <p>{{ items }}</p>
+  <h2>Vue 이벤트 전달 (컴포지션 API 방식)</h2>
+  <item-main></item-main>
 </template>
 
 <script>
-import { ref } from 'vue'; // ref 컴포지션 함수 임포트
+import { ref, provide } from 'vue';
+import ItemMain from './components/ItemMain.vue';
 
 export default {
+  name: 'App',
+  components: {
+    ItemMain,
+  },
   setup() {
-    // 반응형 변수 선언
-    const message = ref('Hello Vue!');
-    // 배열 타입의 반응형 변수 선언
     const items = ref([
       {
         name: 'CPU',
@@ -29,11 +30,8 @@ export default {
         quantity: 2,
       },
     ]);
-    // 변수 반환
-    return {
-      message,
-      items
-    };
+
+    provide('items', items);
   },
 };
 </script>
