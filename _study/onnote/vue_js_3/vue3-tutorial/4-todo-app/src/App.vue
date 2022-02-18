@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
@@ -22,16 +23,20 @@ export default {
     TodoFooter,
   },
   setup() {
-    const todos = ref([]);
+    const store = useStore();
+    const todos = computed(() => store.state.todos);
 
     const addTodo = (todo) => {
-      todos.value.push(todo);
+      //todos.value.push(todo);
+      store.dispatch('addTodo', todo);
     };
     const removeTodo = (index) => {
-      todos.value.splice(index, 1);
+      //todos.value.splice(index, 1);
+      store.dispatch('removeTodo', index);
     };
     const clearAll = () => {
-      todos.value.length = 0;
+      //todos.value.length = 0;
+      store.dispatch('clearAll')
     };
 
     return {
