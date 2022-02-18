@@ -1,5 +1,5 @@
 <template>
-  <h2>Vue props 속성</h2>
+  <h2>Vue props 속성 (컴포지션 API 방식)</h2>
   <!-- v-bind 속성(props)을 통해 하위 컴포넌트로 데이터를 보낸다. -->
   <!-- v-bind:[하위 props data 속성 이름]="[상위 data 속성 이름]" -->
   <item-main v-bind:items="items"></item-main>
