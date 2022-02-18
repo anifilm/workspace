@@ -1,7 +1,13 @@
 import React from 'react';
 
+import styles from '../Todo.module.css';
+
 const TodoFooter = () => {
-  return <div>TodoFooter</div>;
+  return (
+    <div className={styles.footer}>
+      <button>TodoFooter</button>
+    </div>
+  );
 };
 
 export default TodoFooter;
