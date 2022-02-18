@@ -1,38 +1,26 @@
 <template>
-  <h2>Vue data 속성 (컴포지션 API 방식)</h2>
-  <h1>{{ message }}</h1>
-  <p>{{ items }}</p>
+  <h2>Vue watch 속성 (컴포지션 API 방식)</h2>
+  메인보드의 가격: <input type="text" v-on:input="price = $event.target.value" v-bind:value="price" />
 </template>
 
 <script>
-import { ref } from 'vue'; // ref 컴포지션 함수 임포트
+import { ref, watch } from 'vue'; // watch 컴포지션 함수 임포트
 
 export default {
   setup() {
-    // 반응형 변수 선언
-    const message = ref('Hello Vue!');
-    // 배열 타입의 반응형 변수 선언
-    const items = ref([
-      {
-        name: 'CPU',
-        price: 462984,
-        quantity: 1,
+    const price = ref(112053);
+    // watch 속성
+    watch(
+      price,
+      (cur, prev) => {
+        console.log('price의 변경되기 이전 값:', prev);
+        console.log('price의 변경된 값:', cur);
       },
-      {
-        name: '메인보드',
-        price: 112053,
-        quantity: 1,
-      },
-      {
-        name: '메모리',
-        price: 112053,
-        quantity: 2,
-      },
-    ]);
-    // 변수 반환
+      { immediate: true },
+    );
+
     return {
-      message,
-      items
+      price,
     };
   },
 };

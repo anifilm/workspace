@@ -1,17 +1,25 @@
 <template>
-  <h2>Vue data 속성 (컴포지션 API 방식)</h2>
-  <h1>{{ message }}</h1>
-  <p>{{ items }}</p>
+  <h2>Vue computed 속성 (컴포지션 API 방식)</h2>
+  <ul>
+    <li v-for="item in items" v-bind:key="item.name">
+      {{ item.name }}의 가격:
+      <input type="text" v-on:input="item.price = $event.target.value" v-bind:value="item.price" />
+    </li>
+  </ul>
+  <hr />
+  <ul>
+    <li v-for="item in items" v-bind:key="item.name">
+      {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{ item.price * item.quantity }}원
+    </li>
+  </ul>
+  <p>합계: {{ totalPrice }}원</p>
 </template>
 
 <script>
-import { ref } from 'vue'; // ref 컴포지션 함수 임포트
+import { ref, computed } from 'vue';
 
 export default {
   setup() {
-    // 반응형 변수 선언
-    const message = ref('Hello Vue!');
-    // 배열 타입의 반응형 변수 선언
     const items = ref([
       {
         name: 'CPU',
@@ -29,10 +37,16 @@ export default {
         quantity: 2,
       },
     ]);
-    // 변수 반환
+
+    const totalPrice = computed(() => {
+      return items.value.reduce(function (sum, item) {
+        return sum + item.price * item.quantity;
+      }, 0);
+    });
+
     return {
-      message,
-      items
+      items,
+      totalPrice,
     };
   },
 };

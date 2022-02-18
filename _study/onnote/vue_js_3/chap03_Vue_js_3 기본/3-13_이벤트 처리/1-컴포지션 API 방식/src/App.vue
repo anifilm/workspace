@@ -1,38 +1,172 @@
 <template>
-  <h2>Vue data 속성 (컴포지션 API 방식)</h2>
-  <h1>{{ message }}</h1>
-  <p>{{ items }}</p>
+  <h2>Vue 이벤트 처리 (컴포지션 API 방식)</h2>
+  <form v-on:submit.prevent="onSubmit">
+    <table>
+      <tr>
+        <td>사용자 아이디</td>
+        <td><input type="text" v-bind:value="userId" v-on:input="userId = $event.target.value" /></td>
+      </tr>
+      <tr>
+        <td>비밀번호</td>
+        <td><input type="password" v-bind:value="userPw" v-on:change="userPw = $event.target.value" /></td>
+      </tr>
+      <tr>
+        <td>소개</td>
+        <td><textarea v-model="introduction"></textarea></td>
+      </tr>
+      <tr>
+        <td>개발자 여부</td>
+        <td>
+          <input type="checkbox" v-on:change="handleCheckBox" />
+          <span>handleCheckBox</span>
+        </td>
+      </tr>
+      <tr>
+        <td>개발자 여부</td>
+        <td>
+          <input type="checkbox" v-on:change="handleCheckBox()" />
+          <span>handleCheckBox()</span>
+        </td>
+      </tr>
+      <tr>
+        <td>개발자 여부</td>
+        <td>
+          <input type="checkbox" v-on:change="handleCheckBox2" />
+          <span>handleCheckBox2</span>
+        </td>
+      </tr>
+      <tr>
+        <td>개발자 여부</td>
+        <td>
+          <input type="checkbox" v-on:change="handleCheckBox2($event)" />
+          <span>handleCheckBox2($event)</span>
+        </td>
+      </tr>
+      <tr>
+        <td>개발자 여부</td>
+        <td>
+          <input type="checkbox" v-on:change="handleCheckBox3('checked!')" />
+          <span>handleCheckBox3('checked!')</span>
+        </td>
+      </tr>
+      <tr>
+        <td>외국인 여부</td>
+        <td>
+          <input type="checkbox" v-on:change="handleCheckBox4('checked!', $event)" />
+          <span>handleCheckBox4('checked!', $event)</span>
+        </td>
+      </tr>
+      <tr>
+        <td>취미</td>
+        <td>
+          <input type="checkbox" id="chkSports" value="Sports" v-model="hobbyList" />
+          <label for="chkSports">Sports</label>
+          <input type="checkbox" id="chkMusic" value="Music" v-model="hobbyList" />
+          <label for="chkMusic">Music</label>
+          <input type="checkbox" id="chkMovie" value="Movie" v-model="hobbyList" />
+          <label for="chkMovie">Movie</label>
+        </td>
+      </tr>
+      <tr>
+        <td>성별</td>
+        <td>
+          <input type="radio" id="rdoMale" value="male" v-model="gender" />
+          <label for="rdoMale">Male</label>
+          <input type="radio" id="rdoFemale" value="female" v-model="gender" />
+          <label for="rdoFemale">Female</label>
+          <input type="radio" id="rdoNone" value="none" v-model="gender" />
+          <label for="rdoNone">None</label>
+        </td>
+      </tr>
+      <tr>
+        <td>국적</td>
+        <td>
+          <select v-model="nationality">
+            <option disabled value="">Please select one</option>
+            <option value="01">Korea</option>
+            <option value="02">Gemany</option>
+            <option value="03">Australia</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>소유차량</td>
+        <td>
+          <select v-model="carList" multiple>
+            <option>Benz</option>
+            <option>BMW</option>
+            <option>Audi</option>
+            <option>Volvo</option>
+            <option>Saab</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <p><button type="submit">등록</button></p>
+  </form>
 </template>
 
 <script>
-import { ref } from 'vue'; // ref 컴포지션 함수 임포트
+import { ref, computed } from 'vue';
 
 export default {
   setup() {
-    // 반응형 변수 선언
-    const message = ref('Hello Vue!');
-    // 배열 타입의 반응형 변수 선언
-    const items = ref([
-      {
-        name: 'CPU',
-        price: 462984,
-        quantity: 1,
-      },
-      {
-        name: '메인보드',
-        price: 112053,
-        quantity: 1,
-      },
-      {
-        name: '메모리',
-        price: 112053,
-        quantity: 2,
-      },
-    ]);
-    // 변수 반환
+    // data 속성 정의
+    const userId = ref('');
+    const userPw = ref('');
+    const introduction = ref('');
+    const developer = ref(false);
+    const foreigner = ref('no');
+    const hobbyList = ref([]);
+    const gender = ref('male');
+    const nationality = ref('');
+    const carList = ref([]);
+    // 데이터 값을 출력한다.
+    const onSubmit = () => {
+      console.log('userId:', userId.value);
+      console.log('userpw:', userPw.value);
+      console.log('introduction:', introduction.value);
+      console.log('developer:', developer.value);
+      console.log('foreigner:', foreigner.value);
+      console.log('hobbyList:', hobbyList.value);
+      console.log('gender:', gender.value);
+      console.log('nationality:', nationality.value);
+      console.log('carList:', carList.value);
+    };
+    // 인자없는 메서드
+    const handleCheckBox = () => {
+      console.log('handleCheckBox');
+    };
+    // event 인자를 가진 메서드
+    const handleCheckBox2 = (event) => {
+      console.log('handleCheckBox2 event:', event);
+    };
+    // 메서드 인자를 가진 메서드
+    const handleCheckBox3 = (message) => {
+      console.log('handleCheckBox3 message:', message);
+    };
+    // 메서드 인자와 event 인자를 가진 메서드
+    const handleCheckBox4 = (message, event) => {
+      console.log('handleCheckBox4 message:', message);
+      console.log('handleCheckBox4 event:', event);
+    };
+
     return {
-      message,
-      items
+      userId,
+      userPw,
+      introduction,
+      developer,
+      foreigner,
+      hobbyList,
+      gender,
+      nationality,
+      carList,
+      // 이벤트 처리 메서드 변수 반환
+      onSubmit,
+      handleCheckBox,
+      handleCheckBox2,
+      handleCheckBox3,
+      handleCheckBox4,
     };
   },
 };
