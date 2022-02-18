@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { Todo } from '../App';
 
 import TodoFooter from './TodoFooter';
@@ -10,28 +10,29 @@ const Todos = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const nextId = useRef(1);
 
-  const onInsert = (text: string) => {
+  const onInsert = useCallback((text: string) => {
     const todo = {
       id: nextId.current,
       text,
       done: false,
     };
-    setTodos(todos.concat(todo));
+    setTodos((todos) => todos.concat(todo));
     nextId.current += 1;
-  };
-  const onToggle = (id: number) => {
-    setTodos(
+  }, []);
+  const onToggle = useCallback((id: number) => {
+    setTodos((todos) =>
       todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       ),
     );
-  };
-  const onRemove = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-  const onClearAll = () => {
-    setTodos([]);
-  };
+  }, []);
+  const onRemove = useCallback((id: number) => {
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  }, []);
+  const onClearAll = useCallback(() => {
+    // 완료된 항목만 삭제하도록 수정
+    setTodos((todos) => todos.filter((todo) => !todo.done));
+  }, []);
 
   return (
     <div>
