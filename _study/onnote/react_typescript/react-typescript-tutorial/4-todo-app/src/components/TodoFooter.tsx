@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from '../Todo.module.css';
 
-const TodoFooter = () => {
+interface Props {
+  readonly onClearAll: () => void;
+}
+
+const TodoFooter = ({ onClearAll }: Props) => {
   return (
     <div className={styles.footer}>
-      <button>TodoFooter</button>
+      <button onClick={() => onClearAll()}>완료 항목 삭제</button>
     </div>
   );
 };

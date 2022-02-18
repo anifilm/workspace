@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Todo } from '../App';
 
 import TodoFooter from './TodoFooter';
 import TodoHeader from './TodoHeader';
@@ -6,30 +7,38 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 const Todos = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'todoItem1',
-      done: true,
-    },
-    {
-      id: 2,
-      text: 'todoItem2',
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const nextId = useRef(1);
+
+  const onInsert = (text: string) => {
+    const todo = {
+      id: nextId.current,
+      text,
       done: false,
-    },
-    {
-      id: 3,
-      text: 'todoItem3',
-      done: false,
-    },
-  ]);
+    };
+    setTodos(todos.concat(todo));
+    nextId.current += 1;
+  };
+  const onToggle = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      ),
+    );
+  };
+  const onRemove = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  const onClearAll = () => {
+    setTodos([]);
+  };
 
   return (
     <div>
       <TodoHeader />
-      <TodoInput />
-      <TodoList todos={todos} />
-      <TodoFooter />
+      <TodoInput onInsert={onInsert} />
+      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
+      <TodoFooter onClearAll={onClearAll} />
     </div>
   );
 };
