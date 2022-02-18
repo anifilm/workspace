@@ -1,5 +1,5 @@
 <template>
-  <h2>Vue 컴포넌트 (컴포넌트 정의)</h2>
+  <h2>Vue 컴포넌트 (싱글 파일 컴포넌트)</h2>
   <ul>
     <li v-for="item in items" v-bind:key="item.name">
       {{ item.name }}의 가격:
