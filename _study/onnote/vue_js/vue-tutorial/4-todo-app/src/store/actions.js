@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, CLEAR_DONE } from './mutation-types';
+import { ADD_TODO, REMOVE_TODO, CLEAR_DONE, RESTORE } from './mutation-types';
 
 export default {
   addTodo({ commit }, payload) {
@@ -9,5 +9,17 @@ export default {
   },
   clearDone({ commit }) {
     commit(CLEAR_DONE);
+  },
+  save({ state }) {
+    const data = {
+      todoItems: state.todoItems,
+    };
+    localStorage.setItem('vue-todo-app-data', JSON.stringify(data));
+  },
+  restore({ commit }) {
+    const data = localStorage.getItem('vue-todo-app-data');
+    if (data) {
+      commit(RESTORE, JSON.parse(data));
+    }
   },
 };

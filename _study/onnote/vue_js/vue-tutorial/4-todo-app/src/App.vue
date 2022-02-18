@@ -33,22 +33,25 @@ export default {
     TodoFooter,
   },
   computed: {
-    //todoItems() {
-    //  return this.$store.state.todoItems;
-    //}
     ...mapState(['todoItems']),
   },
   methods: {
-    ...mapActions(['addTodo', 'removeTodo', 'clearDone']),
+    ...mapActions(['addTodo', 'removeTodo', 'clearDone', 'save', 'restore']),
     onAddTodo(todoItem) {
       this.addTodo(todoItem);
+      this.save();
     },
     onRemoveTodo(todoItem, index) {
       this.removeTodo(index);
+      this.save();
     },
     onClearDone() {
       this.clearDone();
+      this.save();
     },
+  },
+  created() {
+    this.restore();
   },
 };
 </script>
