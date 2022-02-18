@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>모두 삭제</button>
+    <button v-on:click="clearTodo">모두 삭제</button>
   </div>
 </template>
 
@@ -10,10 +10,12 @@ import { ref } from 'vue';
 export default {
   name: 'TodoFooter',
   setup() {
-    let counter = ref(0);
+    const clearTodo = () => {
+      console.log('clearTodo');
+    }
 
     return {
-      counter
+      clearTodo
     };
   }
 };
