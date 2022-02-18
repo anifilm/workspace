@@ -33,8 +33,7 @@ export default {
     const editInput = ref(null);
 
     // 더블클릭 이벤트를 처리하는 메서드
-    //const handleDblClick = (index) => {
-    function handleDblClick(index) {
+    const handleDblClick = (index) => {
       todos[index].isEditing = true;
       // 입력 요소에 포커스 처리
       nextTick(() => {
