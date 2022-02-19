@@ -1,6 +1,7 @@
 import React from 'react';
-import { TodoConsumer } from '../contexts/todo';
 import styles from '../Todo.module.css';
+
+import { TodoConsumer } from '../contexts/todo';
 
 const TodoFooter = () => {
   return (
