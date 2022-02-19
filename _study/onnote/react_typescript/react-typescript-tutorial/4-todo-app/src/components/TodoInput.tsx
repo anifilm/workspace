@@ -6,13 +6,13 @@ import { TodoConsumer } from '../contexts/todo';
 const TodoInput = () => {
   return (
     <TodoConsumer>
-      {(value) => (
+      {({ state, actions }) => (
         <div className={styles.input}>
-          <form onSubmit={value.actions.onSubmit}>
+          <form onSubmit={actions.onSubmit}>
             <input
               type="text"
-              value={value.state.input}
-              onChange={value.actions.onChange}
+              value={state.input}
+              onChange={actions.onChange}
               placeholder="할 일을 입력하세요"
             />
             <button type="submit">추가</button>

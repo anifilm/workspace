@@ -6,9 +6,9 @@ import { TodoConsumer } from '../contexts/todo';
 const TodoFooter = () => {
   return (
     <TodoConsumer>
-      {(value) => (
+      {({ actions }) => (
         <div className={styles.footer}>
-          <button onClick={() => value.actions.onClearAll()}>완료 항목 삭제</button>
+          <button onClick={() => actions.onClearAll()}>완료 항목 삭제</button>
         </div>
       )}
     </TodoConsumer>
