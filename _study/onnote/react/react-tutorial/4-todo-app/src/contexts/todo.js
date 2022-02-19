@@ -1,10 +1,7 @@
 import React, { createContext, useState, useCallback, useRef } from 'react';
 
 const TodoContext = createContext({
-  state: {
-    todos: [],
-    input: '',
-  },
+  state: { todos: [], input: '' },
   actions: {
     setTodos: () => {},
     onInsert: () => {},
@@ -18,30 +15,12 @@ const TodoContext = createContext({
 
 // 컨텍스트 공급자 정의
 const TodoProvider = ({ children }) => {
-  const todoItems = [
-    {
-      id: 1,
-      text: 'todoItem1',
-      done: true,
-    },
-    {
-      id: 2,
-      text: 'todoItem2',
-      done: false,
-    },
-    {
-      id: 3,
-      text: 'todoItem3',
-      done: false,
-    },
-  ];
-
   // 상태 정의
-  const [todos, setTodos] = useState(todoItems);
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
-
   // 로컬 변수 정의
   const nextId = useRef(4);
+
   // Todo 항목 추가 이벤트 처리
   const onInsert = useCallback((text) => {
     const todo = {
@@ -49,50 +28,42 @@ const TodoProvider = ({ children }) => {
       text: text,
       done: false,
     };
-    setTodos((todos) => {
-      return todos.concat(todo);
-    });
+    setTodos((todos) => todos.concat(todo));
     nextId.current += 1;
   }, []);
   // 완료 체크 이벤트 처리
   const onToggle = useCallback((id) => {
-    setTodos((todos) => {
-      return todos.map((todo) => {
-        return todo.id === id ? { ...todo, done: !todo.done } : todo;
-      });
-    });
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      ),
+    );
   }, []);
   // Todo 항목 삭제 이벤트 처리
   const onRemove = useCallback((id) => {
-    setTodos((todos) => {
-      return todos.filter((todo) => {
-        return todo.id !== id;
-      });
-    });
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
   }, []);
-  // Todo 완료 항목 모두 삭제 이벤트 처리
+  // Todo 완료 항목 삭제 이벤트 처리
   const onClearAll = useCallback(() => {
-    //setTodos(() => { return []; }); // 항목 모두 삭제
-    setTodos((todos) => {
-      return todos.filter((todo) => {
-        return !todo.done;
-      });
-    });
+    setTodos((todos) => todos.filter((todo) => !todo.done));
   }, []);
 
   const onChange = useCallback((e) => {
     setInput(e.target.value);
   }, []);
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
-    if (input.trim() === '') {
-      alert('내용을 입력하세요.');
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (input.trim() === '') {
+        alert('내용을 입력하세요.');
+        setInput('');
+        return;
+      }
+      onInsert(input.trim());
       setInput('');
-      return;
-    }
-    onInsert(input.trim());
-    setInput('');
-  }, [onInsert, input]);
+    },
+    [onInsert, input],
+  );
 
   // 상태(state)와 업데이트 함수(actions)를 묶어 value 객체 생성
   const value = {
@@ -109,11 +80,7 @@ const TodoProvider = ({ children }) => {
   };
 
   // value 속성값 설정
-  return (
-    <TodoContext.Provider value={value}>
-      {children}
-    </TodoContext.Provider>
-  );
+  return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 };
 
 // TodoContext의 Consumer 속성을 TodoConsumer 변수에 저장
