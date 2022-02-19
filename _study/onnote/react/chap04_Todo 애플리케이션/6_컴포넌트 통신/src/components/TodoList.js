@@ -3,16 +3,11 @@ import styles from '../Todo.module.css';
 
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos, onToggle, onRemove }) => {
+const TodoList = ({ todos }) => {
   return (
     <div className={styles.list}>
       {todos.map((todo) => (
-        <TodoItem
-          todo={todo}
-          key={todo.id}
-          onToggle={onToggle}
-          onRemove={onRemove}
-        />
+        <TodoItem todo={todo} key={todo.id} />
       ))}
     </div>
   );
