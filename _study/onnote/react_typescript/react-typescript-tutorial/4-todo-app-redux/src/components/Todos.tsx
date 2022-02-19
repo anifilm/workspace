@@ -2,10 +2,10 @@ import React from 'react';
 
 import { TodoProvider } from '../contexts/todo';
 
-import TodoFooter from './TodoFooter';
 import TodoHeader from './TodoHeader';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
+import TodoFooter from './TodoFooter';
 
 const Todos = () => {
   return (
