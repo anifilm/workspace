@@ -16,6 +16,11 @@ $ vue create my-app
 $ vue init webpack my-app
 
 
+# Vuex 설치 (vue 2.x)
+
+$ yarn add vuex@3
+
+
 # Vuetify 적용
 
 $ vue add vuetify
