@@ -16,22 +16,22 @@ const Todos = () => {
       text,
       done: false,
     };
-    setTodos(todos.concat(todo));
+    setTodos((todos) => todos.concat(todo));
     nextId.current += 1;
   };
   const onToggle = (id) => {
-    setTodos(
+    setTodos((todos) =>
       todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       ),
     );
   };
   const onRemove = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
   };
   const onClearAll = () => {
     // 완료된 항목만 삭제하도록 수정
-    setTodos(todos.filter((todo) => !todo.done));
+    setTodos((todos) => todos.filter((todo) => !todo.done));
   };
 
   return (
