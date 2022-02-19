@@ -23,6 +23,6 @@ export default {
 
 <style scoped>
 div {
-  background-color: AliceBlue;
+  background-color: Lavender;
 }
 </style>

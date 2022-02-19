@@ -68,6 +68,6 @@ export default {
 <style>
 body {
   text-align: center;
-  background-color: SteelBlue;
+  background-color: GhostWhite;
 }
 </style>

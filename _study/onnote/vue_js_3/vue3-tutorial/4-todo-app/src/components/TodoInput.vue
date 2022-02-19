@@ -38,6 +38,6 @@ export default {
 
 <style scoped>
 div {
-  background-color: PaleVioletRed;
+  background-color: LightPink;
 }
 </style>
