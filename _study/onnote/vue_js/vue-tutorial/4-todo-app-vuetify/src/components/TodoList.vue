@@ -14,8 +14,9 @@
           small
           outlined
           v-on:click="removeTodo(todoItem, index)"
-          >삭제</v-btn
         >
+          삭제
+        </v-btn>
       </v-list-item>
     </v-card>
   </v-container>

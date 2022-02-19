@@ -11,7 +11,7 @@
     </v-main>
 
     <v-footer app>
-      <TodoFooter v-on:clearDone="onClearDone" />
+      <TodoFooter v-on:clearAll="onClearAll" />
     </v-footer>
   </v-app>
 </template>
@@ -45,8 +45,8 @@ export default {
       this.removeTodo(index);
       this.save();
     },
-    onClearDone() {
-      this.clearDone();
+    onClearAll() {
+      this.clearAll();
       this.save();
     },
   },

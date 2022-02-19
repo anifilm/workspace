@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, CLEAR_DONE, RESTORE } from './mutation-types';
+import { ADD_TODO, REMOVE_TODO, CLEAR_ALL, RESTORE } from './mutation-types';
 
 export default {
   [ADD_TODO](state, todoItem) {
@@ -7,7 +7,7 @@ export default {
   [REMOVE_TODO](state, index) {
     state.todoItems.splice(index, 1);
   },
-  [CLEAR_DONE](state) {
+  [CLEAR_ALL](state) {
     // TODO: 완료 항목 삭제로 수정 필요
     state.todoItems = [];
   },

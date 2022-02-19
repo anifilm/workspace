@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {
-  name: 'TodoHeader',
-};
+export default {};
 </script>
 
 <style scoped>

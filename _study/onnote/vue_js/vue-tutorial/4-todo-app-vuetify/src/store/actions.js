@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, CLEAR_DONE, RESTORE } from './mutation-types';
+import { ADD_TODO, REMOVE_TODO, CLEAR_ALL, RESTORE } from './mutation-types';
 
 export default {
   addTodo({ commit }, payload) {
@@ -7,7 +7,7 @@ export default {
   removeTodo({ commit }, payload) {
     commit(REMOVE_TODO, payload);
   },
-  clearDone({ commit }) {
+  clearAll({ commit }) {
     commit(CLEAR_DONE);
   },
   save({ state }) {
