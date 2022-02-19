@@ -32,7 +32,7 @@ const Todos = () => {
   };
   const onClearAll = () => {
     // 완료된 항목만 삭제하도록 수정
-    setTodos((todos) => todos.filter((todo) => !todo.done));
+    setTodos(todos.filter((todo) => !todo.done));
   };
 
   return (
