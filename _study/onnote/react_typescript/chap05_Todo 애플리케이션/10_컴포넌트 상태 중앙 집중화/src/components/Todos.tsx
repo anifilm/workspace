@@ -1,10 +1,10 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Todo } from '../App';
 
-import TodoFooter from './TodoFooter';
 import TodoHeader from './TodoHeader';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
+import TodoFooter from './TodoFooter';
 
 const Todos = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
