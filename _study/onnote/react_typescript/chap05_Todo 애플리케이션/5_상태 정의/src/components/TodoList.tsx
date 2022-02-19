@@ -1,18 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../Todo.module.css';
-import { Todo } from '../App';
 
 import TodoItem from './TodoItem';
 
-interface Props {
-  readonly todos: Todo[];
-}
+const TodoList = () => {
+  const [todos, setTodos] = useState(['todoItem1', 'todoItem2', 'todoItem3',]);
 
-const TodoList = ({ todos }: Props) => {
   return (
     <div className={styles.list}>
       {todos.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} />
+        <TodoItem />
       ))}
     </div>
   );
