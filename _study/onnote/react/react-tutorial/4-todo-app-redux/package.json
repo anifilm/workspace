@@ -1,15 +1,13 @@
 {
-  "name": "image-shop",
+  "name": "todo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "typescript": "^4.4.2"
+    "react-redux": "^7.2.6",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
