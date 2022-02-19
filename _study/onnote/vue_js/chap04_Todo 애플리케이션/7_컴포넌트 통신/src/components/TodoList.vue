@@ -15,7 +15,7 @@ export default {
   props: ['todoItems'],
   methods: {
     removeTodo(todoItem, index) {
-      console.log('removeTodo');
+      //console.log('removeTodo');
       this.$emit('removeTodo', todoItem, index);
     },
   },

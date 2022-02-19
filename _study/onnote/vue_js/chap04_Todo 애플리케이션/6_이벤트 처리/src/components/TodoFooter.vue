@@ -1,15 +1,14 @@
 <template>
   <div>
-    <button v-on:click="clearAll">완료 항목 삭제</button>
+    <button v-on:click="clearTodo">완료 항목 삭제</button>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    clearAll() {
-      console.log('clearAll');
-      this.$emit('clearAll');
+    clearTodo() {
+      console.log('clearTodo');
     }
   }
 };

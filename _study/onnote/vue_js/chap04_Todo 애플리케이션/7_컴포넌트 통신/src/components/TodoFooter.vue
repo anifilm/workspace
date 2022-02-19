@@ -8,7 +8,7 @@
 export default {
   methods: {
     clearAll() {
-      console.log('clearAll');
+      //console.log('clearAll');
       this.$emit('clearAll');
     }
   }
