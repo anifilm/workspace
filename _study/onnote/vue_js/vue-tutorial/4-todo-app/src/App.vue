@@ -1,57 +1,28 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <TodoHeader />
-    </v-app-bar>
-
-    <v-main>
-      <TodoInput v-on:addTodo="onAddTodo" />
-      <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="onRemoveTodo" />
-    </v-main>
-
-    <v-footer app>
-      <TodoFooter v-on:clearDone="onClearDone" />
-    </v-footer>
-  </v-app>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
-import TodoHeader from '@/components/TodoHeader';
-import TodoInput from '@/components/TodoInput';
-import TodoList from '@/components/TodoList';
-import TodoFooter from '@/components/TodoFooter';
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    TodoHeader,
-    TodoInput,
-    TodoList,
-    TodoFooter,
-  },
-  computed: {
-    ...mapState(['todoItems']),
-  },
-  methods: {
-    ...mapActions(['addTodo', 'removeTodo', 'clearDone', 'save', 'restore']),
-    onAddTodo(todoItem) {
-      this.addTodo(todoItem);
-      this.save();
-    },
-    onRemoveTodo(todoItem, index) {
-      this.removeTodo(index);
-      this.save();
-    },
-    onClearDone() {
-      this.clearDone();
-      this.save();
-    },
-  },
-  created() {
-    this.restore();
-  },
-};
+    HelloWorld
+  }
+}
 </script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
