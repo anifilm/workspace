@@ -15,4 +15,7 @@ export default {
 div {
   background-color: Pink;
 }
+button {
+  margin: 5px;
+}
 </style>
