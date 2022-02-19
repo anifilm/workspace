@@ -16,6 +16,7 @@ export default {
 
 <style scoped>
 div {
-  background-color: Lavender;
+  background-color: AliceBlue;
+  margin-top: 10px;
 }
 </style>

@@ -17,7 +17,6 @@ const TodoInput = () => {
             />
             <button type="submit">추가</button>
           </form>
-          <h1>TodoInput</h1>
         </div>
       )}
     </TodoConsumer>

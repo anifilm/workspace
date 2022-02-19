@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>TodoInput</h1>
+    <input type="text" />
+    <button>추가</button>
   </div>
 </template>
 
@@ -8,14 +9,17 @@
 export default {
   data() {
     return {
-      counter: 0
+      counter: 0,
     };
-  }
+  },
 };
 </script>
 
 <style scoped>
 div {
-  background-color: LightPink;
+  background-color: Pink;
+}
+input {
+  margin-bottom: 10px;
 }
 </style>

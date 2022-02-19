@@ -26,7 +26,7 @@ export default {
 
 <style>
 body {
-  text-align: center;
+  /*text-align: center;*/
   background-color: GhostWhite;
 }
 </style>

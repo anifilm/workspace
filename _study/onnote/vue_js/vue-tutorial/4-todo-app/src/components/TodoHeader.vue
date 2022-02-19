@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>TodoHeader</h1>
+    <h1>TODO Application</h1>
   </div>
 </template>
 
