@@ -7,6 +7,7 @@ import TodoFooter from './TodoFooter';
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('');
 
   const nextId = useRef(1);
 
@@ -34,10 +35,19 @@ const Todos = () => {
     setTodos((todos) => todos.filter((todo) => !todo.done));
   }, []);
 
+  const onChange = useCallback((e) => {
+    setInput(e.target.value);
+  }, []);
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    onInsert(input);
+    setInput('');
+  }, [onInsert, input]);
+
   return (
     <div>
       <TodoHeader />
-      <TodoInput onInsert={onInsert} />
+      <TodoInput input={input} onChange={onChange} onSubmit={onSubmit} />
       <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
       <TodoFooter onClearAll={onClearAll} />
     </div>
