@@ -1,21 +1,17 @@
 <template>
   <div>
-    <h1>TodoFooter</h1>
+    <h1>TODO Application</h1>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      counter: 0
-    };
-  }
+
 };
 </script>
 
 <style scoped>
 div {
-  background-color: AliceBlue;
+  background-color: LightGreen;
 }
 </style>

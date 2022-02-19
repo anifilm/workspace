@@ -12,6 +12,6 @@ export default {
 
 <style scoped>
 div {
-  background-color: PapayaWhip;
+  background-color: LightCyan;
 }
 </style>
