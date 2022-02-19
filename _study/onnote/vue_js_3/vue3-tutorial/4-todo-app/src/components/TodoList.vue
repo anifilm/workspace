@@ -56,7 +56,6 @@ export default {
     };
     const removeTodo = (index) => {
       //console.log('removeTodo');
-      //todos.value.splice(index, 1);
       context.emit('remove-todo', index);
     };
 
@@ -73,6 +72,17 @@ export default {
 
 <style scoped>
 div {
-  background-color: PapayaWhip;
+  background-color: LightCyan;
+}
+span {
+  margin: 10px;
+}
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+li {
+  background-color: LightYellow;
+  margin: 10px 0;
 }
 </style>

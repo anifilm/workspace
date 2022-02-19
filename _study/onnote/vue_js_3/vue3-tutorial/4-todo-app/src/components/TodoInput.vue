@@ -22,7 +22,6 @@ export default {
         clearInput();
       }
     };
-
     const clearInput = () => {
       newTodo.value = '';
     };
@@ -38,6 +37,9 @@ export default {
 
 <style scoped>
 div {
-  background-color: LightPink;
+  background-color: Pink;
+}
+button {
+  margin: 5px;
 }
 </style>

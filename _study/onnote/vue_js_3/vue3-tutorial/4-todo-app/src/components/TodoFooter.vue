@@ -10,7 +10,7 @@ export default {
   emits: ['clear-all'],
   setup(props, context) {
     const clearTodo = () => {
-      //console.log('clearTodo');
+      //console.log('clearAll');
       context.emit('clear-all');
     };
 
@@ -23,6 +23,6 @@ export default {
 
 <style scoped>
 div {
-  background-color: Lavender;
+  background-color: AliceBlue;
 }
 </style>
