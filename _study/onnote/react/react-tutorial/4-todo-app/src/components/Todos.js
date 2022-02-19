@@ -1,4 +1,6 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React from 'react';
+
+import { TodoProvider } from '../contexts/todo';
 
 import TodoHeader from './TodoHeader';
 import TodoInput from './TodoInput';
@@ -6,51 +8,13 @@ import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 
 const Todos = () => {
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState('');
-
-  const nextId = useRef(1);
-
-  const onInsert = useCallback((text) => {
-    const todo = {
-      id: nextId.current,
-      text,
-      done: false,
-    };
-    setTodos((todos) => todos.concat(todo));
-    nextId.current += 1;
-  }, []);
-  const onToggle = useCallback((id) => {
-    setTodos((todos) =>
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, done: !todo.done } : todo,
-      ),
-    );
-  }, []);
-  const onRemove = useCallback((id) => {
-    setTodos((todos) => todos.filter((todo) => todo.id !== id));
-  }, []);
-  const onClearAll = useCallback(() => {
-    // 완료된 항목만 삭제하도록 수정
-    setTodos((todos) => todos.filter((todo) => !todo.done));
-  }, []);
-
-  const onChange = useCallback((e) => {
-    setInput(e.target.value);
-  }, []);
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
-    onInsert(input);
-    setInput('');
-  }, [onInsert, input]);
-
   return (
-    <div>
+    <TodoProvider>
       <TodoHeader />
-      <TodoInput input={input} onChange={onChange} onSubmit={onSubmit} />
-      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
-      <TodoFooter onClearAll={onClearAll} />
-    </div>
+      <TodoInput />
+      <TodoList />
+      <TodoFooter />
+    </TodoProvider>
   );
 };
 

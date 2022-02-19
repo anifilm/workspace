@@ -1,6 +1,7 @@
 import React from 'react';
-import { TodoConsumer } from '../contexts/todo';
 import styles from '../Todo.module.css';
+
+import { TodoConsumer } from '../contexts/todo';
 
 const TodoInput = () => {
   return (
@@ -10,12 +11,13 @@ const TodoInput = () => {
           <form onSubmit={value.actions.onSubmit}>
             <input
               type="text"
+              placeholder="할 일을 입력하세요"
               value={value.state.input}
               onChange={value.actions.onChange}
-              placeholder="할 일을 입력하세요"
             />
             <button type="submit">추가</button>
           </form>
+          <h1>TodoInput</h1>
         </div>
       )}
     </TodoConsumer>

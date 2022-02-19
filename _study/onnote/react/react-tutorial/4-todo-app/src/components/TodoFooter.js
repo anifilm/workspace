@@ -1,12 +1,17 @@
 import React from 'react';
-
 import styles from '../Todo.module.css';
 
-const TodoFooter = ({ onClearAll }) => {
+import { TodoConsumer } from '../contexts/todo';
+
+const TodoFooter = () => {
   return (
-    <div className={styles.footer}>
-      <button onClick={() => onClearAll()}>완료 항목 삭제</button>
-    </div>
+    <TodoConsumer>
+      {(value) => (
+        <div className={styles.footer}>
+          <button onClick={() => value.actions.onClearAll()}>완료 항목 삭제</button>
+        </div>
+      )}
+    </TodoConsumer>
   );
 };
 

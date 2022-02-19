@@ -1,20 +1,25 @@
 import React from 'react';
 import styles from '../Todo.module.css';
 
+import { TodoConsumer } from '../contexts/todo';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos, onToggle, onRemove }) => {
+const TodoList = () => {
   return (
-    <div className={styles.list}>
-      {todos.map((todo) => (
-        <TodoItem
-          todo={todo}
-          key={todo.id}
-          onToggle={onToggle}
-          onRemove={onRemove}
-        />
-      ))}
-    </div>
+    <TodoConsumer>
+      {(value) => (
+        <div className={styles.list}>
+          {value.state.todos.map((todo) => (
+            <TodoItem
+              todo={todo}
+              key={todo.id}
+              onToggle={value.actions.onToggle}
+              onRemove={value.actions.onRemove}
+            />
+          ))}
+        </div>
+      )}
+    </TodoConsumer>
   );
 };
 

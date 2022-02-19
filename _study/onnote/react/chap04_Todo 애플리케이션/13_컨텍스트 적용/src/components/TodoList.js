@@ -1,6 +1,7 @@
 import React from 'react';
-import { TodoConsumer } from '../contexts/todo';
 import styles from '../Todo.module.css';
+
+import { TodoConsumer } from '../contexts/todo';
 import TodoItem from './TodoItem';
 
 const TodoList = () => {
@@ -8,16 +9,14 @@ const TodoList = () => {
     <TodoConsumer>
       {(value) => (
         <div className={styles.list}>
-          {value.state.todos.map((todo) => {
-            return (
-              <TodoItem
-                key={todo.id}
-                todo={todo}
-                onToggle={value.actions.onToggle}
-                onRemove={value.actions.onRemove}
-              />
-            );
-          })}
+          {value.state.todos.map((todo) => (
+            <TodoItem
+              todo={todo}
+              key={todo.id}
+              onToggle={value.actions.onToggle}
+              onRemove={value.actions.onRemove}
+            />
+          ))}
         </div>
       )}
     </TodoConsumer>
