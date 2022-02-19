@@ -16,5 +16,6 @@ $ vue create my-app
 $ vue init webpack my-app
 
 
-참고 문서
-https://joshua1988.github.io/vue-camp/
+# Vuetify 적용
+
+$ vue add vuetify

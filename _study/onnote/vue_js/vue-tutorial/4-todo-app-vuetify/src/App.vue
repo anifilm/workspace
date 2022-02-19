@@ -36,7 +36,7 @@ export default {
     ...mapState(['todoItems']),
   },
   methods: {
-    ...mapActions(['addTodo', 'removeTodo', 'clearDone', 'save', 'restore']),
+    ...mapActions(['addTodo', 'removeTodo', 'clearAll', 'save', 'restore']),
     onAddTodo(todoItem) {
       this.addTodo(todoItem);
       this.save();

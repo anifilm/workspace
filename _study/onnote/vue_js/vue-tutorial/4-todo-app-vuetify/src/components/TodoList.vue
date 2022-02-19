@@ -7,7 +7,8 @@
       v-bind:key="index"
     >
       <v-list-item>
-        <v-list-item-content>{{ todoItem }}</v-list-item-content>
+        <v-checkbox v-model="todoItem.done"></v-checkbox>
+        <v-list-item-content>{{ todoItem.text }}</v-list-item-content>
         <v-btn color="primary" small outlined>수정</v-btn>&nbsp;
         <v-btn
           color="error"
@@ -29,7 +30,6 @@ export default {
     // 해당 Todo 항목 삭제
     removeTodo(todoItem, index) {
       //console.log('removeTodo:', todoItem, index);
-      //this.todoItems.splice(index, 1);
       // Todo 항목값과 Todo 항목 인덱스를 인자 값으로 추가하여 이벤트 전달
       this.$emit('removeTodo', todoItem, index);
     },

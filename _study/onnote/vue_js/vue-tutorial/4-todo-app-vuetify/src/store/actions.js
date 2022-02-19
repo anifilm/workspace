@@ -8,7 +8,7 @@ export default {
     commit(REMOVE_TODO, payload);
   },
   clearAll({ commit }) {
-    commit(CLEAR_DONE);
+    commit(CLEAR_ALL);
   },
   save({ state }) {
     const data = {
