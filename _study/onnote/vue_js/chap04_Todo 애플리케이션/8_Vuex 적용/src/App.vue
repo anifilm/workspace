@@ -2,7 +2,11 @@
   <div id="app">
     <TodoHeader />
     <TodoInput v-on:addTodo="addTodo" />
-    <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="removeTodo" />
+    <TodoList
+      v-bind:todoItems="todoItems"
+      v-on:checkTodo="checkTodo"
+      v-on:removeTodo="removeTodo"
+    />
     <TodoFooter v-on:clearAll="clearAll" />
   </div>
 </template>
@@ -32,8 +36,11 @@ export default {
     addTodo(todoItem) {
       store.dispatch('addTodo', todoItem);
     },
-    removeTodo(todoItem, index) {
-      store.dispatch('removeTodo', index);
+    checkTodo(id) {
+      store.dispatch('checkTodo', id);
+    },
+    removeTodo(id) {
+      store.dispatch('removeTodo', id);
     },
     clearAll() {
       store.dispatch('clearAll');

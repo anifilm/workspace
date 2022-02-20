@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, CLEAR_ALL } from './mutation-types';
+import { ADD_TODO, CHECK_TODO, REMOVE_TODO, CLEAR_ALL } from './mutation-types';
 
 export default {
   [ADD_TODO](state, todoItem) {
@@ -9,8 +9,13 @@ export default {
     }
     state.todoItems.push(todo);
   },
-  [REMOVE_TODO](state, index) {
-    state.todoItems.splice(index, 1);
+  [CHECK_TODO](state, id) {
+    state.todoItems = state.todoItems.map((todo) =>
+      todo.id === id ? { ...todo, done: !todo.done } : todo,
+    );
+  },
+  [REMOVE_TODO](state, id) {
+    state.todoItems = state.todoItems.filter((todo) => todo.id !== id);
   },
   [CLEAR_ALL](state) {
     // 완료된 항목 삭제로 수정

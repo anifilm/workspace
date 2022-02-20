@@ -2,7 +2,11 @@
   <div id="app">
     <TodoHeader />
     <TodoInput v-on:addTodo="addTodo" />
-    <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="removeTodo" />
+    <TodoList
+      v-bind:todoItems="todoItems"
+      v-on:checkTodo="checkTodo"
+      v-on:removeTodo="removeTodo"
+    />
     <TodoFooter v-on:clearAll="clearAll" />
   </div>
 </template>
@@ -51,8 +55,13 @@ export default {
       };
       this.todoItems.push(todo);
     },
-    removeTodo(todoItem, index) {
-      this.todoItems.splice(index, 1);
+    checkTodo(id) {
+      this.todoItems = this.todoItems.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      );
+    },
+    removeTodo(id) {
+      this.todoItems = this.todoItems.filter((todo) => todo.id !== id);
     },
     clearAll() {
       // 완료된 항목만 삭제하도록 수정

@@ -4,7 +4,7 @@
       <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
         <input type="checkbox" />
         <span>{{ todoItem }}</span>
-        <button v-on:click="removeTodo(todoItem, index)">삭제</button>
+        <button v-on:click="removeTodo(index)">삭제</button>
       </li>
     </ul>
   </div>
@@ -18,7 +18,7 @@ export default {
     };
   },
   methods: {
-    removeTodo(todoItem, index) {
+    removeTodo(index) {
       console.log('removeTodo');
       this.todoItems.splice(index, 1);
     },

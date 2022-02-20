@@ -1,10 +1,14 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
-        <input type="checkbox" v-model="todoItem.done" />
+      <li v-for="todoItem in todoItems" v-bind:key="index">
+        <input
+          type="checkbox"
+          v-model="todoItem.done"
+          v-on:click="checkTodo(todoItem.id)"
+        />
         <span>{{ todoItem.text }}</span>
-        <button v-on:click="removeTodo(todoItem, index)">삭제</button>
+        <button v-on:click="removeTodo(todoItem.id)">삭제</button>
       </li>
     </ul>
   </div>
@@ -14,9 +18,13 @@
 export default {
   props: ['todoItems'],
   methods: {
-    removeTodo(todoItem, index) {
+    checkTodo(id) {
+      //console.log('checkTodo');
+      this.$emit('checkTodo', id);
+    },
+    removeTodo(id) {
       //console.log('removeTodo');
-      this.$emit('removeTodo', todoItem, index);
+      this.$emit('removeTodo', id);
     },
   },
 };

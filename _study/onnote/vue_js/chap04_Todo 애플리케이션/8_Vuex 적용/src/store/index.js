@@ -32,8 +32,13 @@ const store = new Vuex.Store({
       };
       state.todoItems.push(todo);
     },
-    REMOVE_TODO(state, index) {
-      state.todoItems.splice(index, 1);
+    CHEKC_TODO(state, id) {
+      state.todoItems = state.todoItems.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      );
+    },
+    REMOVE_TODO(state, id) {
+      state.todoItems = state.todoItems.filter((todo) => todo.id !== id);
     },
     CLEAR_ALL(state) {
       state.todoItems = state.todoItems.filter((todo) => !todo.done);
@@ -42,6 +47,9 @@ const store = new Vuex.Store({
   actions: {
     addTodo(context, payload) {
       context.commit('ADD_TODO', payload);
+    },
+    checkTodo(context, payload) {
+      context.commit('CHECK_TODO', payload);
     },
     removeTodo(context, payload) {
       context.commit('REMOVE_TODO', payload);

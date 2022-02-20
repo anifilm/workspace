@@ -2,7 +2,11 @@
   <div id="app">
     <TodoHeader />
     <TodoInput v-on:addTodo="onAddTodo" />
-    <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="onRemoveTodo" />
+    <TodoList
+      v-bind:todoItems="todoItems"
+      v-on:checkTodo="onCheckTodo"
+      v-on:removeTodo="onRemoveTodo"
+    />
     <TodoFooter v-on:clearAll="onClearAll" />
   </div>
 </template>
@@ -27,12 +31,20 @@ export default {
     ...mapState(['todoItems']),
   },
   methods: {
-    ...mapActions(['addTodo', 'removeTodo', 'clearAll']),
+    ...mapActions([
+      'addTodo',
+      'chechTodo',
+      'removeTodo',
+      'clearAll',
+    ]),
     onAddTodo(todoItem) {
       this.addTodo(todoItem);
     },
-    onRemoveTodo(todoItem, index) {
-      this.removeTodo(index);
+    onCheckTodo(id) {
+      this.checkTodo(id);
+    },
+    onRemoveTodo(id) {
+      this.removeTodo(id);
     },
     onClearAll() {
       this.clearAll();
