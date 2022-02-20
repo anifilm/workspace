@@ -53,7 +53,6 @@ export default {
         done: false,
       };
       todos.value.push(newTodo);
-      console.log(todos.value);
     };
     const checkTodo = (id) => {
       todos.value.map((todo) =>
