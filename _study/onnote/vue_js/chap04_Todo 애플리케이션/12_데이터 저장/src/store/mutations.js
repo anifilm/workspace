@@ -20,8 +20,8 @@ export default {
       todo.id === id ? { ...todo, done: !todo.done } : todo,
     );
   },
-  [REMOVE_TODO](state, id) {
-    state.todos = state.todos.filter((todo) => todo.id !== id);
+  [REMOVE_TODO](state, index) {
+    state.todos.splice(index, 1);
   },
   [CLEAR_ALL](state) {
     // 완료된 항목 삭제로 수정

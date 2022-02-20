@@ -1,7 +1,6 @@
 import {
   ADD_TODO,
   CHECK_TODO,
-  EDIT_TODO,
   UPDATE_TODO,
   REMOVE_TODO,
   CLEAR_ALL,

@@ -1,4 +1,9 @@
-import { ADD_TODO, CHECK_TODO, REMOVE_TODO, CLEAR_ALL } from './mutation-types';
+import {
+  ADD_TODO,
+  CHECK_TODO,
+  REMOVE_TODO,
+  CLEAR_ALL,
+} from './mutation-types';
 
 export default {
   addTodo({ commit }, payload) {
