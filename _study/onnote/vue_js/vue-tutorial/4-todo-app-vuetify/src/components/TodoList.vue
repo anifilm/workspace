@@ -14,7 +14,7 @@
           color="error"
           small
           outlined
-          v-on:click="removeTodo(todoItem, index)"
+          v-on:click="removeTodo(index)"
         >
           삭제
         </v-btn>
@@ -28,10 +28,10 @@ export default {
   props: ['todoItems'],
   methods: {
     // 해당 Todo 항목 삭제
-    removeTodo(todoItem, index) {
-      //console.log('removeTodo:', todoItem, index);
+    removeTodo(index) {
+      //console.log('removeTodo:', index);
       // Todo 항목값과 Todo 항목 인덱스를 인자 값으로 추가하여 이벤트 전달
-      this.$emit('removeTodo', todoItem, index);
+      this.$emit('removeTodo', index);
     },
   },
 };

@@ -8,7 +8,7 @@
           v-on:change="checkTodo(todoItem.id)"
         />
         <span>{{ todoItem.text }}</span>
-        <button v-on:click="removeTodo(todoItem.id)">삭제</button>
+        <button v-on:click="removeTodo(index)">삭제</button>
       </li>
     </ul>
   </div>
@@ -44,9 +44,9 @@ export default {
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     },
-    removeTodo(id) {
+    removeTodo(index) {
       console.log('removeTodo');
-      todos.value = todos.value.filter((todo) => todo.id !== id);
+      todos.value.splice(index, 1);
     },
   },
 };

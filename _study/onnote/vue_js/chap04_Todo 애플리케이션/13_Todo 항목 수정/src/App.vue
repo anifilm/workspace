@@ -58,8 +58,8 @@ export default {
       this.updateTodo({ id, content });
       this.save();
     },
-    onRemoveTodo(id) {
-      this.removeTodo(id);
+    onRemoveTodo(index) {
+      this.removeTodo(index);
       this.save();
     },
     onClearAll() {

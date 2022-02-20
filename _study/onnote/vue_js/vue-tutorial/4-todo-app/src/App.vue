@@ -60,8 +60,8 @@ export default {
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     },
-    removeTodo(id) {
-      this.todoItems = this.todoItems.filter((todo) => todo.id !== id);
+    removeTodo(index) {
+      this.todoItems.splice(index, 1);;
     },
     clearAll() {
       // 완료된 항목만 삭제하도록 수정

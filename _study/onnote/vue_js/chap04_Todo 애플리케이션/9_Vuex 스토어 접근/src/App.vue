@@ -37,8 +37,8 @@ export default {
     checkTodo(id) {
       this.$store.dispatch('checkTodo', id);
     },
-    removeTodo(id) {
-      this.$store.dispatch('removeTodo', id);
+    removeTodo(index) {
+      this.$store.dispatch('removeTodo', index);
     },
     clearAll() {
       this.$store.dispatch('clearAll');

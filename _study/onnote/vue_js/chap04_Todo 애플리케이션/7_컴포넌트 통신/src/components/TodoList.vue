@@ -8,7 +8,7 @@
           v-on:change="checkTodo(todoItem.id)"
         />
         <span>{{ todoItem.text }}</span>
-        <button v-on:click="removeTodo(todoItem.id)">삭제</button>
+        <button v-on:click="removeTodo(index)">삭제</button>
       </li>
     </ul>
   </div>
@@ -22,9 +22,9 @@ export default {
       //console.log('checkTodo');
       this.$emit('checkTodo', id);
     },
-    removeTodo(id) {
+    removeTodo(index) {
       //console.log('removeTodo');
-      this.$emit('removeTodo', id);
+      this.$emit('removeTodo', index);
     },
   },
 };

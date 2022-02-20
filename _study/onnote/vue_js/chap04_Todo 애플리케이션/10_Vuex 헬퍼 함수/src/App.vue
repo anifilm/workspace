@@ -43,8 +43,8 @@ export default {
     onCheckTodo(id) {
       this.checkTodo(id);
     },
-    onRemoveTodo(id) {
-      this.removeTodo(id);
+    onRemoveTodo(index) {
+      this.removeTodo(index);
     },
     onClearAll() {
       this.clearAll();

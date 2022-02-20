@@ -41,7 +41,7 @@ export default {
       this.addTodo(todoItem);
       this.save();
     },
-    onRemoveTodo(todoItem, index) {
+    onRemoveTodo(index) {
       this.removeTodo(index);
       this.save();
     },

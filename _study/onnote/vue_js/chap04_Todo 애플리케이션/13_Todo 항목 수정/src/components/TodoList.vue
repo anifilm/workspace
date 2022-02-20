@@ -22,7 +22,7 @@
         />
         <button
           v-show="!todoItem.isEditing"
-          v-on:click="removeTodo(todoItem.id)"
+          v-on:click="removeTodo(index)"
         >
           삭제
         </button>
@@ -46,9 +46,9 @@ export default {
       this.$emit('updateTodo', id, content);
       this.$refs.content[0].blur();
     },
-    removeTodo(id) {
+    removeTodo(index) {
       console.log('removeTodo');
-      this.$emit('removeTodo', id);
+      this.$emit('removeTodo', index);
     },
     handleDblClick(id) {
       this.$emit('editTodo', id);

@@ -39,8 +39,8 @@ export default {
     checkTodo(id) {
       store.dispatch('checkTodo', id);
     },
-    removeTodo(id) {
-      store.dispatch('removeTodo', id);
+    removeTodo(index) {
+      store.dispatch('removeTodo', index);
     },
     clearAll() {
       store.dispatch('clearAll');
