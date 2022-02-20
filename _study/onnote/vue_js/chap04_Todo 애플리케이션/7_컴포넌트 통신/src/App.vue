@@ -49,14 +49,14 @@ export default {
   methods: {
     addTodo(todoItem) {
       const todo = {
-        id: this.todoItems.length + 1,
+        id: new Date().getTime(), // 날짜를 사용한 숫자 생성
         text: todoItem,
         done: false,
       };
       this.todoItems.push(todo);
     },
     checkTodo(id) {
-      this.todoItems = this.todoItems.map((todo) =>
+      this.todoItems.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     },

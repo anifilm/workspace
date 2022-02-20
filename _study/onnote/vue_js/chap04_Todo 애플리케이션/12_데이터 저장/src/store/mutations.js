@@ -9,7 +9,7 @@ import {
 export default {
   [ADD_TODO](state, todoItem) {
     const todo = {
-      id: state.todoItems.length + 1,
+      id: new Date().getTime(), // 날짜를 사용한 숫자 생성
       text: todoItem,
       done: false,
     };

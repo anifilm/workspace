@@ -1,10 +1,14 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
-        <input type="checkbox" />
-        <span>{{ todoItem }}</span>
-        <button v-on:click="removeTodo(index)">삭제</button>
+      <li v-for="todoItem in todoItems" v-bind:key="todoItem.id">
+        <input
+          type="checkbox"
+          v-model="todoItem.done"
+          v-on:click="checkTodo(todoItem.id)"
+        />
+        <span>{{ todoItem.text }}</span>
+        <button v-on:click="removeTodo(todoItem.id)">삭제</button>
       </li>
     </ul>
   </div>
@@ -14,13 +18,35 @@
 export default {
   data() {
     return {
-      todoItems: ['todoItem1', 'todoItem2', 'todoItem3'],
+      todoItems: [
+        {
+          id: 1,
+          text: 'todoItem1',
+          done: true,
+        },
+        {
+          id: 2,
+          text: 'todoItem2',
+          done: false,
+        },
+        {
+          id: 3,
+          text: 'todoItem3',
+          done: false,
+        },
+      ],
     };
   },
   methods: {
-    removeTodo(index) {
+    checkTodo(id) {
+      console.log('checkTodo');
+      todos.value.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      );
+    },
+    removeTodo(id) {
       console.log('removeTodo');
-      this.todoItems.splice(index, 1);
+      todos.value = todos.value.filter((todo) => todo.id !== id);
     },
   },
 };

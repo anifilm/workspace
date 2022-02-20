@@ -49,7 +49,7 @@ export default {
   methods: {
     addTodo(todoItem) {
       const todo = {
-        id: this.todoItems.length + 1,
+        id: new Date().getTime(), // 날짜를 사용한 숫자 생성
         text: todoItem,
         done: false,
       };
