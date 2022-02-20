@@ -7,7 +7,7 @@
       v-bind:key="index"
     >
       <v-list-item>
-        <v-checkbox v-model="todoItem.done"></v-checkbox>
+        <v-checkbox v-bind:checked="todoItem.done"></v-checkbox>
         <v-list-item-content>{{ todoItem.text }}</v-list-item-content>
         <v-btn color="primary" small outlined>수정</v-btn>&nbsp;
         <v-btn
