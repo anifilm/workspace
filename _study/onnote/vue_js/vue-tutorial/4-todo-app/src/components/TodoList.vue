@@ -1,13 +1,13 @@
 <template>
   <div>
     <ul>
-      <li v-for="todoItem in todoItems" v-bind:key="index">
+      <li v-for="todo in todos" v-bind:key="index">
         <input
           type="checkbox"
-          v-bind:checked="todoItem.done"
-          v-on:change="checkTodo(todoItem.id)"
+          v-bind:checked="todo.done"
+          v-on:change="checkTodo(todo.id)"
         />
-        <span>{{ todoItem.text }}</span>
+        <span>{{ todo.text }}</span>
         <button v-on:click="removeTodo(index)">삭제</button>
       </li>
     </ul>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  props: ['todoItems'],
+  props: ['todos'],
   methods: {
     checkTodo(id) {
       console.log('checkTodo');

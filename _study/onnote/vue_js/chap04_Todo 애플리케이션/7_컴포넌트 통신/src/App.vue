@@ -3,7 +3,7 @@
     <TodoHeader />
     <TodoInput v-on:addTodo="addTodo" />
     <TodoList
-      v-bind:todoItems="todoItems"
+      v-bind:todos="todos"
       v-on:checkTodo="checkTodo"
       v-on:removeTodo="removeTodo"
     />
@@ -27,45 +27,45 @@ export default {
   },
   data() {
     return {
-      todoItems: [
+      todos: [
         {
           id: 1,
-          text: 'todoItem1',
+          text: 'todo1',
           done: true,
         },
         {
           id: 2,
-          text: 'todoItem2',
+          text: 'todo2',
           done: false,
         },
         {
           id: 3,
-          text: 'todoItem3',
+          text: 'todo3',
           done: false,
         },
       ],
     };
   },
   methods: {
-    addTodo(todoItem) {
+    addTodo(todo) {
       const todo = {
         id: new Date().getTime(), // 날짜를 사용한 숫자 생성
-        text: todoItem,
+        text: todo,
         done: false,
       };
-      this.todoItems.push(todo);
+      this.todos.push(todo);
     },
     checkTodo(id) {
-      this.todoItems.map((todo) =>
+      this.todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     },
     removeTodo(index) {
-      this.todoItems.splice(index, 1);
+      this.todos.splice(index, 1);
     },
     clearAll() {
       // 완료된 항목만 삭제하도록 수정
-      this.todoItems = this.todoItems.filter((todo) => !todo.done);
+      this.todos = this.todos.filter((todo) => !todo.done);
     },
   },
 };

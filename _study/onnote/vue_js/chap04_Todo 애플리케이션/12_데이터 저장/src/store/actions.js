@@ -15,7 +15,7 @@ export default {
   },
   save({ state }) {
     const data = {
-      todoItems: state.todoItems,
+      todos: state.todos,
     };
     localStorage.setItem('vue-todo-app-data', JSON.stringify(data));
   },

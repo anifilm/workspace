@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
+      <li v-for="(todo, index) in todos" v-bind:key="index">
         <input type="checkbox" />
-        <span>{{ todoItem.text }}</span>
+        <span>{{ todo.text }}</span>
         <button>삭제</button>
       </li>
     </ul>
@@ -14,20 +14,20 @@
 export default {
   data() {
     return {
-      todoItems: [
+      todos: [
         {
           id: 1,
-          text: 'todoItem1',
+          text: 'todo1',
           done: true,
         },
         {
           id: 2,
-          text: 'todoItem2',
+          text: 'todo2',
           done: false,
         },
         {
           id: 3,
-          text: 'todoItem3',
+          text: 'todo3',
           done: false,
         },
       ],

@@ -6,7 +6,7 @@
           label="할 일을 입력하세요."
           solo
           clearable
-          v-model="newTodoItem"
+          v-model="newTodo"
           v-on:keyup.enter="addTodo"
         ></v-text-field>
       </v-col>
@@ -21,14 +21,14 @@
 export default {
   data() {
     return {
-      newTodoItem: '',
+      newTodo: '',
     };
   },
   methods: {
     // Todo 항목 추가
     addTodo() {
-      if (this.newTodoItem.trim() !== '') {
-        const value = this.newTodoItem && this.newTodoItem.trim();
+      if (this.newTodo.trim() !== '') {
+        const value = this.newTodo && this.newTodo.trim();
         //console.log('addTodo:', value);
         // 입력된 Todo 항목값을 인자 값으로 추가하여 이벤트 전달
         this.$emit('addTodo', value);
@@ -37,7 +37,7 @@ export default {
     },
     // Todo 항목을 추가한 후 입력된 텍스트를 지운다.
     clearInput() {
-      this.newTodoItem = '';
+      this.newTodo = '';
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="newTodoItem" />
+    <input type="text" v-model="newTodo" />
     <button>추가</button>
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      newTodoItem: '',
+      newTodo: '',
     };
   },
 };

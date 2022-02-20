@@ -3,7 +3,7 @@
     <TodoHeader />
     <TodoInput v-on:addTodo="onAddTodo" />
     <TodoList
-      v-bind:todoItems="todoItems"
+      v-bind:todos="todos"
       v-on:checkTodo="onCheckTodo"
       v-on:updateTodo="onUpdateTodo"
       v-on:removeTodo="onRemoveTodo"
@@ -29,7 +29,7 @@ export default {
     TodoFooter,
   },
   computed: {
-    ...mapState(['todoItems']),
+    ...mapState(['todos']),
   },
   methods: {
     ...mapActions([
@@ -41,11 +41,11 @@ export default {
       'save',
       'restore',
     ]),
-    onAddTodo(todoItem) {
+    onAddTodo(todo) {
       const isEditing = false;
       const content = {
         isEditing,
-        text: todoItem,
+        text: todo,
       }
       this.addTodo(content);
       this.save();

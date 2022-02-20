@@ -3,7 +3,7 @@
     <TodoHeader />
     <TodoInput v-on:addTodo="addTodo" />
     <TodoList
-      v-bind:todoItems="todoItems"
+      v-bind:todos="todos"
       v-on:checkTodo="checkTodo"
       v-on:removeTodo="removeTodo"
     />
@@ -28,13 +28,13 @@ export default {
     TodoFooter,
   },
   computed: {
-    todoItems() {
-      return store.state.todoItems;
+    todos() {
+      return store.state.todos;
     },
   },
   methods: {
-    addTodo(todoItem) {
-      store.dispatch('addTodo', todoItem);
+    addTodo(todo) {
+      store.dispatch('addTodo', todo);
     },
     checkTodo(id) {
       store.dispatch('checkTodo', id);

@@ -3,12 +3,12 @@
     <v-card
       class="mx-auto my-4"
       max-width="600"
-      v-for="(todoItem, index) in todoItems"
+      v-for="(todo, index) in todos"
       v-bind:key="index"
     >
       <v-list-item>
-        <v-checkbox v-bind:checked="todoItem.done"></v-checkbox>
-        <v-list-item-content>{{ todoItem.text }}</v-list-item-content>
+        <v-checkbox v-bind:checked="todo.done"></v-checkbox>
+        <v-list-item-content>{{ todo.text }}</v-list-item-content>
         <v-btn color="primary" small outlined>수정</v-btn>&nbsp;
         <v-btn
           color="error"
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  props: ['todoItems'],
+  props: ['todos'],
   methods: {
     // 해당 Todo 항목 삭제
     removeTodo(index) {

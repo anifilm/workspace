@@ -3,17 +3,17 @@
     <ul>
       <li>
         <input type="checkbox" />
-        <span>todoItem1</span>
+        <span>todo1</span>
         <button>삭제</button>
       </li>
       <li>
         <input type="checkbox" />
-        <span>todoItem2</span>
+        <span>todo2</span>
         <button>삭제</button>
       </li>
       <li>
         <input type="checkbox" />
-        <span>todoItem3</span>
+        <span>todo3</span>
         <button>삭제</button>
       </li>
     </ul>

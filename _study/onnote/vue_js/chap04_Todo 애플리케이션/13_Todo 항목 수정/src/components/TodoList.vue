@@ -1,26 +1,26 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
+      <li v-for="(todo, index) in todos" v-bind:key="index">
         <input
           type="checkbox"
-          v-bind:checked="todoItem.done"
-          v-on:change="checkTodo(todoItem.id)"
+          v-bind:checked="todo.done"
+          v-on:change="checkTodo(todo.id)"
         />
         <span
-          v-if="!todoItem.content.isEditing"
+          v-if="!todo.content.isEditing"
           v-on:dblclick="handleDblClick(index)"
-        >{{ todoItem.content.text }}</span>
+        >{{ todo.content.text }}</span>
         <input
           v-else
           type="text"
           ref="content"
-          v-bind:value="todoItem.content.text"
+          v-bind:value="todo.content.text"
           v-on:blur="handleBlur(index)"
-          v-on:keydown.enter="updateTodo(todoItem.id, $event)"
+          v-on:keydown.enter="updateTodo(todo.id, $event)"
         />
         <button
-          v-show="!todoItem.isEditing"
+          v-show="!todo.isEditing"
           v-on:click="removeTodo(index)"
         >삭제</button>
       </li>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  props: ['todoItems'],
+  props: ['todos'],
   methods: {
     checkTodo(id) {
       console.log('checkTodo');

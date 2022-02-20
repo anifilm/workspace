@@ -2,7 +2,7 @@
   <div id="app">
     <TodoHeader />
     <TodoInput v-on:addTodo="onAddTodo" />
-    <TodoList v-bind:todoItems="todoItems" v-on:checkTodo="onCheckTodo" v-on:removeTodo="onRemoveTodo" />
+    <TodoList v-bind:todos="todos" v-on:checkTodo="onCheckTodo" v-on:removeTodo="onRemoveTodo" />
     <TodoFooter v-on:clearAll="onClearAll" />
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     TodoFooter,
   },
   computed: {
-    ...mapState(['todoItems']),
+    ...mapState(['todos']),
   },
   methods: {
     ...mapActions([
@@ -35,8 +35,8 @@ export default {
       'save',
       'restore',
     ]),
-    onAddTodo(todoItem) {
-      this.addTodo(todoItem);
+    onAddTodo(todo) {
+      this.addTodo(todo);
       this.save();
     },
     onCheckTodo(id) {

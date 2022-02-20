@@ -7,7 +7,7 @@
 
     <v-main>
       <TodoInput v-on:addTodo="onAddTodo" />
-      <TodoList v-bind:todoItems="todoItems" v-on:removeTodo="onRemoveTodo" />
+      <TodoList v-bind:todos="todos" v-on:removeTodo="onRemoveTodo" />
     </v-main>
 
     <v-footer app>
@@ -33,12 +33,12 @@ export default {
     TodoFooter,
   },
   computed: {
-    ...mapState(['todoItems']),
+    ...mapState(['todos']),
   },
   methods: {
     ...mapActions(['addTodo', 'removeTodo', 'clearAll', 'save', 'restore']),
-    onAddTodo(todoItem) {
-      this.addTodo(todoItem);
+    onAddTodo(todo) {
+      this.addTodo(todo);
       this.save();
     },
     onRemoveTodo(index) {
