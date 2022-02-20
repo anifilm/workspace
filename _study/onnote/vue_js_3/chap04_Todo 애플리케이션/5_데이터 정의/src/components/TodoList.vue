@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todo, index) in todos" v-bind:key="index">
+      <li v-for="todo in todos" v-bind:key="todo.id">
         <input type="checkbox" />
-        <span>{{ todo }}</span>
+        <span>{{ todo.text }}</span>
         <button>삭제</button>
       </li>
     </ul>
@@ -16,7 +16,23 @@ import { ref } from 'vue';
 export default {
   name: 'TodoList',
   setup() {
-    const todos = ref(['todoItem1', 'todoItem2', 'todoItem3']);
+    const todos = ref([
+      {
+        id: 1,
+        text: 'todoItem1',
+        done: true,
+      },
+      {
+        id: 2,
+        text: 'todoItem2',
+        done: false,
+      },
+      {
+        id: 3,
+        text: 'todoItem3',
+        done: false,
+      },
+    ]);
 
     return {
       todos,

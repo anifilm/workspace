@@ -15,21 +15,42 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   name: 'TodoList',
-  props: ['todos'],
-  emits: ['check-todo', 'remove-todo'],
-  setup(props, context) {
-     const checkTodo = (id) => {
+  setup() {
+    const todos = ref([
+      {
+        id: 1,
+        text: 'todoItem1',
+        done: true,
+      },
+      {
+        id: 2,
+        text: 'todoItem2',
+        done: false,
+      },
+      {
+        id: 3,
+        text: 'todoItem3',
+        done: false,
+      },
+    ]);
+
+    const checkTodo = (id) => {
       console.log('checkTodo');
-      context.emit('check-todo', id);
+      todos.value.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      );
     };
     const removeTodo = (id) => {
       console.log('removeTodo');
-      context.emit('remove-todo', id);
+      todos.value = todos.value.filter((todo) => todo.id !== id);
     };
 
     return {
+      todos,
       checkTodo,
       removeTodo,
     };

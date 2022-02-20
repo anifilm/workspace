@@ -10,15 +10,13 @@ import { ref } from 'vue';
 
 export default {
   name: 'TodoInput',
-  emits: ['add-todo'],
-  setup(props, context) {
+  setup() {
     const newTodo = ref('');
 
     const addTodo = () => {
       if (newTodo.value !== '') {
         const inputValue = newTodo.value && newTodo.value.trim();
-        //console.log('addTodo inputValue', inputValue);
-        context.emit('add-todo', inputValue);
+        console.log('addTodo inputValue', inputValue);
         clearInput();
       }
     };
