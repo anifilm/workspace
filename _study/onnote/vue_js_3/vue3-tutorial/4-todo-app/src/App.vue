@@ -60,8 +60,8 @@ export default {
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     };
-    const removeTodo = (id) => {
-      todos.value = todos.value.filter((todo) => todo.id !== id);
+    const removeTodo = (index) => {
+      todos.value.splice(index, 1);
     };
     const clearAll = () => {
       // 완료된 항목만 삭제하도록 수정

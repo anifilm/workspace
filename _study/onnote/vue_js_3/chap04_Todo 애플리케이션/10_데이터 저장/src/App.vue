@@ -42,8 +42,8 @@ export default {
       store.dispatch('checkTodo', id);
       store.dispatch('save');
     };
-    const removeTodo = (id) => {
-      store.dispatch('removeTodo', id);
+    const removeTodo = (index) => {
+      store.dispatch('removeTodo', index);
       store.dispatch('save');
     };
     const clearAll = () => {

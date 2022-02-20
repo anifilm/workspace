@@ -52,8 +52,8 @@ export const store = createStore({
     checkTodo(context, id) {
       context.commit('CHECK_TODO', id);
     },
-    removeTodo(context, id) {
-      context.commit('REMOVE_TODO', id);
+    removeTodo(context, index) {
+      context.commit('REMOVE_TODO', index);
     },
     clearAll(context) {
       context.commit('CLEAR_ALL');

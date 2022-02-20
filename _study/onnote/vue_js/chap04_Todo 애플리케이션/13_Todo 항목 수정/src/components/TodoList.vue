@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.id">
+      <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
         <input
           type="checkbox"
           v-bind:checked="todoItem.done"

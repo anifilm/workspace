@@ -1,14 +1,14 @@
 <template>
   <div>
     <ul>
-      <li v-for="todo in todos" v-bind:key="todo.id">
+      <li v-for="(todo, index) in todos" v-bind:key="index">
         <input
           type="checkbox"
           v-bind:checked="todo.done"
           v-on:change="checkTodo(todo.id)"
         />
         <span>{{ todo.text }}</span>
-        <button v-on:click="removeTodo(todo.id)">삭제</button>
+        <button v-on:click="removeTodo(index)">삭제</button>
       </li>
     </ul>
   </div>
@@ -24,9 +24,9 @@ export default {
       console.log('checkTodo');
       context.emit('check-todo', id);
     };
-    const removeTodo = (id) => {
+    const removeTodo = (index) => {
       console.log('removeTodo');
-      context.emit('remove-todo', id);
+      context.emit('remove-todo', index);
     };
 
     return {

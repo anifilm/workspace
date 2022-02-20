@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="todoItem in todoItems" v-bind:key="todoItem.id">
+      <li v-for="(todoItem, index) in todoItems" v-bind:key="index">
         <input type="checkbox" />
         <span>{{ todoItem.text }}</span>
         <button>삭제</button>

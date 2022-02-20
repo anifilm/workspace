@@ -40,8 +40,8 @@ export default {
     const checkTodo = (id) => {
       store.dispatch('checkTodo', id);
     };
-    const removeTodo = (id) => {
-      store.dispatch('removeTodo', id);
+    const removeTodo = (index) => {
+      store.dispatch('removeTodo', index);
     };
     const clearAll = () => {
       store.dispatch('clearAll');
