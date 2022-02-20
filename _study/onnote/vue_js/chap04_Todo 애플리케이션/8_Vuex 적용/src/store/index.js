@@ -32,7 +32,7 @@ const store = new Vuex.Store({
       };
       state.todoItems.push(todo);
     },
-    CHEKC_TODO(state, id) {
+    CHECK_TODO(state, id) {
       state.todoItems = state.todoItems.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
