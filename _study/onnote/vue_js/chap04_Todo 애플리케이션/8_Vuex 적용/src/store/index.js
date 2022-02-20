@@ -37,8 +37,8 @@ const store = new Vuex.Store({
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     },
-    REMOVE_TODO(state, id) {
-      state.todoItems = state.todoItems.filter((todo) => todo.id !== id);
+    REMOVE_TODO(state, index) {
+      state.todoItems.splice(index, 1);
     },
     CLEAR_ALL(state) {
       state.todoItems = state.todoItems.filter((todo) => !todo.done);

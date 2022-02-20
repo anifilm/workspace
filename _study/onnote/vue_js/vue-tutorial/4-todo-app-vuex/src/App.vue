@@ -5,7 +5,6 @@
     <TodoList
       v-bind:todoItems="todoItems"
       v-on:checkTodo="onCheckTodo"
-      v-on:editTodo="onEditTodo"
       v-on:updateTodo="onUpdateTodo"
       v-on:removeTodo="onRemoveTodo"
     />
@@ -36,7 +35,6 @@ export default {
     ...mapActions([
       'addTodo',
       'checkTodo',
-      'editTodo',
       'updateTodo',
       'removeTodo',
       'clearAll',
@@ -44,15 +42,17 @@ export default {
       'restore',
     ]),
     onAddTodo(todoItem) {
-      this.addTodo(todoItem);
+      const isEditing = false;
+      const content = {
+        isEditing,
+        text: todoItem,
+      }
+      this.addTodo(content);
       this.save();
     },
     onCheckTodo(id) {
       this.checkTodo(id);
       this.save();
-    },
-    onEditTodo(id) {
-      this.editTodo(id);
     },
     onUpdateTodo(id, content) {
       this.updateTodo({ id, content });

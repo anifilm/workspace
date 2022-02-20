@@ -1,7 +1,6 @@
 import {
   ADD_TODO,
   CHECK_TODO,
-  EDIT_TODO,
   UPDATE_TODO,
   REMOVE_TODO,
   CLEAR_ALL,
@@ -14,9 +13,6 @@ export default {
   },
   checkTodo({ commit }, payload) {
     commit(CHECK_TODO, payload);
-  },
-  editTodo({ commit }, payload) {
-    commit(EDIT_TODO, payload);
   },
   updateTodo({ commit }, payload) {
     commit(UPDATE_TODO, payload);

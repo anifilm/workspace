@@ -10,9 +10,7 @@
         <span
           v-if="!todo.content.isEditing"
           v-on:dblclick="handleDblClick(index)"
-        >
-          {{ todo.content.text }}
-        </span>
+        >{{ todo.content.text }}</span>
         <input
           v-else
           type="text"
@@ -21,7 +19,10 @@
           v-on:blur="handleBlur(index)"
           v-on:keydown.enter="updateTodo(index, todo.id, $event)"
         />
-        <button v-on:click="removeTodo(index)">삭제</button>
+        <button
+          v-show="!todoItem.isEditing"
+          v-on:click="removeTodo(index)"
+        >삭제</button>
       </li>
     </ul>
   </div>
@@ -33,7 +34,7 @@ import { ref, nextTick } from 'vue';
 export default {
   name: 'TodoList',
   props: ['todos'],
-  emits: ['check-todo', 'remove-todo'],
+  emits: ['check-todo', 'update-todo', 'remove-todo'],
   setup(props, context) {
     const todos = props.todos;
     const editInput = ref([]);

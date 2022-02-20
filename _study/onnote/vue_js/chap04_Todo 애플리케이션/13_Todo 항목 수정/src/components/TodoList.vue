@@ -8,24 +8,21 @@
           v-on:change="checkTodo(todoItem.id)"
         />
         <span
-          v-if="!todoItem.isEditing"
-          v-on:dblclick="handleDblClick(todoItem.id)"
-          >{{ todoItem.text }}</span
-        >
+          v-if="!todoItem.content.isEditing"
+          v-on:dblclick="handleDblClick(index)"
+        >{{ todoItem.content.text }}</span>
         <input
           v-else
           type="text"
           ref="content"
-          v-bind:value="todoItem.text"
-          v-on:blur="handleBlur(todoItem.id)"
+          v-bind:value="todoItem.content.text"
+          v-on:blur="handleBlur(index)"
           v-on:keydown.enter="updateTodo(todoItem.id, $event)"
         />
         <button
           v-show="!todoItem.isEditing"
           v-on:click="removeTodo(index)"
-        >
-          삭제
-        </button>
+        >삭제</button>
       </li>
     </ul>
   </div>
@@ -50,14 +47,16 @@ export default {
       console.log('removeTodo');
       this.$emit('removeTodo', index);
     },
-    handleDblClick(id) {
-      this.$emit('editTodo', id);
+    handleDblClick(index) {
+      //this.$emit('editTodo', index);
+      todos[index].content.isEditing = true;
       this.$nextTick(() => {
         this.$refs.content[0].focus();
       });
     },
-    handleBlur(id) {
-      this.$emit('editTodo', id);
+    handleBlur(index) {
+      //this.$emit('editTodo', index);
+      todos[index].content.isEditing = false;
     },
   },
 };
