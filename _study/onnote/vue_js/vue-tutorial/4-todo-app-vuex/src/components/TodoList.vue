@@ -48,15 +48,13 @@ export default {
       this.$emit('removeTodo', index);
     },
     handleDblClick(index) {
-      //this.$emit('editTodo', index);
-      todos[index].content.isEditing = true;
+      this.todos[index].content.isEditing = true;
       this.$nextTick(() => {
         this.$refs.content[0].focus();
       });
     },
     handleBlur(index) {
-      //this.$emit('editTodo', index);
-      todos[index].content.isEditing = false;
+      this.todos[index].content.isEditing = false;
     },
   },
 };

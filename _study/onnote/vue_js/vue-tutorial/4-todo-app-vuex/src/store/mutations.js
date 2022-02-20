@@ -24,6 +24,7 @@ export default {
   },
   [UPDATE_TODO](state, payload) {
     const { id, content } = payload;
+    const isEditing = false;
     state.todos = state.todos.map((todo) =>
       todo.id === id ? { ...todo, content: { isEditing, text: content } } : todo,
     );

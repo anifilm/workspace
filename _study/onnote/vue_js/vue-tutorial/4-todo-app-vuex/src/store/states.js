@@ -2,17 +2,17 @@ export default {
   todos: [
     {
       id: 1,
-      content: { isEditing: false, text: 'todo1' },
+      content: { isEditing: false, text: 'todoItem1' },
       done: true,
     },
     {
       id: 2,
-      content: { isEditing: false, text: 'todo2' },
+      content: { isEditing: false, text: 'todoItem2' },
       done: false,
     },
     {
       id: 3,
-      content: { isEditing: false, text: 'todo3' },
+      content: { isEditing: false, text: 'todoItem3' },
       done: false,
     },
   ],
