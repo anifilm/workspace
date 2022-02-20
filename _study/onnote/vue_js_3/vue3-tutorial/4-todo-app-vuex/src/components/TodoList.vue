@@ -4,8 +4,8 @@
       <li v-for="todo in todos" v-bind:key="todo.id">
         <input
           type="checkbox"
-          v-model="todo.done"
-          v-on:click="checkTodo(todo.id)"
+          v-bind:checked="todo.done"
+          v-on:change="checkTodo(todo.id)"
         />
         <span>{{ todo.text }}</span>
         <button v-on:click="removeTodo(todo.id)">삭제</button>
