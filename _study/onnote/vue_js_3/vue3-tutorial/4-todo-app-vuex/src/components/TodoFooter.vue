@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="clearTodo">모두 삭제</button>
+    <button v-on:click="clearAll">완료 항목 삭제</button>
   </div>
 </template>
 
@@ -9,13 +9,13 @@ export default {
   name: 'TodoFooter',
   emits: ['clear-all'],
   setup(props, context) {
-    const clearTodo = () => {
-      //console.log('clearAll');
+    const clearAll = () => {
+      console.log('clearAll');
       context.emit('clear-all');
     };
 
     return {
-      clearTodo,
+      clearAll,
     };
   },
 };

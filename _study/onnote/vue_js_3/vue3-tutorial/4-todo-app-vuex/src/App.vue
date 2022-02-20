@@ -1,17 +1,18 @@
 <template>
-  <TodoHeader></TodoHeader>
-  <TodoInput v-on:add-todo="addTodo"></TodoInput>
-  <TodoList
-    v-bind:todos="todos"
-    v-on:update-todo="editTodo"
-    v-on:remove-todo="removeTodo"
-  ></TodoList>
-  <TodoFooter v-on:clear-all="clearAll"></TodoFooter>
+  <div id="app">
+    <TodoHeader />
+    <TodoInput v-on:add-todo="addTodo" />
+    <TodoList
+      v-bind:todos="todos"
+      v-on:check-todo="checkTodo"
+      v-on:remove-todo="removeTodo"
+    />
+    <TodoFooter v-on:clear-all="clearAll" />
+  </div>
 </template>
 
 <script>
-import { computed } from 'vue';
-import { useStore } from 'vuex';
+import { ref } from 'vue';
 
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
@@ -27,37 +28,50 @@ export default {
     TodoFooter,
   },
   setup() {
-    const store = useStore();
-    const todos = computed(() => store.state.todos);
+    const todos = ref([
+      {
+        id: 1,
+        text: 'todoItem1',
+        done: true,
+      },
+      {
+        id: 2,
+        text: 'todoItem2',
+        done: false,
+      },
+      {
+        id: 3,
+        text: 'todoItem3',
+        done: false,
+      },
+    ]);
 
-    const addTodo = (content) => {
-      const isEditing = false;
-      const todo = { isEditing, content };
-      //todos.value.push(todo);
-      store.dispatch('addTodo', todo);
-      store.dispatch('save');
+    const addTodo = (todo) => {
+      const newTodo = {
+        id: new Date().getTime(), // 날짜를 사용한 숫자 생성
+        text: todo,
+        done: false,
+      };
+      todos.value.push(newTodo);
+      console.log(todos.value);
     };
-    const editTodo = (content, index) => {
-      store.dispatch('editTodo', { content, index });
-      store.dispatch('save');
+    const checkTodo = (id) => {
+      todos.value.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      );
     };
-    const removeTodo = (index) => {
-      //todos.value.splice(index, 1);
-      store.dispatch('removeTodo', index);
-      store.dispatch('save');
+    const removeTodo = (id) => {
+      todos.value = todos.value.filter((todo) => todo.id !== id);
     };
     const clearAll = () => {
-      //todos.value.length = 0;
-      store.dispatch('clearAll');
-      store.dispatch('save');
+      // 완료된 항목만 삭제하도록 수정
+      todos.value = todos.value.filter((todo) => !todo.done);
     };
-
-    store.dispatch('restore');
 
     return {
       todos,
       addTodo,
-      editTodo,
+      checkTodo,
       removeTodo,
       clearAll,
     };
