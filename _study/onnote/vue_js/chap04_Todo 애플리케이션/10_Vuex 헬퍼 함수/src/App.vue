@@ -33,7 +33,7 @@ export default {
   methods: {
     ...mapActions([
       'addTodo',
-      'chechTodo',
+      'checkTodo',
       'removeTodo',
       'clearAll',
     ]),
