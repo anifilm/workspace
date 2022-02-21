@@ -10,9 +10,9 @@ import TodoFilter from './TodoFilter';
 const Todos = ({
   input,
   todos,
+  onChangeInput,
   onInsert,
   onToggle,
-  onChangeInput,
   onRemove,
   onClearAll,
   filter,
@@ -21,9 +21,17 @@ const Todos = ({
   return (
     <div>
       <TodoHeader />
-      <TodoInput input={input} onInsert={onInsert} onChangeInput={onChangeInput} />
+      <TodoInput
+        input={input}
+        onChangeInput={onChangeInput}
+        onInsert={onInsert}
+      />
       <TodoFilter filter={filter} onChangeFilter={onChangeFilter} />
-      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
+      <TodoList
+        todos={todos}
+        onToggle={onToggle}
+        onRemove={onRemove}
+      />
       <TodoFooter onClearAll={onClearAll} />
     </div>
   );

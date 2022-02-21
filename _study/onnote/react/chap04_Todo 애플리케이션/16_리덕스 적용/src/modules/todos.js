@@ -1,11 +1,15 @@
 // 액션 타입
+const CHANGE_TODO_INPUT = 'CHANGE_TODO_INPUT';
 const ADD_TODO = 'ADD_TODO';
 const TOGGLE_TODOS_STATUS = 'TOGGLE_TODO_STATUS';
-const CHANGE_TODO_INPUT = 'CHANGE_TODO_INPUT';
 const REMOVE_TODO = 'REMOVE_TODO';
 const CLEAR_ALL_TODOS = 'CLEAR_ALL_TODOS';
 
 // 액션 생성 함수
+export const changeTodoInput = (input) => ({
+  type: CHANGE_TODO_INPUT,
+  input,
+});
 export const addTodo = (input) => ({
   type: ADD_TODO,
   todo: {
@@ -16,10 +20,6 @@ export const addTodo = (input) => ({
 export const toggleTodoStatus = (id) => ({
   type: TOGGLE_TODOS_STATUS,
   id,
-});
-export const changeTodoInput = (input) => ({
-  type: CHANGE_TODO_INPUT,
-  input,
 });
 export const removeTodo = (id) => ({
   type: REMOVE_TODO,
@@ -39,6 +39,11 @@ const initialState = {
 // 리듀서 함수 정의
 function todos(state=initialState, action) {
   switch (action.type) {
+    case CHANGE_TODO_INPUT:
+      return {
+        ...state,
+        input: action.input,
+      };
     case ADD_TODO:
       const newTodo = { ...action.todo, id: state.nextTodoId };
       state.nextTodoId += 1;
@@ -52,11 +57,6 @@ function todos(state=initialState, action) {
         todos: state.todos.map((todo) =>
           todo.id === action.id ? { ...todo, done: !todo.done } : todo,
         ),
-      };
-    case CHANGE_TODO_INPUT:
-      return {
-        ...state,
-        input: action.input,
       };
     case REMOVE_TODO:
       return {

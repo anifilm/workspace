@@ -9,16 +9,16 @@ import TodoFooter from './TodoFooter';
 const Todos = ({
   input,
   todos,
+  onChangeInput,
   onInsert,
   onToggle,
-  onChangeInput,
   onRemove,
   onClearAll,
 }) => {
   return (
     <div>
       <TodoHeader />
-      <TodoInput input={input} onInsert={onInsert} onChangeInput={onChangeInput} />
+      <TodoInput input={input} onChangeInput={onChangeInput} onInsert={onInsert} />
       <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
       <TodoFooter onClearAll={onClearAll} />
     </div>

@@ -23,11 +23,16 @@ const Todos = ({
       <TodoHeader />
       <TodoInput
         input={input}
-        onInsert={onInsert}
         onChangeInput={onChangeInput}
+        onInsert={onInsert}
       />
       <TodoFilter filter={filter} onChangeFilter={onChangeFilter} />
-      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} onEdit={onEdit} />
+      <TodoList
+        todos={todos}
+        onToggle={onToggle}
+        onEdit={onEdit}
+        onRemove={onRemove}
+      />
       <TodoFooter onClearAll={onClearAll} />
     </div>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
+  changeTodoInput,
   addTodo,
   toggleTodoStatus,
-  changeTodoInput,
   removeTodo,
   clearAllTodos,
 } from '../modules/todos';
@@ -13,9 +13,9 @@ import Todos from '../components/Todos';
 const TodosContainer = ({
   input,
   todos,
+  changeTodoInput,
   addTodo,
   toggleTodoStatus,
-  changeTodoInput,
   removeTodo,
   clearAllTodos,
 }) => {
@@ -23,9 +23,9 @@ const TodosContainer = ({
     <Todos
       input={input}
       todos={todos}
+      onChangeInput={changeTodoInput}
       onInsert={addTodo}
       onToggle={toggleTodoStatus}
-      onChangeInput={changeTodoInput}
       onRemove={removeTodo}
       onClearAll={clearAllTodos}
     />
@@ -40,14 +40,14 @@ const mapStateToProps = (state) => ({
 
 // 스토어 상태 변경 함수를 props로 맵핑
 const mapDispatchToProps = (dispatch) => ({
+  changeTodoInput: (input) => {
+    dispatch(changeTodoInput(input));
+  },
   addTodo: (input) => {
     dispatch(addTodo(input));
   },
   toggleTodoStatus: (id) => {
     dispatch(toggleTodoStatus(id));
-  },
-  changeTodoInput: (input) => {
-    dispatch(changeTodoInput(input));
   },
   removeTodo: (id) => {
     dispatch(removeTodo(id));
@@ -68,9 +68,9 @@ export default connect(
     todos: state.todos,
   }),
   (dispatch) => ({
+    changeTodoInput: (input) => dispatch(changeTodoInput(input)),
     addTodo: (input) => dispatch(addTodo(input)),
     toggleTodoStatus: (id) => dispatch(toggleTodoStatus(id)),
-    changeTodoInput: (input) => dispatch(changeTodoInput(input)),
     removeTodo: (id) => dispatch(removeTodo(id)),
     clearAllTodos: () => dispatch(clearAllTodos()),
   }),
@@ -86,9 +86,9 @@ export default connect(
   (dispatch) =>
     bindActionCreators(
       {
+        changeTodoInput,
         addTodo,
         toggleTodoStatus,
-        changeTodoInput,
         removeTodo,
         clearAllTodos,
       },
@@ -104,9 +104,9 @@ export default connect(
     todos: state.todos,
   }),
   {
+    changeTodoInput,
     addTodo,
     toggleTodoStatus,
-    changeTodoInput,
     removeTodo,
     clearAllTodos,
   },

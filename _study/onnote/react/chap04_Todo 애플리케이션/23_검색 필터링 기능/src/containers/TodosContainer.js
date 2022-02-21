@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
+  changeTodoInput,
   addTodo,
   toggleTodoStatus,
-  changeTodoInput,
   removeTodo,
   clearAllTodos,
   changeFilter,
@@ -22,9 +22,9 @@ const TodosContainer = () => {
   const dispatch = useDispatch();
 
   // 스토어 상태 변경 함수 작성
+  const onChangeInput = useCallback((input) => dispatch(changeTodoInput(input)), [dispatch]);
   const onInsert = useCallback((input) => dispatch(addTodo(input)), [dispatch]);
   const onToggle = useCallback((id) => dispatch(toggleTodoStatus(id)), [dispatch]);
-  const onChangeInput = useCallback((input) => dispatch(changeTodoInput(input)), [dispatch]);
   const onRemove = useCallback((id) => dispatch(removeTodo(id)), [dispatch]);
   const onClearAll = useCallback(() => dispatch(clearAllTodos()), [dispatch]);
   const onChangeFilter = useCallback((filter) => dispatch(changeFilter(filter)), [dispatch]);
@@ -48,9 +48,9 @@ const TodosContainer = () => {
     <Todos
       input={input}
       todos={filteredTodos}
+      onChangeInput={onChangeInput}
       onInsert={onInsert}
       onToggle={onToggle}
-      onChangeInput={onChangeInput}
       onRemove={onRemove}
       onClearAll={onClearAll}
       filter={filter}

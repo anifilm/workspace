@@ -1,20 +1,20 @@
 import { createAction, handleActions } from 'redux-actions';
 
 // 액션 타입
+const CHANGE_TODO_INPUT = 'CHANGE_TODO_INPUT';
 const ADD_TODO = 'ADD_TODO';
 const TOGGLE_TODOS_STATUS = 'TOGGLE_TODO_STATUS';
-const CHANGE_TODO_INPUT = 'CHANGE_TODO_INPUT';
 const REMOVE_TODO = 'REMOVE_TODO';
 const CLEAR_ALL_TODOS = 'CLEAR_ALL_TODOS';
 const RESTORE = 'RESTORE';
 
 // createAction 함수를 활용하여 액션 생성 함수 작성
+export const changeTodoInput = createAction(CHANGE_TODO_INPUT, (input) => input);
 export const addTodo = createAction(ADD_TODO, (input) => ({
   text: input,
   done: false,
 }));
 export const toggleTodoStatus = createAction(TOGGLE_TODOS_STATUS, (id) => id);
-export const changeTodoInput = createAction(CHANGE_TODO_INPUT, (input) => input);
 export const removeTodo = createAction(REMOVE_TODO, (id) => id);
 export const clearAllTodos = createAction(CLEAR_ALL_TODOS);
 export const restore = createAction(RESTORE, (data) => data);
@@ -45,6 +45,10 @@ const initialState = {
 // handleActions 함수를 활용하여 리듀서 작성
 const todos = handleActions(
   {
+    [CHANGE_TODO_INPUT]: (state, { payload: input }) => ({
+      ...state,
+      input,
+    }),
     [ADD_TODO]: (state, { payload: todo }) => {
       const newTodo = { ...todo, id: state.nextTodoId };
       const nextTodoId = state.nextTodoId + 1;
@@ -59,10 +63,6 @@ const todos = handleActions(
       todos: state.todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       ),
-    }),
-    [CHANGE_TODO_INPUT]: (state, { payload: input }) => ({
-      ...state,
-      input,
     }),
     [REMOVE_TODO]: (state, { payload: id }) => ({
       ...state,
