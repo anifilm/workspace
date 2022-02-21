@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from 'react';
-
 import styles from '../Todo.module.css';
+import { Todo } from '../App';
 
-const TodoItem = ({ todo, onToggle, onEdit, onRemove }) => {
+interface Props {
+  readonly todo: Todo;
+  readonly onToggle: (id: number) => void;
+  readonly onRemove: (id: number) => void;
+}
+
+const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
   const { id, text, done } = todo;
 
   const [showInput, setShowInput] = useState(false);
   const [inputText, setInputText] = useState('');
 
-  const editInput = React.createRef();
+  const editInput: React.RefObject<HTMLInputElement> = React.createRef();
 
   const onDoubleClick = () => {
-    //console.log('onDoubleClick');
+    console.log('onDoubleClick');
     setInputText(text);
     setShowInput(true);
   };
-  const onChange = (e) => {
-    //console.log('onChange', e.target.value);
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('onChange', e.target.value);
     setInputText(e.target.value);
   };
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      //console.log('handleKeyPress Enter inputText', inputText);
-      onEdit(id, inputText); // Todo 항목 수정
+      console.log('handleKeyPress Enter inputText', inputText);
       setShowInput(false);
     }
   };
   const handleBlur = () => {
-    //console.log('handleBlur inputText', inputText);
+    console.log('handleBlur inputText', inputText);
     setShowInput(false);
   };
 

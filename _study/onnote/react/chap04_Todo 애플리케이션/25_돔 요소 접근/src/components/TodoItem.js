@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import styles from '../Todo.module.css';
 
 const TodoItem = ({ todo, onToggle, onRemove }) => {
+  const { id, text, done } = todo;
+
   const [showInput, setShowInput] = useState(false);
   const [inputText, setInputText] = useState('');
-  const editInput = React.createRef();
 
-  const { id, text, done } = todo;
+  const editInput = React.createRef();
 
   const onDoubleClick = () => {
     console.log('onDoubleClick');
