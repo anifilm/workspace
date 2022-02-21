@@ -85,6 +85,7 @@ const todos = handleActions(
     }),
     [CLEAR_ALL_TODOS]: (state, action) => ({
       ...state,
+      // 완료된 항목만 삭제하도록 수정
       todos: state.todos.filter((todo) => !todo.done),
     }),
     // 상태 복원 액션 처리

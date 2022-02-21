@@ -3,19 +3,19 @@ import { createAction, handleActions } from 'redux-actions';
 // 액션 타입
 const CHANGE_TODO_INPUT = 'CHANGE_TODO_INPUT';
 const ADD_TODO = 'ADD_TODO';
-const TOGGLE_TODOS_STATUS = 'TOGGLE_TODO_STATUS';
+const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS';
 const REMOVE_TODO = 'REMOVE_TODO';
 const CLEAR_ALL_TODOS = 'CLEAR_ALL_TODOS';
 const RESTORE = 'RESTORE';
 const CHANGE_FILTER = 'CHANGE_FILTER';
 
-// createAction 함수를 활용하여 액션 생성 함수 작성
+// createAction 함수를 사용하여 액션 생성 함수 작성
 export const changeTodoInput = createAction(CHANGE_TODO_INPUT, (input) => input);
 export const addTodo = createAction(ADD_TODO, (input) => ({
   text: input,
   done: false,
 }));
-export const toggleTodoStatus = createAction(TOGGLE_TODOS_STATUS, (id) => id);
+export const toggleTodoStatus = createAction(TOGGLE_TODO_STATUS, (id) => id);
 export const removeTodo = createAction(REMOVE_TODO, (id) => id);
 export const clearAllTodos = createAction(CLEAR_ALL_TODOS);
 export const restore = createAction(RESTORE, (data) => data);
@@ -45,7 +45,7 @@ const initialState = {
   filter: 'ALL',
 };
 
-// handleActions 함수를 활용하여 리듀서 작성
+// handleActions 함수를 사용하여 리듀서 작성
 const todos = handleActions(
   {
     [CHANGE_TODO_INPUT]: (state, { payload: input }) => ({
@@ -61,7 +61,7 @@ const todos = handleActions(
         nextTodoId,
       };
     },
-    [TOGGLE_TODOS_STATUS]: (state, { payload: id }) => ({
+    [TOGGLE_TODO_STATUS]: (state, { payload: id }) => ({
       ...state,
       todos: state.todos.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
@@ -73,6 +73,7 @@ const todos = handleActions(
     }),
     [CLEAR_ALL_TODOS]: (state, action) => ({
       ...state,
+      // 완료된 항목만 삭제하도록 수정
       todos: state.todos.filter((todo) => !todo.done),
     }),
     // 상태 복원 액션 처리

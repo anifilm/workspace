@@ -49,6 +49,52 @@ const initialState: TodoState = {
   nextTodoId: 4,
 };
 
+/* 액션 타입 정의
+type TodoAction =
+  | ReturnType<typeof changeTodoInput>
+  | ReturnType<typeof addTodo>
+  | ReturnType<typeof toggleTodoStatus>
+  | ReturnType<typeof removeTodo>
+  | ReturnType<typeof clearAllTodos>;
+
+// 리듀서 함수 정의
+function todos(state: TodoState = initialState, action: TodoAction) {
+  switch (action.type) {
+    case CHANGE_TODO_INPUT:
+      return {
+        ...state,
+        input: action.input,
+      };
+    case ADD_TODO:
+      const newTodo = { ...action.todo, id: state.nextTodoId };
+      state.nextTodoId += 1;
+      return {
+        ...state,
+        todos: state.todos.concat(newTodo),
+      };
+    case TOGGLE_TODO_STATUS:
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.id ? { ...todo, done: !todo.done } : todo,
+        ),
+      };
+    case REMOVE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.id),
+      };
+    case CLEAR_ALL_TODOS:
+      return {
+        ...state,
+        // 완료된 항목만 삭제하도록 수정
+        todos: state.todos.filter((todo) => !todo.done),
+      };
+    default:
+      return state;
+  }
+} */
+
 // createReducer 함수를 사용하여 리듀서 작성
 const todos = createReducer(
   initialState,

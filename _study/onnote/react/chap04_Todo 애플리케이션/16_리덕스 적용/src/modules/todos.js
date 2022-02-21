@@ -1,7 +1,7 @@
 // 액션 타입
 const CHANGE_TODO_INPUT = 'CHANGE_TODO_INPUT';
 const ADD_TODO = 'ADD_TODO';
-const TOGGLE_TODOS_STATUS = 'TOGGLE_TODO_STATUS';
+const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS';
 const REMOVE_TODO = 'REMOVE_TODO';
 const CLEAR_ALL_TODOS = 'CLEAR_ALL_TODOS';
 
@@ -18,7 +18,7 @@ export const addTodo = (input) => ({
   },
 });
 export const toggleTodoStatus = (id) => ({
-  type: TOGGLE_TODOS_STATUS,
+  type: TOGGLE_TODO_STATUS,
   id,
 });
 export const removeTodo = (id) => ({
@@ -51,7 +51,7 @@ function todos(state=initialState, action) {
         ...state,
         todos: state.todos.concat(newTodo),
       };
-    case TOGGLE_TODOS_STATUS:
+    case TOGGLE_TODO_STATUS:
       return {
         ...state,
         todos: state.todos.map((todo) =>
@@ -66,6 +66,7 @@ function todos(state=initialState, action) {
     case CLEAR_ALL_TODOS:
       return {
         ...state,
+        // 완료된 항목만 삭제하도록 수정
         todos: state.todos.filter((todo) => !todo.done),
       };
     default:
