@@ -32,7 +32,7 @@ const TodosContainer = ({
   );
 };
 
-// 스토어 상태를 props로 맵핑
+/* 스토어 상태를 props로 맵핑
 const mapStateToProps = (state) => ({
   input: state.input,
   todos: state.todos,
@@ -59,3 +59,55 @@ const mapDispatchToProps = (dispatch) => ({
 
 // 리덕스와 연동된 컴포넌트 반환
 export default connect(mapStateToProps, mapDispatchToProps)(TodosContainer);
+*/
+
+/* 익명 함수 처리
+export default connect(
+  (state) => ({
+    input: state.input,
+    todos: state.todos,
+  }),
+  (dispatch) => ({
+    addTodo: (input) => dispatch(addTodo(input)),
+    toggleTodoStatus: (id) => dispatch(toggleTodoStatus(id)),
+    changeTodoInput: (input) => dispatch(changeTodoInput(input)),
+    removeTodo: (id) => dispatch(removeTodo(id)),
+    clearAllTodos: () => dispatch(clearAllTodos()),
+  }),
+)(TodosContainer);
+*/
+
+/* bindActionsCreator 유틸 함수 사용
+export default connect(
+  (state) => ({
+    input: state.input,
+    todos: state.todos,
+  }),
+  (dispatch) =>
+    bindActionCreators(
+      {
+        addTodo,
+        toggleTodoStatus,
+        changeTodoInput,
+        removeTodo,
+        clearAllTodos,
+      },
+      dispatch,
+    ),
+)(TodosContainer);
+*/
+
+// 객체 형태 처리
+export default connect(
+  (state) => ({
+    input: state.input,
+    todos: state.todos,
+  }),
+  {
+    addTodo,
+    toggleTodoStatus,
+    changeTodoInput,
+    removeTodo,
+    clearAllTodos,
+  },
+)(TodosContainer);
