@@ -27,7 +27,10 @@ const Todos = ({
         onChangeInput={onChangeInput}
         onInsert={onInsert}
       />
-      <TodoFilter filter={filter} onChangeFilter={onChangeFilter} />
+      <TodoFilter
+        filter={filter}
+        onChangeFilter={onChangeFilter}
+      />
       <TodoList
         todos={todos}
         onToggle={onToggle}

@@ -93,7 +93,7 @@ const todos = createReducer(
         todos: action.payload.todos,
         nextTodoId: action.payload.nextTodoId,
       });
-    }
+    },
   },
 );
 
