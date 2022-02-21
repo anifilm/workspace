@@ -61,7 +61,7 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(TodosContainer);
 */
 
-/* 익명 함수 처리
+/* 익명 함수로 처리
 export default connect(
   (state) => ({
     input: state.input,
