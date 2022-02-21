@@ -4,10 +4,13 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-};
+@Component
+export default class TodoFooter extends Vue {
+
+}
 </script>
 
 <style scoped>

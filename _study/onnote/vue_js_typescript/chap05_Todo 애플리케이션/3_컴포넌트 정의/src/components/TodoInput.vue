@@ -4,10 +4,13 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-};
+@Component
+export default class TodoInput extends Vue {
+
+}
 </script>
 
 <style scoped>
