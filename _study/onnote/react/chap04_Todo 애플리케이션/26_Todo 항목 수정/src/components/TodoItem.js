@@ -10,7 +10,7 @@ const TodoItem = ({ todo, onToggle, onEdit, onRemove }) => {
   const { id, text, done } = todo;
 
   const onDoubleClick = () => {
-    console.log('onDoubleClick');
+    //console.log('onDoubleClick');
     setInputText(text);
     setShowInput(true);
   };
