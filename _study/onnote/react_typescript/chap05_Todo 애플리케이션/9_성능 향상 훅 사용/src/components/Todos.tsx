@@ -7,9 +7,25 @@ import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 
 const Todos = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([
+    {
+      id: 1,
+      text: 'todoItem1',
+      done: true,
+    },
+    {
+      id: 2,
+      text: 'todoItem2',
+      done: false,
+    },
+    {
+      id: 3,
+      text: 'todoItem3',
+      done: false,
+    },
+  ]);
 
-  const nextId = useRef(1);
+  const nextId = useRef(4);
 
   const onInsert = useCallback((text: string) => {
     const todo = {
