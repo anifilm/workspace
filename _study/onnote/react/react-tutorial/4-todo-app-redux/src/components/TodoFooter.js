@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from '../Todo.module.css';
 
-import TodoContext from '../contexts/todo';
-
-const TodoFooter = () => {
-  const { actions } = useContext(TodoContext);
-
+// 부모 컴포넌트에서 컴포넌트 속성으로 수신
+const TodoFooter = ({ onClearAll }) => {
   return (
     <div className={styles.footer}>
-      <button onClick={() => actions.onClearAll()}>완료 항목 삭제</button>
+      <button onClick={onClearAll}>완료 항목 삭제</button>
     </div>
   );
 };

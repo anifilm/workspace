@@ -1,8 +1,9 @@
 import React from 'react';
+
 import TodosContainer from './containers/TodosContainer';
 
-const App = () => {
+function App() {
   return <TodosContainer />;
-};
+}
 
 export default App;

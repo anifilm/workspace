@@ -32,8 +32,24 @@ export const clearAllTodos = () => ({
 // 초기 상태
 const initialState = {
   input: '',
-  todos: [],
-  nextTodoId: 1,
+  todos: [
+    {
+      id: 1,
+      text: 'todoItem1',
+      done: true,
+    },
+    {
+      id: 2,
+      text: 'todoItem2',
+      done: false,
+    },
+    {
+      id: 3,
+      text: 'todoItem3',
+      done: false,
+    },
+  ],
+  nextTodoId: 4,
 };
 
 // 리듀서 함수 정의

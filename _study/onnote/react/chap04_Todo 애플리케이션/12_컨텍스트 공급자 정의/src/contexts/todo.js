@@ -19,7 +19,7 @@ const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
   // 로컬 변수 정의
-  const nextId = useRef(4);
+  const nextId = useRef(1);
 
   // Todo 항목 추가 이벤트 처리
   const onInsert = useCallback((text) => {

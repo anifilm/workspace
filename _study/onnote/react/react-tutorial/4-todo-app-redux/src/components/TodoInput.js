@@ -1,19 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from '../Todo.module.css';
 
-import TodoContext from '../contexts/todo';
-
-const TodoInput = () => {
-  const { state, actions } = useContext(TodoContext);
+// 부모 컴포넌트에서 컴포넌트 속성으로 수신
+const TodoInput = ({ input, onInsert, onChangeInput }) => {
+  const onChange = (e) => onChangeInput(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onInsert(input);
+    onChangeInput('');
+  };
 
   return (
     <div className={styles.input}>
-      <form onSubmit={actions.onSubmit}>
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="할 일을 입력하세요"
-          value={state.input}
-          onChange={actions.onChange}
+          value={input}
+          onChange={onChange}
         />
         <button type="submit">추가</button>
       </form>

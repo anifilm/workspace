@@ -1,20 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from '../Todo.module.css';
 
-import TodoContext from '../contexts/todo';
 import TodoItem from './TodoItem';
 
-const TodoList = () => {
-  const { state, actions } = useContext(TodoContext);
-
+// 부모 컴포넌트에서 컴포넌트 속성으로 수신
+const TodoList = ({ todos, onToggle, onRemove }) => {
   return (
     <div className={styles.list}>
-      {state.todos.map((todo) => (
+      {todos.map((todo) => (
         <TodoItem
-          todo={todo}
           key={todo.id}
-          onToggle={actions.onToggle}
-          onRemove={actions.onRemove}
+          todo={todo}
+          onToggle={onToggle}
+          onRemove={onRemove}
         />
       ))}
     </div>

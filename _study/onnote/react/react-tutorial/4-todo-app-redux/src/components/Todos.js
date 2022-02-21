@@ -1,20 +1,27 @@
 import React from 'react';
 
-import { TodoProvider } from '../contexts/todo';
-
 import TodoHeader from './TodoHeader';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 
-const Todos = () => {
+// 리덕스 스토어 상태와 스토어 상태 변경 함수를 props로 전달 받음
+const Todos = (
+  input,
+  todos,
+  onInsert,
+  onToggle,
+  onChangeInput,
+  onRemove,
+  onClearAll,
+) => {
   return (
-    <TodoProvider>
+    <div>
       <TodoHeader />
-      <TodoInput />
-      <TodoList />
-      <TodoFooter />
-    </TodoProvider>
+      <TodoInput input={input} onInsert={onInsert} onChangeInput={onChangeInput} />
+      <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
+      <TodoFooter onClearAll={onClearAll} />
+    </div>
   );
 };
 
