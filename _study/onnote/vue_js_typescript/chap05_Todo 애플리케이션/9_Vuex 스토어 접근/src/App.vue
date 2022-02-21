@@ -28,8 +28,6 @@ import TodoFooter from './components/TodoFooter.vue';
   },
 })
 export default class App extends Vue {
-  $store: any; // 스토어 관련 타입 오류로 추가
-
   // 스토어 상태 접근
   get todos() {
     return this.$store.state.todos;

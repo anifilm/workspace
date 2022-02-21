@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import store from './store';
 
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
@@ -28,24 +29,22 @@ import TodoFooter from './components/TodoFooter.vue';
   },
 })
 export default class App extends Vue {
-  $store: any; // 스토어 관련 타입 오류로 추가
-
   // 스토어 상태 접근
   get todos() {
-    return this.$store.state.todos;
+    return store.state.todos;
   }
 
   addTodo(todo: string) {
-    this.$store.dispatch('addTodo', todo);
+    store.dispatch('addTodo', todo);
   }
   checkTodo(id: number) {
-    this.$store.dispatch('checkTodo', id);
+    store.dispatch('checkTodo', id);
   }
   removeTodo(index: number) {
-    this.$store.dispatch('removeTodo', index);
+    store.dispatch('removeTodo', index);
   }
   clearAll() {
-    this.$store.dispatch('clearAll');
+    store.dispatch('clearAll');
   }
 }
 </script>
