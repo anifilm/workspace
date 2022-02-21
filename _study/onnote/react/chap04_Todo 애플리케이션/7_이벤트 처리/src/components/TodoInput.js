@@ -10,7 +10,12 @@ const TodoInput = ({ onInsert }) => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    onInsert(value);
+    if (value.trim() === '') {
+      alert('내용을 입력하세요.');
+      setValue('');
+      return;
+    }
+    onInsert(value.trim());
     setValue('');
   };
 

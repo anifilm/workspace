@@ -16,10 +16,26 @@ const TodoContext = createContext({
 // 컨텍스트 공급자 정의
 const TodoProvider = ({ children }) => {
   // 상태 정의
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: 'todoItem1',
+      done: true,
+    },
+    {
+      id: 2,
+      text: 'todoItem2',
+      done: false,
+    },
+    {
+      id: 3,
+      text: 'todoItem3',
+      done: false,
+    },
+  ]);
   const [input, setInput] = useState('');
   // 로컬 변수 정의
-  const nextId = useRef(1);
+  const nextId = useRef(4);
 
   // Todo 항목 추가 이벤트 처리
   const onInsert = useCallback((text) => {

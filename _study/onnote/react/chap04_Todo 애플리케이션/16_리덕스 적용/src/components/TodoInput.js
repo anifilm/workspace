@@ -6,7 +6,12 @@ const TodoInput = ({ input, onInsert, onChangeInput }) => {
   const onChange = (e) => onChangeInput(e.target.value);
   const onSubmit = (e) => {
     e.preventDefault();
-    onInsert(input);
+    if (input.trim() === '') {
+      alert('내용을 입력하세요.');
+      onChangeInput('');
+      return;
+    }
+    onInsert(input.trim());
     onChangeInput('');
   };
 

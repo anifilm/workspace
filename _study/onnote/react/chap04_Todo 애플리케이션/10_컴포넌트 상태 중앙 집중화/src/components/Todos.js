@@ -6,10 +6,26 @@ import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 
 const Todos = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: 'todoItem1',
+      done: true,
+    },
+    {
+      id: 2,
+      text: 'todoItem2',
+      done: false,
+    },
+    {
+      id: 3,
+      text: 'todoItem3',
+      done: false,
+    },
+  ]);
   const [input, setInput] = useState('');
 
-  const nextId = useRef(1);
+  const nextId = useRef(4);
 
   const onInsert = useCallback((text) => {
     const todo = {
@@ -40,7 +56,12 @@ const Todos = () => {
   }, []);
   const onSubmit = useCallback((e) => {
     e.preventDefault();
-    onInsert(input);
+    if (input.trim() === '') {
+      alert('내용을 입력하세요.');
+      setInput('');
+      return;
+    }
+    onInsert(input.trim());
     setInput('');
   }, [onInsert, input]);
 

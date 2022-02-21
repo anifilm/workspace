@@ -6,7 +6,7 @@ import TodoList from './TodoList';
 import TodoFooter from './TodoFooter';
 
 // 리덕스 스토어 상태와 스토어 상태 변경 함수를 props로 전달 받음
-const Todos = (
+const Todos = ({
   input,
   todos,
   onInsert,
@@ -14,7 +14,7 @@ const Todos = (
   onChangeInput,
   onRemove,
   onClearAll,
-) => {
+}) => {
   return (
     <div>
       <TodoHeader />
