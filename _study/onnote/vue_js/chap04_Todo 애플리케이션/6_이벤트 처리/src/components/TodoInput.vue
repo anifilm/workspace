@@ -16,7 +16,7 @@ export default {
     addTodo() {
       if (this.newTodo !== '') {
         const value = this.newTodo && this.newTodo.trim();
-        console.log('addTodo');
+        console.log('addTodo', value);
         this.clearInput();
       }
     },

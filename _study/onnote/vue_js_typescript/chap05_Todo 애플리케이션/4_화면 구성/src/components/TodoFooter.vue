@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>TodoFooter</h1>
+    <button>완료 항목 삭제</button>
   </div>
 </template>
 
