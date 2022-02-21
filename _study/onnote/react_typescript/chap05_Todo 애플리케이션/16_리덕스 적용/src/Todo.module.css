@@ -1,0 +1,25 @@
+.input {
+  background-color: Pink;
+}
+span, input {
+  margin: 10px;
+}
+button {
+  margin-left: 5px;
+}
+.item {
+  background-color: LightYellow;
+  margin: 10px 0;
+}
+
+.header {
+  background-color: LightGreen;
+}
+
+.footer {
+  background-color: AliceBlue;
+}
+
+.list {
+  background-color: LightCyan;
+}

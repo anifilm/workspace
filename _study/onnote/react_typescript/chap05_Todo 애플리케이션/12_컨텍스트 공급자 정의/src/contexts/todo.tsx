@@ -96,7 +96,12 @@ const TodoProvider = ({ children }: Props) => {
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      onInsert(input);
+      if (input.trim() === '') {
+        alert('내용을 입력하세요.');
+        setInput('');
+        return;
+      }
+      onInsert(input.trim());
       setInput('');
     },
     [onInsert, input],

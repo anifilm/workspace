@@ -11,7 +11,12 @@ const TodoInput = ({ input, onChange, onSubmit }: Props) => {
   return (
     <div className={styles.input}>
       <form onSubmit={onSubmit}>
-        <input type="text" placeholder="할 일을 입력하세요" value={input} onChange={onChange} />
+        <input
+          type="text"
+          value={input}
+          onChange={onChange}
+          placeholder="할 일을 입력하세요"
+        />
         <button type="submit">추가</button>
       </form>
     </div>

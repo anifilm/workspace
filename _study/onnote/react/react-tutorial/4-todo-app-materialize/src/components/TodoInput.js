@@ -22,9 +22,9 @@ const TodoInput = ({ input, onChangeInput, onInsert }) => {
         <div className="col s5 offset-s3">
           <input
             type="text"
-            placeholder="할 일을 입력하세요"
             value={input}
             onChange={onChange}
+            placeholder="할 일을 입력하세요"
             />
         </div>
         <div className="col s4">

@@ -8,9 +8,9 @@ const TodoInput = ({ input, onChange, onSubmit }) => {
       <form onSubmit={onSubmit}>
         <input
           type="text"
-          placeholder="할 일을 입력하세요"
           value={input}
           onChange={onChange}
+          placeholder="할 일을 입력하세요"
         />
         <button type="submit">추가</button>
       </form>

@@ -13,14 +13,24 @@ const TodoInput = ({ onInsert }: Props) => {
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onInsert(value);
+    if (value.trim() === '') {
+      alert('내용을 입력하세요.');
+      setValue('');
+      return;
+    }
+    onInsert(value.trim());
     setValue('');
   };
 
   return (
     <div className={styles.input}>
       <form onSubmit={onSubmit}>
-        <input type="text" placeholder="할 일을 입력하세요" value={value} onChange={onChange} />
+        <input
+          type="text"
+          value={value}
+          onChange={onChange}
+          placeholder="할 일을 입력하세요"
+        />
         <button type="submit">추가</button>
       </form>
       <h1>TodoInput</h1>
