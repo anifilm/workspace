@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="clearTodo">완료 항목 삭제</button>
+    <button v-on:click="clearAll">완료 항목 삭제</button>
   </div>
 </template>
 
@@ -9,8 +9,8 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class TodoFooter extends Vue {
-  clearTodo() {
-    console.log('clearTodo');
+  clearAll() {
+    console.log('clearAll');
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="todo in todos" v-bind:key="index">
+      <li v-for="(todo, index) in todos" v-bind:key="index">
         <input
           type="checkbox"
           v-bind:checked="todo.done"
@@ -24,6 +24,7 @@ export default {
     },
     removeTodo(index) {
       //console.log('removeTodo');
+      //todos.value.splice(index, 1);
       this.$emit('removeTodo', index);
     },
   },

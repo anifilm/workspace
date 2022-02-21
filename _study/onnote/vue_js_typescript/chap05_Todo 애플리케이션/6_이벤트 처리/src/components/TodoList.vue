@@ -2,7 +2,11 @@
   <div>
     <ul>
       <li v-for="(todo, index) in todos" v-bind:key="index">
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          v-bind:checked="todo.done"
+          v-on:change="checkTodo(todo.id)"
+        />
         <span>{{ todo.text }}</span>
         <button v-on:click="removeTodo(index)">삭제</button>
       </li>
@@ -39,6 +43,12 @@ export default class TodoList extends Vue {
     },
   ];
 
+  checkTodo(id: number) {
+    console.log('checkTodo');
+    this.todos = this.todos.map((todo) =>
+      todo.id === id ? { ...todo, done: !todo.done } : todo,
+    );
+  }
   removeTodo(index: number) {
     console.log('removeTodo');
     this.todos.splice(index, 1);

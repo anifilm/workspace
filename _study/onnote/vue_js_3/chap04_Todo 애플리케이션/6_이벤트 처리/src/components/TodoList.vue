@@ -40,7 +40,7 @@ export default {
 
     const checkTodo = (id) => {
       console.log('checkTodo');
-      todos.value.map((todo) =>
+      todos.value = todos.value.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     };

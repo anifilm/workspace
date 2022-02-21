@@ -26,6 +26,7 @@ export default {
     };
     const removeTodo = (index) => {
       //console.log('removeTodo');
+      //todos.value.splice(index, 1);
       context.emit('remove-todo', index);
     };
 

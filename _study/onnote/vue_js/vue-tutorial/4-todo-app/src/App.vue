@@ -48,12 +48,12 @@ export default {
   },
   methods: {
     addTodo(todo) {
-      const todo = {
+      const newTodo = {
         id: new Date().getTime(), // 날짜를 사용한 숫자 생성
         text: todo,
         done: false,
       };
-      this.todos.push(todo);
+      this.todos.push(newTodo);
     },
     checkTodo(id) {
       this.todos = this.todos.map((todo) =>

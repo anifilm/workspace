@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="newTodoItem" />
+    <input type="text" v-model="newTodo" />
     <button>추가</button>
   </div>
 </template>
@@ -10,7 +10,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class TodoInput extends Vue {
-  newTodoItem: string = '';
+  newTodo: string = '';
 }
 </script>
 
