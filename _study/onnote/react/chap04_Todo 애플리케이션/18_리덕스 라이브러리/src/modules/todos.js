@@ -31,7 +31,8 @@ export const clearAllTodos = () => ({
   type: CLEAR_ALL_TODOS,
 });
 */
-// createAction 함수를 활요하여 액션 생성 함수
+
+// createAction 함수를 활용하여 액션 생성 함수 작성
 export const addTodo = createAction(ADD_TODO, (input) => ({
   text: input,
   done: false,
