@@ -27,8 +27,8 @@ const TodoFilter = ({ filter, onChangeFilter }) => {
           <input
             className="with-gap"
             type="radio"
-            value="A"
-            checked={filter === 'A'}
+            value="NOTDONE"
+            checked={filter === 'NOTDONE'}
             onChange={handleFilter}
           />
           <span>미완료</span>
@@ -39,8 +39,8 @@ const TodoFilter = ({ filter, onChangeFilter }) => {
           <input
             className="with-gap"
             type="radio"
-            value="B"
-            checked={filter === 'B'}
+            value="DONE"
+            checked={filter === 'DONE'}
             onChange={handleFilter}
           />
           <span>완료</span>

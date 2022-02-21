@@ -12,12 +12,12 @@ export const getFilteredTodos = createSelector(
     if (filter === 'ALL') {
       return todos;
     }
-    if (filter === 'A') {
+    if (filter === 'NOTDONE') {
       return todos.filter((todo) => {
         return todo.done === false;
       });
     }
-    if (filter === 'B') {
+    if (filter === 'DONE') {
       return todos.filter((todo) => {
         return todo.done === true;
       });

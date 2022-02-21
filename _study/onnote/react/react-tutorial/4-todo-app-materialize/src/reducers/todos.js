@@ -60,6 +60,25 @@ const todos = handleActions(
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       ),
     }),
+    // 편집 항목 ID 설정
+    [SET_EDITING_ID]: (state, { payload: id }) => ({
+      ...state,
+      editingId: id,
+    }),
+    // 편집 항목 ID 리셋
+    [RESET_EDITING_ID]: (state) => ({
+      ...state,
+      editingId: 0,
+    }),
+    // Todo 항목 변경 액션 처리
+    [EDIT_TODO]: (state, action) => ({
+      ...state,
+      todos: state.todos.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, text: action.payload.input }
+          : todo,
+      ),
+    }),
     [REMOVE_TODO]: (state, { payload: id }) => ({
       ...state,
       todos: state.todos.filter((todo) => todo.id !== id),
@@ -83,23 +102,6 @@ const todos = handleActions(
     [CHANGE_FILTER]: (state, { payload: filter }) => ({
       ...state,
       filter: filter,
-    }),
-    // Todo 항목 변경 액션 처리
-    [EDIT_TODO]: (state, action) => ({
-      ...state,
-      todos: state.todos.map((todo) =>
-        todo.id === action.payload.id ? { ...todo, text: action.payload.input } : todo
-      ),
-    }),
-    // 편집 항목 ID 설정
-    [SET_EDITING_ID]: (state, { payload: id }) => ({
-      ...state,
-      editingId: id,
-    }),
-    // 편집 항목 ID 리셋
-    [RESET_EDITING_ID]: (state) => ({
-      ...state,
-      editingId: 0,
     }),
   },
   initialState,

@@ -13,10 +13,10 @@ const Todos = ({
   onChangeInput,
   onInsert,
   onToggle,
+  onEdit,
   onRemove,
   onClearAll,
   onChangeFilter,
-  onEdit,
 }) => {
   return (
     <div className="container">

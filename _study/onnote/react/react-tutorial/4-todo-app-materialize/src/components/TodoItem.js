@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setEditingId, resetEditingId } from '../actions/todos';
 
-const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
+const TodoItem = ({ todo, onToggle, onEdit, onRemove }) => {
   const { id, text, done } = todo;
 
   // 스토어 상태 조회
@@ -10,9 +10,8 @@ const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
     editingId: state.editingId,
   }));
   // 편집 상태 확인
-  const showInput = id === editingId;
+  const showInput = (id === editingId);
 
-  //const [showInput, setShowInput] = useState(false);
   const [inputText, setInputText] = useState('');
   const editInput = React.createRef();
 
@@ -77,27 +76,23 @@ const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
           />
           <span style={{ color: 'white' }}>d</span>
         </label>
-        {showInput && (
-          <input
-            value={inputText}
-            onChange={onChange}
-            onKeyPress={handleKeyPress}
-            onBlur={handleBlur}
-            ref={editInput}
-          />
-        )}
         {!showInput && (
           <>
             <span onDoubleClick={onDoubleClick}>{text}</span>
             <button
-              onClick={() => {
-                onRemove(id);
-              }}
+              onClick={() => onRemove(id)}
               className="waves-effect waves-light btn-small red lighten-2 right"
-            >
-              삭제
-            </button>
+            >삭제</button>
           </>
+        )}
+        {showInput && (
+          <input
+            ref={editInput}
+            value={inputText}
+            onChange={onChange}
+            onKeyPress={handleKeyPress}
+            onBlur={handleBlur}
+          />
         )}
       </div>
     </div>

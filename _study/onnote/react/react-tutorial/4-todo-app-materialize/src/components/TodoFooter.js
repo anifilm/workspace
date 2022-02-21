@@ -24,7 +24,7 @@ const TodoFooter = ({ onClearAll }) => {
       <div className="col s5 right">
         <br />
         <button onClick={onClearAll} class="waves-effect waves-light btn red lighten-2">완료 항목 삭제</button>{' '}
-        <button onClick={onSave} class="waves-effect waves-light btn blue" style={{width: 80}}>저장</button>
+        <button onClick={onSave} class="waves-effect waves-light btn blue" style={{ width: 80 }}>저장</button>
       </div>
     </div>
   );

@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 // 리덕스 관련 모듈 임포트
-//import { createStore } from 'redux';
-//import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import todos from './reducers/todos';
 
@@ -15,7 +13,6 @@ import { restore } from './actions/todos';
 import configureStore from './store';
 
 // 스토어 생성
-//const store = createStore(todos, composeWithDevTools());
 const store = configureStore(todos);
 
 // 상태 복원 함수 (즉시 실행)

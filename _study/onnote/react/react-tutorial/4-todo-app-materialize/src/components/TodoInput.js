@@ -1,7 +1,9 @@
 import React from 'react';
 
 // 부모 컴포넌트에서 컴포넌트 속성으로 수신
-const TodoInput = ({ input, onInsert, onChangeInput }) => {
+const TodoInput = ({ input, onChangeInput, onInsert }) => {
+  // 텍스트 입력 요소 변견 이벤트 처리
+  const onChange = (e) => onChangeInput(e.target.value);
   // 폼 submit 이벤트 처리
   const onSubmit = (e) => {
     e.preventDefault();
@@ -13,10 +15,6 @@ const TodoInput = ({ input, onInsert, onChangeInput }) => {
     onInsert(input.trim());
     onChangeInput('');
   };
-  // 텍스트 입력 요소 변견 이벤트 처리
-  const onChange = (e) => {
-    return onChangeInput(e.target.value);
-  };
 
   return (
     <div className="row">
@@ -24,9 +22,9 @@ const TodoInput = ({ input, onInsert, onChangeInput }) => {
         <div className="col s5 offset-s3">
           <input
             type="text"
+            placeholder="할 일을 입력하세요"
             value={input}
             onChange={onChange}
-            placeholder="할 일을 입력하세요"
             />
         </div>
         <div className="col s4">
