@@ -40,20 +40,20 @@ export default class TodoItem extends Vue {
   // 컴포넌트 메서드 정의
   checkTodo() {
     const id = this.todo.id;
-    console.log('checkTodo', id);
+    //console.log('checkTodo', id);
     this.$emit('checkTodo', id);
   }
   updateTodo(e: Event) {
     const id = this.todo.id;
     const content = (e.target as HTMLInputElement).value.trim();
     if (content.length <= 0) return false;
-    console.log('updateTodo', id, content);
+    //console.log('updateTodo', id, content);
     this.$emit('updateTodo', id, content);
     (this.$refs.content as HTMLInputElement).blur();
   }
   removeTodo() {
     const id = this.todo.id;
-    console.log('removeTodo', id);
+    //console.log('removeTodo', id);
     this.$emit('removeTodo', id);
   }
   handleDblClick() {

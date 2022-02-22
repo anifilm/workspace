@@ -63,7 +63,7 @@ const store: StoreOptions<TodoState> = {
     },
     [RESTORE](state, { todos }) {
       state.todos = todos;
-    }
+    },
   },
   actions: {
     addTodo({ commit }, payload: string) {
