@@ -39,7 +39,6 @@ export default {
     const store = useStore(); // 스토어를 가져온다.
 
     // computed 속성 정의
-    //const todos = computed(() => store.state.todos);
     const editingId = computed(() => store.state.editingId);
     // getter 함수 맵핑
     const todos = computed(() => store.getters['filteredTodos']());

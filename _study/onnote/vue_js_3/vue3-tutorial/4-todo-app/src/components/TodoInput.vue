@@ -22,7 +22,6 @@ export default {
         clearInput();
       }
     };
-
     const clearInput = () => {
       newTodo.value = '';
     };
