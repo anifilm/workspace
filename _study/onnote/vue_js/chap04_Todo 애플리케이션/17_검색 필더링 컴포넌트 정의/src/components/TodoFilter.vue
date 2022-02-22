@@ -27,7 +27,7 @@ export default {
     ...mapState(['filter']),
   },
   methods: {
-    ...mapMutations([SET_FILTER])
-  }
+    ...mapMutations([SET_FILTER]),
+  },
 };
 </script>

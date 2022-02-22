@@ -1,4 +1,5 @@
 export default {
+  // 필터링 처리된 Todo 항목 목록을 반환
   filteredTodos(state) {
     // 완료되지 않은 TODO 항목 목록을 반환
     if (state.filter === 'NOTDONE') {

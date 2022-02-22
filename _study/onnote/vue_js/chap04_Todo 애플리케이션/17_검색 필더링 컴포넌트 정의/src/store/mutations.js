@@ -44,10 +44,10 @@ export default {
     // 완료된 항목 삭제로 수정
     state.todos = state.todos.filter((todo) => !todo.done);
   },
+  [SET_FILTER](state, filter) {
+    state.filter = filter;
+  },
   [RESTORE](state, { todos }) {
     state.todos = todos;
   },
-  [SET_FILTER](state, filter) {
-    state.filter = filter;
-  }
 };

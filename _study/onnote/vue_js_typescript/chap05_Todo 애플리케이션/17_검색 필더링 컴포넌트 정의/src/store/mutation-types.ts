@@ -6,5 +6,5 @@ export const RESET_EDITING_ID = 'RESET_EDITING_ID';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const REMOVE_TODO = 'REMOVE_TODO';
 export const CLEAR_ALL = 'CLEAR_ALL';
-export const RESTORE = 'RESTORE';
 export const SET_FILTER = 'SET_FILTER';
+export const RESTORE = 'RESTORE';

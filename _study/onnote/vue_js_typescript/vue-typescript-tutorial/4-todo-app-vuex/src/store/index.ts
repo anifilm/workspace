@@ -49,6 +49,21 @@ const store: StoreOptions<TodoState> = {
     editingId: 0,
     filter: 'ALL',
   },
+  getters: {
+    // 필터링 처리된 Todo 항목 목록을 반환
+    filteredTodos(state) {
+      // 완료되지 않은 TODO 항목 목록을 반환
+      if (state.filter === 'NOTDONE') {
+        return state.todos.filter((todo) => todo.done === false);
+      }
+      // 완료된 Todo 항목 목록을 반환
+      if (state.filter === 'DONE') {
+        return state.todos.filter((todo) => todo.done === true);
+      }
+      // 전체 Todo 항목 목록을 반환
+      return state.todos;
+    },
+  },
   mutations: {
     [ADD_TODO](state, todo: string) {
       const newTodo: Todo = {
@@ -82,11 +97,11 @@ const store: StoreOptions<TodoState> = {
     [CLEAR_ALL](state) {
       state.todos = state.todos.filter((todo) => !todo.done);
     },
-    [RESTORE](state, { todos }) {
-      state.todos = todos;
-    },
     [SET_FILTER](state, filter) {
       state.filter = filter;
+    },
+    [RESTORE](state, { todos }) {
+      state.todos = todos;
     },
   },
   actions: {
@@ -114,21 +129,6 @@ const store: StoreOptions<TodoState> = {
       if (data) {
         commit(RESTORE, JSON.parse(data));
       }
-    },
-  },
-  getters: {
-    // 필터링 처리된 Todo 항목 목록을 반환
-    filteredTodos(state) {
-      // 완료되지 않은 TODO 항목 목록을 반환
-      if (state.filter === 'NOTDONE') {
-        return state.todos.filter((todo) => todo.done === false);
-      }
-      // 완료된 Todo 항목 목록을 반환
-      if (state.filter === 'DONE') {
-        return state.todos.filter((todo) => todo.done === true);
-      }
-      // 전체 Todo 항목 목록을 반환
-      return state.todos;
     },
   },
 };
