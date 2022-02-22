@@ -72,7 +72,7 @@ const store: StoreOptions<TodoState> = {
       commit(REMOVE_TODO, index);
     },
     clearAll({ commit }) {
-      commit('CLEAR_ALL');
+      commit(CLEAR_ALL);
     },
   },
 };
