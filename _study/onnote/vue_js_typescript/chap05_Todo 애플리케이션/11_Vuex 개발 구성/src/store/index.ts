@@ -5,7 +5,7 @@ import {
   CHECK_TODO,
   REMOVE_TODO,
   CLEAR_ALL,
-} from './mutation-type';
+} from './mutation-types';
 
 Vue.use(Vuex);
 

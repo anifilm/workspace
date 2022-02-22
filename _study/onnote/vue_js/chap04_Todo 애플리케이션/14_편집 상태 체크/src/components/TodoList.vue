@@ -33,9 +33,9 @@ export default {
       //console.log('checkTodo', id);
       this.$emit('checkTodo', id);
     },
-    isEditing(id) {
-      if (id === this.editingId) {
-        return true;
+    isEditing(index) {
+      if (this.todos[index]) {
+        return this.todos[index].id === this.editingId;
       }
       return false;
     },

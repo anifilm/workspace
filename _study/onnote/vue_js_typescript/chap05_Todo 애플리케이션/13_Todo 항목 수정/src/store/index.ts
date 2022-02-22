@@ -7,7 +7,7 @@ import {
   REMOVE_TODO,
   CLEAR_ALL,
   RESTORE,
-} from './mutation-type';
+} from './mutation-types';
 
 Vue.use(Vuex);
 
