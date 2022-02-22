@@ -41,20 +41,20 @@ export default {
   methods: {
     checkTodo() {
       const id = this.todo.id;
-      console.log('checkTodo', id);
+      //console.log('checkTodo', id);
       this.$emit('checkTodo', id);
     },
     updateTodo(e) {
       const id = this.todo.id
-      console.log('update Todo', id);
       const content = e.target.value.trim();
       if (content.length <= 0) return false;
+      //console.log('updateTodo', id, content);
       this.$emit('updateTodo', id, content);
       this.$refs.content.blur();
     },
     removeTodo() {
       const id = this.todo.id
-      console.log('removeTodo', id);
+      //console.log('removeTodo', id);
       this.$emit('removeTodo', id);
     },
     handleDblClick() {

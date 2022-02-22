@@ -39,13 +39,13 @@ export default {
   },
   methods: {
     checkTodo(id) {
-      console.log('checkTodo');
+      //console.log('checkTodo', id);
       todos.value = todos.value.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     },
     removeTodo(index) {
-      console.log('removeTodo');
+      //console.log('removeTodo', index);
       todos.value.splice(index, 1);
     },
   },

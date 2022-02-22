@@ -19,11 +19,11 @@ export default {
   props: ['todos'],
   methods: {
     checkTodo(id) {
-      console.log('checkTodo');
+      //console.log('checkTodo', id);
       this.$emit('checkTodo', id);
     },
     removeTodo(index) {
-      console.log('removeTodo');
+      //console.log('removeTodo', index);
       this.$emit('removeTodo', index);
     },
   },

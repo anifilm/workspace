@@ -23,8 +23,7 @@ export default {
       this.$emit('checkTodo', id);
     },
     removeTodo(index) {
-      //console.log('removeTodo');
-      //todos.value.splice(index, 1);
+      //console.log('removeTodo', index);
       this.$emit('removeTodo', index);
     },
   },

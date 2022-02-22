@@ -30,7 +30,7 @@ export default {
   props: ['todos', 'editingId'],
   methods: {
     checkTodo(id) {
-      //console.log('checkTodo');
+      //console.log('checkTodo', id);
       this.$emit('checkTodo', id);
     },
     isEditing(id) {
@@ -40,14 +40,14 @@ export default {
       return false;
     },
     updateTodo(id, e) {
-      //console.log('update Todo');
       const content = e.target.value.trim();
       if (content.length <= 0) return false;
+      //console.log('updateTodo', id, content);
       this.$emit('updateTodo', id, content);
       this.$refs.content[0].blur();
     },
     removeTodo(index) {
-      //console.log('removeTodo');
+      //console.log('removeTodo', index);
       this.$emit('removeTodo', index);
     },
     handleDblClick(id) {

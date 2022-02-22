@@ -34,14 +34,14 @@ export default {
       this.$emit('checkTodo', id);
     },
     updateTodo(id, e) {
-      //console.log('update Todo');
       const content = e.target.value.trim();
       if (content.length <= 0) return false;
+      //console.log('updateTodo', id, content);
       this.$emit('updateTodo', id, content);
       this.$refs.content[0].blur();
     },
     removeTodo(index) {
-      //console.log('removeTodo');
+      //console.log('removeTodo', index);
       this.$emit('removeTodo', index);
     },
     handleDblClick(index) {
