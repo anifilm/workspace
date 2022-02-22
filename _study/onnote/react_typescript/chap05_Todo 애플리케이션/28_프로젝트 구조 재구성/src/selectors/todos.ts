@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 // 상태 인터페이스 임포트
-import { TodoState } from '../modules/todos';
+import { TodoState } from '../reducers/todos';
 
 // Todo 항목 목록 전달 선택자 함수
 const getTodos = (state: TodoState) => state.todos;
