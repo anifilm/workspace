@@ -17,13 +17,13 @@
 
 <script>
 import TodoItem from './TodoItem.vue';
+import { inject } from 'vue';
 
 export default {
   name: 'TodoList',
   components: {
     TodoItem,
   },
-  props: ['todos', 'editingId'],
   emits: [
     'check-todo',
     'set-editing-id',
@@ -32,6 +32,10 @@ export default {
     'remove-todo'
   ],
   setup(props, context) {
+    // 공급된 데이터 가져오기
+    const todos = inject('filteredTodos');
+    const editingId = inject('editingId');
+
     const onCheckTodo = (id) => {
       context.emit('check-todo', id);
     };
@@ -49,6 +53,8 @@ export default {
     };
 
     return {
+      todos,
+      editingId,
       onCheckTodo,
       setEditingId,
       resetEditingId,

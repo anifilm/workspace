@@ -2,10 +2,8 @@
   <div id="app">
     <TodoHeader />
     <TodoInput v-on:add-todo="handleAddTodo" />
-    <TodoFilter v-bind:filter="filter" v-on:set-filter="handleSetFilter" />
+    <TodoFilter v-on:set-filter="handleSetFilter" />
     <TodoList
-      v-bind:todos="filteredTodos"
-      v-bind:editingId="editingId"
       v-on:check-todo="handleCheckTodo"
       v-on:set-editing-id="handleSetEditingId"
       v-on:reset-editing-id="handleResetEditingId"
@@ -18,6 +16,7 @@
 
 <script>
 import { useTodos } from './compositions/useTodos.js';
+import { readonly, provide } from 'vue';
 
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
@@ -51,6 +50,11 @@ export default {
       save,
       restore,
     } = useTodos();
+
+    // 자식 컴포넌트에 데이터와 함수전달
+    provide('filteredTodos', readonly(filteredTodos));
+    provide('editingId', editingId);
+    provide('filter', filter);
 
     const handleAddTodo = (todo) => {
       addTodo(todo);

@@ -19,16 +19,20 @@
 </template>
 
 <script>
+import { inject } from 'vue';
+
 export default {
   name: 'TodoFilter',
-  props: ['filter'],
   emits: ['set-filter'],
   setup(props, context) {
+    const filter = inject('filter'); // 공급된 데이터 가져오기
+
     const setFilter = (filter) => {
       context.emit('set-filter', filter);
     };
 
     return {
+      filter,
       setFilter,
     };
   },
