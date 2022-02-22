@@ -8,7 +8,7 @@
           v-on:change="checkTodo(todo.id)"
         />
         <span
-          v-if="!isEditing(index)"
+          v-if="!isEditing(todo.id)"
           v-on:dblclick="handleDblClick(todo.id)"
         >{{ todo.text }}</span>
         <input
@@ -33,9 +33,9 @@ export default {
       console.log('checkTodo');
       this.$emit('checkTodo', id);
     },
-    isEditing(index) {
-      if (this.todos[index]) {
-        return this.todos[index].id === this.editingId;
+    isEditing(id) {
+      if (id === this.editingId) {
+        return true;
       }
       return false;
     },
