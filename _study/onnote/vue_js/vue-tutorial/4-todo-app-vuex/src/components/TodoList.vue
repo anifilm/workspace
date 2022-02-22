@@ -8,21 +8,18 @@
           v-on:change="checkTodo(todo.id)"
         />
         <span
-          v-if="!todo.content.isEditing"
-          v-on:dblclick="handleDblClick(index)"
-        >{{ todo.content.text }}</span>
+          v-if="!isEditing(index)"
+          v-on:dblclick="handleDblClick(todo.id)"
+        >{{ todo.text }}</span>
         <input
           v-else
           type="text"
           ref="content"
-          v-bind:value="todo.content.text"
-          v-on:blur="handleBlur(index)"
+          v-bind:value="todo.text"
+          v-on:blur="handleBlur()"
           v-on:keydown.enter="updateTodo(todo.id, $event)"
         />
-        <button
-          v-show="!todo.isEditing"
-          v-on:click="removeTodo(index)"
-        >삭제</button>
+        <button v-on:click="removeTodo(index)">삭제</button>
       </li>
     </ul>
   </div>
@@ -30,11 +27,17 @@
 
 <script>
 export default {
-  props: ['todos'],
+  props: ['todos', 'editingId'],
   methods: {
     checkTodo(id) {
       console.log('checkTodo');
       this.$emit('checkTodo', id);
+    },
+    isEditing(index) {
+      if (this.todos[index]) {
+        return this.todos[index].id === this.editingId;
+      }
+      return false;
     },
     updateTodo(id, e) {
       console.log('update Todo');
@@ -47,14 +50,14 @@ export default {
       console.log('removeTodo');
       this.$emit('removeTodo', index);
     },
-    handleDblClick(index) {
-      this.todos[index].content.isEditing = true;
+    handleDblClick(id) {
+      this.$emit('setEditingId', id);
       this.$nextTick(() => {
         this.$refs.content[0].focus();
       });
     },
-    handleBlur(index) {
-      this.todos[index].content.isEditing = false;
+    handleBlur() {
+      this.$emit('resetEditingId');
     },
   },
 };
