@@ -6,9 +6,9 @@
         v-bind:checked="todo.done"
         v-on:change="checkTodo"
       />
-      <span v-if="!isEditing" v-on:dblclick="handleDblClick">{{
-        todo.text
-      }}</span>
+      <span v-if="!isEditing" v-on:dblclick="handleDblClick">
+        {{ todo.text }}
+      </span>
       <input
         v-else
         type="text"
