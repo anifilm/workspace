@@ -10,7 +10,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class TodoFooter extends Vue {
   clearAll() {
-    console.log('clearAll');
+    //console.log('clearAll');
     this.$emit('clearAll');
   }
 }

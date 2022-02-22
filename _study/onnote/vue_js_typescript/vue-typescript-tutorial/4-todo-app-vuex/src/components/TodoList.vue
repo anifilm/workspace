@@ -28,12 +28,11 @@ export default class TodoList extends Vue {
   @Prop() todos!: Todos[]; // props 속성
 
   checkTodo(id: number) {
-    //console.log('checkTodo');
+    console.log('checkTodo', id);
     this.$emit('checkTodo', id);
   }
   removeTodo(index: number) {
-    //console.log('removeTodo');
-    //this.todos.splice(index, 1);
+    console.log('removeTodo', index);
     this.$emit('removeTodo', index);
   }
 }

@@ -15,7 +15,7 @@ export default class TodoInput extends Vue {
   addTodo() {
     if (this.newTodo !== '') {
       const value = this.newTodo && this.newTodo.trim();
-      console.log('addTodo', value);
+      //console.log('addTodo', value);
       this.$emit('addTodo', value);
       this.clearInput();
     }

@@ -44,13 +44,13 @@ export default class TodoList extends Vue {
   ];
 
   checkTodo(id: number) {
-    console.log('checkTodo');
+    //console.log('checkTodo', id);
     this.todos = this.todos.map((todo) =>
       todo.id === id ? { ...todo, done: !todo.done } : todo,
     );
   }
   removeTodo(index: number) {
-    console.log('removeTodo');
+    //console.log('removeTodo', index);
     this.todos.splice(index, 1);
   }
 }
