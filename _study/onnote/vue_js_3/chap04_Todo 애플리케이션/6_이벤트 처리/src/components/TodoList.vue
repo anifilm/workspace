@@ -39,13 +39,13 @@ export default {
     ]);
 
     const checkTodo = (id) => {
-      console.log('checkTodo');
+      //console.log('checkTodo');
       todos.value = todos.value.map((todo) =>
         todo.id === id ? { ...todo, done: !todo.done } : todo,
       );
     };
     const removeTodo = (index) => {
-      console.log('removeTodo');
+      //console.log('removeTodo');
       todos.value.splice(index, 1);
     };
 

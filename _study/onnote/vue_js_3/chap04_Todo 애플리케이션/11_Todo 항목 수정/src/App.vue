@@ -36,12 +36,7 @@ export default {
     const todos = computed(() => store.state.todos);
 
     const addTodo = (todo) => {
-      const isEditing = false;
-      const content = {
-        isEditing,
-        text: todo,
-      };
-      store.dispatch('addTodo', content);
+      store.dispatch('addTodo', todo);
       store.dispatch('save');
     };
     const checkTodo = (id) => {

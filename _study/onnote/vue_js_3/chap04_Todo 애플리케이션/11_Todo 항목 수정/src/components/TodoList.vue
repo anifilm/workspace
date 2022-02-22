@@ -8,16 +8,14 @@
           v-on:change="checkTodo(todo.id)"
         />
         <span
-          v-if="!todo.content.isEditing"
+          v-if="!todo.isEditing"
           v-on:dblclick="handleDblClick(index)"
-        >
-          {{ todo.content.text }}
-        </span>
+        >{{ todo.text }}</span>
         <input
           v-else
           type="text"
           v-bind:ref="(el) => editInput[index] = el"
-          v-bind:value="todo.content.text"
+          v-bind:value="todo.text"
           v-on:blur="handleBlur(index)"
           v-on:keydown.enter="updateTodo(index, todo.id, $event)"
         />
@@ -33,34 +31,34 @@ import { ref, nextTick } from 'vue';
 export default {
   name: 'TodoList',
   props: ['todos'],
-  emits: ['check-todo', 'remove-todo'],
+  emits: ['check-todo', 'update-todo', 'remove-todo'],
   setup(props, context) {
     const todos = props.todos;
     const editInput = ref([]);
 
     const checkTodo = (id) => {
-      console.log('checkTodo');
+      //console.log('checkTodo');
       context.emit('check-todo', id);
     };
     const updateTodo = (index, id, e) => {
       const content = e.target.value.trim();
       if (content.length <= 0) return false;
-      console.log('updateTodo');
+      //console.log('updateTodo');
       context.emit('update-todo', id, content);
       editInput.value[index].blur();
     };
     const removeTodo = (index) => {
-      console.log('removeTodo');
+      //console.log('removeTodo');
       context.emit('remove-todo', index);
     };
     const handleDblClick = (index) => {
-      todos[index].content.isEditing = true;
+      todos[index].isEditing = true;
       nextTick(() => {
         editInput.value[index].focus();
       });
     };
     const handleBlur = (index) => {
-      todos[index].content.isEditing = false;
+      todos[index].isEditing = false;
     };
     return {
       checkTodo,

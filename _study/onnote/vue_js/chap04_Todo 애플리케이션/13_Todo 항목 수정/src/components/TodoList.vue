@@ -8,14 +8,14 @@
           v-on:change="checkTodo(todo.id)"
         />
         <span
-          v-if="!todo.content.isEditing"
+          v-if="!todo.isEditing"
           v-on:dblclick="handleDblClick(index)"
-        >{{ todo.content.text }}</span>
+        >{{ todo.text }}</span>
         <input
           v-else
           type="text"
           ref="content"
-          v-bind:value="todo.content.text"
+          v-bind:value="todo.text"
           v-on:blur="handleBlur(index)"
           v-on:keydown.enter="updateTodo(todo.id, $event)"
         />
@@ -45,13 +45,13 @@ export default {
       this.$emit('removeTodo', index);
     },
     handleDblClick(index) {
-      this.todos[index].content.isEditing = true;
+      this.todos[index].isEditing = true;
       this.$nextTick(() => {
         this.$refs.content[0].focus();
       });
     },
     handleBlur(index) {
-      this.todos[index].content.isEditing = false;
+      this.todos[index].isEditing = false;
     },
   },
 };

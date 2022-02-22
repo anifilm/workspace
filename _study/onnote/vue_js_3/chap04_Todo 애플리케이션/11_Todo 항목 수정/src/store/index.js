@@ -5,18 +5,21 @@ export const store = createStore({
     todos: [
       {
         id: 1,
-        content: { isEditing: false, text: 'todoItem1' },
+        text: 'todoItem1',
         done: true,
+        isEditing: false,
       },
       {
         id: 2,
-        content: { isEditing: false, text: 'todoItem2' },
+        text: 'todoItem2',
         done: false,
+        isEditing: false,
       },
       {
         id: 3,
-        content: { isEditing: false, text: 'todoItem3' },
+        text: 'todoItem3',
         done: false,
+        isEditing: false,
       },
     ],
   }),
@@ -24,8 +27,9 @@ export const store = createStore({
     ADD_TODO(state, todo) {
       const newTodo = {
         id: new Date().getTime(), // 날짜를 사용한 숫자 생성
-        content: todo,
+        text: todo,
         done: false,
+        isEditing: false,
       };
       state.todos.push(newTodo);
     },
@@ -38,7 +42,7 @@ export const store = createStore({
       const { id, content } = payload;
       const isEditing = false;
       state.todos = state.todos.map((todo) =>
-        todo.id === id ? { ...todo, content: { isEditing, text: content } } : todo,
+        todo.id === id ? { ...todo, text: content, isEditing } : todo,
       );
     },
     REMOVE_TODO(state, index) {

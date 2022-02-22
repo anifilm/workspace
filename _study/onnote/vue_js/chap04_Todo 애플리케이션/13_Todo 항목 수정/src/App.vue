@@ -42,12 +42,7 @@ export default {
       'restore',
     ]),
     onAddTodo(todo) {
-      const isEditing = false;
-      const content = {
-        isEditing,
-        text: todo,
-      }
-      this.addTodo(content);
+      this.addTodo(todo);
       this.save();
     },
     onCheckTodo(id) {

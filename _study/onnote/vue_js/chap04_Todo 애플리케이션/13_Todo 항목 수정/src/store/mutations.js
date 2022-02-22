@@ -11,8 +11,9 @@ export default {
   [ADD_TODO](state, todo) {
     const newTodo = {
       id: new Date().getTime(), // 날짜를 사용한 숫자 생성
-      content: todo,
+      text: todo,
       done: false,
+      isEditing: false,
     };
     state.todos.push(newTodo);
   },
@@ -25,7 +26,7 @@ export default {
     const { id, content } = payload;
     const isEditing = false;
     state.todos = state.todos.map((todo) =>
-      todo.id === id ? { ...todo, content: { isEditing, text: content } } : todo,
+      todo.id === id ? { ...todo, text: content, isEditing } : todo,
     );
   },
   [REMOVE_TODO](state, index) {
