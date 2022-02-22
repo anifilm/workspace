@@ -16,16 +16,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-
-interface Todos {
-  id: number;
-  text: string;
-  done: boolean;
-}
+import { Todo } from '../App.vue';
 
 @Component
 export default class TodoList extends Vue {
-  @Prop() todos!: Todos[]; // props 속성
+  @Prop() todos!: Todo[]; // props 속성
 
   checkTodo(id: number) {
     //console.log('checkTodo', id);

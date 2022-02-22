@@ -16,16 +16,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-
-interface Todos {
-  id: number;
-  text: string;
-  done: boolean;
-}
+import { Todo } from '../App.vue';
 
 @Component
 export default class TodoList extends Vue {
-  todos: Todos[] = [
+  todos: Todo[] = [
     {
       id: 1,
       text: 'todoItem1',

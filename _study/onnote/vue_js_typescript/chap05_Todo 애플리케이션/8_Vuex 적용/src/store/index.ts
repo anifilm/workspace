@@ -3,7 +3,7 @@ import Vuex, { StoreOptions } from 'vuex';
 
 Vue.use(Vuex);
 
-interface Todos {
+export interface Todo {
   id: number;
   text: string;
   done: boolean;
@@ -11,7 +11,7 @@ interface Todos {
 
 // 스토어 타입 선언
 interface TodoState {
-  todos: Todos[];
+  todos: Todo[];
 }
 
 const store: StoreOptions<TodoState> = {
@@ -36,7 +36,7 @@ const store: StoreOptions<TodoState> = {
   },
   mutations: {
     ADD_TODO(state, todo: string) {
-      const newTodo: Todos = {
+      const newTodo: Todo = {
         id: new Date().getTime(), // 날짜를 사용한 숫자 생성
         text: todo,
         done: false,

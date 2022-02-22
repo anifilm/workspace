@@ -14,17 +14,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { State, Action } from 'vuex-class';
+import { Todo } from './store';
 
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
 import TodoList from './components/TodoList.vue';
 import TodoFooter from './components/TodoFooter.vue';
-
-interface Todos {
-  id: number;
-  text: string;
-  done: boolean;
-}
 
 @Component({
   components: {
@@ -36,7 +31,7 @@ interface Todos {
 })
 export default class App extends Vue {
   // 스토어 상태 맵핑
-  @State readonly todos!: Todos[];
+  @State readonly todos!: Todo[];
   // 스토어 액션 맵핑
   @Action readonly addTodo: any;
   @Action readonly checkTodo: any;

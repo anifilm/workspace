@@ -19,7 +19,7 @@ import TodoInput from './components/TodoInput.vue';
 import TodoList from './components/TodoList.vue';
 import TodoFooter from './components/TodoFooter.vue';
 
-interface Todos {
+export interface Todo {
   id: number;
   text: string;
   done: boolean;
@@ -34,7 +34,7 @@ interface Todos {
   },
 })
 export default class App extends Vue {
-  todos: Todos[] = [
+  todos: Todo[] = [
     {
       id: 1,
       text: 'todoItem1',
@@ -53,7 +53,7 @@ export default class App extends Vue {
   ];
 
   addTodo(todo: string) {
-    const newTodo: Todos = {
+    const newTodo: Todo = {
       id: new Date().getTime(), // 날짜를 사용한 숫자 생성
       text: todo,
       done: false,

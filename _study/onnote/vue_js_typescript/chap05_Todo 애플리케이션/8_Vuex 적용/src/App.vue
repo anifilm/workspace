@@ -1,19 +1,20 @@
 <template>
   <div>
     <TodoHeader />
-    <TodoInput v-on:addTodo="addTodo" />
+    <TodoInput v-on:addTodo="onAddTodo" />
     <TodoList
       v-bind:todos="todos"
-      v-on:checkTodo="checkTodo"
-      v-on:removeTodo="removeTodo"
+      v-on:checkTodo="onCheckTodo"
+      v-on:removeTodo="onRemoveTodo"
     />
-    <TodoFooter v-on:clearAll="clearAll" />
+    <TodoFooter v-on:clearAll="onClearAll" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import store from './store';
+import { State, Action } from 'vuex-class';
+import { Todo } from './store';
 
 import TodoHeader from './components/TodoHeader.vue';
 import TodoInput from './components/TodoInput.vue';
@@ -29,22 +30,25 @@ import TodoFooter from './components/TodoFooter.vue';
   },
 })
 export default class App extends Vue {
-  // 스토어 상태 접근
-  get todos() {
-    return store.state.todos;
-  }
+  // 스토어 상태 맵핑
+  @State readonly todos!: Todo[];
+  // 스토어 액션 맵핑
+  @Action readonly addTodo: any;
+  @Action readonly checkTodo: any;
+  @Action readonly removeTodo: any;
+  @Action readonly clearAll: any;
 
-  addTodo(todo: string) {
-    store.dispatch('addTodo', todo);
+  onAddTodo(todo: string) {
+    this.addTodo(todo);
   }
-  checkTodo(id: number) {
-    store.dispatch('checkTodo', id);
+  onCheckTodo(id: number) {
+    this.checkTodo(id);
   }
-  removeTodo(index: number) {
-    store.dispatch('removeTodo', index);
+  onRemoveTodo(index: number) {
+    this.removeTodo(index);
   }
-  clearAll() {
-    store.dispatch('clearAll');
+  onClearAll() {
+    this.clearAll();
   }
 }
 </script>
