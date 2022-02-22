@@ -37,18 +37,18 @@ export default {
     const editInput = ref([]);
 
     const checkTodo = (id) => {
-      //console.log('checkTodo');
+      //console.log('checkTodo', id);
       context.emit('check-todo', id);
     };
     const updateTodo = (index, id, e) => {
       const content = e.target.value.trim();
       if (content.length <= 0) return false;
-      //console.log('updateTodo');
+      //console.log('updateTodo', id, content);
       context.emit('update-todo', id, content);
       editInput.value[index].blur();
     };
     const removeTodo = (index) => {
-      //console.log('removeTodo');
+      //console.log('removeTodo', index);
       context.emit('remove-todo', index);
     };
     const handleDblClick = (index) => {

@@ -21,12 +21,11 @@ export default {
   emits: ['check-todo', 'remove-todo'],
   setup(props, context) {
      const checkTodo = (id) => {
-      //console.log('checkTodo');
+      //console.log('checkTodo', id);
       context.emit('check-todo', id);
     };
     const removeTodo = (index) => {
-      //console.log('removeTodo');
-      //todos.value.splice(index, 1);
+      //console.log('removeTodo', index);
       context.emit('remove-todo', index);
     };
 

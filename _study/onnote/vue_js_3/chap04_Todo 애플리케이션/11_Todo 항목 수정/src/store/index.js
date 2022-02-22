@@ -40,10 +40,9 @@ export const store = createStore({
     },
     UPDATE_TODO(state, payload) {
       const { id, content } = payload;
-      const isEditing = false;
-      state.todos = state.todos.map((todo) =>
-        todo.id === id ? { ...todo, text: content, isEditing } : todo,
-      );
+      const targetIndex = state.todos.findIndex((v) => v.id === id);
+      const targetTodo = state.todos[targetIndex];
+      state.todos.splice(targetIndex, 1, { ...targetTodo, text: content });
     },
     REMOVE_TODO(state, index) {
       state.todos.splice(index, 1);
