@@ -17,9 +17,9 @@ import BoardRead from '../components/BoardRead.vue';
 @Component({
   components: {
     BoardRead,
-  }
+  },
 })
 export default class BoardReadPage extends Vue {
 
-};
+}
 </script>

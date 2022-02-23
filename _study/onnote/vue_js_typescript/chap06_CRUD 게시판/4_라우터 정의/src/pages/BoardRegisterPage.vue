@@ -12,9 +12,9 @@ import BoardRegisterForm from '../components/BoardRegisterForm.vue';
 @Component({
   components: {
     BoardRegisterForm,
-  }
+  },
 })
 export default class BoardRegisterPage extends Vue {
 
-};
+}
 </script>

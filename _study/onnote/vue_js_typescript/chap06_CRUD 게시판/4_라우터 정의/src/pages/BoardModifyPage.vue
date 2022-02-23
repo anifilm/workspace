@@ -12,9 +12,9 @@ import BoardModifyForm from '../components/BoardModifyForm.vue';
 @Component({
   components: {
     BoardModifyForm,
-  }
+  },
 })
 export default class BoardModifyPage extends Vue {
 
-};
+}
 </script>

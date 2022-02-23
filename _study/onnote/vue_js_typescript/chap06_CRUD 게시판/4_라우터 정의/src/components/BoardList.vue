@@ -13,5 +13,5 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class BoardList extends Vue {
 
-};
+}
 </script>

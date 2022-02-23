@@ -13,9 +13,9 @@ import BoardList from '../components/BoardList.vue';
 @Component({
   components: {
     BoardList,
-  }
+  },
 })
 export default class BoardListPage extends Vue {
 
-};
+}
 </script>

@@ -17,8 +17,7 @@ export default {
   methods: {
     onSubmit(payload) {
       const { title, content, writer } = payload;
-      api
-        .post('/boards', { title, content, writer })
+      api.post('/boards', { title, content, writer })
         .then((res) => {
           console.log(res);
           alert('등록되었습니다.');

@@ -14,5 +14,5 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class BoardModifyForm extends Vue {
 
-};
+}
 </script>

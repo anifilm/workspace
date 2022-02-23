@@ -10,5 +10,5 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class BoardRead extends Vue {
 
-};
+}
 </script>
