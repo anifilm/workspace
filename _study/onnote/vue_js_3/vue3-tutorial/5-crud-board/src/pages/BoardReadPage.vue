@@ -36,6 +36,7 @@ export default {
         board.value = res.data;
       })
       .catch((err) => {
+        console.log(props);
         alert(err.response.data.message);
       });
 
