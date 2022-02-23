@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <router-view />
+  <div>
+    <h3>게시판 상세보기 뷰</h3>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class App extends Vue {
+export default class BoardRead extends Vue {
 
 };
 </script>

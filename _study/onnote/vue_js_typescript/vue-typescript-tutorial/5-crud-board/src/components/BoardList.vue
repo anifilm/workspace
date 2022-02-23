@@ -7,8 +7,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BoardList',
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class BoardList extends Vue {
+
 };
 </script>
