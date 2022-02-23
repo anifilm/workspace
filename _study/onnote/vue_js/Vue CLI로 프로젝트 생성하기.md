@@ -12,6 +12,8 @@ $ vue create my-app
 
 $ yarn add vuex@^3.6.2
 
+$ yarn add @vue/cli-plugin-vuex@~5.0.0
+
 
 # Vuetify 적용
 
