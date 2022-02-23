@@ -17,7 +17,7 @@ const BoardRegisterContainer = ({ history }) => {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
   // 등록 처리 함수 전달
   return <BoardRegisterForm onRegister={onRegister} />;
 };
