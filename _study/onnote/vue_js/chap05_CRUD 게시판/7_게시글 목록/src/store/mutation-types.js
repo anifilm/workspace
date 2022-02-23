@@ -1,0 +1,1 @@
+export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST';
