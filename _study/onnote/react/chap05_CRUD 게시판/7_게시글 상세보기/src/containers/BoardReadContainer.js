@@ -19,6 +19,7 @@ const BoardReadContainer = ({ match }) => {
       setBoard(response.data);
       setLoading(false);
     } catch (err) {
+      setLoading(false);
       throw err;
     }
   };
