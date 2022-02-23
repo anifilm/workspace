@@ -31,7 +31,6 @@ const BoardReadContainer = ({ match }: RouteComponentProps<MatchParams>) => {
     readBoard(boardNo);
   }, [boardNo]);
 
-  // BoardRead 컴포넌트 표시
   return <BoardRead boardNo={boardNo} board={board} isLoading={isLoading} />;
 };
 

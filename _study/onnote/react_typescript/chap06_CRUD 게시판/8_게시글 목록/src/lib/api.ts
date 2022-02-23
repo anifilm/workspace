@@ -5,4 +5,4 @@ export const registerBoard = (title: string, content: string, writer: string) =>
 export const fetchBoardList = () =>
   axios.get('/boards');
 export const fetchBoard = (boardNo: string) =>
-  axios.get(`/boards/${boardNo}`)
+  axios.get(`/boards/${boardNo}`);
