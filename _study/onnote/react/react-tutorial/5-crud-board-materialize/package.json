@@ -1,5 +1,5 @@
 {
-  "name": "crud-board",
+  "name": "crud-board-materialize",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
