@@ -7,7 +7,7 @@
       </tr>
       <tr>
         <td>등록일시</td>
-        <td><input type="text" :value="board.refDate" readonly></td>
+        <td><input type="text" :value="board.regDate" readonly></td>
       </tr>
       <tr>
         <td>작성자</td>

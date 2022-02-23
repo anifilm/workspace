@@ -4,7 +4,7 @@
     <board-read v-if="board" :board="board" />
     <p v-else>Loading...</p>
     <router-link
-      :to="{ name: 'BoardModifyPage', params: { boardNo } } }"
+      :to="{ name: 'BoardModifyPage', params: { boardNo } }"
     >편집</router-link>
     <button>삭제</button>
     <router-link :to="{ name: 'BoardListPage' }">목록</router-link>
@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import client from '../modules/client';
 import { ref } from 'vue';
+import client from '../modules/client';
 
 import BoardRead from '../components/BoardRead.vue';
 

@@ -7,7 +7,7 @@
 
 <script>
 import client from '../modules/client';
-import router from '../router';
+import { router } from '../router';
 
 import BoardRegisterForm from '../components/BoardRegisterForm.vue';
 
