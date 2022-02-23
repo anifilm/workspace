@@ -16,7 +16,7 @@
     </table>
     <div>
       <button type="submit">등록</button>
-      <router-link :to="{ name: 'BoardReadPage' }">취소</router-link>
+      <router-link :to="{ name: 'BoardListPage' }">취소</router-link>
     </div>
   </form>
 </template>
