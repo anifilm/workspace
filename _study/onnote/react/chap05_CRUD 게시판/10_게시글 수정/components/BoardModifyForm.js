@@ -43,7 +43,7 @@ function BoardModifyForm({ board, isLoading, onModify }) {
               <tbody>
                 <tr>
                   <td>번호</td>
-                  <td><input type="text" value={board.baordNo} disabled /></td>
+                  <td><input type="text" value={board.boardNo} disabled /></td>
                 </tr>
                 <tr>
                   <td>등록일시</td>

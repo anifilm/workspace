@@ -1,8 +1,8 @@
 import React from 'react';
 import BoardModifyForm from '../components/BoardModifyForm';
 
-const BoardModifyContaienr = () => {
+const BoardModifyContainer = () => {
   return <BoardModifyForm />;
 };
 
-export default BoardModifyContaienr;
+export default BoardModifyContainer;
