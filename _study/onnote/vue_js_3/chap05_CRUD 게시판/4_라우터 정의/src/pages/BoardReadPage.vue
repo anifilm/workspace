@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시판 상세보기</h3>
+    <h3>게시글 상세보기</h3>
     <board-read />
     <router-link
       :to="{ name: 'BoardModifyPage', params: { BoardNo: 100 } }"

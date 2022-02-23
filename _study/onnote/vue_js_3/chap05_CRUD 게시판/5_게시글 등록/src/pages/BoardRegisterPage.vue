@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시판 등록</h3>
+    <h3>게시글 등록</h3>
     <board-register-form @add-post="addPost" />
   </div>
 </template>

@@ -11,7 +11,7 @@
       </tr>
       <tr>
         <td>내용</td>
-        <td><textarea v-model="content" rows="5"></textarea></td>
+        <td><textarea v-model="content" cols="23" rows="5"></textarea></td>
       </tr>
     </table>
     <div>
