@@ -11,8 +11,8 @@ const AdminSetupContainer = ({ history }) => {
       await api.adminSetup(userId, userName, userPw);
       alert('등록이 완료되었습니다.');
       history.push('/');
-    } catch (e) {
-      alert(e.response.data);
+    } catch (err) {
+      alert(err.response.data);
     }
   };
 

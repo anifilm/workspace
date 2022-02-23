@@ -21,7 +21,7 @@ const store = configureStore(todos);
     if (!data) return;
     // 상태 복원 액션 디스패치
     store.dispatch(restore(JSON.parse(data)));
-  } catch (e) {
+  } catch (err) {
     console.log('localStorage is not working');
   }
 })();

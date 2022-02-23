@@ -34,8 +34,8 @@ const BoardReadContainer = ({ match, history }) => {
       alert('삭제되었습니다.');
       // 목록 화면으로 이동
       history.push('/');
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

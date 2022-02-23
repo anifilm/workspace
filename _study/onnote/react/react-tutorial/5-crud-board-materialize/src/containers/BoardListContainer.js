@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import BoardList from '../components/BoardList';
 import * as client from '../lib/api';
+
+import BoardList from '../components/BoardList';
 
 const BoardListContainer = () => {
   // 컴포넌트 상태 선언
@@ -14,9 +15,9 @@ const BoardListContainer = () => {
       const response = await client.fetchBoardList();
       setBoards(response.data);
       setLoading(false);
-    } catch (e) {
+    } catch (err) {
       setLoading(false);
-      throw e;
+      throw err;
     }
   }
 

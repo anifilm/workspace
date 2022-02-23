@@ -33,10 +33,10 @@ const BoardReadContainer = ({ match, history }) => {
       const response = await fetchBoardApi(boardNo);
       dispatch(fetchSuccess(response.data));
       dispatch(endLoading('FETCH'));
-    } catch (e) {
-      dispatch(fetchFailure(e));
+    } catch (err) {
+      dispatch(fetchFailure(err));
       dispatch(endLoading('FETCH'));
-      throw e;
+      throw err;
     }
   }, [dispatch]);
 
@@ -49,8 +49,8 @@ const BoardReadContainer = ({ match, history }) => {
       alert('삭제되었습니다.');
       // 목록 화면으로 이동
       history.push('/');
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

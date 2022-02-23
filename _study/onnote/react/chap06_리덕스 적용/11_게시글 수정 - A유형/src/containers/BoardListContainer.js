@@ -25,9 +25,9 @@ const BoardListContainer = () => {
     try {
       const response = await fetchBoardListApi();
       dispatch(fetchListSuccess(response.data));
-    } catch (e) {
-      dispatch(fetchListFailure(e));
-      throw e;
+    } catch (err) {
+      dispatch(fetchListFailure(err));
+      throw err;
     }
   }, [dispatch]);
 

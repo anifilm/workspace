@@ -27,8 +27,8 @@ function* fetchItemSaga(action) {
   try {
     const response = yield call(fetchItemApi, action.payload);
     yield put(fetchSuccess(response.data));
-  } catch (e) {
-    yield put(fetchFailure(e));
+  } catch (err) {
+    yield put(fetchFailure(err));
   }
   yield put(endLoading(FETCH_ITEM));
 }
@@ -38,8 +38,8 @@ function* fetchItemListSaga(action) {
   try {
     const response = yield call(fetchItemListApi);
     yield put(fetchListSuccess(response.data));
-  } catch (e) {
-    yield put(fetchListFailure(e));
+  } catch (err) {
+    yield put(fetchListFailure(err));
   }
   yield put(endLoading(FETCH_ITEM_LIST));
 }

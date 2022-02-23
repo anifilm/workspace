@@ -31,7 +31,7 @@ const BoardReadContainer = ({ match, history }) => {
 
   // 삭제 처리 함수 정의
   const onRemove = async () => {
-    console.log('boardNo:', boardNo);
+    //console.log('boardNo:', boardNo);
     try {
       // 게시글 삭제 API 호출
       await client.removeBoard(boardNo);

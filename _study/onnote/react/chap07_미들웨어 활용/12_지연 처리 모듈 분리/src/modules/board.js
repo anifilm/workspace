@@ -26,9 +26,9 @@ export const readBoardThunk = (boardNo) => {
       const response = await fetchBoardApi(boardNo);
       dispatch(fetchSuccess(response.data));
       dispatch(endLoading('FETCH'));
-    } catch (e) {
+    } catch (err) {
       dispatch(endLoading('FETCH'));
-      throw e;
+      throw err;
     }
   };
 };
@@ -40,9 +40,9 @@ export const listBoardThunk = () => {
       const response = await fetchBoardListApi();
       dispatch(fetchListSuccess(response.data));
       dispatch(endLoading('FETCH'));
-    } catch (e) {
+    } catch (err) {
       dispatch(endLoading('FETCH'));
-      throw e;
+      throw err;
     }
   };
 };

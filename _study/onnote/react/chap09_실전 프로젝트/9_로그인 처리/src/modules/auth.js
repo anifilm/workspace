@@ -25,8 +25,8 @@ function* loginSaga(action) {
 
     client.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
   }
-  catch (e) {
-    console.log(e);
+  catch (err) {
+    console.log(err);
   }
 }
 

@@ -26,8 +26,8 @@ const BoardModifyContainer = ({ match, history }) => {
       await modifyBoardApi(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

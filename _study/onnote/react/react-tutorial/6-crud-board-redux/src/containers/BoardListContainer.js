@@ -28,10 +28,10 @@ const BoardListContainer = () => {
       const response = await fetchBoardListApi();
       dispatch(fetchListSuccess(response.data));
       dispatch(endLoading('FETCH_LIST'));
-    } catch (e) {
-      dispatch(fetchListFailure(e));
+    } catch (err) {
+      dispatch(fetchListFailure(err));
       dispatch(endLoading('FETCH_LIST'));
-      throw e;
+      throw err;
     }
   }, [dispatch]);
 

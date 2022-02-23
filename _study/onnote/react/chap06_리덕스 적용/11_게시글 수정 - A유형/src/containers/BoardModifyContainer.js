@@ -32,9 +32,9 @@ const BoardModifyContainer = ({ match, history }) => {
     try {
       const response = await fetchBoardApi(boardNo);
       dispatch(fetchSuccess(response.data));
-    } catch (e) {
-      dispatch(fetchFailure(e));
-      throw e;
+    } catch (err) {
+      dispatch(fetchFailure(err));
+      throw err;
     }
   }, [dispatch]);
 
@@ -44,8 +44,8 @@ const BoardModifyContainer = ({ match, history }) => {
       await modifyBoardApi(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

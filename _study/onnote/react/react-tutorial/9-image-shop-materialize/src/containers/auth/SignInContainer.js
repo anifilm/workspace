@@ -20,8 +20,8 @@ const SignInContainer = ({ history }) => {
     try {
       dispatch(login({ userId, password }));
     }
-    catch (e) {
-      console.log(e);
+    catch (err) {
+      console.log(err);
     }
   };
 

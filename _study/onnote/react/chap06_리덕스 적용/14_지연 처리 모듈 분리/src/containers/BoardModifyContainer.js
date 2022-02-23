@@ -35,10 +35,10 @@ const BoardModifyContainer = ({ match, history }) => {
       const response = await fetchBoardApi(boardNo);
       dispatch(fetchSuccess(response.data));
       dispatch(endLoading('FETCH'));
-    } catch (e) {
-      dispatch(fetchFailure(e));
+    } catch (err) {
+      dispatch(fetchFailure(err));
       dispatch(endLoading('FETCH'));
-      throw e;
+      throw err;
     }
   }, [dispatch]);
 
@@ -48,8 +48,8 @@ const BoardModifyContainer = ({ match, history }) => {
       await modifyBoardApi(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

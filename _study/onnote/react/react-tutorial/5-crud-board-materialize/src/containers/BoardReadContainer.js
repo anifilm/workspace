@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router';
-import BoardRead from '../components/BoardRead';
 import * as client from '../lib/api';
+
+import BoardRead from '../components/BoardRead';
 
 // match 객체의 params 값을 참조
 const BoardReadContainer = ({ match, history }) => {
@@ -18,8 +19,8 @@ const BoardReadContainer = ({ match, history }) => {
       const response = await client.fetchBoard(boardNo);
       setBoard(response.data);
       setLoading(false);
-    } catch (e) {
-      throw e;
+    } catch (err) {
+      throw err;
     }
   };
   // 마운트될 때 게시글 상세정보를 가져옴
@@ -36,8 +37,8 @@ const BoardReadContainer = ({ match, history }) => {
       alert('삭제되었습니다.');
       // 목록 화면으로 이동
       history.push('/');
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

@@ -13,8 +13,8 @@ const BoardRegisterContainer = ({ history }) => {
       alert('등록 되었습니다.');
       // 게시글 상세보기 페이지로 이동
       history.push('/read/' + response.data.boardNo);
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
 

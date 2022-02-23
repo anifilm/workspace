@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router';
-import BoardModifyForm from '../components/BoardModifyForm';
 import * as client from '../lib/api';
+
+import BoardModifyForm from '../components/BoardModifyForm';
 
 // match, history 객체를 전달 받음
 const BoardModifyContainer = ({ match, history }) => {
@@ -18,10 +19,14 @@ const BoardModifyContainer = ({ match, history }) => {
       const response = await client.fetchBoard(boardNo);
       setBoard(response.data);
       setLoading(false);
-    } catch (e) {
-      throw e;
+    } catch (err) {
+      throw err;
     }
   };
+  // 마운트될 때 게시글 상세정보를 가져옴
+  useEffect(() => {
+    readBoard(boardNo);
+  }, [boardNo]);
 
   // 수정 처리 함수 정의
   const onModify = async (boardNo, title, content) => {
@@ -29,15 +34,10 @@ const BoardModifyContainer = ({ match, history }) => {
       await client.modifyBoard(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
-    } catch (e) {
-      console.log(e);
+    } catch (err) {
+      console.log(err);
     }
   };
-
-  // 마운트될 때 게시글 상세정보를 가져옴
-  useEffect(() => {
-    readBoard(boardNo);
-  }, [boardNo]);
 
   return (
     <BoardModifyForm
