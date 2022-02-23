@@ -21,7 +21,6 @@ export default {
       const { title, writer, content } = payload;
       client.post('/boards', { title, content, writer })
         .then((res) => {
-          console.log(res);
           alert('등록되었습니다.');
           router.push({
             name: 'BoardReadPage',
