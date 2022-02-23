@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table border="1">
+    <table>
       <tr>
         <th align="center" width="80">번호</th>
         <th align="center" width="320">제목</th>
@@ -34,3 +34,14 @@ export default class BoardList extends Vue {
   @Prop() private boards!: Board[];
 }
 </script>
+
+<style scoped>
+table {
+  border-top: 1px solid lightgray;
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+</style>

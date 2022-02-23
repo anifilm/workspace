@@ -43,7 +43,6 @@ const store: StoreOptions<BoardState> = {
     fetchBoardList({ commit }) {
       return AxiosService.instance.get('/boards')
         .then((res) => {
-          console.log(res);
           commit(FETCH_BOARD_LIST, res.data);
         });
     },
