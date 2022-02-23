@@ -1,0 +1,38 @@
+.centered {
+  display: flex;
+  background-color: #FFFFFF;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  align-items: center;
+}
+
+.align_centered {
+  text-align: center;
+}
+
+.board_table {
+  border-width: 1px;
+  border-color: #aaaaaa;
+  border-style: solid;
+}
+
+.board_no {
+  width: 80px;
+  text-align: center;
+}
+
+.board_title {
+  width: 320px;
+  text-align: center;
+}
+
+.board_writer {
+  width: 100px;
+  text-align: center;
+}
+
+.board_date {
+  width: 180px;
+  text-align: center;
+}
