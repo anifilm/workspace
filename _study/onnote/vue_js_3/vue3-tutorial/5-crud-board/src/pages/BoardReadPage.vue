@@ -13,6 +13,7 @@
 
 <script>
 import { ref } from 'vue';
+import { useRoute } from 'vue-router';
 import client from '../modules/client';
 
 import BoardRead from '../components/BoardRead.vue';
@@ -22,16 +23,13 @@ export default {
   components: {
     BoardRead,
   },
-  props: {
-    boardNo: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props) {
+  setup() {
     const board = ref({});
 
-    client.get(`/boards/${props.boardNo}`)
+    const route = useRoute();
+    const boardNo = route.params.boardNo;
+
+    client.get(`/boards/${boardNo}`)
       .then((res) => {
         board.value = res.data;
       })
@@ -42,6 +40,7 @@ export default {
 
     return {
       board,
+      boardNo,
     };
   },
 };

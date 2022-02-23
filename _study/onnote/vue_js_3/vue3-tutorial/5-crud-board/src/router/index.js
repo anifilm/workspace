@@ -1,11 +1,6 @@
 import { defineComponent } from 'vue';
 import { createWebHistory, createRouter } from 'vue-router';
 
-import BoardListPage from '../pages/BoardListPage.vue';
-import BoardRegisterPage from '../pages/BoardRegisterPage.vue';
-import BoardReadPage from '../pages/BoardReadPage.vue';
-import BoardModifyPage from '../pages/BoardModifyPage.vue';
-
 const NotFound = defineComponent({
   template: '<div>Not Found</div>',
 });
@@ -14,36 +9,22 @@ const routes = [
   {
     path: '/',
     name: 'BoardListPage',
-    components: {
-      default: BoardListPage,
-    },
+    component: () => import('../pages/BoardListPage.vue'),
   },
   {
     path: '/board/create',
     name: 'BoardRegisterPage',
-    components: {
-      default: BoardRegisterPage,
-    },
+    component: () => import('../pages/BoardRegisterPage.vue'),
   },
   {
     path: '/board/:boardNo',
     name: 'BoardReadPage',
-    components: {
-      default: BoardReadPage,
-    },
-    props: {
-      default: true,
-    },
+    component: () => import('../pages/BoardReadPage.vue'),
   },
   {
     path: '/board/:boardNo/edit',
     name: 'BoardModifyPage',
-    components: {
-      default: BoardModifyPage,
-    },
-    props: {
-      default: true,
-    },
+    component: () => import('../pages/BoardModifyPage.vue'),
   },
   {
     path: '/:catchAll(.*)+',

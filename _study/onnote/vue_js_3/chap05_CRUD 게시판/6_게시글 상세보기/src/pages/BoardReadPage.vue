@@ -4,7 +4,7 @@
     <board-read v-if="board" :board="board" />
     <p v-else>Loading...</p>
     <router-link
-      :to="{ name: 'BoardModifyPage', params: { boardNo } } }"
+      :to="{ name: 'BoardModifyPage', params: { boardNo } }"
     >편집</router-link>
     <button>삭제</button>
     <router-link :to="{ name: 'BoardListPage' }">목록</router-link>
@@ -12,8 +12,9 @@
 </template>
 
 <script>
-import client from '../modules/client';
 import { ref } from 'vue';
+import { useRoute } from 'vue-router';
+import client from '../modules/client';
 
 import BoardRead from '../components/BoardRead.vue';
 
@@ -22,25 +23,24 @@ export default {
   components: {
     BoardRead,
   },
-  props: {
-    boardNo: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props) {
+  setup() {
     const board = ref({});
 
-    client.get(`/boards/${props.boardNo}`)
+    const route = useRoute();
+    const boardNo = route.params.boardNo;
+
+    client.get(`/boards/${boardNo}`)
       .then((res) => {
         board.value = res.data;
       })
       .catch((err) => {
+        console.log(props);
         alert(err.response.data.message);
       });
 
     return {
       board,
+      boardNo,
     };
   },
 };
