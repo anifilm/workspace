@@ -5,7 +5,7 @@ import {
 
 export default {
   fetchBoardList({ commit }) {
-    return api.get('/board').then((res) => {
+    return api.get('/boards').then((res) => {
       commit(FETCH_BOARD_LIST, res.data);
     });
   },
