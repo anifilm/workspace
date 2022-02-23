@@ -6,9 +6,10 @@
 </template>
 
 <script>
-import BoardRegisterForm from '../components/BoardRegisterForm.vue';
 import client from '../modules/client';
 import router from '../router';
+
+import BoardRegisterForm from '../components/BoardRegisterForm.vue';
 
 export default {
   name: 'BoardRegisterPage',

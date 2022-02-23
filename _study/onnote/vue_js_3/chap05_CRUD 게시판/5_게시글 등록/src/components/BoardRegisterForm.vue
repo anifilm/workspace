@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleAddPost">
+  <form @submit.prevent="onAddPost">
     <table>
       <tr>
         <td>제목</td>
@@ -32,7 +32,7 @@ export default {
     const writer = ref('');
     const content = ref('');
 
-    const handleAddPost = () => {
+    const onAddPost = () => {
       context.emit('add-post', {
         title: title.value,
         writer: writer.value,
@@ -44,7 +44,7 @@ export default {
       title,
       writer,
       content,
-      handleAddPost,
+      onAddPost,
     }
   }
 };
