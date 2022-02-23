@@ -10,7 +10,7 @@ $ vue create my-app
 
 # Vuex 설치 (vue 2.x)
 
-$ yarn add vuex@3
+$ yarn add vuex@^3.6.2
 
 
 # Vuetify 적용
