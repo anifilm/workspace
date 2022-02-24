@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchStart,
@@ -41,25 +41,13 @@ const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>
     readBoard(boardNo);
   }, [boardNo, readBoard]);
 
-  const onRemove = async () => {
-    //console.log('boardNo:', boardNo);
-    try {
-      await client.removeBoard(boardNo);
-      alert('삭제되었습니다.');
-      history.push('/');
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <BoardRead
       boardNo={boardNo}
       board={board}
       isLoading={isLoading}
-      onRemove={onRemove}
     />
   );
 };
 
-export default withRouter(BoardReadContainer);
+export default BoardReadContainer;
