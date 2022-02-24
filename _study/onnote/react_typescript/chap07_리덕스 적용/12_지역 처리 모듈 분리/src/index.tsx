@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 // 리덕스 관련 모듈 임포트
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+//import board from './modules/board';
 import rootReducer from './modules';
 import { composeWithDevTools } from 'redux-devtools-extension';
 

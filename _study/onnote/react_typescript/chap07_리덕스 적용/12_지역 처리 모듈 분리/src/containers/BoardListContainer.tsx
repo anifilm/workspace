@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  //fetchListStart,
   fetchListSuccess,
   fetchListFailure,
 } from '../modules/board';
@@ -9,6 +10,7 @@ import {
   endLoading,
 } from '../modules/loading';
 import * as client from '../lib/api';
+//import { BoardState } from '../modules/board';
 import { RootState } from '../modules';
 
 import BoardList from '../components/BoardList';
@@ -24,6 +26,7 @@ const BoardListContainer = () => {
 
   // 게시글 목록 조회
   const listBoard = useCallback(async () => {
+    //dispatch(fetchListStart());
     dispatch(startLoading('FETCH_LIST'));
     try {
       const response = await client.fetchBoardList();

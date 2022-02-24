@@ -2,23 +2,27 @@ import React, { useEffect, useCallback } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  //fetchStart,
   fetchSuccess,
   fetchFailure,
+  changeTitle,
+  changeContent,
 } from '../modules/board';
 import {
   startLoading,
   endLoading,
 } from '../modules/loading';
 import * as client from '../lib/api';
+//import { BoardState } from '../modules/board';
 import { RootState } from '../modules';
 
-import BoardRead from '../components/BoardRead';
+import BoardModifyForm from '../components/BoardModifyForm';
 
 interface MatchParams {
   boardNo: string;
 }
 
-const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>) => {
+const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParams>) => {
   const { boardNo } = match.params;
   // 스토어 상태 조회
   const { board, isLoading } = useSelector(({ board, loading }: RootState) => ({
@@ -30,6 +34,7 @@ const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>
 
   // 게시글 상세 조회
   const readBoard = useCallback(async (boardNo: string) => {
+    //dispatch(fetchStart());
     dispatch(startLoading('FETCH'));
     try {
       const response = await client.fetchBoard(boardNo);
@@ -46,25 +51,36 @@ const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>
     readBoard(boardNo);
   }, [boardNo, readBoard]);
 
-  const onRemove = async () => {
-    //console.log('boardNo:', boardNo);
+  // 제목 변경 함수
+  const onChangeTitle = useCallback((title) => {
+    return dispatch(changeTitle(title));
+  }, [dispatch]);
+
+  // 내용 변경 함수
+  const onChangeContent = useCallback((content) => {
+    return dispatch(changeContent(content));
+  }, [dispatch]);
+
+  // 수정 처리
+  const onModify = async (boardNo: string, title: string, content: string) => {
     try {
-      await client.removeBoard(boardNo);
-      alert('삭제되었습니다.');
-      history.push('/');
+      await client.modifyBoard(boardNo, title, content);
+      alert('수정되었습니다.');
+      history.push('/read/' + boardNo);
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <BoardRead
-      boardNo={boardNo}
+    <BoardModifyForm
       board={board}
       isLoading={isLoading}
-      onRemove={onRemove}
+      onChangeTitle={onChangeTitle}
+      onChangeContent={onChangeContent}
+      onModify={onModify}
     />
   );
 };
 
-export default withRouter(BoardReadContainer);
+export default withRouter(BoardModifyContainer);

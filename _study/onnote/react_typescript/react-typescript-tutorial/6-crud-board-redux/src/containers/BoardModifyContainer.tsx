@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  fetchStart,
   fetchSuccess,
   fetchFailure,
   changeTitle,
   changeContent,
 } from '../modules/board';
+import {
+  startLoading,
+  endLoading,
+} from '../modules/loading';
 import * as client from '../lib/api';
-import { BoardState } from '../modules/board';
+import { RootState } from '../modules';
 
 import BoardModifyForm from '../components/BoardModifyForm';
 
@@ -20,21 +23,23 @@ interface MatchParams {
 const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParams>) => {
   const { boardNo } = match.params;
   // 스토어 상태 조회
-  const { board, isLoading } = useSelector((state: BoardState) => ({
-    board: state.board,
-    isLoading: state.loading.FETCH,
+  const { board, isLoading } = useSelector(({ board, loading }: RootState) => ({
+    board: board.board,
+    isLoading: loading.FETCH,
   }));
   // 스토어 dispatch 사용
   const dispatch = useDispatch();
 
   // 게시글 상세 조회
   const readBoard = useCallback(async (boardNo: string) => {
-    dispatch(fetchStart());
+    dispatch(startLoading('FETCH'));
     try {
       const response = await client.fetchBoard(boardNo);
       dispatch(fetchSuccess(response.data));
+      dispatch(endLoading('FETCH'));
     } catch (err) {
       dispatch(fetchFailure(err));
+      dispatch(endLoading('FETCH'));
       throw err;
     }
   }, [dispatch]);

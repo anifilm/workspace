@@ -2,6 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  //fetchStart,
   fetchSuccess,
   fetchFailure,
 } from '../modules/board';
@@ -10,6 +11,7 @@ import {
   endLoading,
 } from '../modules/loading';
 import * as client from '../lib/api';
+//import { BoardState } from '../modules/board';
 import { RootState } from '../modules';
 
 import BoardRead from '../components/BoardRead';
@@ -30,6 +32,7 @@ const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>
 
   // 게시글 상세 조회
   const readBoard = useCallback(async (boardNo: string) => {
+    //dispatch(fetchStart());
     dispatch(startLoading('FETCH'));
     try {
       const response = await client.fetchBoard(boardNo);
