@@ -14,8 +14,8 @@
 <script>
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
-import client from '../modules/client';
 import { router } from '../router';
+import client from '../modules/client';
 
 import BoardRead from '../components/BoardRead.vue';
 
@@ -35,8 +35,8 @@ export default {
         board.value = res.data;
       })
       .catch((err) => {
-        console.log(props);
         alert(err.response.data.message);
+        router.back();
       });
 
     // 게시글 삭제

@@ -22,11 +22,10 @@ export default {
       client.post('/boards', { title, content, writer })
         .then((res) => {
           alert('등록되었습니다.');
+          const boardNo = res.data.boardNo.toString();
           router.push({
             name: 'BoardReadPage',
-            params: {
-              boardNo: res.data.boardNo,
-            },
+            params: { boardNo },
           });
         })
         .catch((err) => {
