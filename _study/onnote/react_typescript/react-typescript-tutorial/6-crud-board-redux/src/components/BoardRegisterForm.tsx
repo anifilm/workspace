@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../Board.module.css';
 
 interface Props {
   readonly onRegister: (title: string, content: string, writer: string) => void;
@@ -27,36 +26,47 @@ function BoardRegisterForm({ onRegister }: Props) {
   }, [title, content, writer, onRegister]);
 
   return (
-    <div className={styles.centered}>
-      <h2>게시판 등록</h2>
-      <form onSubmit={handleSubmit}>
-        <table>
-          <tbody>
-            <tr>
-              <td>제목</td>
-              <td><input type="text" value={title} onChange={handleChangeTitle} /></td>
-            </tr>
-            <tr>
-              <td>작성자</td>
-              <td><input type="text" value={writer} onChange={handleChangeWriter} /></td>
-            </tr>
-            <tr>
-              <td>내용</td>
-              <td>
-                <textarea
-                  rows={5}
-                  value={content}
-                  onChange={handleChangeContent}
-                ></textarea>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div className={styles.align_centerd}>
-          <button type="submit">등록</button>
-          <Link to="/">취소</Link>
+    <div className="container">
+      <h3>새로운 글 작성</h3>
+      <form onSubmit={handleSubmit} className="col s12">
+        <div className="row">
+          <div className="input-field col s12">
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={handleChangeTitle}
+              required
+            />
+            <label htmlFor="title">제목</label>
+          </div>
+          <div className="input-field col s12">
+            <input
+              type="text"
+              id="writer"
+              value={writer}
+              onChange={handleChangeWriter}
+              required
+            />
+            <label htmlFor="writer">작성자</label>
+          </div>
         </div>
+        <div className="row">
+          <div className="input-field col s12">
+            <textarea
+              id="textarea"
+              className="materialize-textarea"
+              value={content}
+              onChange={handleChangeContent}
+              style={{ height: 200 }}
+              required
+            ></textarea>
+            <label htmlFor="textarea">내용</label>
+          </div>
+        </div>
+        <br />
+        <Link to="/" className="waves-effect waves-light btn">취소</Link>{' '}
+        <button type="submit" className="waves-effect waves-light btn blue">등록</button>
       </form>
     </div>
   );

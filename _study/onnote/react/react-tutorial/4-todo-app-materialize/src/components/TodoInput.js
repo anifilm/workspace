@@ -25,10 +25,13 @@ const TodoInput = ({ input, onChangeInput, onInsert }) => {
             value={input}
             onChange={onChange}
             placeholder="할 일을 입력하세요"
-            />
+          />
         </div>
         <div className="col s4">
-          <button type="submit" class="waves-effect waves-light btn">추가</button>
+          <button
+            type="submit"
+            className="waves-effect waves-light btn"
+          >추가</button>
         </div>
       </form>
     </div>

@@ -5,7 +5,7 @@ import styles from '../Board.module.css';
 function BoardModifyForm() {
   return (
     <div className={styles.centered}>
-      <h2>게시판 수정</h2>
+      <h2>게시글 수정</h2>
       <form>
         <table>
           <tbody>

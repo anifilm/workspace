@@ -16,15 +16,22 @@ const TodoFooter = ({ onClearAll }) => {
   };
   // 애플리케이션 데이터 저장
   const onSave = () => {
-    localStorage.setItem('todo-app-data', JSON.stringify(data))
+    localStorage.setItem('react-todo-app-data', JSON.stringify(data))
   };
 
   return (
     <div className="row">
       <div className="col s5 right">
         <br />
-        <button onClick={onClearAll} class="waves-effect waves-light btn red lighten-2">완료 항목 삭제</button>{' '}
-        <button onClick={onSave} class="waves-effect waves-light btn blue" style={{ width: 80 }}>저장</button>
+        <button
+          onClick={onClearAll}
+          className="waves-effect waves-light btn red lighten-2"
+        >완료 항목 삭제</button>{' '}
+        <button
+          onClick={onSave}
+          className="waves-effect waves-light btn blue"
+          style={{ width: 80 }}
+        >저장</button>
       </div>
     </div>
   );

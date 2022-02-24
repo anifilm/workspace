@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Board } from '../App';
-import styles from '../Board.module.css';
 
 interface Props {
   readonly board?: Board;
@@ -39,43 +38,58 @@ function BoardModifyForm({ board, isLoading, onModify }: Props) {
   }, [board]);
 
   return (
-    <div className={styles.centered}>
-      <h2>게시판 수정</h2>
-      {isLoading && 'Loading...'}
+    <div className="container">
+      <h3>작성글 수정</h3>
+      {isLoading && (
+        <div className="progress">
+          <div className="indeterminate"></div>
+        </div>
+      )}
       {!isLoading && board && (
-        <>
-          <form onSubmit={handleSubmit}>
-            <table>
-              <tbody>
-                <tr>
-                  <td>번호</td>
-                  <td><input type="text" value={board.boardNo} disabled /></td>
-                </tr>
-                <tr>
-                  <td>등록일시</td>
-                  <td><input type="text" value={board.regDate} disabled /></td>
-                </tr>
-                <tr>
-                  <td>작성자</td>
-                  <td><input type="text" value={board.writer} disabled /></td>
-                </tr>
-                <tr>
-                  <td>제목</td>
-                  <td><input type="text" value={title} onChange={handleChangeTitle} /></td>
-                </tr>
-                <tr>
-                  <td>내용</td>
-                  <td><textarea value={content} onChange={handleChangeContent} rows={5}></textarea></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div className={styles.align_centered}>
-              <button type="submit">수정</button>
-              <Link to={`/read/${board.boardNo}`}>취소</Link>
+        <div className="row">
+          <form onSubmit={handleSubmit} className="col s12">
+            <div className="row">
+              <div className="input-field col s4">
+                <input type="text" id="board-no" value={board.boardNo} disabled />
+                <label className="active" htmlFor="board-no">번호</label>
+              </div>
+              <div className="input-field col s4">
+                <input type="text" id="writer" value={board.writer} disabled />
+                <label className="active" htmlFor="writer">글쓴이</label>
+              </div>
+              <div className="input-field col s4">
+                <input type="text" id="reg-date" value={board.regDate} disabled />
+                <label className="active" htmlFor="reg-date">작성일자</label>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  type="text"
+                  id="title"
+                  value={title}
+                  onChange={handleChangeTitle}
+                  required
+                />
+                <label className="active" htmlFor="title">제목</label>
+              </div>
             </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <textarea
+                  id="textarea"
+                  className="materialize-textarea"
+                  value={content}
+                  onChange={handleChangeContent}
+                  style={{ height: 200 }}
+                  required
+                ></textarea>
+                <label className="active" htmlFor="textarea">내용</label>
+              </div>
+            </div>
+            <br />
+            <Link to={`/read/${board.boardNo}`} className="waves-effect waves-light btn">취소</Link>{' '}
+            <button type="submit" className="waves-effect waves-light btn blue">완료</button>
           </form>
-        </>
+        </div>
       )}
     </div>
   );

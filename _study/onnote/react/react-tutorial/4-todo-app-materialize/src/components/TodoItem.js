@@ -67,18 +67,17 @@ const TodoItem = ({ todo, onToggle, onEdit, onRemove }) => {
 
   return (
     <div className="row">
-      <div className="col s8 offset-s2" style={{ border: '1px solid #ffe0e0', padding: 10}}>
-        <label>
-          <input
-            type="checkbox"
-            className="filled-in"
-            checked={done}
-            onChange={() => onToggle(id)}
-          />
-          <span style={{ color: 'white' }}>d</span>
-        </label>
+      <div className="col s8 offset-s2" style={{ border: '1px solid #ffe0e0', padding: 10 }}>
         {!showInput && (
           <>
+            <label>
+              <input
+                type="checkbox"
+                checked={done}
+                onChange={() => onToggle(id)}
+              />
+              <span style={{ color: 'white' }}>d</span>
+            </label>
             <span onDoubleClick={onDoubleClick}>{text}</span>
             <button
               onClick={() => onRemove(id)}

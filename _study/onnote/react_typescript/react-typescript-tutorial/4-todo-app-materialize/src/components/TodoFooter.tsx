@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { TodoState } from '../reducers/todos';
-import styles from '../Todo.module.css';
 
 // props 타입스크립트 인터페이스 정의
 interface Props {
@@ -22,9 +21,19 @@ const TodoFooter = ({ onClearAll }: Props) => {
   };
 
   return (
-    <div className={styles.footer}>
-      <button onClick={onClearAll}>완료 항목 삭제</button>
-      <button onClick={onSave}>저장</button>
+    <div className="row">
+      <div className="col s5 right">
+        <br />
+        <button
+          onClick={onClearAll}
+          className="waves-effect waves-light btn red lighten-2"
+        >완료 항목 삭제</button>{' '}
+        <button
+          onClick={onSave}
+          className="waves-effect waves-light btn blue"
+          style={{ width: 80 }}
+        >저장</button>
+      </div>
     </div>
   );
 };

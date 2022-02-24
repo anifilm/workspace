@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from '../Todo.module.css';
-
 import TodoItem from './TodoItem';
 
 // 타입스크립트 인터페이스 임포트
@@ -16,7 +14,7 @@ interface Props {
 
 const TodoList = ({ todos, onToggle, onEdit, onRemove }: Props) => {
   return (
-    <div className={styles.list}>
+    <div>
       {todos && todos.map((todo) => (
         <TodoItem
           todo={todo}

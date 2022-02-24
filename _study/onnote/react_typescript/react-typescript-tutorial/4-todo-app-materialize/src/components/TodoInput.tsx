@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../Todo.module.css';
 
 // props 타입스크립트 인터페이스 정의
 interface Props {
@@ -25,15 +24,22 @@ const TodoInput = ({ input, onChangeInput, onInsert }: Props) => {
   };
 
   return (
-    <div className={styles.input}>
+    <div className="row">
       <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          value={input}
-          onChange={onChange}
-          placeholder="할 일을 입력하세요"
-        />
-        <button type="submit">추가</button>
+        <div className="col s5 offset-s3">
+          <input
+            type="text"
+            value={input}
+            onChange={onChange}
+            placeholder="할 일을 입력하세요"
+          />
+        </div>
+        <div className="col s4">
+          <button
+            type="submit"
+            className="waves-effect waves-light btn"
+          >추가</button>
+        </div>
       </form>
     </div>
   );

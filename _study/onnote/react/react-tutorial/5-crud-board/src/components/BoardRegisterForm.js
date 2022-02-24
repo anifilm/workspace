@@ -27,7 +27,7 @@ function BoardRegisterForm({ onRegister }) {
 
   return (
     <div className={styles.centered}>
-      <h2>게시판 등록</h2>
+      <h2>게시글 등록</h2>
       <form onSubmit={handleSubmit}>
         <table>
           <tbody>

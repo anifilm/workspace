@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../Todo.module.css';
 
 // props 타입스크립트 인터페이스 정의
 interface Props {
@@ -13,10 +12,43 @@ const TodoFilter = ({ filter, onChangeFilter }: Props) => {
   const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => onChangeFilter(e.target.value);
 
   return (
-    <div className={styles.filter}>
-      <input type="radio" value="ALL" checked={filter === 'ALL'} onChange={handleFilter} />전체{' '}
-      <input type="radio" value="NOTDONE" checked={filter === 'NOTDONE'} onChange={handleFilter} />미완료{' '}
-      <input type="radio" value="DONE" checked={filter === 'DONE'} onChange={handleFilter} />완료
+    <div className="row">
+      <div className="col s1.5 offset-s3">
+        <label>
+          <input
+            className="with-gap"
+            type="radio"
+            value="ALL"
+            checked={filter === 'ALL'}
+            onChange={handleFilter}
+          />
+          <span>전체</span>
+        </label>
+      </div>
+      <div className="col s1.5">
+        <label>
+          <input
+            className="with-gap"
+            type="radio"
+            value="NOTDONE"
+            checked={filter === 'NOTDONE'}
+            onChange={handleFilter}
+          />
+          <span>미완료</span>
+        </label>
+      </div>
+      <div className="col s1.5">
+        <label>
+          <input
+            className="with-gap"
+            type="radio"
+            value="DONE"
+            checked={filter === 'DONE'}
+            onChange={handleFilter}
+          />
+          <span>완료</span>
+        </label>
+      </div>
     </div>
   );
 };

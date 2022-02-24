@@ -11,7 +11,7 @@ interface Props {
 function BoardList({ boards, isLoading }: Props) {
   return (
     <div className={styles.centered}>
-      <h2>게시판 목록</h2>
+      <h2>게시글 목록</h2>
       {isLoading && 'Loading...'}
       {!isLoading && boards && (
         <>

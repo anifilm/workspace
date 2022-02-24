@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styles from '../Todo.module.css';
 import { Todo } from '../App';
 // 액션 생성 함수 임포트
 import { setEditingId, resetEditingId } from '../actions/todos';
@@ -73,19 +72,35 @@ const TodoItem = ({ todo, onToggle, onEdit, onRemove }: Props) => {
   }, [editInput]);
 
   return (
-    <div className={styles.item}>
-      <input type="checkbox" checked={done} onChange={() => onToggle(id)} />
-      {!showInput && <span onDoubleClick={onDoubleClick}>{text}</span>}
-      {showInput && (
-        <input
-          ref={editInput}
-          value={inputText}
-          onChange={onChange}
-          onKeyPress={handleKeyPress}
-          onBlur={handleBlur}
-        />
-      )}
-      <button onClick={() => onRemove(id)}>삭제</button>
+    <div className="row">
+      <div className="col s8 offset-s2" style={{ border: '1px solid #ffe0e0', padding: 10 }}>
+        {!showInput && (
+          <>
+            <label>
+              <input
+                type="checkbox"
+                checked={done}
+                onChange={() => onToggle(id)}
+              />
+              <span style={{ color: 'white' }}>d</span>
+            </label>
+            <span onDoubleClick={onDoubleClick}>{text}</span>
+            <button
+              onClick={() => onRemove(id)}
+              className="waves-effect waves-light btn-small red lighten-2 right"
+            >삭제</button>
+          </>
+        )}
+        {showInput && (
+          <input
+            ref={editInput}
+            value={inputText}
+            onChange={onChange}
+            onKeyPress={handleKeyPress}
+            onBlur={handleBlur}
+          />
+        )}
+      </div>
     </div>
   );
 };

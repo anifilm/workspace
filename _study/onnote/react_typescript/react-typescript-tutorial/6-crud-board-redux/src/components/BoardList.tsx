@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Board } from '../App';
-import styles from '../Board.module.css';
 
 interface Props {
   readonly boards: Board[];
@@ -10,19 +9,22 @@ interface Props {
 
 function BoardList({ boards, isLoading }: Props) {
   return (
-    <div className={styles.centered}>
-      <h2>게시판 목록</h2>
-      {isLoading && 'Loading...'}
+    <div className="container">
+      <h3>게시글 목록</h3>
+      {isLoading && (
+        <div className="progress">
+          <div className="indeterminate"></div>
+        </div>
+      )}
       {!isLoading && boards && (
         <>
-          <Link to="/create">새로만들기</Link>
-          <table className={styles.board_table}>
+          <table>
             <thead>
               <tr>
-                <th className={styles.board_no}>번호</th>
-                <th className={styles.board_title}>제목</th>
-                <th className={styles.board_writer}>작성자</th>
-                <th className={styles.board_date}>등록일시</th>
+                <th style={{ width: 80 }}>번호</th>
+                <th style={{ width: 320 }}>제목</th>
+                <th style={{ width: 100 }}>글쓴이</th>
+                <th style={{ width: 180 }}>작성일자</th>
               </tr>
             </thead>
             <tbody>
@@ -41,6 +43,8 @@ function BoardList({ boards, isLoading }: Props) {
               ))}
             </tbody>
           </table>
+          <br />
+          <Link to="/create" className="waves-effect waves-light btn blue">새로운 글 작성</Link>
         </>
       )}
     </div>

@@ -5,7 +5,7 @@ import styles from '../Board.module.css';
 function BoardList() {
   return (
     <div className={styles.centered}>
-      <h2>게시판 목록</h2>
+      <h2>게시글 목록</h2>
       <Link to="/create">새로만들기</Link>
       <table className={styles.board_table}>
         <thead>

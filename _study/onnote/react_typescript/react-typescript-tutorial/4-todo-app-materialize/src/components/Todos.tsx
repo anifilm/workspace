@@ -37,7 +37,7 @@ const Todos = ({
   onChangeFilter,
 }: Props) => {
   return (
-    <div>
+    <div className="container">
       <TodoHeader />
       <TodoInput
         input={input}

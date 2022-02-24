@@ -16,7 +16,7 @@ const store = configureStore(todos);
 // 상태 복원 함수 (즉시 실행)
 (function loadData() {
   try {
-    const data = localStorage.getItem('todo-app-data');
+    const data = localStorage.getItem('react-todo-app-data');
     //console.log('loadData data:', data);
     if (!data) return;
     // 상태 복원 액션 디스패치

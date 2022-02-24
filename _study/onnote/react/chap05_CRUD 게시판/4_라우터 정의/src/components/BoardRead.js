@@ -5,7 +5,7 @@ import styles from '../Board.module.css';
 function BoardRead() {
   return (
     <div className={styles.centered}>
-      <h2>게시판 상세보기</h2>
+      <h2>게시글 상세보기</h2>
       <table>
         <tbody>
           <tr>

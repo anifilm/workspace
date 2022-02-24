@@ -40,7 +40,7 @@ function BoardModifyForm({ board, isLoading, onModify }: Props) {
 
   return (
     <div className={styles.centered}>
-      <h2>게시판 수정</h2>
+      <h2>게시글 수정</h2>
       {isLoading && 'Loading...'}
       {!isLoading && board && (
         <>
