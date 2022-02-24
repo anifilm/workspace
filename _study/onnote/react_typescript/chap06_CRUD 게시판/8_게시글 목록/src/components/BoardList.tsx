@@ -28,6 +28,7 @@ function BoardList({ boards, isLoading }: Props) {
             <tbody>
               {!boards.length && (
                 <tr>
+                  <td></td>
                   <td colSpan={4}>List is empty.</td>
                 </tr>
               )}

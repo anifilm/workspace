@@ -16,10 +16,10 @@ const BoardList = ({ boards, isLoading }) => {
           <table>
             <thead>
               <tr>
-                <th width="80">번호</th>
-                <th width="320">제목</th>
-                <th width="100">글쓴이</th>
-                <th width="180">작성일자</th>
+                <th style={{ width: 80, textAlign: 'center' }}>번호</th>
+                <th style={{ width: 320, textAlign: 'center' }}>제목</th>
+                <th style={{ width: 100, textAlign: 'center' }}>글쓴이</th>
+                <th style={{ width: 180, textAlign: 'center' }}>작성일자</th>
               </tr>
             </thead>
             <tbody>
@@ -33,12 +33,10 @@ const BoardList = ({ boards, isLoading }) => {
               )}
               {!!boards.length && boards.map((board) => (
                 <tr key={board.boardNo}>
-                  <td>{board.boardNo}</td>
-                  <td>
-                    <Link to={`/read/${board.boardNo}`}>{board.title}</Link>
-                  </td>
-                  <td>{board.writer}</td>
-                  <td>{board.regDate}</td>
+                  <td style={{ textAlign: 'center' }}>{board.boardNo}</td>
+                  <td style={{ textAlign: 'left' }}><Link to={`/read/${board.boardNo}`}>{board.title}</Link></td>
+                  <td style={{ textAlign: 'center' }}>{board.writer}</td>
+                  <td style={{ textAlign: 'center' }}>{board.regDate}</td>
                 </tr>
               ))}
             </tbody>

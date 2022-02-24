@@ -21,10 +21,10 @@ function BoardList({ boards, isLoading }: Props) {
           <table>
             <thead>
               <tr>
-                <th style={{ width: 80 }}>번호</th>
-                <th style={{ width: 320 }}>제목</th>
-                <th style={{ width: 100 }}>글쓴이</th>
-                <th style={{ width: 180 }}>작성일자</th>
+                <th style={{ width: 80, textAlign: 'center' }}>번호</th>
+                <th style={{ width: 320, textAlign: 'center' }}>제목</th>
+                <th style={{ width: 100, textAlign: 'center' }}>글쓴이</th>
+                <th style={{ width: 180, textAlign: 'center' }}>작성일자</th>
               </tr>
             </thead>
             <tbody>
@@ -35,10 +35,10 @@ function BoardList({ boards, isLoading }: Props) {
               )}
               {!!boards.length && boards.map((board) => (
                 <tr key={board.boardNo}>
-                  <td align="center">{board.boardNo}</td>
-                  <td align="left"><Link to={`/read/${board.boardNo}`}>{board.title}</Link></td>
-                  <td align="center">{board.writer}</td>
-                  <td align="center">{board.regDate}</td>
+                  <td style={{ textAlign: 'center' }}>{board.boardNo}</td>
+                  <td style={{ textAlign: 'left' }}><Link to={`/read/${board.boardNo}`}>{board.title}</Link></td>
+                  <td style={{ textAlign: 'center' }}>{board.writer}</td>
+                  <td style={{ textAlign: 'center' }}>{board.regDate}</td>
                 </tr>
               ))}
             </tbody>
