@@ -1,4 +1,4 @@
-import { action, createReducer } from 'typesafe-actions';
+import { createReducer } from 'typesafe-actions';
 import { createAction } from 'redux-actions';
 import { Board } from '../App';
 
