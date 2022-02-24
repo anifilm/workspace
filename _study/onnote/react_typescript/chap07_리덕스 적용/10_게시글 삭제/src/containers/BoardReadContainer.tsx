@@ -1,23 +1,21 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchStart,
   fetchSuccess,
   fetchFailure,
-  changeTitle,
-  changeContent,
 } from '../modules/board';
 import * as client from '../lib/api';
 import { BoardState } from '../modules/board';
 
-import BoardModifyForm from '../components/BoardModifyForm';
+import BoardRead from '../components/BoardRead';
 
 interface MatchParams {
   boardNo: string;
 }
 
-const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParams>) => {
+const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>) => {
   const { boardNo } = match.params;
   // 스토어 상태 조회
   const { board, isLoading } = useSelector((state: BoardState) => ({
@@ -43,36 +41,25 @@ const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParam
     readBoard(boardNo);
   }, [boardNo, readBoard]);
 
-  // 제목 변경 함수
-  const onChangeTitle = useCallback((title) => {
-    return dispatch(changeTitle(title));
-  }, [dispatch]);
-
-  // 내용 변경 함수
-  const onChangeContent = useCallback((content) => {
-    return dispatch(changeContent(content));
-  }, [dispatch]);
-
-  // 수정 처리
-  const onModify = async (boardNo: string, title: string, content: string) => {
+  const onRemove = async () => {
+    //console.log('boardNo:', boardNo);
     try {
-      await client.modifyBoard(boardNo, title, content);
-      alert('수정되었습니다.');
-      history.push('/read/' + boardNo);
+      await client.removeBoard(boardNo);
+      alert('삭제되었습니다.');
+      history.push('/');
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <BoardModifyForm
+    <BoardRead
+      boardNo={boardNo}
       board={board}
       isLoading={isLoading}
-      onChangeTitle={onChangeTitle}
-      onChangeContent={onChangeContent}
-      onModify={onModify}
+      onRemove={onRemove}
     />
   );
 };
 
-export default withRouter(BoardModifyContainer);
+export default withRouter(BoardReadContainer);

@@ -1,40 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Board } from '../App';
 
 interface Props {
+  readonly boardNo: string;
   readonly board?: Board;
   readonly isLoading: boolean;
-  readonly onChangeTitle: (title: string) => void;
-  readonly onChangeContent: (content: string) => void;
-  readonly onModify: (boardNo: string, title: string, content: string) => void;
+  readonly onRemove: () => void;
 }
 
-function BoardModifyForm({
-  board,
-  isLoading,
-  onChangeTitle,
-  onChangeContent,
-  onModify
-}: Props) {
-  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChangeTitle(e.target.value);
-  };
-  const handleChangeContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    onChangeContent(e.target.value);
-  };
-
-  // 폼 submit 이벤트 처리
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!!board) {
-      onModify(board.boardNo, board.title, board.content);
-    }
-  };
-
+function BoardRead({ boardNo, board, isLoading, onRemove }: Props) {
   return (
     <div className="container">
-      <h3>작성글 수정</h3>
+      <h3>작성글 상세보기</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>
@@ -42,7 +20,7 @@ function BoardModifyForm({
       )}
       {!isLoading && board && (
         <div className="row">
-          <form onSubmit={handleSubmit} className="col s12">
+          <div className="col s12">
             <div className="row">
               <div className="input-field col s4">
                 <input type="text" id="board-no" value={board.boardNo} disabled />
@@ -57,13 +35,7 @@ function BoardModifyForm({
                 <label className="active" htmlFor="reg-date">작성일자</label>
               </div>
               <div className="input-field col s12">
-                <input
-                  type="text"
-                  id="title"
-                  value={board.title}
-                  onChange={handleChangeTitle}
-                  required
-                />
+                <input type="text" id="title" value={board.title} readOnly />
                 <label className="active" htmlFor="title">제목</label>
               </div>
             </div>
@@ -73,21 +45,23 @@ function BoardModifyForm({
                   id="textarea"
                   className="materialize-textarea"
                   value={board.content}
-                  onChange={handleChangeContent}
+                  readOnly
                   style={{ height: 200 }}
-                  required
                 ></textarea>
                 <label className="active" htmlFor="textarea">내용</label>
               </div>
             </div>
-            <br />
-            <Link to={`/read/${board.boardNo}`} className="waves-effect waves-light btn">취소</Link>{' '}
-            <button type="submit" className="waves-effect waves-light btn blue">완료</button>
-          </form>
+          </div>
+          <br />
+          <Link to="/" className="waves-effect waves-light btn">
+            글 목록
+          </Link>{' '}
+          <Link to={`/edit/${boardNo}`} className="waves-effect waves-light btn blue">수정</Link>{' '}
+          <button onClick={onRemove} className="waves-effect waves-light btn red right">삭제</button>
         </div>
       )}
     </div>
   );
 }
 
-export default BoardModifyForm;
+export default BoardRead;

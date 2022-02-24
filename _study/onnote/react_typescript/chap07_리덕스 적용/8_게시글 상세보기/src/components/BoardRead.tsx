@@ -6,7 +6,6 @@ interface Props {
   readonly boardNo: string;
   readonly board?: Board;
   readonly isLoading: boolean;
-  readonly onRemove: () => void;
 }
 
 function BoardRead({ boardNo, board, isLoading }: Props) {
