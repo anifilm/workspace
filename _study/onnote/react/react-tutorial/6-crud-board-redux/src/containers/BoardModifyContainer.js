@@ -18,9 +18,11 @@ const BoardModifyContainer = ({ match, history }) => {
   const { boardNo } = match.params;
 
   // 스토어 상태 조회
-  const { board, isLoading } = useSelector((state) => ({
+  const { board, isLoading, title, content } = useSelector((state) => ({
     board: state.board,
     isLoading: state.loading.FETCH,
+    title: state.title,
+    content: state.content
   }));
   // 스토어 dispatch 사용
   const dispatch = useDispatch();
@@ -68,6 +70,8 @@ const BoardModifyContainer = ({ match, history }) => {
     <BoardModifyForm
       board={board}
       isLoading={isLoading}
+      title={title}
+      content={content}
       onChangeTitle={onChangeTitle}
       onChangeContent={onChangeContent}
       onModify={onModify}

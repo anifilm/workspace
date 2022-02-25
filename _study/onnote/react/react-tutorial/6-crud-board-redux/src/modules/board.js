@@ -33,6 +33,9 @@ const initialState = {
   board: null,
   boards: [],
   error: null,
+  // 제목, 내용 상태 선언
+  title: '',
+  content: '',
 };
 
 // 리듀서 함수 정의
@@ -52,6 +55,9 @@ const board = handleActions(
         FETCH: false,
       },
       board: action.payload,
+      // title, content 상태값 변경
+      title: action.payload.title,
+      content: action.payload.content,
     }),
     [FETCH_FAILURE]: (state) => ({
       ...state,
@@ -86,18 +92,12 @@ const board = handleActions(
     // 제목 변경 리듀서 함수 정의
     [CHANGE_TITLE]: (state, { payload: title }) => ({
       ...state,
-      board: {
-        ...state.board,
-        title,
-      },
+      title,
     }),
     // 내용 변경 리듀서 함수 정의
     [CHANGE_CONTENT]: (state, { payload: content }) => ({
       ...state,
-      board: {
-        ...state.board,
-        content,
-      },
+      content,
     }),
   },
   initialState,

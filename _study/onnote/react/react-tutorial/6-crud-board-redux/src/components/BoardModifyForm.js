@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const BoardModifyForm = ({
   board,
   isLoading,
+  title,
+  content,
   onChangeTitle,
   onChangeContent,
   onModify,
@@ -19,7 +21,7 @@ const BoardModifyForm = ({
   // 폼 submit 이벤트 처리
   const handleSubmit = (e) => {
     e.preventDefault();
-    onModify(board.boardNo, board.title, board.content);
+    onModify(board.boardNo, title, content);
   };
 
   return (
@@ -50,7 +52,7 @@ const BoardModifyForm = ({
                 <input
                   type="text"
                   id="title"
-                  value={board.title}
+                  value={title}
                   onChange={handleChangeTitle}
                   required
                 />
@@ -62,7 +64,7 @@ const BoardModifyForm = ({
                 <textarea
                   id="textarea"
                   className="materialize-textarea"
-                  value={board.content}
+                  value={content}
                   onChange={handleChangeContent}
                   style={{ height: 200 }}
                   required
