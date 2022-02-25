@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import * as client from '../lib/api';
 
 import BoardModifyForm from '../components/BoardModifyForm';
 
-// match, history 객체를 전달 받음
+// match, history 객체를 전달받음
 const BoardModifyContainer = ({ match, history }) => {
   // match 객체의 params 속성값을 참조
   const { boardNo } = match.params;
@@ -20,6 +20,7 @@ const BoardModifyContainer = ({ match, history }) => {
       setBoard(response.data);
       setLoading(false);
     } catch (err) {
+      setLoading(false);
       throw err;
     }
   };
@@ -37,8 +38,9 @@ const BoardModifyContainer = ({ match, history }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }
 
+  // BoardModifyForm 컴포넌트 표시
   return (
     <BoardModifyForm
       board={board}
@@ -48,4 +50,5 @@ const BoardModifyContainer = ({ match, history }) => {
   );
 };
 
+// withRouter 함수를 사용하여 history 객체에 접근
 export default withRouter(BoardModifyContainer);

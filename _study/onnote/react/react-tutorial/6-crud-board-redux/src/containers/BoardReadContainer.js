@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import * as client from '../lib/api';
 
 import BoardRead from '../components/BoardRead';
@@ -20,6 +20,7 @@ const BoardReadContainer = ({ match, history }) => {
       setBoard(response.data);
       setLoading(false);
     } catch (err) {
+      setLoading(false);
       throw err;
     }
   };
@@ -42,6 +43,7 @@ const BoardReadContainer = ({ match, history }) => {
     }
   };
 
+  // BoardRead 컴포넌트 표시
   return (
     <BoardRead
       boardNo={boardNo}

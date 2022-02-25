@@ -19,13 +19,13 @@ const BoardListContainer = () => {
       setLoading(false);
       throw err;
     }
-  }
-
+  };
   // 마운트될 때 게시글 목록을 가져옴
   useEffect(() => {
     listBoard();
   }, []);
 
+  // BoardList 컴포넌트 표시
   return <BoardList boards={boards} isLoading={isLoading} />;
 };
 
