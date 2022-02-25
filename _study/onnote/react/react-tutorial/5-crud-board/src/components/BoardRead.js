@@ -36,7 +36,7 @@ function BoardRead({ boardNo, board, isLoading, onRemove }) {
           </table>
 
           <div className={styles.align_centered}>
-            <Link to={`/edit/${boardNo}`}>편집</Link>
+            <Link to={`/edit/${boardNo}`}>수정</Link>
             <button onClick={onRemove}>삭제</button>
             <Link to="/">목록</Link>
           </div>

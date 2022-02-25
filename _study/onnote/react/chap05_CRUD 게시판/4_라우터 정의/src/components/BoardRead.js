@@ -32,7 +32,7 @@ function BoardRead() {
       </table>
 
       <div className={styles.align_centered}>
-        <Link to={'/edit/100'}>편집</Link>
+        <Link to={'/edit/100'}>수정</Link>
         <button>삭제</button>
         <Link to="/">목록</Link>
       </div>
