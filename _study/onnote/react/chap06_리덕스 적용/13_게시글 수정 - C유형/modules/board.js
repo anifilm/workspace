@@ -13,10 +13,10 @@ const FETCH_LIST_FAILURE = 'board/FETCH_LIST_FAILURE';
 // 액션 생성 함수 정의
 export const fetchStart = createAction(FETCH);
 export const fetchSuccess = createAction(FETCH_SUCCESS, (data) => data);
-export const fetchFailure = createAction(FETCH_FAILURE, (e) => e);
+export const fetchFailure = createAction(FETCH_FAILURE, (err) => err);
 export const fetchListStart = createAction(FETCH_LIST);
 export const fetchListSuccess = createAction(FETCH_LIST_SUCCESS, (data) => data);
-export const fetchListFailure = createAction(FETCH_LIST_FAILURE, (e) => e);
+export const fetchListFailure = createAction(FETCH_LIST_FAILURE, (err) => err);
 //export const changeTitle = createAction(CHANGE_TITLE, (title) => title);
 //export const changeContent = createAction(CHANGE_CONTENT, (content) => content);
 

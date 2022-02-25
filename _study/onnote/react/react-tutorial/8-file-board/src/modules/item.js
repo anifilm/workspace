@@ -14,9 +14,9 @@ export const FETCH_ITEM_LIST = 'item/FETCH_ITEM_LIST';
 
 // 액션 생성 함수
 export const fetchSuccess = createAction(FETCH_SUCCESS, (data) => data);
-export const fetchFailure = createAction(FETCH_FAILURE, (e) => e);
+export const fetchFailure = createAction(FETCH_FAILURE, (err) => err);
 export const fetchListSuccess = createAction(FETCH_LIST_SUCCESS, (data) => data);
-export const fetchListFailure = createAction(FETCH_LIST_FAILURE, (e) => e);
+export const fetchListFailure = createAction(FETCH_LIST_FAILURE, (err) => err);
 // 상세 조회 액션 생성 함수
 export const fetchItem = createAction(FETCH_ITEM, (itemId) => itemId);
 export const fetchItemList = createAction(FETCH_ITEM_LIST);
