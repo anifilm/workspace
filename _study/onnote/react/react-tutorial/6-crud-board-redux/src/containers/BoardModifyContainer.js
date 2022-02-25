@@ -2,12 +2,16 @@ import React, { useEffect, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  fetchStart,
+  //fetchStart,
   fetchSuccess,
   fetchFailure,
-  //changeTitle,
-  //changeContent,
+  changeTitle,
+  changeContent,
 } from '../modules/board';
+import {
+  startLoading,
+  endLoading,
+} from '../modules/loading';
 import * as client from '../lib/api';
 
 import BoardModifyForm from '../components/BoardModifyForm';
@@ -18,23 +22,23 @@ const BoardModifyContainer = ({ match, history }) => {
   const { boardNo } = match.params;
 
   // 스토어 상태 조회
-  const { board, isLoading } = useSelector((state) => ({
-    board: state.board,
-    isLoading: state.loading.FETCH,
-    //title: state.title,
-    //content: state.content
+  const { board, isLoading } = useSelector(({ board, loading }) => ({
+    board: board.board,
+    isLoading: loading.FETCH,
   }));
   // 스토어 dispatch 사용
   const dispatch = useDispatch();
 
   // 게시글 상세 조회
   const readBoard = useCallback(async (boardNo) => {
-    dispatch(fetchStart());
+    dispatch(startLoading('FETCH'));
     try {
       const response = await client.fetchBoard(boardNo);
       dispatch(fetchSuccess(response.data));
+      dispatch(endLoading('FETCH'));
     } catch (err) {
       dispatch(fetchFailure(err));
+      dispatch(endLoading('FETCH'));
       throw err;
     }
   }, [dispatch]);
@@ -44,15 +48,15 @@ const BoardModifyContainer = ({ match, history }) => {
     readBoard(boardNo);
   }, [boardNo, readBoard]);
 
-  /* 제목 변경 함수
+  // 제목 변경 함수
   const onChangeTitle = useCallback((title) => {
     return dispatch(changeTitle(title));
-  }, [dispatch]); */
+  }, [dispatch]);
 
-  /* 내용 변경 함수
+  // 내용 변경 함수
   const onChangeContent = useCallback((content) => {
     return dispatch(changeContent(content));
-  }, [dispatch]); */
+  }, [dispatch]);
 
   // 수정 처리 함수 정의
   const onModify = async (boardNo, title, content) => {
@@ -70,10 +74,8 @@ const BoardModifyContainer = ({ match, history }) => {
     <BoardModifyForm
       board={board}
       isLoading={isLoading}
-      //title={title}
-      //content={content}
-      //onChangeTitle={onChangeTitle}
-      //onChangeContent={onChangeContent}
+      onChangeTitle={onChangeTitle}
+      onChangeContent={onChangeContent}
       onModify={onModify}
     />
   );

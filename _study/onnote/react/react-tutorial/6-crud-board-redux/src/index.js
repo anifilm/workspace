@@ -3,20 +3,23 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
+
 // 리덕스 관련 모듈 임포트
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import board from './modules/board';
+//import board from './modules/board';
+import rootReducer from './modules';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // 스토어 생성
-const store = createStore(board, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools());
 
+// 리덕스 적용
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

@@ -2,10 +2,14 @@ import React, { useEffect, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  fetchStart,
+  //fetchStart,
   fetchSuccess,
   fetchFailure,
 } from '../modules/board';
+import {
+  startLoading,
+  endLoading,
+} from '../modules/loading';
 import * as client from '../lib/api';
 
 import BoardRead from '../components/BoardRead';
@@ -16,21 +20,23 @@ const BoardReadContainer = ({ match, history }) => {
   const { boardNo } = match.params;
 
   // 스토어 상태 조회
-  const { board, isLoading } = useSelector((state) => ({
-    board: state.board,
-    isLoading: state.loading.FETCH,
+  const { board, isLoading } = useSelector(({ board, loading }) => ({
+    board: board.board,
+    isLoading: loading.FETCH,
   }));
   // 스토어 dispatch 사용
   const dispatch = useDispatch();
 
   // 게시글 상세 조회
   const readBoard = useCallback(async (boardNo) => {
-    dispatch(fetchStart());
+    dispatch(startLoading('FETCH'));
     try {
       const response = await client.fetchBoard(boardNo);
       dispatch(fetchSuccess(response.data));
+      dispatch(endLoading('FETCH'));
     } catch (err) {
       dispatch(fetchFailure(err));
+      dispatch(endLoading('FETCH'));
       throw err;
     }
   }, [dispatch]);

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
 
 // 리덕스 관련 모듈 임포트
 import { createStore } from 'redux';
