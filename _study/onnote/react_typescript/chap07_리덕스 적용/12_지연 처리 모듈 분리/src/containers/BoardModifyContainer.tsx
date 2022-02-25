@@ -37,7 +37,7 @@ const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParam
     //dispatch(fetchStart());
     dispatch(startLoading('FETCH'));
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       dispatch(fetchSuccess(response.data));
       dispatch(endLoading('FETCH'));
     } catch (err) {
@@ -64,7 +64,7 @@ const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParam
   // 수정 처리
   const onModify = async (boardNo: string, title: string, content: string) => {
     try {
-      await client.modifyBoard(boardNo, title, content);
+      await client.modifyBoardApi(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
     } catch (err) {

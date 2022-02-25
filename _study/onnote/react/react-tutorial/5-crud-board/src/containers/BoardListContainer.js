@@ -12,7 +12,7 @@ const BoardListContainer = () => {
   const listBoard = async () => {
     setLoading(true);
     try {
-      const response = await client.fetchBoardList();
+      const response = await client.fetchBoardListApi();
       setBoards(response.data);
       setLoading(false);
     } catch (err) {

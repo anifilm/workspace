@@ -10,7 +10,7 @@ const BoardRegisterContainer = ({ history }) => {
   const onRegister = async (title, content, writer) => {
     try {
       // 게시글 등록 서버 API 호출 함수 실행
-      const response = await client.registerBoard(title, content, writer);
+      const response = await client.registerBoardApi(title, content, writer);
       alert('등록 되었습니다.');
       // 게시글 상세보기 페이지로 이동
       history.push('/read/' + response.data.boardNo);

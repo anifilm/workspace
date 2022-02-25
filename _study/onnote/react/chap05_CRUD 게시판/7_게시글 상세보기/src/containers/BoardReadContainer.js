@@ -15,7 +15,7 @@ const BoardReadContainer = ({ match }) => {
   const readBoard = async (boardNo) => {
     setLoading(true);
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       setBoard(response.data);
       setLoading(false);
     } catch (err) {

@@ -16,7 +16,7 @@ const BoardModifyContainer = ({ match, history }) => {
   const readBoard = async (boardNo) => {
     setLoading(true);
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       setBoard(response.data);
       setLoading(false);
     } catch (err) {
@@ -31,7 +31,7 @@ const BoardModifyContainer = ({ match, history }) => {
   // 수정 처리 함수 정의
   const onModify = async (boardNo, title, content) => {
     try {
-      await client.modifyBoard(boardNo, title, content);
+      await client.modifyBoardApi(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
     } catch (err) {

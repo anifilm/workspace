@@ -7,7 +7,7 @@ import BoardRegisterForm from '../components/BoardRegisterForm';
 const BoardRegisterContainer = ({ history }: RouteComponentProps) => {
   const onRegister = async (title: string, content: string, writer: string) => {
     try {
-      const response = await client.registerBoard(title, content, writer);
+      const response = await client.registerBoardApi(title, content, writer);
       alert('등록되었습니다.');
       history.push('/read/' + response.data.boardNo);
     }

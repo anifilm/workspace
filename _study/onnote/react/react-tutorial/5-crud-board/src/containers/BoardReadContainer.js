@@ -16,7 +16,7 @@ const BoardReadContainer = ({ match, history }) => {
   const readBoard = async (boardNo) => {
     setLoading(true);
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       setBoard(response.data);
       setLoading(false);
     } catch (err) {
@@ -34,7 +34,7 @@ const BoardReadContainer = ({ match, history }) => {
     //console.log('boardNo:', boardNo);
     try {
       // 게시글 삭제 API 호출
-      await client.removeBoard(boardNo);
+      await client.removeBoardApi(boardNo);
       alert('삭제되었습니다.');
       // 목록 화면으로 이동
       history.push('/');

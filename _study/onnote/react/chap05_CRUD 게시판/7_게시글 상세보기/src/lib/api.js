@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const registerBoard = (title, content, writer) =>
+export const registerBoardApi = (title, content, writer) =>
   axios.post('/boards', { title, content, writer });
-export const fetchBoard = (boardNo) =>
+export const fetchBoardApi = (boardNo) =>
   axios.get(`/boards/${boardNo}`);

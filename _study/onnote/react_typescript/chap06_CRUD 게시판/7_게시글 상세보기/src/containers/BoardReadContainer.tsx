@@ -18,7 +18,7 @@ const BoardReadContainer = ({ match }: RouteComponentProps<MatchParams>) => {
   const readBoard = async (boardNo: string) => {
     setLoading(true);
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       setBoard(response.data);
       setLoading(false);
     } catch (err) {

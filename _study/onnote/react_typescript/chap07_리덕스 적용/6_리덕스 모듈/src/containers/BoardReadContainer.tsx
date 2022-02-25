@@ -29,7 +29,7 @@ const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>
   const readBoard = useCallback(async (boardNo: string) => {
     dispatch(fetchStart());
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       dispatch(fetchSuccess(response.data));
     } catch (err) {
       dispatch(fetchFailure(err));
@@ -44,7 +44,7 @@ const BoardReadContainer = ({ match, history }: RouteComponentProps<MatchParams>
   const onRemove = async () => {
     //console.log('boardNo:', boardNo);
     try {
-      await client.removeBoard(boardNo);
+      await client.removeBoardApi(boardNo);
       alert('삭제되었습니다.');
       history.push('/');
     } catch (err) {

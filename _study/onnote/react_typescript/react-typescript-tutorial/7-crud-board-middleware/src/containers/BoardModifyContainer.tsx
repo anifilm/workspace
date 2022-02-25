@@ -18,7 +18,7 @@ const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParam
   const readBoard = async (boardNo: string) => {
     setLoading(true);
     try {
-      const response = await client.fetchBoard(boardNo);
+      const response = await client.fetchBoardApi(boardNo);
       setBoard(response.data);
       setLoading(false);
     } catch (err) {
@@ -33,7 +33,7 @@ const BoardModifyContainer = ({ match, history }: RouteComponentProps<MatchParam
 
   const onModify = async (boardNo: string, title: string, content: string) => {
     try {
-      await client.modifyBoard(boardNo, title, content);
+      await client.modifyBoardApi(boardNo, title, content);
       alert('수정되었습니다.');
       history.push('/read/' + boardNo);
     } catch (err) {

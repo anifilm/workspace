@@ -26,7 +26,7 @@ const BoardListContainer = () => {
   const listBoard = useCallback(async () => {
     dispatch(startLoading('FETCH_LIST'));
     try {
-      const response = await client.fetchBoardList();
+      const response = await client.fetchBoardListApi();
       dispatch(fetchListSuccess(response.data));
       dispatch(endLoading('FETCH_LIST'));
     } catch (err) {

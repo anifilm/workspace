@@ -23,7 +23,7 @@ const BoardListContainer = () => {
   const listBoard = useCallback(async () => {
     dispatch(fetchListStart());
     try {
-      const response = await client.fetchBoardList();
+      const response = await client.fetchBoardListApi();
       dispatch(fetchListSuccess(response.data));
     } catch (err) {
       dispatch(fetchListFailure(err));
