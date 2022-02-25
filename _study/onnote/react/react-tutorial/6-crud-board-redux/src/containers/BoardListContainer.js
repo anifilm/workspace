@@ -1,44 +1,30 @@
-import React, { useEffect, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import * as client from '../lib/api';
+
 import BoardList from '../components/BoardList';
-import {
-  //fetchListStart,
-  fetchListSuccess,
-  fetchListFailure,
-} from '../modules/board';
-import { startLoading, endLoading } from '../modules/loading';
-import { fetchBoardListApi } from '../lib/api';
 
 const BoardListContainer = () => {
-  // 스토어 dispatch 사용
-  const dispatch = useDispatch();
-  // 스토어 상태 조회
-  const { boards, isLoading } = useSelector(({ board, loading }) => {
-    return {
-      boards: board.boards,
-      isLoading: loading.FETCH_LIST,
-    };
-  });
+  // 컴포넌트 상태 선언
+  const [boards, setBoards] = useState([]);
+  const [isLoading, setLoading] = useState(false);
 
   // 게시글 목록 조회
-  const listBoard = useCallback(async () => {
-    //dispatch(fetchListStart());
-    dispatch(startLoading('FETCH_LIST'));
+  const listBoard = async () => {
+    setLoading(true);
     try {
-      const response = await fetchBoardListApi();
-      dispatch(fetchListSuccess(response.data));
-      dispatch(endLoading('FETCH_LIST'));
+      const response = await client.fetchBoardList();
+      setBoards(response.data);
+      setLoading(false);
     } catch (err) {
-      dispatch(fetchListFailure(err));
-      dispatch(endLoading('FETCH_LIST'));
+      setLoading(false);
       throw err;
     }
-  }, [dispatch]);
+  }
 
   // 마운트될 때 게시글 목록을 가져옴
   useEffect(() => {
     listBoard();
-  }, [listBoard]);
+  }, []);
 
   return <BoardList boards={boards} isLoading={isLoading} />;
 };
