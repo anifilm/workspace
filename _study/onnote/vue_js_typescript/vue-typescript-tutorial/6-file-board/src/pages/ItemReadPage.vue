@@ -1,25 +1,25 @@
 <template>
   <div align="center">
     <h3>게시글 상세보기</h3>
-    <board-read />
+    <item-read />
     <router-link
-      :to="{ name: 'BoardModifyPage', params: { boardNo: 100 } }"
+      :to="{ name: 'ItemModifyPage', params: { itemNo: 100 } }"
     >수정</router-link>
     <button>삭제</button>
-    <router-link :to="{ name: 'BoardListPage' }">목록</router-link>
+    <router-link :to="{ name: 'ItemListPage' }">목록</router-link>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import BoardRead from '../components/BoardRead.vue';
+import ItemRead from '../components/ItemRead.vue';
 
 @Component({
   components: {
-    BoardRead,
+    ItemRead,
   },
 })
-export default class BoardReadPage extends Vue {
+export default class ItemReadPage extends Vue {
 
 }
 </script>
