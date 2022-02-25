@@ -86,7 +86,6 @@ const board = handleActions(
       //},
       error: action.payload,
     }),
-    // 목록 조회 리듀서 함수 정의
     //[FETCH_LIST]: (state) => ({
     //  ...state,
     //  loading: {
