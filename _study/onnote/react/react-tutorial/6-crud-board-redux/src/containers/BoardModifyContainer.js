@@ -5,8 +5,8 @@ import {
   fetchStart,
   fetchSuccess,
   fetchFailure,
-  changeTitle,
-  changeContent,
+  //changeTitle,
+  //changeContent,
 } from '../modules/board';
 import * as client from '../lib/api';
 
@@ -18,11 +18,11 @@ const BoardModifyContainer = ({ match, history }) => {
   const { boardNo } = match.params;
 
   // 스토어 상태 조회
-  const { board, isLoading, title, content } = useSelector((state) => ({
+  const { board, isLoading } = useSelector((state) => ({
     board: state.board,
     isLoading: state.loading.FETCH,
-    title: state.title,
-    content: state.content
+    //title: state.title,
+    //content: state.content
   }));
   // 스토어 dispatch 사용
   const dispatch = useDispatch();
@@ -44,15 +44,15 @@ const BoardModifyContainer = ({ match, history }) => {
     readBoard(boardNo);
   }, [boardNo, readBoard]);
 
-  // 제목 변경 함수
+  /* 제목 변경 함수
   const onChangeTitle = useCallback((title) => {
     return dispatch(changeTitle(title));
-  }, [dispatch]);
+  }, [dispatch]); */
 
-  // 내용 변경 함수
+  /* 내용 변경 함수
   const onChangeContent = useCallback((content) => {
     return dispatch(changeContent(content));
-  }, [dispatch]);
+  }, [dispatch]); */
 
   // 수정 처리 함수 정의
   const onModify = async (boardNo, title, content) => {
@@ -70,10 +70,10 @@ const BoardModifyContainer = ({ match, history }) => {
     <BoardModifyForm
       board={board}
       isLoading={isLoading}
-      title={title}
-      content={content}
-      onChangeTitle={onChangeTitle}
-      onChangeContent={onChangeContent}
+      //title={title}
+      //content={content}
+      //onChangeTitle={onChangeTitle}
+      //onChangeContent={onChangeContent}
       onModify={onModify}
     />
   );

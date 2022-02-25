@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // 컴포넌트 속성값 수신
 const BoardModifyForm = ({
   board,
   isLoading,
-  title,
-  content,
-  onChangeTitle,
-  onChangeContent,
+  //title,
+  //content,
+  //onChangeTitle,
+  //onChangeContent,
   onModify,
 }) => {
+  // 컴포넌트 상태 정의
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
   const handleChangeTitle = (e) => {
-    onChangeTitle(e.target.value);
+    setTitle(e.target.value);
   };
   const handleChangeContent = (e) => {
-    onChangeContent(e.target.value);
+    setContent(e.target.value);
   };
 
   // 폼 submit 이벤트 처리
@@ -23,6 +27,17 @@ const BoardModifyForm = ({
     e.preventDefault();
     onModify(board.boardNo, title, content);
   };
+
+  // 마운트될 때 게시글 상세정보를 가져옴
+  useEffect(() => {
+    //console.log('useEffect board:', board);
+    if (board) {
+      //console.log('board.title:', board.title);
+      //console.log('board.content:', board.content);
+      setTitle(board.title);
+      setContent(board.content);
+    }
+  }, [board]);
 
   return (
     <div className="container">
