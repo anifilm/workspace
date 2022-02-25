@@ -6,14 +6,14 @@ import BoardRegisterContainer from './containers/BoardRegisterContainer';
 import BoardModifyContainer from './containers/BoardModifyContainer';
 import BoardReadContainer from './containers/BoardReadContainer';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <Route path="/" component={BoardListContainer} exact />
-      <Route path="/create" component={BoardRegisterContainer} />
-      <Route path="/edit/:boardNo" component={BoardModifyContainer} />
-      <Route path="/read/:boardNo" component={BoardReadContainer} />
-    </div>
+    <>
+      <Route component={BoardListContainer} path="/" exact />
+      <Route component={BoardRegisterContainer} path="/create" />
+      <Route component={BoardModifyContainer} path="/edit/:boardNo" />
+      <Route component={BoardReadContainer} path="/read/:boardNo" />
+    </>
   );
 }
 

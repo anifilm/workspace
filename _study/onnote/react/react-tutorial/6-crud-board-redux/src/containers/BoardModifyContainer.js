@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  fetchStart,
+  fetchSuccess,
+  fetchFailure,
+  changeTitle,
+  changeContent,
+} from '../modules/board';
 import * as client from '../lib/api';
 
 import BoardModifyForm from '../components/BoardModifyForm';
@@ -8,26 +16,41 @@ import BoardModifyForm from '../components/BoardModifyForm';
 const BoardModifyContainer = ({ match, history }) => {
   // match 객체의 params 속성값을 참조
   const { boardNo } = match.params;
-  // 컴포넌트 상태 선언
-  const [board, setBoard] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+
+  // 스토어 상태 조회
+  const { board, isLoading } = useSelector((state) => ({
+    board: state.board,
+    isLoading: state.loading.FETCH,
+  }));
+  // 스토어 dispatch 사용
+  const dispatch = useDispatch();
 
   // 게시글 상세 조회
-  const readBoard = async (boardNo) => {
-    setLoading(true);
+  const readBoard = useCallback(async (boardNo) => {
+    dispatch(fetchStart());
     try {
       const response = await client.fetchBoard(boardNo);
-      setBoard(response.data);
-      setLoading(false);
+      dispatch(fetchSuccess(response.data));
     } catch (err) {
-      setLoading(false);
+      dispatch(fetchFailure(err));
       throw err;
     }
-  };
+  }, [dispatch]);
+
   // 마운트될 때 게시글 상세정보를 가져옴
   useEffect(() => {
     readBoard(boardNo);
-  }, [boardNo]);
+  }, [boardNo, readBoard]);
+
+  // 제목 변경 함수
+  const onChangeTitle = useCallback((title) => {
+    return dispatch(changeTitle(title));
+  }, [dispatch]);
+
+  // 내용 변경 함수
+  const onChangeContent = useCallback((content) => {
+    return dispatch(changeContent(content));
+  }, [dispatch]);
 
   // 수정 처리 함수 정의
   const onModify = async (boardNo, title, content) => {
@@ -45,6 +68,8 @@ const BoardModifyContainer = ({ match, history }) => {
     <BoardModifyForm
       board={board}
       isLoading={isLoading}
+      onChangeTitle={onChangeTitle}
+      onChangeContent={onChangeContent}
       onModify={onModify}
     />
   );

@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // 컴포넌트 속성값 수신
-const BoardModifyForm = ({ board, isLoading, onModify }) => {
-  // 컴포넌트 상태 설정
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-
+const BoardModifyForm = ({
+  board,
+  isLoading,
+  onChangeTitle,
+  onChangeContent,
+  onModify,
+}) => {
   const handleChangeTitle = (e) => {
-    setTitle(e.target.value);
+    onChangeTitle(e.target.value);
   };
   const handleChangeContent = (e) => {
-    setContent(e.target.value);
+    onChangeContent(e.target.value);
   };
 
   // 폼 submit 이벤트 처리
   const handleSubmit = (e) => {
     e.preventDefault();
-    onModify(board.boardNo, title, content);
+    onModify(board.boardNo, board.title, board.content);
   };
-
-  // 마운트될 때 게시글 상세정보를 가져옴
-  useEffect(() => {
-    //console.log('useEffect board:', board);
-    if (board) {
-      //console.log('board.title:', board.title);
-      //console.log('board.content:', board.content);
-      setTitle(board.title);
-      setContent(board.content);
-    }
-  }, [board]);
 
   return (
     <div className="container">
@@ -59,7 +50,7 @@ const BoardModifyForm = ({ board, isLoading, onModify }) => {
                 <input
                   type="text"
                   id="title"
-                  value={title}
+                  value={board.title}
                   onChange={handleChangeTitle}
                   required
                 />
@@ -71,7 +62,7 @@ const BoardModifyForm = ({ board, isLoading, onModify }) => {
                 <textarea
                   id="textarea"
                   className="materialize-textarea"
-                  value={content}
+                  value={board.content}
                   onChange={handleChangeContent}
                   style={{ height: 200 }}
                   required

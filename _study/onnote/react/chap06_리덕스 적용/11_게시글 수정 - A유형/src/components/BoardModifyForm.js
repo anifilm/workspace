@@ -9,11 +9,9 @@ const BoardModifyForm = ({
   onChangeContent,
   onModify,
 }) => {
-  // 제목의 변경을 처리하는 함수
   const handleChangeTitle = (e) => {
     onChangeTitle(e.target.value);
   };
-  // 내용의 변경을 처리하는 함수
   const handleChangeContent = (e) => {
     onChangeContent(e.target.value);
   };
@@ -74,7 +72,7 @@ const BoardModifyForm = ({
             </div>
             <br />
             <Link to={`/read/${board.boardNo}`} className="waves-effect waves-light btn">취소</Link>{' '}
-            <button type="submit"className="waves-effect waves-light btn blue">완료</button>
+            <button type="submit" className="waves-effect waves-light btn blue">완료</button>
           </form>
         </div>
       )}
