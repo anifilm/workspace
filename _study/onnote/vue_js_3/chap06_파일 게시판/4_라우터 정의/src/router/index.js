@@ -1,67 +1,29 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-import ItemListPage from '../pages/ItemListPage.vue';
-import ItemRegisterPage from '../pages/ItemRegisterPage.vue';
-import ItemModifyPage from '../pages/ItemModifyPage.vue';
-import ItemReadPage from '../pages/ItemReadPage.vue';
-//import HomeView from '../views/HomeView.vue';
-
-Vue.use(VueRouter);
+import { createWebHistory, createRouter } from 'vue-router';
 
 const routes = [
   {
     path: '/',
     name: 'ItemListPage',
-    components: {
-      default: ItemListPage,
-    },
+    component: () => import('../pages/ItemListPage.vue'),
   },
   {
     path: '/item/create',
     name: 'ItemRegisterPage',
-    components: {
-      default: ItemRegisterPage,
-    },
+    component: () => import('../pages/ItemRegisterPage.vue'),
   },
   {
     path: '/item/:itemNo',
     name: 'ItemReadPage',
-    components: {
-      default: ItemReadPage,
-    },
-    props: {
-      default: true,
-    },
+    component: () => import('../pages/ItemReadPage.vue'),
   },
   {
     path: '/item/:itemNo/edit',
     name: 'ItemModifyPage',
-    components: {
-      default: ItemModifyPage,
-    },
-    props: {
-      default: true,
-    },
+    component: () => import('../pages/ItemModifyPage.vue'),
   },
-  /*
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue'),
-  },
-  */
 ];
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+export const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
-
-export default router;
