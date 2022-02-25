@@ -14,9 +14,9 @@ const BoardReadContainer = ({ match, history }) => {
   const { boardNo } = match.params;
 
   // 스토어 상태 조회
-  const { board, isLoading } = useSelector((state) => ({
-    board: state.board,
-    isLoading: state.loading.FETCH,
+  const { board, isLoading } = useSelector(({ board, loading }) => ({
+    board: board.board,
+    isLoading: loading.FETCH,
   }));
   // 스토어 dispatch 사용
   const dispatch = useDispatch();

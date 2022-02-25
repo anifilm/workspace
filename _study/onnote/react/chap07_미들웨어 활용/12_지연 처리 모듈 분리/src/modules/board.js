@@ -6,6 +6,7 @@ import { startLoading, endLoading } from "./loading";
 //const FETCH = 'board/FETCH';
 const FETCH_SUCCESS = 'board/FETCH_SUCCESS';
 const FETCH_FAILURE = 'baord/FETCH_FAILURE';
+
 //const FETCH_LIST = 'board/FETCH_LIST';
 const FETCH_LIST_SUCCESS = 'board/FETCH_LIST_SUCCESS';
 const FETCH_LIST_FAILURE = 'board/FETCH_LIST_FAILURE';
@@ -14,6 +15,7 @@ const FETCH_LIST_FAILURE = 'board/FETCH_LIST_FAILURE';
 //export const fetchStart = createAction(FETCH);
 export const fetchSuccess = createAction(FETCH_SUCCESS, (data) => data);
 export const fetchFailure = createAction(FETCH_FAILURE, (err) => error);
+
 //export const fetchListStart = createAction(FETCH_LIST);
 export const fetchListSuccess = createAction(FETCH_LIST_SUCCESS, (data) => data);
 export const fetchListFailure = createAction(FETCH_LIST_FAILURE, (err) => err);
