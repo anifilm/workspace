@@ -40,7 +40,7 @@ export default {
   methods: {
     handleFileChange(e) {
       this.file = e.target.files[0];
-      console.log(this.file);
+      //console.log(this.file);
     },
     onSubmit() {
       const { itemName, price, description, file } = this;
