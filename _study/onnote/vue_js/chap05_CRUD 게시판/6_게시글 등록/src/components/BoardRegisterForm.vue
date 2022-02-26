@@ -14,6 +14,7 @@
         <td><textarea v-model="content" cols="23" rows="5"></textarea></td>
       </tr>
     </table>
+
     <div>
       <button type="submit">등록</button>
       <router-link :to="{ name: 'BoardListPage' }">취소</router-link>
