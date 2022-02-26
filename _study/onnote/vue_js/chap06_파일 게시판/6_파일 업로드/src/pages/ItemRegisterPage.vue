@@ -38,7 +38,7 @@ export default {
           alert('등록되었습니다.');
           this.$router.push({
             name: 'ItemReadPage',
-            params: { itemId: res.data.itemId },
+            params: { itemId: res.data.itemId.toString() },
           });
         })
         .catch((err) => {
