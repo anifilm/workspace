@@ -23,7 +23,9 @@ export default {
           alert('등록되었습니다.');
           this.$router.push({
             name: 'BoardReadPage',
-            params: { boardNo: res.data.boardNo.toString() },
+            params: {
+              boardNo: res.data.boardNo.toString(),
+            },
           });
         })
         .catch((err) => {

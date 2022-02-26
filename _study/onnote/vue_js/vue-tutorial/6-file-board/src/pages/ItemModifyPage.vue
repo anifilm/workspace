@@ -50,7 +50,9 @@ export default {
           alert('수정되었습니다.');
           this.$router.push({
             name: 'ItemReadPage',
-            params: { itemId: res.data.itemId.toString() },
+            params: {
+              itemId: res.data.itemId.toString(),
+            },
           });
         })
         .catch((err) => {
