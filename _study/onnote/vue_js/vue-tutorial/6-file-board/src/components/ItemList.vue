@@ -13,7 +13,7 @@
         <td align="center">{{ item.itemId }}</td>
         <td align="left">
           <router-link
-            :to="{ name: 'itemReadPage', params: { itemNo: item.itemId.toString() } }"
+            :to="{ name: 'ItemReadPage', params: { itemId: item.itemId.toString() } }"
           >{{ item.itemName }}</router-link>
         </td>
         <td align="right">{{ item.price }}원</td>

@@ -3,8 +3,8 @@ import VueRouter from 'vue-router';
 
 import ItemListPage from '../pages/ItemListPage.vue';
 import ItemRegisterPage from '../pages/ItemRegisterPage.vue';
-import ItemModifyPage from '../pages/ItemModifyPage.vue';
 import ItemReadPage from '../pages/ItemReadPage.vue';
+import ItemModifyPage from '../pages/ItemModifyPage.vue';
 //import HomeView from '../views/HomeView.vue';
 
 Vue.use(VueRouter);
@@ -25,7 +25,7 @@ const routes = [
     },
   },
   {
-    path: '/item/:itemNo',
+    path: '/item/:itemId',
     name: 'ItemReadPage',
     components: {
       default: ItemReadPage,
@@ -35,7 +35,7 @@ const routes = [
     },
   },
   {
-    path: '/item/:itemNo/edit',
+    path: '/item/:itemId/edit',
     name: 'ItemModifyPage',
     components: {
       default: ItemModifyPage,
