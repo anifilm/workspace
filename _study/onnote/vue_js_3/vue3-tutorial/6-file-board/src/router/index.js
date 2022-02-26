@@ -7,17 +7,17 @@ const routes = [
     component: () => import('../pages/ItemListPage.vue'),
   },
   {
-    path: '/item/create',
+    path: '/item/register',
     name: 'ItemRegisterPage',
     component: () => import('../pages/ItemRegisterPage.vue'),
   },
   {
-    path: '/item/:itemNo',
+    path: '/item/:itemId',
     name: 'ItemReadPage',
     component: () => import('../pages/ItemReadPage.vue'),
   },
   {
-    path: '/item/:itemNo/edit',
+    path: '/item/:itemId/modify',
     name: 'ItemModifyPage',
     component: () => import('../pages/ItemModifyPage.vue'),
   },
