@@ -59,7 +59,7 @@ function ItemRegisterForm({ onRegister }) {
             <div className="file-field input-field col s12">
               <div className="btn">
                 <span>파일선택</span>
-                <input type="file" onChange={handleChangeFile} />
+                <input type="file" onChange={handleChangeFile} required />
               </div>
               <div className="file-path-wrapper">
                 <input className="file-path validate" type="text"  placeholder="선택된 파일 없음" />
