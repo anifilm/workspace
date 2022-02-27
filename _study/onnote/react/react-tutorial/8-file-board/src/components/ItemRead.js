@@ -25,8 +25,8 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
               <label className="active" htmlFor="itemId">상품번호</label>
             </div>
             <div className="input-field col s7">
-              <input type="text" id="price" value={`${item.price}원`} readOnly />
-              <label className="active" htmlFor="price">상품가격</label>
+              <input type="text" id="price" value={item.price} readOnly />
+              <label className="active" htmlFor="price">상품가격 (원)</label>
             </div>
             <div className="input-field col s12">
               <input

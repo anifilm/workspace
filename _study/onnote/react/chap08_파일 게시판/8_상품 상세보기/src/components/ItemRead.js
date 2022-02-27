@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ItemRead({ itemId, item, isLoading }) {
+function ItemRead({ itemId, item, isLoading, onRemove }) {
   // 이미지 표시 URL 생성
   const pictureUrl = () => {
     return (
@@ -25,8 +25,8 @@ function ItemRead({ itemId, item, isLoading }) {
               <label className="active" htmlFor="itemId">상품번호</label>
             </div>
             <div className="input-field col s7">
-              <input type="text" id="price" value={`${item.price}원`} readOnly />
-              <label className="active" htmlFor="price">상품가격</label>
+              <input type="text" id="price" value={item.price} readOnly />
+              <label className="active" htmlFor="price">상품가격 (원)</label>
             </div>
             <div className="input-field col s12">
               <input
@@ -73,7 +73,7 @@ function ItemRead({ itemId, item, isLoading }) {
             상품 목록
           </Link>{' '}
           <Link to={`/edit/${itemId}`} className="waves-effect waves-light btn blue">수정</Link>{' '}
-          <button className="waves-effect waves-light btn red right">삭제</button>
+          <button onClick={onRemove} className="waves-effect waves-light btn red right">삭제</button>
         </div>
       )}
     </div>
