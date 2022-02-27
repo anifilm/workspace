@@ -40,7 +40,7 @@ function ItemRegisterForm({ onRegister }) {
       <div className="row">
         <form onSubmit={handleSubmit} className="col s12">
           <div className="row">
-          <div className="input-field col s12">
+            <div className="input-field col s12">
               <input
                 type="text"
                 id="itemName"
@@ -50,13 +50,9 @@ function ItemRegisterForm({ onRegister }) {
               />
               <label className="active" htmlFor="itemName">상품명</label>
             </div>
-            <div className="input-field col s11">
+            <div className="input-field col s12">
               <input type="text" id="price" value={price} onChange={handleChangePrice} />
-              <label className="active" htmlFor="price">상품가격</label>
-            </div>
-            <div className="col s1">
-              <input type="text" id="price2" />원
-              <label className="active" htmlFor="price2"></label>
+              <label className="active" htmlFor="price">상품가격 (원)</label>
             </div>
           </div>
           <div className="row">
