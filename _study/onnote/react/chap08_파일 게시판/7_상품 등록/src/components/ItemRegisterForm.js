@@ -37,7 +37,6 @@ function ItemRegisterForm({ onRegister }) {
                 type="text"
                 id="itemName"
                 value={itemName}
-                onChange={handleChangeItemName}
                 required
               />
               <label className="active" htmlFor="itemName">상품명</label>

@@ -27,18 +27,18 @@ function ItemModifyForm() {
             </div>
           </div>
           <div className="row">
-            <div class="file-field input-field col s12">
-              <div class="btn">
+            <div className="file-field input-field col s12">
+              <div className="btn">
                 <span>파일선택</span>
                 <input type="file"/>
               </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text"  placeholder="선택된 파일 없음" />
+              <div className="file-path-wrapper">
+                <input className="file-path validate" type="text"  placeholder="선택된 파일 없음" />
               </div>
             </div>
             <div className="input-field col s12">
               <img
-                //class="materialboxed"
+                //className="materialboxed"
                 width="500"
                 id="picture"
                 src="https://picsum.photos/500/300"

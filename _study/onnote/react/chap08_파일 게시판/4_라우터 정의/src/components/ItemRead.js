@@ -8,27 +8,27 @@ function ItemRead() {
       <div className="row">
         <div className="row">
           <div className="input-field col s5">
-            <input type="text" id="item-id" value="100" disabled />
-            <label className="active" htmlFor="item-no">상품번호</label>
+            <input type="text" id="itemId" value="100" disabled />
+            <label className="active" htmlFor="itemId">상품번호</label>
           </div>
           <div className="input-field col s7">
-            <input type="text" id="reg-date" value="1000원" disabled />
-            <label className="active" htmlFor="reg-date">상품가격</label>
+            <input type="text" id="price" value="1000원" disabled />
+            <label className="active" htmlFor="price">상품가격</label>
           </div>
           <div className="input-field col s12">
             <input
               type="text"
-              id="title"
+              id="itemName"
               value="풍경사진"
               disabled
             />
-            <label className="active" htmlFor="title">상품명</label>
+            <label className="active" htmlFor="itemName">상품명</label>
           </div>
         </div>
         <div className="row">
           <div className="input-field col s12">
             <img
-              //class="materialboxed"
+              //className="materialboxed"
               width="500"
               id="picture"
               src="https://picsum.photos/500/300"
@@ -41,13 +41,13 @@ function ItemRead() {
         <div className="row">
           <div className="input-field col s12">
             <textarea
-              id="textarea"
+              id="description"
               className="materialize-textarea"
               value="풍경사진"
               style={{ height: 100 }}
               disabled
             ></textarea>
-            <label className="active" htmlFor="textarea">상품설명</label>
+            <label className="active" htmlFor="description">상품설명</label>
           </div>
         </div>
         <br />

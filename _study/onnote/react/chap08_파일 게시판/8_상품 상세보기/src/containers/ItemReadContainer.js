@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   FETCH_ITEM,
   fetchItem,
-} from '../modules/item';
+} from '../modules, item';
 
 import ItemRead from '../components/ItemRead';
 

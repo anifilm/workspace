@@ -50,16 +50,16 @@ function BoardModifyForm({ board, isLoading, onModify }: Props) {
           <form onSubmit={handleSubmit} className="col s12">
             <div className="row">
               <div className="input-field col s4">
-                <input type="text" id="board-no" value={board.boardNo} disabled />
-                <label className="active" htmlFor="board-no">번호</label>
+                <input type="text" id="boardNo" value={board.boardNo} disabled />
+                <label className="active" htmlFor="boardNo">번호</label>
               </div>
               <div className="input-field col s4">
                 <input type="text" id="writer" value={board.writer} disabled />
                 <label className="active" htmlFor="writer">글쓴이</label>
               </div>
               <div className="input-field col s4">
-                <input type="text" id="reg-date" value={board.regDate} disabled />
-                <label className="active" htmlFor="reg-date">작성일자</label>
+                <input type="text" id="regDate" value={board.regDate} disabled />
+                <label className="active" htmlFor="regDate">작성일자</label>
               </div>
               <div className="input-field col s12">
                 <input

@@ -11,30 +11,30 @@ function ItemRegisterForm() {
           <div className="input-field col s12">
               <input
                 type="text"
-                id="title"
+                id="itemName"
                 value="풍경사진"
                 required
               />
-              <label className="active" htmlFor="title">상품명</label>
+              <label className="active" htmlFor="itemName">상품명</label>
             </div>
             <div className="input-field col s12">
-              <input type="text" id="reg-date" value="1000원" />
-              <label className="active" htmlFor="reg-date">상품가격</label>
+              <input type="text" id="price" value="1000원" />
+              <label className="active" htmlFor="price">상품가격</label>
             </div>
           </div>
           <div className="row">
-            <div class="file-field input-field col s12">
-              <div class="btn">
+            <div className="file-field input-field col s12">
+              <div className="btn">
                 <span>파일선택</span>
-                <input type="file"/>
+                <input type="file" />
               </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text"  placeholder="선택된 파일 없음" />
+              <div className="file-path-wrapper">
+                <input className="file-path validate" type="text"  placeholder="선택된 파일 없음" />
               </div>
             </div>
             {/*<div className="input-field col s12">
               <img
-                //class="materialboxed"
+                //className="materialboxed"
                 width="500"
                 id="picture"
                 src="https://picsum.photos/500/300"
@@ -47,13 +47,13 @@ function ItemRegisterForm() {
           <div className="row">
             <div className="input-field col s12">
               <textarea
-                id="textarea"
+                id="description"
                 className="materialize-textarea"
                 value="풍경사진"
                 style={{ height: 100 }}
                 required
               ></textarea>
-              <label className="active" htmlFor="textarea">상품설명</label>
+              <label className="active" htmlFor="description">상품설명</label>
             </div>
           </div>
           <br />
