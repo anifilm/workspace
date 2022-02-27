@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 // 리덕스 관련 모듈 임포트
 import { createStore, applyMiddleware } from 'redux';
@@ -28,5 +27,5 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
