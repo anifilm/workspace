@@ -6,6 +6,8 @@ function ItemRegisterForm({ onRegister }) {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
   const [file, setFile] = useState(null);
+  // 이미지 미리보기 관련 내용 추가
+  const [preview, setPreview] = useState(null);
 
   const handleChangeItemName = useCallback((e) => {
     setItemName(e.target.value);
@@ -17,7 +19,13 @@ function ItemRegisterForm({ onRegister }) {
     setDescription(e.target.value);
   }, []);
   const handleChangeFile = useCallback((e) => {
-    console.log(e.target.files[0]);
+    // 이미지 미리보기 관련 내용 추가
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(e.target.files[0]);
+    fileReader.onload = () => {
+      setPreview(fileReader.result);
+    };
+    //console.log(e.target.files[0]);
     setFile(e.target.files[0]);
   }, []);
 
@@ -42,9 +50,13 @@ function ItemRegisterForm({ onRegister }) {
               />
               <label className="active" htmlFor="itemName">상품명</label>
             </div>
-            <div className="input-field col s12">
-              <input type="text" id="price" value={price} onChange={handleChangePrice} />원
+            <div className="input-field col s11">
+              <input type="text" id="price" value={price} onChange={handleChangePrice} />
               <label className="active" htmlFor="price">상품가격</label>
+            </div>
+            <div className="col s1">
+              <input type="text" id="price2" />원
+              <label className="active" htmlFor="price2"></label>
             </div>
           </div>
           <div className="row">
@@ -57,17 +69,20 @@ function ItemRegisterForm({ onRegister }) {
                 <input className="file-path validate" type="text"  placeholder="선택된 파일 없음" />
               </div>
             </div>
-            {/*<div className="input-field col s12">
-              <img
-                //className="materialboxed"
-                width="500"
-                id="picture"
-                src="https://picsum.photos/500/300"
-                alt="풍경사진"
-                style={{ marginTop: '10px' }}
-              />
-              <label className="active" htmlFor="picture">미리보기</label>
-            </div>*/}
+            {/* 이미지 미리보기 관련 내용 추가 */}
+            {preview && (
+              <div className="input-field col s12">
+                <img
+                  //className="materialboxed"
+                  width="500"
+                  id="picture"
+                  src={preview}
+                  alt="이미지 미리보기"
+                  style={{ marginTop: '10px' }}
+                />
+                <label className="active" htmlFor="picture">미리보기</label>
+              </div>
+            )}
           </div>
           <div className="row">
             <div className="input-field col s12">

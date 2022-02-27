@@ -44,10 +44,14 @@ function ItemRead({ itemId, item, isLoading }) {
                 //className="materialboxed"
                 width="500"
                 id="picture"
-                //src="https://picsum.photos/500/300"
                 src={pictureUrl()}
                 alt={item.itemName}
                 style={{ marginTop: '10px' }}
+                // 이미지 로딩 에러시 임의의 이미지 출력
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src="https://picsum.photos/500/300";
+                }}
               />
               <label className="active" htmlFor="picture">미리보기</label>
             </div>
