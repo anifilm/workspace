@@ -59,8 +59,8 @@ const ItemModifyForm = ({ item, isLoading, onModify }) => {
           <form onSubmit={handleSubmit} className="col s12">
             <div className="row">
               <div className="input-field col s4">
-                <input type="text" id="item-id" value={item.itemId} disabled />
-                <label className="active" htmlFor="item-id">상품번호</label>
+                <input type="text" id="itemId" value={item.itemId} disabled />
+                <label className="active" htmlFor="itemId">상품번호</label>
               </div>
               <div className="input-field col s4">
                 <input type="text" id="item-name" value={itemName} onChange={handleChangeItemName} />

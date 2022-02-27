@@ -21,11 +21,11 @@ function ItemRead({ itemId, item, isLoading }) {
         <div className="row">
           <div className="row">
             <div className="input-field col s5">
-              <input type="text" id="itemId" value="100" disabled />
+              <input type="text" id="itemId" value={item.itemId} disabled />
               <label className="active" htmlFor="itemId">상품번호</label>
             </div>
             <div className="input-field col s7">
-              <input type="text" id="price" value={item.price} disabled />
+              <input type="text" id="price" value={`${item.price}원`} readOnly />
               <label className="active" htmlFor="price">상품가격</label>
             </div>
             <div className="input-field col s12">
@@ -33,31 +33,22 @@ function ItemRead({ itemId, item, isLoading }) {
                 type="text"
                 id="itemName"
                 value={item.itemName}
-                disabled
+                readOnly
               />
               <label className="active" htmlFor="itemName">상품명</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              {pictureUrl() ? (
-                <img
-                  //className="materialboxed"
-                  width="500"
-                  id="picture"
-                  src={pictureUrl()}
-                  alt={item.itemName}
-                  style={{ marginTop: '10px' }}
-                />
-              ) : (
-                <img
-                  //className="materialboxed"
-                  width="500"
-                  id="picture"
-                  src="https://picsum.photos/500/300"
-                  alt="picsum-photos"
-                  style={{ marginTop: '10px' }}
-                />)}
+              <img
+                //className="materialboxed"
+                width="500"
+                id="picture"
+                //src="https://picsum.photos/500/300"
+                src={pictureUrl()}
+                alt={item.itemName}
+                style={{ marginTop: '10px' }}
+              />
               <label className="active" htmlFor="picture">미리보기</label>
             </div>
           </div>
@@ -68,7 +59,7 @@ function ItemRead({ itemId, item, isLoading }) {
                 className="materialize-textarea"
                 value={item.description}
                 style={{ height: 100 }}
-                disabled
+                readOnly
               ></textarea>
               <label className="active" htmlFor="description">상품설명</label>
             </div>
