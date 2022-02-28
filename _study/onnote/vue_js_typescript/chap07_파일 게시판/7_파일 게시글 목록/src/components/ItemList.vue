@@ -11,12 +11,12 @@
       </tr>
       <tr v-else v-for="item in items" :key="item.itemId">
         <td align="center">{{ item.itemId }}</td>
-        <td align="left">
+        <td align="left" style="padding-left: 20px">
           <router-link
             :to="{ name: 'ItemReadPage', params: { itemId: item.itemId.toString() } }"
           >{{ item.itemName }}</router-link>
         </td>
-        <td align="right">{{ item.price }}원</td>
+        <td align="right" style="padding-right: 10px">{{ item.price }}원</td>
       </tr>
     </table>
   </div>
@@ -32,3 +32,14 @@ export default class ItemList extends Vue {
   @Prop() private items!: Item[];
 }
 </script>
+
+<style scoped>
+table {
+  border-top: 1px solid lightgray;
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+</style>
