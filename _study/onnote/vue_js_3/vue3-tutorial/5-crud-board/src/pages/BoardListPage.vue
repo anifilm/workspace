@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 목록</h3>
+    <h2>게시글 목록</h2>
     <router-link :to="{ name: 'BoardRegisterPage' }">새로만들기</router-link>
     <board-list :boards="boards" />
   </div>

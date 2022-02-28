@@ -6,7 +6,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.26.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"

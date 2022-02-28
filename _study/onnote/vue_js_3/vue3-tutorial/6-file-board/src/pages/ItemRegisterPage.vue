@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 등록</h3>
+    <h2>상품 등록</h2>
     <item-register-form />
   </div>
 </template>
