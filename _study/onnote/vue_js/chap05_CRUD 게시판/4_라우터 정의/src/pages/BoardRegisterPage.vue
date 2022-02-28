@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 등록</h3>
+    <h2>게시글 등록</h2>
     <board-register-form />
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>상품 상세보기</h3>
+    <h2>상품 상세보기</h2>
     <item-read v-if="item" :item="item" />
     <p v-else>Loading...</p>
     <router-link

@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>상품 목록</h3>
+    <h2>상품 목록</h2>
     <router-link :to="{ name: 'ItemRegisterPage' }">새로만들기</router-link>
     <item-list :items="items" />
   </div>
