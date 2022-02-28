@@ -2,6 +2,7 @@
   <div class="container">
     <h3>상품 상세보기</h3>
     <item-read v-if="item" :item="item" />
+    <!-- Loading... -->
     <div v-else class="progress">
       <div class="indeterminate"></div>
     </div>

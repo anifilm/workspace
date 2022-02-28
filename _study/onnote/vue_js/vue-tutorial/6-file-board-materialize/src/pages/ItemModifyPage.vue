@@ -2,6 +2,7 @@
   <div class="container">
     <h3>상품 수정</h3>
     <item-modify-form v-if="item" :item="item" @submit="onSubmit" />
+    <!-- Loading... -->
     <div v-else class="progress">
       <div class="indeterminate"></div>
     </div>
