@@ -23,9 +23,12 @@ export default {
         .then((res) => {
           alert('등록되었습니다.');
           const boardNo = res.data.boardNo.toString();
+          console.log(boardNo);
           router.push({
             name: 'BoardReadPage',
-            params: { boardNo },
+            params: {
+              boardNo: res.data.boardNo.toString(),
+            },
           });
         })
         .catch((err) => {
