@@ -15,17 +15,11 @@ const routes = [
     path: '/item/:itemId',
     name: 'ItemReadPage',
     component: () => import('../pages/ItemReadPage.vue'),
-    props: {
-      default: true,
-    },
   },
   {
     path: '/item/:itemId/modify',
     name: 'ItemModifyPage',
     component: () => import('../pages/ItemModifyPage.vue'),
-    props: {
-      default: true,
-    },
   },
 ];
 

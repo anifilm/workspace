@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 등록</h3>
+    <h2>게시글 등록</h2>
     <board-register-form @add-post="addPost" />
   </div>
 </template>
@@ -22,10 +22,11 @@ export default {
       client.post('/boards', { title, content, writer })
         .then((res) => {
           alert('등록되었습니다.');
-          const boardNo = res.data.boardNo.toString();
           router.push({
             name: 'BoardReadPage',
-            params: { boardNo },
+            params: {
+              boardNo: res.data.boardNo.toString(),
+            },
           });
         })
         .catch((err) => {
