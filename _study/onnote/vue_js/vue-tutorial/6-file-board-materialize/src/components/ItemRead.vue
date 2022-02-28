@@ -1,27 +1,45 @@
 <template>
-  <div>
-    <table>
-      <tr>
-        <td>상품번호</td>
-        <td><input type="text" :value="item.itemId"  readonly></td>
-      </tr>
-      <tr>
-        <td>상품명</td>
-        <td><input type="text" :value="item.itemName" readonly></td>
-      </tr>
-      <tr>
-        <td>상품가격</td>
-        <td><input type="text" :value="item.price" readonly>원</td>
-      </tr>
-      <tr>
-        <td>미리보기</td>
-        <td><img v-bind:src="pictureUrl()" width="170"></td>
-      </tr>
-      <tr>
-        <td>상품설명</td>
-        <td><textarea :value="item.description" cols="23" rows="5" readonly></textarea></td>
-      </tr>
-    </table>
+  <div class="row">
+      <div class="row">
+        <div class="input-field col s5">
+          <input type="text" id="itemId" :value="item.itemId" disabled>
+          <label class="active" for="itemId">상품번호</label>
+        </div>
+        <div class="input-field col s7">
+          <input type="text" id="price" :value="item.price" readonly>
+          <label class="active" for="price">상품가격 (원)</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" id="itemName" :value="item.itemName" readonly>
+          <label class="active" for="itemName">상품명</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <img
+            class="materialboxed"
+            width="500"
+            id="picture"
+            :src="pictureUrl()"
+            alt="{item.itemName}"
+            style="margin-top: 10px"
+            @error="replaceByDefault"
+          />
+          <label class="active" htmlFor="picture">미리보기</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea
+            id="description"
+            class="materialize-textarea"
+            :value="item.description"
+            style="height: 100px"
+            readonly
+          ></textarea>
+          <label class="active" for="description">상품설명</label>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -34,9 +52,17 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      preview: 'https://picsum.photos/500/300',
+    };
+  },
   methods: {
     pictureUrl() {
       return `http://localhost:8080/items/display?itemId=${this.item.itemId}&timestamp=${new Date().getTime()}`;
+    },
+    replaceByDefault(e) {
+      e.target.src = this.preview;
     },
   },
 };

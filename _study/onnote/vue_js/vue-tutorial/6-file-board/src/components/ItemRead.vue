@@ -3,7 +3,7 @@
     <table>
       <tr>
         <td>상품번호</td>
-        <td><input type="text" :value="item.itemId"  readonly></td>
+        <td><input type="text" :value="item.itemId" readonly></td>
       </tr>
       <tr>
         <td>상품명</td>
