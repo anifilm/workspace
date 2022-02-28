@@ -4,7 +4,7 @@
     <item-read v-if="item" :item="item" />
     <p v-else>Loading...</p>
     <router-link
-      :to="{ name: 'ItemModifyPage', params: { itemId: 100 } }"
+      :to="{ name: 'ItemModifyPage', params: { itemId } }"
     >수정</router-link>
     <button>삭제</button>
     <router-link :to="{ name: 'ItemListPage' }">목록</router-link>
@@ -39,6 +39,7 @@ export default {
 
     return {
       item,
+      itemId,
     };
   },
 };

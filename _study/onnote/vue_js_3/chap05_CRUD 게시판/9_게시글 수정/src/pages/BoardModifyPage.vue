@@ -42,7 +42,9 @@ export default {
           alert('수정되었습니다.');
           router.push({
             name: 'BoardReadPage',
-            params: { boardNo }
+            params: {
+              boardNo: res.data.boardNo.toString(),
+            },
           });
         })
         .catch((err) => {
