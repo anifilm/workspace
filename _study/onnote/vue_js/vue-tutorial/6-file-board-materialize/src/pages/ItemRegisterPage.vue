@@ -1,5 +1,5 @@
 <template>
-  <div align="center">
+  <div class="container">
     <h3>상품 등록</h3>
     <item-register-form @submit="onSubmit" />
   </div>

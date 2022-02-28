@@ -18,10 +18,10 @@
         <td><textarea v-model="description" cols="23" rows="5"></textarea></td>
       </tr>
     </table>
-
+    <br />
     <div>
-      <button type="submit">등록</button>
-      <router-link :to="{ name: 'ItemListPage' }">취소</router-link>
+      <router-link :to="{ name: 'ItemListPage' }" class="waves-effect waves-light btn">취소</router-link>&nbsp;
+      <button type="submit" class="waves-effect waves-light btn blue">등록</button>
     </div>
   </form>
 </template>

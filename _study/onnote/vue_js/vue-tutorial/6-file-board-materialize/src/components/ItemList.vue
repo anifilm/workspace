@@ -32,14 +32,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-table {
-  border-top: 1px solid lightgray;
-  border-collapse: collapse;
-}
-th, td {
-  border-bottom: 1px solid lightgray;
-  padding: 10px;
-}
-</style>

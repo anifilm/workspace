@@ -1,13 +1,17 @@
 <template>
-  <div align="center">
+  <div class="container">
     <h3>상품 상세보기</h3>
     <item-read v-if="item" :item="item" />
-    <p v-else>Loading...</p>
+    <div v-else class="progress">
+      <div class="indeterminate"></div>
+    </div>
+    <br />
+    <router-link :to="{ name: 'ItemListPage' }" class="waves-effect waves-light btn">목록</router-link>&nbsp;
     <router-link
       :to="{ name: 'ItemModifyPage', params: { itemId } }"
+      class="waves-effect waves-light btn blue"
     >수정</router-link>
-    <button @click="onDelete">삭제</button>
-    <router-link :to="{ name: 'ItemListPage' }">목록</router-link>
+    <button @click="onDelete" class="waves-effect waves-light btn red right">삭제</button>
   </div>
 </template>
 

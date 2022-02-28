@@ -26,12 +26,13 @@
         <td><textarea v-model="description" cols="23" rows="5"></textarea></td>
       </tr>
     </table>
-
+    <br />
     <div>
-      <button type="submit">수정</button>
       <router-link
         :to="{ name: 'ItemReadPage', params: { itemId: item.itemId.toString() } }"
-      >취소</router-link>
+        class="waves-effect waves-light btn"
+      >취소</router-link>&nbsp;
+      <button type="submit" class="waves-effect waves-light btn blue">수정</button>
     </div>
   </form>
 </template>
