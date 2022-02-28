@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>게시글 수정 폼</h3>
+    <h3>상품 수정 폼</h3>
     <button type="submit">수정</button>
     <router-link
       :to="{ name: 'ItemReadPage', params: { itemId: 100 } }"

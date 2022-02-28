@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 등록</h3>
+    <h3>상품 등록</h3>
     <item-register-form @submit="onSubmit" />
   </div>
 </template>

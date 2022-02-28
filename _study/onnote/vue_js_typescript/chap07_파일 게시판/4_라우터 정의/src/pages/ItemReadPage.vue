@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 상세보기</h3>
+    <h3>상품 상세보기</h3>
     <item-read />
     <router-link
       :to="{ name: 'ItemModifyPage', params: { itemId: 100 } }"

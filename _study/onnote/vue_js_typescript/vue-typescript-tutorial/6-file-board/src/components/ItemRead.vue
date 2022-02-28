@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>게시글 상세보기 뷰</h3>
+    <h3>상품 상세보기 뷰</h3>
   </div>
 </template>
 

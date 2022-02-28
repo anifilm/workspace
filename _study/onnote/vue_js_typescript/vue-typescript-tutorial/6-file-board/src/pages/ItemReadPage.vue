@@ -1,7 +1,7 @@
 <template>
   <div align="center">
-    <h3>게시글 상세보기</h3>
-    <item-read />
+    <h3>상품 상세보기</h3>
+    <item-read/>
     <router-link
       :to="{ name: 'ItemModifyPage', params: { itemId: 100 } }"
     >수정</router-link>
