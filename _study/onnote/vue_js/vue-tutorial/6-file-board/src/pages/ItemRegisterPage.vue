@@ -26,7 +26,6 @@ export default {
       };
 
       let formData = new FormData();
-
       formData.append('file', file);
       formData.append('item', JSON.stringify(itemObject));
 
