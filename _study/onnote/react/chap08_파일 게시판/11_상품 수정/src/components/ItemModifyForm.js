@@ -128,7 +128,6 @@ function ItemModifyForm({ item, isLoading, onModify }) {
                   <label className="active" htmlFor="picture">미리보기</label>
                 </div>
               )}
-
             </div>
             <div className="row">
               <div className="input-field col s12">

@@ -32,7 +32,7 @@
         <!-- 이미지 미리보기 관련 내용 추가 -->
         <div v-show="preview" class="input-field col s12">
           <img
-            class="materialboxed"
+            class="_materialboxed"
             width="500"
             id="picture"
             :src="preview"

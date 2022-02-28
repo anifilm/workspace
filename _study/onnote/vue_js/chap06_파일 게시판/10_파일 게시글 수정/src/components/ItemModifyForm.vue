@@ -3,15 +3,15 @@
     <table>
       <tr>
         <td>상품번호</td>
-        <td><input type="text" :value="item.itemId" disabled></td>
+        <td><input type="text" :value="item.itemId" disabled /></td>
       </tr>
       <tr>
         <td>상품명</td>
-        <td><input type="text" v-model="itemName"></td>
+        <td><input type="text" v-model="itemName" /></td>
       </tr>
       <tr>
         <td>상품가격</td>
-        <td><input type="text" v-model="price">원</td>
+        <td><input type="text" v-model="price" />원</td>
       </tr>
       <tr>
         <td>상품파일</td>
@@ -19,7 +19,7 @@
       </tr>
       <tr>
         <td>미리보기</td>
-        <td><img v-bind:src="pictureUrl()" width="170"></td>
+        <td><img v-bind:src="pictureUrl()" width="170" /></td>
       </tr>
       <tr>
         <td>상품설명</td>
@@ -54,12 +54,12 @@ export default {
     };
   },
   methods: {
+    pictureUrl() {
+      return `http://localhost:8080/items/display?itemId=${this.item.itemId}&timestamp=${new Date().getTime()}`;
+    },
     handleFileChange(e) {
       this.file = e.target.files[0];
       //console.log(this.file);
-    },
-    pictureUrl() {
-      return `http://localhost:8080/items/display?itemId=${this.item.itemId}&timestamp=${new Date().getTime()}`;
     },
     onSubmit() {
       const { itemName, price, description, file } = this;

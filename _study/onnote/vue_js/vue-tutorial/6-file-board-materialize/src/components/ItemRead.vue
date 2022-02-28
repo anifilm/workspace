@@ -2,22 +2,25 @@
   <div class="row">
       <div class="row">
         <div class="input-field col s5">
-          <input type="text" id="itemId" :value="item.itemId" disabled>
+          <!--<input type="text" id="itemId" :value="item.itemId" disabled />-->
+          <div class="item" style="color: darkgray">{{ item.itemId }}</div>
           <label class="active" for="itemId">상품번호</label>
         </div>
         <div class="input-field col s7">
-          <input type="text" id="price" :value="item.price" readonly>
+          <!--<input type="text" id="price" :value="item.price" readonly />-->
+          <div class="item">{{ item.price }}</div>
           <label class="active" for="price">상품가격 (원)</label>
         </div>
         <div class="input-field col s12">
-          <input type="text" id="itemName" :value="item.itemName" readonly>
+          <!--<input type="text" id="itemName" :value="item.itemName" readonly />-->
+          <div class="item">{{ item.itemName }}</div>
           <label class="active" for="itemName">상품명</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <img
-            class="materialboxed"
+            class="_materialboxed"
             width="500"
             id="picture"
             :src="pictureUrl()"
@@ -30,13 +33,14 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea
+          <div class="item" style="height: 100px">{{ item.description }}</div>
+          <!--<textarea
             id="description"
             class="materialize-textarea"
             :value="item.description"
             style="height: 100px"
             readonly
-          ></textarea>
+          ></textarea>-->
           <label class="active" for="description">상품설명</label>
         </div>
       </div>
@@ -54,7 +58,7 @@ export default {
   },
   data() {
     return {
-      preview: 'https://picsum.photos/500/300',
+      previewDefault: 'https://picsum.photos/500/300',
     };
   },
   methods: {
@@ -62,8 +66,18 @@ export default {
       return `http://localhost:8080/items/display?itemId=${this.item.itemId}&timestamp=${new Date().getTime()}`;
     },
     replaceByDefault(e) {
-      e.target.src = this.preview;
+      e.target.src = this.previewDefault;
     },
   },
 };
 </script>
+
+<style scoped>
+.item {
+  margin-top: 10px;
+  margin-bottom: 9px;
+  font-size: 16px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid lightgray;
+}
+</style>
