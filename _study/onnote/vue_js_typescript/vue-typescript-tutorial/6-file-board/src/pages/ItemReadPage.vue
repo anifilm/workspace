@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>상품 상세보기</h3>
+    <h2>상품 상세보기</h2>
     <item-read v-if="item" :item="item" />
     <router-link
       :to="{ name: 'ItemModifyPage', params: { itemId } }"
@@ -13,8 +13,8 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import { State, Action } from 'vuex-class';
-import { Item } from '../store';
 import AxiosService from '../service';
+import { Item } from '../store';
 
 import ItemRead from '../components/ItemRead.vue';
 

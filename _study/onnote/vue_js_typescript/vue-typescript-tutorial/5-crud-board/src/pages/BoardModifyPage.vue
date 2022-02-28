@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h3>게시글 수정</h3>
+    <h2>게시글 수정</h2>
     <board-modify-form v-if="board" :board="board" @submit="onSubmit" />
     <p v-else>Loading...</p>
   </div>
