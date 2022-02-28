@@ -43,6 +43,7 @@ export default class ItemRegisterForm extends Vue {
     const files: FileList | null = target.files;
     if (files) {
       this.file = files[0];
+      //console.log(this.file);
     }
   }
 

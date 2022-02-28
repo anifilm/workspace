@@ -7,7 +7,7 @@
         <th align="center" width="100">상품가격</th>
       </tr>
       <tr v-if="!items || (Array.isArray(items) && items.length === 0)">
-        <td colspan="4">List is empty.</td>
+        <td colspan="3">List is empty.</td>
       </tr>
       <tr v-else v-for="item in items" :key="item.itemId">
         <td align="center">{{ item.itemId }}</td>
