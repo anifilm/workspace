@@ -11,6 +11,7 @@ export interface Item {
   readonly itemName: string;
   readonly price: number;
   readonly description: string;
+  readonly pictureUrl: string;
 }
 
 function App() {

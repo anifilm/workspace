@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { FETCH_ITEM, fetchItem } from '../modules/item';
+import {
+  FETCH_ITEM,
+  fetchItem,
+} from '../modules/item';
 import axios from 'axios';
 
 import ItemModifyForm from '../components/ItemModifyForm';

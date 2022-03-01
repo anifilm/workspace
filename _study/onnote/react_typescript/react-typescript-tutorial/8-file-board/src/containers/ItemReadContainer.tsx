@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   FETCH_ITEM,
   fetchItem,
 } from '../modules/item';
 import { RootState } from '../modules';
-import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { removeItemApi } from '../lib/api';
 
 import ItemRead from '../components/ItemRead';
