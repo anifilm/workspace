@@ -31,6 +31,7 @@ export function* fetchItemSaga(action) {
   }
   yield put(endLoading(FETCH_ITEM));
 }
+
 // 상세 조회 태스크 수행
 export function* itemSaga() {
   yield takeLatest(FETCH_ITEM, fetchItemSaga);

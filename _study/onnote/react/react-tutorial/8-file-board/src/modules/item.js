@@ -50,6 +50,7 @@ function* fetchItemListSaga() {
   }
   yield put(endLoading(FETCH_ITEM_LIST));
 }
+
 // 상세 조회 태스크 수행
 export function* itemSaga() {
   yield takeLatest(FETCH_ITEM, fetchItemSaga);
