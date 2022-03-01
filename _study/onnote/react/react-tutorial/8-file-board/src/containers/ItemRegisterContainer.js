@@ -24,7 +24,9 @@ const ItemRegisterContainer = ({ history }) => {
         alert('등록되었습니다.');
         history.push('/read/' + res.data.itemId);
       })
-      .catch((err) => alert(err));
+      .catch((err) => {
+        alert(err)
+      });
   };
 
   return <ItemRegisterForm onRegister={onRegister} />;
