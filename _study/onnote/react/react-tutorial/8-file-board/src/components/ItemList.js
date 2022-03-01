@@ -24,7 +24,7 @@ function ItemList({ items, isLoading }) {
               {!items.length && (
                 <tr>
                   <td></td>
-                  <td colSpan={3}>List is empty.</td>
+                  <td colSpan="3">List is empty.</td>
                 </tr>
               )}
               {!!items.length &&

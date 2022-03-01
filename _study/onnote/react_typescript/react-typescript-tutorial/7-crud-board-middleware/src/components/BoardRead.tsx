@@ -56,7 +56,7 @@ function BoardRead({ boardNo, board, isLoading, onRemove }: Props) {
           <Link to="/" className="waves-effect waves-light btn">
             글 목록
           </Link>{' '}
-          <Link to={`/edit/${boardNo}`} className="waves-effect waves-light btn blue">수정</Link>{' '}
+          <Link to={`/edit/${boardNo}`} className="waves-effect waves-light btn blue">수정</Link>
           <button onClick={onRemove} className="waves-effect waves-light btn red right">삭제</button>
         </div>
       )}

@@ -54,7 +54,7 @@ function ItemRead() {
         <Link to="/" className="waves-effect waves-light btn">
           상품 목록
         </Link>{' '}
-        <Link to={`/edit/100`} className="waves-effect waves-light btn blue">수정</Link>{' '}
+        <Link to={`/edit/100`} className="waves-effect waves-light btn blue">수정</Link>
         <button className="waves-effect waves-light btn red right">삭제</button>
       </div>
     </div>
