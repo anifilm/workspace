@@ -54,6 +54,7 @@ const initialState: ItemState = {
     itemName: '',
     price: 0,
     description: '',
+    pictureUrl: '',
   },
   items: [],
   error: null,
