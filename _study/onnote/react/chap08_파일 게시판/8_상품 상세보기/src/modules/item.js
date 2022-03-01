@@ -6,7 +6,6 @@ import {
   endLoading,
 } from './loading';
 
-
 // 액션 타입
 const FETCH_SUCCESS = 'item/FETCH_SUCCESS';
 const FETCH_FAILURE = 'item/FETCH_FAILURE';
