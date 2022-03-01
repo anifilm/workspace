@@ -11,8 +11,8 @@ function App() {
     <>
       <Route path="/" component={ItemListContainer} exact />
       <Route path="/create" component={ItemRegisterContainer} />
-      <Route path="/read/:boardNo" component={ItemReadContainer} />
-      <Route path="/edit/:boardNo" component={ItemModifyContainer} />
+      <Route path="/read/:itemId" component={ItemReadContainer} />
+      <Route path="/edit/:itemId" component={ItemModifyContainer} />
     </>
   );
 }
