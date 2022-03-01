@@ -13,6 +13,7 @@ function ItemModifyForm({ item, isLoading, onModify }: Props) {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
   // 사용자 변경 이미지 파일명
+  //const [file, setFile] = useState<File>();
   const [file, setFile] = useState<any>();
   // 이미지 미리보기 관련 내용 추가
   const [preview, setPreview] = useState<any>();
