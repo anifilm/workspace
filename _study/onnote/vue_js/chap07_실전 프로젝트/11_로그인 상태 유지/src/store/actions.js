@@ -33,5 +33,5 @@ export default {
         console.log('signinByToken', res);
         commit(SET_USER_INFO, res.data);
       });
-  }
+  },
 };
