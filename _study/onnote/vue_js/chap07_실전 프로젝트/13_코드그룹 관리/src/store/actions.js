@@ -52,6 +52,6 @@ export default {
       .then((res) => {
         //console.log(`/codegroups/${groupCode}`, res.data);
         commit(FETCH_CODEGROUP, res.data);
-      })
-  }
+      });
+  },
 };

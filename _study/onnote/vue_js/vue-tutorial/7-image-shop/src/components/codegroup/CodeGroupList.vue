@@ -3,8 +3,8 @@
     <table>
       <tr>
         <th align="center" width="160">코드그룹코드</th>
-        <th align="center" width="160">코드그룹명</th>
-        <th align="center" width="180">등록일시</th>
+        <th align="center" width="180">코드그룹명</th>
+        <th align="center" width="160">등록일시</th>
       </tr>
       <tr v-if="!codeGroups || (Array.isArray(codeGroups) && codeGroups.length === 0)">
         <td colspan="3">List is empty.</td>
