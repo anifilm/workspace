@@ -6,7 +6,7 @@ import { HomeRouters } from './home';
 Vue.use(VueRouter);
 
 const routes = [
-  ...HomeRouters
+  ...HomeRouters,
 ];
 
 const router = new VueRouter({
