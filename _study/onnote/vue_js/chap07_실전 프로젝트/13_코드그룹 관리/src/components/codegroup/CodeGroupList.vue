@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table border="1">
+    <table>
       <tr>
         <th align="center" width="160">코드그룹코드</th>
         <th align="center" width="160">코드그룹명</th>
@@ -28,3 +28,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+table {
+  border-top: 1px solid lightgray;
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+</style>
