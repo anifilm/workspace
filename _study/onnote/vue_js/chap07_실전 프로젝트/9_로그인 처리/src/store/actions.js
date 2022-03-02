@@ -1,5 +1,7 @@
 import api from '../api';
-import { SET_ACCESS_TOKEN } from './mutation-types';
+import {
+  SET_ACCESS_TOKEN,
+} from './mutation-types';
 
 export default {
   signin({ commit }, payload) {
