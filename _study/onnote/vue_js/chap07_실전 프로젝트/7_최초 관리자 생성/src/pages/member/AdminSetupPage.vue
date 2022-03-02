@@ -7,6 +7,7 @@
 
 <script>
 import api from '@/api';
+
 import AdminSetupForm from '@/components/member/AdminSetupForm.vue';
 
 export default {
