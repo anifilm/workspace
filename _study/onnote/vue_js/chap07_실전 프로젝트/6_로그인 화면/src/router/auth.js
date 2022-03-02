@@ -1,7 +1,7 @@
 import HomeHeader from '@/components/common/HomeHeader.vue';
 import Footer from '@/components/common/Footer.vue';
 
-import Signin from '@/pages/auth/Signin.vue'
+import Signin from '@/pages/auth/Signin.vue';
 
 export const AuthRouters = [
   {

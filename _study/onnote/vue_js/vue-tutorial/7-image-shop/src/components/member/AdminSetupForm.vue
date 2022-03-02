@@ -6,12 +6,12 @@
         <td><input type="text" v-model="userId" /></td>
       </tr>
       <tr>
-        <td>관리자명</td>
-        <td><input type="text" v-model="userName" /></td>
-      </tr>
-      <tr>
         <td>비밀번호</td>
         <td><input type="password" v-model="userPw" /></td>
+      </tr>
+      <tr>
+        <td>관리자명</td>
+        <td><input type="text" v-model="userName" /></td>
       </tr>
       <tr>
         <td colspan="2" align="center">
@@ -28,14 +28,14 @@ export default {
   data() {
     return {
       userId: '',
-      userName: '',
       userPw: '',
+      userName: '',
     };
   },
   methods: {
     onSubmit() {
-      const { userId, userName, userPw } = this;
-      this.$emit('submit', { userId, userName, userPw });
+      const { userId, userPw, userName } = this;
+      this.$emit('submit', { userId, userPw, userName });
     },
   },
 };

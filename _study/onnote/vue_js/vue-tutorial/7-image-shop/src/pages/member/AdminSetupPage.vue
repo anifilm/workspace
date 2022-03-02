@@ -17,9 +17,9 @@ export default {
   },
   methods: {
     onSubmit(payload) {
-      const { userId, userName, userPw } = payload;
+      const { userId, userPw, userName } = payload;
       api
-        .post('/users/setup', { userId, userName, userPw })
+        .post('/users/setup', { userId, userPw, userName })
         .then((res) => {
           alert('등록이 완료되었습니다.');
           this.$router.push({
