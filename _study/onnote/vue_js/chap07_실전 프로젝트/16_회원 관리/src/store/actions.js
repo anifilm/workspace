@@ -83,6 +83,7 @@ export default {
   fetchMemberList({ commit }) {
     return api.get('/users')
       .then((res) => {
+        console.log(res);
         commit(FETCH_MEMBER_LIST, res.data);
       });
   },
