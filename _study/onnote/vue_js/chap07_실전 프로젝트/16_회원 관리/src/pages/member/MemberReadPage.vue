@@ -26,7 +26,7 @@ export default {
   },
   props: {
     userNo: {
-      type: Number|String,
+      type: [Number, String],
       required: true,
     },
   },

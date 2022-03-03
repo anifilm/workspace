@@ -26,11 +26,11 @@ export default {
     TodoItem,
   },
   computed: {
+    ...mapState(['editingId']),
+    ...mapGetters(['filteredTodos']),
     todos() {
       return this.filteredTodos;
     },
-    ...mapState(['editingId']),
-    ...mapGetters(['filteredTodos']),
   },
   methods: {
     ...mapMutations([
