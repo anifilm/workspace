@@ -19,14 +19,6 @@ export const BoardRouters = [
       default: BoardListPage,
       footer: Footer,
     },
-    beforeEnter(to, from, next) {
-      const { isAdmin } = store.getters;
-      if (!isAdmin) {
-        alert('관리자 권한이 필요합니다.');
-        next({ name: 'Signin' });
-      }
-      next();
-    },
   },
   {
     path: '/board/register',
@@ -38,9 +30,9 @@ export const BoardRouters = [
       footer: Footer,
     },
     beforeEnter(to, from, next) {
-      const { isAdmin } = store.getters;
-      if (!isAdmin) {
-        alert('관리자 권한이 필요합니다.');
+      const { isAuthorized } = store.getters;
+      if (!isAuthorized) {
+        alert('로그인이 필요합니다.');
         next({ name: 'Signin' });
       }
       next();
@@ -58,14 +50,6 @@ export const BoardRouters = [
     props: {
       default: true,
     },
-    beforeEnter(to, from, next) {
-      const { isAdmin } = store.getters;
-      if (!isAdmin) {
-        alert('관리자 권한이 필요합니다.');
-        next({ name: 'Signin' });
-      }
-      next();
-    },
   },
   {
     path: '/board/:boardNo/modify',
@@ -80,12 +64,26 @@ export const BoardRouters = [
       default: true,
     },
     beforeEnter(to, from, next) {
-      const { isAdmin } = store.getters;
-      if (!isAdmin) {
-        alert('관리자 권한이 필요합니다.');
+      const { isAuthorized } = store.getters;
+      if (!isAuthorized) {
+        alert('로그인이 필요합니다.');
         next({ name: 'Signin' });
       }
-      next();
+      store.dispatch('fetchBoard', to.params.boardNo)
+        .then(() => {
+          const board = store.state.board;
+          const isAuthor = board.writer === store.state.userInfo.userId;
+          if (isAuthor) {
+            next();
+          } else {
+            alert('게시물의 작성자만 수정할 수 있습니다.');
+            next(false);
+          }
+        })
+        .catch((err) => {
+          alert(err.response.data.message);
+          next(false);
+        });
     },
   },
 ]
