@@ -56,7 +56,7 @@ export default {
           });
         })
         .catch((err) => {
-          alert(err.response.data.msg);
+          alert(err.response.data.massage);
         });
     },
   },

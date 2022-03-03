@@ -36,7 +36,7 @@ export default {
   created() {
     this.fetchItem(this.itemId)
       .catch((err) => {
-        alert(err.response.data.msg);
+        alert(err.response.data.massage);
         this.$router.back();
       });
   },

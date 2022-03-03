@@ -41,14 +41,14 @@ export default {
           this.$router.push({ name: 'ItemListPage' });
         })
         .catch((err) => {
-          alert(err.response.data.msg);
+          alert(err.response.data.massage);
         });
     },
   },
   created() {
     this.fetchItem(this.itemId)
       .catch((err) => {
-        alert(err.response.data.msg);
+        alert(err.response.data.massage);
         this.$router.back();
       });
   },
