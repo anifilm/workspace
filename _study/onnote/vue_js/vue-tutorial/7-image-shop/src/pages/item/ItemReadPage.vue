@@ -40,7 +40,7 @@ export default {
       const { itemId } = this.item;
       api.delete(`/items/${itemId}`)
         .then((res) => {
-          alert('삭제되었습니다.');
+          alert('삭제가 완료되었습니다.');
           this.$router.push({ name: 'ItemListPage' });
         })
         .catch((err) => {
