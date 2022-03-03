@@ -114,7 +114,7 @@ export default {
         commit(FETCH_NOTICE_LIST, res.data);
       });
   },
-  fetchNotice({ commit }, boardNo) {
+  fetchNotice({ commit }, noticeNo) {
     return api.get(`/notices/${noticeNo}`)
       .then((res) => {
         commit(FETCH_NOTICE, res.data);

@@ -1,28 +1,21 @@
 <template>
   <div align="center">
-    <h2>공지사항 상세보기</h2>
-    <notice-read v-if="notice" :notice="notice" />
+    <h2>공지사항 수정</h2>
+    <notice-modify-form v-if="notice" :notice="notice" @submit="onSubmit" />
     <p v-else>Loading...</p>
-    <template v-if="isAdmin">
-      <router-link
-        :to="{ name: 'NoticeModifyPage', params: { noticeNo } }"
-      >수정</router-link>
-      <button @click="onDelete">삭제</button>
-    </template>
-    <router-link :to="{ name: 'NoticeListPage' }">목록</router-link>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import api from '@/api';
 
-import NoticeRead from '@/components/notice/NoticeRead.vue';
+import NoticeModifyForm from '@/components/notice/NoticeModifyForm.vue';
 
 export default {
-  name: 'NoticeReadPage',
+  name: 'NoticeModifyPage',
   components: {
-    NoticeRead,
+    NoticeModifyForm,
   },
   props: {
     noticeNo: {
@@ -32,16 +25,20 @@ export default {
   },
   computed: {
     ...mapState(['notice']),
-    ...mapGetters(['isAdmin']),
   },
   methods: {
     ...mapActions(['fetchNotice']),
-    onDelete() {
-      const { noticeNo } = this.notice;
-      api.delete(`/notices/${noticeNo}`)
+    onSubmit(payload) {
+      const { title, content } = payload;
+      api.put(`/notices/${this.noticeNo}`, { title, content })
         .then((res) => {
-          alert('삭제가 완료되었습니다.');
-          this.$router.push({ name: 'NoticeListPage' });
+          alert('수정이 완료되었습니다.');
+          this.$router.push({
+            name: 'NoticeReadPage',
+            params: {
+              noticeNo: res.data.noticeNo.toString(),
+            },
+          });
         })
         .catch((err) => {
           if (err.response.status === 401) {
