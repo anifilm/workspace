@@ -30,9 +30,9 @@ export const NoticeRouters = [
       footer: Footer,
     },
     beforeEnter(to, from, next) {
-      const { isAuthorized } = store.getters;
-      if (!isAuthorized) {
-        alert('로그인이 필요합니다.');
+      const { isAdmin } = store.getters;
+      if (!isAdmin) {
+        alert('관리자 권한이 필요합니다.');
         next({ name: 'Signin' });
       }
       next();
@@ -64,26 +64,12 @@ export const NoticeRouters = [
       default: true,
     },
     beforeEnter(to, from, next) {
-      const { isAuthorized } = store.getters;
-      if (!isAuthorized) {
-        alert('로그인이 필요합니다.');
+      const { isAdmin } = store.getters;
+      if (!isAdmin) {
+        alert('관리자 권한이 필요합니다.');
         next({ name: 'Signin' });
       }
-      store.dispatch('fetchNotice', to.params.noticeNo)
-        .then(() => {
-          const notice = store.state.notice;
-          const isAuthor = notice.writer === store.state.userInfo.userId;
-          if (isAuthor) {
-            next();
-          } else {
-            alert('게시물의 작성자만 수정할 수 있습니다.');
-            next(false);
-          }
-        })
-        .catch((err) => {
-          alert(err.response.data.message);
-          next(false);
-        });
+      next();
     },
   },
 ]

@@ -12,7 +12,7 @@
     </table>
 
     <div>
-      <button type="submit" v-if="isAuthorized">등록</button>
+      <button type="submit">등록</button>
       <router-link :to="{ name: 'NoticeListPage' }">취소</router-link>
     </div>
   </form>

@@ -16,7 +16,7 @@ export default {
     BoardRegisterForm,
   },
   methods: {
-onSubmit(payload) {
+    onSubmit(payload) {
       const { title, content, writer } = payload;
       api.post('/boards', { title, content, writer })
         .then((res) => {

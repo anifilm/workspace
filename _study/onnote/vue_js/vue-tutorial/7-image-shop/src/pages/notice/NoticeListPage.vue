@@ -1,5 +1,9 @@
 <template>
-
+  <div align="center">
+    <h2>공지사항 목록</h2>
+    <router-link v-if="isAdmin" :to="{ name: 'NoticeRegisterPage' }">새로만들기</router-link>
+    <notice-list :notices="notices" />
+  </div>
 </template>
 
 <script>
