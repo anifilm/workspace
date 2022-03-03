@@ -14,11 +14,11 @@
         <td><input type="text" :value="item.price" readonly />원</td>
       </tr>
       <tr>
-        <td>미리보기</td>
+        <td>상품파일</td>
         <td><img v-bind:src="pictureUrl()" width="170" /></td>
       </tr>
       <tr>
-        <td>미리보기</td>
+        <td>미리보기파일</td>
         <td><img v-bind:src="previewUrl()" width="170" /></td>
       </tr>
       <tr>
