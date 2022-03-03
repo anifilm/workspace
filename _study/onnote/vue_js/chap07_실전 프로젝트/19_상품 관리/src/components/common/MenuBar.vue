@@ -22,6 +22,7 @@
         <template v-else>
           <td width="60"><router-link :to="{ name: 'Home' }">홈</router-link></td>
           <td width="120"><router-link :to="{ name: 'BoardListPage' }">회원게시판</router-link></td>
+          <td width="120"><router-link :to="{ name: 'ItemListPage' }">상품게시판</router-link></td>
           <td width="100"><router-link :to="{ name: 'NoticeListPage' }">공지사항</router-link></td>
         </template>
       </tr>
