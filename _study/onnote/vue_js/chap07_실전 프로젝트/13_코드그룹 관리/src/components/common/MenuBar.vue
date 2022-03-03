@@ -4,15 +4,15 @@
       <tr>
         <template v-if="isAuthorized">
           <template v-if="isAdmin">
-            <td width="120"><router-link :to="{ name: 'Home' }">홈</router-link></td>
+            <td width="6-"><router-link :to="{ name: 'Home' }">홈</router-link></td>
             <td width="120"><router-link :to="{ name: 'CodeGroupListPage' }">코드그룹관리</router-link></td>
           </template>
           <template v-else>
-            <td width="120"><router-link :to="{ name: 'Home' }">홈</router-link></td>
+            <td width="60"><router-link :to="{ name: 'Home' }">홈</router-link></td>
           </template>
         </template>
         <template v-else>
-          <td width="120"><router-link :to="{ name: 'Home' }">홈</router-link></td>
+          <td width="60"><router-link :to="{ name: 'Home' }">홈</router-link></td>
         </template>
       </tr>
     </table>
