@@ -9,8 +9,10 @@ import Cookies from 'js-cookie';
 
 // 로그인여부와 로그인한 사용자 정보 속성값으로 수신
 const MainHeaderContainer = ({ isAuthorized, userInfo }) => {
+  // 스토어 dispatch 사용
   const dispatch = useDispatch();
 
+  // 로그아웃 처리
   const onLogout = () => {
     delete client.defaults.headers.common.Authorization;
     Cookies.remove('accessToken');
