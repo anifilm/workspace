@@ -7,15 +7,15 @@ const AdminSetupForm = ({ onRegister }) => {
   const [userPw, setUserPw] = useState('');
   const [userName, setUserName] = useState('');
 
-  // 회원 아이디의 변경을 처리하는 함수
+  // 회원 아이디의 입력을 처리하는 함수
   const handleChangeUserId = useCallback((e) => {
     setUserId(e.target.value);
   }, []);
-  // 비밀번호의 변경을 처리하는 함수
-  const handleChangePassword = useCallback((e) => {
+  // 비밀번호의 입력을 처리하는 함수
+  const handleChangeUserPw = useCallback((e) => {
     setUserPw(e.target.value);
   }, []);
-  // 사용자명의 변경을 처리하는 함수
+  // 사용자명의 입력을 처리하는 함수
   const handleChangeUserName = useCallback((e) => {
     setUserName(e.target.value);
   }, []);
@@ -43,7 +43,7 @@ const AdminSetupForm = ({ onRegister }) => {
             <div>
               <div>비밀번호</div>
               <div>
-                <input type="password" value={userPw} onChange={handleChangePassword} />
+                <input type="password" value={userPw} onChange={handleChangeUserPw} />
               </div>
             </div>
             <div>
