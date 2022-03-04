@@ -9,7 +9,9 @@ const rootReducer = combineReducers({
 
 // 루트 사가
 export function* rootSaga() {
-  yield all([authSaga()]);
+  yield all([
+    authSaga(),
+  ]);
 }
 
 export default rootReducer;
