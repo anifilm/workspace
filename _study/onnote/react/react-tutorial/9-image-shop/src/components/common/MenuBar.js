@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const MenuBar = () => {
   return (
-    <div align="center">
+    <div>
       <table>
         <tbody>
           <tr>
-            <td width="120"><Link to="/">홈</Link></td>
+            <td style={{ width: 120, textAlign: 'center' }}><Link to="/">홈</Link></td>
           </tr>
         </tbody>
       </table>

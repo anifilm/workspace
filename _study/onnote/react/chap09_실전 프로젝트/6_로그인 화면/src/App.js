@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
-import SignInPage from './pages/auth/SignInPage';
+import HomePage from 'pages/HomePage';
+import SignInPage from 'pages/auth/SignInPage';
 
 const App = () => {
   return (
