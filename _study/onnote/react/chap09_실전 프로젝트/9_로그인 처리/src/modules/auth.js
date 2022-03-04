@@ -15,14 +15,11 @@ export const login = createAction(LOGIN, ({ userId, userPw }) => ({ userId, user
 function* loginSaga(action) {
   try {
     const { userId, userPw } = action.payload;
-
     const response = yield call(signIn, userId, userPw);
-
     const { authorization } = response.headers;
     const accessToken = authorization.substring(7);
 
     yield put(setAccessToken(accessToken));
-
     client.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
   } catch (err) {
     console.log(err);
@@ -36,7 +33,7 @@ export function* authSaga() {
 
 // 초기 상태
 const initialState = {
-  accessToken: ''
+  accessToken: '',
 };
 
 // 리듀서 함수 정의
