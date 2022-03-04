@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 
-const App = () => {
+function App() {
   return <Route path="/" component={HomePage} exact />;
 }
 

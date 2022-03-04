@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Home from '../components/Home';
 import MainLayout from '../layout/MainLayout';
 
