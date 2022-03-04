@@ -1,17 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import CodeGroupRegisterForm from 'components/codegroup/CodeGroupRegisterForm';
-import { writeCodeGroup } from 'lib/api';
+import CodeDetailRegisterForm from 'components/codedetail/CodeDetailRegisterForm';
+import { writeCodeDetail } from 'lib/api';
 
 // withRouter 함수의 기능이 적용되어 속성으로 history를 전달받음
-const CodeGroupRegisterContainer = ({ history }) => {
+const CodeDetailRegisterContainer = ({ history }) => {
   // 등록 처리
-  const onRegister = async (groupCode, groupName) => {
+  const onRegister = async (groupCode, codeValue, codeName) => {
     try {
-      const response = await writeCodeGroup(groupCode, groupName);
+      const response = await writeCodeDetail(groupCode, codeValue, codeName);
       alert('등록이 완료되었습니다.');
-      history.push(`/codegroup/read/${response.data.groupCode}`);
+      history.push(`/codedetail/read/${response.data.groupCode}/${response.data.codeValue}`);
     } catch (err) {
       if (err.response.status === 400) {
         alert('잘못된 요청입니다.');
@@ -27,9 +27,9 @@ const CodeGroupRegisterContainer = ({ history }) => {
     }
   };
 
-  // 코드그룹 등록 폼 컴포넌트 표시
-  return <CodeGroupRegisterForm onRegister={onRegister} />;
+  // 코드 등록 폼 컴포넌트 표시
+  return <CodeDetailRegisterForm onRegister={onRegister} />;
 };
 
 // withRouter 함수를 사용하여 history 객체에 접근
-export default withRouter(CodeGroupRegisterContainer);
+export default withRouter(CodeDetailRegisterContainer);

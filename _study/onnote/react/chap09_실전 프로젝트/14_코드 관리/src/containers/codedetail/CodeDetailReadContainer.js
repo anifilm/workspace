@@ -2,31 +2,31 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import CodeGroupRead from 'components/codegroup/CodeGroupRead';
-import { FETCH_ONE, fetchOne } from 'modules/codegroup';
-import { removeCodeGroup } from 'lib/api';
+import CodeDetailRead from 'components/codedetail/CodeDetailRead';
+import { FETCH_ONE, fetchOne } from 'modules/codedetail';
+import { removeCodeDetail } from 'lib/api';
 
-// 속성값으로 groupCode와 history를 전달받음
-const CodeGroupReadContainer = ({ groupCode, history }) => {
+// 속성값으로 groupCode, codeValue와 history를 전달받음
+const CodeDetailReadContainer = ({ groupCode, codeValue, history }) => {
   // 스토어 상태 조회
-  const { codeGroup, isLoading } = useSelector(({ codegroup, loading }) => ({
-    codeGroup: codegroup.codeGroup,
+  const { codeDetail, isLoading } = useSelector(({ codedetail, loading }) => ({
+    codeDetail: codedetail.codeDetail,
     isLoading: loading[FETCH_ONE],
   }));
   // 스토어 dispatch 사용 가능
   const dispatch = useDispatch();
 
-  // 마운트될 때 코드그룹 상제정보를 가져옴
+  // 마운트될 때 코드 상제정보를 가져옴
   useEffect(() => {
-    dispatch(fetchOne(groupCode));
-  }, [dispatch, groupCode]);
+    dispatch(fetchOne(groupCode, codeValue));
+  }, [dispatch, groupCode, codeValue]);
 
   // 삭제 처리
   const onRemove = async () => {
     try {
-      await removeCodeGroup(groupCode);
+      await removeCodeDetail(groupCode, codeValue);
       alert('삭제가 완료되었습니다.');
-      history.push('/codegroup');
+      history.push('/codedetail');
     } catch (err) {
       if (err.response.status === 400) {
         alert('잘못된 요청입니다.');
@@ -42,11 +42,12 @@ const CodeGroupReadContainer = ({ groupCode, history }) => {
     }
   };
 
-  // 코드그룹 상세보기 컴포넌트 표시
+  // 코드 상세보기 컴포넌트 표시
   return (
-    <CodeGroupRead
-      codeGroup={codeGroup}
+    <CodeDetailRead
+      codeDetail={codeDetail}
       groupCode={groupCode}
+      codeValue={codeValue}
       isLoading={isLoading}
       onRemove={onRemove}
     />
@@ -54,4 +55,4 @@ const CodeGroupReadContainer = ({ groupCode, history }) => {
 };
 
 // withRouter 함수를 사용하여 history 객체에 접근
-export default withRouter(CodeGroupReadContainer);
+export default withRouter(CodeDetailReadContainer);

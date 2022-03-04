@@ -7,5 +7,4 @@ export const adminSetup = (userId, userPw, userName) =>
 export const signIn = (userId, userPw) =>
   client.post(`/api/authenticate?username=${userId}&password=${userPw}`);
 // 로그인 사용자 정보 수신 API 호출 함수
-export const getUserInfo = () =>
-  client.get('/users/myinfo');
+export const getUserInfo = () => client.get('/users/myinfo');

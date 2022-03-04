@@ -17,8 +17,10 @@ const CodeGroupRegisterContainer = ({ history }) => {
         alert('잘못된 요청입니다.');
       } else if (err.response.status === 401) {
         alert('로그인이 필요합니다.');
+        history.push('/signin');
       } else if (err.response.status === 403) {
         alert('접근 권한이 없습니다.');
+        history.goBack();
       } else {
         alert(err.response.data.message);
       }

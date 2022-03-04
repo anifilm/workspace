@@ -7,11 +7,9 @@ export const adminSetup = (userId, userPw, userName) =>
 export const signIn = (userId, userPw) =>
   client.post(`/api/authenticate?username=${userId}&password=${userPw}`);
 // 로그인 사용자 정보 수신 API 호출 함수
-export const getUserInfo = () =>
-  client.get('/users/myinfo');
-// 코드그룹 관련 API 호출 함수
-export const fetchCodeGroupList = () =>
-  client.get('/codegroups');
+export const getUserInfo = () => client.get('/users/myinfo');
+// 코드그룹 관리 API 호출 함수
+export const fetchCodeGroupList = () => client.get('/codegroups');
 export const fetchCodeGroup = (groupCode) =>
   client.get(`/codegroups/${groupCode}`);
 export const writeCodeGroup = (groupCode, groupName) =>

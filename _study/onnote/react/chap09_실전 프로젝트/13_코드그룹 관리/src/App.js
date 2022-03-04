@@ -19,8 +19,8 @@ function App() {
       {/* 코드그룹 페이지 라우트 */}
       <Route path="/codegroup" component={CodeGroupListPage} exact />
       <Route path="/codegroup/create" component={CodeGroupRegisterPage} />
-      <Route path="/codegroup/read/:groupCode" component={CodeGroupReadPage} exact />
-      <Route path="/codegroup/edit/:groupCode" component={CodeGroupModifyPage} exact />
+      <Route path="/codegroup/read/:groupCode" component={CodeGroupReadPage} />
+      <Route path="/codegroup/edit/:groupCode" component={CodeGroupModifyPage} />
     </>
   );
 }
