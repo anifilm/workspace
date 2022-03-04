@@ -1,18 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import HomePage from './pages/HomePage';
-import SignInPage from './pages/auth/SignInPage';
-import AdminSetupPage from './pages/member/AdminSetupPage';
+import Home from './components/Home';
 
 const App = () => {
-  return (
-    <div>
-      <Route path="/" component={HomePage} exact />
-      <Route path="/signin" component={SignInPage} exact />
-      <Route path="/member/setup" component={AdminSetupPage} />
-    </div>
-  );
+  return <Route path="/" component={Home} exact />;
 }
 
 export default App;
