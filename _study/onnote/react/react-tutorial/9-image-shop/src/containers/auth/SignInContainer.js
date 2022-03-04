@@ -24,13 +24,13 @@ const SignInContainer = ({ history }) => {
     }
   };
 
-  // 마운트될 때 액세스 토큰 상태 정보 확인
+  // checkUserInfo 액션 디스패치
   useEffect(() => {
     if (accessToken) {
       dispatch(checkUserInfo());
     }
   }, [accessToken, dispatch]);
-
+  // 마운트될 때 사용자정보 확인
   useEffect(() => {
     if (userInfo) {
       alert('로그인 되었습니다.');
