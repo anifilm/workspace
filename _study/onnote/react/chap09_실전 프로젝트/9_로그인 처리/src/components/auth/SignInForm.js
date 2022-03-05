@@ -31,13 +31,13 @@ const SignInForm = ({ onSignIn }) => {
             <div>
               <div>아이디</div>
               <div>
-                <input type="text" value={userId} onChange={handleChangeUserId} />
+                <input type="text" value={userId} onChange={handleChangeUserId} required />
               </div>
             </div>
             <div>
               <div>비밀번호</div>
               <div>
-                <input type="password" value={userPw} onChange={handleChangeUserPw} />
+                <input type="password" value={userPw} onChange={handleChangeUserPw} required />
               </div>
             </div>
           </div>

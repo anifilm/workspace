@@ -1,7 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { fetchJobCodeList } from 'lib/api';
+
+import M from 'materialize-css';
 
 // 등록 처리 함수를 컴포넌트 속성으로 전달받음
-const AdminSetupForm = ({ onRegister }) => {
+const SignUpForm = ({ onSignUp }) => {
   // 컴포넌트 상태 설정
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
@@ -9,12 +13,14 @@ const AdminSetupForm = ({ onRegister }) => {
   const [checkPw, setCheckPw] = useState(false);
   const [userPwErr, setUserPwErr] = useState(false);
   const [userName, setUserName] = useState('');
+  const [job, setJob] = useState('01'); // 기본값 01 - 'Developer'
+  const [jobCodes, setJobCodes] = useState([]);
 
   // 회원 아이디의 입력을 처리하는 함수
   const handleChangeUserId = useCallback((e) => {
     setUserId(e.target.value);
   }, []);
-  // 비밀번호의 입력을 처리하는 함수
+  // 비밀번호의 입력의 처리하는 함수
   const handleChangeUserPw = useCallback((e) => {
     setUserPw(e.target.value);
   }, []);
@@ -25,6 +31,11 @@ const AdminSetupForm = ({ onRegister }) => {
   // 사용자명의 입력을 처리하는 함수
   const handleChangeUserName = useCallback((e) => {
     setUserName(e.target.value);
+  }, []);
+  // 직업의 입력을 처리하는 함수
+  const handleChangeJob = useCallback((e) => {
+    console.log(e.target.value);
+    setJob(e.target.value);
   }, []);
 
   // 비밀번호 일치 확인
@@ -55,23 +66,41 @@ const AdminSetupForm = ({ onRegister }) => {
       setUserPwErr(true); // 오류!
       return;
     }
-    onRegister(userId, userPw, userName);
-  }, [userId, userPw, checkPw, userName, checkPassword, onRegister]);
+    onSignUp(userId, userPw, userName, job);
+  }, [userId, userPw, checkPw, userName, job, checkPassword, onSignUp]);
+
+  // 직업코드 목록을 가져옴
+  const getJobCodeList = async () => {
+    try {
+      const response = await fetchJobCodeList();
+      setJobCodes(response.data);
+    } catch (err) {
+      throw err;
+    }
+  };
+
+  useEffect(() => {
+    M.AutoInit(); // materialize select 태그 사용
+  });
+
+  // 마운트될 때 직업코드 목록을 가져옴
+  useEffect(() => {
+    getJobCodeList();
+  }, []);
 
   useEffect(() => {
     checkPassword();
   }, [userPw, userPw2, checkPassword])
 
-  // 회원 등록 폼 화면 표시
   return (
     <div className="container">
-      <h3 className="center">최초관리자 등록</h3>
+      <h3 className="center">회원가입</h3>
       <br />
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col s6 offset-s3">
             <div>
-              <div>관리자아이디</div>
+              <div>아이디</div>
               <div>
                 <input type="text" value={userId} onChange={handleChangeUserId} required />
               </div>
@@ -89,23 +118,35 @@ const AdminSetupForm = ({ onRegister }) => {
               </div>
             </div>
             <div>
-              <div>관리자이름</div>
+              <div>사용자명</div>
               <div>
                 <input type="text" value={userName} onChange={handleChangeUserName} required />
               </div>
+            </div>
+            <div>
+              <div>직업</div>
+              <select value={job} onChange={handleChangeJob}>
+                {jobCodes.map((jobCode) => (
+                  <option value={jobCode.value} key={jobCode.value}>
+                    {jobCode.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col s12">
             <div className="center">
-              <button type="submit" className="waves-effect waves-light btn">등록</button>
+              <button type="submit" className="waves-effect waves-light btn">회원가입</button>
             </div>
           </div>
         </div>
       </form>
+      {/* 로그인 링크 */}
+      <p align="center"><Link to="/signin">로그인</Link></p>
     </div>
   );
-};
+}
 
-export default AdminSetupForm;
+export default SignUpForm;
