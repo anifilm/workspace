@@ -17,9 +17,13 @@ const CodeDetailRead = ({ codeDetail, groupCode, codeValue, isLoading, onRemove 
       throw err;
     }
   };
-  // 마운트될 때 그룹코드 목록을 가져옴
+
   useEffect(() => {
     M.AutoInit(); // materialize select 태그 사용
+  });
+
+  // 마운트될 때 그룹코드 목록을 가져옴
+  useEffect(() => {
     getGroupCodeList();
   }, []);
 

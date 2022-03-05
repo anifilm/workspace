@@ -30,9 +30,12 @@ const CodeDetailModifyForm = ({ codeDetail, isLoading, onModify }) => {
     }
   };
 
-  // 마운팅될 때 그룹코드 목록을 가져옴
   useEffect(() => {
     M.AutoInit(); // materialize select 태그 사용
+  });
+
+  // 마운팅될 때 그룹코드 목록을 가져옴
+  useEffect(() => {
     getGroupCodeList();
   }, []);
 
