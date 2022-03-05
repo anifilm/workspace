@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // 부모 컴포넌트에서 컴포넌트 속성으로 수신
-const BoardList = ({ boards, isLoading }) => {
+const BoardList = ({ boards, isMember, isLoading }) => {
   return (
     <div className="container">
-      <h3>게시글 목록</h3>
+      <h3 style={{ marginBottom: '30px' }}>게시글 목록</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>
@@ -34,15 +34,19 @@ const BoardList = ({ boards, isLoading }) => {
               {!!boards.length && boards.map((board) => (
                 <tr key={board.boardNo}>
                   <td style={{ textAlign: 'center' }}>{board.boardNo}</td>
-                  <td style={{ textAlign: 'left', paddingLeft: 50 }}><Link to={`/read/${board.boardNo}`}>{board.title}</Link></td>
+                  <td style={{ textAlign: 'left', paddingLeft: 50 }}><Link to={`/board/read/${board.boardNo}`}>{board.title}</Link></td>
                   <td style={{ textAlign: 'center' }}>{board.writer}</td>
                   <td style={{ textAlign: 'center' }}>{board.regDate}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <br />
-          <Link to="/create" className="waves-effect waves-light btn blue">새로운 글 작성</Link>
+          {isMember && (
+            <>
+              <br />
+              <Link to="/board/create" className="waves-effect waves-light btn blue">새로운 글 작성</Link>
+            </>
+          )}
         </>
       )}
     </div>

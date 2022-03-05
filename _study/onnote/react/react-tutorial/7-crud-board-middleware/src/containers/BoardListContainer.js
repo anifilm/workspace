@@ -8,7 +8,7 @@ import BoardList from '../components/BoardList';
 
 const BoardListContainer = () => {
   // 스토어 상태 조회
-  const { boards, isLoading } = useSelector(({ board, loading}) => ({
+  const { boards, isLoading } = useSelector(({ board, loading }) => ({
     boards: board.boards,
     isLoading: loading.FETCH_LIST,
   }));
