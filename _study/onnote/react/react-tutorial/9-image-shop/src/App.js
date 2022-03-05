@@ -15,6 +15,11 @@ import CodeDetailListPage from 'pages/codedetail/CodeDetailListPage';
 import CodeDetailRegisterPage from 'pages/codedetail/CodeDetailRegisterPage';
 import CodeDetailReadPage from 'pages/codedetail/CodeDetailReadPage';
 import CodeDetailModifyPage from 'pages/codedetail/CodeDetailModifyPage';
+// 회원 관리 페이지 컴포넌트
+import MemberListPage from 'pages/member/MemberListPage';
+import MemberRegisterPage from 'pages/member/MemberRegisterPage';
+import MemberReadPage from 'pages/member/MemberReadPage';
+import MemberModifyPage from 'pages/member/MemberModifyPage';
 
 function App() {
   return (
@@ -33,6 +38,11 @@ function App() {
       <Route path="/codedetail/create" component={CodeDetailRegisterPage} />
       <Route path="/codedetail/read/:groupCode/:codeValue" component={CodeDetailReadPage} />
       <Route path="/codedetail/edit/:groupCode/:codeValue" component={CodeDetailModifyPage} />
+      {/* 회원 관리 페이지 라우트 */}
+      <Route path="/member" component={MemberListPage} exact />
+      <Route path="/member/create" component={MemberRegisterPage} />
+      <Route path="/member/read/:groupCode/:codeValue" component={MemberReadPage} />
+      <Route path="/member/edit/:groupCode/:codeValue" component={MemberModifyPage} />
     </>
   );
 }
