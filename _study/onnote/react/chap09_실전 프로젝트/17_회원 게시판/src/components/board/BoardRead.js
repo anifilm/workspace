@@ -18,7 +18,7 @@ const BoardRead = ({ boardNo, board, userInfo, isLoading, onRemove }) => {
 
   return (
     <div className="container">
-      <h3 style={{ marginBottom: '40px' }}>작성글 상세보기</h3>
+      <h3 className="center" style={{ marginBottom: '40px' }}>작성글 상세보기</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>

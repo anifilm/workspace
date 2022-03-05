@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const BoardList = ({ boards, isMember, isLoading }) => {
   return (
     <div className="container">
-      <h3 style={{ marginBottom: '30px' }}>게시글 목록</h3>
+      <h3 className="center" style={{ marginBottom: '30px' }}>게시글 목록</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>

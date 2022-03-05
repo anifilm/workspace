@@ -24,7 +24,7 @@ const BoardRegisterForm = ({ onRegister }) => {
 
   return (
     <div className="container">
-      <h3 style={{ marginBottom: '40px' }}>새로운 글 작성</h3>
+      <h3 className="center" style={{ marginBottom: '40px' }}>새로운 글 작성</h3>
       <form onSubmit={handleSubmit} className="col s12">
         <div className="row">
           <div className="input-field col s12">

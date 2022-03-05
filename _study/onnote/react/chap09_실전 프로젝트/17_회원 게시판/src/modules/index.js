@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   codegroup,
   codedetail,
   member,
-  board
+  board,
 });
 
 // 루트 사가

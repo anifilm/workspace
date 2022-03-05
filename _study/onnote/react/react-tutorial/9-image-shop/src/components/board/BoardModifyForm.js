@@ -15,9 +15,11 @@ const BoardModifyForm = ({ board, userInfo, isLoading, onModify }) => {
     }
   }
 
+  // 게시물 제목의 변경을 처리하는 함수
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
+  // 게시물 내용의 변경을 처리하는 함수
   const handleChangeContent = (e) => {
     setContent(e.target.value);
   };
@@ -39,7 +41,7 @@ const BoardModifyForm = ({ board, userInfo, isLoading, onModify }) => {
   // 게시글 수정 폼 화면 표시
   return (
     <div className="container">
-      <h3 style={{ marginBottom: '40px' }}>작성글 수정</h3>
+      <h3 className="center" style={{ marginBottom: '40px' }}>작성글 수정</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>
