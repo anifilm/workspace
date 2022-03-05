@@ -13,7 +13,7 @@ const FETCH_LIST_SUCCESS = 'member/FETCH_LIST_SUCCESS';
 const FETCH_LIST_FAILURE = 'member/FETCH_LIST_FAILURE';
 
 // 액션 생성 함수
-export const fetchOne = createAction(FETCH_ONE, (userNo) => ({ userNo }));
+export const fetchOne = createAction(FETCH_ONE, (userNo) => userNo);
 export const fetchList = createAction(FETCH_LIST);
 
 // 비동기 액션을 수행하는 태스크 작성

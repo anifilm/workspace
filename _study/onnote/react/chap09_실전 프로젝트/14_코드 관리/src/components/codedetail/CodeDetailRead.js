@@ -40,14 +40,14 @@ const CodeDetailRead = ({ codeDetail, groupCode, codeValue, isLoading, onRemove 
         <div className="row">
           <div className="row">
             <div className="input-field col s12">
-              <select value={codeDetail.groupCode} readOnly>
+              <select id="groupCode" value={codeDetail.groupCode} readOnly>
                 {groupCodes.map((groupCode) => (
                   <option value={groupCode.value} key={groupCode.value}>
                     {groupCode.label}
                   </option>
                 ))}
               </select>
-              <label className="active" htmlFor="groupCode">그룹코드</label>
+              <label htmlFor="groupCode">그룹코드</label>
             </div>
             <div className="input-field col s6">
               <input

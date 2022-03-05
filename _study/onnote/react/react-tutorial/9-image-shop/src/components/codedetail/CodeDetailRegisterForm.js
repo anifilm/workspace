@@ -58,14 +58,14 @@ const CodeDetailRegisterForm = ({ onRegister }) => {
         <form onSubmit={handleSubmit} className="col s12">
           <div className="row">
             <div className="input-field col s12">
-              <select onChange={handleChangeGroupCode} value={groupCode}>
+              <select id="groupCode" onChange={handleChangeGroupCode} value={groupCode}>
                 {groupCodes.map((groupCode) => (
                   <option value={groupCode.value} key={groupCode.value}>
                     {groupCode.label}
                   </option>
                 ))}
               </select>
-              <label className="active" htmlFor="groupCode">그룹코드</label>
+              <label htmlFor="groupCode">그룹코드</label>
             </div>
             <div className="input-field col s12">
               <input

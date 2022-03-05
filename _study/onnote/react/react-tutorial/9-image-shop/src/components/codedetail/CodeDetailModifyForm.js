@@ -61,14 +61,14 @@ const CodeDetailModifyForm = ({ codeDetail, isLoading, onModify }) => {
           <form onSubmit={handleSubmit} className="col s12">
             <div className="row">
               <div className="input-field col s12">
-                <select value={codeDetail.groupCode} disabled>
+                <select id="groupCode" value={codeDetail.groupCode} disabled>
                   {groupCodes.map((groupCode) => (
                     <option value={groupCode.value} key={groupCode.value}>
                       {groupCode.label}
                     </option>
                   ))}
                 </select>
-                <label className="active" htmlFor="groupCode">그룹코드</label>
+                <label htmlFor="groupCode">그룹코드</label>
               </div>
               <div className="input-field col s6">
                 <input
