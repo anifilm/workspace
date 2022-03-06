@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ItemList({ items, isLoading }) {
+// 부모 컴포넌트에서 컴포넌트 속성으로 수신
+const ItemList = ({ items, isAdmin, isLoading }) => {
   return (
     <div className="container">
-      <h3>상품 목록</h3>
+      <h3 className="center" style={{ marginBottom: '30px' }}>상품 목록</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>
@@ -31,7 +32,7 @@ function ItemList({ items, isLoading }) {
                   <tr key={item.itemId}>
                     <td style={{ textAlign: 'center' }}>{item.itemId}</td>
                     <td style={{ textAlign: 'left', paddingLeft: 50 }}>
-                      <Link to={`/read/${item.itemId}`}>{item.itemName}</Link>
+                      <Link to={`/item/read/${item.itemId}`}>{item.itemName}</Link>
                     </td>
                     <td style={{ textAlign: 'right', paddingRight: 40 }}>
                       {item.price}원
@@ -40,14 +41,18 @@ function ItemList({ items, isLoading }) {
                 ))}
             </tbody>
           </table>
-          <br />
-          <Link to="/create" className="waves-effect waves-light btn blue">
-            새로운 상품 등록
-          </Link>
+          {isAdmin && (
+            <>
+              <br />
+              <Link to="/item/create" className="waves-effect waves-light btn blue">
+                새로운 상품 등록
+              </Link>
+            </>
+          )}
         </>
       )}
     </div>
   );
-}
+};
 
 export default ItemList;

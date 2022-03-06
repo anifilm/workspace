@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom';
 
 import M from 'materialize-css';
 
-function ItemRead({ itemId, item, isLoading, onRemove }) {
-  // 이미지 표시 URL 생성
+// 부모 컴포넌트에서 컴포넌트 속성으로 수신
+const ItemRead = ({ itemId, item, isAdmin, isLoading, onRemove }) => {
+  // 미리보기 이미지 URL 생성
   const pictureUrl = () => {
     return (
       `/items/display?itemId=${itemId}&timestamp=${new Date().getTime()}`
+    );
+  };
+  const previewUrl = () => {
+    return (
+      `/items/preview?itemId=${itemId}&timestamp=${new Date().getTime()}`
     );
   };
 
@@ -17,7 +23,7 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
 
   return (
     <div className="container">
-      <h3>상품 상세보기</h3>
+      <h3 className="center" style={{ marginBottom: '40px' }}>상품 상세보기</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>
@@ -59,7 +65,25 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
                   currentTarget.src="https://picsum.photos/500/300";
                 }}
               />
-              <label className="active" htmlFor="picture">미리보기</label>
+              <label className="active" htmlFor="picture">상품파일</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <img
+                className="materialboxed"
+                width="500"
+                id="picture"
+                src={previewUrl()}
+                alt={item.itemName}
+                style={{ marginTop: '10px' }}
+                // 이미지 로딩 에러시 임의의 이미지 출력
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src="https://picsum.photos/500/300";
+                }}
+              />
+              <label className="active" htmlFor="picture">미리보기파일</label>
             </div>
           </div>
           <div className="row">
@@ -75,15 +99,19 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
             </div>
           </div>
           <br />
-          <Link to="/" className="waves-effect waves-light btn">
+          <Link to="/item" className="waves-effect waves-light btn">
             상품 목록
           </Link>{' '}
-          <Link to={`/edit/${itemId}`} className="waves-effect waves-light btn blue">수정</Link>
-          <button onClick={onRemove} className="waves-effect waves-light btn red right">삭제</button>
+          {isAdmin && (
+            <>
+              <Link to={`/item/edit/${itemId}`} className="waves-effect waves-light btn blue">수정</Link>
+              <button onClick={onRemove} className="waves-effect waves-light btn red right">삭제</button>
+            </>
+          )}
         </div>
       )}
     </div>
   );
-}
+};
 
 export default ItemRead;

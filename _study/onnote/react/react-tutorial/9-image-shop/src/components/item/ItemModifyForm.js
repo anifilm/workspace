@@ -1,33 +1,42 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import M from 'materialize-css';
 
-function ItemModifyForm({ item, isLoading, onModify }) {
+// 컴포넌트 속성값 수신
+const ItemModifyForm = ({ item, isLoading, onModify }) => {
+  // 컴포넌트 상태 설정
   const [itemName, setItemName] = useState('');
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState('');
   // 사용자 변경 이미지 파일명
   const [file, setFile] = useState(null);
+  const [previewFile, setPreviewFile] = useState(null);
   // 이미지 미리보기 관련 내용 추가
   const [preview, setPreview] = useState(null);
+  const [preview2, setPreview2] = useState(null);
 
-  // 이미지 표시 URL 생성
+  // 미리보기 이미지 URL 생성
   const pictureUrl = (itemId) => {
     return (
       `/items/display?itemId=${itemId}&timestamp=${new Date().getTime()}`
     );
   };
+  const previewUrl = (itemId) => {
+    return (
+      `/items/preview?itemId=${itemId}&timestamp=${new Date().getTime()}`
+    );
+  };
 
+  // 상품명의 변경을 처리하는 함수
   const handleChangeItemName = useCallback((e) => {
     setItemName(e.target.value);
   }, []);
+  // 상품 가격의 변경을 처리하는 함수
   const handleChangePrice = useCallback((e) => {
     setPrice(e.target.value);
   }, []);
-  const handleChangeDescription = useCallback((e) => {
-    setDescription(e.target.value);
-  }, []);
+  // 원본 이미지 파일의 변경을 처라하는 함수
   const handleChangeFile = useCallback((e) => {
     // 이미지 미리보기 관련 내용 추가
     const fileReader = new FileReader();
@@ -38,16 +47,33 @@ function ItemModifyForm({ item, isLoading, onModify }) {
     //console.log(e.target.files[0]);
     setFile(e.target.files[0]);
   }, []);
+  // 미리보기 이미지 파일의 변경을 처리하는 함수
+  const handleChangePreviewFile = useCallback((e) => {
+    // 이미지 미리보기 관련 내용 추가
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(e.target.files[0]);
+    fileReader.onload = () => {
+      setPreview2(fileReader.result);
+    };
+    //console.log(e.target.files[0]);
+    setPreviewFile(e.target.files[0]);
+  }, []);
+  // 상품 설명의 변경을 처리하는 함수
+  const handleChangeDescription = useCallback((e) => {
+    setDescription(e.target.value);
+  }, []);
 
-  const handleSubmit = useCallback((e) => {
+  // 폼 submit 이벤트 처리
+  const handleSubmit = (e) => {
     e.preventDefault();
-    onModify(itemName, price, description, file);
-  }, [onModify, itemName, price, description, file]);
+    onModify(item.itemId, itemName, price, description, file, previewFile);
+  }
 
   useEffect(() => {
     M.AutoInit(); // materialboxed 사용
   }, []);
 
+  // 마운트될 때 상품 상세정보를 가져옴
   useEffect(() => {
     if (item) {
       setItemName(item.itemName);
@@ -56,12 +82,16 @@ function ItemModifyForm({ item, isLoading, onModify }) {
       // 파일명 가져오기
       const filename = item.pictureUrl.split('_').splice(1).join('_');
       setFile(filename);
+      // 파일명2 가져오기
+      const filename2 = item.previewUrl.split('_').splice(1).join('_');
+      setPreviewFile(filename2);
     }
   }, [item]);
 
+  // 게시글 수정 폼 화면 표시
   return (
     <div className="container">
-      <h3>상품 수정</h3>
+      <h3 className="center" style={{ marginBottom: '40px' }}>상품 수정</h3>
       {isLoading && (
         <div className="progress">
           <div className="indeterminate"></div>
@@ -93,7 +123,7 @@ function ItemModifyForm({ item, isLoading, onModify }) {
             <div className="row">
               <div className="file-field input-field col s12">
                 <div className="btn">
-                  <span>파일선택</span>
+                  <span>상품파일</span>
                   <input type="file" onChange={handleChangeFile} />
                 </div>
                 <div className="file-path-wrapper">
@@ -136,6 +166,51 @@ function ItemModifyForm({ item, isLoading, onModify }) {
               )}
             </div>
             <div className="row">
+              <div className="file-field input-field col s12">
+                <div className="btn">
+                  <span>미리보기파일</span>
+                  <input type="file" onChange={handleChangePreviewFile} />
+                </div>
+                <div className="file-path-wrapper">
+                  <input className="file-path validate" type="text"
+                    placeholder={previewFile} />
+                </div>
+              </div>
+              {/* 이미지 미리보기 관련 내용 추가 */}
+              {preview2 ? (
+                <div className="input-field col s12">
+                  {/* 수정한 이미지 미리보기 */}
+                  <img
+                    className="materialboxed"
+                    width="500"
+                    id="picture"
+                    src={preview2}
+                    alt="이미지 미리보기"
+                    style={{ marginTop: '10px' }}
+                  />
+                  <label className="active" htmlFor="picture">미리보기</label>
+                </div>
+              ) : (
+                <div className="input-field col s12">
+                  {/* 기존 업로드 이미지 */}
+                  <img
+                    className="materialboxed"
+                    width="500"
+                    id="picture"
+                    src={previewUrl(item.itemId)}
+                    alt={item.itemName}
+                    style={{ marginTop: '10px' }}
+                    // 이미지 로딩 에러시 임의의 이미지 출력
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null;
+                      currentTarget.src="https://picsum.photos/500/300";
+                    }}
+                  />
+                  <label className="active" htmlFor="picture">미리보기</label>
+                </div>
+              )}
+            </div>
+            <div className="row">
               <div className="input-field col s12">
                 <textarea
                   id="description"
@@ -149,7 +224,7 @@ function ItemModifyForm({ item, isLoading, onModify }) {
               </div>
             </div>
             <br />
-            <Link to={`/read/${item.itemId}`} className="waves-effect waves-light btn">취소</Link>{' '}
+            <Link to={`/item/read/${item.itemId}`} className="waves-effect waves-light btn">취소</Link>{' '}
             <button type="submit" className="waves-effect waves-light btn blue">완료</button>
           </form>
         </div>

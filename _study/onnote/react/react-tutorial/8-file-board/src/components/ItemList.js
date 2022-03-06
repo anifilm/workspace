@@ -27,8 +27,7 @@ function ItemList({ items, isLoading }) {
                   <td colSpan="3">List is empty.</td>
                 </tr>
               )}
-              {!!items.length &&
-                items.map((item) => (
+              {!!items.length && items.map((item) => (
                   <tr key={item.itemId}>
                     <td style={{ textAlign: 'center' }}>{item.itemId}</td>
                     <td style={{ textAlign: 'left', paddingLeft: 50 }}>
