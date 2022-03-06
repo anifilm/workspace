@@ -13,7 +13,7 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
 
   useEffect(() => {
     M.AutoInit(); // materialboxed 사용
-  }, []);
+  });
 
   return (
     <div className="container">

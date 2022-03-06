@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-import M from 'materialize-css';
 
 function ItemModifyForm({ item, isLoading, onModify }) {
   const [itemName, setItemName] = useState('');
@@ -43,10 +41,6 @@ function ItemModifyForm({ item, isLoading, onModify }) {
     e.preventDefault();
     onModify(itemName, price, description, file);
   }, [onModify, itemName, price, description, file]);
-
-  useEffect(() => {
-    M.AutoInit(); // materialboxed 사용
-  }, []);
 
   useEffect(() => {
     if (item) {
@@ -106,7 +100,7 @@ function ItemModifyForm({ item, isLoading, onModify }) {
                 <div className="input-field col s12">
                   {/* 수정한 이미지 미리보기 */}
                   <img
-                    className="materialboxed"
+                    //className="materialboxed"
                     width="500"
                     id="picture"
                     src={preview}
@@ -119,7 +113,7 @@ function ItemModifyForm({ item, isLoading, onModify }) {
                 <div className="input-field col s12">
                   {/* 기존 업로드 이미지 */}
                   <img
-                    className="materialboxed"
+                    //className="materialboxed"
                     width="500"
                     id="picture"
                     src={pictureUrl(item.itemId)}

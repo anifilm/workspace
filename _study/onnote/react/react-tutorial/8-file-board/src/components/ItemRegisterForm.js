@@ -1,7 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-
-import M from 'materialize-css';
 
 function ItemRegisterForm({ onRegister }) {
   const [itemName, setItemName] = useState('');
@@ -35,10 +33,6 @@ function ItemRegisterForm({ onRegister }) {
     e.preventDefault();
     onRegister(itemName, price, description, file);
   }, [onRegister, itemName, price, description, file]);
-
-  useEffect(() => {
-    M.AutoInit(); // materialboxed 사용
-  }, []);
 
   return (
     <div className="container">
@@ -75,7 +69,7 @@ function ItemRegisterForm({ onRegister }) {
             {preview && (
               <div className="input-field col s12">
                 <img
-                  className="materialboxed"
+                  //className="materialboxed"
                   width="500"
                   id="picture"
                   src={preview}

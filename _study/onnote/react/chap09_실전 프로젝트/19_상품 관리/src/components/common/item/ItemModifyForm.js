@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import M from 'materialize-css';
-
 // 컴포넌트 속성값 수신
 const ItemModifyForm = ({ item, isLoading, onModify }) => {
   // 컴포넌트 상태 설정
@@ -67,11 +65,7 @@ const ItemModifyForm = ({ item, isLoading, onModify }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onModify(item.itemId, itemName, price, description, file, previewFile);
-  }
-
-  useEffect(() => {
-    M.AutoInit(); // materialboxed 사용
-  }, []);
+  };
 
   // 마운트될 때 상품 상세정보를 가져옴
   useEffect(() => {
@@ -136,7 +130,7 @@ const ItemModifyForm = ({ item, isLoading, onModify }) => {
                 <div className="input-field col s12">
                   {/* 수정한 이미지 미리보기 */}
                   <img
-                    className="materialboxed"
+                    //className="materialboxed"
                     width="500"
                     id="picture"
                     src={preview}
@@ -149,7 +143,7 @@ const ItemModifyForm = ({ item, isLoading, onModify }) => {
                 <div className="input-field col s12">
                   {/* 기존 업로드 이미지 */}
                   <img
-                    className="materialboxed"
+                    //className="materialboxed"
                     width="500"
                     id="picture"
                     src={pictureUrl(item.itemId)}
@@ -181,7 +175,7 @@ const ItemModifyForm = ({ item, isLoading, onModify }) => {
                 <div className="input-field col s12">
                   {/* 수정한 이미지 미리보기 */}
                   <img
-                    className="materialboxed"
+                    //className="materialboxed"
                     width="500"
                     id="picture"
                     src={preview2}
@@ -194,7 +188,7 @@ const ItemModifyForm = ({ item, isLoading, onModify }) => {
                 <div className="input-field col s12">
                   {/* 기존 업로드 이미지 */}
                   <img
-                    className="materialboxed"
+                    //className="materialboxed"
                     width="500"
                     id="picture"
                     src={previewUrl(item.itemId)}

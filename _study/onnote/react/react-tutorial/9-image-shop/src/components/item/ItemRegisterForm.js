@@ -1,7 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-
-import M from 'materialize-css';
 
 // 등록 처리 함수를 컴포넌트 속성으로 전달 받음
 const ItemRegisterForm = ({ onRegister }) => {
@@ -57,10 +55,6 @@ const ItemRegisterForm = ({ onRegister }) => {
     onRegister(itemName, price, description, file, previewFile);
   }, [itemName, price, description, file, previewFile, onRegister]);
 
-  useEffect(() => {
-    M.AutoInit(); // materialboxed 사용
-  }, []);
-
   return (
     <div className="container">
       <h3 className="center" style={{ marginBottom: '40px' }}>새로운 상품 등록</h3>
@@ -96,7 +90,7 @@ const ItemRegisterForm = ({ onRegister }) => {
             {preview && (
               <div className="input-field col s12">
                 <img
-                  className="materialboxed"
+                  //className="materialboxed"
                   width="500"
                   id="picture"
                   src={preview}
@@ -121,7 +115,7 @@ const ItemRegisterForm = ({ onRegister }) => {
             {preview2 && (
               <div className="input-field col s12">
                 <img
-                  className="materialboxed"
+                  //className="materialboxed"
                   width="500"
                   id="picture"
                   src={preview2}

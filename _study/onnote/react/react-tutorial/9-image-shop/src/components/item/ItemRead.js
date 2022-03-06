@@ -19,7 +19,7 @@ const ItemRead = ({ itemId, item, isAdmin, isLoading, onRemove }) => {
 
   useEffect(() => {
     M.AutoInit(); // materialboxed 사용
-  }, []);
+  });
 
   return (
     <div className="container">
