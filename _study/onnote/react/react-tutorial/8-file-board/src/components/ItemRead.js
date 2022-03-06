@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import M from 'materialize-css';
 
 function ItemRead({ itemId, item, isLoading, onRemove }) {
   // 이미지 표시 URL 생성
@@ -8,6 +10,10 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
       `/items/display?itemId=${itemId}&timestamp=${new Date().getTime()}`
     );
   };
+
+  useEffect(() => {
+    M.AutoInit(); // materialboxed 사용
+  });
 
   return (
     <div className="container">
@@ -41,7 +47,7 @@ function ItemRead({ itemId, item, isLoading, onRemove }) {
           <div className="row">
             <div className="input-field col s12">
               <img
-                //className="materialboxed"
+                className="materialboxed"
                 width="500"
                 id="picture"
                 src={pictureUrl()}
