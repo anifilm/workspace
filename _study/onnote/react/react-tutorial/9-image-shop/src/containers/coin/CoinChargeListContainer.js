@@ -19,12 +19,7 @@ const CoinChargeListContainer = () => {
   }, [dispatch]);
 
   // 충전내역 컴포넌트 표시
-  return (
-    <CoinChargeList
-      chargeCoins={chargeCoins}
-      isLoading={isLoading}
-    />
-  );
+  return <CoinChargeList chargeCoins={chargeCoins} isLoading={isLoading} />;
 };
 
 export default CoinChargeListContainer;

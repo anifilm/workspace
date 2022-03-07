@@ -16,8 +16,8 @@ const CoinChargeList = ({ chargeCoins, isLoading }) => {
             <thead>
               <tr>
                 <th style={{ width: 80, textAlign: 'center' }}>번호</th>
-                <th style={{ width: 320, textAlign: 'center' }}>충전내역</th>
-                <th style={{ width: 100, textAlign: 'center' }}>등록일시</th>
+                <th style={{ width: 180, textAlign: 'center' }}>충전내역</th>
+                <th style={{ width: 100, textAlign: 'center' }}>충전일시</th>
               </tr>
             </thead>
             <tbody>
@@ -32,7 +32,7 @@ const CoinChargeList = ({ chargeCoins, isLoading }) => {
                     <td style={{ textAlign: 'center' }}>
                       {chargeCoin.historyNo}
                     </td>
-                    <td style={{ textAlign: 'left', paddingLeft: 50 }}>
+                    <td style={{ textAlign: 'right', paddingRight: 80 }}>
                       {chargeCoin.amount}코인
                     </td>
                     <td style={{ textAlign: 'center' }}>

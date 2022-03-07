@@ -17,7 +17,7 @@ const ItemList = ({ items, isAdmin, isLoading }) => {
             <thead>
               <tr>
                 <th style={{ width: 80, textAlign: 'center' }}>상품아이디</th>
-                <th style={{ width: 320, textAlign: 'center' }}>상품명</th>
+                <th style={{ width: 180, textAlign: 'center' }}>상품명</th>
                 <th style={{ width: 100, textAlign: 'center' }}>상품가격</th>
               </tr>
             </thead>
@@ -35,7 +35,7 @@ const ItemList = ({ items, isAdmin, isLoading }) => {
                       <Link to={`/item/read/${item.itemId}`}>{item.itemName}</Link>
                     </td>
                     <td style={{ textAlign: 'right', paddingRight: 40 }}>
-                      {item.price}원
+                      {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
                     </td>
                   </tr>
                 ))}

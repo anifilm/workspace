@@ -31,7 +31,7 @@ const CoinChargeRegisterForm = ({ onRegister }) => {
                 onChange={handleChangeAmount}
                 required
               />
-              <label className="active" htmlFor="chargeAmount">충전금액</label>
+              <label className="active" htmlFor="chargeAmount">충전금액 (코인)</label>
             </div>
           </div>
           <br />
