@@ -25,8 +25,7 @@ const ItemRegisterContainer = ({ history }) => {
       alert('등록이 완료되었습니다.');
       history.push(`/item/read/${response.data.itemId}`);
     } catch (err) {
-      alert(err.response.data.message);
-      /*if (err.response.status === 400) {
+      if (err.response.status === 400) {
         alert('잘못된 요청입니다.');
       } else if (err.response.status === 401) {
         alert('로그인이 필요합니다.');
@@ -36,7 +35,7 @@ const ItemRegisterContainer = ({ history }) => {
         history.goBack();
       } else {
         alert(err.response.data.message);
-      }*/
+      }
     }
   };
 
