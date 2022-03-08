@@ -1,7 +1,10 @@
+const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
-const loginButton = document.querySelector('#login-form button');
 
-function onLoginBtnClick() {
+const link = document.querySelector('a');
+
+function onLoginSubmit(e) {
+  e.preventDefault();
   const username = loginInput.value;
   if (username === '') {
     alert('Please write your name.');
@@ -12,4 +15,9 @@ function onLoginBtnClick() {
   }
 }
 
-loginButton.addEventListener('click', onLoginBtnClick);
+function handleLinkClick() {
+  alert('click');
+}
+
+loginForm.addEventListener('submit', onLoginSubmit);
+link.addEventListener('click', handleLinkClick);
