@@ -8,7 +8,6 @@ pathspec==0.9.0
 platformdirs==2.4.0
 pycodestyle==2.7.0
 pyflakes==2.3.1
-pywin32==227
 regex==2021.9.30
 tomli==1.2.1
 typing-extensions==3.10.0.2
