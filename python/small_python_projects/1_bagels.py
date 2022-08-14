@@ -1,8 +1,8 @@
 import random
-from tkinter.tix import MAX
 
 NUM_DIGITS = 3
 MAX_GUESSES = 10
+
 
 def main():
     print('''Bagles, a deductive logic game.
