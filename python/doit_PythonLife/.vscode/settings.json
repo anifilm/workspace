@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+    "python.defaultInterpreterPath": "~\\anaconda3\\python.exe",
     "python.terminal.activateEnvironment": false,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
