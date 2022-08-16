@@ -4,7 +4,7 @@ using System.Collections;
 // Stack 클래스: LIFO(Last In First Out) 형태의 데이터 보관
 class StackDemo {
     static void Main() {
-        // [1] Stack 개체 만들기
+        // [1] Stack 객체 만들기
         Stack stack = new Stack();
 
         // [2] Push()로 데이터 저장
