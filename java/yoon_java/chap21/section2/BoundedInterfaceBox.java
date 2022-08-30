@@ -15,23 +15,24 @@ class Apple implements Eatable {
 }
 
 class Box<T extends Eatable> {
-    T ob;
+    T obj;
 
     public void set(T o) {
-        ob = o;
+        obj = o;
     }
+
     public T get() {
-        System.out.println(ob.eat()); // Eatable로 제한하였기에 eat 호출 가능
-        return ob;
+        System.out.println(obj.eat());  // Eatable로 제한하였기에 eat 호출 가능
+        return obj;
     }
 }
 
 class BoundedInterfaceBox {
     public static void main(String[] args) {
         Box<Apple> box = new Box<>();
-        box.set(new Apple()); // 사과 저장
+        box.set(new Apple());  // 사과 저장
 
-        Apple ap = box.get(); // 사과 꺼내기
+        Apple ap = box.get();  // 사과 꺼내기
         System.out.println(ap);
     }
 }

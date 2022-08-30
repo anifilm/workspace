@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 class CopyOfArrays {
     public static void main(String[] args) {
-        double[] arrOrg = {1.1, 2.2, 3.3, 4.4, 5.5};
+        double[] arrOrg = { 1.1, 2.2, 3.3, 4.4, 5.5 };
 
         // 배열 전체를 복사
         double[] arrCpy1 = Arrays.copyOf(arrOrg, arrOrg.length);

@@ -1,11 +1,11 @@
 // 제네릭 이후의 코드
-class Apple { // 사과를 단순히 표현한 클래스
+class Apple {  // 사과를 단순히 표현한 클래스
     public String toString() {
         return "I am an apple.";
     }
 }
 
-class Orange { // 오렌지를 단순히 표현한 클래스
+class Orange {  // 오렌지를 단순히 표현한 클래스
     public String toString() {
         return "I am an orange.";
     }
@@ -17,6 +17,7 @@ class Box<T> {
     public void set(T o) {
         ob = o;
     }
+
     public T get() {
         return ob;
     }

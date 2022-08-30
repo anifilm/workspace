@@ -2,13 +2,14 @@ import jdk.internal.jshell.tool.resources.l10n;
 
 // '매개변수화 타입'을 '타입 인자'로 전달하기
 class Box<T> {
-    private T ob;
+    private T obj;
 
     public void set(T o) {
-        ob = o;
+        obj = o;
     }
+
     public T get() {
-        return ob;
+        return obj;
     }
 }
 
@@ -23,6 +24,6 @@ class BoxInBox {
         Box<Box<Box<String>>> zBox = new Box<>();
         zBox.set(wBox);
 
-        System.out.println(z.Box.get().get().get());
+        System.out.println(zBox.get().get().get());
     }
 }

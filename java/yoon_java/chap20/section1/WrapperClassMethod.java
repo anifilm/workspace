@@ -2,8 +2,8 @@
 class WrapperClassMethod {
     public static void main(String[] args) {
         // 클래스 메서드를 통한 인스턴스 생성
-        Integer n1 = Integer.valueOf(5);       //  숫자 기반 Integer 인스턴스 생성
-        Integer n2 = Integer.valueOf("1024");  // 문자열 기반 Integer 인스턴스 생성
+        Integer n1 = Integer.valueOf(5);      // 숫자 기반 Integer 인스턴스 생성
+        Integer n2 = Integer.valueOf("1024"); // 문자열 기반 Integer 인스턴스 생성
 
         // 대소 비교와 합을 계산하는 클래스 메서드
         System.out.println("큰 수: " + Integer.max(n1, n2));

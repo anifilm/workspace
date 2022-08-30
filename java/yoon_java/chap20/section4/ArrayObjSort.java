@@ -9,16 +9,18 @@ class Person implements Comparable {
         this.name = name;
         this.age = age;
     }
+
     @Override
     public int compareTo(Object obj) {
-        Person p = (Person)obj;
+        Person p = (Person) obj;
         if (this.age > p.age)
-            return 1;   // 인자로 전달된 obj가 작다면 양의 정수 반환
+            return 1;  // 인자로 전달된 obj가 작다면 양의 정수 반환
         else if (this.age < p.age)
             return -1;  // 인자로 전달된 obj가 크다면 음의 정수 반환
         else
-            return 0;   // 인자로 전달된 obj가 같다면 0을 반환
+            return 0;  // 인자로 전달된 obj가 같다면 0을 반환
     }
+
     @Override
     public String toString() {
         return name + ": " + age;

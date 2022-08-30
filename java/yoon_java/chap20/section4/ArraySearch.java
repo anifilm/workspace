@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 class ArraySearch {
     public static void main(String[] args) {
-        int[] arr = {33, 55, 11, 44, 22};
+        int[] arr = { 33, 55, 11, 44, 22 };
         Arrays.sort(arr);  // 탐색 이전에 정렬이 선행되어야 한다.
 
         for (int n : arr)

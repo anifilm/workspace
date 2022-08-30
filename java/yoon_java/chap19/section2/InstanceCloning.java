@@ -7,9 +7,11 @@ class Point implements Cloneable {
         xPos = x;
         yPos = y;
     }
+
     public void showPosition() {
         System.out.printf("[%d, %d]\n", xPos, yPos);
     }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
@@ -22,11 +24,10 @@ class InstanceCloning {
         Point cpy;
 
         try {
-            cpy = (Point)org.clone();
+            cpy = (Point) org.clone();
             org.showPosition();
             cpy.showPosition();
-        }
-        catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
     }

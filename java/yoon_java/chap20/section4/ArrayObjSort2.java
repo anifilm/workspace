@@ -9,11 +9,13 @@ class Person implements Comparable {
         this.name = name;
         this.age = age;
     }
+
     @Override
     public int compareTo(Object obj) {
-        Person p = (Person)obj;
+        Person p = (Person) obj;
         return this.age - p.age;
-    }  // 앞서 정의한 compareTo 메서드와 사실상 동일
+    } // 앞서 정의한 compareTo 메서드와 사실상 동일
+
     @Override
     public String toString() {
         return name + ": " + age;

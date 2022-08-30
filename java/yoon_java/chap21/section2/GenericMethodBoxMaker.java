@@ -1,20 +1,21 @@
 // 제네릭 메서드의 정의
 class Box<T> {
-    private T ob;
+    private T obj;
 
     public void set(T o) {
-        ob = o;
+        obj = o;
     }
+
     public T get() {
-        return ob;
+        return obj;
     }
 }
 
 class BoxFactory {
-    public static <T> Box<T> makeBox(T o) { // 제네릭 메서드의 정의
-        Box<T> box = new Box<T>(); // 상자를 생성하고,
-        box.set(o); // 전달된 인스턴스를 상자에 담아서,
-        return box; // 이 상자를 반환한다.
+    public static <T> Box<T> makeBox(T o) {  // 제네릭 메서드의 정의
+        Box<T> box = new Box<T>();  // 상자를 생성하고,
+        box.set(o);  // 전달된 인스턴스를 상자에 담아서,
+        return box;  // 이 상자를 반환한다.
     }
 }
 

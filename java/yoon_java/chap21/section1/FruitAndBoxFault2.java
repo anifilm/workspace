@@ -17,6 +17,7 @@ class Box {
     public void set(Object o) {
         ob = o;
     }
+
     public Object get() {
         return ob;
     }

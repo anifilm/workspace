@@ -1,12 +1,13 @@
 // 제네릭 메서드의 정의
 class Box<T> {
-    private T ob;
+    private T obj;
 
     public void set(T o) {
-        ob = o;
+        obj = o;
     }
+
     public T get() {
-        return ob;
+        return obj;
     }
 }
 
