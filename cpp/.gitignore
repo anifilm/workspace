@@ -1,3 +1,6 @@
 *.o
 *.gch
 *.exe
+*.zip
+*.pdf
+*.lnk
