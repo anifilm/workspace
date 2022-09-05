@@ -17,7 +17,6 @@ class Ex01_GlobalVariable {
         int num2 = 2;  // [3]
         System.out.println(num1 + ", " + num2);
 
-
         Cat cat1 = new Cat();  // [4] 스택 영역에 생성
         cat1.num = 1;  // [5]
         cat1.a = 10;   // [6] static 변수에 직접 접근
