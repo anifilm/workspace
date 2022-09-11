@@ -1,6 +1,18 @@
 ﻿using System;
+using System.Linq;
 
-int num = 1000;
-int number = num + 1234;
+// LINQ(Language Integrated Query)
+class FromWhereSelect {
+    static void Main() {
+        int[] arr = { 1, 2, 3, 4, 5 };
 
-Console.WriteLine(number);
+        var evenNumbers =
+            from num in arr
+            where num % 2 == 0
+            select num;
+
+        foreach (var number in evenNumbers) {
+            Console.WriteLine($"짝수: {number}");
+        }
+    }
+}
