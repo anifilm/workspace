@@ -5,7 +5,7 @@ public class Ex08_EnhancedFor {
         int[] arr = {1, 2, 3, 4, 5};  // [1]
 
         // [2] 배열 요소 전체 출력
-        for (var e : arr) {
+        for (int e : arr) {
             System.out.print(e + " ");
         }
         System.out.println();  // 줄바꿈을 목적으로
