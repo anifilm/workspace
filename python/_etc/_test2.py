@@ -25,7 +25,7 @@ for i in items:
     if stock_str.find("통상") == -1:
         print("\n" + stock_str.rjust(56))
     else:
-        print()
+        print("\n")
 
     # 해당 상품 구매가능한 경우 카카오 메시지 전송
     if title_str.find("안드") != -1 and stock_str.find("품절") == -1:
