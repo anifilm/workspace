@@ -11,7 +11,7 @@ mod tests {
     fn calc_test2() {
         // 단순한 계산 테스트 2
         assert_eq!(2 * 3, 6);
-        //
+        // 일부러 틀린 값을 설정
         assert_eq!(2 * 3, 7);
     }
 }
