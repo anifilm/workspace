@@ -59,5 +59,5 @@ fn main() {
 
     println!("{:?}", f5);
     println!("{} is {} bytes long", &f5.name, f5_length);
-    println!("{}", text)
+    println!("{}", text);
 }
