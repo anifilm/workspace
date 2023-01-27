@@ -1,6 +1,24 @@
 import requests
 from bs4 import BeautifulSoup
 
+def print_item(title, price):
+    if title.find("이노치노하하") != -1:  # 특정 상품 표시안함 (이노치노하하)
+        pass
+    elif title.find("프로기노바") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
+        # print("구매가능!")
+        print("\x1b[1;33m" + title + "\x1b[1;m")
+        print(price.rjust(60))
+        print("-" * 60)
+    elif title.find("안드로쿨") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
+        # print("구매가능!")
+        print("\x1b[1;31m" + title + "\x1b[1;m")
+        print(price.rjust(60))
+        print("-" * 60)
+    else:  # 품절이 아닌 경우 금액 출력
+        print(title)
+        print(price.rjust(60))
+        print("-" * 60)
+
 def get_info(url):
     res = requests.get(url)
     res.raise_for_status()
@@ -25,28 +43,9 @@ def get_info(url):
                 # print("\n" + stock_str.rjust(56)) # 재고품절 출력
                 pass
             else:
-                # 특정 상품 표시안함 (이노치노하하)
-                if title_str.find("이노치노하하") != -1:
-                    continue
-                # 품절이 아닌 경우 금액 출력
-                print(title_str)
-                print(price_str.rjust(60))
-                print("-" * 60)
-                # 해당 상품 구매가능한 경우 카카오 메시지 전송 (1)
-                if title_str.find("안드") != -1:
-                    print("구매가능!")
+                print_item(title_str, price_str)
         else:
-            # 특정 상품 표시안함 (이노치노하하)
-            if title_str.find("이노치노하하") != -1:
-                continue
-            # 품절이 아닌 경우 금액 출력
-            print(title_str)
-            print(price_str.rjust(60))
-            print("-" * 60)
-            # 해당 상품 구매가능한 경우 카카오 메시지 전송 (2)
-            if title_str.find("안드") != -1:
-                print("구매가능!")
-
+            print_item(title_str, price_str)
 
 
 url1 = "https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf.html?p=1"
