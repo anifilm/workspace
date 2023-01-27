@@ -21,15 +21,18 @@ impl PrimeIterator {
 impl Iterator for PrimeIterator {
     type Item = u8;
     // 다음 소수 값을 반환
-    loop {
-        self.n + 1;
-        // 8비트를 남는 소수는 찾지 않음
-        if std::u8::MAX == self.n {
-            return None;
-        }
-        // slef.n이 소인지 확인
-        if self.is_prime() {
-            return Some(self.n);
+    fn next(&mut self) -> Option<Self::Item> {
+        // 소수를 찾아 반환
+        loop {
+            self.n += 1;
+            // 8비트를 남는 소수는 찾지 않음
+            if std::u8::MAX == self.n {
+                return None;
+            }
+            // self.n이 소인지 확인
+            if self.is_prime() {
+                return Some(self.n);
+            }
         }
     }
 }
@@ -38,7 +41,7 @@ fn main() {
     // 반복자 생성
     let prime_iter = PrimeIterator::new();
     // for 문으로 반복
-    for n in prime_iter() {
-        print!("{},", n);
+    for n in prime_iter {
+        print!("{}, ", n);
     }
 }
