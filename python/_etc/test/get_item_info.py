@@ -4,14 +4,19 @@ from bs4 import BeautifulSoup
 def print_item(title, price):
     if title.find("이노치노하하") != -1:  # 특정 상품 표시안함 (이노치노하하)
         pass
-    elif title.find("프로기노바") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
+    elif title.find("프로기노바") != -1 or title.find("에스트로") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
         # print("구매가능!")
-        print("\x1b[1;33m" + title + "\x1b[1;m")
+        print("\x1b[1;33m" + title + "\x1b[1;m")  # yellow
+        print(price.rjust(60))
+        print("-" * 60)
+    elif title.find("클리마라") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
+        # print("구매가능!")
+        print("\x1b[1;96m" + title + "\x1b[1;m")  # blue
         print(price.rjust(60))
         print("-" * 60)
     elif title.find("안드로쿨") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
         # print("구매가능!")
-        print("\x1b[1;31m" + title + "\x1b[1;m")
+        print("\x1b[1;31m" + title + "\x1b[1;m")  # red
         print(price.rjust(60))
         print("-" * 60)
     else:  # 품절이 아닌 경우 금액 출력
