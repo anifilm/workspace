@@ -2,9 +2,12 @@ using System;
 
 class Program {
     static void Main(string[] args) {
-        byte b = 250;
-        short s = b;
+        System.Int32 n1 = 50;
+        System.Int32 n2;
+        n2 = 100;
 
-        Console.WriteLine(s); // 출력 결과: 250
+        System.Int32 sum = n1 + n2;
+
+        Console.WriteLine(sum); // 출력 결과 150
     }
 }
