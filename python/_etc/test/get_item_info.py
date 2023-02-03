@@ -1,3 +1,4 @@
+import webbrowser
 import requests
 from bs4 import BeautifulSoup
 
@@ -19,6 +20,9 @@ def print_item(title, price):
         print("\x1b[1;31m" + title + "\x1b[1;m")  # red
         print(price.rjust(60))
         print("-" * 60)
+        if title.find("시테론") != -1:
+            # 시테론 상품 페이지 열기
+            webbrowser.open("https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf/premon-331.html")
     else:  # 품절이 아닌 경우 금액 출력
         print(title)
         print(price.rjust(60))
