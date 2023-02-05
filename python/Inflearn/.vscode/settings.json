@@ -7,6 +7,10 @@
     "python.formatting.provider": "black",
     "python.linting.flake8Args": [
         "--max-line-length=120",
-        "--ignore=E265,E302,E501"
-    ]
+        "--ignore=E226,E302,E401,E501,E711"
+    ],
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+    }
 }

@@ -43,8 +43,26 @@ siri = Robot("siri", 21039788127)
 jarvis = Robot("jarvis", 2311213123)
 bixby = Robot("bixby", 124312423)
 
+print(Robot.__dict__)
+print(siri.__dict__)
+print(jarvis.__dict__)
 
 print(siri.name)
-print(siri.code)
+print(bixby.name)
 
 siri.cal_add(2, 3)
+print(siri.population)
+siri.how_many()
+
+
+Robot.say_hi(siri)
+siri.say_hi()
+
+
+print(dir(siri))
+
+print(dir(Robot))
+
+print(Robot.__doc__)
+
+print(siri.__class__)
