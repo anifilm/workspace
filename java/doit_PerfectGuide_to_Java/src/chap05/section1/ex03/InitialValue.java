@@ -20,26 +20,26 @@ public class InitialValue {
         // @기본 자료형 배열
         boolean[] array1 = new boolean[3]; // false로 초기화
         for (int i = 0; i < 3; i++) {
-            System.out.println(array1[i] + " ");
+            System.out.print(array1[i] + " ");
         }
         System.out.println();
 
         int[] array2 = new int[3]; // 0으로 초기화
         for (int i = 0; i < 3; i++) {
-            System.out.println(array2[i] + " ");
+            System.out.print(array2[i] + " ");
         }
         System.out.println();
 
         double[] array3 = new double[3]; // 0.0으로 초기화
         for (int i = 0; i < 3; i++) {
-            System.out.println(array3[i] + " ");
+            System.out.print(array3[i] + " ");
         }
         System.out.println();
 
         // @참조 자료형 배열
         String[] array4 = new String[3]; // null로 초기화
         for (int i = 0; i < 3; i++) {
-            System.out.println(array4[i] + " ");
+            System.out.print(array4[i] + " ");
         }
         System.out.println();
 
