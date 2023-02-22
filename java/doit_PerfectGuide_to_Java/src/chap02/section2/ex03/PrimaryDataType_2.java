@@ -1,5 +1,5 @@
 // 문자값의 다양한 저장 방법 및 출력
-package chap02.section3.ex03;
+package chap02.section2.ex03;
 
 public class PrimaryDataType_2 {
     public static void main(String[] args) {

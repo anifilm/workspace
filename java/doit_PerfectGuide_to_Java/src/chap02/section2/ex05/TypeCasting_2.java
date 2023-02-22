@@ -1,5 +1,5 @@
 // 자동 타입 변환과 수동 타입 변환
-package chap02.section4.ex05;
+package chap02.section2.ex05;
 
 public class TypeCasting_2 {
     public static void main(String[] args) {

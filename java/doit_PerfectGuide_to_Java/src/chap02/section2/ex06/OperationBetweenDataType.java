@@ -1,5 +1,5 @@
 // 같은 자료형 간의 연산과 다른 자료형 간의 연산
-package chap02.section4.ex06;
+package chap02.section2.ex06;
 
 public class OperationBetweenDataType {
     public static void main(String[] args) {

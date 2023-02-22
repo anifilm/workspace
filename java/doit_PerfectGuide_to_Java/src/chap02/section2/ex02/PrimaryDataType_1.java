@@ -1,5 +1,5 @@
 // 부울대수, 정수, 실수 값의 저장 및 출력
-package chap02.section3.ex02;
+package chap02.section2.ex02;
 
 public class PrimaryDataType_1 {
     public static void main(String[] args) {

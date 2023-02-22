@@ -1,5 +1,5 @@
 // 변수의 생존 기간
-package chap02.section2.ex03;
+package chap02.section1.ex03;
 
 public class RangeOFVariableUse {
     public static void main(String[] args) {
@@ -11,6 +11,6 @@ public class RangeOFVariableUse {
         } // 변수 value2 소멸 시점
 
         System.out.println(value1);
-     // System.out.println(value2); // 오류
+        // System.out.println(value2); // 오류
     } // 변수 value1 소멸 시점
 }

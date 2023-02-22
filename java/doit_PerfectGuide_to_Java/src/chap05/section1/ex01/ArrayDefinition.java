@@ -1,5 +1,5 @@
 // 1차원 배열의 2가지 선언 방법과 다양한 배열 선언 예
-package chap05.section2.ex01;
+package chap05.section1.ex01;
 
 public class ArrayDefinition {
     public static void main(String[] args) {

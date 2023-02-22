@@ -1,5 +1,5 @@
 // float과 double의 정밀도 비교
-package chap02.section3.ex01;
+package chap02.section2.ex01;
 
 public class FloatVsDouble {
     public static void main(String[] args) {

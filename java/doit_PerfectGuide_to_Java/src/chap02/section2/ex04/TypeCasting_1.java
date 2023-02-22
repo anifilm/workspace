@@ -1,5 +1,5 @@
 // 2가지 타입 변환 방법
-package chap02.section4.ex04;
+package chap02.section2.ex04;
 
 public class TypeCasting_1 {
     public static void main(String[] args) {
