@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Solution {
+public class Solution3 {
     private static final String TEXT = "Be strong, be fearless, be beautiful."
             + "And believe that anything is possible when you have the right"
             + "people there to support you.";
@@ -15,17 +15,17 @@ public class Solution {
     // 😍 ->\uD83D\uDE0D, Code Point: 128525
     private static final String TEXT_CP = TEXT + "😍 I love 💕 you Ӝ so much 💕 😍 🎼🎼🎼!";
 
-    public static Map<Character, Integer> countDuplicateCharacters(String str) {
-        Map<Character, Integer> result = new HashMap<>();
+    public static Map<String, Integer> countDuplicateCharacters(String str) {
+        Map<String, Integer> result = new HashMap<>();
 
-        for (char ch : str.toCharArray()) {
+        for (int i = 0; i < str.length(); i++) {
+            int cp = str.codePointAt(i);
+            String ch = String.valueOf(Character.toChars(cp));
+            if (Character.charCount(cp) == 2) { // 2는 대리 쌍을 뜻한다.
+                i++;
+            }
             result.compute(ch, (k, v) -> (v == null) ? 1 : ++v);
         }
-        /*
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            result.compute(ch, (k, v) -> (v == null) ? 1 : ++v);
-        } */
 
         return result;
     }

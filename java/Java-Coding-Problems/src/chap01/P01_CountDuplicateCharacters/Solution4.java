@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Solution {
+public class Solution4 {
     private static final String TEXT = "Be strong, be fearless, be beautiful."
             + "And believe that anything is possible when you have the right"
             + "people there to support you.";
@@ -15,17 +15,10 @@ public class Solution {
     // 😍 ->\uD83D\uDE0D, Code Point: 128525
     private static final String TEXT_CP = TEXT + "😍 I love 💕 you Ӝ so much 💕 😍 🎼🎼🎼!";
 
-    public static Map<Character, Integer> countDuplicateCharacters(String str) {
-        Map<Character, Integer> result = new HashMap<>();
-
-        for (char ch : str.toCharArray()) {
-            result.compute(ch, (k, v) -> (v == null) ? 1 : ++v);
-        }
-        /*
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            result.compute(ch, (k, v) -> (v == null) ? 1 : ++v);
-        } */
+    public static Map<String, Long> countDuplicateCharacters(String str) {
+        Map<String, Long> result = str.codePoints()
+                .mapToObj(c -> String.valueOf(Character.toChars(c)))
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
         return result;
     }
