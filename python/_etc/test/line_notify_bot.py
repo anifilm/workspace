@@ -4,7 +4,7 @@ import requests
 
 load_dotenv()
 
-def send_message(message):
+def send_message(message='라인 메시지 테스트'):
     try:
         api_url = 'https://notify-api.line.me/api/notify'
         token = os.environ.get('LineToken')
@@ -23,4 +23,4 @@ def send_message(message):
 
 
 if __name__ == '__main__':
-    send_message('테스트 입니다')
+    send_message()
