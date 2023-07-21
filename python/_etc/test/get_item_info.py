@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 load_dotenv()
 
-def send_message(message):
+def send_message(message='라인 메시지 테스트'):
     try:
         api_url = 'https://notify-api.line.me/api/notify'
         token = os.environ.get('LineToken')
@@ -36,6 +36,7 @@ def print_item(title, price):
         print("\x1b[1;96m" + title + "\x1b[1;m")  # blue
         print(price.rjust(60))
         print("-" * 60)
+        send_message()
     elif title.find("안드로쿨") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
         # print("구매가능!")
         print("\x1b[1;31m" + title + "\x1b[1;m")  # red
