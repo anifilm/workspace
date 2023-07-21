@@ -18,7 +18,6 @@ def main():
                 'message': '테스트 입니다'
             }
         )
-        print(response)
     except Exception as ex:
         print(ex)
 

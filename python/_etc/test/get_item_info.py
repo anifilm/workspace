@@ -1,6 +1,27 @@
-import webbrowser
+from dotenv import load_dotenv
+import os
 import requests
+import webbrowser
 from bs4 import BeautifulSoup
+
+load_dotenv()
+
+def send_message():
+    try:
+        api_url = 'https://notify-api.line.me/api/notify'
+        token = os.environ.get('LineToken')
+
+        response = requests.post(
+            api_url,
+            headers = {
+                'Authorization': 'Bearer ' + token
+            },
+            data = {
+                'message': '해당 쇼핑몰에서 원하시는 상품을 판매하기 시작했습니다.'
+            }
+        )
+    except Exception as ex:
+        print(ex)
 
 def print_item(title, price):
     if title.find("이노치노하하") != -1:  # 특정 상품 표시안함 (이노치노하하)
@@ -21,8 +42,10 @@ def print_item(title, price):
         print(price.rjust(60))
         print("-" * 60)
         if title.find("시테론") != -1:
+            # 라인 메시지 전송
+            send_message()
             # 시테론 상품 페이지 열기
-            webbrowser.open("https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf/premon-331.html")
+            #webbrowser.open("https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf/premon-331.html")
     else:  # 품절이 아닌 경우 금액 출력
         print(title)
         print(price.rjust(60))
