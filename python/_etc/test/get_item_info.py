@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 load_dotenv()
 
-def send_message():
+def send_message(message):
     try:
         api_url = 'https://notify-api.line.me/api/notify'
         token = os.environ.get('LineToken')
@@ -17,7 +17,7 @@ def send_message():
                 'Authorization': 'Bearer ' + token
             },
             data = {
-                'message': '해당 쇼핑몰에서 원하시는 상품을 판매하기 시작했습니다.'
+                'message': message
             }
         )
     except Exception as ex:
@@ -43,7 +43,7 @@ def print_item(title, price):
         print("-" * 60)
         if title.find("시테론") != -1:
             # 라인 메시지 전송
-            send_message()
+            send_message('해당 쇼핑몰에서 원하시는 상품을 판매하기 시작했습니다.')
             # 시테론 상품 페이지 열기
             #webbrowser.open("https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf/premon-331.html")
     else:  # 품절이 아닌 경우 금액 출력
