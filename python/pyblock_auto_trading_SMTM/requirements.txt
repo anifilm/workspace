@@ -1,0 +1,10 @@
+requests
+pandas
+numpy
+mplfinance
+matplotlib
+pyjwt
+python-dotenv
+jupyter
+psutil
+scikit-learn
