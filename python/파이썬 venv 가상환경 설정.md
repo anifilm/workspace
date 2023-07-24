@@ -1,7 +1,7 @@
-# 파이썬 venv 가상환경 설정
-
+## 파이썬 venv 가상환경 설정
 
 $ python -m venv venv
+
 
 # add venv folder to .gitignore
 
@@ -14,6 +14,7 @@ $ source ./venv/Scripts/activate
 
 또는 (윈도우 터미널)
 > venv\Scripts\activate.bat
+
 
 # 가상 환경 비활성화
 
