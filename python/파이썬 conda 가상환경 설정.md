@@ -34,6 +34,7 @@ $ conda activate py38_32
 
 $ conda deactivate
 
+
 # 가상 환경 진입 / 해제 (윈도우 커맨드 라인)
 
 > conda activate py38_32
