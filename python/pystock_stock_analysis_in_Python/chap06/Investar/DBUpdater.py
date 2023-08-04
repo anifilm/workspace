@@ -1,9 +1,8 @@
 import pandas as pd
 from bs4 import BeautifulSoup
-import pymysql, calendar, json
-import requests
+import pymysql, json, requests
 from datetime import datetime
-from threading import Timer
+#from threading import Timer
 
 from dotenv import load_dotenv
 import os
@@ -184,13 +183,37 @@ class DBUpdater:
             with open("config.json", "r") as in_file:
                 config = json.load(in_file)
                 pages_to_fetch = config["pages_to_fetch"]
+                last_save_date = config["last_save_date"]
         except FileNotFoundError:
             with open("config.json", "w") as out_file:
-                pages_to_fetch = 180
-                config = {"pages_to_fetch": 1}
+                pages_to_fetch = 100
+                config = {
+                    "pages_to_fetch": 1,
+                    "last_save_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
+                }
                 json.dump(config, out_file)
-        self.update_daily_price(pages_to_fetch)
 
+        # 페이지별 2주이므로 마지막 크롤링 날짜를 저장해 두었다가 계산하여 페이지 추가하도록 함
+        tmnow = datetime.now()
+        tmlast = datetime.strptime(last_save_date, "%Y-%m-%d %H:%M:%S.%f")
+        tm_diff = tmnow - tmlast
+        day_diff = tm_diff.days
+        add_page = int(day_diff) // 14
+
+        self.update_daily_price(pages_to_fetch + add_page)
+
+        try:
+            with open("config.json", "w") as out_file:
+                pages_to_fetch = 100
+                config = {
+                    "pages_to_fetch": 1,
+                    "last_save_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
+                }
+                json.dump(config, out_file)
+        except FileNotFoundError:
+            print("config.json 파일 저장 오류 발생!")
+
+        """ 매일 오후 5시에 종목 업데이트는 사용하지 않음
         tmnow = datetime.now()
         lastday = calendar.monthrange(tmnow.year, tmnow.month)[1]
         if tmnow.month == 12 and tmnow.day == lastday:
@@ -212,6 +235,7 @@ class DBUpdater:
             )
         )
         t.start()
+        """
 
 
 if __name__ == "__main__":
