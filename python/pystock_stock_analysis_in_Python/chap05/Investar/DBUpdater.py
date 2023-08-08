@@ -1,7 +1,6 @@
 import pandas as pd
 from bs4 import BeautifulSoup
-import pymysql, calendar, json
-import requests
+import pymysql, calendar, json, requests
 from datetime import datetime
 from threading import Timer
 
@@ -186,7 +185,7 @@ class DBUpdater:
                 pages_to_fetch = config["pages_to_fetch"]
         except FileNotFoundError:
             with open("config.json", "w") as out_file:
-                pages_to_fetch = 180
+                pages_to_fetch = 100
                 config = {"pages_to_fetch": 1}
                 json.dump(config, out_file)
         self.update_daily_price(pages_to_fetch)

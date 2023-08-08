@@ -1,10 +1,11 @@
+black
+flake8
+python-dotenv
 requests
 pandas
-numpy
 mplfinance
 matplotlib
 pyjwt
-python-dotenv
 jupyter
 psutil
 scikit-learn
