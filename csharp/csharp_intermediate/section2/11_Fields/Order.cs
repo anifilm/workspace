@@ -1,4 +1,4 @@
-﻿namespace CSharpIntermediate
+namespace Fields
 {
     public class Order
     {

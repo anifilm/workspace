@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Methods
+﻿namespace Methods
 {
     public class Point
     {
@@ -22,7 +20,9 @@ namespace Methods
         public void Move(Point newLocation)
         {
             if (newLocation == null)
+            {
                 throw new ArgumentNullException("newLocation");
+            }
 
             Move(newLocation.X, newLocation.Y);
             //this.X = newLocation.X;
