@@ -19,7 +19,7 @@ namespace Conversion
             // cast double to int;
             myInt = (int)myDouble;
 
-            // typeConversion 
+            // typeConversion
             string myString = myDouble.ToString(); // "13.37"
             string myFloatString = myFloat.ToString();
             bool sunIsShining = false;
@@ -27,7 +27,6 @@ namespace Conversion
             string myBoolString = sunIsShining.ToString();
 
             Console.WriteLine(myBoolString);
-            Console.Read();
         }
     }
 }

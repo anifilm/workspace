@@ -42,8 +42,6 @@ namespace Challenge
             string numText = "15";
             int myNumFromText = int.Parse(numText);
             Console.WriteLine(myNumFromText);
-
-            Console.ReadLine();
         }
     }
 }

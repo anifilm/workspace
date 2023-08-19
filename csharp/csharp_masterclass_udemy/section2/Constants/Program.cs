@@ -21,7 +21,6 @@ namespace Constants
         static void Main(string[] args)
         {
             Console.WriteLine("My birthday is always going to be: {0}", birthday);
-            Console.ReadKey();
         }
     }
 }

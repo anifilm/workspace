@@ -16,7 +16,6 @@ namespace Datatypes
 
             Console.WriteLine("The sum of " + num1 + " and " + num2 + " is " + sum);
             Console.WriteLine(d1 + " devided by " + num2 + " is " + sumD);
-            Console.Read();
         }
     }
 }

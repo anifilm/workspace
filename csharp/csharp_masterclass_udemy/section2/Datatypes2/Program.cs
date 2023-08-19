@@ -17,7 +17,6 @@ namespace Datatypes2
             Console.WriteLine(message);
             Console.WriteLine(capsMessage);
             Console.WriteLine(lowerCaseMessage);
-            Console.Read();
         }
     }
 }

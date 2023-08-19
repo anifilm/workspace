@@ -14,7 +14,6 @@ namespace Parsing
             string result = myString + mySecondString;
 
             Console.WriteLine(resultInt);
-            Console.Read();
         }
     }
 }
