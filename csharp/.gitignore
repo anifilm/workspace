@@ -6,3 +6,5 @@ Properties/
 *.config
 *.exe
 __init__.cs
+
+csharp_book_source_code/
