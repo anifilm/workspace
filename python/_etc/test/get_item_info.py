@@ -1,32 +1,45 @@
 from dotenv import load_dotenv
 import os
 import requests
-import webbrowser
+import telegram
+import asyncio
 from bs4 import BeautifulSoup
 
 load_dotenv()
 
-def send_message(message='라인 메시지 테스트'):
+
+async def send_message(message="텔레그램 메시지 테스트", send_url="http://example.com"):
     try:
-        api_url = 'https://notify-api.line.me/api/notify'
-        token = os.environ.get('LineToken')
+        token = os.environ.get("TelegramToken")
+        bot = telegram.Bot(token)
+        chat_id_bot1 = "7011657775"
+        chat_id_bot2 = "-1002464227122"
+        new_message = message + "\n\n" + send_url
+        await bot.send_message(chat_id=chat_id_bot1, text=new_message)
+    except Exception as ex:
+        print(ex)
+
+
+def send_message_line(message="라인 메시지 테스트"):
+    try:
+        api_url = "https://notify-api.line.me/api/notify"
+        token = os.environ.get("LineToken")
 
         response = requests.post(
             api_url,
-            headers = {
-                'Authorization': 'Bearer ' + token
-            },
-            data = {
-                'message': message
-            }
+            headers={"Authorization": "Bearer " + token},
+            data={"message": message},
         )
     except Exception as ex:
         print(ex)
 
-def print_item(title, price):
+
+def print_item(title, price, link):
     if title.find("이노치노하하") != -1:  # 특정 상품 표시안함 (이노치노하하)
         pass
-    elif title.find("프로기노바") != -1 or title.find("에스트로") != -1:  # 해당 상품 구매가능한 경우 카카오 메시지 전송
+    elif (
+        title.find("프로기노바") != -1 or title.find("에스트로") != -1
+    ):  # 해당 상품 구매가능한 경우 카카오 메시지 전송
         # print("구매가능!")
         print("\x1b[1;33m" + title + "\x1b[1;m")  # yellow
         print(price.rjust(60))
@@ -41,23 +54,25 @@ def print_item(title, price):
         print("\x1b[1;31m" + title + "\x1b[1;m")  # red
         print(price.rjust(60))
         print("-" * 60)
+        if title.find("안드로쿨") != -1:
+            # 메시지 전송
+            asyncio.run(send_message("해당 쇼핑몰에서 안드로쿨을 판매하기 시작했습니다.", link))
         if title.find("시테론") != -1:
-            # 라인 메시지 전송
-            send_message('해당 쇼핑몰에서 시테론을 판매하기 시작했습니다.')
-            # 시테론 상품 페이지 열기
-            webbrowser.open("https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf/premon-331.html")
+            # 메시지 전송
+            asyncio.run(send_message("해당 쇼핑몰에서 시테론을 판매하기 시작했습니다.", link))
     else:  # 품절이 아닌 경우 금액 출력
         print(title)
         print(price.rjust(60))
         print("-" * 60)
+
 
 def get_info(url):
     res = requests.get(url)
     res.raise_for_status()
 
     soup = BeautifulSoup(res.text, "lxml")
-    item_list = soup.find('div', class_="category-products")
-    items = item_list.find_all('li')
+    item_list = soup.find("div", class_="category-products")
+    items = item_list.find_all("li")
 
     for i in items:
         title = i.find("a")
@@ -67,6 +82,7 @@ def get_info(url):
             continue
 
         title_str = str(title.get("title"))
+        link_str = str(title.get("href"))
         price_str = str(price.contents[0]).strip()[0:-2]
 
         if stock is not None:
@@ -75,14 +91,17 @@ def get_info(url):
                 # print("\n" + stock_str.rjust(56)) # 재고품절 출력
                 pass
             else:
-                print_item(title_str, price_str)
+                print_item(title_str, price_str, link_str)
         else:
-            print_item(title_str, price_str)
+            print_item(title_str, price_str, link_str)
 
 
-url1 = "https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf.html?p=1"
-url2 = "https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf.html?p=2"
+url1 = "https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf.html?limit=12&p=1"
+url2 = "https://bombyxdrug-xsrvjp.ssl-xserver.jp/bd/index.php/tedf.html?limit=12&p=2"
 
 print("\n" + "-" * 60)
 get_info(url1)
 get_info(url2)
+
+# Test Send Message
+#asyncio.run(send_message())

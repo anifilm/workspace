@@ -4,23 +4,19 @@ import requests
 
 load_dotenv()
 
-def send_message(message='라인 메시지 테스트'):
+
+def send_message(message="라인 메시지 테스트"):
     try:
-        api_url = 'https://notify-api.line.me/api/notify'
-        token = os.environ.get('LineToken')
+        api_url = "https://notify-api.line.me/api/notify"
+        token = os.environ.get("LineToken")
 
         response = requests.post(
             api_url,
-            headers = {
-                'Authorization': 'Bearer ' + token
-            },
-            data = {
-                'message': message
-            }
+            headers={"Authorization": "Bearer " + token},
+            data={"message": message},
         )
     except Exception as ex:
         print(ex)
 
 
-if __name__ == '__main__':
-    send_message()
+send_message()

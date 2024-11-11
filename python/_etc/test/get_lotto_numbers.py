@@ -1,12 +1,10 @@
 import requests
 import random
 
+
 # 지정된 회차의 당첨번호를 크롤링하여 가져옴
 def get_lotto_numbers(episode):
-    params = {
-        "method": "getLottoNumber",
-        "drwNo": episode
-    }
+    params = {"method": "getLottoNumber", "drwNo": episode}
 
     request = requests.get("https://www.dhlottery.co.kr/common.do", params=params)
     response = request.json()
