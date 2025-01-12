@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"hello/greeting"
+	"hello/typeof"
 )
 
 func main() {
@@ -21,10 +22,11 @@ func main() {
 
 	b := 20
 	fmt.Println(b)
+	typeof.Type(b)
 
-	var c int
-	c = 30
+	var c string = "30"
 	fmt.Println(c)
+	typeof.Type(c)
 }
 
 func foo() {
