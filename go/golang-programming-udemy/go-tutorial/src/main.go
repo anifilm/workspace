@@ -15,6 +15,12 @@ func main() {
 	//fmt.Println(err)
 
 	greeting.Say("Lazies")
+
+	var a = 10
+	fmt.Println(a)
+
+	b := 20
+	fmt.Println(b)
 }
 
 func foo() {
