@@ -21,6 +21,10 @@ func main() {
 
 	b := 20
 	fmt.Println(b)
+
+	var c int
+	c = 30
+	fmt.Println(c)
 }
 
 func foo() {
